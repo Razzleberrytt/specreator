@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V0111-MANIFEST-INTEGRITY-CI-001",
+  "created_at": "2026-08-29T06:48:44Z",
+  "authority_lane": "lane-5",
+  "transition_type": "EVIDENCE_RECONCILIATION_NO_PHASE_CHANGE",
+  "subject": "historical-v0.11.1-manifest-byte-integrity-ci",
+  "repository": "Razzleberrytt/specreator",
+  "observed_main_sha": "9c9e7d65608f1578ce0b68af102d7c9108dcfc6d",
+  "observed_main_tree_sha": "5d9e6e248ccc37453c7fc4061117113c807552f1",
+  "source_pr": 22,
+  "source_head_sha": "dfec82aa6ca340ace30216d97d265bbcf35af9a0",
+  "source_merge_sha": "9c9e7d65608f1578ce0b68af102d7c9108dcfc6d",
+  "workflow_run": {
+    "id": 33237686099,
+    "name": "integrity",
+    "conclusion": "success",
+    "job_id": 99061435123
+  },
+  "mechanical_evidence": {
+    "manifest_members_verified_sha256_and_bytes": "1770/1770",
+    "materialized_historical_package_files": "1771/1771",
+    "frozen_registry": "36/36",
+    "v0_10_hashes": "1120/1120",
+    "failed_v0_11_hashes": "154/154",
+    "ownership_and_prospective_closure": "exact",
+    "frozen_contract_hash": "valid",
+    "workspace_validation": "0 errors / 0 warnings",
+    "pytest": "166/166 passed",
+    "control_plane_validator": "PASS"
+  },
+  "historical_authority": {
+    "sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+    "new_seal_created": false
+  },
+  "lane5_judgment": {
+    "accepted_as": "stronger exact-head historical package integrity evidence",
+    "phase_changed": false,
+    "v1_must_blocker_count_changed": false,
+    "successor_implementation_authorized": false,
+    "reason": "PR #22 strengthens mechanical verification of the already-reconciled historical package but does not satisfy or alter the selected v1 freshness preregistration gap."
+  }
+}
