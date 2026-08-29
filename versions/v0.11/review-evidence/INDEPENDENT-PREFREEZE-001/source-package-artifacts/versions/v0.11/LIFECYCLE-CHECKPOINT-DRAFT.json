@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0-candidate",
+  "checkpoint_id": "LCP-011-PREREG-DRAFT-001",
+  "candidate_version": "0.11",
+  "parent_version": "0.10",
+  "release_state": "PREREGISTRATION_DRAFT",
+  "immutable_boundary": {
+    "registry_id": "IMMUT-011-DRAFT-001",
+    "historical_versions": [
+      "0.10",
+      "0.09.2",
+      "0.09",
+      "0.09.1",
+      "0.08",
+      "0.07",
+      "0.06.1",
+      "0.06",
+      "0.05",
+      "0.04",
+      "0.03",
+      "0.02",
+      "0.01"
+    ],
+    "hash_algorithm": "sha256",
+    "mutation_rule": "Historical frozen/failed bytes remain immutable; only v0.11-owned unfrozen artifacts may change.",
+    "registry_ref": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json"
+  },
+  "validation_profile": {
+    "profile_id": "VAL-011-PREREG-DRAFT",
+    "commands": [
+      "python -m pytest -q",
+      "python -m spec_creator.cli validate . --no-package-manifest",
+      "candidate schema + fixture preflight",
+      "v0.10 manifest hash integrity check"
+    ],
+    "success_condition": "All commands PASS, candidate schemas are Draft 2020-12 valid, fixtures parse, and every v0.10 manifest-bound content hash matches."
+  },
+  "blockers": [
+    {
+      "blocker_id": "B-011-INDEPENDENT-PREFREEZE-REVIEW",
+      "status": "OPEN",
+      "description": "A genuinely separate receiving context must review the preregistration draft before freeze.",
+      "owner_decision_required": false
+    },
+    {
+      "blocker_id": "B-011-FROZEN-HASHES",
+      "status": "OPEN",
+      "description": "Final preregistered artifact hashes and frozen release contract do not yet exist.",
+      "owner_decision_required": false
+    }
+  ],
+  "next_legal_action": {
+    "action_id": "ACT-011-INDEPENDENT-PREFREEZE-REVIEW",
+    "description": "Perform independent prefreeze review of v0.11 preregistration artifacts and return raw evidence; do not implement or freeze.",
+    "allowed_actor": "genuinely separate receiving context",
+    "required_inputs": [
+      "versions/v0.11/EVALUATION-DESIGN.json",
+      "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "versions/v0.11/candidate-schemas/",
+      "versions/v0.11/candidate-fixtures/",
+      "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json"
+    ],
+    "expected_outputs": [
+      "schema/fixture review evidence",
+      "denominator/threshold/guardrail review",
+      "freeze-readiness recommendation",
+      "identified defects if any"
+    ]
+  },
+  "required_artifacts": [
+    "versions/v0.11/EVALUATION-DESIGN.json",
+    "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+    "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl"
+  ],
+  "stop_condition": "Do not freeze or implement v0.11 in this planning context. Stop after local preflight is clean and package an independent-review checkpoint.",
+  "notes": [
+    "Empirical efficiency measurements are mandatory calibration evidence but non-promotional in v0.11.",
+    "The target is maximum useful parallelism, not maximum workstream count."
+  ]
+}

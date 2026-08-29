@@ -1,0 +1,14 @@
+{
+  "candidate_version": "0.09.2",
+  "disposition": "adopt",
+  "evidence_refs": [
+    "EXPR-0011",
+    "evaluation/verifier-pass-v0.09.2.json",
+    "evaluation/metric-reconciliation-v0.09.2.json"
+  ],
+  "experiment_id": "EXP-0011",
+  "improvement_id": "IMP-0017",
+  "notes": "Fail-closed retry benchmark and Prompt Compiler satisfy original/stricter frozen targets without rewriting v0.09 or v0.09.1 history.",
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "result": "PASS"
+}

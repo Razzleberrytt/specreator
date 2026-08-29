@@ -1,0 +1,136 @@
+{
+  "candidate_version": "0.06.1",
+  "case_counts": {
+    "clean": 20,
+    "defect": 24,
+    "priority": 8,
+    "resolved": 12,
+    "total": 72,
+    "workflow": 8
+  },
+  "evaluation_mode": "frozen synthetic ambiguity corpus plus clarification-interception proxy",
+  "metrics": [
+    {
+      "denominator": "24 frozen defect cases",
+      "name": "defect_case_detection_rate",
+      "numerator": "defect cases containing every expected code/block pair",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "denominator": "20 frozen clean cases",
+      "name": "clean_case_acceptance_rate",
+      "numerator": "clean cases emitting zero findings",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "denominator": "all expected candidates in defect/resolved/workflow/priority cases",
+      "name": "decision_needed_classification_accuracy",
+      "numerator": "labeled expected candidates with exact decision_needed and disposition",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "denominator": "1 frozen release evaluation",
+      "name": "governed_default_question_count",
+      "numerator": "questions emitted for 12 resolved governed-default cases",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "denominator": "8 frozen priority cases",
+      "name": "priority_top_question_accuracy",
+      "numerator": "priority cases whose top question matches preregistration",
+      "target_operator": "gte",
+      "target_value": 0.9
+    },
+    {
+      "denominator": "sum of frozen true_implementation_clarification_triggers across 8 workflow cases",
+      "name": "implementation_time_clarification_reduction_proxy_rate",
+      "numerator": "known workflow implementation-time clarification triggers intercepted by matching pre-implementation questions",
+      "target_operator": "gte",
+      "target_value": 0.8
+    },
+    {
+      "denominator": "all emitted questions across frozen corpus",
+      "name": "unnecessary_question_rate",
+      "numerator": "emitted questions with no matching decision-needed expected candidate",
+      "target_operator": "lte",
+      "target_value": 0.05
+    },
+    {
+      "denominator": "1 frozen release evaluation",
+      "name": "critical_ambiguity_escape_count",
+      "numerator": "preregistered critical workflow triggers not surfaced as decision-needed questions",
+      "target_operator": "eq",
+      "target_value": 0
+    }
+  ],
+  "missing_data_policy": "Missing/unreadable cases or labels are incomplete evidence and cannot enter numerators as success or be imputed as zero.",
+  "notes": [
+    "Workflow metric is an explicit pre-implementation interception proxy, not observed production-agent behavior.",
+    "Corpus and plan hashes must be frozen before implementation.",
+    "v0.06.1 exists solely as a governed retry; failed v0.06 frozen artifacts remain immutable evidence.",
+    "Final root PACKAGE-MANIFEST.json is generated only after all shipping files are complete and must validate at release."
+  ],
+  "parent_version": "0.05",
+  "priority_contract": {
+    "critical_block_weight": 50,
+    "impact_cap": 99,
+    "severity_weights": {
+      "high": 300,
+      "low": 100,
+      "medium": 200
+    },
+    "tie_break": [
+      "block_id",
+      "code",
+      "line"
+    ]
+  },
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "real_project_claim_allowed": false,
+  "retry_context": {
+    "allowed_fixture_repairs": [
+      "trace_graph.graph_id replaced by TG-<case_id>",
+      "every embedded trace node receives required label equal to its stable node id"
+    ],
+    "failed_candidate_version": "0.06",
+    "failed_contract_id": "REL-0.06-FROZEN-001",
+    "governing_decisions": [
+      "DEC-0014",
+      "DEC-0015"
+    ],
+    "metric_thresholds_changed": false,
+    "new_pre_freeze_invariant": "Every embedded artifact governed by a promoted parent validator must pass that parent validator before this contract freezes.",
+    "semantic_documents_or_expected_outcomes_changed": false
+  },
+  "rules": {
+    "AMB-001": "unresolved_or_defaulted_options",
+    "AMB-002": "missing_measurable_bound",
+    "AMB-003": "undefined_referent",
+    "AMB-004": "constraint_conflict",
+    "AMB-005": "assumption_governance",
+    "AMB-006": "unresolved_marker"
+  },
+  "schema_version": "1.0",
+  "status": "preregistered-pre-freeze",
+  "unbounded_terms": [
+    "quickly",
+    "soon",
+    "large",
+    "small",
+    "recent",
+    "significant",
+    "substantial",
+    "minimal"
+  ],
+  "unresolved_markers": [
+    "TBD",
+    "TODO",
+    "pending",
+    "unresolved",
+    "undecided"
+  ]
+}

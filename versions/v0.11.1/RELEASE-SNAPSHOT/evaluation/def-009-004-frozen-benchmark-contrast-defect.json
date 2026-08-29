@@ -1,0 +1,21 @@
+{
+  "defect_id": "DEF-009-004",
+  "candidate_version": "0.09",
+  "observed_at_utc": "2026-08-24T17:23:00Z",
+  "phase": "verification",
+  "classification": "evaluation_defect",
+  "severity": "critical",
+  "status": "open",
+  "observation": "Frozen case DEV-NEG-2-07 is labeled task_contract_mismatch but its task_contract exactly matches valid accepted implementation fixtures for CTASK-008-SELF-03. The compiler therefore emits a valid envelope and the frozen negative-classification target cannot be met without case-specific overfitting.",
+  "evidence": {
+    "failing_case": "DEV-NEG-2-07",
+    "accepted_semantic_controls": ["DEV-IMPLEMENTATION-04", "HELD-IMPLEMENTATION-01"],
+    "frozen_result_ref": "evaluation/v009-corpus-results-failed.json",
+    "negative_case_classification_accuracy": 0.9666666666666667,
+    "invalid_input_escape_count": 1,
+    "frozen_artifacts_modified": false
+  },
+  "root_cause": "The preregistration corpus generator intended to mutate task_contract.task_id for three mismatch fixtures, but one generated retry/variant retained the correct target task_id. The prefreeze checks validated schema and parent dependencies but did not verify semantic contrast between negative and accepted cases.",
+  "failure_disposition": "REL-0.09-FROZEN-001 cannot be satisfied honestly. Preserve v0.09 and retry under a new frozen candidate with semantic-contrast preflight.",
+  "regression_candidate": true
+}

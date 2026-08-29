@@ -1,0 +1,7 @@
+PASS: v0.11.1 governed-retry preregistration preflight
+candidate schemas: 2 valid; execution fixtures: 6; lifecycle fixtures: 4
+parent suite universe: 155 node IDs; regressions: 24 inherited + REG-0025
+immutable integrity: v0.10=1120/1120; failed-v0.11=154/154
+classification: protected=1121 failed_predecessor=154 retry_successor=36 unclassified=0 overlap=0 multimatch=0 stale=0
+prospective output closure: 25/25 legal paths classify exactly once; 7/7 forbidden paths rejected
+promotion-authoritative metrics: 16 (15 inherited + 1 stricter retry guardrail)

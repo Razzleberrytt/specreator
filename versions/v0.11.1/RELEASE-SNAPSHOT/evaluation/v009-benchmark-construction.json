@@ -1,0 +1,17 @@
+{
+  "candidate_version": "0.09",
+  "development_accepted": 30,
+  "development_cases": 50,
+  "development_negative": 20,
+  "heldout_accepted": 15,
+  "heldout_cases": 25,
+  "heldout_negative": 10,
+  "preflight_all_ok": true,
+  "prompt_kind_counts": {
+    "bootstrap": 9,
+    "continuation": 9,
+    "debug": 12,
+    "implementation": 30,
+    "verification": 15
+  }
+}

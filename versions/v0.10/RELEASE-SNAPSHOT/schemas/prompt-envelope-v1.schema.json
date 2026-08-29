@@ -1,0 +1,262 @@
+{
+  "$id": "https://spec-creator.local/schemas/prompt-envelope-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_criteria": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "actor_role": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "allowed_write_scopes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "candidate_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "completed_evidence_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "completion_constraints": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "critical_obligations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "declared_write_scopes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "diagnostics": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "refs"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "envelope_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "evidence_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "excluded_context_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "frozen_criteria_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "gate_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "graph_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "included_context_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "next_permitted_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "open_blockers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "prerequisite_states": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "task_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "state"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "prompt_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_evidence_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "source_requirement_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "status": {
+      "enum": [
+        "compiled",
+        "blocked",
+        "invalid"
+      ]
+    },
+    "task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task_state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "request_id",
+    "status",
+    "candidate_version",
+    "graph_hash",
+    "task_id",
+    "prompt_kind",
+    "actor_role",
+    "allowed_write_scopes",
+    "prerequisite_states",
+    "source_requirement_ids",
+    "acceptance_criteria",
+    "verification_refs",
+    "gate_ids",
+    "critical_obligations",
+    "evidence_requirements",
+    "included_context_refs",
+    "excluded_context_refs",
+    "completion_constraints",
+    "diagnostics",
+    "prompt_text",
+    "envelope_hash",
+    "declared_write_scopes",
+    "source_evidence_refs",
+    "task_state",
+    "completed_evidence_refs",
+    "open_blockers",
+    "next_permitted_action",
+    "frozen_criteria_refs"
+  ],
+  "title": "Prompt Envelope v1",
+  "type": "object"
+}

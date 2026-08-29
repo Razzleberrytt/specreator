@@ -1,0 +1,20 @@
+{
+  "candidate_version": "0.11.1",
+  "decision_id": "DEC-0035",
+  "parent_remains_available": true,
+  "preserve_failed_history": [
+    "0.11",
+    "0.09",
+    "0.09.1"
+  ],
+  "rollback_required": false,
+  "rollback_target": "0.10",
+  "trigger_if": [
+    "Any sealed v0.11.1 package integrity check fails after promotion.",
+    "Any frozen v0.11.1 registry artifact is found mutated.",
+    "Any protected v0.10/earlier or failed-v0.11 baseline byte is found mutated.",
+    "Any v0.11.1 mandatory gate is later shown to have been bypassed.",
+    "Independent verification evidence is shown not to correspond to the sealed VERIFYING source checkpoint."
+  ],
+  "rollback_rule": "Preserve all v0.11 and v0.11.1 evidence; restore executable authority to sealed v0.10 without rewriting failed or frozen history."
+}

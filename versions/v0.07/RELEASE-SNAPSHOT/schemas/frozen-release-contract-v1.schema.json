@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/frozen-release-contract-v1.json",
+  "title": "Frozen Successor Release Contract v1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "parent_version",
+    "candidate_version",
+    "frozen_at_utc",
+    "goals",
+    "mandatory_gates",
+    "critical_regressions",
+    "primary_metrics",
+    "guardrail_metrics",
+    "promotion_rule"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_version": {
+      "type": "string"
+    },
+    "candidate_version": {
+      "type": "string"
+    },
+    "frozen_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "goal_id",
+          "description",
+          "acceptance"
+        ],
+        "properties": {
+          "goal_id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "acceptance": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mandatory_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "critical_regressions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "primary_metrics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "guardrail_metrics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "promotion_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

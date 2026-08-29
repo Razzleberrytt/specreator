@@ -1,0 +1,60 @@
+{
+  "contract_id": "REL-0.02-FROZEN-001",
+  "parent_version": "0.01",
+  "candidate_version": "0.02",
+  "frozen_at_utc": "2026-08-24T14:11:00Z",
+  "goals": [
+    {
+      "goal_id": "G-001",
+      "description": "Add controlled recursive successor design.",
+      "acceptance": "Meta-spec lifecycle is explicit and blocks direct proposal-to-promotion."
+    },
+    {
+      "goal_id": "G-002",
+      "description": "Prevent post-result goalpost movement.",
+      "acceptance": "Frozen release contracts and no-goalpost-movement invariant are defined."
+    },
+    {
+      "goal_id": "G-003",
+      "description": "Preserve learned failure modes.",
+      "acceptance": "Permanent regression registry and promotion regression gate are defined."
+    },
+    {
+      "goal_id": "G-004",
+      "description": "Separate implementation from evaluation.",
+      "acceptance": "Independent evaluator role and no-self-certification invariant are defined."
+    }
+  ],
+  "mandatory_gates": [
+    "Self-Improvement Gate",
+    "Candidate Promotion Gate",
+    "v0.01 critical gates"
+  ],
+  "critical_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003"
+  ],
+  "primary_metrics": [
+    {
+      "name": "promotion_decision_reproducibility",
+      "target": "100% for the first governed cycle"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "name": "critical_gate_bypass_count",
+      "target": 0
+    },
+    {
+      "name": "critical_regression_pass_rate",
+      "target": 1.0
+    },
+    {
+      "name": "metric_reconciliation_failure_count",
+      "target": 0
+    }
+  ],
+  "promotion_rule": "Promote only if all critical gates/regressions pass, frozen goals are satisfied, evaluation is independently reproducible, and no critical open defect exists.",
+  "notes": "This contract is a design-time frozen baseline for the v0.01\u2192v0.02 recursive experiment."
+}

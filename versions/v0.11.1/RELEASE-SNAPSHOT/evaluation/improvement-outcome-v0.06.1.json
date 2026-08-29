@@ -1,0 +1,15 @@
+{
+  "candidate_version": "0.06.1",
+  "disposition": "Adopt capability as experimental under DEC-0018; keep the preregistered IMP-0011 ledger row byte-immutable and carry outcome here plus EXPR-0006/EVAL-0.06.1-20260824-001.",
+  "evidence_refs": [
+    "EXPR-0006",
+    "EVAL-0.06.1-20260824-001",
+    "DEC-0018",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013"
+  ],
+  "improvement_id": "IMP-0011",
+  "result": "PASS"
+}

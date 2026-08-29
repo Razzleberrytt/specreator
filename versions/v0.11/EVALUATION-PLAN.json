@@ -1,0 +1,135 @@
+{
+  "candidate_version": "0.11",
+  "control_equivalence_rule": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+  "critical_path_tie_rule": "Every execution fixture is eligible. Critical-path truth is the set of ALL maximum-total-work paths in the effective DAG after mechanically derived conflict-serialization edges; set equality is required.",
+  "derivation_rule": "This file is a canonical freeze-time projection of the independently reviewed EVALUATION-DESIGN.json. Metric names, universes, denominator counts, numerator rules, targets, missing-data policy, and anti-gaming rules may not be weakened.",
+  "guardrail_metric_count": 10,
+  "guardrail_metrics": [
+    {
+      "metric": "unsafe_parallelization_count",
+      "metric_id": "M-011-G01",
+      "target": 0,
+      "universe": "execution_fixtures"
+    },
+    {
+      "denominator_count": 22,
+      "metric": "unsupported_dependency_edge_count",
+      "metric_id": "M-011-G02",
+      "oracle_ref": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "target": 0,
+      "universe": "effective_dependency_edges"
+    },
+    {
+      "denominator_count": 1,
+      "metric": "speculative_authority_escape_count",
+      "metric_id": "M-011-G03",
+      "target": 0,
+      "universe": "speculative_fixtures"
+    },
+    {
+      "metric": "hidden_manual_state_reconstruction_count",
+      "metric_id": "M-011-G04",
+      "target": 0,
+      "universe": "lifecycle_fixtures"
+    },
+    {
+      "metric": "immutable_boundary_classification_error_count",
+      "metric_id": "M-011-G05",
+      "target": 0,
+      "universe": "immutable_boundary_assertions"
+    },
+    {
+      "denominator_count": 155,
+      "metric": "parent_suite_pass_rate",
+      "metric_id": "M-011-G06",
+      "numerator_rule": "exact listed pytest node IDs with PASS outcome",
+      "target": 1.0,
+      "universe": "parent_suite"
+    },
+    {
+      "denominator_count": 24,
+      "metric": "active_regression_pass_rate",
+      "metric_id": "M-011-G07",
+      "numerator_rule": "exact listed regression IDs with explicit passing verification evidence",
+      "target": 1.0,
+      "universe": "active_regressions"
+    },
+    {
+      "denominator_count": 1120,
+      "metric": "frozen_parent_hash_integrity_rate",
+      "metric_id": "M-011-G08",
+      "numerator_rule": "exact v0.10 manifest file entries whose path exists and sha256 equals manifest value",
+      "target": 1.0,
+      "universe": "frozen_parent_hash_entries"
+    },
+    {
+      "denominator_count": 25,
+      "metric": "missing_data_count",
+      "metric_id": "M-011-G09",
+      "target": 0,
+      "universe": "mandatory_evidence_slots"
+    },
+    {
+      "denominator_count": 8,
+      "metric": "critical_gate_bypass_count",
+      "metric_id": "M-011-G10",
+      "target": 0,
+      "universe": "mandatory_quality_gates"
+    }
+  ],
+  "independent_verifier_actor": "verifier:independent-pass-011",
+  "integration_anti_gaming_rule": "Integration completeness denominator is the fixed 23-source-task universe, never emitted workstream count. Every emitted workstream must identify >=1 source_task_ids, and every source task must be covered.",
+  "missing_data_policy": "Missing, skipped, malformed, unreconciled, or environment-incomparable evidence is unavailable and cannot count as zero or PASS.",
+  "parent_version": "0.10",
+  "plan_id": "EVAL-011-FROZEN-001",
+  "primary_metric_count": 5,
+  "primary_metrics": [
+    {
+      "denominator_count": 4,
+      "metric": "next_legal_action_exact_match_rate",
+      "metric_id": "M-011-001",
+      "numerator_rule": "fixture count for which applying lifecycle transition rules to state+blockers exactly equals expected_next_action",
+      "target": 1.0,
+      "universe": "lifecycle_fixtures"
+    },
+    {
+      "denominator_count": 6,
+      "metric": "critical_path_exact_match_rate",
+      "metric_id": "M-011-002",
+      "numerator_rule": "fixture count for which the independently recomputed set of all maximum-weight effective-DAG paths exactly equals expected.critical_paths",
+      "target": 1.0,
+      "universe": "critical_path_fixtures"
+    },
+    {
+      "denominator_count": 6,
+      "metric": "execution_wave_exact_match_rate",
+      "metric_id": "M-011-003",
+      "numerator_rule": "fixture count for which deterministic dependency+conflict-safe waves exactly equal expected.waves",
+      "target": 1.0,
+      "universe": "execution_fixtures"
+    },
+    {
+      "denominator_count": 1,
+      "metric": "retry_isolation_exact_match_rate",
+      "metric_id": "M-011-004",
+      "numerator_rule": "failure-injection fixtures satisfying all authored preservation and unrelated-rerun expectations",
+      "target": 1.0,
+      "universe": "failure_injection_fixtures"
+    },
+    {
+      "denominator_count": 23,
+      "metric": "integration_contract_completeness_rate",
+      "metric_id": "M-011-005",
+      "numerator_rule": "source-task keys covered by >=1 emitted workstream via tasks[*].source_task_ids where every covering emitted workstream has a schema-valid integration_contract; emitted workstreams with no source_task_ids are schema-invalid",
+      "target": 1.0,
+      "universe": "integration_source_tasks"
+    }
+  ],
+  "promotion_authoritative_metric_count": 15,
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "shadow_metrics_ref": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+  "source_reviewed_design_ref": "versions/v0.11/EVALUATION-DESIGN.json",
+  "status": "PREREGISTERED_PREFREEZE",
+  "structural_vs_empirical_rule": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+  "universe_ref": "versions/v0.11/EVALUATION-UNIVERSES.json"
+}

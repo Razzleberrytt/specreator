@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/decision-v1.json",
+  "title": "Governance Decision v1",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "decision_time_utc",
+    "title",
+    "status",
+    "decision_type",
+    "rationale",
+    "evidence_refs",
+    "constraints"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[A-Za-z0-9._-]+$"
+    },
+    "decision_time_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "approved",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "decision_type": {
+      "enum": [
+        "governance",
+        "architecture",
+        "roadmap",
+        "risk_acceptance",
+        "breaking_change"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "supersedes_decision_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^DEC-[A-Za-z0-9._-]+$"
+    }
+  },
+  "additionalProperties": false
+}

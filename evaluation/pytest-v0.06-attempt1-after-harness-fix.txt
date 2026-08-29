@@ -1,0 +1,216 @@
+FF..F.FF...FF........................................................... [ 74%]
+.........................                                                [100%]
+=================================== FAILURES ===================================
+_______________ test_frozen_candidate_detection_and_diagnostics ________________
+
+    def test_frozen_candidate_detection_and_diagnostics():
+>       result = evaluate_v006_corpus(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/spec_creator/ambiguity_evaluator.py:48: in evaluate_v006_corpus
+    report = analyze_text(case["document"], trace_graph=case.get("trace_graph"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-WF01-A\nRequirement: Select storage for workflow 1.\nCritical: true\nOptions: storage_backend = SQLite | Post...ment: Return records in stable identifier order.\nCritical: true\nAcceptance: [B, A] becomes [A, B].\nVerify: wf:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+_____________________ test_decision_needed_classification ______________________
+
+    def test_decision_needed_classification():
+>       result = evaluate_v006_corpus(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/spec_creator/ambiguity_evaluator.py:48: in evaluate_v006_corpus
+    report = analyze_text(case["document"], trace_graph=case.get("trace_graph"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-WF01-A\nRequirement: Select storage for workflow 1.\nCritical: true\nOptions: storage_backend = SQLite | Post...ment: Return records in stable identifier order.\nCritical: true\nAcceptance: [B, A] becomes [A, B].\nVerify: wf:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+_______________________ test_traceability_impact_context _______________________
+
+    def test_traceability_impact_context():
+        cases = [json.loads(x) for x in (ROOT/"fixtures/ambiguity/v0.06/corpus.jsonl").read_text().splitlines() if x.strip()]
+        case = next(c for c in cases if c["case_kind"] == "priority")
+>       report = analyze_text(case["document"], trace_graph=case["trace_graph"])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-PRI01-A\nRequirement: Select cache backend for priority case 1.\nCritical: true\nOptions: cache_backend = mem...ent: The health probe must complete quickly.\nCritical: true\nAcceptance: Probe timing is explicit.\nVerify: pri:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+____________________________ test_question_priority ____________________________
+
+    def test_question_priority():
+>       result = evaluate_v006_corpus(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/spec_creator/ambiguity_evaluator.py:48: in evaluate_v006_corpus
+    report = analyze_text(case["document"], trace_graph=case.get("trace_graph"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-WF01-A\nRequirement: Select storage for workflow 1.\nCritical: true\nOptions: storage_backend = SQLite | Post...ment: Return records in stable identifier order.\nCritical: true\nAcceptance: [B, A] becomes [A, B].\nVerify: wf:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+_____________________ test_question_generation_guardrails ______________________
+
+    def test_question_generation_guardrails():
+>       result = evaluate_v006_corpus(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/spec_creator/ambiguity_evaluator.py:48: in evaluate_v006_corpus
+    report = analyze_text(case["document"], trace_graph=case.get("trace_graph"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-WF01-A\nRequirement: Select storage for workflow 1.\nCritical: true\nOptions: storage_backend = SQLite | Post...ment: Return records in stable identifier order.\nCritical: true\nAcceptance: [B, A] becomes [A, B].\nVerify: wf:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+______________________ test_evaluate_ambiguity_corpus_cli ______________________
+
+    def test_evaluate_ambiguity_corpus_cli():
+        result=run_cli(ROOT,"evaluate-ambiguity-corpus",".","--json")
+>       assert result.returncode == 0, result.stderr + result.stdout
+E       AssertionError: error: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python3', '-m', 'spec_creator.cli', 'evaluate-ambiguity-corpus', '.', '--json'...EMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA\n').returncode
+
+tests/test_ambiguity_cli.py:44: AssertionError
+____________________ test_clarification_interception_proxy _____________________
+
+    def test_clarification_interception_proxy():
+>       result = evaluate_v006_corpus(ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ambiguity_evaluator.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/spec_creator/ambiguity_evaluator.py:48: in evaluate_v006_corpus
+    report = analyze_text(case["document"], trace_graph=case.get("trace_graph"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '### REQ-WF01-A\nRequirement: Select storage for workflow 1.\nCritical: true\nOptions: storage_backend = SQLite | Post...ment: Return records in stable identifier order.\nCritical: true\nAcceptance: [B, A] becomes [A, B].\nVerify: wf:1:c\n'
+
+    def analyze_text(text: str, *, trace_graph: dict[str, Any] | None = None) -> AmbiguityReport:
+        lines = _scan_lines(text)
+        blocks = _blocks(lines)
+        refs = _declared_references(lines)
+        findings: list[AmbiguityFinding] = []
+        for block in blocks:
+            findings.extend(_detect_block_findings(block, refs))
+        findings.extend(_constraint_findings(blocks))
+    
+        if trace_graph is not None:
+            trace_report = validate_graph(trace_graph)
+            if not trace_report.ok:
+                codes = ", ".join(d.code for d in trace_report.errors)
+>               raise ValueError(f"invalid traceability graph supplied to ambiguity analysis: {codes}")
+E               ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+
+src/spec_creator/ambiguity.py:349: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_ambiguity.py::test_frozen_candidate_detection_and_diagnostics - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+FAILED tests/test_ambiguity.py::test_decision_needed_classification - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+FAILED tests/test_ambiguity.py::test_traceability_impact_context - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+FAILED tests/test_ambiguity.py::test_question_priority - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+FAILED tests/test_ambiguity.py::test_question_generation_guardrails - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+FAILED tests/test_ambiguity_cli.py::test_evaluate_ambiguity_corpus_cli - AssertionError: error: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+  
+assert 1 == 0
+ +  where 1 = CompletedProcess(args=['/opt/pyvenv/bin/python3', '-m', 'spec_creator.cli', 'evaluate-ambiguity-corpus', '.', '--json'...EMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA\n').returncode
+FAILED tests/test_ambiguity_evaluator.py::test_clarification_interception_proxy - ValueError: invalid traceability graph supplied to ambiguity analysis: TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA, TRACE-SCHEMA
+7 failed, 90 passed in 7.33s

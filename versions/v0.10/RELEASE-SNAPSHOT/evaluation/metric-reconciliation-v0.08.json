@@ -1,0 +1,222 @@
+{
+  "candidate_version": "0.08",
+  "contract_id": "REL-0.08-FROZEN-001",
+  "cutoff_utc": "2026-08-24T17:15:00Z",
+  "denominator_manipulation_detected": false,
+  "evidence_refs": [
+    "evaluation/v008-corpus-results.json",
+    "evaluation/v008-preregistration-preflight.json",
+    "evaluation/verifier-pass-v0.08.json",
+    "evaluation/package-validation-prefinal-v0.08.json",
+    "evaluation/denominator-snapshots.jsonl",
+    "evaluation/metric-ledger.jsonl"
+  ],
+  "fail_count": 0,
+  "metric_count": 20,
+  "missing_data_treated_as_zero": false,
+  "missing_metric_count": 0,
+  "pass_count": 20,
+  "result": "PASS",
+  "rows": [
+    {
+      "metric_name": "accepted_task_graph_exact_match_rate",
+      "metric_record_id": "MET-008-001",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-001",
+      "status": "PASS",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "value": 1.0
+    },
+    {
+      "metric_name": "heldout_task_graph_exact_match_rate",
+      "metric_record_id": "MET-008-002",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-002",
+      "status": "PASS",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "value": 1.0
+    },
+    {
+      "metric_name": "negative_case_classification_accuracy",
+      "metric_record_id": "MET-008-003",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-003",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "dependency_provenance_accuracy",
+      "metric_record_id": "MET-008-G01",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G01",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "critical_ready_task_trace_completeness_rate",
+      "metric_record_id": "MET-008-G02",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G02",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "parallelization_decision_accuracy",
+      "metric_record_id": "MET-008-G03",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G03",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "unresolved_decision_escape_count",
+      "metric_record_id": "MET-008-G04",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G04",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "unsafe_parallelization_count",
+      "metric_record_id": "MET-008-G05",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G05",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "oversized_ready_task_count",
+      "metric_record_id": "MET-008-G06",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G06",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "dependency_cycle_escape_count",
+      "metric_record_id": "MET-008-G07",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G07",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "invented_dependency_count",
+      "metric_record_id": "MET-008-G08",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G08",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "execution_stream_exact_match_rate",
+      "metric_record_id": "MET-008-G09",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G09",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "invalid_execution_escape_count",
+      "metric_record_id": "MET-008-G10",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G10",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "deterministic_repeat_rate",
+      "metric_record_id": "MET-008-G11",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G11",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "parent_preflight_rate",
+      "metric_record_id": "MET-008-G12",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G12",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "inherited_suite_pass_rate",
+      "metric_record_id": "MET-008-G13",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G13",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "active_regression_pass_rate",
+      "metric_record_id": "MET-008-G14",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G14",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "v008_spec_quality_acceptance_rate",
+      "metric_record_id": "MET-008-G15",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G15",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "metric_name": "package_manifest_validation_error_count",
+      "metric_record_id": "MET-008-G16",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G16",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "metric_name": "critical_gate_bypass_count",
+      "metric_record_id": "MET-008-G17",
+      "raw_evidence_reconciled": true,
+      "snapshot_id": "DEN-008-G17",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    }
+  ]
+}

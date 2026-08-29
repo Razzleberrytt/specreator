@@ -1,0 +1,148 @@
+{
+  "prior_evaluation_design_preserved_sha256": "d962c0f93e5754e43921d72ab226778fead6947968d4b8a126293a46f5bee727",
+  "current_evaluation_design_sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+  "metric_comparisons": [
+    {
+      "metric": "next_legal_action_exact_match_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": "all lifecycle fixtures",
+      "current_universe": "lifecycle_fixtures",
+      "current_denominator_count": 4
+    },
+    {
+      "metric": "critical_path_exact_match_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": "all execution fixtures with unambiguous/tie-aware expected critical paths",
+      "current_universe": "critical_path_fixtures",
+      "current_denominator_count": 6
+    },
+    {
+      "metric": "execution_wave_exact_match_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": "all execution fixtures",
+      "current_universe": "execution_fixtures",
+      "current_denominator_count": 6
+    },
+    {
+      "metric": "retry_isolation_exact_match_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": "all failure-injection fixtures",
+      "current_universe": "failure_injection_fixtures",
+      "current_denominator_count": 1
+    },
+    {
+      "metric": "integration_contract_completeness_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": "all implementation workstreams emitted in governed corpus",
+      "current_universe": "integration_source_tasks",
+      "current_denominator_count": 23
+    },
+    {
+      "metric": "unsafe_parallelization_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "execution_fixtures",
+      "current_denominator_count": null
+    },
+    {
+      "metric": "unsupported_dependency_edge_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "effective_dependency_edges",
+      "current_denominator_count": 22
+    },
+    {
+      "metric": "speculative_authority_escape_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "speculative_fixtures",
+      "current_denominator_count": 1
+    },
+    {
+      "metric": "hidden_manual_state_reconstruction_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "lifecycle_fixtures",
+      "current_denominator_count": null
+    },
+    {
+      "metric": "immutable_boundary_classification_error_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "immutable_boundary_assertions",
+      "current_denominator_count": null
+    },
+    {
+      "metric": "parent_suite_pass_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "parent_suite",
+      "current_denominator_count": 155
+    },
+    {
+      "metric": "active_regression_pass_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "active_regressions",
+      "current_denominator_count": 24
+    },
+    {
+      "metric": "frozen_parent_hash_integrity_rate",
+      "prior_target": 1.0,
+      "current_target": 1.0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "frozen_parent_hash_entries",
+      "current_denominator_count": 1120
+    },
+    {
+      "metric": "missing_data_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "mandatory_evidence_slots",
+      "current_denominator_count": 25
+    },
+    {
+      "metric": "critical_gate_bypass_count",
+      "prior_target": 0,
+      "current_target": 0,
+      "target_unchanged": true,
+      "prior_denominator": null,
+      "current_universe": "mandatory_quality_gates",
+      "current_denominator_count": 8
+    }
+  ],
+  "all_15_targets_unchanged": true,
+  "scope_changes_summary": {
+    "critical_path": "selection-sensitive prior denominator replaced by all six canonical fixtures",
+    "integration": "emitted-workstream denominator replaced by fixed 23 canonical source tasks",
+    "parent_regression_hash": "formerly unspecified ratio denominators replaced by exact 155/24/1120 universes"
+  },
+  "verdict": "PASS"
+}

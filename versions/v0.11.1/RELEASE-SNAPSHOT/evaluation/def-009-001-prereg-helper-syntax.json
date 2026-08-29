@@ -1,0 +1,13 @@
+{
+  "defect_id": "DEF-009-001",
+  "classification": "agent_execution_error",
+  "phase": "preregistration",
+  "severity": "minor",
+  "status": "resolved",
+  "description": "The first v0.09 preregistration helper had an unclosed Python dictionary and failed before writing the approved spec or schemas. Shell redirection created three zero-byte evaluation placeholders; those placeholders were removed and the exact failure is preserved here.",
+  "frozen_artifacts_affected": false,
+  "historical_ledgers_rewritten": false,
+  "failure_excerpt": "SyntaxError: '{' was never closed",
+  "resolution": "Split preregistration into smaller deterministic file-generation steps and validate outputs before append/freeze.",
+  "regression_action": "No new product regression; reinforces existing orchestration/validated-write discipline."
+}

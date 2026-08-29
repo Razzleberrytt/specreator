@@ -1,0 +1,32 @@
+{
+  "registry_id": "IMMUT-011-DRAFT-002",
+  "status": "UNFROZEN_CANDIDATE",
+  "hash_algorithm": "sha256",
+  "immutable_rule": "Any path bound by a historical frozen manifest/contract remains immutable. Every shipped path not classified as protected parent must be explicitly classified in the exact v0.11 successor ownership universe; no unclassified package path is permitted.",
+  "protected_release_manifests": [
+    "versions/v0.10/MANIFEST.json",
+    "versions/v0.09.2/MANIFEST.json",
+    "versions/v0.08/MANIFEST.json"
+  ],
+  "current_parent_manifest_ref": "versions/v0.10/MANIFEST.json",
+  "protected_parent_selector": {
+    "rule": "Union of every versions/v0.10/MANIFEST.json content_hashes key plus protected_release_manifests, with protected-parent precedence over successor ownership.",
+    "expected_unique_count": 1121,
+    "expected_class": "IMMUTABLE_PARENT"
+  },
+  "successor_ownership_universe_ref": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+  "successor_classification_rule": "Every shipped package path not in the protected-parent selector must appear exactly once in SUCCESSOR-OWNERSHIP-UNIVERSE.json and classifies as MUTABLE_SUCCESSOR. This includes root PACKAGE-MANIFEST.json and successor-owned root docs/prompts/roadmap/evaluation files.",
+  "classification_precedence": [
+    "IMMUTABLE_PARENT",
+    "MUTABLE_SUCCESSOR"
+  ],
+  "unclassified_policy": "FAIL_CLOSED_ZERO_TOLERANCE",
+  "evidence_preservation_override": "MUTABLE_SUCCESSOR is an ownership/boundary class, not blanket write permission. Hash-preserved independent-review source artifacts remain write-prohibited by their evidence-preservation obligations.",
+  "explicitly_not_authorized": [
+    "overwrite v0.10-bound bytes",
+    "rewrite historical failure evidence",
+    "mutate preserved independent-review source artifacts",
+    "silently add a shipped path without regenerating the exact successor ownership universe",
+    "append to shared frozen/hash-locked canonical docs merely for convenience"
+  ]
+}

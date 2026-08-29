@@ -1,0 +1,28 @@
+{
+  "candidate_version": "0.08",
+  "classification": "PROMOTED AS EXPERIMENTAL",
+  "evaluated_at_utc": "2026-08-24T17:16:00Z",
+  "evidence_refs": [
+    "evaluation/release-scorecards.jsonl",
+    "evaluation/metric-reconciliation-v0.08.json",
+    "evaluation/verifier-pass-v0.08.json"
+  ],
+  "improvement_id": "IMP-0014",
+  "limitations": [
+    "Compiler/held-out/execution corpora are synthetic same-cycle evidence and visible to the implementer.",
+    "Held-out labels are hash-locked but are not independent external-project evidence.",
+    "Role-separated verification occurs in the same runtime/session.",
+    "Normalized Task Compiler assumes governed source-task boundaries already exist; natural-language architecture/task decomposition remains outside v0.08.",
+    "Final extracted-package verification occurs after scorecard accounting as part of manifest-last seal."
+  ],
+  "mandatory_gates_passed": 21,
+  "mandatory_gates_total": 21,
+  "postfreeze_corrective_regressions": [
+    "REG-0017",
+    "REG-0018",
+    "REG-0019"
+  ],
+  "preregistered_metrics_passed": 20,
+  "preregistered_metrics_total": 20,
+  "result": "ADOPT"
+}

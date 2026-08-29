@@ -1,0 +1,643 @@
+{
+  "discovery_plan": {
+    "actions": [],
+    "ok": true,
+    "profile": {
+      "profile_id": "PROF-DEFAULT",
+      "project_type": "custom",
+      "question_budget": 2
+    },
+    "questions": [],
+    "summary": {
+      "already_governed": 0,
+      "ask_now": 0,
+      "baseline_questions": 0,
+      "candidates": 0,
+      "defer_budget": 0,
+      "defer_dependency": 0,
+      "infer_default": 0,
+      "question_batches": 0
+    }
+  },
+  "ordering_constraints": [],
+  "project_id": "TCP-008-SELF",
+  "schema_version": "1.0",
+  "source_spec_ref": "versions/v0.08/SPEC-CREATOR-v0.08.md",
+  "spec_text": "# Spec Creator v0.08 \u2014 Task Compiler\n\n**Status:** Approved specification; implementation is authorized only after the v0.08 schemas, benchmark partitions, evaluation plan, and frozen release contract are hash-locked.\n**Parent:** v0.07 (PROMOTED AS EXPERIMENTAL)\n\n## Objective\n\nCompile governed specification evidence into a deterministic dependency-safe task graph without inventing product intent, architecture, interfaces, acceptance criteria, dependencies, or task splits. If existing source task structure cannot satisfy preregistered atomicity bounds, emit `needs_spec_refinement` rather than manufacturing a decomposition.\n\nA supplied v0.07 discovery plan containing `ask_now`, `defer_dependency`, or `defer_budget` is a project-level implementation-readiness blocker. The compiler may report the blocking actions, but it must not emit a ready task graph until those actions are replaced by governed specification evidence.\n\n## Normalized compilation input\n\nv0.08 compiles a versioned machine-readable project IR rather than attempting a second natural-language parser. The IR contains the approved specification text, the validated v0.05 traceability graph, the v0.07 discovery plan, source-task metadata for write/read scopes and produced/consumed artifacts, and explicit ordering constraints with source references. Requirement membership, tests, and gates are derived from traceability edges rather than copied from task metadata.\n\nSource task definitions are immutable compilation evidence. Execution progress is represented separately as append-only task execution events tied to the compiled task-graph hash.\n\n## Deterministic output\n\nEach compiled task record contains a compilation-scoped deterministic identifier, source task ID, source requirement IDs, owned write scopes, required read scopes, produced/consumed artifacts, prerequisite compiled task IDs, verification/test IDs, gate IDs, conflict-zone IDs, pairwise `parallel_with` eligibility, complexity score/factors, and machine-readable provenance for every derived field.\n\nTask ordering is a deterministic topological order with stable lexical tie-breaking among dependency-independent source tasks. Dependency edges may arise only from validated traceability `precedes` edges, explicit ordering constraints, or unique artifact producer/consumer relationships.\n\n## Atomicity model\n\nA task is compilable only when all of these bounds hold:\n\n1. at most three source requirements;\n2. at most two declared top-level write scopes unless a non-empty governed wide-scope authorization reference is supplied;\n3. complexity score at most 10;\n4. at least one verification reference;\n5. every critical source requirement reaches at least one compiled task, test, and release gate;\n6. tasks sharing a write scope receive the same deterministic conflict zone and are never listed as parallel with one another;\n7. prerequisite edges form a directed acyclic graph;\n8. every prerequisite edge has trace, artifact, or explicit-order provenance.\n\nComplexity score is frozen as:\n\n`3 * source_requirement_count + 2 * write_scope_count + prerequisite_count + verification_reference_count`\n\nIf a source task violates an atomicity bound, v0.08 emits `needs_spec_refinement` and does not invent a split.\n\n## Event-sourced task execution state\n\nCompiled task definitions contain no mutable execution status. Task progress uses `task-execution-event-v1` records tied to the immutable compiled graph hash. The initial event is `null -> planned`; allowed transitions are `planned -> ready|cancelled`, `ready -> in_progress|blocked|cancelled`, `in_progress -> blocked|done|cancelled`, and `blocked -> ready|cancelled`. Replay must reject unknown tasks, graph-hash drift, duplicate event IDs, mismatched `from_state`, non-monotonic event time, or invalid transitions.\n\n## Compilation blockers\n\nCompilation fails or refuses readiness when the active linter rejects the source specification, the traceability graph is invalid, critical traceability coverage is incomplete, unresolved owner-decision actions remain, dependency cycles exist, artifact producer identity is ambiguous, source task metadata is missing, or required provenance cannot be derived.\n\n## Requirements\n\n### REQ-008-001\nRequirement: Compile governed traceability and source-task evidence into deterministic task records with requirements, scopes, artifacts, dependencies, verification references, gates, complexity, and provenance.\nCritical: true\nAcceptance: Every accepted frozen benchmark project produces the preregistered normalized task graph and ordering.\nVerify: tests/test_task_compiler.py::test_frozen_task_graphs\n\n### REQ-008-002\nRequirement: Refuse implementation-ready compilation while any supplied discovery action remains ask_now, defer_dependency, or defer_budget.\nCritical: true\nAcceptance: Every frozen owner-decision blocker case returns blocked status and identifies every blocking source action.\nVerify: tests/test_task_compiler.py::test_owner_decisions_block_compilation\n\n### REQ-008-003\nRequirement: Derive prerequisite edges only from traceability precedes edges, explicit ordering constraints, or unique artifact producer-consumer relationships.\nCritical: true\nAcceptance: Every frozen dependency edge has exact machine-readable provenance and invented dependency count is zero.\nVerify: tests/test_task_compiler.py::test_dependency_provenance\n\n### REQ-008-004\nRequirement: Reject combined prerequisite graphs containing a dependency cycle and report the exact cycle source-task set.\nCritical: true\nAcceptance: Every frozen cycle case is rejected with the preregistered cycle node set and no acyclic case is rejected for a cycle.\nVerify: tests/test_task_compiler.py::test_cycle_rejection\n\n### REQ-008-005\nRequirement: Enforce the frozen source-requirement, write-scope, complexity, and verification atomicity bounds without inventing task splits.\nCritical: true\nAcceptance: Every frozen boundary case is classified exactly as compiled or needs_spec_refinement and reports every controlling bound.\nFailure: Return needs_spec_refinement with the violated bound codes; do not emit a ready task graph.\nVerify: tests/test_task_compiler.py::test_atomicity_bounds\n\n### REQ-008-006\nRequirement: Detect shared write scopes as deterministic conflict zones and prevent conflicting task pairs from parallel eligibility.\nCritical: true\nAcceptance: Every frozen conflict case identifies every shared write scope and unsafe parallelization count is zero.\nFailure: Treat any unresolved shared write-scope relationship as a compilation blocker rather than marking the pair parallel.\nVerify: tests/test_task_compiler.py::test_conflict_zones\n\n### REQ-008-007\nRequirement: Compute pairwise parallel eligibility only when no dependency path exists in either direction and no shared write-scope conflict exists.\nCritical: true\nAcceptance: Every frozen parallel_with list exactly matches preregistration.\nFailure: Omit the pair from parallel_with whenever dependency or write-scope safety cannot be proven.\nVerify: tests/test_task_compiler.py::test_parallelization_rules\n\n### REQ-008-008\nRequirement: Preserve complete critical requirement coverage from source requirement through compiled task to verification and release gate.\nCritical: true\nAcceptance: Critical compilation coverage is 100 percent on accepted cases and missing critical coverage blocks compilation.\nVerify: tests/test_task_compiler.py::test_critical_coverage\n\n### REQ-008-009\nRequirement: Expose compilation and compiled-task-graph validation through deterministic Python API and CLI JSON output.\nCritical: true\nAcceptance: Byte-identical inputs produce byte-equivalent normalized outputs and malformed inputs return nonzero status with structured diagnostics.\nVerify: tests/test_task_compiler_cli.py::test_task_compiler_cli\n\n### REQ-008-010\nRequirement: Preserve all active validator, linter, traceability, ambiguity, discovery, history, ledger, and package regressions from the sealed parent.\nCritical: true\nAcceptance: The exact v0.07 parent suite and every active regression pass before promotion.\nVerify: evaluation/independent_verifier_v0.08.py\n\n### REQ-008-011\nRequirement: Evaluate task compilation on hash-locked development and held-out projects spanning valid, dependent, conflicting, owner-blocked, oversized, cyclic, and parent-invalid cases.\nCritical: true\nAcceptance: The evaluator reports every frozen denominator, exact accepted graph, negative classification, dependency label, and missing-data state without imputation.\nVerify: tests/test_task_compiler_evaluator.py::test_frozen_task_compiler_corpus\n\n### REQ-008-012\nRequirement: Require role-separated verification, reconciled metrics, rollback evidence, historical snapshots, and manifest-last sealing before promotion.\nCritical: true\nAcceptance: Every frozen mandatory gate has explicit evidence and the final extracted package validates with zero errors and warnings.\nVerify: evaluation/independent_verifier_v0.08.py\n\n### REQ-008-013\nRequirement: Keep compiled task definitions immutable and derive execution status only by replaying append-only task execution events bound to the compiled graph hash.\nCritical: true\nAcceptance: Every frozen valid execution stream replays exactly and every invalid transition, duplicate event ID, graph-hash drift, unknown task, from-state mismatch, or time reversal is rejected.\nVerify: tests/test_task_execution.py::test_frozen_execution_corpus\n\n## Non-goals\n\n- no prompt compiler;\n- no code generation;\n- no automatic architecture redesign;\n- no automatic source-task splitting;\n- no multi-agent scheduler;\n- no mutation of compiled task definitions to store execution state;\n- no optimization for maximum parallelism at the expense of safety;\n- no full promotion claim from same-cycle synthetic evidence alone.\n",
+  "task_metadata": [
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-01"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-01",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_compiler.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-02"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-02",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_compiler.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-03"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-03",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_compiler.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-04"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-04",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_compiler.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-05"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-05",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_compiler_evaluator.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-06"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-06",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "src/spec_creator/task_execution.py"
+      ]
+    },
+    {
+      "consumes_artifacts": [],
+      "produces_artifacts": [
+        "artifact:v008-self-07"
+      ],
+      "read_scopes": [
+        "versions/v0.08/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "source_task_id": "TASK-008-SELF-07",
+      "wide_scope_authorization_ref": null,
+      "write_scopes": [
+        "evaluation/v0.08-release"
+      ]
+    }
+  ],
+  "traceability_graph": {
+    "edges": [
+      {
+        "from": "G-008-001",
+        "relation": "requires",
+        "to": "REQ-008-001"
+      },
+      {
+        "from": "G-008-002",
+        "relation": "requires",
+        "to": "REQ-008-002"
+      },
+      {
+        "from": "G-008-003",
+        "relation": "requires",
+        "to": "REQ-008-003"
+      },
+      {
+        "from": "G-008-002",
+        "relation": "requires",
+        "to": "REQ-008-004"
+      },
+      {
+        "from": "G-008-002",
+        "relation": "requires",
+        "to": "REQ-008-005"
+      },
+      {
+        "from": "G-008-003",
+        "relation": "requires",
+        "to": "REQ-008-006"
+      },
+      {
+        "from": "G-008-003",
+        "relation": "requires",
+        "to": "REQ-008-007"
+      },
+      {
+        "from": "G-008-003",
+        "relation": "requires",
+        "to": "REQ-008-008"
+      },
+      {
+        "from": "G-008-001",
+        "relation": "requires",
+        "to": "REQ-008-009"
+      },
+      {
+        "from": "G-008-005",
+        "relation": "requires",
+        "to": "REQ-008-010"
+      },
+      {
+        "from": "G-008-001",
+        "relation": "requires",
+        "to": "REQ-008-011"
+      },
+      {
+        "from": "G-008-005",
+        "relation": "requires",
+        "to": "REQ-008-012"
+      },
+      {
+        "from": "G-008-004",
+        "relation": "requires",
+        "to": "REQ-008-013"
+      },
+      {
+        "from": "REQ-008-001",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-01"
+      },
+      {
+        "from": "REQ-008-003",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-01"
+      },
+      {
+        "from": "FEAT-008-SELF-01",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-01"
+      },
+      {
+        "from": "TASK-008-SELF-01",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-01"
+      },
+      {
+        "from": "TEST-008-SELF-01",
+        "relation": "gated_by",
+        "to": "GATE-008-COMPILE"
+      },
+      {
+        "from": "REQ-008-002",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-02"
+      },
+      {
+        "from": "REQ-008-004",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-02"
+      },
+      {
+        "from": "FEAT-008-SELF-02",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-02"
+      },
+      {
+        "from": "TASK-008-SELF-02",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-02"
+      },
+      {
+        "from": "TEST-008-SELF-02",
+        "relation": "gated_by",
+        "to": "GATE-008-OWNER-BLOCK"
+      },
+      {
+        "from": "TASK-008-SELF-01",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-02"
+      },
+      {
+        "from": "REQ-008-005",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-03"
+      },
+      {
+        "from": "REQ-008-006",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-03"
+      },
+      {
+        "from": "FEAT-008-SELF-03",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-03"
+      },
+      {
+        "from": "TASK-008-SELF-03",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-03"
+      },
+      {
+        "from": "TEST-008-SELF-03",
+        "relation": "gated_by",
+        "to": "GATE-008-ATOMICITY"
+      },
+      {
+        "from": "TASK-008-SELF-02",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-03"
+      },
+      {
+        "from": "REQ-008-007",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-04"
+      },
+      {
+        "from": "REQ-008-008",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-04"
+      },
+      {
+        "from": "FEAT-008-SELF-04",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-04"
+      },
+      {
+        "from": "TASK-008-SELF-04",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-04"
+      },
+      {
+        "from": "TEST-008-SELF-04",
+        "relation": "gated_by",
+        "to": "GATE-008-PARALLEL"
+      },
+      {
+        "from": "TASK-008-SELF-03",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-04"
+      },
+      {
+        "from": "REQ-008-009",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-05"
+      },
+      {
+        "from": "REQ-008-011",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-05"
+      },
+      {
+        "from": "FEAT-008-SELF-05",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-05"
+      },
+      {
+        "from": "TASK-008-SELF-05",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-05"
+      },
+      {
+        "from": "TEST-008-SELF-05",
+        "relation": "gated_by",
+        "to": "GATE-008-CLI"
+      },
+      {
+        "from": "TASK-008-SELF-04",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-05"
+      },
+      {
+        "from": "REQ-008-013",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-06"
+      },
+      {
+        "from": "FEAT-008-SELF-06",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-06"
+      },
+      {
+        "from": "TASK-008-SELF-06",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-06"
+      },
+      {
+        "from": "TEST-008-SELF-06",
+        "relation": "gated_by",
+        "to": "GATE-008-EXECUTION"
+      },
+      {
+        "from": "TASK-008-SELF-05",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-06"
+      },
+      {
+        "from": "REQ-008-010",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-07"
+      },
+      {
+        "from": "REQ-008-012",
+        "relation": "realized_by",
+        "to": "FEAT-008-SELF-07"
+      },
+      {
+        "from": "FEAT-008-SELF-07",
+        "relation": "decomposed_to",
+        "to": "TASK-008-SELF-07"
+      },
+      {
+        "from": "TASK-008-SELF-07",
+        "relation": "verified_by",
+        "to": "TEST-008-SELF-07"
+      },
+      {
+        "from": "TEST-008-SELF-07",
+        "relation": "gated_by",
+        "to": "GATE-008-INDEPENDENT"
+      },
+      {
+        "from": "TASK-008-SELF-06",
+        "relation": "precedes",
+        "to": "TASK-008-SELF-07"
+      }
+    ],
+    "graph_id": "TG-008-SELF-001",
+    "nodes": [
+      {
+        "id": "G-008-001",
+        "label": "G-008-001",
+        "type": "goal"
+      },
+      {
+        "id": "G-008-002",
+        "label": "G-008-002",
+        "type": "goal"
+      },
+      {
+        "id": "G-008-003",
+        "label": "G-008-003",
+        "type": "goal"
+      },
+      {
+        "id": "G-008-004",
+        "label": "G-008-004",
+        "type": "goal"
+      },
+      {
+        "id": "G-008-005",
+        "label": "G-008-005",
+        "type": "goal"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-001",
+        "label": "REQ-008-001",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-002",
+        "label": "REQ-008-002",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-003",
+        "label": "REQ-008-003",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-004",
+        "label": "REQ-008-004",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-005",
+        "label": "REQ-008-005",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-006",
+        "label": "REQ-008-006",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-007",
+        "label": "REQ-008-007",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-008",
+        "label": "REQ-008-008",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-009",
+        "label": "REQ-008-009",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-010",
+        "label": "REQ-008-010",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-011",
+        "label": "REQ-008-011",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-012",
+        "label": "REQ-008-012",
+        "type": "requirement"
+      },
+      {
+        "critical": true,
+        "id": "REQ-008-013",
+        "label": "REQ-008-013",
+        "type": "requirement"
+      },
+      {
+        "id": "FEAT-008-SELF-01",
+        "label": "FEAT-008-SELF-01",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-01",
+        "label": "TASK-008-SELF-01",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-01",
+        "label": "TEST-008-SELF-01",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-COMPILE",
+        "label": "GATE-008-COMPILE",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-02",
+        "label": "FEAT-008-SELF-02",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-02",
+        "label": "TASK-008-SELF-02",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-02",
+        "label": "TEST-008-SELF-02",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-OWNER-BLOCK",
+        "label": "GATE-008-OWNER-BLOCK",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-03",
+        "label": "FEAT-008-SELF-03",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-03",
+        "label": "TASK-008-SELF-03",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-03",
+        "label": "TEST-008-SELF-03",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-ATOMICITY",
+        "label": "GATE-008-ATOMICITY",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-04",
+        "label": "FEAT-008-SELF-04",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-04",
+        "label": "TASK-008-SELF-04",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-04",
+        "label": "TEST-008-SELF-04",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-PARALLEL",
+        "label": "GATE-008-PARALLEL",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-05",
+        "label": "FEAT-008-SELF-05",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-05",
+        "label": "TASK-008-SELF-05",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-05",
+        "label": "TEST-008-SELF-05",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-CLI",
+        "label": "GATE-008-CLI",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-06",
+        "label": "FEAT-008-SELF-06",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-06",
+        "label": "TASK-008-SELF-06",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-06",
+        "label": "TEST-008-SELF-06",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-EXECUTION",
+        "label": "GATE-008-EXECUTION",
+        "type": "gate"
+      },
+      {
+        "id": "FEAT-008-SELF-07",
+        "label": "FEAT-008-SELF-07",
+        "type": "feature"
+      },
+      {
+        "id": "TASK-008-SELF-07",
+        "label": "TASK-008-SELF-07",
+        "type": "task"
+      },
+      {
+        "id": "TEST-008-SELF-07",
+        "label": "TEST-008-SELF-07",
+        "type": "test"
+      },
+      {
+        "id": "GATE-008-INDEPENDENT",
+        "label": "GATE-008-INDEPENDENT",
+        "type": "gate"
+      }
+    ],
+    "schema_version": "1.0"
+  }
+}

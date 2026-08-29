@@ -1,0 +1,46 @@
+{
+  "classification": "inherited implementation defect",
+  "defect_id": "DEF-007-002",
+  "evidence": {
+    "actions": [
+      {
+        "action": "ask_now",
+        "batch_group": "REQ-0061-002:AMB-006",
+        "block_id": "REQ-0061-002",
+        "candidate_id": "REQ-0061-002:AMB-006:28",
+        "code": "AMB-006",
+        "critical": true,
+        "dependencies": [],
+        "information_value": 350,
+        "provenance": {
+          "profile_id": "PROF-SHADOW-007",
+          "ref": "REL-0.07-FROZEN-001",
+          "source": "adaptive_discovery_policy"
+        },
+        "reason": "selected_information_frontier",
+        "span": "unresolved"
+      }
+    ],
+    "file": "versions/v0.06.1/SPEC-CREATOR-v0.06.1.md",
+    "question_groups": [
+      "REQ-0061-002:AMB-006"
+    ],
+    "summary": {
+      "already_governed": 0,
+      "ask_now": 1,
+      "baseline_questions": 1,
+      "candidates": 1,
+      "defer_budget": 0,
+      "defer_dependency": 0,
+      "infer_default": 0,
+      "question_batches": 1
+    }
+  },
+  "frozen_artifact_impact": "No frozen v0.07 artifact changes; inherited v0.06.1 corpus does not preregister descriptive unresolved prose as a defect and must remain passing.",
+  "observation": "Historical v0.06.1 requirement REQ-0061-002 still produces AMB-006 because the phrase \"unresolved alternatives\" describes the taxonomy rather than an unresolved decision state.",
+  "observed_during": "v0.07 shadow evaluation after DEF-007-001 fix",
+  "pre_fix_shadow_sha256": "6394ad30c828aa04950a74766455e7d420971d8759450117cb95d7188a1cf043",
+  "proposed_fix": "Use status/decision context for unresolved: retain status uses such as \"is unresolved\" or \"unresolved decision\" while ignoring descriptive taxonomy uses such as \"unresolved alternatives\" and \"unresolved markers\".",
+  "root_cause": "AMB-006 treats every active occurrence of the token unresolved as a status marker, unlike the contextual handling already added for pending.",
+  "severity": "major"
+}

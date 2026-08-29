@@ -1,0 +1,18 @@
+{
+  "candidate_version": "0.05",
+  "rollback_target": "0.04",
+  "trigger_conditions": [
+    "Any frozen v0.05 mandatory gate fails or becomes blocked.",
+    "Frozen contract, evaluation-plan, or traceability-corpus integrity fails.",
+    "Any applicable inherited regression REG-0001 through REG-0006 fails or disappears without governance.",
+    "A critical traceability defect is discovered that invalidates the frozen evaluation result."
+  ],
+  "procedure": [
+    "Keep all v0.05 candidate artifacts, failed runs, metrics, and regression records as audit history.",
+    "Restore v0.04 as the active promoted-experimental executable baseline.",
+    "Preserve REG-0007 and DEF-005-001 even when rolling back, because the failure occurred and remains regression memory.",
+    "Do not alter REL-0.05-FROZEN-001, its corpus, or its evaluation plan; create a governed retry/successor contract instead."
+  ],
+  "data_loss_expectation": "None. v0.05 evidence remains preserved; executable active baseline reverts to v0.04.",
+  "parent_contract_sha256": "625f3adc395bc6981cac3d3928c89df603dddc7fa2adcd1a9ffc9ed1c6946233"
+}

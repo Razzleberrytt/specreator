@@ -1,0 +1,14 @@
+{
+  "classification": "implementation_defect",
+  "defect_id": "DEF-008-002",
+  "fix": "Reject duplicate source_task_id records before dictionary construction.",
+  "frozen_artifacts_changed": false,
+  "initial_evidence": "evaluation/shadow-task-compiler-v0.08-initial.json",
+  "observation": "Duplicate source_task_id metadata records silently collapsed through dict construction, allowing later bytes to overwrite earlier task metadata.",
+  "root_cause": "Input schema allowed duplicate metadata IDs and compiler materialized metadata directly into a dictionary without a duplicate-ID precheck.",
+  "severity": "major",
+  "verification": [
+    "tests/test_task_compiler.py::test_duplicate_task_metadata_is_rejected_before_dict_overwrite_regression",
+    "evaluation/shadow-task-compiler-v0.08-final.json"
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "candidate_version": "0.07",
+  "case_count": 72,
+  "cases": [
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-01",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-02",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-03",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-04",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-05",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-06",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-07",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-08",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-09",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-10",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-11",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-12",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-13",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-14",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-15",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-16",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-17",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-18",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-19",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-SAFE-20",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-01",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-02",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-03",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-04",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-05",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-06",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-07",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-08",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-09",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-10",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-11",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-12",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-13",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-14",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-15",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 1,
+      "case_id": "DISC-UNSAFE-16",
+      "expected_baseline_question_count": 1,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-01",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-02",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-03",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-04",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-05",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-06",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-07",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-08",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-09",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-10",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-11",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-12",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-13",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-14",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-15",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 2,
+      "case_id": "DISC-DEP-16",
+      "expected_baseline_question_count": 2,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-01",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-02",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-03",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-04",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-05",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-06",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-07",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 3,
+      "case_id": "DISC-BATCH-08",
+      "expected_baseline_question_count": 3,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-01",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-02",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-03",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-04",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-05",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-06",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "development",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-07",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-08",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-09",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-10",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-11",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    },
+    {
+      "baseline_question_count": 0,
+      "case_id": "DISC-CLEAN-12",
+      "expected_baseline_question_count": 0,
+      "lint_ok": true,
+      "ok": true,
+      "partition": "heldout",
+      "trace_graph_ok": true
+    }
+  ],
+  "corpus_sha256": "31e13b98991543208e453faa89d2277282646f8110483fab1ea9a8d9b3c272ad",
+  "development_case_count": 38,
+  "development_sha256": "24018e1224e8ecc24417618872a3cdaef558ceb660eadce66fe9ea0d8ffa0c7e",
+  "graph_backed_case_count": 2,
+  "heldout_case_count": 34,
+  "heldout_sha256": "064d0b1a78e708cb071fa9c28db8b7b0f1b98cb5e70f0c9f81e14e0282f3848e",
+  "ok": true,
+  "parent_preflight_rate": 1.0,
+  "parent_valid_case_count": 72,
+  "parent_version": "0.06.1",
+  "preflight_id": "PREFLIGHT-007-001"
+}

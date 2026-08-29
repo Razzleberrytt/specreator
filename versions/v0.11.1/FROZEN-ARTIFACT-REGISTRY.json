@@ -1,0 +1,193 @@
+{
+  "artifact_count": 36,
+  "artifacts": [
+    {
+      "bytes": 7496,
+      "path": "versions/v0.11.1/SPEC-CREATOR-v0.11.1.md",
+      "sha256": "cb10d06709b3c56245d2e38d006a199d28ac73fe68d96b2496fded45750fc81d"
+    },
+    {
+      "bytes": 6374,
+      "path": "versions/v0.11.1/EVALUATION-PLAN.json",
+      "sha256": "176aff3a4cb533d2130b172c639b441723c8323f347465b3072dc5f4bf06529d"
+    },
+    {
+      "bytes": 6515,
+      "path": "versions/v0.11.1/EVALUATION-DESIGN.json",
+      "sha256": "00ba4847f2cd274b40c339373055c5903087dc5c2d8a7de8a7d60cb4d50acf16"
+    },
+    {
+      "bytes": 10398,
+      "path": "versions/v0.11.1/EVALUATION-UNIVERSES.json",
+      "sha256": "5275a6dd54804f4b22cdcd23398bfae4385b5d1022b8e2e5dda2e9b8574563fe"
+    },
+    {
+      "bytes": 3365,
+      "path": "versions/v0.11.1/EXECUTION-TRIAL-PROTOCOL.json",
+      "sha256": "006d87bf4c5390f650b92e72a44173cbed1112a6fc75a0141b150105d77f430f"
+    },
+    {
+      "bytes": 6116,
+      "path": "versions/v0.11.1/LIFECYCLE-TRANSITION-RULES.candidate.json",
+      "sha256": "e6de654a7148258ef244f36f8b203ed2a3666d423c76436008e29a618ac4f146"
+    },
+    {
+      "bytes": 2059,
+      "path": "versions/v0.11.1/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "sha256": "f25ca917b017b6b953747ddaf6af8c269df3b9c632dcc06aa2c20258609a09dc"
+    },
+    {
+      "bytes": 12502,
+      "path": "versions/v0.11.1/PARENT-SUITE-UNIVERSE.json",
+      "sha256": "d8a5bbecccca0fdb29361b3abc0afc6b74b208124ccfdc162e0f3d2810459b4c"
+    },
+    {
+      "bytes": 9278,
+      "path": "versions/v0.11.1/ACTIVE-REGRESSION-UNIVERSE.json",
+      "sha256": "f892d2183bb889ae864f162c882e791bef712ab21d02dd6033ab3de7ab3c5fb9"
+    },
+    {
+      "bytes": 4759,
+      "path": "versions/v0.11.1/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "sha256": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb"
+    },
+    {
+      "bytes": 10002,
+      "path": "versions/v0.11.1/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "sha256": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452"
+    },
+    {
+      "bytes": 778,
+      "path": "versions/v0.11.1/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+      "sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54"
+    },
+    {
+      "bytes": 6292,
+      "path": "versions/v0.11.1/candidate-fixtures/execution-architecture-corpus.jsonl",
+      "sha256": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2"
+    },
+    {
+      "bytes": 2337,
+      "path": "versions/v0.11.1/candidate-fixtures/ownership-prospective-paths.json",
+      "sha256": "cca2b71a93b23901b6e415b56e7b3ff5b1b2f9f0c2c86dc4dfb6acbee060039d"
+    },
+    {
+      "bytes": 1934,
+      "path": "versions/v0.11.1/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "sha256": "5e257b88c07b30adfbde1fb49f62835354ef0728d77c4a076fb5323621a216cc"
+    },
+    {
+      "bytes": 6442,
+      "path": "versions/v0.11.1/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "sha256": "8a8a52494ed835d75721b3df2e82755f9211c728569cab693594d23871075253"
+    },
+    {
+      "bytes": 33595,
+      "path": "versions/v0.11.1/FAILED-PREDECESSOR-v0.11-BASELINE.json",
+      "sha256": "51823649beccf14348a019d5f229882ba4a4a9710f2a4a0ca47598f6508cd027"
+    },
+    {
+      "bytes": 1015,
+      "path": "versions/v0.11.1/DEFECT-RESOLUTION-POSTFREEZE-001.json",
+      "sha256": "24f92b803986e45d6316634906ab8b02c7033ebadaf7a3901bf5351de9d0cff7"
+    },
+    {
+      "bytes": 5406,
+      "path": "versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+      "sha256": "0c83451a038dad4bc5242139a4135f2c7e397caf89dc5ca176937bf736111c29"
+    },
+    {
+      "bytes": 1330,
+      "path": "versions/v0.11.1/ROADMAP-AMENDMENT.md",
+      "sha256": "01f87324c5ab397c4aa67b84b4d4a426cdf0b90f41a7cdcd20c96d20de456c16"
+    },
+    {
+      "bytes": 1119,
+      "path": "versions/v0.11.1/DEC-0034.json",
+      "sha256": "d98010ec66436cdf6d291f41733743672b486f1e04eb5f42518ac2f9796fd010"
+    },
+    {
+      "bytes": 6667187,
+      "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/source-package.zip",
+      "sha256": "2d84d3b2f1119d0ba54b5102ca5f4905864b09214dbe7a8b596a54deb8378075"
+    },
+    {
+      "bytes": 5956721,
+      "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/evidence-package.zip",
+      "sha256": "3b7963df2894627fc974576d1badc72e2ab21d56199a83e885a00d8ee6c17538"
+    },
+    {
+      "bytes": 6032,
+      "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md",
+      "sha256": "2360f23653290eb4a339a1c11e14f6de4b578e0bcd996d014b34a795ada5c2c9"
+    },
+    {
+      "bytes": 4782,
+      "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json",
+      "sha256": "c52a257b5d5a3ab7d9e8f9601d29e6b49eed864defc6d9d7a53f45b8d69b0c20"
+    },
+    {
+      "bytes": 919,
+      "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/INGEST.json",
+      "sha256": "b8e13487db9f902e8b8e3ce5e049e26a5d5e6011a35d9690594eade6be49a410"
+    },
+    {
+      "bytes": 8219,
+      "path": "versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+      "sha256": "e854ed64bd5bf09b5c156457b9bdf6863deeb8e8ac9e690628920eaa862c38d3"
+    },
+    {
+      "bytes": 3723,
+      "path": "versions/v0.11.1/tools/frozen_contract_preflight.py",
+      "sha256": "a726499c3fb5f83f1e4db039dc85b57287c42d5343ba262489b2e5bf8da88d08"
+    },
+    {
+      "bytes": 2450,
+      "path": "evaluation/v0111-freeze-attempt-002-aborted.json",
+      "sha256": "d28d6fdc5e8d73be8850655b4e91cf0e06fc4f958d14d8a9b5f691d4bf5c0ec0"
+    },
+    {
+      "bytes": 450,
+      "path": "evaluation/v0111-parent-preflight.json",
+      "sha256": "4f5b6a217b653159a57a19aa6659df40b917dba9851b475e899762f1cb086a2b"
+    },
+    {
+      "bytes": 15245,
+      "path": "evaluation/v0111-metric-freeze-equivalence.json",
+      "sha256": "aee3fa76a405274bfb71a03ce3d70f8cdc127149e2710a5ed3b74b47f1b4cb55"
+    },
+    {
+      "bytes": 260,
+      "path": "evaluation/pytest-v0.11.1-reviewed-source-freeze.txt",
+      "sha256": "02634623bf7a943154c9c2e1af62b97bb8076958b972b7af0e97ef535c954c2c"
+    },
+    {
+      "bytes": 31,
+      "path": "evaluation/workspace-validation-v0.11.1-reviewed-source-freeze.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf"
+    },
+    {
+      "bytes": 558,
+      "path": "evaluation/v0111-reviewed-source-preregistration-preflight.txt",
+      "sha256": "ca65c803ea60ed638ddf72f97ec86f0fa884ec710b87361c87beffcfef8cbcbf"
+    },
+    {
+      "bytes": 661,
+      "path": "evaluation/v0111-freeze-preparation-attempt-001.json",
+      "sha256": "b08cbd4e9bc91c6338cf22695b9b49839812808a4e3558c8c445a57c02083867"
+    },
+    {
+      "bytes": 0,
+      "path": "evaluation/v0111-prefreeze-preflight-freeze.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "candidate_version": "0.11.1",
+  "created_at_utc": "2026-08-25T01:10:53Z",
+  "hash_algorithm": "sha256",
+  "independent_review_evidence_package_sha256": "3b7963df2894627fc974576d1badc72e2ab21d56199a83e885a00d8ee6c17538",
+  "mutation_rule": "All registry bytes, all 1120 v0.10 manifest-bound paths, and all 154 failed-v0.11 baseline paths are immutable. Future v0.11.1 outputs may be created only under the frozen successor selectors and cannot change frozen target bytes.",
+  "parent_version": "0.10",
+  "registry_id": "FROZEN-REGISTRY-0111-001",
+  "reviewed_prefreeze_package_sha256": "2d84d3b2f1119d0ba54b5102ca5f4905864b09214dbe7a8b596a54deb8378075"
+}

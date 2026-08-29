@@ -1,0 +1,56 @@
+{
+  "candidate_version": "0.11.1",
+  "created_at_utc": "2026-08-25T01:15:49.542328+00:00",
+  "files": [
+    {
+      "bytes": 458,
+      "path": "src/spec_creator/v0111/__init__.py",
+      "sha256": "d6821bdd97616f49f300a0f77dc928021dfc00f03003dfefc97677960ad85303"
+    },
+    {
+      "bytes": 1443,
+      "path": "src/spec_creator/v0111/lifecycle.py",
+      "sha256": "2fb58f968de7c18590d0bece33c8120d9d421a9e1409ed4f7feb72f520472f1c"
+    },
+    {
+      "bytes": 10963,
+      "path": "src/spec_creator/v0111/execution_architecture.py",
+      "sha256": "2687210516a4250e40392ab4de6df1c235e2ba437dae9a6d8cab6f47541a8d46"
+    },
+    {
+      "bytes": 4029,
+      "path": "src/spec_creator/v0111/evaluator.py",
+      "sha256": "44ee5e78628a8e14cd0bbd1e68f67dd918308002e0bef6a7d0ccabfae65719b2"
+    },
+    {
+      "bytes": 0,
+      "path": "tests/v0111/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1090,
+      "path": "tests/v0111/test_lifecycle.py",
+      "sha256": "9ee888f46192d81fb6f28b4085bb6cbaf4b227fdc6e6504282f591ef8c042514"
+    },
+    {
+      "bytes": 1969,
+      "path": "tests/v0111/test_execution_architecture.py",
+      "sha256": "4fe48a419b05ec3630bdec02b6d6052bc15bfa1bdaa164d6df8f44f15395b2bf"
+    },
+    {
+      "bytes": 1888,
+      "path": "tests/v0111/test_regressions.py",
+      "sha256": "fb6127483f0f10b0ad673a5917ec1120bec0a7fc6bd1db8429c28f4a586fa050"
+    }
+  ],
+  "frozen_contract_id": "REL-0.11.1-FROZEN-001",
+  "frozen_registry_preflight": "PASS 36/36; v0.10 1120/1120; failed-v0.11 154/154",
+  "implementation_actor_id": "agent:spec-creator-builder-v0.11.1",
+  "implementation_id": "IMPL-0111-001",
+  "local_test_summary": "166/166 full current tests PASS; exact frozen parent 155/155 PASS; retry-local 11/11 PASS",
+  "next_gate": "genuinely independent verification",
+  "promotion_authorized": false,
+  "reg0025": "PASS 25/25 legal exactly once; 7/7 forbidden rejected",
+  "status": "IMPLEMENTED_LOCAL_VALIDATION_PASS",
+  "workspace_validation": "PASS 0 errors / 0 warnings"
+}

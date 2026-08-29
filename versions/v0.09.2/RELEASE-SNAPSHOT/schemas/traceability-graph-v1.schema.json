@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/traceability-graph-v1.schema.json",
+  "title": "Spec Creator Traceability Graph v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "graph_id", "nodes", "edges"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "graph_id": {"type": "string", "minLength": 1, "pattern": "^TG-[A-Za-z0-9._-]+$"},
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "label"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["goal", "requirement", "feature", "task", "test", "gate"]},
+          "label": {"type": "string", "minLength": 1},
+          "critical": {"type": "boolean"}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "relation", "to"],
+        "properties": {
+          "from": {"type": "string", "minLength": 1},
+          "relation": {"enum": ["requires", "realized_by", "decomposed_to", "verified_by", "gated_by", "precedes"]},
+          "to": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

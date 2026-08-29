@@ -1,0 +1,140 @@
+{
+  "all_equal": true,
+  "artifact_id": "EVAL-011-FREEZE-EQUIVALENCE-001",
+  "canonical_plan_sha256": "a2ebc957916bcd190554919620f5a4c8f0bcd912e64708bcd43534666d8da7ad",
+  "created_at_utc": "2026-08-24T23:21:10Z",
+  "guardrail_count": 10,
+  "metric_comparisons": [
+    {
+      "kind": "primary",
+      "match": true,
+      "metric": "next_legal_action_exact_match_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "primary",
+      "match": true,
+      "metric": "critical_path_exact_match_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "primary",
+      "match": true,
+      "metric": "execution_wave_exact_match_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "primary",
+      "match": true,
+      "metric": "retry_isolation_exact_match_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "primary",
+      "match": true,
+      "metric": "integration_contract_completeness_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "unsafe_parallelization_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "unsupported_dependency_edge_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "speculative_authority_escape_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "hidden_manual_state_reconstruction_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "immutable_boundary_classification_error_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "parent_suite_pass_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "active_regression_pass_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "frozen_parent_hash_integrity_rate",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "missing_data_count",
+      "mismatches": {}
+    },
+    {
+      "kind": "guardrail",
+      "match": true,
+      "metric": "critical_gate_bypass_count",
+      "mismatches": {}
+    }
+  ],
+  "policy_comparisons": [
+    {
+      "field": "missing_data_policy",
+      "frozen_plan": "Missing, skipped, malformed, unreconciled, or environment-incomparable evidence is unavailable and cannot count as zero or PASS.",
+      "match": true,
+      "reviewed": "Missing, skipped, malformed, unreconciled, or environment-incomparable evidence is unavailable and cannot count as zero or PASS."
+    },
+    {
+      "field": "structural_vs_empirical_rule",
+      "frozen_plan": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+      "match": true,
+      "reviewed": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11."
+    },
+    {
+      "field": "control_equivalence_rule",
+      "frozen_plan": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+      "match": true,
+      "reviewed": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid."
+    },
+    {
+      "field": "integration_anti_gaming_rule",
+      "frozen_plan": "Integration completeness denominator is the fixed 23-source-task universe, never emitted workstream count. Every emitted workstream must identify >=1 source_task_ids, and every source task must be covered.",
+      "match": true,
+      "reviewed": "Integration completeness denominator is the fixed 23-source-task universe, never emitted workstream count. Every emitted workstream must identify >=1 source_task_ids, and every source task must be covered."
+    },
+    {
+      "field": "critical_path_tie_rule",
+      "frozen_plan": "Every execution fixture is eligible. Critical-path truth is the set of ALL maximum-total-work paths in the effective DAG after mechanically derived conflict-serialization edges; set equality is required.",
+      "match": true,
+      "reviewed": "Every execution fixture is eligible. Critical-path truth is the set of ALL maximum-total-work paths in the effective DAG after mechanically derived conflict-serialization edges; set equality is required."
+    },
+    {
+      "field": "shadow_metrics_ref",
+      "frozen_plan": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "match": true,
+      "reviewed": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json"
+    }
+  ],
+  "primary_count": 5,
+  "reviewed_design_sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+  "target_count": 15
+}

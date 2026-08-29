@@ -1,0 +1,14 @@
+{
+  "source_task_ids_required": true,
+  "source_task_ids_minItems": 1,
+  "source_task_ids_uniqueItems": true,
+  "integration_contract_required": true,
+  "integration_contract_required_fields": [
+    "outputs",
+    "consumer_ids",
+    "merge_rule"
+  ],
+  "merge_rule_minLength": 1,
+  "fixed_source_task_universe_count": 23,
+  "verdict": "PASS"
+}

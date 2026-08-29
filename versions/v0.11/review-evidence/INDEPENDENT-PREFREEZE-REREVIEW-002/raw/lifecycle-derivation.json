@@ -1,0 +1,122 @@
+{
+  "oracle_ref": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+  "fixture_derivations": [
+    {
+      "fixture_id": "LIFE-011-001-DISCOVERY",
+      "state": "UNFROZEN_DISCOVERY",
+      "blockers": [],
+      "derived_before_expected_read": {
+        "valid": true,
+        "rule_id": "LR-001",
+        "priority": 100,
+        "action": "prepare_preregistration",
+        "matches": [
+          {
+            "rule_id": "LR-001",
+            "priority": 100,
+            "action": "prepare_preregistration"
+          }
+        ]
+      },
+      "authored_expected_next_action": "prepare_preregistration",
+      "match": true
+    },
+    {
+      "fixture_id": "LIFE-011-002-BLOCKED-PREFREEZE",
+      "state": "PREFREEZE_REVIEW",
+      "blockers": [
+        "parent_preflight_failed"
+      ],
+      "derived_before_expected_read": {
+        "valid": true,
+        "rule_id": "LR-006",
+        "priority": 30,
+        "action": "repair_or_reject_prefreeze",
+        "matches": [
+          {
+            "rule_id": "LR-006",
+            "priority": 30,
+            "action": "repair_or_reject_prefreeze"
+          },
+          {
+            "rule_id": "LR-009",
+            "priority": 200,
+            "action": "resolve_prefreeze_blockers"
+          }
+        ]
+      },
+      "authored_expected_next_action": "repair_or_reject_prefreeze",
+      "match": true
+    },
+    {
+      "fixture_id": "LIFE-011-003-FROZEN",
+      "state": "FROZEN",
+      "blockers": [],
+      "derived_before_expected_read": {
+        "valid": true,
+        "rule_id": "LR-010",
+        "priority": 100,
+        "action": "implement_frozen_candidate",
+        "matches": [
+          {
+            "rule_id": "LR-010",
+            "priority": 100,
+            "action": "implement_frozen_candidate"
+          }
+        ]
+      },
+      "authored_expected_next_action": "implement_frozen_candidate",
+      "match": true
+    },
+    {
+      "fixture_id": "LIFE-011-004-VERIFYING",
+      "state": "VERIFYING",
+      "blockers": [],
+      "derived_before_expected_read": {
+        "valid": true,
+        "rule_id": "LR-014",
+        "priority": 100,
+        "action": "independent_verification",
+        "matches": [
+          {
+            "rule_id": "LR-014",
+            "priority": 100,
+            "action": "independent_verification"
+          }
+        ]
+      },
+      "authored_expected_next_action": "independent_verification",
+      "match": true
+    }
+  ],
+  "fixture_exact_matches": 4,
+  "fixture_count": 4,
+  "current_checkpoint": {
+    "release_state": "PREREGISTRATION_DRAFT",
+    "open_blocker_transition_tokens": [
+      "independent_prefreeze_review_required",
+      "frozen_hashes_not_established"
+    ],
+    "derived": {
+      "valid": true,
+      "rule_id": "LR-005A",
+      "priority": 40,
+      "action": "independent_prefreeze_review",
+      "matches": [
+        {
+          "rule_id": "LR-005A",
+          "priority": 40,
+          "action": "independent_prefreeze_review"
+        },
+        {
+          "rule_id": "LR-005",
+          "priority": 200,
+          "action": "resolve_preregistration_blockers"
+        }
+      ]
+    },
+    "declared_action_token": "independent_prefreeze_review",
+    "exact_match": true
+  },
+  "verdict": "PASS"
+}

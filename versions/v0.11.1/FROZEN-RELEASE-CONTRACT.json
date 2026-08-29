@@ -1,0 +1,317 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013",
+    "REG-0014",
+    "REG-0015",
+    "REG-0016",
+    "REG-0017",
+    "REG-0018",
+    "REG-0019",
+    "REG-0020",
+    "REG-0021",
+    "REG-0022",
+    "REG-0023",
+    "REG-0024"
+  ],
+  "candidate_version": "0.11.1",
+  "contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+  "contract_id": "REL-0.11.1-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder-v0.11.1",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-0111"
+  },
+  "failure_conditions": [
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/SPEC-CREATOR-v0.11.1.md: expected cb10d06709b3c56245d2e38d006a199d28ac73fe68d96b2496fded45750fc81d.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/EVALUATION-PLAN.json: expected 176aff3a4cb533d2130b172c639b441723c8323f347465b3072dc5f4bf06529d.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/EVALUATION-DESIGN.json: expected 00ba4847f2cd274b40c339373055c5903087dc5c2d8a7de8a7d60cb4d50acf16.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/EVALUATION-UNIVERSES.json: expected 5275a6dd54804f4b22cdcd23398bfae4385b5d1022b8e2e5dda2e9b8574563fe.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/EXECUTION-TRIAL-PROTOCOL.json: expected 006d87bf4c5390f650b92e72a44173cbed1112a6fc75a0141b150105d77f430f.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/LIFECYCLE-TRANSITION-RULES.candidate.json: expected e6de654a7148258ef244f36f8b203ed2a3666d423c76436008e29a618ac4f146.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/DEPENDENCY-PROVENANCE-RULES.candidate.json: expected f25ca917b017b6b953747ddaf6af8c269df3b9c632dcc06aa2c20258609a09dc.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/PARENT-SUITE-UNIVERSE.json: expected d8a5bbecccca0fdb29361b3abc0afc6b74b208124ccfdc162e0f3d2810459b4c.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/ACTIVE-REGRESSION-UNIVERSE.json: expected f892d2183bb889ae864f162c882e791bef712ab21d02dd6033ab3de7ab3c5fb9.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json: expected 66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/candidate-schemas/execution-architecture-v1.candidate.schema.json: expected 63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/candidate-fixtures/lifecycle-continuation-corpus.jsonl: expected 3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/candidate-fixtures/execution-architecture-corpus.jsonl: expected 6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/candidate-fixtures/ownership-prospective-paths.json: expected cca2b71a93b23901b6e415b56e7b3ff5b1b2f9f0c2c86dc4dfb6acbee060039d.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/IMMUTABILITY-BOUNDARY-DRAFT.json: expected 5e257b88c07b30adfbde1fb49f62835354ef0728d77c4a076fb5323621a216cc.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/SUCCESSOR-OWNERSHIP-UNIVERSE.json: expected 8a8a52494ed835d75721b3df2e82755f9211c728569cab693594d23871075253.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/FAILED-PREDECESSOR-v0.11-BASELINE.json: expected 51823649beccf14348a019d5f229882ba4a4a9710f2a4a0ca47598f6508cd027.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/DEFECT-RESOLUTION-POSTFREEZE-001.json: expected 24f92b803986e45d6316634906ab8b02c7033ebadaf7a3901bf5351de9d0cff7.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json: expected 0c83451a038dad4bc5242139a4135f2c7e397caf89dc5ca176937bf736111c29.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/ROADMAP-AMENDMENT.md: expected 01f87324c5ab397c4aa67b84b4d4a426cdf0b90f41a7cdcd20c96d20de456c16.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/DEC-0034.json: expected d98010ec66436cdf6d291f41733743672b486f1e04eb5f42518ac2f9796fd010.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/source-package.zip: expected 2d84d3b2f1119d0ba54b5102ca5f4905864b09214dbe7a8b596a54deb8378075.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/evidence-package.zip: expected 3b7963df2894627fc974576d1badc72e2ab21d56199a83e885a00d8ee6c17538.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md: expected 2360f23653290eb4a339a1c11e14f6de4b578e0bcd996d014b34a795ada5c2c9.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json: expected c52a257b5d5a3ab7d9e8f9601d29e6b49eed864defc6d9d7a53f45b8d69b0c20.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/INGEST.json: expected b8e13487db9f902e8b8e3ce5e049e26a5d5e6011a35d9690594eade6be49a410.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json: expected e854ed64bd5bf09b5c156457b9bdf6863deeb8e8ac9e690628920eaa862c38d3.",
+    "Frozen artifact SHA-256 differs for versions/v0.11.1/tools/frozen_contract_preflight.py: expected a726499c3fb5f83f1e4db039dc85b57287c42d5343ba262489b2e5bf8da88d08.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-freeze-attempt-002-aborted.json: expected d28d6fdc5e8d73be8850655b4e91cf0e06fc4f958d14d8a9b5f691d4bf5c0ec0.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-parent-preflight.json: expected 4f5b6a217b653159a57a19aa6659df40b917dba9851b475e899762f1cb086a2b.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-metric-freeze-equivalence.json: expected aee3fa76a405274bfb71a03ce3d70f8cdc127149e2710a5ed3b74b47f1b4cb55.",
+    "Frozen artifact SHA-256 differs for evaluation/pytest-v0.11.1-reviewed-source-freeze.txt: expected 02634623bf7a943154c9c2e1af62b97bb8076958b972b7af0e97ef535c954c2c.",
+    "Frozen artifact SHA-256 differs for evaluation/workspace-validation-v0.11.1-reviewed-source-freeze.txt: expected 53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-reviewed-source-preregistration-preflight.txt: expected ca65c803ea60ed638ddf72f97ec86f0fa884ec710b87361c87beffcfef8cbcbf.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-freeze-preparation-attempt-001.json: expected b08cbd4e9bc91c6338cf22695b9b49839812808a4e3558c8c445a57c02083867.",
+    "Frozen artifact SHA-256 differs for evaluation/v0111-prefreeze-preflight-freeze.txt: expected e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.",
+    "Any of the 16 frozen promotion-authoritative metrics misses its target or uses a denominator/universe different from the frozen evaluation design.",
+    "Any of the exact 155 parent pytest nodes or 25 active regressions fails, disappears, is weakened, or lacks explicit evidence.",
+    "Any of the exact 1120 v0.10 hashes or 154 failed-v0.11 baseline hashes differs.",
+    "Any current or preregistered prospective output path violates frozen selector ownership closure.",
+    "Required independent verification is absent or performed by the implementation actor.",
+    "Final shipping package has missing, extra, hash, or size mismatches after clean extraction."
+  ],
+  "frozen_at_utc": "2026-08-25T01:10:53Z",
+  "goals": [
+    {
+      "acceptance": "4/4 lifecycle fixtures derive the exact next legal action with zero hidden/manual state reconstruction.",
+      "description": "Make continuation authority recoverable from the package alone.",
+      "goal_id": "G-011-001"
+    },
+    {
+      "acceptance": "6/6 critical-path sets and 6/6 execution-wave plans match exactly with zero unsupported edges or unsafe parallelization.",
+      "description": "Produce deterministic, provenance-backed execution architecture.",
+      "goal_id": "G-011-002"
+    },
+    {
+      "acceptance": "23/23 source tasks are integration-covered; retry isolation is exact; speculative authority escapes are zero.",
+      "description": "Preserve useful parallelism through explicit integration, retry, cache, context, and speculation boundaries.",
+      "goal_id": "G-011-003"
+    },
+    {
+      "acceptance": "155/155 parent tests, 24/24 active regressions, 1120/1120 v0.10 hashes, zero immutable-boundary classification errors, and zero missing data.",
+      "description": "Preserve parent, regressions, and immutable history while making release state mechanically auditable.",
+      "goal_id": "G-011-004"
+    },
+    {
+      "acceptance": "Matched empirical trials preserve obligation/gate equivalence and remain shadow-only for v0.11 promotion.",
+      "description": "Collect real efficiency calibration without overclaiming.",
+      "goal_id": "G-011-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-0111-G01",
+      "name": "unsafe_parallelization_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G02",
+      "name": "unsupported_dependency_edge_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G03",
+      "name": "speculative_authority_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G04",
+      "name": "hidden_manual_state_reconstruction_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G05",
+      "name": "immutable_boundary_classification_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G06",
+      "name": "parent_suite_pass_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-G07",
+      "name": "active_regression_pass_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-G08",
+      "name": "frozen_parent_hash_integrity_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-G09",
+      "name": "missing_data_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G10",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0111-G11",
+      "name": "prospective_output_classification_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical JSON excluding contract_hash. Exact frozen registry bytes, reviewed preregistration inventory, independent review evidence, v0.10 parent hashes, failed-v0.11 baseline hashes, selector ownership rules, and final freeze transaction are separately hash-bound.",
+  "mandatory_gates": [
+    "GATE-0111-SPEC",
+    "GATE-0111-SCHEMA",
+    "GATE-0111-FIXTURE-ORACLE",
+    "GATE-0111-LIFECYCLE",
+    "GATE-0111-PROVENANCE",
+    "GATE-0111-EXECUTION-STRUCTURE",
+    "GATE-0111-INTEGRATION",
+    "GATE-0111-RETRY-SPECULATION",
+    "GATE-0111-PARENT",
+    "GATE-0111-REGRESSION",
+    "GATE-0111-IMMUTABILITY",
+    "GATE-0111-INDEPENDENT-PREFREEZE",
+    "GATE-0111-IMPLEMENTATION",
+    "GATE-0111-PROSPECTIVE-OWNERSHIP",
+    "GATE-0111-INDEPENDENT",
+    "GATE-0111-PACKAGE",
+    "GATE-0111-ROLLBACK"
+  ],
+  "parent_version": "0.10",
+  "primary_metrics": [
+    {
+      "metric_id": "M-0111-001",
+      "name": "next_legal_action_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-002",
+      "name": "critical_path_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-003",
+      "name": "execution_wave_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-004",
+      "name": "retry_isolation_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0111-005",
+      "name": "integration_contract_completeness_rate",
+      "target_operator": "gte",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "Every frozen primary and guardrail metric meets its target over the exact frozen universe with complete denominator reconciliation.",
+    "Every mandatory gate passes with no FAIL/BLOCKED gate at promotion.",
+    "The independent evaluator actor differs from the implementation actor and independently recomputes promotion-authoritative evidence.",
+    "Frozen registry hashes, all v0.10 parent hashes, all failed-v0.11 baseline hashes, selector ownership closure, and the final clean-extracted package manifest validate exactly.",
+    "Promotion may not exceed PROMOTED AS EXPERIMENTAL."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Machine-readable package-only lifecycle checkpoint exposes exact state, immutable boundary, blockers, validation profile, next legal action, required artifacts, and stop condition.",
+      "requirement_id": "REQ-0111-001"
+    },
+    {
+      "critical": true,
+      "description": "Next legal action is deterministically derived from state plus blocker transition tokens using frozen lifecycle transition rules, with no answer-key or hidden-chat dependence.",
+      "requirement_id": "REQ-0111-002"
+    },
+    {
+      "critical": true,
+      "description": "Every explicit dependency has exactly one permitted machine-derived provenance and mechanically derived conflict serialization is included in the effective DAG.",
+      "requirement_id": "REQ-0111-003"
+    },
+    {
+      "critical": true,
+      "description": "All maximum-work critical paths and deterministic dependency/conflict-safe execution waves are computed exactly.",
+      "requirement_id": "REQ-0111-004"
+    },
+    {
+      "critical": true,
+      "description": "Maximum useful parallelism preserves the fixed 23-source-task integration denominator and requires context, cache, retry, integration, and verification contracts for every emitted workstream.",
+      "requirement_id": "REQ-0111-005"
+    },
+    {
+      "critical": true,
+      "description": "Failure reruns only the failed workstream and declared dependents; unrelated successful work is preserved unless explicitly invalidated.",
+      "requirement_id": "REQ-0111-006"
+    },
+    {
+      "critical": true,
+      "description": "Speculative/preparatory work remains non-authoritative until prerequisites resolve.",
+      "requirement_id": "REQ-0111-007"
+    },
+    {
+      "critical": true,
+      "description": "Validation profiles and immutable-boundary mechanics are explicit and mechanically checkable with zero unclassified, overlap, multimatch, or stale ownership errors.",
+      "requirement_id": "REQ-0111-008"
+    },
+    {
+      "critical": true,
+      "description": "Every preregistered future output path classifies exactly once as retry successor before freeze and at later lifecycle checkpoints.",
+      "requirement_id": "REQ-0111-009"
+    },
+    {
+      "critical": true,
+      "description": "Exact 155 parent nodes, 25 active regressions including REG-0025, 1120 v0.10 hashes, and 154 failed-v0.11 baseline hashes remain mandatory fail-closed guardrails.",
+      "requirement_id": "REQ-0111-010"
+    },
+    {
+      "critical": true,
+      "description": "All 16 frozen promotion-authoritative metrics preserve reviewed universes/targets; empirical efficiency metrics remain shadow-only and cannot authorize a general speed claim.",
+      "requirement_id": "REQ-0111-011"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.11.1 implementation or verification fails frozen criteria, preserve all v0.11/v0.11.1 evidence and revert executable authority to promoted v0.10 without altering protected history.",
+    "parent_contract_sha256": "5440dd507d13e13853ebd9aba2e9b39df0e7d340abfa308b9000ebb79e8cd9b2",
+    "preserve_parent_history": true,
+    "rollback_target": "v0.10 Protocol MVP — PROMOTED AS EXPERIMENTAL"
+  },
+  "schema_version": "2.0"
+}

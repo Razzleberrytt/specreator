@@ -1,0 +1,50 @@
+{
+  "active_candidate": {
+    "frozen_release_contract_present": false,
+    "implementation_status": "Prompt Compiler implementation exists from earlier v0.09 work; v0.09.2 has not been frozen/evaluated as a release candidate.",
+    "next_required_action": "Correct and schema-validate the in-memory v0.09.2 frozen-contract builder; write the recognized frozen contract only if all preregistration guards remain PASS.",
+    "status": "PREFREEZE / NOT PROMOTED",
+    "version": "0.09.2"
+  },
+  "checkpoint_id": "PAUSE-0092-20260824T1332-0400",
+  "created_at_local": "2026-08-24T13:32:00-04:00",
+  "critical_artifact_sha256": {
+    "evaluation/pytest-v0.08-inherited-on-v0.09.2-preimplementation.txt": "7f18685432501cf969fb12d47e3b48dd6a6c8c7fd5d58a0951209c2d38d2ae12",
+    "evaluation/v0092-benchmark-contrast-preflight.json": "0ea91647d6626da4063c1d1cc15cb6746f89ce12627864ae0429f0801fb798d6",
+    "evaluation/v0092-prefreeze-transaction.json": "8b843d87fb4b2e79651554e5a3ddc097d3e4ac04bdba1759da259e5924e918c8",
+    "evaluation/v0092-preregistration-preflight.json": "3e07a83f0440f7448603f34c85acee3ad4ba28455432e00ff09d8383fc1632fd",
+    "evaluation/v0092-schema-preflight.json": "0e2c0f1ba60b53a2596012570679c198bb8cd62a954fc11e82dec077925b390d",
+    "evaluation/workspace-validation-v0.09.2-final-prefreeze.json": "b65df417fd737813c080a3c097c38924e77ebca7432cd9ee9a9ee4971b608a90",
+    "schemas/prompt-compilation-input-v1.schema.json": "4365164d63f141cb0cece5e812666871d2af988369b598a2cdb7337dd82aba9c",
+    "schemas/prompt-envelope-v1.schema.json": "8549a36497cebe28ad01e136224fe6ed820c9d37a7922a767c1d48ec239a8d24",
+    "versions/v0.09.2/EVALUATION-PLAN.json": "8e0601991928641fc4559d13b96a7293df9da3a7832792c33fc74b17293350e6",
+    "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md": "fff55af89386e3750af3c86fd37f922a52e9423186a02f269997ee2a52f3a68b"
+  },
+  "failed_candidates_preserved": [
+    {
+      "reason": "Frozen negative benchmark contained a semantically indistinguishable defect case.",
+      "status": "RETRY REQUIRED",
+      "version": "0.09"
+    },
+    {
+      "reason": "Freeze helper wrote an invalid contract attempt despite failed preregistration; invalid attempt is quarantined and preserved.",
+      "status": "RETRY REQUIRED",
+      "version": "0.09.1"
+    }
+  ],
+  "invariants": [
+    "Do not invent or backfill a v0.09.2 frozen contract for this checkpoint.",
+    "Do not modify frozen v0.09 or failed/quarantined v0.09.1 historical artifacts to make them pass.",
+    "Preserve REG-0020, REG-0021, and REG-0022.",
+    "Generate a new root shipping manifest only after a future candidate is actually sealed."
+  ],
+  "last_sealed_release": {
+    "status": "PROMOTED AS EXPERIMENTAL",
+    "version": "0.08"
+  },
+  "verification_at_pause": {
+    "pytest": "142 passed",
+    "root_package_manifest_note": "PACKAGE-MANIFEST.json is the last sealed v0.08 shipping manifest and is intentionally stale for this active-development checkpoint; do not treat this checkpoint as a sealed release.",
+    "workspace_validation_excluding_root_shipping_manifest": "PASS: 0 errors, 0 warnings"
+  }
+}

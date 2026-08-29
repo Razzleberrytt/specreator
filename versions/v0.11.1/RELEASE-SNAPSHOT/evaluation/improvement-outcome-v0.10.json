@@ -1,0 +1,12 @@
+{
+  "candidate_version": "0.10",
+  "decision_id": "DEC-0032",
+  "evidence_refs": [
+    "evaluation/v010-corpus-results.json",
+    "evaluation/verifier-pass-v0.10.json",
+    "evaluation/metric-reconciliation-v0.10.json"
+  ],
+  "improvement_id": "IMP-0018",
+  "result": "Protocol MVP met every frozen v0.10 threshold and gate; DEF-010-001 was fixed post-freeze and preserved as REG-0024.",
+  "status": "adopted"
+}

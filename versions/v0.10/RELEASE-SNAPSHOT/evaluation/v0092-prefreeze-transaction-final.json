@@ -1,0 +1,42 @@
+{
+  "all_ok": true,
+  "candidate_version": "0.09.2",
+  "checked_at_utc": "2026-08-24T17:46:09Z",
+  "checks": {
+    "all_preregistered_artifact_hashes_match_plan": true,
+    "candidate_contract_canonical_hash_valid_in_memory": true,
+    "candidate_contract_schema_valid_in_memory": true,
+    "checkpoint_critical_hashes_reverified": true,
+    "contract_path_absent_before_transaction": true,
+    "current_suite_145_pass": true,
+    "future_contract_id_matches_all_frozen_fixture_contract_refs": true,
+    "parent_preflight_75_of_75": true,
+    "reg0020_reg0021_reg0022_tests_pass": true,
+    "schema_preflight": true,
+    "sealed_parent_suite_142_pass_reproduced": true,
+    "semantic_contrast_preflight_30_of_30": true,
+    "spec_ambiguity_clean": true,
+    "spec_discovery_clean": true,
+    "spec_lint_clean": true,
+    "workspace_validation_clean_excluding_intentionally_stale_root_manifest": true
+  },
+  "evidence_refs": [
+    "versions/v0.09.2/PAUSE-CHECKPOINT.json",
+    "evaluation/v0092-preregistration-preflight.json",
+    "evaluation/v0092-schema-preflight.json",
+    "evaluation/v0092-benchmark-contrast-preflight.json",
+    "evaluation/lint-v0.09.2-prefreeze.json",
+    "evaluation/ambiguity-v0.09.2-prefreeze.json",
+    "evaluation/discovery-v0.09.2-prefreeze.json",
+    "evaluation/pytest-v0.08-inherited-on-v0.09.2-rerun.txt",
+    "evaluation/pytest-regressions-v0.09.2-prefreeze.txt",
+    "evaluation/pytest-v0.09.2-prefreeze-current-suite.txt",
+    "evaluation/workspace-validation-v0.09.2-prefreeze-after-regression-tests.json",
+    "src/spec_creator/release_freeze.py",
+    "tests/test_prompt_compiler_retry_regressions.py"
+  ],
+  "note": "This transaction independently rechecks the checkpoint and fail-closes before the recognized frozen-contract path is created. The root PACKAGE-MANIFEST.json remains the intentional sealed v0.08 shipping manifest until final v0.09.2 package sealing.",
+  "recognized_contract_path": "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+  "recognized_contract_path_written_at_check_time": false,
+  "transaction_id": "PREFREEZE-0092-002"
+}

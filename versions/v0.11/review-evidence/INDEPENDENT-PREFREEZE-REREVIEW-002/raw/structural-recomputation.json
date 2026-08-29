@@ -1,0 +1,506 @@
+{
+  "fixtures_checked": 6,
+  "records": [
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "explicit_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "derived_conflict_edges": [],
+      "effective_edges": [
+        "A->B",
+        "B->C"
+      ],
+      "computed_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "computed_critical_work_units": 6,
+      "wave_safety_issues": [],
+      "speculative_tasks": [],
+      "authority_escape_count": 0,
+      "retry": null,
+      "expected": {
+        "critical_paths": [
+          [
+            "A",
+            "B",
+            "C"
+          ]
+        ],
+        "critical_work_units": 6,
+        "waves": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ]
+        ],
+        "unsafe_parallelizations": 0
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true
+      }
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "explicit_edges": [
+        "A->B",
+        "A->C",
+        "B->D",
+        "C->D"
+      ],
+      "derived_conflict_edges": [],
+      "effective_edges": [
+        "A->B",
+        "A->C",
+        "B->D",
+        "C->D"
+      ],
+      "computed_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "D"
+        ],
+        [
+          "A",
+          "C",
+          "D"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "wave_safety_issues": [],
+      "speculative_tasks": [],
+      "authority_escape_count": 0,
+      "retry": null,
+      "expected": {
+        "critical_paths": [
+          [
+            "A",
+            "B",
+            "D"
+          ],
+          [
+            "A",
+            "C",
+            "D"
+          ]
+        ],
+        "critical_work_units": 5,
+        "waves": [
+          [
+            "A"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "D"
+          ]
+        ],
+        "unsafe_parallelizations": 0
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true
+      }
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "explicit_edges": [
+        "A->C",
+        "B->C"
+      ],
+      "derived_conflict_edges": [
+        "A->B"
+      ],
+      "effective_edges": [
+        "A->B",
+        "A->C",
+        "B->C"
+      ],
+      "computed_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "wave_safety_issues": [],
+      "speculative_tasks": [],
+      "authority_escape_count": 0,
+      "retry": null,
+      "expected": {
+        "critical_paths": [
+          [
+            "A",
+            "B",
+            "C"
+          ]
+        ],
+        "critical_work_units": 5,
+        "waves": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ]
+        ],
+        "unsafe_parallelizations": 0
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true
+      }
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "explicit_edges": [
+        "A->B",
+        "A->C",
+        "A->D",
+        "B->E",
+        "C->E",
+        "D->E"
+      ],
+      "derived_conflict_edges": [],
+      "effective_edges": [
+        "A->B",
+        "A->C",
+        "A->D",
+        "B->E",
+        "C->E",
+        "D->E"
+      ],
+      "computed_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "E"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "E"
+        ]
+      ],
+      "computed_critical_work_units": 10,
+      "wave_safety_issues": [],
+      "speculative_tasks": [],
+      "authority_escape_count": 0,
+      "retry": null,
+      "expected": {
+        "critical_paths": [
+          [
+            "A",
+            "B",
+            "E"
+          ]
+        ],
+        "critical_work_units": 10,
+        "waves": [
+          [
+            "A"
+          ],
+          [
+            "B",
+            "C",
+            "D"
+          ],
+          [
+            "E"
+          ]
+        ],
+        "bottleneck_task": "B",
+        "partition_warning_required": true
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true
+      }
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "explicit_edges": [
+        "DECIDE->IMPLEMENT",
+        "IMPLEMENT->VERIFY",
+        "PREP->VERIFY"
+      ],
+      "derived_conflict_edges": [],
+      "effective_edges": [
+        "DECIDE->IMPLEMENT",
+        "PREP->VERIFY",
+        "IMPLEMENT->VERIFY"
+      ],
+      "computed_waves": [
+        [
+          "DECIDE",
+          "PREP"
+        ],
+        [
+          "IMPLEMENT"
+        ],
+        [
+          "VERIFY"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "DECIDE",
+          "IMPLEMENT",
+          "VERIFY"
+        ]
+      ],
+      "computed_critical_work_units": 8,
+      "wave_safety_issues": [],
+      "speculative_tasks": [
+        "PREP"
+      ],
+      "authority_escape_count": 0,
+      "retry": null,
+      "expected": {
+        "critical_paths": [
+          [
+            "DECIDE",
+            "IMPLEMENT",
+            "VERIFY"
+          ]
+        ],
+        "critical_work_units": 8,
+        "waves": [
+          [
+            "DECIDE",
+            "PREP"
+          ],
+          [
+            "IMPLEMENT"
+          ],
+          [
+            "VERIFY"
+          ]
+        ],
+        "speculative_non_authoritative": [
+          "PREP"
+        ],
+        "authority_escape_count": 0
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true,
+        "speculative_non_authoritative_match": true,
+        "authority_escape_count_match": true
+      }
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "explicit_edges": [
+        "A->B",
+        "A->C",
+        "B->D",
+        "C->D"
+      ],
+      "derived_conflict_edges": [],
+      "effective_edges": [
+        "A->B",
+        "A->C",
+        "B->D",
+        "C->D"
+      ],
+      "computed_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "D"
+        ],
+        [
+          "A",
+          "C",
+          "D"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "wave_safety_issues": [],
+      "speculative_tasks": [],
+      "authority_escape_count": 0,
+      "retry": {
+        "failed_task": "B",
+        "derived_preserve": [
+          "A",
+          "C"
+        ],
+        "derived_rerun_scope": [
+          "B",
+          "D"
+        ],
+        "derived_unrelated_rerun_count": 0
+      },
+      "expected": {
+        "critical_paths": [
+          [
+            "A",
+            "B",
+            "D"
+          ],
+          [
+            "A",
+            "C",
+            "D"
+          ]
+        ],
+        "critical_work_units": 5,
+        "waves": [
+          [
+            "A"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "D"
+          ]
+        ],
+        "must_preserve_after_B_failure": [
+          "A",
+          "C"
+        ],
+        "unrelated_rerun_count": 0
+      },
+      "comparisons": {
+        "waves_match": true,
+        "critical_paths_set_match": true,
+        "critical_work_units_match": true,
+        "retry_preserve_match": true,
+        "unrelated_rerun_count_match": true
+      }
+    }
+  ],
+  "all_waves_match": true,
+  "all_critical_path_sets_match": true,
+  "all_critical_work_matches": true,
+  "all_wave_safety_issue_counts_zero": true,
+  "tie_truth": {
+    "EXEC-011-002-DIAMOND": [
+      [
+        "A",
+        "B",
+        "D"
+      ],
+      [
+        "A",
+        "C",
+        "D"
+      ]
+    ],
+    "EXEC-011-006-RETRY-ISOLATION": [
+      [
+        "A",
+        "B",
+        "D"
+      ],
+      [
+        "A",
+        "C",
+        "D"
+      ]
+    ]
+  },
+  "speculative_authority": {
+    "fixture_id": "EXEC-011-005-SPECULATIVE",
+    "computed_speculative_tasks": [
+      "PREP"
+    ],
+    "computed_authority_escape_count": 0,
+    "verdict": "PASS"
+  },
+  "retry_preservation": {
+    "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+    "failed_task": "B",
+    "derived_preserve": [
+      "A",
+      "C"
+    ],
+    "derived_rerun_scope": [
+      "B",
+      "D"
+    ],
+    "derived_unrelated_rerun_count": 0,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS"
+}

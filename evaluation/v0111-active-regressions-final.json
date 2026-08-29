@@ -1,0 +1,233 @@
+{
+  "evidence_id": "ACTIVE-REGRESSIONS-0111-LOCAL-001",
+  "expected_count": 25,
+  "outcomes": [
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0001",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0002",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0003",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0004",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0005",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0006",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0007",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0008",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0009",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0010",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0011",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0012",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0013",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0014",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0015",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0016",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0017",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0018",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0019",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0020",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0021",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0022",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0023",
+      "status": "PASS"
+    },
+    {
+      "basis": "protected v0.10 promotion evidence plus exact frozen parent-suite rerun",
+      "evidence_refs": [
+        "evaluation/pytest-v0.11.1-parent-final.txt",
+        "versions/v0.10/RELEASE-SNAPSHOT/evaluation/release-scorecards.jsonl"
+      ],
+      "regression_id": "REG-0024",
+      "status": "PASS"
+    },
+    {
+      "basis": "retry-local executable prospective ownership closure rerun",
+      "evidence_refs": [
+        "tests/v0111/test_regressions.py::test_reg0025_prospective_ownership_25_legal_and_7_forbidden",
+        "evaluation/v0111-reg0025-postimplementation.json"
+      ],
+      "regression_id": "REG-0025",
+      "status": "PASS"
+    }
+  ],
+  "pass_count": 25,
+  "status": "PASS"
+}

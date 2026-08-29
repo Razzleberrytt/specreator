@@ -1,0 +1,44 @@
+{
+  "protocol_id": "TRANSFER-010-PREFREEZE-001",
+  "candidate_version": "0.10",
+  "source_release": "0.09.2",
+  "status": "PREREGISTERED_UNEXECUTED",
+  "purpose": "Test whether sealed v0.09.2 compiled prompts transfer to genuinely separate execution contexts without hidden reconstruction help before v0.10 orchestration is frozen.",
+  "required_trials": 3,
+  "separation_rule": "Each receiving execution context must be distinct from the context that implemented/evaluated v0.09.2 and must receive only the sealed compiled prompt plus evidence explicitly referenced by that prompt.",
+  "trial_requirements": [
+    "Use a real bounded software task, not a prompt-compiler benchmark fixture.",
+    "Record the exact prompt-envelope hash and all supplied evidence refs before execution.",
+    "Do not answer reconstruction questions using hidden v0.09.2 implementation-session context; any required extra context is recorded as a reconstruction request.",
+    "Record corrective prompts attributable to missing, ambiguous, stale, or excessive compiled context.",
+    "Record scope expansion attempts, missing obligations, prerequisite/owner-decision escapes, and completion evidence.",
+    "Preserve raw trial transcript/evidence reference or an immutable exported trial record sufficient for independent review."
+  ],
+  "preregistered_fields": [
+    "trial_id",
+    "project_id",
+    "receiver_context_id",
+    "prompt_envelope_sha256",
+    "prompt_kind",
+    "supplied_evidence_refs",
+    "reconstruction_request_count",
+    "corrective_prompt_count",
+    "scope_escape_count",
+    "missing_obligation_count",
+    "prerequisite_escape_count",
+    "owner_decision_escape_count",
+    "completed",
+    "completion_evidence_refs",
+    "raw_evidence_ref"
+  ],
+  "prefreeze_acceptance": {
+    "completed_trials": 3,
+    "scope_escape_count": 0,
+    "missing_obligation_count": 0,
+    "prerequisite_escape_count": 0,
+    "owner_decision_escape_count": 0,
+    "missing_required_field_count": 0
+  },
+  "missing_data_policy": "Any missing trial, required field, prompt hash, or raw evidence reference leaves the prefreeze transfer gate incomplete and cannot be counted as zero or PASS.",
+  "promotion_claim_limit": "Transfer trials can justify freezing/evaluating v0.10 but do not by themselves prove population-level causal reduction in rework."
+}

@@ -1,0 +1,15 @@
+{
+  "classification": "historical_release_snapshot_defect",
+  "defect_id": "DEF-0061-005",
+  "description": "v0.05 RELEASE-SNAPSHOT/README.md contained explanatory snapshot-directory text rather than the release-time root README.md bytes expected by the v0.05 manifest. The defect remained latent while live README matched v0.05 and surfaced only after legitimate successor README changes.",
+  "detected_at_utc": "2026-08-24T15:57:45Z",
+  "governance": "Repair only the broken version-local snapshot copy; do not alter v0.05 manifest, contract, package snapshot, ledgers, or release decision.",
+  "manifest_declared_bytes": 4974,
+  "manifest_declared_sha256": "9fe774b320d91e4ec0d289fc1be1d88858750272c0fd4cf888758c0d21d4e0d8",
+  "reconstructed_bytes": 4974,
+  "reconstructed_sha256": "9fe774b320d91e4ec0d289fc1be1d88858750272c0fd4cf888758c0d21d4e0d8",
+  "reconstruction_method": "Reverse only the deterministic v0.06.1 README edits from the live successor README; resulting bytes independently match the exact v0.05 manifest-declared SHA-256 and byte count.",
+  "snapshot_before_base64": "IyB2MC4wNSBSZWxlYXNlIFNuYXBzaG90CgpUaGlzIGRpcmVjdG9yeSBwcmVzZXJ2ZXMgcmVsZWFzZS10aW1lIGNvcGllcyBvZiBzaGFyZWQgbXV0YWJsZSBzb3VyY2UsIHRlc3RzLCBhbmQgZ292ZXJuYW5jZSBsZWRnZXJzIHJlZmVyZW5jZWQgYnkgdGhlIHYwLjA1IG1hbmlmZXN0LiBBcHBlbmQtb25seSBsZWRnZXJzIGFyZSBhZGRpdGlvbmFsbHkgcHJvdGVjdGVkIGJ5IGJ5dGUtcHJlZml4IG1ldGFkYXRhIGluIFBBQ0tBR0UtTUFOSUZFU1QtU05BUFNIT1QuanNvbi4K",
+  "snapshot_before_bytes": 267,
+  "snapshot_before_sha256": "cac8780078519725b37ce59e3427949161f9c606a6ecb097a13c1f60c87427b5"
+}

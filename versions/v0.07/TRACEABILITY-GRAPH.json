@@ -1,0 +1,400 @@
+{
+  "edges": [
+    {
+      "from": "G-007-001",
+      "relation": "requires",
+      "to": "REQ-007-001"
+    },
+    {
+      "from": "G-007-001",
+      "relation": "requires",
+      "to": "REQ-007-002"
+    },
+    {
+      "from": "G-007-001",
+      "relation": "requires",
+      "to": "REQ-007-003"
+    },
+    {
+      "from": "G-007-001",
+      "relation": "requires",
+      "to": "REQ-007-004"
+    },
+    {
+      "from": "G-007-002",
+      "relation": "requires",
+      "to": "REQ-007-005"
+    },
+    {
+      "from": "G-007-002",
+      "relation": "requires",
+      "to": "REQ-007-006"
+    },
+    {
+      "from": "G-007-002",
+      "relation": "requires",
+      "to": "REQ-007-007"
+    },
+    {
+      "from": "G-007-004",
+      "relation": "requires",
+      "to": "REQ-007-008"
+    },
+    {
+      "from": "G-007-003",
+      "relation": "requires",
+      "to": "REQ-007-009"
+    },
+    {
+      "from": "G-007-005",
+      "relation": "requires",
+      "to": "REQ-007-010"
+    },
+    {
+      "from": "G-007-005",
+      "relation": "requires",
+      "to": "REQ-007-011"
+    },
+    {
+      "from": "G-007-005",
+      "relation": "requires",
+      "to": "REQ-007-012"
+    },
+    {
+      "from": "REQ-007-001",
+      "relation": "realized_by",
+      "to": "FEAT-007-PLAN"
+    },
+    {
+      "from": "REQ-007-007",
+      "relation": "realized_by",
+      "to": "FEAT-007-PLAN"
+    },
+    {
+      "from": "REQ-007-008",
+      "relation": "realized_by",
+      "to": "FEAT-007-PLAN"
+    },
+    {
+      "from": "REQ-007-005",
+      "relation": "realized_by",
+      "to": "FEAT-007-SAFE"
+    },
+    {
+      "from": "REQ-007-006",
+      "relation": "realized_by",
+      "to": "FEAT-007-SAFE"
+    },
+    {
+      "from": "REQ-007-002",
+      "relation": "realized_by",
+      "to": "FEAT-007-FRONTIER"
+    },
+    {
+      "from": "REQ-007-003",
+      "relation": "realized_by",
+      "to": "FEAT-007-FRONTIER"
+    },
+    {
+      "from": "REQ-007-004",
+      "relation": "realized_by",
+      "to": "FEAT-007-FRONTIER"
+    },
+    {
+      "from": "REQ-007-009",
+      "relation": "realized_by",
+      "to": "FEAT-007-EVAL"
+    },
+    {
+      "from": "REQ-007-010",
+      "relation": "realized_by",
+      "to": "FEAT-007-EVAL"
+    },
+    {
+      "from": "REQ-007-011",
+      "relation": "realized_by",
+      "to": "FEAT-007-EVAL"
+    },
+    {
+      "from": "REQ-007-012",
+      "relation": "realized_by",
+      "to": "FEAT-007-RELEASE"
+    },
+    {
+      "from": "FEAT-007-PLAN",
+      "relation": "decomposed_to",
+      "to": "TASK-007-001"
+    },
+    {
+      "from": "TASK-007-001",
+      "relation": "verified_by",
+      "to": "TEST-007-001"
+    },
+    {
+      "from": "TEST-007-001",
+      "relation": "gated_by",
+      "to": "GATE-007-ACTION-PLAN"
+    },
+    {
+      "from": "FEAT-007-SAFE",
+      "relation": "decomposed_to",
+      "to": "TASK-007-002"
+    },
+    {
+      "from": "TASK-007-002",
+      "relation": "verified_by",
+      "to": "TEST-007-002"
+    },
+    {
+      "from": "TEST-007-002",
+      "relation": "gated_by",
+      "to": "GATE-007-SAFE-INFERENCE"
+    },
+    {
+      "from": "FEAT-007-FRONTIER",
+      "relation": "decomposed_to",
+      "to": "TASK-007-003"
+    },
+    {
+      "from": "TASK-007-003",
+      "relation": "verified_by",
+      "to": "TEST-007-003"
+    },
+    {
+      "from": "TEST-007-003",
+      "relation": "gated_by",
+      "to": "GATE-007-INFORMATION-VALUE"
+    },
+    {
+      "from": "FEAT-007-EVAL",
+      "relation": "decomposed_to",
+      "to": "TASK-007-004"
+    },
+    {
+      "from": "TASK-007-004",
+      "relation": "verified_by",
+      "to": "TEST-007-004"
+    },
+    {
+      "from": "TEST-007-004",
+      "relation": "gated_by",
+      "to": "GATE-007-TEST"
+    },
+    {
+      "from": "FEAT-007-RELEASE",
+      "relation": "decomposed_to",
+      "to": "TASK-007-005"
+    },
+    {
+      "from": "TASK-007-005",
+      "relation": "verified_by",
+      "to": "TEST-007-005"
+    },
+    {
+      "from": "TEST-007-005",
+      "relation": "gated_by",
+      "to": "GATE-007-INDEPENDENT"
+    }
+  ],
+  "graph_id": "TG-007-SELF-001",
+  "nodes": [
+    {
+      "id": "G-007-001",
+      "label": "G-007-001",
+      "type": "goal"
+    },
+    {
+      "id": "G-007-002",
+      "label": "G-007-002",
+      "type": "goal"
+    },
+    {
+      "id": "G-007-003",
+      "label": "G-007-003",
+      "type": "goal"
+    },
+    {
+      "id": "G-007-004",
+      "label": "G-007-004",
+      "type": "goal"
+    },
+    {
+      "id": "G-007-005",
+      "label": "G-007-005",
+      "type": "goal"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-001",
+      "label": "REQ-007-001",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-002",
+      "label": "REQ-007-002",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-003",
+      "label": "REQ-007-003",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-004",
+      "label": "REQ-007-004",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-005",
+      "label": "REQ-007-005",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-006",
+      "label": "REQ-007-006",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-007",
+      "label": "REQ-007-007",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-008",
+      "label": "REQ-007-008",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-009",
+      "label": "REQ-007-009",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-010",
+      "label": "REQ-007-010",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-011",
+      "label": "REQ-007-011",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-007-012",
+      "label": "REQ-007-012",
+      "type": "requirement"
+    },
+    {
+      "id": "FEAT-007-PLAN",
+      "label": "FEAT-007-PLAN",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-007-SAFE",
+      "label": "FEAT-007-SAFE",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-007-FRONTIER",
+      "label": "FEAT-007-FRONTIER",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-007-EVAL",
+      "label": "FEAT-007-EVAL",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-007-RELEASE",
+      "label": "FEAT-007-RELEASE",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-007-001",
+      "label": "TASK-007-001",
+      "type": "task"
+    },
+    {
+      "id": "TEST-007-001",
+      "label": "TEST-007-001",
+      "type": "test"
+    },
+    {
+      "id": "GATE-007-ACTION-PLAN",
+      "label": "GATE-007-ACTION-PLAN",
+      "type": "gate"
+    },
+    {
+      "id": "TASK-007-002",
+      "label": "TASK-007-002",
+      "type": "task"
+    },
+    {
+      "id": "TEST-007-002",
+      "label": "TEST-007-002",
+      "type": "test"
+    },
+    {
+      "id": "GATE-007-SAFE-INFERENCE",
+      "label": "GATE-007-SAFE-INFERENCE",
+      "type": "gate"
+    },
+    {
+      "id": "TASK-007-003",
+      "label": "TASK-007-003",
+      "type": "task"
+    },
+    {
+      "id": "TEST-007-003",
+      "label": "TEST-007-003",
+      "type": "test"
+    },
+    {
+      "id": "GATE-007-INFORMATION-VALUE",
+      "label": "GATE-007-INFORMATION-VALUE",
+      "type": "gate"
+    },
+    {
+      "id": "TASK-007-004",
+      "label": "TASK-007-004",
+      "type": "task"
+    },
+    {
+      "id": "TEST-007-004",
+      "label": "TEST-007-004",
+      "type": "test"
+    },
+    {
+      "id": "GATE-007-TEST",
+      "label": "GATE-007-TEST",
+      "type": "gate"
+    },
+    {
+      "id": "TASK-007-005",
+      "label": "TASK-007-005",
+      "type": "task"
+    },
+    {
+      "id": "TEST-007-005",
+      "label": "TEST-007-005",
+      "type": "test"
+    },
+    {
+      "id": "GATE-007-INDEPENDENT",
+      "label": "GATE-007-INDEPENDENT",
+      "type": "gate"
+    }
+  ],
+  "schema_version": "1.0"
+}

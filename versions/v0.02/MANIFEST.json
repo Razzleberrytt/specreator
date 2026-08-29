@@ -1,0 +1,18 @@
+{
+  "version": "0.02",
+  "parent_version": "0.01",
+  "status": "experimental",
+  "protocol_schema_version": "1.0",
+  "added_capabilities": [
+    "recursive governance",
+    "frozen release contracts",
+    "improvement experiments",
+    "regression memory",
+    "independent promotion evaluation"
+  ],
+  "breaking_changes": [],
+  "content_hashes": {
+    "versions/v0.02/FROZEN-RELEASE-CONTRACT.json": "eaf68e91974302b6771be89e546f33c8b90e23e3f84c356658c3f4108c6bc717",
+    "versions/v0.02/SPEC-CREATOR-v0.02.md": "d86d3edb790b33e3c111c5c2dbd02684dd8ad769b08b0d168f67db15f36f89f3"
+  }
+}

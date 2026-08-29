@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/requirement-v1.json",
+  "title": "Requirement v1",
+  "type": "object",
+  "required": [
+    "requirement_id",
+    "description",
+    "acceptance_criteria",
+    "critical",
+    "status"
+  ],
+  "properties": {
+    "requirement_id": {
+      "type": "string",
+      "pattern": "^REQ-[A-Za-z0-9._-]+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "critical": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approved",
+        "implemented",
+        "verified",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

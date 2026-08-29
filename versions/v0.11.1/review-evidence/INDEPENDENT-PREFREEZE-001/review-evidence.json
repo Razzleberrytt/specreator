@@ -1,0 +1,108 @@
+{
+  "review_id": "INDEPENDENT-PREFREEZE-REVIEW-0111-001",
+  "receiver_identifier": "receiver:gpt-5.6-sol:independent-prefreeze-review:v0.11.1:001",
+  "reviewed_at_utc": "2026-08-25T00:00:23.621321+00:00",
+  "source_package": "spec-creator-v0.11.1-independent-prefreeze-review-checkpoint(1).zip",
+  "source_package_sha256": "2d84d3b2f1119d0ba54b5102ca5f4905864b09214dbe7a8b596a54deb8378075",
+  "scope": "independent evidence-only v0.11.1 prefreeze review; no implementation, repair, freeze, promotion, or redesign performed",
+  "protocol_ref": "versions/v0.11.1/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+  "obligations": [
+    {
+      "id": 1,
+      "name": "candidate schemas and inherited semantic corpora",
+      "verdict": "PASS",
+      "summary": "2/2 Draft 2020-12 schemas valid; lifecycle checkpoint schema-valid; both schemas and both semantic corpora byte-identical to failed-v0.11 target; semantic guards required by schema are present.",
+      "evidence": [
+        "raw/schema-validation.json"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "lifecycle action recomputation",
+      "verdict": "PASS",
+      "summary": "4/4 fixtures exact; current PREREGISTRATION_DRAFT checkpoint independently resolves to independent_prefreeze_review via LR-005A. ",
+      "evidence": [
+        "raw/lifecycle-derivation.json"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "execution/provenance/critical paths/waves/retry/speculation/integration denominator",
+      "verdict": "PASS",
+      "summary": "21/21 explicit edges have exactly one correct semantic provenance; 1 derived conflict edge; 22 effective edges; critical paths 6/6; waves 6/6; unsafe parallelizations 0; speculative authority escapes 0; retry isolation PASS; fixed integration source-task denominator 23.",
+      "evidence": [
+        "raw/provenance-derivation.json",
+        "raw/structural-recomputation.json",
+        "raw/universe-audit.json"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "exact parent suite collection and outcomes",
+      "verdict": "PASS",
+      "summary": "Fresh collection exactly matches all 155 listed node IDs in order; clean-extraction pytest outcome is 155/155 PASS.",
+      "evidence": [
+        "raw/parent-suite-audit.json",
+        "raw/validation-commands.json"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "active regressions plus REG-0025",
+      "verdict": "PASS",
+      "summary": "Exact 24 inherited active regression IDs preserved in order; v0.10 scorecard records 24/24 PASS; REG-0025 is the sole retry-local tail and independently reproduces 52 paths omitted by the failed v0.11 exact-enumeration mechanism.",
+      "evidence": [
+        "raw/active-regression-audit.json"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "protected hash integrity",
+      "verdict": "PASS",
+      "summary": "v0.10 manifest 1120/1120 exact; failed-v0.11 predecessor baseline 154/154 exact.",
+      "evidence": [
+        "raw/hash-integrity.json"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "whole-package ownership recomputation",
+      "verdict": "PASS",
+      "summary": "1311 shipped = 1121 protected parent + 154 failed predecessor + 36 retry successor; unclassified 0, immutable/successor overlap 0, successor multi-match 0, stale snapshot 0.",
+      "evidence": [
+        "raw/whole-package-classification.json"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "prospective output closure",
+      "verdict": "PASS",
+      "summary": "25/25 legal prospective paths classify exactly once as retry successor; 7/7 forbidden paths are rejected.",
+      "evidence": [
+        "raw/prospective-output-closure.json"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "v0.11 metric nonweakening",
+      "verdict": "PASS",
+      "summary": "All 15 inherited promotion-authoritative metrics retain targets, universe semantics, numerator rules, missing-data policy, and anti-gaming controls; the only new metric is prospective_output_classification_error_count == 0. Active regressions, mandatory evidence, and mandatory gates each add exactly one stricter retry member.",
+      "evidence": [
+        "raw/metric-nonweakening.json"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "clean extraction validation and package evidence",
+      "verdict": "PASS",
+      "summary": "All three declared clean-extraction commands exit 0; workspace validation is 0 errors/0 warnings; preregistration hash inventory is 27/27; PACKAGE-MANIFEST covers all 1310 non-self files with 0 missing/stale/hash/size mismatches.",
+      "evidence": [
+        "raw/validation-commands.json",
+        "raw/preregistration-hash-audit.json",
+        "raw/package-manifest-validation.json"
+      ]
+    }
+  ],
+  "new_blocking_defects": [],
+  "final_recommendation": "READY_FOR_FREEZE_PREPARATION"
+}

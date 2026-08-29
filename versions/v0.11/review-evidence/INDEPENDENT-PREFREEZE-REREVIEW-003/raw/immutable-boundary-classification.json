@@ -1,0 +1,290 @@
+{
+  "actual_shipped_file_count": 1224,
+  "v010_manifest_content_hash_count": 1120,
+  "protected_parent_unique_count": 1121,
+  "declared_expected_protected_unique_count": 1121,
+  "successor_declared_member_count": 103,
+  "successor_unique_member_count": 103,
+  "immutable_parent_actual_count": 1121,
+  "mutable_successor_actual_count": 103,
+  "overlap_count": 0,
+  "overlaps": [],
+  "stale_successor_member_count": 0,
+  "stale_successor_members": [],
+  "unclassified_count": 0,
+  "unclassified_paths": [],
+  "frozen_parent_hash_match_count": 1120,
+  "frozen_parent_hash_total": 1120,
+  "specified_prior_unclassified_paths_now": [
+    {
+      "path": "PACKAGE-MANIFEST.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "self-improvement/SELF-IMPROVEMENT-PROTOCOL-v0.11-DRAFT.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "roadmap/ROADMAP-to-v1.00-v0.11-DRAFT.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "prompts/MASTER-RECURSIVE-PROMPT-v0.11-DRAFT.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "docs/EXISTING-SOLUTION-INTELLIGENCE-AND-SYNTHESIS.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-discovery-docs.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/pytest-v0.11-discovery-docs.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-preregistration-shipping.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/pytest-v0.11-esis-roadmap-amendment.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/pytest-v0.11-preregistration-final.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-preregistration.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-esis-roadmap-amendment.json",
+      "class": "MUTABLE_SUCCESSOR"
+    }
+  ],
+  "review_evidence_file_count": 52,
+  "review_evidence_class_counts": {
+    "IMMUTABLE_PARENT": 0,
+    "MUTABLE_SUCCESSOR": 52,
+    "UNCLASSIFIED": 0,
+    "OVERLAP": 0
+  },
+  "review_evidence_paths": [
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/INGESTION.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.10/FROZEN-RELEASE-CONTRACT.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.10/MANIFEST.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/CONTINUATION.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/DISCOVERY.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/EVALUATION-DESIGN.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/INGEST.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/MANIFEST.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/active-regression-test-mapping.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/artifact-hashes.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/docs-execution-architecture-after-review.diff",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/fixture-coherence.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/frozen-parent-hash-checks.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/immutable-boundary-classification.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/lifecycle-derivation.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/metric-audit.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.exit_code.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.stderr.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.stdout.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/provenance-derivation.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.exit_code.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.stderr.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.stdout.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/schema-validation.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/structural-recomputation.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/target-nonweakening-comparison.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/universe-audit.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.command.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.exit_code.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.stderr.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.stdout.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.command.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.exit_code.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.stderr.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.stdout.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.command.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.exit_code.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.stderr.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.stdout.txt",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-evidence.json",
+      "class": "MUTABLE_SUCCESSOR"
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-report.md",
+      "class": "MUTABLE_SUCCESSOR"
+    }
+  ],
+  "verdict": "PASS"
+}

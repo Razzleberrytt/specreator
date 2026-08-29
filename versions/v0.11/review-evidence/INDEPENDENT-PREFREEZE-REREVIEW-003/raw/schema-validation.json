@@ -1,0 +1,20 @@
+{
+  "schemas": [
+    {
+      "path": "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "declared_schema": "https://json-schema.org/draft/2020-12/schema",
+      "draft_2020_12_declared": true,
+      "check_schema_pass": true,
+      "errors": []
+    },
+    {
+      "path": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "declared_schema": "https://json-schema.org/draft/2020-12/schema",
+      "draft_2020_12_declared": true,
+      "check_schema_pass": true,
+      "errors": []
+    }
+  ],
+  "current_checkpoint_schema_errors": [],
+  "verdict": "PASS"
+}

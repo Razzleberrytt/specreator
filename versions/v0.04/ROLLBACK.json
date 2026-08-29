@@ -1,0 +1,18 @@
+{
+  "candidate_version": "0.04",
+  "rollback_target": "0.03",
+  "trigger_conditions": [
+    "Any frozen v0.04 mandatory gate fails or becomes blocked.",
+    "Frozen corpus, evaluation plan, or release contract integrity fails.",
+    "A critical inherited regression fails.",
+    "Historical release evidence cannot be verified without rewriting prior history."
+  ],
+  "procedure": [
+    "Keep the complete v0.04 candidate directory and evaluation evidence as failed or superseded history.",
+    "Restore v0.03 as the active promoted-experimental executable baseline.",
+    "Do not alter v0.03 frozen contract, manifest, release snapshots, regression records, or raw v0.04 failure events.",
+    "Create a governed successor/retry contract rather than weakening REL-0.04-FROZEN-001."
+  ],
+  "data_loss_expectation": "None. Candidate artifacts remain preserved for audit and regression extraction.",
+  "parent_contract_sha256": "15f73ea6c273931f8f974a9630d2269b2ac3a04786215aeab98318a624a0b91f"
+}

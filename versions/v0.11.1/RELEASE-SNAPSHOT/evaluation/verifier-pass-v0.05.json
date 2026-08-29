@@ -1,0 +1,77 @@
+{
+  "actor_id": "verifier:independent-pass-004",
+  "all_checks_pass": true,
+  "applicable_regression_tests": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "..........                                                               [100%]\n10 passed in 0.50s"
+  },
+  "candidate_version": "0.05",
+  "checks": {
+    "actor_separation": true,
+    "applicable_regression_registry_intact": true,
+    "applicable_regression_tests_pass": true,
+    "contract_canonical_hash": true,
+    "corpus_file_hash": true,
+    "critical_traceability_coverage_rate": true,
+    "diagnostic_code_precision": true,
+    "evaluation_plan_file_hash": true,
+    "full_test_suite_pass": true,
+    "impact_analysis_exact_match_rate": true,
+    "invalid_graph_detection_rate": true,
+    "self_traceability_graph_clean": true,
+    "v005_spec_lint_clean": true,
+    "valid_graph_acceptance_rate": true,
+    "valid_graph_false_positive_count": true,
+    "workspace_validation_clean": true
+  },
+  "corpus_counts": {
+    "accepted_graph_count": 10,
+    "accepted_graph_total": 10,
+    "case_count": 30,
+    "critical_requirement_complete": 10,
+    "critical_requirement_total": 10,
+    "emitted_invalid_diagnostic_count": 20,
+    "expected_invalid_diagnostic_hits": 20,
+    "impact_exact": 5,
+    "impact_total": 5,
+    "invalid_detected": 20,
+    "invalid_total": 20
+  },
+  "corpus_metrics": {
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostic_code_precision": 1.0,
+    "impact_analysis_exact_match_rate": 1.0,
+    "invalid_graph_detection_rate": 1.0,
+    "valid_graph_acceptance_rate": 1.0,
+    "valid_graph_false_positive_count": 0
+  },
+  "full_tests": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 86%]\n...........                                                              [100%]\n83 passed in 2.04s"
+  },
+  "implementation_actor_id": "agent:spec-creator-builder",
+  "limitations": [
+    "Verifier role is process-separated from the implementation actor but runs in the same local session/runtime.",
+    "Frozen traceability benchmark is synthetic and visible to the implementer; no independent real-project outcome evidence is claimed."
+  ],
+  "lint_summary": {
+    "findings": 0,
+    "suppressed": 0,
+    "unsuppressed": 0
+  },
+  "recommendation": "PROMOTED AS EXPERIMENTAL",
+  "self_trace_summary": {
+    "critical_requirements_complete": 10,
+    "critical_requirements_total": 10,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  },
+  "workspace_summary": {
+    "errors": 0,
+    "issues": 0,
+    "warnings": 0
+  }
+}

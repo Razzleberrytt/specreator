@@ -1,0 +1,140 @@
+{
+  "lifecycle_fixtures": {
+    "expected": [
+      "LIFE-011-001-DISCOVERY",
+      "LIFE-011-002-BLOCKED-PREFREEZE",
+      "LIFE-011-003-FROZEN",
+      "LIFE-011-004-VERIFYING"
+    ],
+    "derived": [
+      "LIFE-011-001-DISCOVERY",
+      "LIFE-011-002-BLOCKED-PREFREEZE",
+      "LIFE-011-003-FROZEN",
+      "LIFE-011-004-VERIFYING"
+    ]
+  },
+  "execution_fixtures": {
+    "expected": [
+      "EXEC-011-001-LINEAR",
+      "EXEC-011-002-DIAMOND",
+      "EXEC-011-003-CONFLICT",
+      "EXEC-011-004-LOAD-BALANCE",
+      "EXEC-011-005-SPECULATIVE",
+      "EXEC-011-006-RETRY-ISOLATION"
+    ],
+    "derived": [
+      "EXEC-011-001-LINEAR",
+      "EXEC-011-002-DIAMOND",
+      "EXEC-011-003-CONFLICT",
+      "EXEC-011-004-LOAD-BALANCE",
+      "EXEC-011-005-SPECULATIVE",
+      "EXEC-011-006-RETRY-ISOLATION"
+    ]
+  },
+  "critical_path_fixtures": {
+    "expected": [
+      "EXEC-011-001-LINEAR",
+      "EXEC-011-002-DIAMOND",
+      "EXEC-011-003-CONFLICT",
+      "EXEC-011-004-LOAD-BALANCE",
+      "EXEC-011-005-SPECULATIVE",
+      "EXEC-011-006-RETRY-ISOLATION"
+    ],
+    "derived": [
+      "EXEC-011-001-LINEAR",
+      "EXEC-011-002-DIAMOND",
+      "EXEC-011-003-CONFLICT",
+      "EXEC-011-004-LOAD-BALANCE",
+      "EXEC-011-005-SPECULATIVE",
+      "EXEC-011-006-RETRY-ISOLATION"
+    ]
+  },
+  "integration_source_tasks": {
+    "declared_count": 23,
+    "derived_count": 23,
+    "set_match": true,
+    "derived_members": [
+      "EXEC-011-001-LINEAR::A",
+      "EXEC-011-001-LINEAR::B",
+      "EXEC-011-001-LINEAR::C",
+      "EXEC-011-002-DIAMOND::A",
+      "EXEC-011-002-DIAMOND::B",
+      "EXEC-011-002-DIAMOND::C",
+      "EXEC-011-002-DIAMOND::D",
+      "EXEC-011-003-CONFLICT::A",
+      "EXEC-011-003-CONFLICT::B",
+      "EXEC-011-003-CONFLICT::C",
+      "EXEC-011-004-LOAD-BALANCE::A",
+      "EXEC-011-004-LOAD-BALANCE::B",
+      "EXEC-011-004-LOAD-BALANCE::C",
+      "EXEC-011-004-LOAD-BALANCE::D",
+      "EXEC-011-004-LOAD-BALANCE::E",
+      "EXEC-011-005-SPECULATIVE::DECIDE",
+      "EXEC-011-005-SPECULATIVE::PREP",
+      "EXEC-011-005-SPECULATIVE::IMPLEMENT",
+      "EXEC-011-005-SPECULATIVE::VERIFY",
+      "EXEC-011-006-RETRY-ISOLATION::A",
+      "EXEC-011-006-RETRY-ISOLATION::B",
+      "EXEC-011-006-RETRY-ISOLATION::C",
+      "EXEC-011-006-RETRY-ISOLATION::D"
+    ]
+  },
+  "explicit_dependency_edges": {
+    "declared_count": 21,
+    "derived_count": 21,
+    "set_match": true
+  },
+  "derived_conflict_edges": {
+    "declared_count": 1,
+    "derived_count": 1,
+    "set_match": true,
+    "derived_members": [
+      "EXEC-011-003-CONFLICT::A->B"
+    ]
+  },
+  "effective_dependency_edges": {
+    "declared_count": 22,
+    "derived_count": 22,
+    "set_match": true
+  },
+  "parent_suite": {
+    "stored_count": 155,
+    "unique_count": 155,
+    "fresh_collected_count": 155,
+    "exact_order_match_fresh_collection": true
+  },
+  "active_regressions": {
+    "stored_count": 24,
+    "unique_count": 24,
+    "source_active_count": 24,
+    "exact_set_match_source_active": true,
+    "passing_evidence_count_v010_scorecard": 24,
+    "all_have_passing_evidence": true,
+    "ids": [
+      "REG-0001",
+      "REG-0002",
+      "REG-0003",
+      "REG-0004",
+      "REG-0005",
+      "REG-0006",
+      "REG-0007",
+      "REG-0008",
+      "REG-0009",
+      "REG-0010",
+      "REG-0011",
+      "REG-0012",
+      "REG-0013",
+      "REG-0014",
+      "REG-0015",
+      "REG-0016",
+      "REG-0017",
+      "REG-0018",
+      "REG-0019",
+      "REG-0020",
+      "REG-0021",
+      "REG-0022",
+      "REG-0023",
+      "REG-0024"
+    ]
+  }
+}

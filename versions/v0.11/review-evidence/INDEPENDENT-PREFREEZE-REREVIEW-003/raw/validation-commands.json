@@ -1,0 +1,27 @@
+{
+  "execution_context": "clean extraction root; no package modifications and no dependency installation/environment manipulation; only command 2 uses its declared inline PYTHONPATH=src assignment",
+  "commands": [
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 46%]\n........................................................................ [ 92%]\n...........                                                              [100%]\n155 passed in 7.63s\n",
+      "stderr": "",
+      "concise_output": "155 passed in 7.63s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+      "exit_code": 0,
+      "stdout": "PASS: 0 error(s), 0 warning(s)\n",
+      "stderr": "",
+      "concise_output": "PASS: 0 error(s), 0 warning(s)"
+    },
+    {
+      "command": "python versions/v0.11/tools/preregistration_preflight.py",
+      "exit_code": 0,
+      "stdout": "PASS: v0.11 preregistration preflight\ncandidate schemas: 2 valid\nexecution fixtures: 6; explicit provenance edges: 21; derived conflict edges: 1\nlifecycle fixtures: 4 independently derived\nintegration source-task universe: 23\nparent suite universe: 155 node IDs\nactive regression universe: 24 IDs\nfrozen parent integrity: 1120/1120\nimmutable-boundary classification: protected=1121 successor=103 unclassified=0 overlap=0 stale=0\n",
+      "stderr": "",
+      "concise_output": "immutable-boundary classification: protected=1121 successor=103 unclassified=0 overlap=0 stale=0"
+    }
+  ],
+  "all_exit_zero": true
+}

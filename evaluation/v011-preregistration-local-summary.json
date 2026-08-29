@@ -1,0 +1,23 @@
+{
+  "preflight_id": "PREFLIGHT-011-PREREG-LOCAL-001",
+  "candidate_version": "0.11",
+  "status": "PASS_LOCAL_ONLY_NOT_INDEPENDENT",
+  "checks": {
+    "candidate_schema_documents": "2/2 valid Draft 2020-12",
+    "candidate_fixtures": "10/10 parse and local structural coherence checks pass",
+    "full_pytest_suite": "155/155 PASS",
+    "workspace_validation_without_root_manifest": "0 errors / 0 warnings",
+    "v0.10_manifest_bound_hash_integrity": "1120/1120 match",
+    "shadow_metrics_non_promotional": true,
+    "control_obligation_equivalence_required": true
+  },
+  "evidence_refs": [
+    "evaluation/v011-preregistration-preflight.json",
+    "evaluation/pytest-v0.11-preregistration-final.txt",
+    "evaluation/workspace-validation-v0.11-preregistration.txt",
+    "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json"
+  ],
+  "remaining_blocker": "Independent prefreeze review by a genuinely separate context.",
+  "implementation_authority": false,
+  "freeze_authority": false
+}

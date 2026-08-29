@@ -1,0 +1,19 @@
+{
+  "case_count_original": 72,
+  "case_count_retry": 72,
+  "case_ids_equal": true,
+  "documents_equal": true,
+  "expected_findings_equal": true,
+  "expected_priority_equal": true,
+  "failed_candidate": "0.06",
+  "governing_decision": "DEC-0015",
+  "only_allowed_repairs": [
+    "trace_graph.graph_id",
+    "trace_graph.nodes[].label"
+  ],
+  "retry_candidate": "0.06.1",
+  "semantic_payload_equal": true,
+  "semantic_payload_original_sha256": "25969cbe57fd60cbc94791d92c93a639cc8804f7e97054d3060c84c303da9b0b",
+  "semantic_payload_retry_sha256": "25969cbe57fd60cbc94791d92c93a639cc8804f7e97054d3060c84c303da9b0b",
+  "workflow_denominators_equal": true
+}

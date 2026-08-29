@@ -1,0 +1,11 @@
+{
+  "candidate_version": "0.11.1",
+  "command": "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+  "created_at_utc": "2026-08-25T01:15:49.531222+00:00",
+  "error_count": 0,
+  "evidence_id": "WORKSPACE-VALIDATION-0111-FINAL-LOCAL",
+  "exit_code": 0,
+  "status": "PASS",
+  "stdout": "PASS: 0 error(s), 0 warning(s)",
+  "warning_count": 0
+}

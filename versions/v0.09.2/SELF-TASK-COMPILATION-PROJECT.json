@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.0",
+  "project_id": "TCP-0092-SELF",
+  "source_spec_ref": "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md",
+  "spec_text": "# Spec Creator v0.09.2.1 \u2014 Prompt Compiler Governed Retry\n\n**Status:** Approved preregistration specification. Implementation remains unauthorized until REL-0.09-FROZEN-001 is frozen.\n**Parent:** v0.08 Task Compiler, PROMOTED AS EXPERIMENTAL under DEC-0025.\n\n## Objective\n\nCompile one immutable v0.08 task plus only the governed context required to execute or verify it into deterministic bounded agent prompts. Prompt compilation must preserve task scope, prerequisites, source requirements, acceptance criteria, write scopes, verification references, gate obligations, and compiled-task-graph identity without inventing product or architectural decisions.\n\nThe Prompt Compiler should reduce context reconstruction and corrective prompting by producing purpose-specific prompts rather than copying the entire project into every agent context.\n\n## Proposed prompt kinds\n\n1. `bootstrap` \u2014 establish task identity, immutable evidence, allowed scope, prerequisites, and required outputs before work starts.\n2. `implementation` \u2014 authorize only the task's owned write scopes and acceptance criteria.\n3. `debug` \u2014 constrain diagnosis/correction to observed evidence and preserve frozen requirements/tests.\n4. `verification` \u2014 give a role-separated verifier the frozen criteria and evidence needed to reproduce claims without implementation-author self-certification.\n5. `continuation` \u2014 preserve exact task state, evidence refs, unresolved blockers, completed work, and next permitted action across sessions.\n\n## Proposed invariants\n\n### REQ-0092-001\nRequirement: Every compiled prompt must bind to candidate version, compiled graph hash, compiled task ID, prompt kind, and source evidence identifiers.\nCritical: true\nAcceptance: Every accepted prompt fixture contains exact preregistered identity/provenance fields and rejects graph/task hash mismatches.\nFailure: Missing or mismatched immutable identity blocks prompt compilation instead of emitting an unbound prompt.\nVerify: Planned frozen prompt-schema and identity tests.\n\n### REQ-0092-002\nRequirement: An implementation prompt may authorize writes only within the compiled task's declared write scopes and must include its prerequisites, acceptance criteria, verification references, and gates.\nCritical: true\nAcceptance: Every accepted implementation fixture contains exactly the task-authorized scopes/criteria and no unrelated write scope.\nFailure: Missing task evidence or requested scope expansion returns a structured blocking diagnostic rather than silently widening authority.\nVerify: Planned scope-preservation corpus tests.\n\n### REQ-0092-003\nRequirement: Prompt compilation must refuse implementation/debug prompts when prerequisite execution state is not satisfied or an unresolved owner decision blocks the task.\nCritical: true\nAcceptance: Every frozen blocked-state case emits the exact preregistered blocker and no executable prompt body.\nFailure: A blocked task cannot be converted into executable agent authority.\nVerify: Planned prerequisite/decision-block corpus tests.\n\n### REQ-0092-004\nRequirement: Verification prompts must identify a verifier role distinct from the implementation actor and include frozen criteria/evidence without implementation-authored success conclusions.\nCritical: true\nAcceptance: Accepted verification fixtures contain exact objective checks and omit candidate self-certification language.\nFailure: Same-actor verification or missing frozen checks blocks verifier-prompt generation.\nVerify: Planned independent-verification prompt tests.\n\n### REQ-0092-005\nRequirement: Continuation prompts must preserve task state by replayed execution evidence, graph hash, completed evidence, open blockers, and the next permitted action without rewriting historical task definitions.\nCritical: true\nAcceptance: Repeated continuation compilation over identical event streams is byte-equivalent and every held-out handoff fixture retains all preregistered state facts.\nFailure: Incomplete, conflicting, or hash-mismatched execution history blocks continuation compilation.\nVerify: Planned continuation/handoff corpus tests.\n\n### REQ-0092-006\nRequirement: Context minimization must be deterministic and may omit evidence only when that evidence is outside the task's transitive prerequisites, source requirement/test/gate closure, authorized scopes, or selected prompt-kind obligations.\nCritical: true\nAcceptance: Frozen fixtures exactly match both included and intentionally excluded context references and preserve every critical obligation.\nFailure: If safe context closure cannot be proven, prompt compilation fails closed rather than heuristically dropping context.\nVerify: Planned context-closure exact-match tests.\n\n### REQ-0092-007\nRequirement: Generated prompts must encode explicit completion evidence requirements and prohibit tests, gates, frozen criteria, or critical regressions from being weakened to obtain a pass.\nCritical: true\nAcceptance: Every implementation/debug/verification fixture contains the preregistered evidence and non-weakening constraints appropriate to its prompt kind.\nFailure: Missing completion or non-weakening constraints makes the prompt invalid.\nVerify: Planned constraint-preservation tests.\n\n### REQ-0092-008\nRequirement: Expose prompt compilation through deterministic Python API and CLI JSON output with versioned machine-readable prompt envelopes.\nCritical: true\nAcceptance: Repeated runs over byte-identical inputs produce byte-equivalent normalized envelopes; malformed inputs return nonzero with structured diagnostics.\nFailure: Nondeterministic prompt envelopes or unstructured errors fail the release gate.\nVerify: Planned CLI/API tests.\n\n### REQ-0092-009\nRequirement: Preserve the exact sealed v0.08 parent suite and every active regression, including task-compiler shadow/integration regressions.\nCritical: true\nAcceptance: Parent baseline and all active regressions pass unchanged before any v0.09.2 promotion.\nFailure: Any missing/failing active regression blocks promotion; tests may not be weakened to make v0.09.2 pass.\nVerify: Planned independent verifier.\n\n### REQ-0092-010\nRequirement: Evaluate prompt compilation on hash-locked development and held-out fixtures spanning all five prompt kinds, blocked tasks, scope attacks, context-closure boundaries, continuation handoffs, and verifier-role separation.\nCritical: true\nAcceptance: Frozen evaluator reports exact envelope/context matches, corrective-prompt proxy, scope escapes, missing obligations, context over-inclusion, and missing-data state with preregistered denominators.\nFailure: Missing/invalid parent dependencies, incomplete denominators, or post-result benchmark edits invalidate the candidate rather than being treated as zero/pass.\nVerify: Planned frozen corpus evaluator.\n\n## Proposed evaluation emphasis\n\nPrimary candidate evidence should compare bounded compiled prompts with a preregistered generic-prompt baseline on corrective-prompt proxy and exact obligation retention. Guardrails should include zero scope expansion, zero missing critical constraints, zero prerequisite/owner-decision escapes, zero self-certification violations, exact continuation-state preservation, deterministic prompt reproduction, and a bounded context-over-inclusion rate.\n\nHeld-out fixtures must be hash-locked before implementation. At least one non-promotional shadow pass should use historical v0.08 tasks/events because v0.07 and v0.08 both demonstrated that perfect synthetic benchmarks can miss integration-shaped defects.\n\n## Non-goals\n\n- no LLM-generated rewriting of product intent;\n- no automatic task decomposition or architecture invention;\n- no code generation;\n- no multi-agent scheduler;\n- no hidden retrieval heuristics that cannot explain why context was included or excluded;\n- no full promotion claim from same-cycle synthetic evidence alone.\n\n\n## Additional release requirements\n\n### REQ-0092-011\nRequirement: The generic-prompt baseline, development corpus, held-out corpus, prompt schemas, evaluation plan, and parent-preflight evidence must be hash-locked before implementation.\nCritical: true\nAcceptance: The frozen contract binds exact SHA-256 values for every preregistered artifact and post-freeze evaluation reproduces all hashes.\nFailure: Any post-freeze change to a bound benchmark/schema/spec artifact invalidates the candidate rather than being treated as a pass.\nVerify: Frozen hash-integrity and parent-preflight tests.\n\n### REQ-0092-012\nRequirement: v0.09.2 must dogfood prompt compilation on a real v0.09.2 compiled task and perform a non-promotional shadow pass over historical v0.08 task/execution shapes.\nCritical: true\nAcceptance: Self-compilation and historical shadow results are recorded; meaningful defects become governed regression memory without changing frozen promotion metrics.\nFailure: Missing self/shadow evidence blocks the release gate, but shadow success cannot raise the promotion ceiling.\nVerify: Self-prompt and shadow evaluation artifacts.\n\n### REQ-0092-013\nRequirement: Preserve parent behavior, reconcile all frozen metrics to raw evidence, use role-separated verification, provide rollback/retrospective/continuation artifacts, and seal the shipping package manifest last.\nCritical: true\nAcceptance: Exact sealed-parent tests and active regressions pass; every mandatory gate/metric reconciles; independent verifier differs from implementation actor; extracted ZIP validates byte-for-byte.\nFailure: Any parent regression, unreconciled metric, self-certification, critical open defect, or package mismatch blocks promotion.\nVerify: Independent verifier, release scorecard, historical validator, fresh extracted-package test.\n\n### REQ-0092-014\nRequirement: Before freezing a prompt-compiler benchmark, every negative fixture must have a mechanically observable semantic mutation consistent with its expected diagnostic, and no negative case may be semantically indistinguishable from an accepted control.\nCritical: true\nAcceptance: Semantic-contrast preflight reports 30/30 negative fixtures distinguishable, including 3/3 task-contract mismatch cases whose task_contract.task_id differs from the requested compiled task.\nFailure: Any negative fixture lacking the preregistered defect predicate invalidates the candidate before freeze.\nVerify: tests/test_prompt_compiler_retry_regressions.py::test_reg0020_negative_cases_have_semantic_contrast\n\n### REQ-0092-015\nRequirement: Release-contract creation must be a fail-closed preregistration transaction that occurs only after parent, schema, semantic-contrast, specification-quality, inherited-suite, and workspace preconditions are green.\nCritical: true\nAcceptance: A machine-readable prefreeze transaction record reports every required precondition PASS before the v0.09.2 frozen timestamp; the regression test proves a failed precondition prevents contract creation.\nFailure: Writing a frozen contract while any required precondition is false invalidates the candidate.\nVerify: tests/test_prompt_compiler_retry_regressions.py::test_reg0021_freeze_preconditions_are_fail_closed\n\n## Frozen evaluation intent\n\nPrimary metrics are exact envelope match on development/held-out accepted cases and corrective-prompt proxy reduction relative to the frozen generic baseline. Guardrails require complete obligation retention, zero scope expansion, zero missing critical constraints, zero prerequisite/owner-decision escapes, zero verifier self-certification violations, exact continuation-state preservation, deterministic reproduction, bounded context over-inclusion, complete parent preflight, and explicit missing-data accounting.\n\nThe maximum release classification remains **PROMOTED AS EXPERIMENTAL** because same-cycle synthetic/process-separated evidence is not external organizational evidence.\n",
+  "traceability_graph": {
+    "schema_version": "1.0",
+    "graph_id": "TG-0092-SELF",
+    "nodes": [
+      {
+        "id": "G-0092-SELF-001",
+        "type": "goal",
+        "label": "Promote v0.09.2 Prompt Compiler under its frozen release contract",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-01",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 1",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-01",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 1",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-01",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 1",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-COMPILE",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-COMPILE",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-001",
+        "type": "requirement",
+        "label": "Every compiled prompt must bind to candidate version, compiled graph hash, compiled task ID, prompt kind, and source evidence identifiers.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-002",
+        "type": "requirement",
+        "label": "An implementation prompt may authorize writes only within the compiled task's declared write scopes and must include its prerequisites, acceptance criteria, verification references, and gates.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-02",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 2",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-02",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 2",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-02",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 2",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-SCOPE",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-SCOPE",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-003",
+        "type": "requirement",
+        "label": "Prompt compilation must refuse implementation/debug prompts when prerequisite execution state is not satisfied or an unresolved owner decision blocks the task.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-004",
+        "type": "requirement",
+        "label": "Verification prompts must identify a verifier role distinct from the implementation actor and include frozen criteria/evidence without implementation-authored success conclusions.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-03",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 3",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-03",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 3",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-03",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 3",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-PREREQUISITE",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-PREREQUISITE",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-005",
+        "type": "requirement",
+        "label": "Continuation prompts must preserve task state by replayed execution evidence, graph hash, completed evidence, open blockers, and the next permitted action without rewriting historical task definitions.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-006",
+        "type": "requirement",
+        "label": "Context minimization must be deterministic and may omit evidence only when that evidence is outside the task's transitive prerequisites, source requirement/test/gate closure, authorized scopes, or selected prompt-kind obligations.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-04",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 4",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-04",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 4",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-04",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 4",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-VERIFIER",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-VERIFIER",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-007",
+        "type": "requirement",
+        "label": "Generated prompts must encode explicit completion evidence requirements and prohibit tests, gates, frozen criteria, or critical regressions from being weakened to obtain a pass.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-008",
+        "type": "requirement",
+        "label": "Expose prompt compilation through deterministic Python API and CLI JSON output with versioned machine-readable prompt envelopes.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-05",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 5",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-05",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 5",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-05",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 5",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-CONTINUATION",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-CONTINUATION",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-009",
+        "type": "requirement",
+        "label": "Preserve the exact sealed v0.08 parent suite and every active regression, including task-compiler shadow/integration regressions.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-010",
+        "type": "requirement",
+        "label": "Evaluate prompt compilation on hash-locked development and held-out fixtures spanning all five prompt kinds, blocked tasks, scope attacks, context-closure boundaries, continuation handoffs, and verifier-role separation.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-06",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 6",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-06",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 6",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-06",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 6",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-CONTEXT",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-CONTEXT",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-011",
+        "type": "requirement",
+        "label": "The generic-prompt baseline, development corpus, held-out corpus, prompt schemas, evaluation plan, and parent-preflight evidence must be hash-locked before implementation.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-012",
+        "type": "requirement",
+        "label": "v0.09.2 must dogfood prompt compilation on a real v0.09.2 compiled task and perform a non-promotional shadow pass over historical v0.08 task/execution shapes.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-07",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 7",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-07",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 7",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-07",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 7",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-RECONCILIATION",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-RECONCILIATION",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-013",
+        "type": "requirement",
+        "label": "Preserve parent behavior, reconcile all frozen metrics to raw evidence, use role-separated verification, provide rollback/retrospective/continuation artifacts, and seal the shipping package manifest last.",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-014",
+        "type": "requirement",
+        "label": "Before freezing a prompt-compiler benchmark, every negative fixture must have a mechanically observable semantic mutation consistent with its expected diagnostic, and no negative case may be semantically indistinguishable from an accepted control.",
+        "critical": true
+      },
+      {
+        "id": "FEAT-0092-SELF-08",
+        "type": "feature",
+        "label": "Prompt Compiler governed self-build slice 8",
+        "critical": true
+      },
+      {
+        "id": "TASK-0092-SELF-08",
+        "type": "task",
+        "label": "Implement/evaluate v0.09.2 self-build slice 8",
+        "critical": true
+      },
+      {
+        "id": "TEST-0092-SELF-08",
+        "type": "test",
+        "label": "Verify v0.09.2 self-build slice 8",
+        "critical": true
+      },
+      {
+        "id": "GATE-009-SELF",
+        "type": "gate",
+        "label": "Frozen release gate GATE-009-SELF",
+        "critical": true
+      },
+      {
+        "id": "REQ-0092-015",
+        "type": "requirement",
+        "label": "Release-contract creation must be a fail-closed preregistration transaction that occurs only after parent, schema, semantic-contrast, specification-quality, inherited-suite, and workspace preconditions are green.",
+        "critical": true
+      }
+    ],
+    "edges": [
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-001"
+      },
+      {
+        "from": "REQ-0092-001",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-01"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-002"
+      },
+      {
+        "from": "REQ-0092-002",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-01"
+      },
+      {
+        "from": "FEAT-0092-SELF-01",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-01"
+      },
+      {
+        "from": "TASK-0092-SELF-01",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-01"
+      },
+      {
+        "from": "TEST-0092-SELF-01",
+        "relation": "gated_by",
+        "to": "GATE-009-COMPILE"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-003"
+      },
+      {
+        "from": "REQ-0092-003",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-02"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-004"
+      },
+      {
+        "from": "REQ-0092-004",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-02"
+      },
+      {
+        "from": "FEAT-0092-SELF-02",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-02"
+      },
+      {
+        "from": "TASK-0092-SELF-02",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-02"
+      },
+      {
+        "from": "TEST-0092-SELF-02",
+        "relation": "gated_by",
+        "to": "GATE-009-SCOPE"
+      },
+      {
+        "from": "TASK-0092-SELF-01",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-02"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-005"
+      },
+      {
+        "from": "REQ-0092-005",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-03"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-006"
+      },
+      {
+        "from": "REQ-0092-006",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-03"
+      },
+      {
+        "from": "FEAT-0092-SELF-03",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-03"
+      },
+      {
+        "from": "TASK-0092-SELF-03",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-03"
+      },
+      {
+        "from": "TEST-0092-SELF-03",
+        "relation": "gated_by",
+        "to": "GATE-009-PREREQUISITE"
+      },
+      {
+        "from": "TASK-0092-SELF-02",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-03"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-007"
+      },
+      {
+        "from": "REQ-0092-007",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-04"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-008"
+      },
+      {
+        "from": "REQ-0092-008",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-04"
+      },
+      {
+        "from": "FEAT-0092-SELF-04",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-04"
+      },
+      {
+        "from": "TASK-0092-SELF-04",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-04"
+      },
+      {
+        "from": "TEST-0092-SELF-04",
+        "relation": "gated_by",
+        "to": "GATE-009-VERIFIER"
+      },
+      {
+        "from": "TASK-0092-SELF-03",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-04"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-009"
+      },
+      {
+        "from": "REQ-0092-009",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-05"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-010"
+      },
+      {
+        "from": "REQ-0092-010",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-05"
+      },
+      {
+        "from": "FEAT-0092-SELF-05",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-05"
+      },
+      {
+        "from": "TASK-0092-SELF-05",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-05"
+      },
+      {
+        "from": "TEST-0092-SELF-05",
+        "relation": "gated_by",
+        "to": "GATE-009-CONTINUATION"
+      },
+      {
+        "from": "TASK-0092-SELF-04",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-05"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-011"
+      },
+      {
+        "from": "REQ-0092-011",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-06"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-012"
+      },
+      {
+        "from": "REQ-0092-012",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-06"
+      },
+      {
+        "from": "FEAT-0092-SELF-06",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-06"
+      },
+      {
+        "from": "TASK-0092-SELF-06",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-06"
+      },
+      {
+        "from": "TEST-0092-SELF-06",
+        "relation": "gated_by",
+        "to": "GATE-009-CONTEXT"
+      },
+      {
+        "from": "TASK-0092-SELF-05",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-06"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-013"
+      },
+      {
+        "from": "REQ-0092-013",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-07"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-014"
+      },
+      {
+        "from": "REQ-0092-014",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-07"
+      },
+      {
+        "from": "FEAT-0092-SELF-07",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-07"
+      },
+      {
+        "from": "TASK-0092-SELF-07",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-07"
+      },
+      {
+        "from": "TEST-0092-SELF-07",
+        "relation": "gated_by",
+        "to": "GATE-009-RECONCILIATION"
+      },
+      {
+        "from": "TASK-0092-SELF-06",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-07"
+      },
+      {
+        "from": "G-0092-SELF-001",
+        "relation": "requires",
+        "to": "REQ-0092-015"
+      },
+      {
+        "from": "REQ-0092-015",
+        "relation": "realized_by",
+        "to": "FEAT-0092-SELF-08"
+      },
+      {
+        "from": "FEAT-0092-SELF-08",
+        "relation": "decomposed_to",
+        "to": "TASK-0092-SELF-08"
+      },
+      {
+        "from": "TASK-0092-SELF-08",
+        "relation": "verified_by",
+        "to": "TEST-0092-SELF-08"
+      },
+      {
+        "from": "TEST-0092-SELF-08",
+        "relation": "gated_by",
+        "to": "GATE-009-SELF"
+      },
+      {
+        "from": "TASK-0092-SELF-07",
+        "relation": "precedes",
+        "to": "TASK-0092-SELF-08"
+      }
+    ]
+  },
+  "discovery_plan": {
+    "actions": [],
+    "ok": true,
+    "profile": {
+      "profile_id": "PROF-DEFAULT",
+      "project_type": "custom",
+      "question_budget": 2
+    },
+    "questions": [],
+    "summary": {
+      "already_governed": 0,
+      "ask_now": 0,
+      "baseline_questions": 0,
+      "candidates": 0,
+      "defer_budget": 0,
+      "defer_dependency": 0,
+      "infer_default": 0,
+      "question_batches": 0
+    }
+  },
+  "task_metadata": [
+    {
+      "source_task_id": "TASK-0092-SELF-01",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-01"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-02",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-02"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-03",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-03"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-04",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-04"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-05",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-05"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-06",
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler_evaluator.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-06"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-07",
+      "write_scopes": [
+        "evaluation/metric-reconciliation-v0.09.2.json"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-07"
+      ],
+      "consumes_artifacts": []
+    },
+    {
+      "source_task_id": "TASK-0092-SELF-08",
+      "write_scopes": [
+        "versions/v0.09.2/SELF-COMPILED-PROMPT.json"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+        "versions/v0.09.2/EVALUATION-PLAN.json"
+      ],
+      "produces_artifacts": [
+        "artifact:v0092-self-08"
+      ],
+      "consumes_artifacts": []
+    }
+  ],
+  "ordering_constraints": []
+}

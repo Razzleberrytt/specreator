@@ -1,0 +1,49 @@
+{
+  "artifact_id": "DEP-PROV-0111-CANDIDATE-001",
+  "status": "PREREGISTRATION_DRAFT",
+  "candidate_version": "0.11.1",
+  "allowed_provenance_classes": [
+    "source_requirement",
+    "artifact_input",
+    "authority_gate",
+    "explicit_integration",
+    "conflict_serialization"
+  ],
+  "derivation_precedence": [
+    "authority_gate",
+    "artifact_input",
+    "explicit_integration",
+    "source_requirement",
+    "conflict_serialization"
+  ],
+  "rules": [
+    {
+      "provenance": "authority_gate",
+      "edge_kind": "explicit",
+      "predicate": "producer task_id is present in consumer.authority_gates"
+    },
+    {
+      "provenance": "artifact_input",
+      "edge_kind": "explicit",
+      "predicate": "intersection(producer.write, consumer.read) is non-empty"
+    },
+    {
+      "provenance": "explicit_integration",
+      "edge_kind": "explicit",
+      "predicate": "producer task_id is present in consumer.integration_inputs"
+    },
+    {
+      "provenance": "source_requirement",
+      "edge_kind": "explicit",
+      "predicate": "producer task_id is present in consumer.source_requirement_predecessors"
+    },
+    {
+      "provenance": "conflict_serialization",
+      "edge_kind": "derived",
+      "predicate": "producer and consumer share a write scope, have no dependency path forcing order before conflict resolution, and deterministic_conflict_order orders producer before consumer"
+    }
+  ],
+  "oracle_rule": "For each explicit deps edge exactly one of the first four predicates MUST be true and its derived class MUST equal deps[*].provenance. Conflict-serialization edges are derived mechanically and MUST NOT be authored as explicit deps. Zero or multiple matching predicates is an invalid fixture.",
+  "unsupported_edge_rule": "An effective edge is unsupported if it lacks exactly one derivable permitted provenance class under these rules.",
+  "conflict_rule": "Only the minimum deterministic serialization edges needed to order each write-conflict set are added; these edges participate in critical-path and wave recomputation."
+}

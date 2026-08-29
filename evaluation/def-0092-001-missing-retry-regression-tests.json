@@ -1,0 +1,22 @@
+{
+  "defect_id": "DEF-0092-001",
+  "title": "Declared retry regressions lacked executable test file in checkpoint",
+  "observed_at_utc": "2026-08-24T17:42:00Z",
+  "classification": "specification_defect",
+  "observation": "The v0.09.2 checkpoint declared REG-0020, REG-0021, and REG-0022 automated and named tests/test_prompt_compiler_retry_regressions.py, but that referenced test file was absent.",
+  "root_cause": "Retry governance records were preregistered before the concrete regression test module and reusable fail-closed freeze helper were materialized in the checkpoint.",
+  "disposition": "Resolved before freeze by adding the referenced automated regressions and a generic fail-closed contract finalization/write helper, then rerunning all prefreeze checks. No frozen artifact existed at discovery time.",
+  "covered_by_regressions": [
+    "REG-0020",
+    "REG-0021",
+    "REG-0022"
+  ],
+  "evidence_refs": [
+    "tests/test_prompt_compiler_retry_regressions.py",
+    "src/spec_creator/release_freeze.py",
+    "evaluation/pytest-regressions-v0.09.2-prefreeze.txt",
+    "evaluation/v0092-prefreeze-transaction-final.json"
+  ],
+  "frozen_artifacts_changed": false,
+  "status": "resolved_before_freeze"
+}

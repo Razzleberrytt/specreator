@@ -1,0 +1,8 @@
+{
+  "candidate_version": "0.09.1",
+  "contract_id": "REL-0.09.1-FROZEN-001",
+  "result": "RETRY REQUIRED",
+  "defect_id": "DEF-0091-001",
+  "evidence_refs": ["evaluation/def-0091-001-freeze-with-failed-preflight.json", "evaluation/v0091-preregistration-preflight.json"],
+  "superseded_by_candidate": "0.09.2"
+}

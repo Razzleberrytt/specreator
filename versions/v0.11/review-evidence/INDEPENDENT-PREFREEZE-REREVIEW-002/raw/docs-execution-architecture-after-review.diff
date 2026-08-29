@@ -1,0 +1,15 @@
+--- versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md	2026-08-24 22:14:00.000000000 +0000
++++ docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md	2026-08-24 22:06:54.000000000 +0000
+@@ -51,6 +51,12 @@
+ ### 12. Integration efficiency
+ Parallel work is only useful if outputs can be recombined cheaply and correctly. Define interface contracts, write scopes, artifact schemas, merge points, acceptance criteria, and integration order before work begins.
+ 
++## Existing-solution intelligence as a meta-optimization
++
++Before optimizing a newly invented design, ask whether the design itself needs to be invented. The forward Existing-Solution Intelligence & Synthesis (ESIS) capability extends caching/reuse beyond artifacts produced inside the current project. Mature repositories, libraries, reference implementations, standards, papers, prior internal work, tests, and failure reports may contain validated approaches that eliminate design work or reveal better algorithms and boundaries.
++
++ESIS should itself be execution-efficient: independent source discovery/analysis can run in parallel, all source analyses should conform to one comparison contract, forks/near-clones should be deduplicated early, and corpus expansion should stop at capability saturation rather than a fixed source count. See `docs/EXISTING-SOLUTION-INTELLIGENCE-AND-SYNTHESIS.md`.
++
+ ## Required execution-architecture output
+ 
+ For implementation-oriented specifications, Spec Creator should eventually emit an execution architecture containing at least:

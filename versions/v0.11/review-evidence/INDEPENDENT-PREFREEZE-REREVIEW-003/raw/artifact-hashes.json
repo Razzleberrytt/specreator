@@ -1,0 +1,164 @@
+[
+  {
+    "path": "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+    "exists": true,
+    "bytes": 6460,
+    "sha256": "45db9bc3c477e444f1856813e095242a00a37c81fd127e1d05a4c371fd3560c3"
+  },
+  {
+    "path": "versions/v0.11/CONTINUATION.md",
+    "exists": true,
+    "bytes": 4975,
+    "sha256": "9dfaf2bee6238fd2c505e9ccee586fc487640db7a09710af0ffa97e21200646a"
+  },
+  {
+    "path": "versions/v0.11/DISCOVERY.md",
+    "exists": true,
+    "bytes": 7444,
+    "sha256": "817979b961caa1a9a855eff7e4362c7bea608f655399c19ae2641f20edc4e934"
+  },
+  {
+    "path": "versions/v0.11/EVALUATION-DESIGN.json",
+    "exists": true,
+    "bytes": 6004,
+    "sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6"
+  },
+  {
+    "path": "versions/v0.11/EVALUATION-UNIVERSES.json",
+    "exists": true,
+    "bytes": 9104,
+    "sha256": "96e64c464fa7a0d3fd603ba93f79512c2f3d2565b6b4ca6cd5e4a101c4a57928"
+  },
+  {
+    "path": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+    "exists": true,
+    "bytes": 3362,
+    "sha256": "1af09e51fe382c549fc6ee5d52e36486fdefff6244de940f7a0ba08daca35b9b"
+  },
+  {
+    "path": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+    "exists": true,
+    "bytes": 2006,
+    "sha256": "9d8d61fbac214395b77aba03188ede7b1ffe1fc5c58acd4471fa4b78a1e97bdb"
+  },
+  {
+    "path": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+    "exists": true,
+    "bytes": 6113,
+    "sha256": "ad5bc9595274e6d8a3fdd13773a8b98824022d1801bb2a0f6e811959e9ff4ee5"
+  },
+  {
+    "path": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+    "exists": true,
+    "bytes": 2056,
+    "sha256": "5592ac3400433cd97bed890bc39457133b64e80d5b0c519aafc46d2bbc5810a6"
+  },
+  {
+    "path": "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+    "exists": true,
+    "bytes": 12520,
+    "sha256": "a3406db3e33dec35ef98bac96a3db46812241cc066bee0f028f079d4903751c4"
+  },
+  {
+    "path": "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+    "exists": true,
+    "bytes": 8679,
+    "sha256": "c9508ef9d5a175f3572ac5f85ce1f3709a9ed5d7aee64d3b383ac85d23e84aeb"
+  },
+  {
+    "path": "versions/v0.11/DEFECT-RESOLUTION-001.json",
+    "exists": true,
+    "bytes": 2985,
+    "sha256": "61379fefc35e7944fb6a31808bf650a0af9f0bbcc0eb1586b3a2fa2642e68dd6"
+  },
+  {
+    "path": "versions/v0.11/DEFECT-RESOLUTION-002.json",
+    "exists": true,
+    "bytes": 1718,
+    "sha256": "ab15c5e9112c2ab35b00d3d8fc7d0f37bd7fe81c80b426c25d514065f7256790"
+  },
+  {
+    "path": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+    "exists": true,
+    "bytes": 9722,
+    "sha256": "f119a0139f35034d48b74400901f47efa8d2aa5e43ba29c74b7b8177ebf9c103"
+  },
+  {
+    "path": "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+    "exists": true,
+    "bytes": 4558,
+    "sha256": "7ecf37d11eb1eda08573d33aaca57f3434b89b4b21107e1325a36de035e5b2c9"
+  },
+  {
+    "path": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+    "exists": true,
+    "bytes": 4348,
+    "sha256": "8b19d3d5af337627f5ee7a54f3974daac0c5ac72d0f881721399693e97dbbd67"
+  },
+  {
+    "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md",
+    "exists": true,
+    "bytes": 6553,
+    "sha256": "3c17165284862f54406ddc945c25b165e719d209333f043d225d3e9e2a564383"
+  },
+  {
+    "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json",
+    "exists": true,
+    "bytes": 36638,
+    "sha256": "649635fb2b65aa0b5109beecbf16a949dbe89eb2827b3a5d4b927a9c136e6c30"
+  },
+  {
+    "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-report.md",
+    "exists": true,
+    "bytes": 6816,
+    "sha256": "7a5485549e75ab53e121cd4bfca91b17d0d8d49cafa3c66326c5f57da46587cf"
+  },
+  {
+    "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-evidence.json",
+    "exists": true,
+    "bytes": 23313,
+    "sha256": "1426bf3dba7f681234ba5749709f2deee630c8e9874c647ca8d70afae1d34d7d"
+  },
+  {
+    "path": "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+    "exists": true,
+    "bytes": 8847,
+    "sha256": "4fe8f0c666a65191ef7ea7ff054eb7e7717897c36c97b9179a7ce4d86cd933ae"
+  },
+  {
+    "path": "versions/v0.10/MANIFEST.json",
+    "exists": true,
+    "bytes": 150570,
+    "sha256": "8228cd1c99875246fa52c269e8efdffce489f37ef9ccbfd70c5c0e16dbcf878f"
+  },
+  {
+    "path": "versions/v0.10/FROZEN-RELEASE-CONTRACT.json",
+    "exists": true,
+    "bytes": 13027,
+    "sha256": "5440dd507d13e13853ebd9aba2e9b39df0e7d340abfa308b9000ebb79e8cd9b2"
+  },
+  {
+    "path": "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+    "exists": true,
+    "bytes": 10002,
+    "sha256": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452"
+  },
+  {
+    "path": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "exists": true,
+    "bytes": 4759,
+    "sha256": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb"
+  },
+  {
+    "path": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+    "exists": true,
+    "bytes": 6292,
+    "sha256": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2"
+  },
+  {
+    "path": "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+    "exists": true,
+    "bytes": 778,
+    "sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54"
+  }
+]

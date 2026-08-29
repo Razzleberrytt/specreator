@@ -1,0 +1,17 @@
+{
+  "defect_id": "DEF-0092-002",
+  "title": "v0.09.2 evaluator emitted stale v0.09 metric namespace",
+  "observed_at_utc": "2026-08-24T17:55:00Z",
+  "classification": "implementation_defect",
+  "observation": "evaluate_v0092_corpus returned v009_spec_quality_acceptance_rate even though the frozen v0.09.2 evaluation plan names the guardrail v0092_spec_quality_acceptance_rate.",
+  "root_cause": "The retry evaluator was adapted from the historical v0.09 evaluator and one version-qualified metric key was not renamed.",
+  "disposition": "Correct the non-frozen v0.09.2 evaluator key only; preserve the historical v0.09 evaluator and every v0.09.2 frozen artifact unchanged. Add REG-0023 to require current evaluator metric names to be a subset of the frozen plan namespace.",
+  "covered_by_regression": "REG-0023",
+  "evidence_refs": [
+    "src/spec_creator/prompt_compiler_evaluator.py",
+    "tests/test_prompt_compiler_evaluator.py::test_reg0023_v0092_evaluator_metric_names_match_frozen_plan",
+    "versions/v0.09.2/EVALUATION-PLAN.json"
+  ],
+  "frozen_artifacts_changed": false,
+  "status": "resolved_postfreeze"
+}

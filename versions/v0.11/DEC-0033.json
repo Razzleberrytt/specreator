@@ -1,0 +1,24 @@
+{
+  "decision_id": "DEC-0033",
+  "decision_time_utc": "2026-08-24T19:55:00Z",
+  "title": "Open v0.11 continuation and execution-efficiency discovery",
+  "status": "approved",
+  "decision_type": "roadmap",
+  "rationale": "v0.10 proved end-to-end deterministic orchestration but its retrospective identified continuation friction, while the promoted v0.08 task compiler already exposes conservative dependency and parallel-safety structure. The highest-leverage next step is to combine package-only continuation with a governed execution-efficiency architecture so future specs optimize time-to-verified-implementation through algorithm simplification, useful safe parallelism, latency management, partitioning, minimal context/I/O, dependency/critical-path analysis, load balancing, reuse, safe preparation, failure isolation, and explicit integration contracts. This is opened as unfrozen discovery so metrics and evidence rules can be preregistered before implementation.",
+  "evidence_refs": [
+    "DEC-0032",
+    "versions/v0.10/RETROSPECTIVE.md",
+    "versions/v0.10/CONTINUATION.md",
+    "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+    "versions/v0.11/DISCOVERY.md",
+    "roadmap/ROADMAP-to-v1.00-v0.11-DRAFT.md"
+  ],
+  "constraints": [
+    "All v0.10 frozen contract-bound artifacts and earlier frozen/failed release history remain immutable.",
+    "v0.11 remains unfrozen discovery; this decision does not authorize implementation or release freeze.",
+    "Efficiency optimization is subordinate to correctness, safety, traceability, reproducibility, verification independence, and governance.",
+    "Parallelism must be evidence-backed and must not be inflated through arbitrary task fragmentation or invented independence.",
+    "Empirical wall-clock, provider, context, or compute savings may not be claimed from structural/synthetic evidence alone.",
+    "Before v0.11 freeze, exact baselines, schemas, fixtures, denominators, thresholds, guardrails, immutable boundaries, and parent preflight must be explicit and validation-clean."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "all_metrics_available": true,
+  "all_targets_met": true,
+  "candidate_version": "0.09.2",
+  "contract_id": "REL-0.09.2.1-FROZEN-001",
+  "critical_gate_bypass_count": 0,
+  "evaluator_actor_id": "verifier:independent-pass-0092",
+  "evidence_refs": [
+    "evaluation/verifier-pass-v0.09.2.json",
+    "evaluation/v0092-corpus-results.json",
+    "evaluation/metric-ledger.jsonl",
+    "evaluation/denominator-snapshots.jsonl"
+  ],
+  "metric_values": {
+    "benchmark_contrast_preflight_rate": 1.0,
+    "context_over_inclusion_rate": 0.0,
+    "continuation_state_exact_match_rate": 1.0,
+    "corrective_prompt_proxy_reduction_rate": 1.0,
+    "critical_gate_bypass_count": 0,
+    "deterministic_repeat_rate": 1.0,
+    "development_prompt_envelope_exact_match_rate": 1.0,
+    "frozen_hash_integrity_rate": 1.0,
+    "heldout_prompt_envelope_exact_match_rate": 1.0,
+    "inherited_regression_pass_rate": 1.0,
+    "invalid_input_escape_count": 0,
+    "missing_critical_constraint_count": 0,
+    "missing_data_count": 0,
+    "negative_case_classification_accuracy": 1.0,
+    "obligation_retention_rate": 1.0,
+    "owner_decision_escape_count": 0,
+    "parent_preflight_rate": 1.0,
+    "preregistration_precondition_pass_rate": 1.0,
+    "prerequisite_escape_count": 0,
+    "scope_expansion_count": 0,
+    "self_certification_violation_count": 0,
+    "v0092_spec_quality_acceptance_rate": 1.0
+  },
+  "missing_data_count": 0,
+  "reconciled_at_utc": "2026-08-24T18:08:00Z"
+}

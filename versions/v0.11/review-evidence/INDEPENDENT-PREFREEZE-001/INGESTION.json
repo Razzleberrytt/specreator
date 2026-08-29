@@ -1,0 +1,11 @@
+{
+  "record_id": "REVIEWINGEST-011-001",
+  "source_review_package_sha256": "9dc0a6e9de984653413cc1f86951ed407d62f8a3cf07490f2a74129e01a4de3d",
+  "source_review_recommendation": "NOT_READY",
+  "authoritative_repair_base_sha256": "bd4a766cfac78b26223287e19c3e11f0708ce99283ee2260ed3c9fdcab89597b",
+  "authoritative_repair_base_note": "ESIS-amended checkpoint was used as repair base. The v0.11 preregistration hash inventory artifacts remained unchanged by the ESIS amendment; forward ESIS docs were outside the first review source and are subject to the required second review.",
+  "preserved_source_artifact_count": 14,
+  "preserved_source_artifacts_root": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/",
+  "hash_verification": "all preserved source artifacts match reviewed_artifact_hashes in review-evidence.json",
+  "authority": "evidence ingestion only; does not authorize freeze"
+}

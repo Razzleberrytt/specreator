@@ -1,0 +1,22 @@
+{
+  "candidate_version": "0.08",
+  "declared_at_utc": "2026-08-24T17:15:00Z",
+  "evidence_refs": [
+    "versions/v0.07/MANIFEST.json",
+    "versions/v0.08/FROZEN-RELEASE-CONTRACT.json",
+    "evaluation/verifier-pass-v0.08.json"
+  ],
+  "preservation_requirements": [
+    "Preserve all v0.08 frozen artifacts, raw evaluation evidence, defects, regressions, scorecard, and promotion decision even if runtime use rolls back to v0.07.",
+    "Do not rewrite v0.08 events or ledgers to make rollback appear as non-occurrence."
+  ],
+  "rollback_action": "Use sealed v0.07 release behavior as promoted parent while retaining v0.08 as historical experimental evidence and opening a governed corrective candidate.",
+  "rollback_target_version": "0.07",
+  "status": "declared",
+  "trigger_conditions": [
+    "Any mandatory v0.08 gate later proves falsely recorded or unreproducible.",
+    "Any frozen v0.08 artifact hash mismatch is discovered.",
+    "Any critical active regression fails in the sealed deliverable.",
+    "Extracted-package verification fails or shipping manifest is stale/incomplete."
+  ]
+}

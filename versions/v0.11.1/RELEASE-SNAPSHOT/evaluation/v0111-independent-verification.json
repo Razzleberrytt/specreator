@@ -1,0 +1,202 @@
+{
+  "evidence_id": "INDEPENDENT-VERIFICATION-0111-INGEST-001",
+  "candidate_version": "0.11.1",
+  "contract_id": "REL-0.11.1-FROZEN-001",
+  "verification_actor": "verifier:independent-pass-0111",
+  "implementation_actor": "agent:spec-creator-builder-v0.11.1",
+  "source_checkpoint_sha256": "43c0bc83c83b1c6eaec325140aeaa3b853662b93a88bfb36a0a906f1a394459a",
+  "evidence_package_sha256": "e087f9d1d368288a3d0946450f8b666ee91ebcc8dd2f08cd930cfc65363435a3",
+  "recommendation": "READY_FOR_RELEASE_SEAL",
+  "blocking_defects": [],
+  "headline": {
+    "active_regressions": "25/25",
+    "cli_validation": "0 errors / 0 warnings",
+    "critical_paths": "6/6",
+    "derived_conflict_edges": 1,
+    "effective_edges": 22,
+    "explicit_edges": 21,
+    "failed_v011_hashes": "154/154",
+    "frozen_registry": "36/36",
+    "full_current_suite": "166/166",
+    "integration_sources": "23/23",
+    "lifecycle": "4/4",
+    "metric_targets_met": true,
+    "package_class_counts": {
+      "IMMUTABLE_FAILED_PREDECESSOR_V011": 154,
+      "IMMUTABLE_PARENT_V010": 1121,
+      "MUTABLE_RETRY_SUCCESSOR": 83
+    },
+    "package_multimatch": 0,
+    "package_overlap": 0,
+    "package_unclassified": 0,
+    "parent_suite": "155/155",
+    "prospective_forbidden": "7/7",
+    "prospective_legal": "25/25",
+    "shadow_matched_obligation_gate_pairs": true,
+    "shadow_promotion_authoritative": false,
+    "v010_hashes": "1120/1120",
+    "waves": "6/6"
+  },
+  "metrics": {
+    "all_metric_targets_met": true,
+    "checks": [
+      {
+        "denominator_count": 4,
+        "metric": "next_legal_action_exact_match_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "lifecycle_fixtures",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 6,
+        "metric": "critical_path_exact_match_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "critical_path_fixtures",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 6,
+        "metric": "execution_wave_exact_match_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "execution_fixtures",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 1,
+        "metric": "retry_isolation_exact_match_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "failure_injection_fixtures",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 23,
+        "metric": "integration_contract_completeness_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "integration_source_tasks",
+        "value": 1.0
+      },
+      {
+        "denominator_count": null,
+        "metric": "unsafe_parallelization_count",
+        "ok": true,
+        "target": 0,
+        "universe": "execution_fixtures",
+        "value": 0
+      },
+      {
+        "denominator_count": 22,
+        "metric": "unsupported_dependency_edge_count",
+        "ok": true,
+        "target": 0,
+        "universe": "effective_dependency_edges",
+        "value": 0
+      },
+      {
+        "denominator_count": 1,
+        "metric": "speculative_authority_escape_count",
+        "ok": true,
+        "target": 0,
+        "universe": "speculative_fixtures",
+        "value": 0
+      },
+      {
+        "denominator_count": null,
+        "metric": "hidden_manual_state_reconstruction_count",
+        "ok": true,
+        "target": 0,
+        "universe": "lifecycle_fixtures",
+        "value": 0
+      },
+      {
+        "denominator_count": null,
+        "metric": "immutable_boundary_classification_error_count",
+        "ok": true,
+        "target": 0,
+        "universe": "immutable_boundary_assertions",
+        "value": 0
+      },
+      {
+        "denominator_count": 155,
+        "metric": "parent_suite_pass_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "parent_suite",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 25,
+        "metric": "active_regression_pass_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "active_regressions",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 1120,
+        "metric": "frozen_parent_hash_integrity_rate",
+        "ok": true,
+        "target": 1.0,
+        "universe": "frozen_parent_hash_entries",
+        "value": 1.0
+      },
+      {
+        "denominator_count": 26,
+        "metric": "missing_data_count",
+        "ok": true,
+        "target": 0,
+        "universe": "mandatory_evidence_slots",
+        "value": 0
+      },
+      {
+        "denominator_count": 9,
+        "metric": "critical_gate_bypass_count",
+        "ok": true,
+        "target": 0,
+        "universe": "mandatory_quality_gates",
+        "value": 0
+      },
+      {
+        "denominator_count": 25,
+        "metric": "prospective_output_classification_error_count",
+        "ok": true,
+        "target": 0,
+        "universe": "prospective_output_paths",
+        "value": 0
+      }
+    ],
+    "guardrails": {
+      "active_regression_pass_rate": 1.0,
+      "critical_gate_bypass_count": 0,
+      "frozen_parent_hash_integrity_rate": 1.0,
+      "hidden_manual_state_reconstruction_count": 0,
+      "immutable_boundary_classification_error_count": 0,
+      "missing_data_count": 0,
+      "parent_suite_pass_rate": 1.0,
+      "prospective_output_classification_error_count": 0,
+      "speculative_authority_escape_count": 0,
+      "unsafe_parallelization_count": 0,
+      "unsupported_dependency_edge_count": 0
+    },
+    "primary": {
+      "critical_path_exact_match_rate": 1.0,
+      "execution_wave_exact_match_rate": 1.0,
+      "integration_contract_completeness_rate": 1.0,
+      "next_legal_action_exact_match_rate": 1.0,
+      "retry_isolation_exact_match_rate": 1.0
+    },
+    "sequencing_note": "Final shipping PACKAGE-MANIFEST generation/validation is expressly reserved for the authoritative release-seal context. Its absence is recorded as sequence-deferred, not missing or bypassed."
+  },
+  "nonblocking_observations": [
+    {
+      "observation_id": "OBS-0111-VERIFY-001",
+      "text": "Shadow artifact does not capture every environment field named by EXECUTION-TRIAL-PROTOCOL.json (session/context mode, start/end UTC timestamps, input artifact hashes, output artifact hashes, and explicit ordering/deviation record are absent). The evidence is explicitly non-authoritative calibration, matched by obligation/gate set, and makes no general speedup claim; no frozen promotion-authoritative metric depends on these timing values."
+    }
+  ],
+  "authoritative_ingest_recompute_ref": "evaluation/v0111-release-seal.json",
+  "status": "PASS"
+}

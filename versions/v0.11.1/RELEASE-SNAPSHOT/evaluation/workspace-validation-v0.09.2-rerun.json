@@ -1,0 +1,130 @@
+{
+  "issues": [
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for evaluation/events.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for requirements/requirements.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for self-improvement/decisions.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for self-improvement/experiment-registry.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for self-improvement/experiment-results.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for self-improvement/improvement-ledger.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for self-improvement/regressions.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for src/spec_creator/cli.py",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for src/spec_creator/schema_registry.py",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+      "message": "Hash mismatch for tasks/tasks.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for evaluation/events.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for requirements/requirements.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for self-improvement/decisions.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for self-improvement/experiment-registry.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for self-improvement/experiment-results.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for self-improvement/improvement-ledger.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for self-improvement/regressions.jsonl",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for src/spec_creator/cli.py",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for src/spec_creator/schema_registry.py",
+      "severity": "error"
+    },
+    {
+      "artifact": "PACKAGE-MANIFEST.json",
+      "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+      "message": "Byte count mismatch for tasks/tasks.jsonl",
+      "severity": "error"
+    }
+  ],
+  "ok": false,
+  "summary": {
+    "errors": 20,
+    "issues": 20,
+    "warnings": 0
+  }
+}

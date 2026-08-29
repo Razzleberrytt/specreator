@@ -1,0 +1,1543 @@
+{
+  "cases": [
+    {
+      "case_id": "DEF-OPT-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DOPT-01",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DOPT-01",
+          "AMB-001"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DOPT-01",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "DEF-OPT-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DOPT-02",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DOPT-02",
+          "AMB-001"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DOPT-02",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "DEF-OPT-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DOPT-03",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DOPT-03",
+          "AMB-001"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DOPT-03",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "DEF-OPT-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DOPT-04",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DOPT-04",
+          "AMB-001"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DOPT-04",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "DEF-BOUND-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DBOUND-01",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DBOUND-01",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DBOUND-01",
+        "code": "AMB-002"
+      }
+    },
+    {
+      "case_id": "DEF-BOUND-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DBOUND-02",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DBOUND-02",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DBOUND-02",
+        "code": "AMB-002"
+      }
+    },
+    {
+      "case_id": "DEF-BOUND-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DBOUND-03",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DBOUND-03",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DBOUND-03",
+        "code": "AMB-002"
+      }
+    },
+    {
+      "case_id": "DEF-BOUND-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DBOUND-04",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DBOUND-04",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DBOUND-04",
+        "code": "AMB-002"
+      }
+    },
+    {
+      "case_id": "DEF-REF-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DREF-01",
+          "AMB-003"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DREF-01",
+          "AMB-003"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DREF-01",
+        "code": "AMB-003"
+      }
+    },
+    {
+      "case_id": "DEF-REF-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DREF-02",
+          "AMB-003"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DREF-02",
+          "AMB-003"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DREF-02",
+        "code": "AMB-003"
+      }
+    },
+    {
+      "case_id": "DEF-REF-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DREF-03",
+          "AMB-003"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DREF-03",
+          "AMB-003"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DREF-03",
+        "code": "AMB-003"
+      }
+    },
+    {
+      "case_id": "DEF-REF-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DREF-04",
+          "AMB-003"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DREF-04",
+          "AMB-003"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DREF-04",
+        "code": "AMB-003"
+      }
+    },
+    {
+      "case_id": "DEF-CON-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DCON-01",
+          "AMB-004"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DCON-01",
+          "AMB-004"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DCON-01",
+        "code": "AMB-004"
+      }
+    },
+    {
+      "case_id": "DEF-CON-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DCON-02",
+          "AMB-004"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DCON-02",
+          "AMB-004"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DCON-02",
+        "code": "AMB-004"
+      }
+    },
+    {
+      "case_id": "DEF-CON-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DCON-03",
+          "AMB-004"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DCON-03",
+          "AMB-004"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DCON-03",
+        "code": "AMB-004"
+      }
+    },
+    {
+      "case_id": "DEF-CON-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DCON-04",
+          "AMB-004"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DCON-04",
+          "AMB-004"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DCON-04",
+        "code": "AMB-004"
+      }
+    },
+    {
+      "case_id": "DEF-ASM-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DASM-01",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DASM-01",
+          "AMB-005"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DASM-01",
+        "code": "AMB-005"
+      }
+    },
+    {
+      "case_id": "DEF-ASM-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DASM-02",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DASM-02",
+          "AMB-005"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DASM-02",
+        "code": "AMB-005"
+      }
+    },
+    {
+      "case_id": "DEF-ASM-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DASM-03",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DASM-03",
+          "AMB-005"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DASM-03",
+        "code": "AMB-005"
+      }
+    },
+    {
+      "case_id": "DEF-ASM-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DASM-04",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DASM-04",
+          "AMB-005"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DASM-04",
+        "code": "AMB-005"
+      }
+    },
+    {
+      "case_id": "DEF-MARK-01",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DMARK-01",
+          "AMB-006"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DMARK-01",
+          "AMB-006"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DMARK-01",
+        "code": "AMB-006"
+      }
+    },
+    {
+      "case_id": "DEF-MARK-02",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DMARK-02",
+          "AMB-006"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DMARK-02",
+          "AMB-006"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DMARK-02",
+        "code": "AMB-006"
+      }
+    },
+    {
+      "case_id": "DEF-MARK-03",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DMARK-03",
+          "AMB-006"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DMARK-03",
+          "AMB-006"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DMARK-03",
+        "code": "AMB-006"
+      }
+    },
+    {
+      "case_id": "DEF-MARK-04",
+      "case_kind": "defect",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-DMARK-04",
+          "AMB-006"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-DMARK-04",
+          "AMB-006"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-DMARK-04",
+        "code": "AMB-006"
+      }
+    },
+    {
+      "case_id": "RES-OPT-01",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-01",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-OPT-02",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-02",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-OPT-03",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-03",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-OPT-04",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-04",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-OPT-05",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-05",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-OPT-06",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-ROPT-06",
+          "AMB-001"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-01",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-01",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-02",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-02",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-03",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-03",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-04",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-04",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-05",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-05",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "RES-ASM-06",
+      "case_kind": "resolved",
+      "exact_classification_count": 1,
+      "expected_candidate_count": 1,
+      "finding_pairs": [
+        [
+          "REQ-RASM-06",
+          "AMB-005"
+        ]
+      ],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-BOUND-01",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-BOUND-02",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-BOUND-03",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-BOUND-04",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-REF-01",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-REF-02",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-REF-03",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-REF-04",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-CON-01",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-CON-02",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-CON-03",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-CON-04",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NORM-01",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NORM-02",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NORM-03",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NORM-04",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NONNORM-01",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NONNORM-02",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NONNORM-03",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "CLN-NONNORM-04",
+      "case_kind": "clean",
+      "exact_classification_count": 0,
+      "expected_candidate_count": 0,
+      "finding_pairs": [],
+      "question_pairs": [],
+      "top_question": null
+    },
+    {
+      "case_id": "WF-01",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF01-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF01-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF01-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF01-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF01-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-02",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF02-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF02-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF02-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF02-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF02-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-03",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF03-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF03-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF03-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF03-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF03-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-04",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF04-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF04-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF04-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF04-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF04-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-05",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF05-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF05-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF05-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF05-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF05-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-06",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF06-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF06-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF06-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF06-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF06-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-07",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF07-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF07-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF07-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF07-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF07-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "WF-08",
+      "case_kind": "workflow",
+      "exact_classification_count": 2,
+      "expected_candidate_count": 2,
+      "finding_pairs": [
+        [
+          "REQ-WF08-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF08-B",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-WF08-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-WF08-B",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-WF08-A",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-01",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI01-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI01-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI01-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI01-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI01-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI01-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI01-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-02",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI02-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI02-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI02-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI02-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI02-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI02-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI02-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-03",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI03-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI03-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI03-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI03-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI03-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI03-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI03-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-04",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI04-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI04-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI04-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI04-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI04-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI04-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI04-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-05",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI05-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI05-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI05-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI05-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI05-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI05-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI05-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-06",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI06-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI06-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI06-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI06-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI06-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI06-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI06-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-07",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI07-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI07-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI07-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI07-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI07-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI07-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI07-B",
+        "code": "AMB-001"
+      }
+    },
+    {
+      "case_id": "PRI-08",
+      "case_kind": "priority",
+      "exact_classification_count": 3,
+      "expected_candidate_count": 3,
+      "finding_pairs": [
+        [
+          "REQ-PRI08-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI08-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI08-C",
+          "AMB-002"
+        ]
+      ],
+      "question_pairs": [
+        [
+          "REQ-PRI08-A",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI08-B",
+          "AMB-001"
+        ],
+        [
+          "REQ-PRI08-C",
+          "AMB-002"
+        ]
+      ],
+      "top_question": {
+        "block_id": "REQ-PRI08-B",
+        "code": "AMB-001"
+      }
+    }
+  ],
+  "corpus_sha256": "3d147717ff2501061f72a0c5f384403751297eb91b6d916fd4fbb48e9edf5f9e",
+  "counts": {
+    "case_count": 72,
+    "clean_accepted": 20,
+    "clean_total": 20,
+    "critical_intercepted": 16,
+    "critical_trigger_total": 16,
+    "defect_detected": 24,
+    "defect_total": 24,
+    "emitted_questions": 64,
+    "expected_candidate_exact": 76,
+    "expected_candidate_total": 76,
+    "governed_default_questions": 0,
+    "priority_exact": 8,
+    "priority_total": 8,
+    "unnecessary_questions": 0,
+    "workflow_intercepted": 16,
+    "workflow_trigger_total": 16
+  },
+  "evaluation_plan_sha256": "70e3f6c5017fc2a6aef312065ec7f705cbc055f9cec46aec6144c1a1ee6a0bc5",
+  "metrics": {
+    "clean_case_acceptance_rate": 1.0,
+    "critical_ambiguity_escape_count": 0,
+    "decision_needed_classification_accuracy": 1.0,
+    "defect_case_detection_rate": 1.0,
+    "governed_default_question_count": 0,
+    "implementation_time_clarification_reduction_proxy_rate": 1.0,
+    "priority_top_question_accuracy": 1.0,
+    "unnecessary_question_rate": 0.0
+  },
+  "preflight": {
+    "case_count": 72,
+    "ok": true,
+    "trace_cases": [
+      {
+        "case_id": "WF-01",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-02",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-03",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-04",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-05",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-06",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-07",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "WF-08",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-01",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-02",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-03",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-04",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-05",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-06",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-07",
+        "diagnostics": [],
+        "valid": true
+      },
+      {
+        "case_id": "PRI-08",
+        "diagnostics": [],
+        "valid": true
+      }
+    ],
+    "trace_graph_case_count": 16,
+    "trace_graph_invalid_count": 0,
+    "trace_graph_valid_count": 16
+  }
+}

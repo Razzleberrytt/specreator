@@ -1,0 +1,259 @@
+{
+  "baseline": {
+    "baseline_id": "BASELINE-009-GENERIC-001",
+    "corrective_prompt_proxy": "Count exact frozen obligation tokens absent from each rendered prompt. Compiled and baseline prompts use the same token denominator.",
+    "missing_data_rule": "A zero or unavailable baseline denominator is unavailable evidence and may not be reported as zero corrective prompts or a pass.",
+    "path": "fixtures/prompt-compiler/v0.09.1/baseline.json"
+  },
+  "candidate_version": "0.09.1",
+  "corpus_denominators": {
+    "accepted_excluded_context_refs": 134,
+    "accepted_obligation_tokens": 1196,
+    "accepted_total": 45,
+    "continuation_accepted_cases": 9,
+    "development_accepted": 30,
+    "development_cases": 50,
+    "development_negative": 20,
+    "heldout_accepted": 15,
+    "heldout_cases": 25,
+    "heldout_negative": 10,
+    "negative_total": 30
+  },
+  "evaluation_plan_version": "1.0",
+  "evaluator_role": "verifier:independent-pass-0091",
+  "frozen_artifacts": {
+    "approved_spec": {
+      "path": "versions/v0.09.1/SPEC-CREATOR-v0.09.1.md",
+      "sha256": "fad5bc60f2860d131e75da9c35ff8c2cda297452b5e42dedc52e7d59c77f7f07"
+    },
+    "baseline": {
+      "path": "fixtures/prompt-compiler/v0.09.1/baseline.json",
+      "sha256": "ecab22f1ff6b609e250dea79a7df6d2cb871e4a6dd1db54bb69dbf3d2964d7f7"
+    },
+    "combined_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.1/corpus.jsonl",
+      "sha256": "991acb5d47104f5ffce196194741bd340b79b052938a9c2fab4a84ce2ab9e9ee"
+    },
+    "contrast_preflight": {
+      "path": "evaluation/v0091-benchmark-contrast-preflight.json",
+      "sha256": "49843521b3baf0bdeb333343ce0bf6f98d007448c12ee8c25935f5c32361946e"
+    },
+    "development_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.1/development.jsonl",
+      "sha256": "2925a711b0a44d995ef458cce6ce5df618a2db198f47a245838eedff726a8eb1"
+    },
+    "envelope_schema": {
+      "path": "schemas/prompt-envelope-v1.schema.json",
+      "sha256": "8549a36497cebe28ad01e136224fe6ed820c9d37a7922a767c1d48ec239a8d24"
+    },
+    "heldout_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.1/heldout.jsonl",
+      "sha256": "614ade13d8bf6d2c432f54fd9c0bb6fec57291204dc0aeb92f178967afe8f199"
+    },
+    "input_schema": {
+      "path": "schemas/prompt-compilation-input-v1.schema.json",
+      "sha256": "4365164d63f141cb0cece5e812666871d2af988369b598a2cdb7337dd82aba9c"
+    },
+    "parent_preflight": {
+      "path": "evaluation/v0091-preregistration-preflight.json",
+      "sha256": "104afd4a313a5726ba7f0b4ae814f54e1622b97b7881674d6b65eef5d348f466"
+    },
+    "schema_preflight": {
+      "path": "evaluation/v0091-schema-preflight.json",
+      "sha256": "bc170054e0e1bc7080b30c7183a0583eda053b3d83d62bd82278c58f4027fc3e"
+    }
+  },
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-0091-G01",
+      "name": "obligation_retention_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G02",
+      "name": "scope_expansion_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G03",
+      "name": "missing_critical_constraint_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G04",
+      "name": "prerequisite_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G05",
+      "name": "owner_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G06",
+      "name": "self_certification_violation_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G07",
+      "name": "continuation_state_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G08",
+      "name": "deterministic_repeat_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G09",
+      "name": "context_over_inclusion_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G10",
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G11",
+      "name": "v009_spec_quality_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G12",
+      "name": "invalid_input_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G13",
+      "name": "frozen_hash_integrity_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G14",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-G15",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G16",
+      "name": "missing_data_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0091-G17",
+      "name": "benchmark_contrast_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "implementation_actor": "agent:spec-creator-builder",
+  "mandatory_gates": [
+    "GATE-0091-CORPUS-INTEGRITY",
+    "GATE-0091-PARENT-PREFLIGHT",
+    "GATE-0091-SPEC-QUALITY",
+    "GATE-0091-SCHEMA",
+    "GATE-0091-COMPILE",
+    "GATE-0091-IDENTITY",
+    "GATE-0091-SCOPE",
+    "GATE-0091-PREREQUISITE",
+    "GATE-0091-OWNER",
+    "GATE-0091-VERIFIER",
+    "GATE-0091-CONTINUATION",
+    "GATE-0091-CONTEXT",
+    "GATE-0091-OBLIGATION",
+    "GATE-0091-CLI",
+    "GATE-0091-TEST",
+    "GATE-0091-REGRESSION",
+    "GATE-0091-SHADOW",
+    "GATE-0091-SELF",
+    "GATE-0091-RECONCILIATION",
+    "GATE-0091-INDEPENDENT",
+    "GATE-0091-PACKAGE",
+    "GATE-0091-ROLLBACK"
+  ],
+  "missing_data_policy": "Missing, unreadable, skipped, malformed, or unscored cases are unavailable/incomplete evidence and cannot be treated as zeros or passes.",
+  "notes": [
+    "v0.09.1 is a governed retry of failed v0.09; thresholds are unchanged or stricter.",
+    "REG-0020 requires semantic-contrast preflight before freeze."
+  ],
+  "parent_version": "0.08",
+  "primary_metrics": [
+    {
+      "metric_id": "M-0091-001",
+      "name": "development_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-002",
+      "name": "heldout_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-003",
+      "name": "corrective_prompt_proxy_reduction_rate",
+      "target_operator": "gte",
+      "target_value": 0.5,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0091-004",
+      "name": "negative_case_classification_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "scoring_rules": {
+    "context_over_inclusion": "Count compiler included_context_refs that are frozen expected exclusions divided by 134 frozen excluded refs.",
+    "continuation_state": "For accepted continuation cases task_state, prerequisite_states, completed_evidence_refs, open_blockers, and next_permitted_action must exactly match frozen expected envelope.",
+    "determinism": "Compile each accepted case twice and require byte-equivalent canonical JSON.",
+    "exact_envelope": "Canonical JSON equality including deterministic prompt_text and envelope_hash.",
+    "negative_classification": "Expected status and first blocking diagnostic code must match preregistration.",
+    "obligation_retention": "Every expected_obligation_token must be present as an exact substring in prompt_text.",
+    "scope_expansion": "Any compiled allowed_write_scopes value not in the task declared write scope is an escape."
+  },
+  "shadow_policy": "Historical v0.08 task/execution shadow cases are required but non-promotional. Defects found there may add regressions but cannot improve frozen promotion metrics."
+}

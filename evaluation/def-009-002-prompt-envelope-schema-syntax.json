@@ -1,0 +1,11 @@
+{
+  "defect_id": "DEF-009-002",
+  "classification": "schema_defect",
+  "phase": "preregistration",
+  "severity": "minor",
+  "status": "resolved",
+  "description": "The first prompt-envelope-v1 schema draft omitted the closing brace for the diagnostics array property. The inherited workspace validator rejected the schema before any v0.09 benchmark or contract was frozen.",
+  "frozen_artifacts_affected": false,
+  "resolution": "Close the diagnostics property, reparse both schemas, rerun workspace validation, and only then construct the frozen corpus.",
+  "regression_action": "No new runtime regression; existing schema-document validation already detected the defect at the correct boundary."
+}

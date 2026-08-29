@@ -1,0 +1,173 @@
+{
+  "active_regression_count": 19,
+  "actor_id": "verifier:independent-pass-008",
+  "candidate_version": "0.08",
+  "checks": {
+    "accepted_exact": true,
+    "actor_independence": true,
+    "compiled_schema_hash": true,
+    "contract_hash": true,
+    "corpus_hash": true,
+    "corrective_regressions_present": true,
+    "critical_trace": true,
+    "cycle_escape": true,
+    "dependency_provenance": true,
+    "deterministic_repeat": true,
+    "execution_corpus_hash": true,
+    "execution_exact": true,
+    "execution_schema_hash": true,
+    "frozen_regressions_present": true,
+    "full_tests": true,
+    "heldout_exact": true,
+    "heldout_hash": true,
+    "inherited_tests": true,
+    "invalid_execution_escape": true,
+    "invented_dependency": true,
+    "negative_exact": true,
+    "new_corrective_regressions": true,
+    "oversized_escape": true,
+    "parallelization": true,
+    "parent_preflight": true,
+    "plan_hash": true,
+    "preflight_hash": true,
+    "project_schema_hash": true,
+    "self_compile_reproduces": true,
+    "self_execution_replay": true,
+    "self_traceability": true,
+    "shadow_corrective_clean": true,
+    "spec_hash": true,
+    "spec_quality": true,
+    "unresolved_escape": true,
+    "unsafe_parallel": true,
+    "workspace_without_shipping_manifest": true
+  },
+  "corpus_counts": {
+    "accepted_cases": 24,
+    "compiled_tasks_evaluated": 40,
+    "compiler_cases": 60,
+    "dependency_edges_evaluated": 8,
+    "execution_cases": 16,
+    "heldout_accepted_cases": 12,
+    "negative_cases": 36
+  },
+  "corpus_metrics": {
+    "accepted_task_graph_exact_match_rate": 1.0,
+    "critical_ready_task_trace_completeness_rate": 1.0,
+    "dependency_cycle_escape_count": 0,
+    "dependency_provenance_accuracy": 1.0,
+    "deterministic_repeat_rate": 1.0,
+    "execution_stream_exact_match_rate": 1.0,
+    "heldout_task_graph_exact_match_rate": 1.0,
+    "invalid_execution_escape_count": 0,
+    "invented_dependency_count": 0,
+    "negative_case_classification_accuracy": 1.0,
+    "oversized_ready_task_count": 0,
+    "parallelization_decision_accuracy": 1.0,
+    "parent_preflight_rate": 1.0,
+    "unresolved_decision_escape_count": 0,
+    "unsafe_parallelization_count": 0,
+    "v008_spec_quality_acceptance_rate": 1.0
+  },
+  "full_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 50%]\n......................................................................   [100%]\n142 passed in 4.21s"
+  },
+  "hashes": {
+    "compiled_schema": "c5678475b219c29fc383ae789410448188144874e73b1c309798dfafe36dcde0",
+    "contract": "460333b394380c6fbc9633ee86fcbff1e91e0c2105b681e51bb9acf5d1b92ec6",
+    "corpus": "abec3d8c23f2eec3a4a721dc254ea72fbbedafe1f4ea6e9f19722eda733e61ef",
+    "execution": "8ffa30d23ed346a1e4c5ebb0e458babd9e2b997cdcd2284bfbdbb67bf71710eb",
+    "execution_schema": "c00c68c6c10561471ccc1d132fa597c477a185a6ce07f7a3b4a763cdeb256173",
+    "heldout": "da9ee47f5fadf77911d512e43a0ac17dd20404283130e2be513f7744d06fcae1",
+    "plan": "93917ef51cd4ca06db01bbbbe89ec8e448ec8c44cc0ea0ae79f419c474d423b5",
+    "preflight": "40a46aaec5c098b144e90be5b428a595c23b440d0410a314f7d97a02d05fee33",
+    "project_schema": "88b54a4415a829d1c8ee55a29e5ddf9de470e227b18185506a8531d173244bcf",
+    "spec": "8b078db7dfb566cf83ac563d5ce7ef60c1f456145c2a8bc6077bdcb7698c4ddd"
+  },
+  "implementation_actor_id": "agent:spec-creator-builder",
+  "inherited_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 60%]\n...............................................                          [100%]\n119 passed, 1 deselected in 3.06s"
+  },
+  "limitations": [
+    "Independent role separation occurs within the same runtime/session.",
+    "Frozen compiler and execution corpora are same-cycle synthetic evidence; held-out labels are hash-locked but not externally independent.",
+    "Shadow cases are corrective/non-promotional and cannot raise classification above the frozen experimental ceiling.",
+    "The normalized task IR assumes source task boundaries already exist; automatic architecture/task decomposition remains a non-goal.",
+    "Final root package manifest is intentionally generated only after release accounting is complete."
+  ],
+  "new_corrective_regression_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "...                                                                      [100%]\n3 passed in 0.19s"
+  },
+  "preflight_summary": {
+    "all_ok": true,
+    "compiler_cases": 60,
+    "compiler_preflight_pass": 60,
+    "compiler_preflight_rate": 1.0,
+    "execution_event_schema_failures": [],
+    "v008_spec_ambiguity_findings": 0,
+    "v008_spec_discovery_question_batches": 0,
+    "v008_spec_lint_findings": 0,
+    "v008_spec_lint_ok": true
+  },
+  "recommendation": "PROMOTED AS EXPERIMENTAL",
+  "result": "PASS",
+  "self_compiled_summary": {
+    "blocking_diagnostic_count": 0,
+    "conflict_zone_count": 1,
+    "dependency_edge_count": 6,
+    "task_count": 7
+  },
+  "self_execution_summary": {
+    "event_count": 28,
+    "final_states": {
+      "CTASK-008-SELF-01": "done",
+      "CTASK-008-SELF-02": "done",
+      "CTASK-008-SELF-03": "done",
+      "CTASK-008-SELF-04": "done",
+      "CTASK-008-SELF-05": "done",
+      "CTASK-008-SELF-06": "done",
+      "CTASK-008-SELF-07": "done"
+    }
+  },
+  "shadow_summary": {
+    "cases": 2,
+    "passed": 2
+  },
+  "spec_ambiguity_summary": {
+    "decision_needed": 0,
+    "findings": 0,
+    "questions": 0
+  },
+  "spec_discovery_summary": {
+    "already_governed": 0,
+    "ask_now": 0,
+    "baseline_questions": 0,
+    "candidates": 0,
+    "defer_budget": 0,
+    "defer_dependency": 0,
+    "infer_default": 0,
+    "question_batches": 0
+  },
+  "spec_lint_summary": {
+    "findings": 0,
+    "suppressed": 0,
+    "unsuppressed": 0
+  },
+  "traceability_summary": {
+    "critical_requirements_complete": 13,
+    "critical_requirements_total": 13,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  },
+  "workspace_validation": {
+    "errors": 0,
+    "issues": 0,
+    "warnings": 0
+  }
+}

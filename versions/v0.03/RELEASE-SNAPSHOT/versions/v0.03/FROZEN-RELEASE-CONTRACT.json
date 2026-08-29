@@ -1,0 +1,200 @@
+{
+  "contract_id": "REL-0.03-FROZEN-001",
+  "schema_version": "2.0",
+  "parent_version": "0.02",
+  "candidate_version": "0.03",
+  "frozen_at_utc": "2026-08-24T14:20:00Z",
+  "goals": [
+    {
+      "goal_id": "G-003-001",
+      "description": "Make core Spec Creator artifacts machine-checkable.",
+      "acceptance": "A deterministic CLI/library validates preregistered core JSON/JSONL schemas and semantic invariants."
+    },
+    {
+      "goal_id": "G-003-002",
+      "description": "Make frozen release integrity mechanically detectable.",
+      "acceptance": "The unmodified v0.03 contract passes canonical SHA-256 verification and all preregistered mutation fixtures fail."
+    },
+    {
+      "goal_id": "G-003-003",
+      "description": "Make metric evidence mechanically reconcilable.",
+      "acceptance": "Metric records reconcile to denominator snapshots, cutoffs, scopes, values, source events, and missing-data declarations; seeded mismatches fail."
+    },
+    {
+      "goal_id": "G-003-004",
+      "description": "Convert recursive governance invariants into executable regressions.",
+      "acceptance": "Candidate self-certification and unguided regression retirement are rejected when represented in machine-readable records."
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "REQ-003-001",
+      "description": "Validate JSON and JSONL syntax with artifact/line diagnostics.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-002",
+      "description": "Validate core records against Draft 2020-12 JSON Schemas.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-003",
+      "description": "Enforce stable IDs, controlled enums, duplicate detection, and cross-references.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-004",
+      "description": "Enforce event lifecycle and supersession consistency.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-005",
+      "description": "Enforce governed regression retirement and active critical regression resolution.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-006",
+      "description": "Validate denominator snapshots and metric-ledger reconciliation without treating missing data as zero.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-007",
+      "description": "Verify frozen-contract canonical SHA-256 and detect mutation.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-008",
+      "description": "Verify release-manifest file hashes and release-contract hash.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-009",
+      "description": "Detect candidate self-certification from release scorecard actor identity where mechanically observable.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-010",
+      "description": "Provide CLI and importable library with deterministic validation results and nonzero failure exit.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-011",
+      "description": "Provide automated valid/invalid fixture corpus covering preregistered failure classes.",
+      "critical": true
+    },
+    {
+      "requirement_id": "REQ-003-012",
+      "description": "Document immutable versioned-schema migration strategy.",
+      "critical": false
+    }
+  ],
+  "mandatory_gates": [
+    "GATE-003-SCHEMA",
+    "GATE-003-TEST",
+    "GATE-003-SEMANTIC",
+    "GATE-003-INTEGRITY",
+    "GATE-003-REGRESSION",
+    "GATE-003-RECONCILIATION",
+    "GATE-003-INDEPENDENT",
+    "GATE-003-ROLLBACK"
+  ],
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003"
+  ],
+  "primary_metrics": [
+    {
+      "metric_id": "M-003-001",
+      "name": "invalid_fixture_detection_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-003-002",
+      "name": "valid_fixture_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-003-003",
+      "name": "promotion_decision_reproducibility",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-003-G01",
+      "name": "critical_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-003-G02",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-003-G03",
+      "name": "valid_fixture_false_positive_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-003-G04",
+      "name": "metric_reconciliation_failure_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-003-G05",
+      "name": "candidate_self_certification_violation_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Any applicable critical regression fails or disappears without an approved superseding decision.",
+    "Frozen contract hash validation fails.",
+    "A preregistered invalid critical fixture is accepted.",
+    "A preregistered valid fixture is rejected.",
+    "A mismatched or missing denominator is used as complete promotion evidence.",
+    "The evaluator actor is also an implementation actor.",
+    "The release manifest contains an unresolved content-hash mismatch."
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS; PASS WITH ACCEPTED RISK is permitted only for noncritical documentary limitations explicitly recorded in the scorecard.",
+    "All applicable critical regressions PASS.",
+    "All primary metrics meet frozen targets.",
+    "All guardrail metrics meet frozen targets.",
+    "No critical open defect remains.",
+    "Independent evaluator recommendation is recorded.",
+    "Metric ledger reconciles to frozen denominator snapshots and raw source events.",
+    "Release manifest and rollback declaration are complete."
+  ],
+  "rollback_expectations": {
+    "rollback_target": "0.02",
+    "preserve_parent_history": true,
+    "parent_contract_sha256": "eaf68e91974302b6771be89e546f33c8b90e23e3f84c356658c3f4108c6bc717",
+    "expectation": "If v0.03 is rejected, v0.02 remains the active experimental parent; v0.03 files remain as failed evidence and are not rewritten. Original v0.01/v0.02 artifacts remain byte-identical."
+  },
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "required_evaluator_actor_id": "verifier:independent-pass-002",
+    "must_differ": true
+  },
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "contract_hash": "7996697714454684bd324bc368dec7588ebf9443f117e9d27c7dc2bf434c4f47"
+}

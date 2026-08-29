@@ -1,0 +1,160 @@
+{
+  "all_ok": true,
+  "candidate_version": "0.09.2",
+  "negative_cases": 30,
+  "passing": 30,
+  "rate": 1.0,
+  "rows": [
+    {
+      "case_id": "DEV-NEG-1-01",
+      "contrast_observable": true,
+      "defect_class": "scope_expansion"
+    },
+    {
+      "case_id": "DEV-NEG-1-02",
+      "contrast_observable": true,
+      "defect_class": "prerequisite_incomplete"
+    },
+    {
+      "case_id": "DEV-NEG-1-03",
+      "contrast_observable": true,
+      "defect_class": "owner_decision"
+    },
+    {
+      "case_id": "DEV-NEG-1-04",
+      "contrast_observable": true,
+      "defect_class": "same_actor_verification"
+    },
+    {
+      "case_id": "DEV-NEG-1-05",
+      "contrast_observable": true,
+      "defect_class": "verification_not_done"
+    },
+    {
+      "case_id": "DEV-NEG-1-06",
+      "contrast_observable": true,
+      "defect_class": "debug_missing_evidence"
+    },
+    {
+      "case_id": "DEV-NEG-1-07",
+      "contrast_observable": true,
+      "defect_class": "task_contract_mismatch"
+    },
+    {
+      "case_id": "DEV-NEG-1-08",
+      "contrast_observable": true,
+      "defect_class": "duplicate_context"
+    },
+    {
+      "case_id": "DEV-NEG-1-09",
+      "contrast_observable": true,
+      "defect_class": "critical_unbound_context"
+    },
+    {
+      "case_id": "DEV-NEG-1-10",
+      "contrast_observable": true,
+      "defect_class": "invalid_graph_hash"
+    },
+    {
+      "case_id": "DEV-NEG-2-01",
+      "contrast_observable": true,
+      "defect_class": "scope_expansion"
+    },
+    {
+      "case_id": "DEV-NEG-2-02",
+      "contrast_observable": true,
+      "defect_class": "prerequisite_incomplete"
+    },
+    {
+      "case_id": "DEV-NEG-2-03",
+      "contrast_observable": true,
+      "defect_class": "owner_decision"
+    },
+    {
+      "case_id": "DEV-NEG-2-04",
+      "contrast_observable": true,
+      "defect_class": "same_actor_verification"
+    },
+    {
+      "case_id": "DEV-NEG-2-05",
+      "contrast_observable": true,
+      "defect_class": "verification_not_done"
+    },
+    {
+      "case_id": "DEV-NEG-2-06",
+      "contrast_observable": true,
+      "defect_class": "debug_missing_evidence"
+    },
+    {
+      "case_id": "DEV-NEG-2-07",
+      "contrast_observable": true,
+      "defect_class": "task_contract_mismatch"
+    },
+    {
+      "case_id": "DEV-NEG-2-08",
+      "contrast_observable": true,
+      "defect_class": "duplicate_context"
+    },
+    {
+      "case_id": "DEV-NEG-2-09",
+      "contrast_observable": true,
+      "defect_class": "critical_unbound_context"
+    },
+    {
+      "case_id": "DEV-NEG-2-10",
+      "contrast_observable": true,
+      "defect_class": "invalid_graph_hash"
+    },
+    {
+      "case_id": "HELD-NEG-01",
+      "contrast_observable": true,
+      "defect_class": "scope_expansion"
+    },
+    {
+      "case_id": "HELD-NEG-02",
+      "contrast_observable": true,
+      "defect_class": "prerequisite_incomplete"
+    },
+    {
+      "case_id": "HELD-NEG-03",
+      "contrast_observable": true,
+      "defect_class": "owner_decision"
+    },
+    {
+      "case_id": "HELD-NEG-04",
+      "contrast_observable": true,
+      "defect_class": "same_actor_verification"
+    },
+    {
+      "case_id": "HELD-NEG-05",
+      "contrast_observable": true,
+      "defect_class": "verification_not_done"
+    },
+    {
+      "case_id": "HELD-NEG-06",
+      "contrast_observable": true,
+      "defect_class": "debug_missing_evidence"
+    },
+    {
+      "case_id": "HELD-NEG-07",
+      "contrast_observable": true,
+      "defect_class": "task_contract_mismatch"
+    },
+    {
+      "case_id": "HELD-NEG-08",
+      "contrast_observable": true,
+      "defect_class": "duplicate_context"
+    },
+    {
+      "case_id": "HELD-NEG-09",
+      "contrast_observable": true,
+      "defect_class": "critical_unbound_context"
+    },
+    {
+      "case_id": "HELD-NEG-10",
+      "contrast_observable": true,
+      "defect_class": "invalid_graph_hash"
+    }
+  ],
+  "task_contract_mismatch_cases": 3
+}

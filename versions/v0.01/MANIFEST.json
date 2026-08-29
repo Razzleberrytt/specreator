@@ -1,0 +1,16 @@
+{
+  "version": "0.01",
+  "parent_version": null,
+  "status": "experimental",
+  "protocol_schema_version": "1.0",
+  "added_capabilities": [
+    "quality gates",
+    "event logging",
+    "metrics",
+    "traceability"
+  ],
+  "breaking_changes": [],
+  "content_hashes": {
+    "versions/v0.01/SPEC-CREATOR-v0.01.md": "fb3daca564ae495e11afffcb47e8e0b35371325fa7925ec626c88fc574e62fca"
+  }
+}

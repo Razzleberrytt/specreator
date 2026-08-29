@@ -1,0 +1,37 @@
+[
+  {
+    "defect_id": "DEF-011-REVIEW-001",
+    "verdict": "PASS",
+    "summary": "21/21 explicit edges; zero=0 multi=0 misclassified=0; derived_conflict=['EXEC-011-003-CONFLICT::A->B']; effective=22"
+  },
+  {
+    "defect_id": "DEF-011-REVIEW-002",
+    "verdict": "PASS",
+    "summary": "lifecycle fixtures 4/4; checkpoint action match=True; validation command exits=[0, 0, 0]"
+  },
+  {
+    "defect_id": "DEF-011-REVIEW-003",
+    "verdict": "PASS",
+    "summary": "all-six denominator=6; critical path exact matches=6/6"
+  },
+  {
+    "defect_id": "DEF-011-REVIEW-004",
+    "verdict": "PASS",
+    "summary": "fixed source-task universe=23; schema source_task_ids minItems=1; integration_contract required=True"
+  },
+  {
+    "defect_id": "DEF-011-REVIEW-005",
+    "verdict": "PASS",
+    "summary": "parent nodes=155 fresh exact=True; active regressions=24 source exact=True; v0.10 hashes=1120/1120"
+  },
+  {
+    "defect_id": "DEF-011-REVIEW-006",
+    "verdict": "PASS",
+    "summary": "exact declared validation profile exit codes [0, 0, 0] from clean extraction"
+  },
+  {
+    "defect_id": "DEF-011-REREVIEW-001",
+    "verdict": "PASS",
+    "summary": "protected=1121 successor=103 unclassified=0 overlap=0 stale=0 parent_hashes=1120/1120"
+  }
+]

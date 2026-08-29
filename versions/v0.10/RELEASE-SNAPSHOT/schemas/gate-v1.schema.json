@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/gate-v1.json",
+  "title": "Quality Gate v1",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "description",
+    "critical",
+    "criteria",
+    "status"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string",
+      "pattern": "^GATE-[A-Za-z0-9._-]+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "critical": {
+      "type": "boolean"
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PASS WITH ACCEPTED RISK",
+        "BLOCKED",
+        "FAIL",
+        "NOT APPLICABLE"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

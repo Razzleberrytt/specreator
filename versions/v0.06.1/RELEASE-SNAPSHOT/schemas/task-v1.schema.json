@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/task-v1.json",
+  "title": "Task v1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "description",
+    "requirement_ids",
+    "acceptance_criteria",
+    "status"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-[A-Za-z0-9._-]+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirement_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^REQ-[A-Za-z0-9._-]+$"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^TASK-[A-Za-z0-9._-]+$"
+      }
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "ready",
+        "in_progress",
+        "blocked",
+        "done",
+        "cancelled"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,340 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013",
+    "REG-0014",
+    "REG-0015",
+    "REG-0016",
+    "REG-0017",
+    "REG-0018",
+    "REG-0019"
+  ],
+  "candidate_version": "0.09",
+  "contract_hash": "e3759fb602aad1612f3d8048253f6e6b59f5c0c15d7fc6dd04b529115c0d6049",
+  "contract_id": "REL-0.09-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-009"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Approved v0.09 specification SHA-256 differs from 41081a5b76bed98c1260044fac827d01731d72fa6a158e32256a11071a6b37d1.",
+    "Prompt input schema SHA-256 differs from 4365164d63f141cb0cece5e812666871d2af988369b598a2cdb7337dd82aba9c.",
+    "Prompt envelope schema SHA-256 differs from 8549a36497cebe28ad01e136224fe6ed820c9d37a7922a767c1d48ec239a8d24.",
+    "Frozen generic baseline SHA-256 differs from ecab22f1ff6b609e250dea79a7df6d2cb871e4a6dd1db54bb69dbf3d2964d7f7.",
+    "Frozen development corpus SHA-256 differs from 97ed9e4009c96bc8e9333bc5ab5fe2d5720ecf3356cd1514004e7df662992836.",
+    "Frozen held-out corpus SHA-256 differs from 9598dfcffe90b1d1a2f766a93e65ae9ac189982a9b866d5009238f1a70949138.",
+    "Frozen combined corpus SHA-256 differs from 47925572a6a5581b1915b5d82fc62326d0082cfe82b20e03fa47c9570aa3421e.",
+    "Frozen parent preflight SHA-256 differs from 1b8ec0a289e5967abb7820705688be5d93e871d08b31f2ff5ba6d176a7c0f51d.",
+    "Frozen schema preflight SHA-256 differs from b4651babc50fe561df9e6149bad7df1158ced2bb6b33e67ca9e7fc675a4314e1.",
+    "Frozen evaluation-plan SHA-256 differs from 7a5796af9a10bfcd2dbfaf530ecfce2c75f829524344e740b45bb9b4b3c8f337.",
+    "Parent preflight rate is below 1.0 or v0.09 spec-quality acceptance is below 1.0.",
+    "Development or held-out exact accepted-envelope rate is below 0.95.",
+    "Corrective-prompt proxy reduction rate is below 0.50 or its baseline denominator is incomplete/unavailable.",
+    "Negative-case classification accuracy is below 1.0.",
+    "Any compiled prompt expands write scope or omits a frozen critical obligation/completion constraint.",
+    "Any prerequisite-incomplete or owner-decision-blocked task escapes as executable implementation/debug authority.",
+    "Any same-actor verification case compiles or implementation-authored success conclusion is treated as independent evidence.",
+    "Continuation-state exact-match rate or deterministic-repeat rate is below 1.0.",
+    "Context over-inclusion rate exceeds 0.05 or safe context closure is guessed rather than proven.",
+    "Any active regression fails, disappears, or is weakened to obtain a pass.",
+    "Any frozen missing/skipped evidence is treated as zero/pass.",
+    "Candidate self-certifies without the required verifier actor.",
+    "Final shipping package has missing/extra/hash/size mismatches after fresh extraction."
+  ],
+  "frozen_at_utc": "2026-08-24T17:18:00Z",
+  "goals": [
+    {
+      "acceptance": "Development and held-out exact accepted-envelope rates are each >= 0.95.",
+      "description": "Compile exact deterministic bounded prompt envelopes across all five prompt kinds.",
+      "goal_id": "G-009-001"
+    },
+    {
+      "acceptance": "Corrective-prompt proxy reduction rate >= 0.50 with complete denominator reconciliation.",
+      "description": "Reduce task-context corrective prompting versus the frozen generic baseline.",
+      "goal_id": "G-009-002"
+    },
+    {
+      "acceptance": "Negative classification accuracy = 1.0 with zero scope/prerequisite/owner/self-certification escapes.",
+      "description": "Fail closed on scope, prerequisite, owner-decision, verifier-role, and context-closure violations.",
+      "goal_id": "G-009-003"
+    },
+    {
+      "acceptance": "Continuation-state exactness, obligation retention, and deterministic repeat = 1.0; context over-inclusion <= 0.05.",
+      "description": "Preserve exact continuation state, critical obligations, and deterministic explainable context closure.",
+      "goal_id": "G-009-004"
+    },
+    {
+      "acceptance": "Exact v0.08 parent suite, all active regressions, independent verification, reconciliation, rollback, and extracted-package integrity pass.",
+      "description": "Preserve promoted-parent integrity and produce reproducible release evidence.",
+      "goal_id": "G-009-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-009-G01",
+      "name": "obligation_retention_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G02",
+      "name": "scope_expansion_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G03",
+      "name": "missing_critical_constraint_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G04",
+      "name": "prerequisite_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G05",
+      "name": "owner_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G06",
+      "name": "self_certification_violation_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G07",
+      "name": "continuation_state_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G08",
+      "name": "deterministic_repeat_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G09",
+      "name": "context_over_inclusion_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G10",
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G11",
+      "name": "v009_spec_quality_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G12",
+      "name": "invalid_input_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G13",
+      "name": "frozen_hash_integrity_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G14",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-G15",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-009-G16",
+      "name": "missing_data_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical JSON excluding contract_hash. Frozen criteria additionally bind exact bytes of the approved spec, two prompt schemas, generic baseline, development/held-out/combined corpora, evaluation plan, and both preregistration preflights by explicit failure-condition hashes.",
+  "mandatory_gates": [
+    "GATE-009-CORPUS-INTEGRITY",
+    "GATE-009-PARENT-PREFLIGHT",
+    "GATE-009-SPEC-QUALITY",
+    "GATE-009-SCHEMA",
+    "GATE-009-COMPILE",
+    "GATE-009-IDENTITY",
+    "GATE-009-SCOPE",
+    "GATE-009-PREREQUISITE",
+    "GATE-009-OWNER",
+    "GATE-009-VERIFIER",
+    "GATE-009-CONTINUATION",
+    "GATE-009-CONTEXT",
+    "GATE-009-OBLIGATION",
+    "GATE-009-CLI",
+    "GATE-009-TEST",
+    "GATE-009-REGRESSION",
+    "GATE-009-SHADOW",
+    "GATE-009-SELF",
+    "GATE-009-RECONCILIATION",
+    "GATE-009-INDEPENDENT",
+    "GATE-009-PACKAGE",
+    "GATE-009-ROLLBACK"
+  ],
+  "parent_version": "0.08",
+  "primary_metrics": [
+    {
+      "metric_id": "M-009-001",
+      "name": "development_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-002",
+      "name": "heldout_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-003",
+      "name": "corrective_prompt_proxy_reduction_rate",
+      "target_operator": "gte",
+      "target_value": 0.5,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-009-004",
+      "name": "negative_case_classification_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and every frozen primary/guardrail metric meets target.",
+    "All metrics reconcile to raw frozen corpus results and denominator snapshots; missing data is not zero.",
+    "All active regressions PASS and meaningful defects are considered for permanent regression memory.",
+    "Approved spec, prompt schemas, baseline, development/held-out corpora, evaluation plan, parent/schema preflights, and contract hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "Required self-dogfood and historical v0.08 shadow evidence are recorded; shadow data is non-promotional.",
+    "No critical open defect remains; rollback, retrospective, continuation state, version-local snapshots, manifest-last seal, and extracted-package verification are complete.",
+    "Because same-cycle synthetic evidence is not organizationally independent, maximum classification is PROMOTED AS EXPERIMENTAL."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Bind every compiled prompt to candidate version, graph hash, task ID, prompt kind, and governed evidence identifiers.",
+      "requirement_id": "REQ-009-001"
+    },
+    {
+      "critical": true,
+      "description": "Restrict implementation/debug writes to compiled task scope while preserving prerequisites, acceptance criteria, tests, and gates.",
+      "requirement_id": "REQ-009-002"
+    },
+    {
+      "critical": true,
+      "description": "Refuse implementation/debug prompts when prerequisites or owner decisions block work.",
+      "requirement_id": "REQ-009-003"
+    },
+    {
+      "critical": true,
+      "description": "Require role-separated verification prompts with frozen checks and no candidate self-certification.",
+      "requirement_id": "REQ-009-004"
+    },
+    {
+      "critical": true,
+      "description": "Compile continuation prompts from replayed immutable execution evidence without rewriting task history.",
+      "requirement_id": "REQ-009-005"
+    },
+    {
+      "critical": true,
+      "description": "Use deterministic provable context closure and fail closed when safe minimization cannot be proven.",
+      "requirement_id": "REQ-009-006"
+    },
+    {
+      "critical": true,
+      "description": "Preserve completion-evidence and non-weakening constraints in executable/verification prompts.",
+      "requirement_id": "REQ-009-007"
+    },
+    {
+      "critical": true,
+      "description": "Expose deterministic Python API and CLI with versioned prompt envelopes and structured failures.",
+      "requirement_id": "REQ-009-008"
+    },
+    {
+      "critical": true,
+      "description": "Preserve exact sealed v0.08 parent behavior and every active regression.",
+      "requirement_id": "REQ-009-009"
+    },
+    {
+      "critical": true,
+      "description": "Evaluate on frozen development/held-out fixtures across all prompt kinds, blockers, attacks, and handoffs.",
+      "requirement_id": "REQ-009-010"
+    },
+    {
+      "critical": true,
+      "description": "Hash-lock baseline, corpora, schemas, plan, and parent-preflight evidence before implementation.",
+      "requirement_id": "REQ-009-011"
+    },
+    {
+      "critical": true,
+      "description": "Dogfood v0.09 prompts and run non-promotional shadow checks on historical v0.08 task/execution shapes.",
+      "requirement_id": "REQ-009-012"
+    },
+    {
+      "critical": true,
+      "description": "Require reconciled metrics/gates, independent verification, rollback/retrospective/continuation, and manifest-last extracted-package integrity.",
+      "requirement_id": "REQ-009-013"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.09 fails, preserve all frozen/failed v0.09 evidence and continue using sealed v0.08 executable behavior; do not rewrite parent ledgers, snapshots, contracts, or regressions.",
+    "parent_contract_sha256": "460333b394380c6fbc9633ee86fcbff1e91e0c2105b681e51bb9acf5d1b92ec6",
+    "preserve_parent_history": true,
+    "rollback_target": "0.08"
+  },
+  "schema_version": "2.0"
+}

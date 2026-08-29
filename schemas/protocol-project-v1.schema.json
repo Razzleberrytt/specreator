@@ -1,0 +1,74 @@
+{
+  "$id": "https://spec-creator.local/schemas/protocol-project-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "expected_behavior": {
+      "additionalProperties": false,
+      "properties": {
+        "critical_gate_bypass_count": {
+          "const": 0
+        },
+        "manual_artifact_reconstruction_count": {
+          "const": 0
+        },
+        "must_complete": {
+          "const": true
+        },
+        "requires_block_then_recovery": {
+          "type": "boolean"
+        },
+        "requires_resume_exact_match": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "must_complete",
+        "manual_artifact_reconstruction_count",
+        "critical_gate_bypass_count"
+      ],
+      "type": "object"
+    },
+    "project": {
+      "type": "object"
+    },
+    "prompt_kinds": {
+      "items": {
+        "enum": [
+          "bootstrap",
+          "implementation",
+          "debug",
+          "verification",
+          "continuation"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "scenario": {
+      "enum": [
+        "normal",
+        "blocker_recovery",
+        "resume"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "case_id",
+    "scenario",
+    "project",
+    "prompt_kinds",
+    "expected_behavior"
+  ],
+  "title": "Protocol MVP Evaluation Project v1",
+  "type": "object"
+}

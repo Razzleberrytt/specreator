@@ -1,0 +1,67 @@
+{
+  "candidate_version": "0.10",
+  "denominators": {
+    "artifact_provenance_completeness_rate": {
+      "denominator": "all required stage artifacts across all 3 projects",
+      "numerator": "required artifact provenance refs present and hash-valid"
+    },
+    "deterministic_rerun_rate": {
+      "denominator": 3,
+      "numerator": "projects whose repeated fresh execution produces canonical-equivalent run artifacts"
+    },
+    "end_to_end_project_completion_rate": {
+      "denominator": 3,
+      "numerator": "projects with completed final run status and all mandatory stage assertions passing"
+    },
+    "external_transfer_trial_completion_rate": {
+      "denominator": 3,
+      "numerator": "validated qualifying external transfer trials"
+    },
+    "promoted_stage_semantic_preservation_rate": {
+      "denominator": "all promoted-stage comparisons executed by evaluator",
+      "numerator": "promoted stage checks matching direct component invocation"
+    },
+    "resume_exact_match_rate": {
+      "denominator": 1,
+      "numerator": "resume cases whose resumed canonical result matches uninterrupted result"
+    }
+  },
+  "evaluation_projects_ref": "fixtures/protocol/v0.10/corpus.jsonl",
+  "external_transfer_index_ref": "evaluation/transfer-v0.10/trial-index.json",
+  "guardrail_thresholds": {
+    "critical_gate_bypass_count": 0,
+    "external_transfer_missing_obligation_count": 0,
+    "external_transfer_owner_decision_escape_count": 0,
+    "external_transfer_prerequisite_escape_count": 0,
+    "external_transfer_scope_escape_count": 0,
+    "external_transfer_trial_completion_rate": 1.0,
+    "frozen_hash_integrity_rate": 1.0,
+    "inherited_regression_pass_rate": 1.0,
+    "invalid_or_hash_mismatched_resume_escape_count": 0,
+    "missing_data_count": 0,
+    "owner_decision_escape_count": 0,
+    "parent_suite_pass_rate": 1.0,
+    "prerequisite_escape_count": 0,
+    "scope_escape_count": 0
+  },
+  "independent_verifier_actor": "verifier:independent-pass-010",
+  "missing_data_policy": "Missing, skipped, malformed, or unreconciled evidence is unavailable and cannot count as zero or PASS.",
+  "parent_version": "0.09.2",
+  "plan_id": "EVAL-010-FROZEN-001",
+  "primary_thresholds": {
+    "artifact_provenance_completeness_rate": 1.0,
+    "deterministic_rerun_rate": 1.0,
+    "end_to_end_project_completion_rate": 1.0,
+    "manual_artifact_reconstruction_count": 0,
+    "promoted_stage_semantic_preservation_rate": 1.0,
+    "resume_exact_match_rate": 1.0
+  },
+  "project_count": 3,
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "required_scenarios": [
+    "normal",
+    "blocker_recovery",
+    "resume"
+  ],
+  "status": "PREREGISTERED_PREFREEZE"
+}

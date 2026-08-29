@@ -1,0 +1,17 @@
+Spec Creator v0.04 final independent-role verifier pass
+evaluator_actor_id: verifier:independent-pass-003
+implementation_actor_id: agent:spec-creator-builder
+actors_differ: true
+contract_declared_hash: 2e512511159fd20d432b143f2093e84001eb8857f5b3db151c0654a89eea3010
+contract_recomputed_hash: 2e512511159fd20d432b143f2093e84001eb8857f5b3db151c0654a89eea3010
+contract_hash_match: True
+evaluation_plan_sha256: d397f59d72cf83df246beb41a59931b67d8d15d3bd850dce8fc2e2be4925fbc4
+corpus_sha256: cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d
+corpus_metrics: {"clean_case_acceptance_rate": 1.0, "clean_false_positive_count": 0, "defect_case_detection_rate": 1.0, "diagnostic_completeness_rate": 1.0, "finding_precision": 1.0, "minimum_per_rule_precision": 1.0}
+workspace_validation: {"errors": 0, "issues": 0, "warnings": 0}
+full_suite_rc: 0
+.................................................                        [100%]
+49 passed in 2.76s
+mandatory_gates: 12/12 PASS
+release_scorecard: PROMOTED AS EXPERIMENTAL
+final_verifier_result: PASS

@@ -1,0 +1,65 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_task_compiler.py _________________
+tests/test_task_compiler.py:7: in <module>
+    CORPUS = [json.loads(x) for x in (ROOT/'fixtures/task-compiler/v0.08/corpus.jsonl').read_text().splitlines() if x.strip()]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:539: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/corpus.jsonl'
+_______________ ERROR collecting tests/test_task_compiler_cli.py _______________
+tests/test_task_compiler_cli.py:6: in <module>
+    CASES=[json.loads(x) for x in (ROOT/'fixtures/task-compiler/v0.08/corpus.jsonl').read_text().splitlines() if x.strip()]
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:539: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/corpus.jsonl'
+________________ ERROR collecting tests/test_task_execution.py _________________
+tests/test_task_execution.py:7: in <module>
+    CASES=[json.loads(x) for x in (ROOT/'fixtures/task-compiler/v0.08/execution-corpus.jsonl').read_text().splitlines() if x.strip()]
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:539: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/execution-corpus.jsonl'
+_________________ ERROR collecting tests/test_traceability.py __________________
+tests/test_traceability.py:14: in <module>
+    CORPUS = [json.loads(x) for x in (ROOT / "fixtures/traceability/v0.05/corpus.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:539: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/traceability/v0.05/corpus.jsonl'
+=========================== short test summary info ============================
+ERROR tests/test_task_compiler.py - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/corpus.jsonl'
+ERROR tests/test_task_compiler_cli.py - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/corpus.jsonl'
+ERROR tests/test_task_execution.py - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/task-compiler/v0.08/execution-corpus.jsonl'
+ERROR tests/test_traceability.py - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/spec_work/checkpoint/spec-creator/versions/v0.09.2/RELEASE-SNAPSHOT/fixtures/traceability/v0.05/corpus.jsonl'
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!!
+4 errors in 0.54s

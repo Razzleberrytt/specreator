@@ -1,0 +1,111 @@
+{
+  "review_id": "INDEPENDENT-PREFREEZE-REREVIEW-003",
+  "receiver_identifier": "receiver:gpt-5.6-sol:independent-prefreeze-rereview:v0.11:003",
+  "reviewed_at_utc": "2026-08-24T23:08:53.698914Z",
+  "source_package": "spec-creator-v0.11-preregistration-rereview-003-repaired-top5-checkpoint(1).zip",
+  "source_package_sha256": "dbc7751daa050e28e849aac83c8b679eee5be334e3dadb4286ce90f43d7f954f",
+  "scope": "independent evidence-only preregistration re-review; no implementation, repair, freeze, promotion, or redesign",
+  "defect_regressions": [
+    {
+      "defect_id": "DEF-011-REVIEW-001",
+      "verdict": "PASS",
+      "summary": "21/21 explicit edges; zero=0 multi=0 misclassified=0; derived_conflict=['EXEC-011-003-CONFLICT::A->B']; effective=22"
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-002",
+      "verdict": "PASS",
+      "summary": "lifecycle fixtures 4/4; checkpoint action match=True; validation command exits=[0, 0, 0]"
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-003",
+      "verdict": "PASS",
+      "summary": "all-six denominator=6; critical path exact matches=6/6"
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-004",
+      "verdict": "PASS",
+      "summary": "fixed source-task universe=23; schema source_task_ids minItems=1; integration_contract required=True"
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-005",
+      "verdict": "PASS",
+      "summary": "parent nodes=155 fresh exact=True; active regressions=24 source exact=True; v0.10 hashes=1120/1120"
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-006",
+      "verdict": "PASS",
+      "summary": "exact declared validation profile exit codes [0, 0, 0] from clean extraction"
+    },
+    {
+      "defect_id": "DEF-011-REREVIEW-001",
+      "verdict": "PASS",
+      "summary": "protected=1121 successor=103 unclassified=0 overlap=0 stale=0 parent_hashes=1120/1120"
+    }
+  ],
+  "review_obligations": [
+    {
+      "id": 1,
+      "name": "immutable frozen/failed history",
+      "verdict": "PASS",
+      "evidence": "raw/frozen-parent-hash-checks.json; raw/immutable-boundary-classification.json"
+    },
+    {
+      "id": 2,
+      "name": "candidate schemas Draft 2020-12",
+      "verdict": "PASS",
+      "evidence": "raw/schema-validation.json"
+    },
+    {
+      "id": 3,
+      "name": "candidate fixtures parse/cohere",
+      "verdict": "PASS",
+      "evidence": "raw/fixture-coherence.json"
+    },
+    {
+      "id": 4,
+      "name": "structural paths/waves/conflict/speculation/retry recomputed",
+      "verdict": "PASS",
+      "evidence": "raw/structural-recomputation.json"
+    },
+    {
+      "id": 5,
+      "name": "dependency provenance and wave safety",
+      "verdict": "PASS",
+      "evidence": "raw/provenance-derivation.json; raw/structural-recomputation.json"
+    },
+    {
+      "id": 6,
+      "name": "lifecycle exact next action with zero hidden chat state / bootstrap",
+      "verdict": "PASS",
+      "evidence": "raw/lifecycle-derivation.json; raw/validation-commands.json"
+    },
+    {
+      "id": 7,
+      "name": "metric denominators/thresholds/anti-gaming",
+      "verdict": "PASS",
+      "evidence": "raw/metric-audit.json; raw/universe-audit.json; raw/immutable-boundary-classification.json"
+    },
+    {
+      "id": 8,
+      "name": "empirical efficiency shadow-only",
+      "verdict": "PASS",
+      "evidence": "raw/metric-audit.json"
+    },
+    {
+      "id": 9,
+      "name": "matched obligation hash and mandatory quality gates",
+      "verdict": "PASS",
+      "evidence": "raw/metric-audit.json"
+    },
+    {
+      "id": 10,
+      "name": "evidence package completeness / final recommendation",
+      "verdict": "PASS",
+      "evidence": "review-evidence.json; review-report.md; raw/"
+    }
+  ],
+  "new_blocking_defects": [],
+  "package_manifest_validation": "PASS",
+  "preregistration_artifact_hash_draft_match_count": "22/22",
+  "final_recommendation": "READY_FOR_FREEZE_PREPARATION"
+}

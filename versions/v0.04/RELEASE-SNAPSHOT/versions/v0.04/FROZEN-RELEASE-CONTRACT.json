@@ -1,0 +1,253 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004"
+  ],
+  "candidate_version": "0.04",
+  "contract_hash": "2e512511159fd20d432b143f2093e84001eb8857f5b3db151c0654a89eea3010",
+  "contract_id": "REL-0.04-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-003"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Frozen evaluation-plan SHA-256 differs from d397f59d72cf83df246beb41a59931b67d8d15d3bd850dce8fc2e2be4925fbc4.",
+    "Frozen lint corpus SHA-256 differs from cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d.",
+    "Any of the 50 seeded defect cases misses its expected LINT-001..LINT-010 finding.",
+    "Any of the 50 seeded clean cases emits an unsuppressed finding.",
+    "Any emitted corpus finding lacks an exact source span, line/column, or rationale.",
+    "Any per-rule precision is below 1.0 on the frozen corpus.",
+    "An unapproved or unknown suppression decision hides a finding.",
+    "A legitimate append-only successor record invalidates an unchanged historical release prefix.",
+    "A mutation inside a preserved historical prefix or immutable version-local artifact is accepted.",
+    "Any applicable inherited regression fails or disappears without approved retirement.",
+    "The evaluator actor is also an implementation actor.",
+    "Missing evaluation cases or missing denominator data are treated as zero or complete evidence."
+  ],
+  "frozen_at_utc": "2026-08-24T14:49:00Z",
+  "goals": [
+    {
+      "acceptance": "Frozen 100-case corpus SHA-256 cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d achieves complete seeded defect detection with no clean-case findings.",
+      "description": "Detect preregistered deterministic specification defects before implementation.",
+      "goal_id": "G-004-001"
+    },
+    {
+      "acceptance": "Every corpus finding contains rule ID, severity, exact source span, line/column, and deterministic rationale; contradictions include a related line.",
+      "description": "Keep lint diagnostics actionable and auditable.",
+      "goal_id": "G-004-002"
+    },
+    {
+      "acceptance": "Every LINT-001..LINT-010 rule has perfect precision on its frozen matched corpus and suppressions require an explicitly supplied approved DEC-* identifier.",
+      "description": "Prevent linter false-positive pressure and suppression bypasses.",
+      "goal_id": "G-004-003"
+    },
+    {
+      "acceptance": "Legitimate successor appends do not invalidate the v0.03 release snapshot, while mutation of the historical prefix and immutable artifacts remains detectable.",
+      "description": "Restore recursive compatibility of historical manifest verification.",
+      "goal_id": "G-004-004"
+    },
+    {
+      "acceptance": "All inherited automated tests and REG-0001 through REG-0004 pass; validate and lint commands coexist deterministically.",
+      "description": "Preserve v0.03 structural validator behavior while adding lint CLI/library functionality.",
+      "goal_id": "G-004-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-004-G01",
+      "name": "minimum_per_rule_precision",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-G02",
+      "name": "clean_false_positive_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-004-G03",
+      "name": "suppression_governance_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-G04",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-G05",
+      "name": "baseline_validator_test_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-G06",
+      "name": "historical_prefix_mutation_detection_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-G07",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "mandatory_gates": [
+    "GATE-004-CORPUS-INTEGRITY",
+    "GATE-004-HISTORICAL-MANIFEST",
+    "GATE-004-LINT-RULES",
+    "GATE-004-CLEAN-CORPUS",
+    "GATE-004-DIAGNOSTICS",
+    "GATE-004-SUPPRESSION",
+    "GATE-004-CLI",
+    "GATE-004-TEST",
+    "GATE-004-REGRESSION",
+    "GATE-004-RECONCILIATION",
+    "GATE-004-INDEPENDENT",
+    "GATE-004-ROLLBACK"
+  ],
+  "parent_version": "0.03",
+  "primary_metrics": [
+    {
+      "metric_id": "M-004-001",
+      "name": "defect_case_detection_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-002",
+      "name": "clean_case_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-003",
+      "name": "finding_precision",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-004",
+      "name": "diagnostic_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-004-005",
+      "name": "historical_manifest_append_compatibility_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS; accepted risk may only apply to explicitly noncritical documentary limitations.",
+    "All primary and guardrail metrics meet frozen targets and reconcile to raw events and denominator snapshots.",
+    "All applicable regressions REG-0001 through REG-0004 PASS and any newly discovered meaningful defect is considered for permanent regression memory.",
+    "Frozen corpus and evaluation-plan hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains.",
+    "Release manifest and rollback declaration are complete.",
+    "Because evaluation is synthetic, the maximum release classification for this candidate is PROMOTED AS EXPERIMENTAL unless independent real-project evidence is added under a separately preregistered contract."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Provide deterministic context scanning that excludes fenced code, blockquotes, Notes:, and Rationale: from active prose linting.",
+      "requirement_id": "REQ-004-001"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-001 vague/non-testable normative language detection with exact phrase span.",
+      "requirement_id": "REQ-004-002"
+    },
+    {
+      "critical": true,
+      "description": "Implement requirement-block rules LINT-002 missing acceptance, LINT-003 critical failure behavior, and LINT-006 missing verification.",
+      "requirement_id": "REQ-004-003"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-004 unresolved critical decision detection.",
+      "requirement_id": "REQ-004-004"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-005 undefined interface/entity reference detection.",
+      "requirement_id": "REQ-004-005"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-007 deterministic constraint contradiction detection with related source location.",
+      "requirement_id": "REQ-004-006"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-008 task-breadth and LINT-009 component-boundary detection.",
+      "requirement_id": "REQ-004-007"
+    },
+    {
+      "critical": true,
+      "description": "Implement LINT-010 governed-assumption detection.",
+      "requirement_id": "REQ-004-008"
+    },
+    {
+      "critical": true,
+      "description": "Every lint finding contains rule ID, severity, line, column, exact source span, and rationale in deterministic order.",
+      "requirement_id": "REQ-004-009"
+    },
+    {
+      "critical": true,
+      "description": "Implement local suppression requiring an explicitly supplied approved DEC-* identifier; unapproved suppression cannot silently hide findings.",
+      "requirement_id": "REQ-004-010"
+    },
+    {
+      "critical": true,
+      "description": "Expose linter through importable Python API and CLI human/JSON modes with nonzero exit on unsuppressed errors while preserving validate compatibility.",
+      "requirement_id": "REQ-004-011"
+    },
+    {
+      "critical": true,
+      "description": "Provide deterministic evaluator that refuses frozen evaluation-plan hash d397f59d72cf83df246beb41a59931b67d8d15d3bd850dce8fc2e2be4925fbc4 or corpus hash cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d drift and computes preregistered metrics.",
+      "requirement_id": "REQ-004-012"
+    },
+    {
+      "critical": true,
+      "description": "Preserve inherited active regressions REG-0001 through REG-0004 and the v0.03 validator suite.",
+      "requirement_id": "REQ-004-013"
+    },
+    {
+      "critical": true,
+      "description": "Historical release-manifest verification must remain valid after legitimate appends to shared append-only ledgers while detecting historical-prefix and immutable-artifact mutation.",
+      "requirement_id": "REQ-004-014"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.04 fails, v0.03 remains the active promoted-experimental parent. Preserve all v0.04 failed evidence, the original v0.04 frozen contract, and all prior release artifacts without rewriting history.",
+    "parent_contract_sha256": "15f73ea6c273931f8f974a9630d2269b2ac3a04786215aeab98318a624a0b91f",
+    "preserve_parent_history": true,
+    "rollback_target": "0.03"
+  },
+  "schema_version": "2.0"
+}

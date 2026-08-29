@@ -1,0 +1,288 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013",
+    "REG-0014"
+  ],
+  "candidate_version": "0.07",
+  "contract_hash": "981c1415040c986d031f528ce10a12456a0e594bbb9551f95cbec4bf8c3dac38",
+  "contract_id": "REL-0.07-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-007"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Frozen evaluation-plan SHA-256 differs from 539e75dca5af5067188417b27ed405719b9b3e4d78a61739178c0db0a9cebe3d.",
+    "Frozen combined discovery corpus SHA-256 differs from 31e13b98991543208e453faa89d2277282646f8110483fab1ea9a8d9b3c272ad.",
+    "Frozen held-out partition SHA-256 differs from 064d0b1a78e708cb071fa9c28db8b7b0f1b98cb5e70f0c9f81e14e0282f3848e.",
+    "Parent preregistration preflight rate is below 1.0.",
+    "owner_question_reduction_rate is below 0.40.",
+    "information_value_top_selection_accuracy or heldout_action_exact_match_rate is below 0.95.",
+    "Any unsafe automatic default or critical ambiguity escape occurs.",
+    "Dependency frontier or provenance completeness is below 1.0.",
+    "Any active inherited regression fails or disappears without governed retirement.",
+    "The approved v0.07 specification emits an unsuppressed v0.04 linter finding or a v0.06.1 owner question.",
+    "Evaluator actor equals implementation actor.",
+    "Missing/skipped evaluation evidence is treated as zero or complete.",
+    "Final shipping package manifest is stale, incomplete, or fails integrity validation."
+  ],
+  "frozen_at_utc": "2026-08-24T16:10:00Z",
+  "goals": [
+    {
+      "acceptance": "owner_question_reduction_rate >= 0.40 and information_value_top_selection_accuracy >= 0.95.",
+      "description": "Reduce immediate owner-question burden using governed adaptive discovery.",
+      "goal_id": "G-007-001"
+    },
+    {
+      "acceptance": "safe_inference_exact_match_rate = 1.0, unsafe_default_count = 0, and critical_ambiguity_escape_count = 0.",
+      "description": "Apply only safe explicit defaults and preserve every risky decision for the owner.",
+      "goal_id": "G-007-002"
+    },
+    {
+      "acceptance": "heldout_action_exact_match_rate >= 0.95 with frozen held-out labels unchanged.",
+      "description": "Generalize across a separately hash-locked held-out synthetic partition.",
+      "goal_id": "G-007-003"
+    },
+    {
+      "acceptance": "dependency_frontier_accuracy = 1.0 and provenance_completeness_rate = 1.0.",
+      "description": "Make every non-question action auditable and dependency-aware.",
+      "goal_id": "G-007-004"
+    },
+    {
+      "acceptance": "Parent preflight, inherited suite/regressions, independent verification, reconciliation, and final package integrity all pass.",
+      "description": "Preserve promoted-parent executable behavior and release integrity.",
+      "goal_id": "G-007-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-007-G01",
+      "name": "safe_inference_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G02",
+      "name": "unsafe_default_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-007-G03",
+      "name": "critical_ambiguity_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-007-G04",
+      "name": "dependency_frontier_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G05",
+      "name": "provenance_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G06",
+      "name": "unnecessary_question_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G07",
+      "name": "rework_proxy_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-007-G08",
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G09",
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G10",
+      "name": "active_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G11",
+      "name": "v007_spec_lint_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-G12",
+      "name": "package_manifest_validation_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-007-G13",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "mandatory_gates": [
+    "GATE-007-CORPUS-INTEGRITY",
+    "GATE-007-PARENT-PREFLIGHT",
+    "GATE-007-SPEC-LINT",
+    "GATE-007-ACTION-PLAN",
+    "GATE-007-INFORMATION-VALUE",
+    "GATE-007-DEPENDENCY",
+    "GATE-007-BATCH-BUDGET",
+    "GATE-007-SAFE-INFERENCE",
+    "GATE-007-UNSAFE-DEFAULT",
+    "GATE-007-HELDOUT",
+    "GATE-007-PROVENANCE",
+    "GATE-007-CLI",
+    "GATE-007-TEST",
+    "GATE-007-REGRESSION",
+    "GATE-007-SHADOW",
+    "GATE-007-RECONCILIATION",
+    "GATE-007-INDEPENDENT",
+    "GATE-007-PACKAGE",
+    "GATE-007-ROLLBACK"
+  ],
+  "parent_version": "0.06.1",
+  "primary_metrics": [
+    {
+      "metric_id": "M-007-001",
+      "name": "owner_question_reduction_rate",
+      "target_operator": "gte",
+      "target_value": 0.4,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-002",
+      "name": "information_value_top_selection_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-007-003",
+      "name": "heldout_action_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and every frozen primary/guardrail metric meets target.",
+    "All metric records reconcile to raw corpus results and frozen denominator snapshots.",
+    "All active regressions PASS and meaningful new defects are considered for permanent regression memory.",
+    "Combined corpus, held-out partition, evaluation-plan, and contract hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains; rollback, manifest, retrospective, continuation state, and extracted-package verification are complete.",
+    "Because evidence is synthetic and benchmark creation is not organizationally independent, maximum classification is PROMOTED AS EXPERIMENTAL."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Transform a v0.06.1 ambiguity report into a deterministic discovery plan with exactly one action per finding.",
+      "requirement_id": "REQ-007-001"
+    },
+    {
+      "critical": true,
+      "description": "Compute deterministic information-value scores for ready question batches using the preregistered formula and stable tie-breaking.",
+      "requirement_id": "REQ-007-002"
+    },
+    {
+      "critical": true,
+      "description": "Respect explicit decision dependencies by deferring dependent questions until prerequisite blocks that still require an owner decision are resolved or selected.",
+      "requirement_id": "REQ-007-003"
+    },
+    {
+      "critical": true,
+      "description": "Batch owner questions only when findings share the same explicit Decision-Group token and enforce the project-profile question budget for noncritical frontier batches.",
+      "requirement_id": "REQ-007-004"
+    },
+    {
+      "critical": true,
+      "description": "Apply an automatic profile default only when every preregistered safe-inference gate passes.",
+      "requirement_id": "REQ-007-005"
+    },
+    {
+      "critical": true,
+      "description": "Reject unsafe automatic defaults for critical, high-impact, nonreversible, non-low-risk, untrusted, disabled, mismatched, or regulated-profile cases.",
+      "requirement_id": "REQ-007-006"
+    },
+    {
+      "critical": true,
+      "description": "Support controlled project-type intake profiles without deriving product choices from project type alone.",
+      "requirement_id": "REQ-007-007"
+    },
+    {
+      "critical": true,
+      "description": "Preserve machine-readable provenance and reason codes for every inferred, governed, asked, or deferred candidate.",
+      "requirement_id": "REQ-007-008"
+    },
+    {
+      "critical": true,
+      "description": "Evaluate adaptive discovery on hash-locked development and held-out partitions without using missing evidence as zero.",
+      "requirement_id": "REQ-007-009"
+    },
+    {
+      "critical": true,
+      "description": "Expose adaptive discovery through deterministic Python API and CLI JSON output with optional traceability graph and project-profile inputs.",
+      "requirement_id": "REQ-007-010"
+    },
+    {
+      "critical": true,
+      "description": "Preserve all promoted-parent validator, linter, traceability, ambiguity, ledger, history, and package-integrity behavior.",
+      "requirement_id": "REQ-007-011"
+    },
+    {
+      "critical": true,
+      "description": "Seal release evidence only after independent verification and generate the mutable shipping package manifest last.",
+      "requirement_id": "REQ-007-012"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "Disable/remove v0.07 discovery modules and CLI surfaces while retaining the promoted v0.06.1 package, all failed/candidate evidence, append-only histories, and regression memory.",
+    "parent_contract_sha256": "2ae4073dc197c73386d07b9746d38d807a1d9c038b56aae6a68c7c16a53fbf27",
+    "preserve_parent_history": true,
+    "rollback_target": "0.06.1"
+  },
+  "schema_version": "2.0"
+}

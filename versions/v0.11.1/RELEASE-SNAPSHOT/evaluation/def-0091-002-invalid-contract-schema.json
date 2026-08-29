@@ -1,0 +1,19 @@
+{
+  "candidate_version": "0.09.1",
+  "canonical_contract_hash_field": "ece6c01cf6e4ab5813d53c72685328b7fb106bd6adeb20b861cf96e30f39310f",
+  "classification": "schema_defect",
+  "defect_id": "DEF-0091-002",
+  "evidence_refs": [
+    "versions/v0.09.1/FROZEN-RELEASE-CONTRACT.INVALID-ATTEMPT.json",
+    "evaluation/workspace-validation-v0.09.2-prefreeze.json"
+  ],
+  "observation": "Workspace validation found the already-failed v0.09.1 attempted frozen contract was itself invalid against frozen-release-contract-v2.schema.json because retry requirement REQ-0091-014 used field 'text' instead of required field 'description'.",
+  "observed_at_utc": "2026-08-24T17:32:00Z",
+  "original_attempt_file_sha256": "f383bba360b693f9216cd1d72e2368dc83c63099807960e5c53985dcde561c07",
+  "phase": "specification",
+  "preservation": "The exact invalid attempted-contract bytes are preserved at versions/v0.09.1/FROZEN-RELEASE-CONTRACT.INVALID-ATTEMPT.json. The recognized FROZEN-RELEASE-CONTRACT.json path was quarantined because the freeze transaction had already been declared invalid under DEF-0091-001 and never became an eligible release contract.",
+  "regression_candidate": true,
+  "root_cause": "The freeze helper calculated a canonical hash but did not validate the candidate contract against the contract JSON Schema before writing it.",
+  "severity": "critical",
+  "status": "resolved"
+}

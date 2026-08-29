@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "immutable frozen/failed history",
+    "verdict": "PASS",
+    "evidence": "raw/frozen-parent-hash-checks.json; raw/immutable-boundary-classification.json"
+  },
+  {
+    "id": 2,
+    "name": "candidate schemas Draft 2020-12",
+    "verdict": "PASS",
+    "evidence": "raw/schema-validation.json"
+  },
+  {
+    "id": 3,
+    "name": "candidate fixtures parse/cohere",
+    "verdict": "PASS",
+    "evidence": "raw/fixture-coherence.json"
+  },
+  {
+    "id": 4,
+    "name": "structural paths/waves/conflict/speculation/retry recomputed",
+    "verdict": "PASS",
+    "evidence": "raw/structural-recomputation.json"
+  },
+  {
+    "id": 5,
+    "name": "dependency provenance and wave safety",
+    "verdict": "PASS",
+    "evidence": "raw/provenance-derivation.json; raw/structural-recomputation.json"
+  },
+  {
+    "id": 6,
+    "name": "lifecycle exact next action with zero hidden chat state / bootstrap",
+    "verdict": "PASS",
+    "evidence": "raw/lifecycle-derivation.json; raw/validation-commands.json"
+  },
+  {
+    "id": 7,
+    "name": "metric denominators/thresholds/anti-gaming",
+    "verdict": "PASS",
+    "evidence": "raw/metric-audit.json; raw/universe-audit.json; raw/immutable-boundary-classification.json"
+  },
+  {
+    "id": 8,
+    "name": "empirical efficiency shadow-only",
+    "verdict": "PASS",
+    "evidence": "raw/metric-audit.json"
+  },
+  {
+    "id": 9,
+    "name": "matched obligation hash and mandatory quality gates",
+    "verdict": "PASS",
+    "evidence": "raw/metric-audit.json"
+  },
+  {
+    "id": 10,
+    "name": "evidence package completeness / final recommendation",
+    "verdict": "PASS",
+    "evidence": "review-evidence.json; review-report.md; raw/"
+  }
+]

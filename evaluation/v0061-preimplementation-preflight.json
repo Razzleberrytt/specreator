@@ -1,0 +1,89 @@
+{
+  "all_valid": true,
+  "candidate_version": "0.06.1",
+  "cases": [
+    {
+      "case_id": "WF-01",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-02",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-03",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-04",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-05",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-06",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-07",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-08",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-01",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-02",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-03",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-04",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-05",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-06",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-07",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-08",
+      "diagnostics": [],
+      "valid": true
+    }
+  ],
+  "trace_graph_case_count": 16,
+  "trace_graph_invalid_count": 0,
+  "trace_graph_valid_count": 16
+}

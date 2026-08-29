@@ -1,0 +1,15 @@
+{
+  "shipped_path_count": 1311,
+  "protected_parent_count": 1121,
+  "failed_predecessor_count": 154,
+  "retry_successor_count": 36,
+  "unclassified": [],
+  "immutable_successor_overlaps": [],
+  "successor_multi_matches": [],
+  "snapshot_member_count": 36,
+  "snapshot_matches_actual_successor": true,
+  "legal_prospective_pass_count": 25,
+  "legal_prospective_total": 25,
+  "forbidden_rejection_pass_count": 7,
+  "forbidden_total": 7
+}

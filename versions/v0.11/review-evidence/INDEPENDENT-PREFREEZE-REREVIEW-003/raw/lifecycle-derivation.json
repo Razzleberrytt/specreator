@@ -1,0 +1,82 @@
+{
+  "fixtures": [
+    {
+      "status": "OK",
+      "matches": [
+        "LR-001"
+      ],
+      "selected_rule": "LR-001",
+      "priority": 100,
+      "action": "prepare_preregistration",
+      "fixture_id": "LIFE-011-001-DISCOVERY",
+      "state": "UNFROZEN_DISCOVERY",
+      "blockers": [],
+      "expected": "prepare_preregistration",
+      "match": true
+    },
+    {
+      "status": "OK",
+      "matches": [
+        "LR-006",
+        "LR-009"
+      ],
+      "selected_rule": "LR-006",
+      "priority": 30,
+      "action": "repair_or_reject_prefreeze",
+      "fixture_id": "LIFE-011-002-BLOCKED-PREFREEZE",
+      "state": "PREFREEZE_REVIEW",
+      "blockers": [
+        "parent_preflight_failed"
+      ],
+      "expected": "repair_or_reject_prefreeze",
+      "match": true
+    },
+    {
+      "status": "OK",
+      "matches": [
+        "LR-010"
+      ],
+      "selected_rule": "LR-010",
+      "priority": 100,
+      "action": "implement_frozen_candidate",
+      "fixture_id": "LIFE-011-003-FROZEN",
+      "state": "FROZEN",
+      "blockers": [],
+      "expected": "implement_frozen_candidate",
+      "match": true
+    },
+    {
+      "status": "OK",
+      "matches": [
+        "LR-014"
+      ],
+      "selected_rule": "LR-014",
+      "priority": 100,
+      "action": "independent_verification",
+      "fixture_id": "LIFE-011-004-VERIFYING",
+      "state": "VERIFYING",
+      "blockers": [],
+      "expected": "independent_verification",
+      "match": true
+    }
+  ],
+  "current_checkpoint": {
+    "status": "OK",
+    "matches": [
+      "LR-005A",
+      "LR-005"
+    ],
+    "selected_rule": "LR-005A",
+    "priority": 40,
+    "action": "independent_prefreeze_review",
+    "release_state": "PREREGISTRATION_DRAFT",
+    "open_transition_tokens": [
+      "independent_prefreeze_review_required",
+      "frozen_hashes_not_established"
+    ],
+    "authored_action_token": "independent_prefreeze_review",
+    "match": true
+  },
+  "fixture_pass_count": 4,
+  "verdict": "PASS"
+}

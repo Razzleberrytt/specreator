@@ -1,0 +1,27 @@
+{
+  "all_ok": true,
+  "candidate_version": "0.09.2",
+  "checked_at_utc": "2026-08-24T17:34:30Z",
+  "checks": {
+    "inherited_suite_142_pass": true,
+    "parent_preflight": true,
+    "schema_preflight": true,
+    "semantic_contrast_preflight": true,
+    "spec_ambiguity_clean": true,
+    "spec_discovery_clean": true,
+    "spec_lint_clean": true,
+    "workspace_validation_clean": true
+  },
+  "contract_path_absent_before_transaction": true,
+  "evidence_refs": [
+    "evaluation/v0092-preregistration-preflight.json",
+    "evaluation/v0092-schema-preflight.json",
+    "evaluation/v0092-benchmark-contrast-preflight.json",
+    "evaluation/lint-v0.09.2-prefreeze.json",
+    "evaluation/ambiguity-v0.09.2-prefreeze.json",
+    "evaluation/discovery-v0.09.2-prefreeze.json",
+    "evaluation/pytest-v0.08-inherited-on-v0.09.2-preimplementation.txt",
+    "evaluation/workspace-validation-v0.09.2-final-prefreeze.json"
+  ],
+  "transaction_id": "PREFREEZE-0092-001"
+}

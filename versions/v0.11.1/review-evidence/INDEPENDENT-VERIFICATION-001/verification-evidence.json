@@ -1,0 +1,43 @@
+{
+  "blocking_defect_count": 0,
+  "blocking_defects": [],
+  "candidate_version": "0.11.1",
+  "contract_id": "REL-0.11.1-FROZEN-001",
+  "headline": {
+    "active_regressions": "25/25",
+    "cli_validation": "0 errors / 0 warnings",
+    "critical_paths": "6/6",
+    "derived_conflict_edges": 1,
+    "effective_edges": 22,
+    "explicit_edges": 21,
+    "failed_v011_hashes": "154/154",
+    "frozen_registry": "36/36",
+    "full_current_suite": "166/166",
+    "integration_sources": "23/23",
+    "lifecycle": "4/4",
+    "metric_targets_met": true,
+    "package_class_counts": {
+      "IMMUTABLE_FAILED_PREDECESSOR_V011": 154,
+      "IMMUTABLE_PARENT_V010": 1121,
+      "MUTABLE_RETRY_SUCCESSOR": 83
+    },
+    "package_multimatch": 0,
+    "package_overlap": 0,
+    "package_unclassified": 0,
+    "parent_suite": "155/155",
+    "prospective_forbidden": "7/7",
+    "prospective_legal": "25/25",
+    "shadow_matched_obligation_gate_pairs": true,
+    "shadow_promotion_authoritative": false,
+    "v010_hashes": "1120/1120",
+    "waves": "6/6"
+  },
+  "nonblocking_observations": [
+    {
+      "observation_id": "OBS-0111-VERIFY-001",
+      "text": "Shadow artifact does not capture every environment field named by EXECUTION-TRIAL-PROTOCOL.json (session/context mode, start/end UTC timestamps, input artifact hashes, output artifact hashes, and explicit ordering/deviation record are absent). The evidence is explicitly non-authoritative calibration, matched by obligation/gate set, and makes no general speedup claim; no frozen promotion-authoritative metric depends on these timing values."
+    }
+  ],
+  "recommendation": "READY_FOR_RELEASE_SEAL",
+  "verification_actor": "verifier:independent-pass-0111"
+}

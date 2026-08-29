@@ -1,0 +1,18 @@
+{
+  "defect_id": "DEF-009-003",
+  "candidate_version": "0.09",
+  "observed_at_utc": "2026-08-24T17:21:22Z",
+  "phase": "implementation",
+  "classification": "implementation_defect",
+  "severity": "moderate",
+  "status": "resolved",
+  "observation": "The first post-freeze frozen-corpus evaluator execution aborted before scoring cases because it accessed AmbiguityReport.summary directly, but the inherited analyzer exposes summary through as_dict().",
+  "evidence": {
+    "exception": "AttributeError: 'AmbiguityReport' object has no attribute 'summary'",
+    "component": "src/spec_creator/prompt_compiler_evaluator.py",
+    "frozen_artifacts_modified": false
+  },
+  "root_cause": "The new evaluator coupled to an assumed internal object shape instead of the promoted parent analyzer's public serialization API.",
+  "corrective_change": "Read ambiguity/discovery summaries from their public as_dict() payloads.",
+  "regression_candidate": true
+}

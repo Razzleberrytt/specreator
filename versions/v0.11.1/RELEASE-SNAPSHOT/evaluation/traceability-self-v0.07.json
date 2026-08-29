@@ -1,0 +1,134 @@
+{
+  "complete_paths": {
+    "REQ-007-001": [
+      [
+        "G-007-001",
+        "REQ-007-001",
+        "FEAT-007-PLAN",
+        "TASK-007-001",
+        "TEST-007-001",
+        "GATE-007-ACTION-PLAN"
+      ]
+    ],
+    "REQ-007-002": [
+      [
+        "G-007-001",
+        "REQ-007-002",
+        "FEAT-007-FRONTIER",
+        "TASK-007-003",
+        "TEST-007-003",
+        "GATE-007-INFORMATION-VALUE"
+      ]
+    ],
+    "REQ-007-003": [
+      [
+        "G-007-001",
+        "REQ-007-003",
+        "FEAT-007-FRONTIER",
+        "TASK-007-003",
+        "TEST-007-003",
+        "GATE-007-INFORMATION-VALUE"
+      ]
+    ],
+    "REQ-007-004": [
+      [
+        "G-007-001",
+        "REQ-007-004",
+        "FEAT-007-FRONTIER",
+        "TASK-007-003",
+        "TEST-007-003",
+        "GATE-007-INFORMATION-VALUE"
+      ]
+    ],
+    "REQ-007-005": [
+      [
+        "G-007-002",
+        "REQ-007-005",
+        "FEAT-007-SAFE",
+        "TASK-007-002",
+        "TEST-007-002",
+        "GATE-007-SAFE-INFERENCE"
+      ]
+    ],
+    "REQ-007-006": [
+      [
+        "G-007-002",
+        "REQ-007-006",
+        "FEAT-007-SAFE",
+        "TASK-007-002",
+        "TEST-007-002",
+        "GATE-007-SAFE-INFERENCE"
+      ]
+    ],
+    "REQ-007-007": [
+      [
+        "G-007-002",
+        "REQ-007-007",
+        "FEAT-007-PLAN",
+        "TASK-007-001",
+        "TEST-007-001",
+        "GATE-007-ACTION-PLAN"
+      ]
+    ],
+    "REQ-007-008": [
+      [
+        "G-007-004",
+        "REQ-007-008",
+        "FEAT-007-PLAN",
+        "TASK-007-001",
+        "TEST-007-001",
+        "GATE-007-ACTION-PLAN"
+      ]
+    ],
+    "REQ-007-009": [
+      [
+        "G-007-003",
+        "REQ-007-009",
+        "FEAT-007-EVAL",
+        "TASK-007-004",
+        "TEST-007-004",
+        "GATE-007-TEST"
+      ]
+    ],
+    "REQ-007-010": [
+      [
+        "G-007-005",
+        "REQ-007-010",
+        "FEAT-007-EVAL",
+        "TASK-007-004",
+        "TEST-007-004",
+        "GATE-007-TEST"
+      ]
+    ],
+    "REQ-007-011": [
+      [
+        "G-007-005",
+        "REQ-007-011",
+        "FEAT-007-EVAL",
+        "TASK-007-004",
+        "TEST-007-004",
+        "GATE-007-TEST"
+      ]
+    ],
+    "REQ-007-012": [
+      [
+        "G-007-005",
+        "REQ-007-012",
+        "FEAT-007-RELEASE",
+        "TASK-007-005",
+        "TEST-007-005",
+        "GATE-007-INDEPENDENT"
+      ]
+    ]
+  },
+  "diagnostics": [],
+  "graph_id": "TG-007-SELF-001",
+  "ok": true,
+  "summary": {
+    "critical_requirements_complete": 12,
+    "critical_requirements_total": 12,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  }
+}

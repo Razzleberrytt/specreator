@@ -1,0 +1,1846 @@
+{
+  "candidate_version": "0.11.1",
+  "evaluated_at_utc": "2026-08-25T01:15:49.538652+00:00",
+  "evaluation_id": "STRUCT-EVAL-0111-LOCAL-001",
+  "evaluator_actor_id": "agent:spec-creator-builder-v0.11.1:self-check",
+  "execution_fixture_count": 6,
+  "integration_source_tasks_covered": 23,
+  "lifecycle_fixture_passes": 4,
+  "metrics": {
+    "critical_path_exact_match_rate": 1.0,
+    "execution_wave_exact_match_rate": 1.0,
+    "hidden_manual_state_reconstruction_count": 0,
+    "immutable_boundary_classification_error_count": 0,
+    "integration_contract_completeness_rate": 1.0,
+    "next_legal_action_exact_match_rate": 1.0,
+    "prospective_output_classification_error_count": 0,
+    "retry_isolation_exact_match_rate": 1.0,
+    "speculative_authority_escape_count": 0,
+    "unsafe_parallelization_count": 0,
+    "unsupported_dependency_edge_count": 0
+  },
+  "plan_schema_errors": [],
+  "plans": [
+    {
+      "bottleneck_warnings": [],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "A",
+            "B",
+            "C"
+          ],
+          "total_work_units": 6
+        }
+      ],
+      "execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "B",
+          "integration_id": "INT-A-B",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-B-C",
+          "producer_ids": [
+            "B"
+          ],
+          "rule": "artifact_input"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "e4ad2dac74818fcad272a97a8591cf546cc75a1c01ad5b6e1435406f0c2b874a",
+      "optimization_actions": [
+        {
+          "action": "none",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "20a02492cc586f0dfe3fce864a6ed4091338fbbc66f75dae4f06e31d05e01739",
+      "plan_id": "EPLAN-EXEC-011-001-LINEAR-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "1e2e72c89eaf3dd92a013e85c1947821fb4707e5c41e7a128a55e9168b2df5d6",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-001-LINEAR::A"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "B"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "a"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-001-LINEAR::A",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-001-LINEAR::A"
+          ],
+          "task_id": "A",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-001-LINEAR"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "a"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-001-LINEAR::B",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "C"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "b"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-001-LINEAR::B",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "B",
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-001-LINEAR::B"
+          ],
+          "task_id": "B",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-001-LINEAR"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "b"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-001-LINEAR::C",
+              "b"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "b"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "B"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "c"
+            ]
+          },
+          "read_scopes": [
+            "b"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-001-LINEAR::C",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-001-LINEAR::C"
+          ],
+          "task_id": "C",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-001-LINEAR"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "c"
+          ]
+        }
+      ]
+    },
+    {
+      "bottleneck_warnings": [],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "A",
+            "B",
+            "D"
+          ],
+          "total_work_units": 5
+        },
+        {
+          "task_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "total_work_units": 5
+        }
+      ],
+      "execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "B",
+          "integration_id": "INT-A-B",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-A-C",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "D",
+          "integration_id": "INT-B-D",
+          "producer_ids": [
+            "B"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "D",
+          "integration_id": "INT-C-D",
+          "producer_ids": [
+            "C"
+          ],
+          "rule": "artifact_input"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "eabaa06c28e3542ef66d2325fcc7704d8f2dc2c8044452827c16df346b4ca884",
+      "optimization_actions": [
+        {
+          "action": "parallelize",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "5a9e4fef4268889685e487f8a9d88b7e16dd6297ec0fb5e8e7e6e1c7daaa4bf5",
+      "plan_id": "EPLAN-EXEC-011-002-DIAMOND-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "a856a80ac88ac25b8de52f7e89320a0a4e095bc94bca588fa9b68d7ec5af6680",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-002-DIAMOND::A"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [
+              "B",
+              "C"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "a"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-002-DIAMOND::A",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-002-DIAMOND::A"
+          ],
+          "task_id": "A",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-002-DIAMOND"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "a"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-002-DIAMOND::B",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "D"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "b"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-002-DIAMOND::B",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "B",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-002-DIAMOND::B"
+          ],
+          "task_id": "B",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-002-DIAMOND"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "b"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-002-DIAMOND::C",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "D"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "c"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-002-DIAMOND::C",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "C",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-002-DIAMOND::C"
+          ],
+          "task_id": "C",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-002-DIAMOND"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "c"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-002-DIAMOND::D",
+              "b",
+              "c"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "b",
+              "c"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "B"
+            },
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "C"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "d"
+            ]
+          },
+          "read_scopes": [
+            "b",
+            "c"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-002-DIAMOND::D",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-002-DIAMOND::D"
+          ],
+          "task_id": "D",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-002-DIAMOND"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "d"
+          ]
+        }
+      ]
+    },
+    {
+      "bottleneck_warnings": [],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "A",
+            "B",
+            "C"
+          ],
+          "total_work_units": 5
+        }
+      ],
+      "execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-A-C",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "explicit_integration"
+        },
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-B-C",
+          "producer_ids": [
+            "B"
+          ],
+          "rule": "explicit_integration"
+        },
+        {
+          "consumer_id": "B",
+          "integration_id": "INT-A-B",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "conflict_serialization"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "71afceb19c229ff80969e1d3c06fdf7ee0cb1070d7db82178e23227c4a5ef0d6",
+      "optimization_actions": [
+        {
+          "action": "none",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "574058fb33c0efcfdce0f9a3b51f54c289c7787d843aab1a740b5d4a2627e7c8",
+      "plan_id": "EPLAN-EXEC-011-003-CONFLICT-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "535727b9627d7f7eb2cbf6f7456c7aa5df51eaeaf0db766e99167f17b5597898",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-003-CONFLICT::A"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "B",
+              "C"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "shared.json"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-003-CONFLICT::A",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-003-CONFLICT::A"
+          ],
+          "task_id": "A",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-003-CONFLICT"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "shared.json"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-003-CONFLICT::B"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "conflict_serialization",
+              "reason": "machine-derived conflict_serialization edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "C"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "shared.json"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-003-CONFLICT::B",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "B",
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-003-CONFLICT::B"
+          ],
+          "task_id": "B",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-003-CONFLICT"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "shared.json"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-003-CONFLICT::C"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "explicit_integration",
+              "reason": "machine-derived explicit_integration edge",
+              "task_id": "A"
+            },
+            {
+              "provenance": "explicit_integration",
+              "reason": "machine-derived explicit_integration edge",
+              "task_id": "B"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "report"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-003-CONFLICT::C",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "C"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-003-CONFLICT::C"
+          ],
+          "task_id": "C",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-003-CONFLICT"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "report"
+          ]
+        }
+      ]
+    },
+    {
+      "bottleneck_warnings": [
+        "dominant bottleneck: B"
+      ],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "A",
+            "B",
+            "E"
+          ],
+          "total_work_units": 10
+        }
+      ],
+      "execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "E"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "B",
+          "integration_id": "INT-A-B",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-A-C",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "D",
+          "integration_id": "INT-A-D",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "E",
+          "integration_id": "INT-B-E",
+          "producer_ids": [
+            "B"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "E",
+          "integration_id": "INT-C-E",
+          "producer_ids": [
+            "C"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "E",
+          "integration_id": "INT-D-E",
+          "producer_ids": [
+            "D"
+          ],
+          "rule": "artifact_input"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "602317e8f0284a9ba465fdecd7ed92f6722f2f6a0cb8ac17741479497c8532ab",
+      "optimization_actions": [
+        {
+          "action": "parallelize",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "cc000c1d6edc29e0e6783300c183fed1fd8a584866afb7866f14b337b15548f6",
+      "plan_id": "EPLAN-EXEC-011-004-LOAD-BALANCE-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "dc3f678aecffa23346c34c5bb96fe6c06aa81a52a59d660d89381e495e138da7",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-004-LOAD-BALANCE::A"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [
+              "B",
+              "C",
+              "D"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "a"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-004-LOAD-BALANCE::A",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-004-LOAD-BALANCE::A"
+          ],
+          "task_id": "A",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-004-LOAD-BALANCE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "a"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-004-LOAD-BALANCE::B",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 8,
+          "integration_contract": {
+            "consumer_ids": [
+              "E"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "b"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-004-LOAD-BALANCE::B",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "B",
+              "E"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-004-LOAD-BALANCE::B"
+          ],
+          "task_id": "B",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-004-LOAD-BALANCE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "b"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-004-LOAD-BALANCE::C",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "E"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "c"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-004-LOAD-BALANCE::C",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "C",
+              "E"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-004-LOAD-BALANCE::C"
+          ],
+          "task_id": "C",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-004-LOAD-BALANCE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "c"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-004-LOAD-BALANCE::D",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "E"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "d"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-004-LOAD-BALANCE::D",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "D",
+              "E"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-004-LOAD-BALANCE::D"
+          ],
+          "task_id": "D",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-004-LOAD-BALANCE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "d"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-004-LOAD-BALANCE::E",
+              "b",
+              "c",
+              "d"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "b",
+              "c",
+              "d"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "B"
+            },
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "C"
+            },
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "D"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "e"
+            ]
+          },
+          "read_scopes": [
+            "b",
+            "c",
+            "d"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-004-LOAD-BALANCE::E",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "E"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-004-LOAD-BALANCE::E"
+          ],
+          "task_id": "E",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-004-LOAD-BALANCE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "e"
+          ]
+        }
+      ]
+    },
+    {
+      "bottleneck_warnings": [],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "DECIDE",
+            "IMPLEMENT",
+            "VERIFY"
+          ],
+          "total_work_units": 8
+        }
+      ],
+      "execution_waves": [
+        [
+          "DECIDE",
+          "PREP"
+        ],
+        [
+          "IMPLEMENT"
+        ],
+        [
+          "VERIFY"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "IMPLEMENT",
+          "integration_id": "INT-DECIDE-IMPLEMENT",
+          "producer_ids": [
+            "DECIDE"
+          ],
+          "rule": "authority_gate"
+        },
+        {
+          "consumer_id": "VERIFY",
+          "integration_id": "INT-IMPLEMENT-VERIFY",
+          "producer_ids": [
+            "IMPLEMENT"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "VERIFY",
+          "integration_id": "INT-PREP-VERIFY",
+          "producer_ids": [
+            "PREP"
+          ],
+          "rule": "artifact_input"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "e9f438db4fb6b983d324502057d33ecdf22b596768b2d708c24575efc7bd5dfc",
+      "optimization_actions": [
+        {
+          "action": "parallelize",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "c56f8c72b14263639f0bd8543e687b72f7e91642a6d11bb14579057eeb628771",
+      "plan_id": "EPLAN-EXEC-011-005-SPECULATIVE-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "6e3b6ff57fd4a893ffd3a5116974701e876ba0aea16df953501090ef474b8250",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-005-SPECULATIVE::DECIDE"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "IMPLEMENT"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "decision"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-005-SPECULATIVE::DECIDE",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "DECIDE",
+              "IMPLEMENT",
+              "VERIFY"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-005-SPECULATIVE::DECIDE"
+          ],
+          "task_id": "DECIDE",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-005-SPECULATIVE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "decision"
+          ]
+        },
+        {
+          "authoritative_before_prerequisites": false,
+          "cache_contract": {
+            "cacheable": false,
+            "identity_inputs": [
+              "source:EXEC-011-005-SPECULATIVE::PREP"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 2,
+          "integration_contract": {
+            "consumer_ids": [
+              "VERIFY"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "draft-tests"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-005-SPECULATIVE::PREP",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "PREP",
+              "VERIFY"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-005-SPECULATIVE::PREP"
+          ],
+          "speculative": true,
+          "task_id": "PREP",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-005-SPECULATIVE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "draft-tests"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-005-SPECULATIVE::IMPLEMENT"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "authority_gate",
+              "reason": "machine-derived authority_gate edge",
+              "task_id": "DECIDE"
+            }
+          ],
+          "estimated_work_units": 4,
+          "integration_contract": {
+            "consumer_ids": [
+              "VERIFY"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "code"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-005-SPECULATIVE::IMPLEMENT",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "IMPLEMENT",
+              "VERIFY"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-005-SPECULATIVE::IMPLEMENT"
+          ],
+          "task_id": "IMPLEMENT",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-005-SPECULATIVE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "code"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-005-SPECULATIVE::VERIFY",
+              "code",
+              "draft-tests"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "code",
+              "draft-tests"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "IMPLEMENT"
+            },
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "PREP"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "evidence"
+            ]
+          },
+          "read_scopes": [
+            "code",
+            "draft-tests"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-005-SPECULATIVE::VERIFY",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "VERIFY"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-005-SPECULATIVE::VERIFY"
+          ],
+          "task_id": "VERIFY",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-005-SPECULATIVE"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "bottleneck_warnings": [],
+      "critical_paths": [
+        {
+          "task_ids": [
+            "A",
+            "B",
+            "D"
+          ],
+          "total_work_units": 5
+        },
+        {
+          "task_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "total_work_units": 5
+        }
+      ],
+      "execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "integration_points": [
+        {
+          "consumer_id": "B",
+          "integration_id": "INT-A-B",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "C",
+          "integration_id": "INT-A-C",
+          "producer_ids": [
+            "A"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "D",
+          "integration_id": "INT-B-D",
+          "producer_ids": [
+            "B"
+          ],
+          "rule": "artifact_input"
+        },
+        {
+          "consumer_id": "D",
+          "integration_id": "INT-C-D",
+          "producer_ids": [
+            "C"
+          ],
+          "rule": "artifact_input"
+        }
+      ],
+      "objective": "preserve frozen obligations while maximizing useful dependency/conflict-safe parallelism",
+      "obligation_set_hash": "5774bf4cd0bdbb066413275080076001343b3382c8ebe001a65ed4cc645a8f15",
+      "optimization_actions": [
+        {
+          "action": "parallelize",
+          "justification": "effective DAG and write-conflict analysis determines useful concurrency",
+          "pillar": "dependency-safe execution"
+        }
+      ],
+      "parallelism_policy": {
+        "dependency_path_blocks": true,
+        "max_useful_not_max_count": true,
+        "speculative_non_authority_required": true,
+        "write_conflict_blocks": true
+      },
+      "plan_hash": "76dedf18f00192b41c3b67571a84008f062b453367b31468951e67eaaa2eedc6",
+      "plan_id": "EPLAN-EXEC-011-006-RETRY-ISOLATION-optimized_parallel_ready",
+      "schema_version": "1.0-candidate",
+      "source_task_graph_hash": "a856a80ac88ac25b8de52f7e89320a0a4e095bc94bca588fa9b68d7ec5af6680",
+      "strategy": "optimized_parallel_ready",
+      "tasks": [
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-006-RETRY-ISOLATION::A"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [
+              "B",
+              "C"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "a"
+            ]
+          },
+          "read_scopes": [],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-006-RETRY-ISOLATION::A",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-006-RETRY-ISOLATION::A"
+          ],
+          "task_id": "A",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-006-RETRY-ISOLATION"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "a"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-006-RETRY-ISOLATION::B",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "D"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "b"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-006-RETRY-ISOLATION::B",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "B",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-006-RETRY-ISOLATION::B"
+          ],
+          "task_id": "B",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-006-RETRY-ISOLATION"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "b"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-006-RETRY-ISOLATION::C",
+              "a"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "a"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "A"
+            }
+          ],
+          "estimated_work_units": 3,
+          "integration_contract": {
+            "consumer_ids": [
+              "D"
+            ],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "c"
+            ]
+          },
+          "read_scopes": [
+            "a"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-006-RETRY-ISOLATION::C",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "C",
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-006-RETRY-ISOLATION::C"
+          ],
+          "task_id": "C",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-006-RETRY-ISOLATION"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "c"
+          ]
+        },
+        {
+          "cache_contract": {
+            "cacheable": true,
+            "identity_inputs": [
+              "source:EXEC-011-006-RETRY-ISOLATION::D",
+              "b",
+              "c"
+            ],
+            "invalidation_conditions": [
+              "identity input hash changes",
+              "declared dependency output changes"
+            ]
+          },
+          "context_contract": {
+            "required_refs": [
+              "b",
+              "c"
+            ],
+            "selection_rule": "minimum canonical inputs required by source task"
+          },
+          "dependencies": [
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "B"
+            },
+            {
+              "provenance": "artifact_input",
+              "reason": "machine-derived artifact_input edge",
+              "task_id": "C"
+            }
+          ],
+          "estimated_work_units": 1,
+          "integration_contract": {
+            "consumer_ids": [],
+            "merge_rule": "consume only after producer verification; serialize shared-write conflicts by effective DAG",
+            "outputs": [
+              "d"
+            ]
+          },
+          "read_scopes": [
+            "b",
+            "c"
+          ],
+          "retry_boundary": {
+            "boundary_id": "retry::EXEC-011-006-RETRY-ISOLATION::D",
+            "preserve_successful_independent_work": true,
+            "rerun_scope": [
+              "D"
+            ]
+          },
+          "source_task_ids": [
+            "EXEC-011-006-RETRY-ISOLATION::D"
+          ],
+          "task_id": "D",
+          "verification_contract": {
+            "acceptance_refs": [
+              "EXEC-011-006-RETRY-ISOLATION"
+            ],
+            "verifier_role": "independent evaluator for promotion-authoritative claims"
+          },
+          "write_scopes": [
+            "d"
+          ]
+        }
+      ]
+    }
+  ],
+  "promotion_authority": false,
+  "schema_valid_plan_count": 6
+}

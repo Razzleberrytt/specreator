@@ -1,0 +1,41 @@
+{
+  "classification": "agent_execution_error",
+  "covered_by_regression": "REG-0009",
+  "defect_id": "DEF-008-004",
+  "disposition": "Preserve the failed rehearsal. Re-run seal and validation with stdout/stderr outside the workspace. Existing REG-0009 already requires manifest-last/no-post-seal-mutation behavior, so no duplicate regression is added.",
+  "evidence": {
+    "actual_rehearsal_file_after_command": {
+      "bytes": 22,
+      "sha256": "a9e4fd22440b18954e4d56b14cecf3f2a15e61fac8dc88e6d3ef017d1e5949a2"
+    },
+    "issues": [
+      {
+        "artifact": "PACKAGE-MANIFEST.json",
+        "code": "PACKAGE_MANIFEST_HASH_MISMATCH",
+        "message": "Hash mismatch for evaluation/package-seal-rehearsal-v0.08.txt",
+        "severity": "error"
+      },
+      {
+        "artifact": "PACKAGE-MANIFEST.json",
+        "code": "PACKAGE_MANIFEST_SIZE_MISMATCH",
+        "message": "Byte count mismatch for evaluation/package-seal-rehearsal-v0.08.txt",
+        "severity": "error"
+      }
+    ],
+    "tracked_rehearsal_file_at_seal": {
+      "bytes": 0,
+      "path": "evaluation/package-seal-rehearsal-v0.08.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validation_summary": {
+      "errors": 2,
+      "issues": 2,
+      "warnings": 0
+    }
+  },
+  "frozen_artifacts_changed": false,
+  "observation": "The first v0.08 package rehearsal produced two manifest mismatches immediately after sealing.",
+  "observed_at_utc": "2026-08-24T16:58:00Z",
+  "root_cause": "Shell redirection created the destination file before seal-package enumerated workspace contents, then command stdout mutated that already-hashed file after the manifest was written.",
+  "title": "Package rehearsal stdout was redirected into the workspace being sealed"
+}

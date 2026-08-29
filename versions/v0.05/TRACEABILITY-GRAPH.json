@@ -1,0 +1,433 @@
+{
+  "edges": [
+    {
+      "from": "G-005-001",
+      "relation": "requires",
+      "to": "REQ-005-001"
+    },
+    {
+      "from": "G-005-001",
+      "relation": "requires",
+      "to": "REQ-005-006"
+    },
+    {
+      "from": "G-005-001",
+      "relation": "requires",
+      "to": "REQ-005-007"
+    },
+    {
+      "from": "G-005-002",
+      "relation": "requires",
+      "to": "REQ-005-002"
+    },
+    {
+      "from": "G-005-002",
+      "relation": "requires",
+      "to": "REQ-005-003"
+    },
+    {
+      "from": "G-005-002",
+      "relation": "requires",
+      "to": "REQ-005-004"
+    },
+    {
+      "from": "G-005-002",
+      "relation": "requires",
+      "to": "REQ-005-005"
+    },
+    {
+      "from": "G-005-003",
+      "relation": "requires",
+      "to": "REQ-005-008"
+    },
+    {
+      "from": "G-005-003",
+      "relation": "requires",
+      "to": "REQ-005-009"
+    },
+    {
+      "from": "G-005-004",
+      "relation": "requires",
+      "to": "REQ-005-010"
+    },
+    {
+      "from": "REQ-005-001",
+      "relation": "realized_by",
+      "to": "FEAT-005-001"
+    },
+    {
+      "from": "REQ-005-002",
+      "relation": "realized_by",
+      "to": "FEAT-005-001"
+    },
+    {
+      "from": "REQ-005-003",
+      "relation": "realized_by",
+      "to": "FEAT-005-001"
+    },
+    {
+      "from": "REQ-005-004",
+      "relation": "realized_by",
+      "to": "FEAT-005-001"
+    },
+    {
+      "from": "REQ-005-005",
+      "relation": "realized_by",
+      "to": "FEAT-005-002"
+    },
+    {
+      "from": "REQ-005-006",
+      "relation": "realized_by",
+      "to": "FEAT-005-002"
+    },
+    {
+      "from": "REQ-005-007",
+      "relation": "realized_by",
+      "to": "FEAT-005-002"
+    },
+    {
+      "from": "REQ-005-008",
+      "relation": "realized_by",
+      "to": "FEAT-005-003"
+    },
+    {
+      "from": "REQ-005-009",
+      "relation": "realized_by",
+      "to": "FEAT-005-003"
+    },
+    {
+      "from": "REQ-005-010",
+      "relation": "realized_by",
+      "to": "FEAT-005-005"
+    },
+    {
+      "from": "FEAT-005-001",
+      "relation": "decomposed_to",
+      "to": "TASK-005-001"
+    },
+    {
+      "from": "FEAT-005-002",
+      "relation": "decomposed_to",
+      "to": "TASK-005-002"
+    },
+    {
+      "from": "FEAT-005-003",
+      "relation": "decomposed_to",
+      "to": "TASK-005-003"
+    },
+    {
+      "from": "FEAT-005-004",
+      "relation": "decomposed_to",
+      "to": "TASK-005-004"
+    },
+    {
+      "from": "FEAT-005-005",
+      "relation": "decomposed_to",
+      "to": "TASK-005-005"
+    },
+    {
+      "from": "TASK-005-001",
+      "relation": "verified_by",
+      "to": "TEST-005-STRUCT"
+    },
+    {
+      "from": "TASK-005-002",
+      "relation": "verified_by",
+      "to": "TEST-005-SEMANTIC"
+    },
+    {
+      "from": "TASK-005-003",
+      "relation": "verified_by",
+      "to": "TEST-005-IMPACT"
+    },
+    {
+      "from": "TASK-005-004",
+      "relation": "verified_by",
+      "to": "TEST-005-EVALUATOR"
+    },
+    {
+      "from": "TASK-005-005",
+      "relation": "verified_by",
+      "to": "TEST-005-REGRESSION"
+    },
+    {
+      "from": "TEST-005-STRUCT",
+      "relation": "gated_by",
+      "to": "GATE-005-GRAPH-SCHEMA"
+    },
+    {
+      "from": "TEST-005-STRUCT",
+      "relation": "gated_by",
+      "to": "GATE-005-VALIDATION"
+    },
+    {
+      "from": "TEST-005-SEMANTIC",
+      "relation": "gated_by",
+      "to": "GATE-005-TRACEABILITY"
+    },
+    {
+      "from": "TEST-005-IMPACT",
+      "relation": "gated_by",
+      "to": "GATE-005-IMPACT"
+    },
+    {
+      "from": "TEST-005-IMPACT",
+      "relation": "gated_by",
+      "to": "GATE-005-CLI"
+    },
+    {
+      "from": "TEST-005-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-005-CORPUS-INTEGRITY"
+    },
+    {
+      "from": "TEST-005-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-005-TEST"
+    },
+    {
+      "from": "TEST-005-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-005-RECONCILIATION"
+    },
+    {
+      "from": "TEST-005-REGRESSION",
+      "relation": "gated_by",
+      "to": "GATE-005-SPEC-LINT"
+    },
+    {
+      "from": "TEST-005-REGRESSION",
+      "relation": "gated_by",
+      "to": "GATE-005-REGRESSION"
+    },
+    {
+      "from": "TEST-005-REGRESSION",
+      "relation": "gated_by",
+      "to": "GATE-005-INDEPENDENT"
+    },
+    {
+      "from": "TEST-005-REGRESSION",
+      "relation": "gated_by",
+      "to": "GATE-005-ROLLBACK"
+    }
+  ],
+  "graph_id": "TG-005-RELEASE",
+  "nodes": [
+    {
+      "id": "G-005-001",
+      "label": "G-005-001",
+      "type": "goal"
+    },
+    {
+      "id": "G-005-002",
+      "label": "G-005-002",
+      "type": "goal"
+    },
+    {
+      "id": "G-005-003",
+      "label": "G-005-003",
+      "type": "goal"
+    },
+    {
+      "id": "G-005-004",
+      "label": "G-005-004",
+      "type": "goal"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-001",
+      "label": "REQ-005-001",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-002",
+      "label": "REQ-005-002",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-003",
+      "label": "REQ-005-003",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-004",
+      "label": "REQ-005-004",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-005",
+      "label": "REQ-005-005",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-006",
+      "label": "REQ-005-006",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-007",
+      "label": "REQ-005-007",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-008",
+      "label": "REQ-005-008",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-009",
+      "label": "REQ-005-009",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-005-010",
+      "label": "REQ-005-010",
+      "type": "requirement"
+    },
+    {
+      "id": "FEAT-005-001",
+      "label": "FEAT-005-001",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-005-002",
+      "label": "FEAT-005-002",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-005-003",
+      "label": "FEAT-005-003",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-005-004",
+      "label": "FEAT-005-004",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-005-005",
+      "label": "FEAT-005-005",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-005-001",
+      "label": "TASK-005-001",
+      "type": "task"
+    },
+    {
+      "id": "TASK-005-002",
+      "label": "TASK-005-002",
+      "type": "task"
+    },
+    {
+      "id": "TASK-005-003",
+      "label": "TASK-005-003",
+      "type": "task"
+    },
+    {
+      "id": "TASK-005-004",
+      "label": "TASK-005-004",
+      "type": "task"
+    },
+    {
+      "id": "TASK-005-005",
+      "label": "TASK-005-005",
+      "type": "task"
+    },
+    {
+      "id": "TEST-005-STRUCT",
+      "label": "TEST-005-STRUCT",
+      "type": "test"
+    },
+    {
+      "id": "TEST-005-SEMANTIC",
+      "label": "TEST-005-SEMANTIC",
+      "type": "test"
+    },
+    {
+      "id": "TEST-005-IMPACT",
+      "label": "TEST-005-IMPACT",
+      "type": "test"
+    },
+    {
+      "id": "TEST-005-EVALUATOR",
+      "label": "TEST-005-EVALUATOR",
+      "type": "test"
+    },
+    {
+      "id": "TEST-005-REGRESSION",
+      "label": "TEST-005-REGRESSION",
+      "type": "test"
+    },
+    {
+      "id": "GATE-005-CORPUS-INTEGRITY",
+      "label": "GATE-005-CORPUS-INTEGRITY",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-SPEC-LINT",
+      "label": "GATE-005-SPEC-LINT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-GRAPH-SCHEMA",
+      "label": "GATE-005-GRAPH-SCHEMA",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-VALIDATION",
+      "label": "GATE-005-VALIDATION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-TRACEABILITY",
+      "label": "GATE-005-TRACEABILITY",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-IMPACT",
+      "label": "GATE-005-IMPACT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-CLI",
+      "label": "GATE-005-CLI",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-TEST",
+      "label": "GATE-005-TEST",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-REGRESSION",
+      "label": "GATE-005-REGRESSION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-RECONCILIATION",
+      "label": "GATE-005-RECONCILIATION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-INDEPENDENT",
+      "label": "GATE-005-INDEPENDENT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-005-ROLLBACK",
+      "label": "GATE-005-ROLLBACK",
+      "type": "gate"
+    }
+  ],
+  "schema_version": "1.0"
+}

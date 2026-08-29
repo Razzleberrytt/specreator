@@ -1,0 +1,26 @@
+{
+  "candidate_version": "0.06.1",
+  "command": "PYTHONPATH=src pytest -q",
+  "failed": 2,
+  "failures": [
+    {
+      "case_id": "CLN-NONNORM-01",
+      "classification": "implementation_defect",
+      "defect_id": "DEF-0061-003",
+      "description": "AMB-006 treated ordinary domain adjective pending in zero pending records as an unresolved decision marker.",
+      "test": "tests/test_ambiguity.py::test_frozen_candidate_detection_and_diagnostics"
+    },
+    {
+      "classification": "implementation_defect",
+      "defect_id": "DEF-0061-004",
+      "description": "Evaluator constant referenced an obsolete transient pre-freeze evaluation-plan hash rather than the hash embedded in the actual immutable v0.06.1 frozen contract.",
+      "test": "tests/test_ambiguity_evaluator.py::test_clarification_interception_proxy"
+    }
+  ],
+  "frozen_artifacts_modified_to_fix": false,
+  "passed": 94,
+  "phase": "implementation",
+  "resolution": "Implementation/tests updated only; frozen corpus, evaluation plan, and release contract remained byte-identical.",
+  "result": "FAIL",
+  "total": 96
+}

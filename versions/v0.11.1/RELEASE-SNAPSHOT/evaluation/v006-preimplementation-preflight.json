@@ -1,0 +1,1630 @@
+{
+  "candidate_version": "0.06",
+  "cases": [
+    {
+      "case_id": "WF-01",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-02",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-03",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-04",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-05",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-06",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-07",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "WF-08",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-01",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-02",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-03",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-04",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-05",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-06",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-07",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    },
+    {
+      "case_id": "PRI-08",
+      "diagnostics": [
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "graph_id: 'GRAPH-WF' does not match '^TG-[A-Za-z0-9._-]+$'",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.0: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.1: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.2: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.3: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.4: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.5: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.6: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.7: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.8: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.9: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.10: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.11: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.12: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.13: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.14: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.15: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.16: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.17: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.18: 'label' is a required property",
+          "severity": "error"
+        },
+        {
+          "code": "TRACE-SCHEMA",
+          "message": "nodes.19: 'label' is a required property",
+          "severity": "error"
+        }
+      ],
+      "valid": false
+    }
+  ],
+  "checked_at_utc": "2026-08-24T15:43:00Z",
+  "contract_id": "REL-0.06-FROZEN-001",
+  "failure": "All embedded trace graphs fail the inherited v0.05 traceability schema; candidate cannot satisfy frozen trace-integration requirements without mutating preregistered fixtures.",
+  "frozen_contract_sha256": "85bba76599b844a49784850837abad70e5fd06aab8fca44989d149499622845d",
+  "frozen_corpus_sha256": "67ba6d18c8e6249de6d00e6f90238738f7820945f623c66510dcd8bd1b2f5cec",
+  "result": "FAIL",
+  "trace_graph_case_count": 16,
+  "trace_graph_invalid_count": 16,
+  "trace_graph_valid_count": 0
+}

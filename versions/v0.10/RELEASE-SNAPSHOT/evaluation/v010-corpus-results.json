@@ -1,0 +1,70 @@
+{
+  "candidate_version": "0.10",
+  "metrics": {
+    "artifact_provenance_completeness_rate": 1.0,
+    "critical_gate_bypass_count": 0,
+    "deterministic_rerun_rate": 1.0,
+    "end_to_end_project_completion_rate": 1.0,
+    "invalid_or_hash_mismatched_resume_escape_count": 0,
+    "manual_artifact_reconstruction_count": 0,
+    "owner_decision_escape_count": 0,
+    "prerequisite_escape_count": 0,
+    "promoted_stage_semantic_preservation_rate": 1.0,
+    "resume_exact_match_rate": 1.0,
+    "scope_escape_count": 0
+  },
+  "project_count": 3,
+  "results": [
+    {
+      "case_id": "PROTO-010-NORMAL-01",
+      "completed": true,
+      "deterministic": true,
+      "metrics": {
+        "blocked_then_recovered": false,
+        "critical_gate_bypass_count": 0,
+        "manual_artifact_reconstruction_count": 0,
+        "owner_decision_escape_count": 0,
+        "prerequisite_escape_count": 0,
+        "prompt_envelope_count": 3,
+        "scope_escape_count": 0
+      },
+      "resume_exact_match": null,
+      "run_hash": "16c192ef9c802d2a32bb3265619d7fdebfa02b754b68dc5fcb8ca3a960366b4e",
+      "scenario": "normal"
+    },
+    {
+      "case_id": "PROTO-010-BLOCKER-RECOVERY-01",
+      "completed": true,
+      "deterministic": true,
+      "metrics": {
+        "blocked_then_recovered": true,
+        "critical_gate_bypass_count": 0,
+        "manual_artifact_reconstruction_count": 0,
+        "owner_decision_escape_count": 0,
+        "prerequisite_escape_count": 0,
+        "prompt_envelope_count": 7,
+        "scope_escape_count": 0
+      },
+      "resume_exact_match": null,
+      "run_hash": "825c27562bed80f656a3205178c5e4279040fc81ec4994af2f3ef6d3a598bfd9",
+      "scenario": "blocker_recovery"
+    },
+    {
+      "case_id": "PROTO-010-RESUME-01",
+      "completed": true,
+      "deterministic": true,
+      "metrics": {
+        "blocked_then_recovered": false,
+        "critical_gate_bypass_count": 0,
+        "manual_artifact_reconstruction_count": 0,
+        "owner_decision_escape_count": 0,
+        "prerequisite_escape_count": 0,
+        "prompt_envelope_count": 8,
+        "scope_escape_count": 0
+      },
+      "resume_exact_match": true,
+      "run_hash": "4b7104bb52012866fd7e3fcfad22c50a5034231da8a6d7ad3412e374761ccee6",
+      "scenario": "resume"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0-candidate",
+  "checkpoint_id": "LCP-011-PREREG-DRAFT-003",
+  "candidate_version": "0.11",
+  "parent_version": "0.10",
+  "release_state": "PREREGISTRATION_DRAFT",
+  "immutable_boundary": {
+    "registry_id": "IMMUT-011-DRAFT-002",
+    "historical_versions": [
+      "0.10",
+      "0.09.2",
+      "0.09",
+      "0.09.1",
+      "0.08",
+      "0.07",
+      "0.06.1",
+      "0.06",
+      "0.05",
+      "0.04",
+      "0.03",
+      "0.02",
+      "0.01"
+    ],
+    "hash_algorithm": "sha256",
+    "mutation_rule": "Historical frozen/failed bytes remain immutable; only v0.11-owned unfrozen artifacts may change.",
+    "registry_ref": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json"
+  },
+  "validation_profile": {
+    "profile_id": "VAL-011-PREREG-DRAFT-003",
+    "commands": [
+      "python -m pytest -q",
+      "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+      "python versions/v0.11/tools/preregistration_preflight.py"
+    ],
+    "success_condition": "All 155 parent-suite node IDs pass; all 24 active regressions have passing verification evidence in the applicable release evaluation; candidate schemas/oracles/fixtures/universes pass preregistration_preflight.py; all 1120 v0.10 manifest entries exist with exact SHA-256 matches; and the package-wide immutable-boundary partition has zero unclassified or multiply classified shipped paths."
+  },
+  "blockers": [
+    {
+      "blocker_id": "B-011-INDEPENDENT-PREFREEZE-REVIEW",
+      "status": "OPEN",
+      "description": "Independent prefreeze re-review 002 returned NOT_READY. DEF-011-REVIEW-001 through DEF-011-REVIEW-006 independently PASS; new blocking DEF-011-REREVIEW-001 (immutable-boundary selector/classification mismatch) has been repaired locally and requires genuinely separate re-review before freeze.",
+      "owner_decision_required": false,
+      "transition_token": "independent_prefreeze_review_required"
+    },
+    {
+      "blocker_id": "B-011-FROZEN-HASHES",
+      "status": "OPEN",
+      "description": "Final preregistered artifact hashes and frozen release contract do not yet exist.",
+      "owner_decision_required": false,
+      "transition_token": "frozen_hashes_not_established"
+    }
+  ],
+  "next_legal_action": {
+    "action_id": "ACT-011-INDEPENDENT-PREFREEZE-REREVIEW-003",
+    "description": "Perform a new independent prefreeze re-review of the repaired v0.11 preregistration artifacts; confirm the six original defects remain PASS and independently regress DEF-011-REREVIEW-001 by recomputing the exact package-wide immutable-boundary classification. Return raw evidence; do not implement or freeze.",
+    "allowed_actor": "genuinely separate receiving context that did not perform the repairs",
+    "required_inputs": [
+      "versions/v0.11/EVALUATION-DESIGN.json",
+      "versions/v0.11/EVALUATION-UNIVERSES.json",
+      "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+      "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "versions/v0.11/candidate-schemas/",
+      "versions/v0.11/candidate-fixtures/",
+      "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+      "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+      "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "versions/v0.11/DEFECT-RESOLUTION-001.json",
+      "versions/v0.11/DEFECT-RESOLUTION-002.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/",
+      "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json"
+    ],
+    "expected_outputs": [
+      "per-defect regression verdict for DEF-011-REVIEW-001 through 006 and DEF-011-REREVIEW-001",
+      "independent whole-package immutable-boundary classification with exact counts and unclassified list",
+      "schema/oracle/fixture review evidence",
+      "exact denominator/universe audit",
+      "clean-extraction command evidence",
+      "freeze-readiness recommendation",
+      "identified residual/new defects if any"
+    ],
+    "action_token": "independent_prefreeze_review"
+  },
+  "required_artifacts": [
+    "versions/v0.11/EVALUATION-DESIGN.json",
+    "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+    "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+    "versions/v0.11/EVALUATION-UNIVERSES.json",
+    "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+    "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+    "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+    "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+    "versions/v0.11/DEFECT-RESOLUTION-001.json",
+    "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+    "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+    "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROMPT.md",
+    "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+    "versions/v0.11/DEFECT-RESOLUTION-002.json"
+  ],
+  "stop_condition": "Do not freeze or implement v0.11 in this planning context. Stop after local preflight is clean and package an independent-review checkpoint.",
+  "notes": [
+    "Independent prefreeze review 001 returned NOT_READY; its raw evidence remains preserved under versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/.",
+    "Independent re-review 002 independently PASSed DEF-011-REVIEW-001 through DEF-011-REVIEW-006 and found new DEF-011-REREVIEW-001; its raw evidence is preserved under versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/.",
+    "DEF-011-REREVIEW-001 is locally repaired by an exact package-wide successor ownership universe; independent re-review is still mandatory.",
+    "Empirical efficiency measurements remain mandatory calibration evidence but non-promotional in v0.11.",
+    "The target is maximum useful parallelism, not maximum workstream count.",
+    "The forward ESIS top-5 repository prototype requirement is product-direction only and does not alter v0.11 promotion metrics."
+  ],
+  "transition_rule_ref": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json"
+}

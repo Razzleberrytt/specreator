@@ -1,0 +1,266 @@
+{
+  "baseline": {
+    "baseline_id": "BASELINE-009-GENERIC-001",
+    "corrective_prompt_proxy": "Count exact frozen obligation tokens absent from each rendered prompt. Compiled and baseline prompts use the same token denominator.",
+    "missing_data_rule": "A zero or unavailable baseline denominator is unavailable evidence and may not be reported as zero corrective prompts or a pass.",
+    "path": "fixtures/prompt-compiler/v0.09.2/baseline.json"
+  },
+  "candidate_version": "0.09.2",
+  "corpus_denominators": {
+    "accepted_excluded_context_refs": 134,
+    "accepted_obligation_tokens": 1196,
+    "accepted_total": 45,
+    "continuation_accepted_cases": 9,
+    "development_accepted": 30,
+    "development_cases": 50,
+    "development_negative": 20,
+    "heldout_accepted": 15,
+    "heldout_cases": 25,
+    "heldout_negative": 10,
+    "negative_total": 30
+  },
+  "evaluation_plan_version": "1.0",
+  "evaluator_role": "verifier:independent-pass-0092",
+  "frozen_artifacts": {
+    "approved_spec": {
+      "path": "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md",
+      "sha256": "fff55af89386e3750af3c86fd37f922a52e9423186a02f269997ee2a52f3a68b"
+    },
+    "baseline": {
+      "path": "fixtures/prompt-compiler/v0.09.2/baseline.json",
+      "sha256": "ecab22f1ff6b609e250dea79a7df6d2cb871e4a6dd1db54bb69dbf3d2964d7f7"
+    },
+    "combined_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.2/corpus.jsonl",
+      "sha256": "5e63cb9c90fa0f46fe876fab1b36dfc705ba0f3d4ec27dfc2fb93cc63dc6c8ec"
+    },
+    "contrast_preflight": {
+      "path": "evaluation/v0092-benchmark-contrast-preflight.json",
+      "sha256": "0ea91647d6626da4063c1d1cc15cb6746f89ce12627864ae0429f0801fb798d6"
+    },
+    "development_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.2/development.jsonl",
+      "sha256": "d4e6b29a4891dd8af4de5474e145a2bb631ccc574ea58770db4c0018044cdd54"
+    },
+    "envelope_schema": {
+      "path": "schemas/prompt-envelope-v1.schema.json",
+      "sha256": "8549a36497cebe28ad01e136224fe6ed820c9d37a7922a767c1d48ec239a8d24"
+    },
+    "heldout_corpus": {
+      "path": "fixtures/prompt-compiler/v0.09.2/heldout.jsonl",
+      "sha256": "ac355ba31a6a818e6da36eb4695023406a01d0408b153c8ba7258bc2e4858c3a"
+    },
+    "input_schema": {
+      "path": "schemas/prompt-compilation-input-v1.schema.json",
+      "sha256": "4365164d63f141cb0cece5e812666871d2af988369b598a2cdb7337dd82aba9c"
+    },
+    "parent_preflight": {
+      "path": "evaluation/v0092-preregistration-preflight.json",
+      "sha256": "3e07a83f0440f7448603f34c85acee3ad4ba28455432e00ff09d8383fc1632fd"
+    },
+    "schema_preflight": {
+      "path": "evaluation/v0092-schema-preflight.json",
+      "sha256": "0e2c0f1ba60b53a2596012570679c198bb8cd62a954fc11e82dec077925b390d"
+    }
+  },
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-0092-G01",
+      "name": "obligation_retention_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G02",
+      "name": "scope_expansion_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G03",
+      "name": "missing_critical_constraint_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G04",
+      "name": "prerequisite_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G05",
+      "name": "owner_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G06",
+      "name": "self_certification_violation_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G07",
+      "name": "continuation_state_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G08",
+      "name": "deterministic_repeat_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G09",
+      "name": "context_over_inclusion_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G10",
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G11",
+      "name": "v0092_spec_quality_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G12",
+      "name": "invalid_input_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G13",
+      "name": "frozen_hash_integrity_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G14",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G15",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G16",
+      "name": "missing_data_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0092-G17",
+      "name": "benchmark_contrast_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-G18",
+      "name": "preregistration_precondition_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "implementation_actor": "agent:spec-creator-builder",
+  "mandatory_gates": [
+    "GATE-009-CORPUS-INTEGRITY",
+    "GATE-009-PARENT-PREFLIGHT",
+    "GATE-009-SPEC-QUALITY",
+    "GATE-009-SCHEMA",
+    "GATE-009-COMPILE",
+    "GATE-009-IDENTITY",
+    "GATE-009-SCOPE",
+    "GATE-009-PREREQUISITE",
+    "GATE-009-OWNER",
+    "GATE-009-VERIFIER",
+    "GATE-009-CONTINUATION",
+    "GATE-009-CONTEXT",
+    "GATE-009-OBLIGATION",
+    "GATE-009-CLI",
+    "GATE-009-TEST",
+    "GATE-009-REGRESSION",
+    "GATE-009-SHADOW",
+    "GATE-009-SELF",
+    "GATE-009-RECONCILIATION",
+    "GATE-009-INDEPENDENT",
+    "GATE-009-PACKAGE",
+    "GATE-009-ROLLBACK"
+  ],
+  "missing_data_policy": "Missing, unreadable, skipped, malformed, or unscored cases are unavailable/incomplete evidence and cannot be treated as zeros or passes.",
+  "notes": [
+    "v0.09.2 is the fail-closed governed retry after v0.09 and v0.09.1 RETRY REQUIRED outcomes.",
+    "REG-0020 semantic contrast and REG-0021/REG-0022 fail-closed freeze controls are mandatory."
+  ],
+  "parent_version": "0.08",
+  "primary_metrics": [
+    {
+      "metric_id": "M-0092-001",
+      "name": "development_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-002",
+      "name": "heldout_prompt_envelope_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-003",
+      "name": "corrective_prompt_proxy_reduction_rate",
+      "target_operator": "gte",
+      "target_value": 0.5,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0092-004",
+      "name": "negative_case_classification_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "scoring_rules": {
+    "context_over_inclusion": "Count compiler included_context_refs that are frozen expected exclusions divided by 134 frozen excluded refs.",
+    "continuation_state": "For accepted continuation cases task_state, prerequisite_states, completed_evidence_refs, open_blockers, and next_permitted_action must exactly match frozen expected envelope.",
+    "determinism": "Compile each accepted case twice and require byte-equivalent canonical JSON.",
+    "exact_envelope": "Canonical JSON equality including deterministic prompt_text and envelope_hash.",
+    "negative_classification": "Expected status and first blocking diagnostic code must match preregistration.",
+    "obligation_retention": "Every expected_obligation_token must be present as an exact substring in prompt_text.",
+    "scope_expansion": "Any compiled allowed_write_scopes value not in the task declared write scope is an escape."
+  },
+  "shadow_policy": "Historical v0.08 task/execution shadow cases are required but non-promotional. Defects found there may add regressions but cannot improve frozen promotion metrics."
+}

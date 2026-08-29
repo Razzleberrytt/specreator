@@ -1,0 +1,290 @@
+{
+  "oracle_ref": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+  "explicit_edges_checked": 21,
+  "derived_class_counts": {
+    "artifact_input": 18,
+    "explicit_integration": 2,
+    "authority_gate": 1
+  },
+  "zero_match_edges": [],
+  "multi_match_edges": [],
+  "misclassified_edges": [],
+  "edge_records": [
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "edge": "A->B",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "edge": "B->C",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "edge": "A->B",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "edge": "A->C",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "edge": "B->D",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "edge": "C->D",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "edge": "A->C",
+      "authored_provenance": "explicit_integration",
+      "derived_matches": [
+        "explicit_integration"
+      ],
+      "match_count": 1,
+      "derived_provenance": "explicit_integration",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "edge": "B->C",
+      "authored_provenance": "explicit_integration",
+      "derived_matches": [
+        "explicit_integration"
+      ],
+      "match_count": 1,
+      "derived_provenance": "explicit_integration",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "A->B",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "A->C",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "A->D",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "B->E",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "C->E",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "edge": "D->E",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "edge": "DECIDE->IMPLEMENT",
+      "authored_provenance": "authority_gate",
+      "derived_matches": [
+        "authority_gate"
+      ],
+      "match_count": 1,
+      "derived_provenance": "authority_gate",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "edge": "IMPLEMENT->VERIFY",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "edge": "PREP->VERIFY",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "edge": "A->B",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "edge": "A->C",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "edge": "B->D",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "edge": "C->D",
+      "authored_provenance": "artifact_input",
+      "derived_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived_provenance": "artifact_input",
+      "verdict": "PASS"
+    }
+  ],
+  "derived_conflict_edges": [
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "edge": "A->B",
+      "provenance": "conflict_serialization"
+    }
+  ],
+  "declared_universe_ref": "versions/v0.11/EVALUATION-UNIVERSES.json:/universes/effective_dependency_edges",
+  "universe_checks": {
+    "explicit_dependency_edges": {
+      "declared_count": 21,
+      "declared_len": 21,
+      "derived_len": 21,
+      "unique_declared": 21,
+      "unique_derived": 21,
+      "exact_set_match": true,
+      "exact_order_match": true,
+      "missing_from_declared": [],
+      "extra_in_declared": []
+    },
+    "derived_conflict_edges": {
+      "declared_count": 1,
+      "declared_len": 1,
+      "derived_len": 1,
+      "unique_declared": 1,
+      "unique_derived": 1,
+      "exact_set_match": true,
+      "exact_order_match": true,
+      "missing_from_declared": [],
+      "extra_in_declared": []
+    },
+    "effective_dependency_edges": {
+      "declared_count": 22,
+      "declared_len": 22,
+      "derived_len": 22,
+      "unique_declared": 22,
+      "unique_derived": 22,
+      "exact_set_match": true,
+      "exact_order_match": true,
+      "missing_from_declared": [],
+      "extra_in_declared": []
+    }
+  },
+  "unsupported_effective_edge_count": 0,
+  "verdict": "PASS"
+}

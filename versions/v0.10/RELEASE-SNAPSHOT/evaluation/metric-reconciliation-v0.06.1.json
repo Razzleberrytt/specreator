@@ -1,0 +1,45 @@
+{
+  "candidate_version": "0.06.1",
+  "denominator_snapshot_ids": [
+    "DEN-0061-001",
+    "DEN-0061-002",
+    "DEN-0061-003",
+    "DEN-0061-004",
+    "DEN-0061-G01",
+    "DEN-0061-G02",
+    "DEN-0061-G03",
+    "DEN-0061-G04",
+    "DEN-0061-G05",
+    "DEN-0061-G06",
+    "DEN-0061-G07",
+    "DEN-0061-G08",
+    "DEN-0061-G09",
+    "DEN-0061-G10"
+  ],
+  "failures": [],
+  "metric_record_ids": [
+    "MET-0061-001",
+    "MET-0061-002",
+    "MET-0061-003",
+    "MET-0061-004",
+    "MET-0061-G01",
+    "MET-0061-G02",
+    "MET-0061-G03",
+    "MET-0061-G04",
+    "MET-0061-G05",
+    "MET-0061-G06",
+    "MET-0061-G07",
+    "MET-0061-G08",
+    "MET-0061-G09",
+    "MET-0061-G10"
+  ],
+  "missing_data_treated_as_zero": false,
+  "reconciled_at_utc": "2026-08-24T15:53:12Z",
+  "result": "PASS",
+  "source_events": [
+    "EVT-SC-0074",
+    "EVT-SC-0075",
+    "EVT-SC-0076",
+    "EVT-SC-0077"
+  ]
+}

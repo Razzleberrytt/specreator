@@ -1,0 +1,99 @@
+{
+  "$id": "https://spec-creator.local/schemas/protocol-run-v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_hashes": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "candidate_version": {
+      "const": "0.10"
+    },
+    "diagnostics": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "project_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "run_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "stage_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "diagnostics": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "blocked",
+              "invalid"
+            ]
+          }
+        },
+        "required": [
+          "stage",
+          "status",
+          "artifact_refs"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "blocked",
+        "invalid"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "project_id",
+    "candidate_version",
+    "status",
+    "stage_records",
+    "artifact_hashes",
+    "metrics",
+    "diagnostics",
+    "run_hash"
+  ],
+  "title": "Protocol MVP Run Record v1",
+  "type": "object"
+}

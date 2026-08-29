@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/release-scorecard-v1.json",
+  "title": "Release Scorecard v1",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "contract_id",
+    "candidate_version",
+    "evaluated_at_utc",
+    "implementation_actor_ids",
+    "evaluator_actor_id",
+    "gate_outcomes",
+    "regression_outcomes",
+    "primary_metric_outcomes",
+    "guardrail_metric_outcomes",
+    "open_critical_defects",
+    "recommendation",
+    "rationale"
+  ],
+  "properties": {
+    "evaluation_id": {
+      "type": "string",
+      "pattern": "^EVAL-[A-Za-z0-9._-]+$"
+    },
+    "contract_id": {
+      "type": "string",
+      "pattern": "^REL-[A-Za-z0-9._-]+$"
+    },
+    "candidate_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "implementation_actor_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evaluator_actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gate_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/outcome"
+      }
+    },
+    "regression_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/outcome"
+      }
+    },
+    "primary_metric_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metricOutcome"
+      }
+    },
+    "guardrail_metric_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metricOutcome"
+      }
+    },
+    "open_critical_defects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "recommendation": {
+      "enum": [
+        "PROMOTED",
+        "PROMOTED AS EXPERIMENTAL",
+        "RETRY REQUIRED",
+        "REJECTED",
+        "BLOCKED"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "outcome": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "PASS WITH ACCEPTED RISK",
+            "BLOCKED",
+            "FAIL",
+            "NOT APPLICABLE"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metricOutcome": {
+      "type": "object",
+      "required": [
+        "metric_name",
+        "status",
+        "metric_record_id"
+      ],
+      "properties": {
+        "metric_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "PASS WITH ACCEPTED RISK",
+            "BLOCKED",
+            "FAIL",
+            "NOT APPLICABLE"
+          ]
+        },
+        "metric_record_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^MET-[A-Za-z0-9._-]+$"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

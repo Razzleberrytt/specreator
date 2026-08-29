@@ -1,0 +1,282 @@
+{
+  "$id": "https://spec-creator.local/schemas/compiled-task-graph-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "conflict_zones": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "conflict_zone_id": {
+            "pattern": "^CZ-[0-9]{3}$",
+            "type": "string"
+          },
+          "task_ids": {
+            "items": {
+              "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+              "type": "string"
+            },
+            "minItems": 2,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "write_scope": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "conflict_zone_id",
+          "write_scope",
+          "task_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "diagnostics": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "code": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "message": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_task_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "graph_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "project_id": {
+      "pattern": "^TCP-[A-Za-z0-9._-]+$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "status": {
+      "enum": [
+        "compiled",
+        "blocked",
+        "needs_spec_refinement",
+        "invalid"
+      ]
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking_diagnostic_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "conflict_zone_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "dependency_edge_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "task_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "task_count",
+        "dependency_edge_count",
+        "conflict_zone_count",
+        "blocking_diagnostic_count"
+      ],
+      "type": "object"
+    },
+    "tasks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "complexity_factors": {
+            "additionalProperties": false,
+            "properties": {
+              "prerequisite_count": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "source_requirement_count": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "verification_reference_count": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "write_scope_count": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "source_requirement_count",
+              "write_scope_count",
+              "prerequisite_count",
+              "verification_reference_count"
+            ],
+            "type": "object"
+          },
+          "complexity_score": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "conflict_zone_ids": {
+            "items": {
+              "pattern": "^CZ-[0-9]{3}$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "consumed_artifacts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "gate_ids": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "parallel_with": {
+            "items": {
+              "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "prerequisite_task_ids": {
+            "items": {
+              "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "produced_artifacts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "provenance": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "read_scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "source_requirement_ids": {
+            "items": {
+              "pattern": "^REQ-[A-Za-z0-9._-]+$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "source_task_id": {
+            "pattern": "^TASK-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "task_id": {
+            "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "verification_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "write_scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "task_id",
+          "source_task_id",
+          "source_requirement_ids",
+          "write_scopes",
+          "read_scopes",
+          "produced_artifacts",
+          "consumed_artifacts",
+          "prerequisite_task_ids",
+          "verification_refs",
+          "gate_ids",
+          "conflict_zone_ids",
+          "parallel_with",
+          "complexity_score",
+          "complexity_factors",
+          "provenance"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "project_id",
+    "status",
+    "tasks",
+    "conflict_zones",
+    "diagnostics",
+    "summary",
+    "graph_hash"
+  ],
+  "title": "Compiled Task Graph v1",
+  "type": "object"
+}

@@ -1,0 +1,64 @@
+{
+  "record_id": "DEFRES-011-PREFREEZE-001",
+  "status": "REPAIRED_PENDING_INDEPENDENT_REREVIEW",
+  "source_review_recommendation": "NOT_READY",
+  "source_review_ref": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json",
+  "repairs": [
+    {
+      "defect_id": "DEF-011-REVIEW-001",
+      "resolution": "Added machine-readable task semantics + per-edge provenance and independent derivation rules; exact 21 explicit + 1 derived conflict edge universe is frozen in EVALUATION-UNIVERSES.json.",
+      "artifacts": [
+        "candidate-fixtures/execution-architecture-corpus.jsonl",
+        "DEPENDENCY-PROVENANCE-RULES.candidate.json",
+        "EVALUATION-UNIVERSES.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-002",
+      "resolution": "Added ordered machine-readable lifecycle transition rules; fixture expected action is now comparison evidence only. Declared validation command now includes required PYTHONPATH bootstrap.",
+      "artifacts": [
+        "LIFECYCLE-TRANSITION-RULES.candidate.json",
+        "candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+        "LIFECYCLE-CHECKPOINT-DRAFT.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-003",
+      "resolution": "Critical-path denominator fixed to all 6 execution fixtures with exact all-maximum-path tie semantics; heldout fixtures now include critical-path expectations.",
+      "artifacts": [
+        "EVALUATION-DESIGN.json",
+        "EVALUATION-UNIVERSES.json",
+        "candidate-fixtures/execution-architecture-corpus.jsonl"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-004",
+      "resolution": "Integration denominator fixed to 23 canonical source-task keys, independent of emitted workstream count; candidate output tasks now require source_task_ids mapping.",
+      "artifacts": [
+        "EVALUATION-DESIGN.json",
+        "EVALUATION-UNIVERSES.json",
+        "candidate-schemas/execution-architecture-v1.candidate.schema.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-005",
+      "resolution": "Exact universes captured: 155 parent pytest node IDs, 24 active regression IDs, and all 1120 v0.10 manifest entries.",
+      "artifacts": [
+        "PARENT-SUITE-UNIVERSE.json",
+        "ACTIVE-REGRESSION-UNIVERSE.json",
+        "EVALUATION-UNIVERSES.json",
+        "EVALUATION-DESIGN.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-006",
+      "resolution": "Validation profile uses exact self-executable POSIX command with PYTHONPATH=src and a package-local preregistration preflight command.",
+      "artifacts": [
+        "LIFECYCLE-CHECKPOINT-DRAFT.json",
+        "tools/preregistration_preflight.py"
+      ]
+    }
+  ],
+  "authority_rule": "This repair record is not independent verification. All six repairs remain pending until a genuinely separate receiving context re-reviews the new checkpoint.",
+  "historical_integrity_requirement": "v0.10 manifest-bound hashes must remain 1120/1120 exact."
+}

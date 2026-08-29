@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/manifest-v1.json",
+  "title": "Legacy Version Manifest v1",
+  "type": "object",
+  "required": [
+    "version",
+    "parent_version",
+    "status",
+    "protocol_schema_version",
+    "added_capabilities",
+    "breaking_changes",
+    "content_hashes"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "parent_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string"
+    },
+    "protocol_schema_version": {
+      "type": "string"
+    },
+    "added_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "breaking_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    }
+  },
+  "additionalProperties": true
+}

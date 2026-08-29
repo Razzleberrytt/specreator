@@ -1,0 +1,32 @@
+{
+  "candidate_version": "0.11.1",
+  "created_at_utc": "2026-08-25T01:16:44.243743+00:00",
+  "guardrails_local": {
+    "active_regression_pass_rate": 1.0,
+    "critical_gate_bypass_count": 0,
+    "frozen_parent_hash_integrity_rate": 1.0,
+    "hidden_manual_state_reconstruction_count": 0,
+    "immutable_boundary_classification_error_count": 0,
+    "missing_data_count": 2,
+    "parent_suite_pass_rate": 1.0,
+    "prospective_output_classification_error_count": 0,
+    "speculative_authority_escape_count": 0,
+    "unsafe_parallelization_count": 0,
+    "unsupported_dependency_edge_count": 0
+  },
+  "note": "missing_data_count is intentionally nonzero before the two future gates execute; it may not be coerced to zero. All other locally measurable frozen targets currently pass.",
+  "pending_evidence_slots": [
+    "gate::independent_verification",
+    "gate::package_manifest_validation/final shipping package"
+  ],
+  "precheck_id": "PROMOTION-PRECHECK-0111-LOCAL-001",
+  "primary_metrics": {
+    "critical_path_exact_match_rate": 1.0,
+    "execution_wave_exact_match_rate": 1.0,
+    "integration_contract_completeness_rate": 1.0,
+    "next_legal_action_exact_match_rate": 1.0,
+    "retry_isolation_exact_match_rate": 1.0
+  },
+  "promotion_authorized": false,
+  "status": "BLOCKED_PENDING_INDEPENDENT_VERIFICATION_AND_FINAL_PACKAGE_SEAL"
+}

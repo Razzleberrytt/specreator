@@ -1,0 +1,9 @@
+{
+  "attempt_id": "FREEZE-PREP-0111-ATTEMPT-001",
+  "criteria_changed": false,
+  "failed_output_ref": "evaluation/v0111-prefreeze-preflight-freeze.txt",
+  "frozen_contract_created": false,
+  "reason": "preregistration_preflight was invoked after review-evidence files were added under versions/v0.11.1, causing the reviewed 27-artifact inventory exact-coverage check to fail closed",
+  "repair": "Re-run the declared preregistration preflight against a clean extraction of the byte-identical independently reviewed source package, then treat subsequent review/freeze outputs as selector-authorized post-review additions.",
+  "status": "ABORTED_BEFORE_FREEZE"
+}

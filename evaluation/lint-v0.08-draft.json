@@ -1,0 +1,46 @@
+{
+  "findings": [
+    {
+      "column": 102,
+      "line": 64,
+      "rationale": "Critical mutating operation 'write' lacks explicit Failure: behavior.",
+      "rule_id": "LINT-003",
+      "severity": "error",
+      "span": "write",
+      "suppressed": false
+    },
+    {
+      "column": 117,
+      "line": 88,
+      "rationale": "Critical mutating operation 'write' lacks explicit Failure: behavior.",
+      "rule_id": "LINT-003",
+      "severity": "error",
+      "span": "write",
+      "suppressed": false
+    },
+    {
+      "column": 28,
+      "line": 94,
+      "rationale": "Critical mutating operation 'write' lacks explicit Failure: behavior.",
+      "rule_id": "LINT-003",
+      "severity": "error",
+      "span": "write",
+      "suppressed": false
+    },
+    {
+      "column": 105,
+      "line": 100,
+      "rationale": "Critical mutating operation 'write' lacks explicit Failure: behavior.",
+      "rule_id": "LINT-003",
+      "severity": "error",
+      "span": "write",
+      "suppressed": false
+    }
+  ],
+  "ok": false,
+  "summary": {
+    "findings": 4,
+    "suppressed": 0,
+    "unsuppressed": 4
+  }
+}

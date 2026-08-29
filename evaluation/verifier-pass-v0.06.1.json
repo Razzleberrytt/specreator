@@ -1,0 +1,108 @@
+{
+  "actor_id": "verifier:independent-pass-006",
+  "candidate_version": "0.06.1",
+  "checks": {
+    "actor_independence": true,
+    "clarification_proxy": true,
+    "classification": true,
+    "clean_acceptance": true,
+    "contract_hash": true,
+    "corpus_hash": true,
+    "critical_escapes": true,
+    "defect_detection": true,
+    "failed_candidate_regression": true,
+    "frozen_regressions_present": true,
+    "full_tests": true,
+    "governed_default_questions": true,
+    "inherited_tests": true,
+    "new_regressions_present": true,
+    "plan_hash": true,
+    "priority": true,
+    "retry_dependency_preflight": true,
+    "self_traceability": true,
+    "spec_lint": true,
+    "unnecessary_questions": true,
+    "workspace_without_shipping_manifest": true
+  },
+  "corpus_counts": {
+    "case_count": 72,
+    "clean_accepted": 20,
+    "clean_total": 20,
+    "critical_intercepted": 16,
+    "critical_trigger_total": 16,
+    "defect_detected": 24,
+    "defect_total": 24,
+    "emitted_questions": 64,
+    "expected_candidate_exact": 76,
+    "expected_candidate_total": 76,
+    "governed_default_questions": 0,
+    "priority_exact": 8,
+    "priority_total": 8,
+    "unnecessary_questions": 0,
+    "workflow_intercepted": 16,
+    "workflow_trigger_total": 16
+  },
+  "corpus_metrics": {
+    "clean_case_acceptance_rate": 1.0,
+    "critical_ambiguity_escape_count": 0,
+    "decision_needed_classification_accuracy": 1.0,
+    "defect_case_detection_rate": 1.0,
+    "governed_default_question_count": 0,
+    "implementation_time_clarification_reduction_proxy_rate": 1.0,
+    "priority_top_question_accuracy": 1.0,
+    "unnecessary_question_rate": 0.0
+  },
+  "failed_v006_preflight": {
+    "case_count": 72,
+    "ok": false,
+    "trace_graph_case_count": 16,
+    "trace_graph_invalid_count": 16,
+    "trace_graph_valid_count": 0
+  },
+  "full_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 72%]\n............................                                             [100%]\n100 passed in 2.68s"
+  },
+  "hashes": {
+    "contract_canonical_sha256": "2ae4073dc197c73386d07b9746d38d807a1d9c038b56aae6a68c7c16a53fbf27",
+    "corpus_sha256": "3d147717ff2501061f72a0c5f384403751297eb91b6d916fd4fbb48e9edf5f9e",
+    "evaluation_plan_sha256": "70e3f6c5017fc2a6aef312065ec7f705cbc055f9cec46aec6144c1a1ee6a0bc5"
+  },
+  "implementation_actor_id": "agent:spec-creator-builder",
+  "inherited_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 85%]\n............                                                             [100%]\n84 passed in 2.02s"
+  },
+  "limitations": [
+    "Role separation is within the same runtime/session, not an external organization.",
+    "Clarification reduction is a synthetic interception proxy; no real-project causal reduction is claimed.",
+    "Final root package manifest is intentionally sealed only after all release evidence files are complete."
+  ],
+  "result": "PASS",
+  "retry_preflight": {
+    "case_count": 72,
+    "ok": true,
+    "trace_graph_case_count": 16,
+    "trace_graph_invalid_count": 0,
+    "trace_graph_valid_count": 16
+  },
+  "spec_lint_summary": {
+    "findings": 0,
+    "suppressed": 0,
+    "unsuppressed": 0
+  },
+  "traceability_summary": {
+    "critical_requirements_complete": 12,
+    "critical_requirements_total": 12,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  },
+  "workspace_validation": {
+    "errors": 0,
+    "issues": 0,
+    "warnings": 0
+  }
+}

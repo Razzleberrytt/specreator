@@ -1,0 +1,984 @@
+{
+  "evidence_schema": "spec-creator-independent-prefreeze-review-evidence-v1",
+  "receiver_identifier": "receiver:gpt-5.6-sol:independent-prefreeze-review:v0.11",
+  "reviewed_at_utc": "2026-08-24T21:02:16Z",
+  "source_package": {
+    "filename": "spec-creator-v0.11-preregistration-review-checkpoint(1).zip",
+    "sha256": "9dc0a6e9de984653413cc1f86951ed407d62f8a3cf07490f2a74129e01a4de3d"
+  },
+  "review_scope": "evidence-only; no v0.11 implementation, repair, freeze, promotion, or redesign performed",
+  "reviewed_artifact_hashes": {
+    "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json": "024fe841e238d81523ce241f053b1855abd63dd0e13fdfbd86fee4985a51ea2f",
+    "versions/v0.11/CONTINUATION.md": "c941949f56a8431a7ab0e484b16987509bcd441fafe860c3a4a3869112a3c87c",
+    "versions/v0.11/DISCOVERY.md": "2bbe87f2cd9466900e0fa75ed9c2e0e4f09a9204b64508780e217e927f040faf",
+    "versions/v0.11/EVALUATION-DESIGN.json": "d962c0f93e5754e43921d72ab226778fead6947968d4b8a126293a46f5bee727",
+    "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json": "cdf2a564a69be8baa262e868a128a21bddc63200e55f7033688b8b5dce92be5e",
+    "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json": "e57380a459a1e8fd270762ffdbcf9600a8c33092c351e5f28884050600fa105a",
+    "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md": "cf9a3700b6caf684aa7260b27c1c76beae4f643d81309af20bfb71c15ea4c7fe",
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json": "5d9c0e02f24d6221d293a236f4b69e88a38b8ca079a0037a066efd4166deca63",
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json": "0f4d8b8a60e71a9fed20ba753ab7eb9fe6acfd49c65e2f36633f414262bb0ea3",
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl": "37cfa6fbd99dbb6912cb2caac5d37453ba76cff836efa74ed45e865817d39b32",
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+    "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md": "24fe09ed6660ea4a9ee06e3b1d63cbecc85ebc68cce91e133db40488127cb4d0",
+    "versions/v0.10/MANIFEST.json": "8228cd1c99875246fa52c269e8efdffce489f37ef9ccbfd70c5c0e16dbcf878f",
+    "versions/v0.10/FROZEN-RELEASE-CONTRACT.json": "5440dd507d13e13853ebd9aba2e9b39df0e7d340abfa308b9000ebb79e8cd9b2"
+  },
+  "computations_performed": [
+    "Draft 2020-12 meta-schema validation for both candidate schemas",
+    "lifecycle checkpoint validation against lifecycle candidate schema",
+    "JSONL parse/coherence checks for all 10 fixtures",
+    "independent effective-DAG construction including conflict serialization",
+    "independent weighted critical-path enumeration for all 6 execution fixtures",
+    "independent execution-wave derivation and dependency/write-conflict safety checks",
+    "independent load-balance/speculative/retry behavior checks",
+    "dependency provenance presence audit",
+    "package-wide exact-token search for lifecycle action semantics",
+    "EVALUATION-DESIGN denominator/threshold anti-gaming audit",
+    "EXECUTION-TRIAL shadow-authority/equivalence audit",
+    "v0.10 manifest 1120-entry hash integrity recomputation",
+    "v0.10 frozen-contract canonical hash recomputation",
+    "historical version binding coverage check",
+    "full pytest run (155 passed)",
+    "exact declared CLI validation-profile command run plus PYTHONPATH=src diagnostic rerun"
+  ],
+  "schema_validation": [
+    {
+      "artifact": "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "declared_meta_schema": "https://json-schema.org/draft/2020-12/schema",
+      "draft_2020_12_check": "PASS",
+      "error": null
+    },
+    {
+      "artifact": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "declared_meta_schema": "https://json-schema.org/draft/2020-12/schema",
+      "draft_2020_12_check": "PASS",
+      "error": null
+    }
+  ],
+  "lifecycle_checkpoint_schema_validation": {
+    "status": "PASS",
+    "errors": []
+  },
+  "fixture_parse": {
+    "execution": {
+      "records": 6,
+      "errors": []
+    },
+    "lifecycle": {
+      "records": 4,
+      "errors": []
+    }
+  },
+  "structural_recomputation": [
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "line": 1,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "B"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "computed_critical_work_units": 6,
+      "computed_execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "critical_paths_match": true,
+        "critical_work_units_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "B",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:1:tasks[1].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "C",
+          "depends_on": "B",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:1:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        }
+      ]
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "line": 2,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "A"
+        ],
+        "D": [
+          "B",
+          "C"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "D"
+        ],
+        [
+          "A",
+          "C",
+          "D"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "computed_execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "critical_paths_match": true,
+        "critical_work_units_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "B",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:2:tasks[1].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "C",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:2:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "D",
+          "depends_on": "B",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:2:tasks[3].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "D",
+          "depends_on": "C",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:2:tasks[3].deps[1]",
+          "permitted_provenance_class_present": false
+        }
+      ]
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "line": 3,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "A",
+          "B"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [
+        {
+          "from": "A",
+          "to": "B",
+          "provenance": "conflict_serialization"
+        }
+      ],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "computed_execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "critical_paths_match": true,
+        "critical_work_units_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "C",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:3:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "C",
+          "depends_on": "B",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:3:tasks[2].deps[1]",
+          "permitted_provenance_class_present": false
+        }
+      ]
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "line": 4,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "A"
+        ],
+        "D": [
+          "A"
+        ],
+        "E": [
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "E"
+        ]
+      ],
+      "computed_critical_work_units": 10,
+      "computed_execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "E"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "critical_paths_match": true,
+        "critical_work_units_match": true,
+        "bottleneck_task_match": true,
+        "partition_warning_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "B",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[1].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "C",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "D",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[3].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "E",
+          "depends_on": "B",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[4].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "E",
+          "depends_on": "C",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[4].deps[1]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "E",
+          "depends_on": "D",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:4:tasks[4].deps[2]",
+          "permitted_provenance_class_present": false
+        }
+      ],
+      "computed_bottleneck_task": "B",
+      "computed_partition_warning_required": true
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "line": 5,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "DECIDE": [],
+        "PREP": [],
+        "IMPLEMENT": [
+          "DECIDE"
+        ],
+        "VERIFY": [
+          "IMPLEMENT",
+          "PREP"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [],
+      "computed_critical_paths": [
+        [
+          "DECIDE",
+          "IMPLEMENT",
+          "VERIFY"
+        ]
+      ],
+      "computed_critical_work_units": 8,
+      "computed_execution_waves": [
+        [
+          "DECIDE",
+          "PREP"
+        ],
+        [
+          "IMPLEMENT"
+        ],
+        [
+          "VERIFY"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "speculative_non_authoritative_match": true,
+        "authority_escape_count_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "IMPLEMENT",
+          "depends_on": "DECIDE",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:5:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "VERIFY",
+          "depends_on": "IMPLEMENT",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:5:tasks[3].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "VERIFY",
+          "depends_on": "PREP",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:5:tasks[3].deps[1]",
+          "permitted_provenance_class_present": false
+        }
+      ],
+      "computed_speculative_non_authoritative": [
+        "PREP"
+      ],
+      "computed_authority_escape_count": 0
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "line": 6,
+      "internal_coherence_issues": [],
+      "effective_dependencies": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "A"
+        ],
+        "D": [
+          "B",
+          "C"
+        ]
+      },
+      "synthetic_conflict_serialization_edges": [],
+      "computed_critical_paths": [
+        [
+          "A",
+          "B",
+          "D"
+        ],
+        [
+          "A",
+          "C",
+          "D"
+        ]
+      ],
+      "computed_critical_work_units": 5,
+      "computed_execution_waves": [
+        [
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "computed_wave_safety_issues": [],
+      "declared_wave_safety_issues": [],
+      "authored_expectation_comparisons": {
+        "waves_match": true,
+        "must_preserve_match": true,
+        "unrelated_rerun_count_match": true
+      },
+      "source_dependency_edges_without_provenance_class": [
+        {
+          "task_id": "B",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:6:tasks[1].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "C",
+          "depends_on": "A",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:6:tasks[2].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "D",
+          "depends_on": "B",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:6:tasks[3].deps[0]",
+          "permitted_provenance_class_present": false
+        },
+        {
+          "task_id": "D",
+          "depends_on": "C",
+          "artifact_location": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:6:tasks[3].deps[1]",
+          "permitted_provenance_class_present": false
+        }
+      ],
+      "computed_must_preserve_after_B_failure": [
+        "A",
+        "C"
+      ],
+      "computed_unrelated_rerun_count": 0
+    }
+  ],
+  "lifecycle_recoverability": [
+    {
+      "fixture_id": "LIFE-011-001-DISCOVERY",
+      "line": 1,
+      "local_internal_coherence_issues": [],
+      "state": "UNFROZEN_DISCOVERY",
+      "blockers": [],
+      "authored_expected_next_action": "prepare_preregistration",
+      "independent_transition_rule_found": false,
+      "expected_action_token_occurrences_outside_answer_key": [],
+      "independently_recoverable_without_authored_expected_field": false,
+      "hidden_reconstruction_risk": "No machine-readable state/blocker -> action transition table or equivalent rule exists in the reviewed v0.11 artifacts."
+    },
+    {
+      "fixture_id": "LIFE-011-002-BLOCKED-PREFREEZE",
+      "line": 2,
+      "local_internal_coherence_issues": [],
+      "state": "PREFREEZE_REVIEW",
+      "blockers": [
+        "parent_preflight_failed"
+      ],
+      "authored_expected_next_action": "repair_or_reject_prefreeze",
+      "independent_transition_rule_found": false,
+      "expected_action_token_occurrences_outside_answer_key": [],
+      "independently_recoverable_without_authored_expected_field": false,
+      "hidden_reconstruction_risk": "No machine-readable state/blocker -> action transition table or equivalent rule exists in the reviewed v0.11 artifacts."
+    },
+    {
+      "fixture_id": "LIFE-011-003-FROZEN",
+      "line": 3,
+      "local_internal_coherence_issues": [],
+      "state": "FROZEN",
+      "blockers": [],
+      "authored_expected_next_action": "implement_frozen_candidate",
+      "independent_transition_rule_found": false,
+      "expected_action_token_occurrences_outside_answer_key": [],
+      "independently_recoverable_without_authored_expected_field": false,
+      "hidden_reconstruction_risk": "No machine-readable state/blocker -> action transition table or equivalent rule exists in the reviewed v0.11 artifacts."
+    },
+    {
+      "fixture_id": "LIFE-011-004-VERIFYING",
+      "line": 4,
+      "local_internal_coherence_issues": [],
+      "state": "VERIFYING",
+      "blockers": [],
+      "authored_expected_next_action": "independent_verification",
+      "independent_transition_rule_found": false,
+      "expected_action_token_occurrences_outside_answer_key": [],
+      "independently_recoverable_without_authored_expected_field": false,
+      "hidden_reconstruction_risk": "No machine-readable state/blocker -> action transition table or equivalent rule exists in the reviewed v0.11 artifacts."
+    }
+  ],
+  "immutable_history_integrity": {
+    "v0_10_manifest_content_hash_count": 1120,
+    "v0_10_manifest_missing_count": 0,
+    "v0_10_manifest_mismatch_count": 0,
+    "v0_10_manifest_missing": [],
+    "v0_10_manifest_mismatches": [],
+    "v0_10_contract_claimed_hash": "b9b1480d0fc7cb943d5010c4801b95e6e8005664825cb5f531b342400a62e10d",
+    "v0_10_contract_recomputed_canonical_hash_excluding_contract_hash": "b9b1480d0fc7cb943d5010c4801b95e6e8005664825cb5f531b342400a62e10d",
+    "contract_hash_matches": true,
+    "manifest_release_contract_hash_matches": true,
+    "historical_version_file_binding_coverage": {
+      "0.01": {
+        "file_count": 2,
+        "unbound_except_parent_manifest": []
+      },
+      "0.02": {
+        "file_count": 5,
+        "unbound_except_parent_manifest": []
+      },
+      "0.03": {
+        "file_count": 54,
+        "unbound_except_parent_manifest": []
+      },
+      "0.04": {
+        "file_count": 38,
+        "unbound_except_parent_manifest": []
+      },
+      "0.05": {
+        "file_count": 35,
+        "unbound_except_parent_manifest": []
+      },
+      "0.06": {
+        "file_count": 7,
+        "unbound_except_parent_manifest": []
+      },
+      "0.06.1": {
+        "file_count": 60,
+        "unbound_except_parent_manifest": []
+      },
+      "0.07": {
+        "file_count": 68,
+        "unbound_except_parent_manifest": []
+      },
+      "0.08": {
+        "file_count": 81,
+        "unbound_except_parent_manifest": []
+      },
+      "0.09": {
+        "file_count": 7,
+        "unbound_except_parent_manifest": []
+      },
+      "0.09.1": {
+        "file_count": 7,
+        "unbound_except_parent_manifest": []
+      },
+      "0.09.2": {
+        "file_count": 93,
+        "unbound_except_parent_manifest": []
+      },
+      "0.10": {
+        "file_count": 337,
+        "unbound_except_parent_manifest": []
+      }
+    }
+  },
+  "evaluation_design_audit": [
+    {
+      "json_pointer": "/primary_metrics/0",
+      "metric": "next_legal_action_exact_match_rate",
+      "denominator": "all lifecycle fixtures",
+      "target": 1.0,
+      "denominator_verdict": "CLEAR",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Fixed universe: all lifecycle fixtures (4 records); semantic executability is separately blocked by missing transition rules."
+    },
+    {
+      "json_pointer": "/primary_metrics/1",
+      "metric": "critical_path_exact_match_rate",
+      "denominator": "all execution fixtures with unambiguous/tie-aware expected critical paths",
+      "target": 1.0,
+      "denominator_verdict": "AMBIGUOUS_GAMEABLE",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Eligibility phrase \"unambiguous/tie-aware expected critical paths\" is not machine-defined and references authored expected values."
+    },
+    {
+      "json_pointer": "/primary_metrics/2",
+      "metric": "execution_wave_exact_match_rate",
+      "denominator": "all execution fixtures",
+      "target": 1.0,
+      "denominator_verdict": "CLEAR",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Fixed universe: all execution fixtures (6 records)."
+    },
+    {
+      "json_pointer": "/primary_metrics/3",
+      "metric": "retry_isolation_exact_match_rate",
+      "denominator": "all failure-injection fixtures",
+      "target": 1.0,
+      "denominator_verdict": "CLEAR",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Machine-identifiable universe: fixtures containing failure_injection (1 record)."
+    },
+    {
+      "json_pointer": "/primary_metrics/4",
+      "metric": "integration_contract_completeness_rate",
+      "denominator": "all implementation workstreams emitted in governed corpus",
+      "target": 1.0,
+      "denominator_verdict": "AMBIGUOUS_GAMEABLE",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Emission-dependent denominator can shrink if workstreams are omitted; no independent expected workstream identity/count is frozen."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/0",
+      "metric": "unsafe_parallelization_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/1",
+      "metric": "unsupported_dependency_edge_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/2",
+      "metric": "speculative_authority_escape_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/3",
+      "metric": "hidden_manual_state_reconstruction_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/4",
+      "metric": "immutable_boundary_classification_error_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/5",
+      "metric": "parent_suite_pass_rate",
+      "denominator": null,
+      "target": 1.0,
+      "denominator_verdict": "AMBIGUOUS_GAMEABLE",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Ratio target is explicit, but no exact denominator/test-regression-hash universe is defined in EVALUATION-DESIGN."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/6",
+      "metric": "active_regression_pass_rate",
+      "denominator": null,
+      "target": 1.0,
+      "denominator_verdict": "AMBIGUOUS_GAMEABLE",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Ratio target is explicit, but no exact denominator/test-regression-hash universe is defined in EVALUATION-DESIGN."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/7",
+      "metric": "frozen_parent_hash_integrity_rate",
+      "denominator": null,
+      "target": 1.0,
+      "denominator_verdict": "AMBIGUOUS_GAMEABLE",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Ratio target is explicit, but no exact denominator/test-regression-hash universe is defined in EVALUATION-DESIGN."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/8",
+      "metric": "missing_data_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    },
+    {
+      "json_pointer": "/guardrail_metrics/9",
+      "metric": "critical_gate_bypass_count",
+      "denominator": null,
+      "target": 0,
+      "denominator_verdict": "THRESHOLD_CLEAR_SCOPE_NOT_EXPLICIT",
+      "threshold_verdict": "CLEAR_STRICT",
+      "notes": "Absolute zero target is strict; exact counting scope is not separately enumerated in this draft."
+    }
+  ],
+  "execution_trial_supplemental_audit": [
+    {
+      "json_pointer": "/required_shadow_metrics/0",
+      "name": "time_to_verified_implementation_seconds",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/1",
+      "name": "canonical_context_payload_bytes",
+      "denominator": "all work packages in each strategy",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/2",
+      "name": "corrective_prompt_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/3",
+      "name": "integration_conflict_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/4",
+      "name": "architectural_rework_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/5",
+      "name": "retry_amplification_work_units",
+      "denominator": "injected-failure trial if applicable",
+      "promotion_authoritative": false,
+      "verdict": "AMBIGUOUS_SHADOW_ONLY",
+      "notes": "\"if applicable\" lacks a machine-readable applicability rule; non-promotional but should be tightened before calibration."
+    },
+    {
+      "json_pointer": "/required_shadow_metrics/6",
+      "name": "verified_obligation_completion_rate",
+      "denominator": "frozen implementation obligations",
+      "promotion_authoritative": false,
+      "verdict": "CLEAR",
+      "notes": "Shadow-only denominator is operationally descriptive."
+    }
+  ],
+  "shadow_only_confirmation": {
+    "evaluation_design_structural_vs_empirical_rule": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+    "trial_purpose": "Collect matched empirical calibration evidence without using provider/runtime-dependent efficiency measurements as v0.11 promotion authority.",
+    "trial_interpretation_rule": "v0.11 may report observed empirical deltas only as calibration/shadow evidence. It must not claim general speedup from these trials. A later reproducible runner (roadmap v0.17) may preregister provider/runtime-dependent promotion thresholds.",
+    "all_required_shadow_metrics_promotion_authoritative_false": true
+  },
+  "control_equivalence_confirmation": {
+    "evaluation_design_rule": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+    "trial_matched_obligations_required": true,
+    "trial_matched_quality_gates_required": true,
+    "same_obligations_anti_gaming_rule_present": true,
+    "same_quality_gates_anti_gaming_rule_present": true
+  },
+  "command_evidence": {
+    "pytest": {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "summary": "155 passed in 16.21s"
+    },
+    "cli_validate_exact_declared_command": {
+      "command": "python -m spec_creator.cli validate . --no-package-manifest",
+      "exit_code": 1,
+      "stderr": "ModuleNotFoundError: No module named spec_creator"
+    },
+    "cli_validate_with_PYTHONPATH_src_diagnostic": {
+      "command": "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+      "exit_code": 0,
+      "stdout": "PASS: 0 error(s), 0 warning(s)"
+    }
+  },
+  "findings": [
+    {
+      "id": "DEF-011-REVIEW-001",
+      "blocking": true,
+      "obligations": [
+        5,
+        7
+      ],
+      "artifact_locations": [
+        "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl:1-6 tasks[*].deps",
+        "versions/v0.11/EVALUATION-DESIGN.json:55-56"
+      ],
+      "summary": "Execution fixtures do not carry expected machine-readable provenance classes for declared dependency edges.",
+      "evidence": "All 21 explicit dependency entries are bare task IDs. The candidate output schema constrains provenance to five enum values, but the corpus does not provide an expected provenance oracle per edge. Semantic provenance correctness and unsupported_dependency_edge_count therefore cannot be independently recomputed."
+    },
+    {
+      "id": "DEF-011-REVIEW-002",
+      "blocking": true,
+      "obligations": [
+        6
+      ],
+      "artifact_locations": [
+        "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl:1-4",
+        "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json:/properties/release_state",
+        "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json:/properties/next_legal_action"
+      ],
+      "summary": "Lifecycle fixture next actions are answer keys rather than independently derivable package semantics.",
+      "evidence": "No machine-readable state/blocker -> action transition table or equivalent rule exists in the reviewed artifacts; the exact expected action tokens are supplied only by the fixture answer key. Independent recovery would require trusting authored expected values or reconstructing lifecycle semantics manually."
+    },
+    {
+      "id": "DEF-011-REVIEW-003",
+      "blocking": true,
+      "obligations": [
+        7
+      ],
+      "artifact_locations": [
+        "versions/v0.11/EVALUATION-DESIGN.json:29-31"
+      ],
+      "summary": "Critical-path metric denominator has an undefined selection-sensitive predicate.",
+      "evidence": "The phrase \"all execution fixtures with unambiguous/tie-aware expected critical paths\" does not machine-define ambiguity/tie handling and references authored expectations, so fixture eligibility can vary."
+    },
+    {
+      "id": "DEF-011-REVIEW-004",
+      "blocking": true,
+      "obligations": [
+        7
+      ],
+      "artifact_locations": [
+        "versions/v0.11/EVALUATION-DESIGN.json:44-46"
+      ],
+      "summary": "Integration-contract completeness uses an emission-dependent denominator.",
+      "evidence": "The denominator is all workstreams emitted by the system, so omission can reduce the denominator. No independent obligation-derived workstream identity/count is specified."
+    },
+    {
+      "id": "DEF-011-REVIEW-005",
+      "blocking": true,
+      "obligations": [
+        7
+      ],
+      "artifact_locations": [
+        "versions/v0.11/EVALUATION-DESIGN.json:71-80"
+      ],
+      "summary": "Three guardrail pass-rate targets lack exact denominators.",
+      "evidence": "parent_suite_pass_rate, active_regression_pass_rate, and frozen_parent_hash_integrity_rate target 1.0 but do not define the exact test/regression/hash-entry universe, permitting subset selection."
+    },
+    {
+      "id": "DEF-011-REVIEW-006",
+      "blocking": true,
+      "obligations": [
+        6
+      ],
+      "artifact_locations": [
+        "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json:31-36"
+      ],
+      "summary": "The declared validation profile is not self-executable as written from the extracted package.",
+      "evidence": "Exact command \"python -m spec_creator.cli validate . --no-package-manifest\" exits 1 with ModuleNotFoundError. The same command passes only with PYTHONPATH=src, but that bootstrap requirement is not declared in the lifecycle checkpoint."
+    }
+  ],
+  "obligations": [
+    {
+      "id": 1,
+      "status": "PASS",
+      "summary": "v0.10 and earlier frozen/failed history is treated as immutable. Independent v0.10 manifest check: 1120/1120 content hashes match; all historical version files are transitively bound except the manifest file itself."
+    },
+    {
+      "id": 2,
+      "status": "PASS",
+      "summary": "Both candidate JSON Schemas are valid Draft 2020-12 schemas."
+    },
+    {
+      "id": 3,
+      "status": "PASS",
+      "summary": "All 10 fixture records parse and are locally coherent; execution DAGs have valid references, positive weights, and no cycles."
+    },
+    {
+      "id": 4,
+      "status": "PASS",
+      "summary": "Structural critical paths, waves, conflict behavior, speculative overlap, bottleneck, and retry preservation were independently recomputed; every authored structural expectation that is present matches."
+    },
+    {
+      "id": 5,
+      "status": "FAIL",
+      "summary": "Declared waves are safe, but the 21 explicit fixture dependency edges have no machine-readable provenance class, so provenance correctness cannot be independently confirmed."
+    },
+    {
+      "id": 6,
+      "status": "FAIL",
+      "summary": "Lifecycle fixture actions are not independently derivable from package transition rules, and the exact declared validation command requires undeclared environment bootstrap state."
+    },
+    {
+      "id": 7,
+      "status": "FAIL",
+      "summary": "The evaluation design contains ambiguous/gameable denominators: critical-path eligibility, emission-dependent integration completeness, and three pass-rate guardrails without exact denominators."
+    },
+    {
+      "id": 8,
+      "status": "PASS",
+      "summary": "Empirical wall-clock/context/rework evidence is explicitly shadow-only and cannot authorize a v0.11 speed claim."
+    },
+    {
+      "id": 9,
+      "status": "PASS",
+      "summary": "Serial/control and optimized comparisons explicitly require identical obligation_set_hash values and identical mandatory quality-gate sets."
+    },
+    {
+      "id": 10,
+      "status": "PASS",
+      "summary": "The returned package includes machine-readable evidence, concise Markdown, per-obligation PASS/FAIL, exact defect locations, hashes, computations, findings, and an allowed recommendation."
+    }
+  ],
+  "recommendation": "NOT_READY"
+}

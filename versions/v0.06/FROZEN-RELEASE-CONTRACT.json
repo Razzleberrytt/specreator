@@ -1,0 +1,237 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007"
+  ],
+  "candidate_version": "0.06",
+  "contract_hash": "0c1e2c27bf642bddec6ce88661a4b5f8ca2601745caf911fac18cb5836533018",
+  "contract_id": "REL-0.06-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-005"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Frozen evaluation-plan SHA-256 differs from d6d8166725a1c5fba5e60ef5431916ac2184f841c5b8fa1e5e1fdaf8a9e921e5.",
+    "Frozen ambiguity corpus SHA-256 differs from 67ba6d18c8e6249de6d00e6f90238738f7820945f623c66510dcd8bd1b2f5cec.",
+    "Defect-case detection rate is below 0.95 or any preregistered critical workflow ambiguity escapes.",
+    "Decision-needed classification accuracy is below 0.95.",
+    "Any governed-default case emits a question or unnecessary-question rate exceeds 0.05.",
+    "Priority top-question accuracy is below 0.90.",
+    "Clarification-interception proxy rate is below 0.80.",
+    "Any supplied valid trace graph is ignored or an invalid supplied trace graph is accepted as partial success.",
+    "Any applicable inherited regression fails or disappears without approved retirement.",
+    "The approved v0.06 specification emits an unsuppressed v0.04 linter finding.",
+    "The evaluator actor is also the implementation actor.",
+    "Missing evaluation cases or denominator data are treated as zero or complete evidence."
+  ],
+  "frozen_at_utc": "2026-08-24T15:42:00Z",
+  "goals": [
+    {
+      "acceptance": "At least 95% of the 24 frozen defect cases are detected and critical ambiguity escape count is zero.",
+      "description": "Detect preregistered implementation-blocking ambiguity before execution.",
+      "goal_id": "G-006-001"
+    },
+    {
+      "acceptance": "Decision-needed classification accuracy is at least 95%, governed-default question count is zero, and unnecessary-question rate is at most 5%.",
+      "description": "Ask only questions that require a decision while respecting explicit governed defaults.",
+      "goal_id": "G-006-002"
+    },
+    {
+      "acceptance": "At least 90% of the 8 frozen priority projects select the preregistered top question.",
+      "description": "Prioritize owner questions using traceability-aware delivery impact.",
+      "goal_id": "G-006-003"
+    },
+    {
+      "acceptance": "The frozen workflow proxy intercepts at least 80% of known implementation-time clarification triggers with zero critical ambiguity escapes.",
+      "description": "Demonstrate measurable pre-implementation interception of known clarification triggers without claiming real-project causality.",
+      "goal_id": "G-006-004"
+    },
+    {
+      "acceptance": "The inherited 83-test suite and REG-0001 through REG-0007 remain passing; the approved v0.06 spec remains lint-clean.",
+      "description": "Preserve all inherited controls.",
+      "goal_id": "G-006-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-006-G01",
+      "name": "clean_case_acceptance_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-G02",
+      "name": "governed_default_question_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-006-G03",
+      "name": "unnecessary_question_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-G04",
+      "name": "critical_ambiguity_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-006-G05",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-G06",
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-G07",
+      "name": "v006_spec_lint_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-G08",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "mandatory_gates": [
+    "GATE-006-CORPUS-INTEGRITY",
+    "GATE-006-SPEC-LINT",
+    "GATE-006-AMBIGUITY-DETECTION",
+    "GATE-006-DECISION-CLASSIFICATION",
+    "GATE-006-QUESTION-GUARDRAIL",
+    "GATE-006-PRIORITY",
+    "GATE-006-CLARIFICATION-PROXY",
+    "GATE-006-TRACE-INTEGRATION",
+    "GATE-006-CLI",
+    "GATE-006-TEST",
+    "GATE-006-REGRESSION",
+    "GATE-006-RECONCILIATION",
+    "GATE-006-INDEPENDENT",
+    "GATE-006-ROLLBACK"
+  ],
+  "parent_version": "0.05",
+  "primary_metrics": [
+    {
+      "metric_id": "M-006-001",
+      "name": "defect_case_detection_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-002",
+      "name": "decision_needed_classification_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-003",
+      "name": "priority_top_question_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.9,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-006-004",
+      "name": "implementation_time_clarification_reduction_proxy_rate",
+      "target_operator": "gte",
+      "target_value": 0.8,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and all frozen primary and guardrail metrics meet target.",
+    "All metrics reconcile to raw evaluation evidence and denominator snapshots.",
+    "All applicable regressions REG-0001 through REG-0007 PASS and new meaningful defects are considered for permanent regression memory.",
+    "Frozen corpus and evaluation-plan hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains and release manifest/rollback declaration are complete.",
+    "Because the clarification outcome is a synthetic interception proxy, the maximum release classification is PROMOTED AS EXPERIMENTAL; no claim of observed real-project clarification reduction is permitted."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Parse active Markdown requirement/task blocks and produce deterministic structured ambiguity findings with source locations and owning block identifiers.",
+      "requirement_id": "REQ-006-001"
+    },
+    {
+      "critical": true,
+      "description": "Implement the preregistered six-family ambiguity taxonomy and detect frozen ambiguity cases.",
+      "requirement_id": "REQ-006-002"
+    },
+    {
+      "critical": true,
+      "description": "Classify ambiguity candidates as owner_decision, governed_default, or spec_correction with an explicit decision-needed flag.",
+      "requirement_id": "REQ-006-003"
+    },
+    {
+      "critical": true,
+      "description": "Scope explicit Default fields and approved DEC governance markers to the ambiguity candidate they resolve.",
+      "requirement_id": "REQ-006-004"
+    },
+    {
+      "critical": true,
+      "description": "Link findings to requirement/task blocks and compute v0.05 traceability impact context when a valid graph is supplied.",
+      "requirement_id": "REQ-006-005"
+    },
+    {
+      "critical": true,
+      "description": "Rank required clarification questions using the preregistered severity, criticality, and downstream-impact score.",
+      "requirement_id": "REQ-006-006"
+    },
+    {
+      "critical": true,
+      "description": "Generate bounded questions only for decision-needed findings and preserve unnecessary-question guardrails.",
+      "requirement_id": "REQ-006-007"
+    },
+    {
+      "critical": true,
+      "description": "Measure the preregistered implementation-time clarification interception proxy without denominator manipulation.",
+      "requirement_id": "REQ-006-008"
+    },
+    {
+      "critical": true,
+      "description": "Expose ambiguity analysis through deterministic Python API and CLI JSON output.",
+      "requirement_id": "REQ-006-009"
+    },
+    {
+      "critical": true,
+      "description": "Preserve inherited v0.05 functionality and active regressions REG-0001 through REG-0007.",
+      "requirement_id": "REQ-006-010"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.06 fails, v0.05 remains the active promoted-experimental release; preserve all v0.06 frozen artifacts and failure evidence without rewriting v0.05 history.",
+    "parent_contract_sha256": "c3d9588520221b8b8440d296bf3da5f2cbf7b43751b1725299b576f16efb3ca5",
+    "preserve_parent_history": true,
+    "rollback_target": "0.05"
+  },
+  "schema_version": "2.0"
+}

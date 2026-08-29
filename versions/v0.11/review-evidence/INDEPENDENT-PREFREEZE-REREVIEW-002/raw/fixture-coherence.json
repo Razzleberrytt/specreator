@@ -1,0 +1,56 @@
+{
+  "execution": [
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "issues": [],
+      "verdict": "PASS"
+    }
+  ],
+  "lifecycle": [
+    {
+      "fixture_id": "LIFE-011-001-DISCOVERY",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "LIFE-011-002-BLOCKED-PREFREEZE",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "LIFE-011-003-FROZEN",
+      "issues": [],
+      "verdict": "PASS"
+    },
+    {
+      "fixture_id": "LIFE-011-004-VERIFYING",
+      "issues": [],
+      "verdict": "PASS"
+    }
+  ]
+}

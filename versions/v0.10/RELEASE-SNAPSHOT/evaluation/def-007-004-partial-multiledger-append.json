@@ -1,0 +1,22 @@
+{
+  "candidate_version": "0.07",
+  "classification": "agent_execution_error",
+  "defect_id": "DEF-007-004",
+  "evidence": {
+    "attempted_event_id": "EVT-SC-0095",
+    "existing_event_id": "EVT-SC-0095",
+    "guardrail": "REG-0011 / duplicate stable-ID rejection",
+    "partial_commits_before_failure": [
+      "DEC-0023 appended to self-improvement/decisions.jsonl",
+      "IMP-0013 appended to self-improvement/improvement-ledger.jsonl"
+    ],
+    "event_ledger_mutated_by_failed_duplicate_append": false,
+    "frozen_v0.07_artifacts_mutated": false
+  },
+  "observation": "A sequential successor-draft helper appended a valid decision and improvement proposal, then attempted to append an already-used event ID. Per-ledger duplicate protection correctly rejected the event write, but the earlier cross-ledger writes remained committed.",
+  "root_cause": "Schema-aware append is atomic per target ledger, not transactional across a multi-ledger orchestration. The caller also selected an event ID without preflighting the global event ledger.",
+  "resolution": "Preserve DEC-0023 and IMP-0013 because they are valid intended successor records, record this execution defect, and append the successor event under the next unused stable ID.",
+  "regression_disposition": "No new v0.07 product regression. REG-0011 already proves duplicate IDs fail closed within a ledger. Cross-ledger transaction/preflight support is deferred as reliability work (aligned with roadmap v0.12-v0.13) and should receive a dedicated regression when that capability is introduced.",
+  "severity": "minor",
+  "status": "resolved"
+}

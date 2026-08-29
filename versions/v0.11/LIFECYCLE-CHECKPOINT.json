@@ -1,0 +1,83 @@
+{
+  "blockers": [
+    {
+      "blocker_id": "DEF-011-POSTFREEZE-001",
+      "description": "Frozen whole-package ownership/classification is unsatisfiable for the current frozen checkpoint: 52 shipped post-review/freeze paths are absent from the frozen 103-member SUCCESSOR-OWNERSHIP-UNIVERSE.json, while frozen rules require every shipped path to classify exactly once and forbid mutating that frozen universe.",
+      "owner_decision_required": true,
+      "status": "OPEN",
+      "transition_token": "immutable_boundary_classification_failed"
+    }
+  ],
+  "candidate_version": "0.11",
+  "checkpoint_id": "LCP-011-POSTFREEZE-BLOCKER-001",
+  "immutable_boundary": {
+    "hash_algorithm": "sha256",
+    "historical_versions": [
+      "0.10",
+      "0.09.2",
+      "0.09",
+      "0.09.1",
+      "0.08",
+      "0.07",
+      "0.06.1",
+      "0.06",
+      "0.05",
+      "0.04",
+      "0.03",
+      "0.02",
+      "0.01"
+    ],
+    "mutation_rule": "All artifacts listed in versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json plus v0.10 and earlier protected history are immutable. Only unbound v0.11 implementation/operational artifacts may change.",
+    "registry_id": "FROZEN-REGISTRY-011-001",
+    "registry_ref": "versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json"
+  },
+  "next_legal_action": {
+    "action_id": "ACT-011-HALT-FROZEN-BLOCKER-001",
+    "action_token": "halt_on_frozen_state_blocker",
+    "allowed_actor": "agent:spec-creator-builder-v0.11",
+    "description": "Stop v0.11 implementation without altering frozen criteria. Preserve the post-freeze defect and require a governed release decision/retry path before any implementation attempt.",
+    "expected_outputs": [
+      "preserved post-freeze blocker state",
+      "no mutation of frozen v0.11 target/evaluation artifacts",
+      "governed decision selecting rejection/rollback or a separately preregistered retry candidate"
+    ],
+    "required_inputs": [
+      "versions/v0.11/FROZEN-RELEASE-CONTRACT.json",
+      "versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json",
+      "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "versions/v0.11/EVALUATION-UNIVERSES.json"
+    ]
+  },
+  "notes": [
+    "Independent prefreeze re-review 003 returned READY_FOR_FREEZE_PREPARATION with all seven defect regressions and all ten review obligations PASS.",
+    "ESIS Top-5 Repository Prototype Synthesis is hash-preserved forward product direction but is not a v0.11 implementation/promotion obligation.",
+    "General speedup claims remain prohibited from v0.11 shadow-only empirical efficiency evidence.",
+    "Post-freeze audit on the frozen implementation checkpoint found 52 currently shipped paths that are neither protected-parent nor members of the frozen 103-path successor ownership universe.",
+    "The exact 155 parent tests still pass, frozen registry preflight remains 31/31, and v0.10 hash integrity remains 1120/1120; the blocker is the frozen whole-package classification contract itself.",
+    "No v0.11 implementation code or tests were added because doing so would add further unclassified shipped paths and violate the frozen zero-tolerance boundary."
+  ],
+  "parent_version": "0.10",
+  "release_state": "FROZEN",
+  "required_artifacts": [
+    "versions/v0.11/FROZEN-RELEASE-CONTRACT.json",
+    "versions/v0.11/SPEC-CREATOR-v0.11.md",
+    "versions/v0.11/EVALUATION-PLAN.json",
+    "versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json",
+    "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+    "evaluation/v011-prefreeze-transaction-final.json",
+    "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/evidence-package.zip"
+  ],
+  "schema_version": "1.0-candidate",
+  "stop_condition": "Do not implement or self-repair REL-0.11-FROZEN-001 while DEF-011-POSTFREEZE-001 is open. The frozen successor ownership universe and frozen metric universe may not be expanded or weakened in place. Preserve v0.10 authority and require a governed retry/rejection decision.",
+  "transition_rule_ref": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+  "validation_profile": {
+    "commands": [
+      "python -m pytest -q",
+      "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+      "python versions/v0.11/tools/frozen_contract_preflight.py"
+    ],
+    "profile_id": "VAL-011-FROZEN-IMPLEMENTATION-001",
+    "success_condition": "All current tests pass; workspace validation has zero errors/warnings; frozen-contract preflight reports exact frozen registry and v0.10 parent integrity. Implementation-specific v0.11 evaluation evidence must also satisfy REL-0.11-FROZEN-001 before transition to VERIFYING."
+  }
+}

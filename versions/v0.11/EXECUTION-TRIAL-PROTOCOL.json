@@ -1,0 +1,74 @@
+{
+  "protocol_id": "EXEC-TRIAL-011-DRAFT-002",
+  "status": "PREREGISTRATION_DRAFT",
+  "candidate_version": "0.11",
+  "purpose": "Collect matched empirical calibration evidence without using provider/runtime-dependent efficiency measurements as v0.11 promotion authority.",
+  "design": {
+    "workload_count": 3,
+    "strategies": [
+      "serial_control",
+      "optimized_parallel_ready"
+    ],
+    "matched_obligations_required": true,
+    "matched_quality_gates_required": true,
+    "ordering": "For each workload, randomly choose which strategy is executed first when practical; record deviations.",
+    "environment_capture": [
+      "provider/model/configuration",
+      "session/context mode",
+      "start/end UTC timestamps",
+      "tool availability",
+      "input artifact hashes",
+      "output artifact hashes",
+      "human intervention count"
+    ],
+    "control_rule": "Serial control executes one ready implementation work package at a time in deterministic topological order; verification remains required and obligations may not be reduced.",
+    "optimized_rule": "Optimized plan may execute only dependency- and conflict-safe workstreams concurrently; speculative work stays non-authoritative until gates resolve."
+  },
+  "required_shadow_metrics": [
+    {
+      "name": "time_to_verified_implementation_seconds",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "canonical_context_payload_bytes",
+      "denominator": "all work packages in each strategy",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "corrective_prompt_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "integration_conflict_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "architectural_rework_count",
+      "denominator": "each matched workload execution",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "retry_amplification_work_units",
+      "denominator": "exact matched executions whose workload manifest has failure_injection.enabled=true; otherwise metric outcome is NOT_APPLICABLE and excluded by the preregistered applicability predicate",
+      "promotion_authoritative": false
+    },
+    {
+      "name": "verified_obligation_completion_rate",
+      "denominator": "frozen implementation obligations",
+      "promotion_authoritative": false
+    }
+  ],
+  "interpretation_rule": "v0.11 may report observed empirical deltas only as calibration/shadow evidence. It must not claim general speedup from these trials. A later reproducible runner (roadmap v0.17) may preregister provider/runtime-dependent promotion thresholds.",
+  "anti_gaming": [
+    "same implementation obligations",
+    "same quality gates",
+    "no task-count inflation credit",
+    "missing/skipped execution is unavailable, never zero",
+    "failed verification stops time-to-verified completion rather than being counted as fast",
+    "parallel strategy must record integration/rework overhead"
+  ],
+  "failure_injection_applicability_rule": "failure_injection.enabled is a required boolean workload-manifest field. retry_amplification_work_units applies iff true; false produces NOT_APPLICABLE, never missing/zero."
+}

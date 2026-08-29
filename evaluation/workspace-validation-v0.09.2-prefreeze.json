@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "artifact": "versions/v0.09.1/FROZEN-RELEASE-CONTRACT.json",
+      "code": "SCHEMA_VALIDATION_ERROR",
+      "message": "frozen-release-contract-v2.schema.json at requirements.13: 'description' is a required property",
+      "severity": "error"
+    },
+    {
+      "artifact": "versions/v0.09.1/FROZEN-RELEASE-CONTRACT.json",
+      "code": "SCHEMA_VALIDATION_ERROR",
+      "message": "frozen-release-contract-v2.schema.json at requirements.13: Additional properties are not allowed ('text' was unexpected)",
+      "severity": "error"
+    }
+  ],
+  "ok": false,
+  "summary": {
+    "errors": 2,
+    "issues": 2,
+    "warnings": 0
+  }
+}
