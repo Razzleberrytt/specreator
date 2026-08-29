@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T03:41:00Z",
-  "authority_note": "Lane 5 reconciled the already-existing historical v0.11.1 seal after byte-exact restoration. This state does not create or reseal v0.11.1. Exact historical evidence, frozen contracts, verifier evidence, manifests, tests, repository bytes, claims and receipts remain authoritative for the claims they govern.",
+  "updated_at": "2026-08-29T03:50:28Z",
+  "authority_note": "Lane 5 reconciled the already-existing historical v0.11.1 seal after byte-exact restoration and has now reconciled the initial v1 MUST evidence. No new v0.11.1 seal exists and no successor implementation is authorized until preregistration/freeze.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "5a2530a25ecd77c965c282f5810e34f8792a3198",
-    "observation_basis_tree_sha": "6bf5134cf3a61c0e4bd19f5c4f3f7043a3ea2d15",
-    "observation_semantics": "Exact pre-reconciliation branch snapshot. A control-plane state commit cannot contain its own resulting commit SHA. Subsequent reconciliation-only ops changes do not alter sealed historical package identity.",
+    "observation_basis_main_sha": "2d6dcb52693fdee63814061f1fd2842373978581",
+    "observation_basis_tree_sha": "9628240f4deee3360b06682d7245f24a42459a0c",
+    "observation_semantics": "Exact main/tree inspected before this v1 evidence-reconciliation transaction.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -27,8 +27,7 @@
       "failed_v0_11_hashes": "154/154",
       "workspace_validation": "0 errors / 0 warnings",
       "pytest": "166 passed",
-      "working_tree_at_restoration_head": "clean",
-      "post_restoration_historical_diff_status": "SEALED_HISTORICAL_PATHS_UNCHANGED_AFTER_README_REPAIR"
+      "working_tree_at_restoration_head": "clean"
     }
   },
   "current_sealed_release": {
@@ -42,7 +41,7 @@
     "new_seal_created": false
   },
   "active_candidate": null,
-  "phase": "V1_EVIDENCE_RECONCILIATION",
+  "phase": "V1_GAP_PREREGISTRATION",
   "phase_authority": "lane-5",
   "lane_ownership": {
     "lane-1": "integrity-packaging-release-infrastructure-and-control-plane-formats",
@@ -53,51 +52,31 @@
   },
   "blockers": [],
   "live_claims": [],
-  "latest_handoff_receipt_ids": [
-    "REC-V0111-BASELINE-RECONCILE-001"
-  ],
+  "latest_handoff_receipt_ids": ["REC-V0111-BASELINE-RECONCILE-001", "REC-V1-EVIDENCE-RECONCILE-001"],
   "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "freshness_inputs": {
-      "sealed_package_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
-      "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
-      "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
-      "historical_files": "1771/1771 exact",
-      "pytest": "166 passed",
-      "workspace_validation": "0 errors / 0 warnings"
-    },
-    "scope_note": "Freshness is established for the already-sealed historical v0.11.1 package by exact byte identity. It is not a claim that additive docs/control-plane files form a new v0.11.1 release."
+    "scope_note": "Valid for the already-sealed historical v0.11.1 package; not a verifier receipt for any future v1 candidate."
   },
   "next_legal_transition": {
-    "action": "RECONCILE_V1_MUST_EVIDENCE_AGAINST_SEALED_V0_11_1",
-    "owner": "lane-5",
+    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX",
+    "owner": "lane-2",
+    "blocker_id": "V1-MUST-FRESHNESS-001",
     "requirements": [
-      "evaluate each prospective v1 MUST capability against existing sealed v0.11.1 evidence before admitting implementation work",
-      "retire any v1 blocker already objectively satisfied by preserved evidence",
-      "rank remaining objective v1 MUST blockers by dependency, user value, risk and information value",
-      "admit at most one promotion-authoritative successor candidate unless governance proves safe independent concurrency",
-      "preregister and freeze any admitted successor before implementation"
+      "define the authoritative MUST-07 mutation universe and expected stale/affected outcomes before implementation",
+      "map existing v0.11.1 impact/provenance capability so only the proven missing delta is targeted",
+      "freeze acceptance criteria and negative cases before implementation",
+      "preserve verifier independence and exact historical release authority"
     ],
-    "prohibited_until_complete": [
-      "invent successor work for capabilities already evidenced by v0.11.1",
-      "treat documentation prose as completion evidence",
-      "weaken frozen historical tests or criteria"
-    ]
+    "prohibited_until_complete": ["successor implementation", "new v0.11.1 seal", "claiming any v1 MUST cluster PASS without exact evidence"]
   },
   "successor_cycle_count_since_convergence_review": 0,
   "convergence_mode": "ACTIVE_V1_CONVERGENCE",
   "v1_convergence": {
-    "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+    "status": "BOUNDED_GAPS_PREREGISTRATION_REQUIRED",
     "must_blocker_count": 6,
-    "must_blockers": [
-      "V1-MUST-LIFECYCLE-001",
-      "V1-MUST-FRESHNESS-001",
-      "V1-MUST-TRANSFER-001",
-      "V1-MUST-INTEGRITY-001",
-      "V1-MUST-USABILITY-001",
-      "V1-MUST-RELEASE-001"
-    ]
+    "must_blockers": ["V1-MUST-LIFECYCLE-001", "V1-MUST-FRESHNESS-001", "V1-MUST-TRANSFER-001", "V1-MUST-INTEGRITY-001", "V1-MUST-USABILITY-001", "V1-MUST-RELEASE-001"],
+    "selected_next_blocker": "V1-MUST-FRESHNESS-001"
   }
 }

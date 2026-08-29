@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-EVIDENCE-RECONCILE-001",
+  "created_at": "2026-08-29T03:50:28Z",
+  "authority": "lane-5",
+  "basis_main_sha": "2d6dcb52693fdee63814061f1fd2842373978581",
+  "sealed_baseline": {
+    "version": "0.11.1",
+    "canonical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+    "baseline_reconciliation_receipt": "REC-V0111-BASELINE-RECONCILE-001"
+  },
+  "verifier_freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
+  "cluster_results": [
+    {"id":"V1-MUST-LIFECYCLE-001","status":"PARTIALLY_SATISFIED_OPEN_GAP","evidence":"Existing sealed evidence covers deterministic discovery, traceability, task compilation, prompt/context compilation, execution replay/resume and provenance, but the v1 MUST-01 representative end-to-end real-project lifecycle requirement is not yet proven as a complete claim."},
+    {"id":"V1-MUST-FRESHNESS-001","status":"OPEN_OBJECTIVE_GAP","evidence":"No authoritative mutation matrix covering the full MUST-07 artifact universe was found in the sealed/current tree. Existing deterministic impact/provenance evidence is narrower than the v1 freshness requirement."},
+    {"id":"V1-MUST-TRANSFER-001","status":"PARTIALLY_SATISFIED_OPEN_CLAIM_BOUNDARY","evidence":"The frozen v0.10 transfer protocol and 3/3 separate-context trials provide exact narrow transfer/resume/reconstruction evidence, but do not by themselves establish every final v1 real-project transfer/rework claim."},
+    {"id":"V1-MUST-INTEGRITY-001","status":"PARTIALLY_SATISFIED_OPEN_SECURITY_GAP","evidence":"Exact package identity, ownership/hash universes, clean restoration validation and active regression universe are preserved. The v1 MUST-11 threat-model/adversarial-security evidence is not established by those package-integrity results alone."},
+    {"id":"V1-MUST-USABILITY-001","status":"OPEN_EVIDENCE_GAP","evidence":"A substantial CLI and documentation surface exists, but candidate-exact end-to-end example reproduction, CLI/API contract verification and structured diagnostic evidence required by MUST-13/14 have not been reconciled to PASS."},
+    {"id":"V1-MUST-RELEASE-001","status":"BLOCKED_BY_OTHER_V1_MUSTS","evidence":"v0.11.1 release lineage is reconciled, but MUST-15/16 are terminal v1-candidate gates and cannot pass before substantive v1 MUST gaps are closed and exact-state independent verification is run."}
+  ],
+  "must_blocker_count_before": 6,
+  "must_blocker_count_after": 6,
+  "retired_blockers": [],
+  "highest_priority_objective_gap": "V1-MUST-FRESHNESS-001",
+  "next_legal_action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX",
+  "implementation_authorized": false,
+  "reason": "Evidence reconciliation converts broad uncertainty into bounded objective gaps. MUST-07 freshness is the first dependency-relevant missing artifact and must be preregistered/frozen before implementation."
+}
