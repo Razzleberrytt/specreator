@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-08-29T05:07:00Z",
+  "updated_at": "2026-08-29T05:13:30Z",
   "staleness_policy": {
     "default_ttl_seconds": 7200,
     "expired_claim_status": "STALE",
@@ -38,13 +38,7 @@
       "completed_at": "2026-08-29T04:31:00Z",
       "frozen_contract_hash": "9831a59d7009a416d0ac425fd250cffc09ad8b935a0242ec4e4f9b74b8761688",
       "conflict_key": "v1-must-freshness-001",
-      "completion_evidence": {
-        "pr_number": 17,
-        "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
-        "freeze_id": "V1-FRESHNESS-FREEZE-001",
-        "contract_id": "V1-FRESHNESS-PREREG-001",
-        "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001"
-      },
+      "completion_evidence": {"pr_number":17,"merge_sha":"9e1ccc3fc238fb194ca427a674b23cd09a0cddea","freeze_id":"V1-FRESHNESS-FREEZE-001","contract_id":"V1-FRESHNESS-PREREG-001","matrix_id":"V1-FRESHNESS-MUTATION-MATRIX-001"},
       "incompatible_scopes": ["V1-MUST-FRESHNESS-001","successor-capability-implementation:freshness","successor-preregistration-and-freeze:freshness"]
     },
     {
@@ -61,14 +55,24 @@
       "status": "COMPLETED",
       "completed_at": "2026-08-29T05:07:00Z",
       "conflict_key": "control-plane-prereg-freeze-integrity-ci",
-      "completion_evidence": {
-        "pr_number": 19,
-        "validated_functional_head_sha": "acf75e347e1e83daa00585341966d41ea01c25ab",
-        "workflow_run_id": 33235303250,
-        "workflow_conclusion": "success",
-        "historical_package_files": 1771
-      },
+      "completion_evidence": {"pr_number":19,"validated_functional_head_sha":"acf75e347e1e83daa00585341966d41ea01c25ab","workflow_run_id":33235303250,"workflow_conclusion":"success","historical_package_files":1771},
       "incompatible_scopes": ["control-plane-validator","github-actions-integrity-ci"]
+    },
+    {
+      "task_id": "L2-V1-FRESHNESS-PREREG-RETRY-002",
+      "owner_lane": "lane-2",
+      "scope": ["V1-MUST-FRESHNESS-001","MUST-07-authoritative-mutation-matrix-retry","MUST-08-freshness-provenance-contract-retry","successor-preregistration-and-freeze:freshness"],
+      "candidate_version": "v1-freshness-successor-prereg-retry-002",
+      "exact_candidate_sha": "c0f9ad6ccfaa36f018e1f19c8ef5a437ab2f6f9c",
+      "release_identity": "V1-MUST-FRESHNESS-001@prereg-retry-002:c0f9ad6ccfaa36f018e1f19c8ef5a437ab2f6f9c",
+      "claimed_at": "2026-08-29T05:13:30Z",
+      "heartbeat_at": "2026-08-29T05:13:30Z",
+      "updated_at": "2026-08-29T05:13:30Z",
+      "expires_at": "2026-08-29T07:13:30Z",
+      "status": "ACTIVE",
+      "conflict_key": "v1-must-freshness-001",
+      "retry_of": "V1-FRESHNESS-FREEZE-001",
+      "incompatible_scopes": ["V1-MUST-FRESHNESS-001","successor-capability-implementation:freshness","successor-preregistration-and-freeze:freshness"]
     }
   ]
 }
