@@ -1,34 +1,122 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T03:39:31Z",
-  "current_status": "BLOCKED_BY_V0_11_1_RELEASE_STATE_RECONCILIATION",
-  "rule": "No prospective successor is admitted until the byte-exact restored v0.11.1 historical release is reconciled into canonical current release state with all required verification-freshness evidence and lane-5 phase authority.",
+  "updated_at": "2026-08-29T03:41:00Z",
+  "current_status": "V1_EVIDENCE_RECONCILIATION",
+  "rule": "The canonical v0.11.1 historical release is restored and reconciled. Before any successor implementation is admitted, each prospective v1 MUST capability must be compared against existing sealed evidence so already-satisfied capability is not rebuilt and only objective remaining gaps enter successor governance.",
+  "sealed_baseline": {
+    "version": "0.11.1",
+    "canonical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+    "reconciliation_receipt_id": "REC-V0111-BASELINE-RECONCILE-001"
+  },
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
-      "id": "V1-MUST-BASELINE-RECONCILE-001",
+      "id": "V1-MUST-LIFECYCLE-001",
       "necessity": "must",
-      "observed_gap": "The canonical sealed v0.11.1 bytes have been restored and exact-head integrity validation passed, but canonical release state and verification freshness have not yet been reconciled for the live GitHub lineage.",
-      "v1_capability_advanced": "reproducible governed release lineage",
-      "dependencies": [
-        "BLK-BASELINE-RECONCILE-001"
-      ],
-      "preregistration_status": "NOT_APPLICABLE_RELEASE_STATE_RECONCILIATION",
-      "expected_information_value": "Confirms that restored historical identity and live release authority are equivalent before successor work is admitted.",
+      "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+      "observed_gap": "The v1 contract requires end-to-end governed specification, discovery, traceability, task compilation, prompt/context compilation, execution planning/resume and durable lifecycle evidence. Existing v0.11.1 evidence must be reconciled against that complete v1 scope before any missing capability is asserted.",
+      "v1_capability_advanced": "MUST-01 through MUST-06 lifecycle completeness",
+      "dependencies": [],
+      "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
+      "expected_information_value": "High: may retire multiple prospective v1 requirements using already-preserved capability evidence and prevents duplicate implementation.",
       "completion_evidence": [
-        "restoration merge/tree bound to historical sealed release identity",
-        "historical restoration integrity evidence accepted",
-        "required fresh exact-state independent verifier receipt",
-        "canonical current sealed release reconciled without generating a new v0.11.1 seal",
-        "reconstruction blocker retired with history preserved"
+        "claim-by-claim mapping from v1 MUST-01..06 to exact sealed v0.11.1 artifacts/tests",
+        "explicit unresolved capability gaps only",
+        "no prose-only satisfaction claims"
+      ]
+    },
+    {
+      "id": "V1-MUST-FRESHNESS-001",
+      "necessity": "must",
+      "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+      "observed_gap": "Version 1.00 requires deterministic stale/change propagation and reproducible provenance semantics across promotion-authoritative artifacts. Existing v0.11.1 lifecycle/dependency/provenance evidence must be reconciled against the broader v1 freshness contract.",
+      "v1_capability_advanced": "MUST-07 and MUST-08 change propagation, determinism and provenance",
+      "dependencies": ["V1-MUST-LIFECYCLE-001"],
+      "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
+      "expected_information_value": "High: freshness errors can invalidate otherwise-correct automation and release evidence.",
+      "completion_evidence": [
+        "authoritative mutation matrix",
+        "stale-derived-artifact invalidation evidence",
+        "determinism/provenance evidence mapped to exact v1 claims"
+      ]
+    },
+    {
+      "id": "V1-MUST-TRANSFER-001",
+      "necessity": "must",
+      "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+      "observed_gap": "Version 1.00 requires preregistered real-project transfer evidence for any v1 transfer/rework claims. Existing transfer protocols and trials must be reconciled against the final intended claims and denominators.",
+      "v1_capability_advanced": "MUST-09 real-project transfer",
+      "dependencies": ["V1-MUST-LIFECYCLE-001"],
+      "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
+      "expected_information_value": "High: distinguishes self-dogfood/synthetic success from transferable user value.",
+      "completion_evidence": [
+        "preregistered separate-context evidence",
+        "exact denominators and raw observations",
+        "claim-limited reconciliation with uncertainty and limitations"
+      ]
+    },
+    {
+      "id": "V1-MUST-INTEGRITY-001",
+      "necessity": "must",
+      "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+      "observed_gap": "Version 1.00 requires clean package/install/extraction reproducibility, security/data integrity and active regression memory. v0.11.1 already contains substantial integrity evidence, but the exact v1 scope must be reconciled before remaining work is admitted.",
+      "v1_capability_advanced": "MUST-10 through MUST-12 packaging, security/data integrity and regression memory",
+      "dependencies": [],
+      "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
+      "expected_information_value": "High: existing sealed release evidence may satisfy much of this cluster while exposing any genuinely missing v1 hardening.",
+      "completion_evidence": [
+        "package/install/clean-extraction evidence mapped to v1 scope",
+        "security and transaction-integrity evidence",
+        "active regression ledger and retirement rules"
+      ]
+    },
+    {
+      "id": "V1-MUST-USABILITY-001",
+      "necessity": "must",
+      "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+      "observed_gap": "Version 1.00 requires documentation/examples matching behavior and a coherent supported CLI/API/workflow surface. Existing CLI and documentation evidence must be checked against the final v1 user contract.",
+      "v1_capability_advanced": "MUST-13 and MUST-14 documentation/examples and usability",
+      "dependencies": ["V1-MUST-LIFECYCLE-001"],
+      "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
+      "expected_information_value": "Medium-high: identifies whether user-facing gaps are actual capability blockers or documentation-only work.",
+      "completion_evidence": [
+        "reproducible end-to-end example",
+        "CLI/API contract verification",
+        "actionable blocked/stale/invalid diagnostics",
+        "documentation checked against exact behavior"
+      ]
+    },
+    {
+      "id": "V1-MUST-RELEASE-001",
+      "necessity": "must",
+      "status": "BLOCKED_BY_OTHER_V1_MUSTS",
+      "observed_gap": "Final v1 independent verification, exact release lineage and shipping seal cannot complete until all substantive v1 MUST evidence has been reconciled and any true capability gaps are closed.",
+      "v1_capability_advanced": "MUST-15 and MUST-16 independent verification and final release lineage",
+      "dependencies": [
+        "V1-MUST-LIFECYCLE-001",
+        "V1-MUST-FRESHNESS-001",
+        "V1-MUST-TRANSFER-001",
+        "V1-MUST-INTEGRITY-001",
+        "V1-MUST-USABILITY-001"
+      ],
+      "preregistration_status": "RELEASE_CANDIDATE_ONLY",
+      "expected_information_value": "Terminal gate: proves the exact v1 candidate rather than an earlier or stale state.",
+      "completion_evidence": [
+        "zero unresolved substantive v1 MUST blockers",
+        "fresh exact-state independent verifier recommendation",
+        "authoritative shipping manifest and clean extraction",
+        "completion receipt, release notes, version 1.0.0 and tag/release where tooling permits"
       ]
     }
   ],
   "convergence_review": {
     "required_now": true,
-    "question": "What specifically prevents v1.00 now?",
-    "answer": "Exactly one admitted MUST blocker remains: reconcile the verified restored v0.11.1 historical release into canonical current release state with required fresh verification evidence. Successor exploration remains frozen until that transition completes.",
-    "must_blocker_count": 1
+    "question": "What specifically prevents v1.00 right now?",
+    "answer": "The restored v0.11.1 baseline no longer blocks progress. Six objective v1 evidence/capability clusters remain to reconcile. The immediate legal work is evidence reconciliation against the sealed baseline; successor implementation is admitted only for gaps that survive that review.",
+    "must_blocker_count": 6,
+    "successor_cycle_count_since_review": 0,
+    "mode": "ACTIVE_V1_CONVERGENCE"
   }
 }
