@@ -1,222 +1,205 @@
 # Spec Creator
 
-Spec Creator is a controlled, evidence-driven specification system for AI software development. It is recursively developing itself under the same preregistration, frozen-contract, verification, regression-memory, and release rules it is intended to impose on future projects.
+**Controlled, evidence-driven specification and execution infrastructure for AI software development.**
 
-## Current state
+Spec Creator turns product intent into governed discovery, traceable specifications, deterministic execution artifacts, verification evidence, and reproducible releases. It is also recursively developing itself under the same governance it imposes on its own development.
 
-- **v0.01** — measured specification protocol; historical experimental baseline.
-- **v0.02** — controlled recursive-improvement protocol; structurally useful but not retroactively promoted because supplied release evidence was incomplete.
-- **v0.03** — **PROMOTED AS EXPERIMENTAL**; executable schemas and structural validator.
-- **v0.04** — **PROMOTED AS EXPERIMENTAL**; deterministic Spec Linter plus recursion-safe historical release verification.
-- **v0.05** — **PROMOTED AS EXPERIMENTAL**; typed Traceability Engine with critical-path enforcement and deterministic change-impact analysis.
-- **v0.06** — **RETRY REQUIRED**; frozen Ambiguity Engine candidate rejected before implementation because all 16 graph-backed benchmark dependencies violated the promoted v0.05 traceability schema.
-- **v0.06.1** — **PROMOTED AS EXPERIMENTAL**; governed retry with deterministic ambiguity detection/classification, trace-aware question priority, clarification-interception proxy, parent-artifact preflight, schema-aware ledger append, and manifest-last package sealing.
-- **v0.07** — **PROMOTED AS EXPERIMENTAL**; deterministic Adaptive Discovery with safe explicit defaults, dependency-aware question frontiering, explicit batching/budgets, information-value ranking, provenance, and a hash-locked held-out evaluation partition.
-- **v0.08** — **PROMOTED AS EXPERIMENTAL**; deterministic Task Compiler with trace-derived dependencies, atomicity bounds, conflict zones, conservative parallelization, immutable compiled task graphs, and append-only graph-hash-bound execution replay.
-- **v0.09** — **RETRY REQUIRED**; frozen Prompt Compiler candidate preserved after a semantically contradictory negative benchmark case was discovered.
-- **v0.09.1** — **RETRY REQUIRED**; governed retry preserved after an invalid freeze transaction wrote a contract despite failed preregistration preflight.
-- **v0.09.2** — **PROMOTED AS EXPERIMENTAL**; fail-closed Prompt Compiler retry with five deterministic prompt kinds, exact context closure, obligation retention, authority/prerequisite/owner/verifier guards, continuation replay, self-dogfood, historical shadow verification, and REG-0020 through REG-0023.
+> **Project invariant:** observe → evidence → root cause → hypothesis → preregister → freeze → implement → independently verify → reconcile → adopt/reject → preserve regression memory → specify successor.
+
+## What Spec Creator is
+
+Spec Creator is not a generic idea-to-spec generator. It is infrastructure for making specification and execution work **auditable, deterministic, provenance-preserving, and resistant to self-deception**.
+
+The system is designed to preserve a chain from goals and requirements through discovery, traceability, task compilation, prompt/context compilation, execution planning, validation, history, and release governance. Frozen criteria stay frozen. Failed experiments stay visible. Missing evidence is not success. Tests and denominators cannot be weakened after the fact to manufacture promotion.
+
+## Core principles
+
+- **Evidence before promotion.** Claims require the evidence defined before implementation.
+- **Frozen contracts.** Acceptance criteria, metrics, denominators, and guardrails cannot be rewritten after a candidate begins.
+- **Deterministic artifacts.** Governed inputs should produce reproducible outputs with explicit provenance.
+- **Traceability.** Goals, requirements, features, tasks, tests, gates, prompts, and execution artifacts remain connected.
+- **Fail-closed freshness.** A PASS or READY recommendation becomes stale when its promotion-authoritative inputs change.
+- **Independent verification.** Candidate implementation and release verification remain separate authorities.
+- **Regression memory.** Discovered failures become durable tests rather than disappearing after repair.
+- **Historical immutability.** Failed and superseded experiments remain part of the record.
+- **Convergence over version churn.** Successors must close an objective capability gap or necessary uncertainty.
+
+## Capability evolution
+
+| Version | Outcome | Capability |
+| --- | --- | --- |
+| v0.01 | Historical baseline | Measured specification protocol |
+| v0.02 | Evidence incomplete | Controlled recursive-improvement protocol |
+| v0.03 | Promoted experimental | Executable schemas and structural validation |
+| v0.04 | Promoted experimental | Deterministic Spec Linter and recursive-history integrity |
+| v0.05 | Promoted experimental | Typed Traceability Engine and deterministic change-impact analysis |
+| v0.06 | Retry required | Ambiguity Engine candidate; invalid benchmark dependencies discovered before implementation |
+| v0.06.1 | Promoted experimental | Governed Ambiguity Engine retry and hardened release mechanics |
+| v0.07 | Promoted experimental | Adaptive Discovery with safe defaults, dependency frontiering, budgets, provenance, and held-out evaluation |
+| v0.08 | Promoted experimental | Deterministic Task Compiler and append-only execution replay |
+| v0.09 | Retry required | Prompt Compiler candidate with contradictory negative benchmark case |
+| v0.09.1 | Retry required | Invalid freeze transaction preserved as failed history |
+| v0.09.2 | Promoted experimental | Fail-closed Prompt Compiler with exact context closure and continuation replay |
+| v0.10+ | Governed evolution | Transfer, lifecycle, execution, and recursive-governance maturation toward v1.00 |
+
+Historical release artifacts and repository governance are authoritative for exact release status; this table is an orientation layer, not a replacement control plane.
+
+## Architecture
+
+The intended governed lifecycle is:
+
+```text
+Intent / evidence
+      ↓
+Governed discovery & clarification
+      ↓
+Specification + decisions
+      ↓
+Typed traceability graph
+      ↓
+Deterministic task compilation
+      ↓
+Prompt / context compilation
+      ↓
+Execution planning + resumable history
+      ↓
+Validation + independent verification
+      ↓
+Reconciliation / adoption or rejection
+      ↓
+Regression memory + reproducible release
+```
+
+Every transformation should preserve enough provenance to answer: **where did this requirement come from, what depends on it, what changed, what must be revalidated, and what evidence authorizes the current state?**
+
+## Executable capability families
+
+### Structural validation
+
+The validator family covers JSON/JSONL and schema validity, stable IDs and references, event supersession, regression governance, denominator reconciliation, missing-data enforcement, frozen-contract hashing, release-manifest verification, and candidate self-certification detection where actor evidence is available.
+
+### Spec Linter
+
+The deterministic Markdown linter identifies vague or non-testable normative language, missing acceptance/failure behavior, unresolved decisions, undefined references, contradictions, overly broad tasks, unbounded components, and ungoverned assumptions. Findings carry stable rule IDs and source locations; suppression requires an explicitly governed decision.
+
+### Traceability Engine
+
+The typed graph supports the canonical chain:
+
+```text
+Goal → Requirement → Feature → Task → Test → Gate
+```
+
+It validates relation/type transitions, references, cycles and critical-chain completeness, and computes deterministic upstream/downstream change impact.
+
+### Ambiguity Engine
+
+The ambiguity layer detects unresolved/defaulted options, missing measurable bounds, undefined referents, conflicting constraints, assumption-governance problems, and unresolved status markers. It can bind findings to traceability impact and distinguish owner decisions from governed defaults or specification corrections.
+
+### Adaptive Discovery
+
+Discovery turns unresolved ambiguity into a deterministic question/default plan. It may apply only explicitly safe defaults, respects dependency frontiers, batches only governed decisions, uses bounded question budgets, and preserves provenance for every action.
+
+### Task Compiler
+
+The compiler turns governed normalized task evidence into immutable task graphs. Dependencies must come from validated trace edges, explicit ordering, or unique producer/consumer evidence. It refuses unresolved owner decisions, rejects cycles, avoids inventing architectural splits, identifies write-conflict zones, and permits parallelism only when dependency and conflict checks allow it.
+
+### Prompt / Context Compiler
+
+The prompt compiler builds deterministic execution context while retaining obligations, authority boundaries, prerequisites, ownership, verifier constraints, and continuation/replay information. Context closure is governed rather than guessed.
+
+## Governance and recursive development
+
+Spec Creator dogfoods its own governance. A normal successor lifecycle is:
+
+1. Observe a real gap or uncertainty.
+2. Gather evidence and identify root cause.
+3. State a falsifiable hypothesis.
+4. Preregister metrics, denominators, guardrails, and acceptance evidence.
+5. Freeze the contract.
+6. Implement without rewriting that contract.
+7. Produce an exact-state handoff receipt.
+8. Independently verify the exact candidate.
+9. Reconcile the evidence and adopt, retry, or reject.
+10. Preserve failures as regression memory.
+11. Create a successor only when an objective remaining capability requires one.
+
+A candidate may never promote itself merely because it is newer.
+
+## Canonical automation control plane
+
+Autonomous development is coordinated through machine-readable repository state. The control plane is intentionally separate from historical release evidence and does not retroactively rewrite it.
+
+Key responsibilities include:
+
+- one canonical phase/release/candidate state;
+- mechanical work claims to prevent incompatible duplicate work;
+- append-only handoff and verifier receipts bound to exact candidate identity;
+- fail-closed verification freshness;
+- one prospective Version 1.00 trajectory;
+- formal convergence reviews that distinguish true v1 MUST blockers from optional post-v1 improvements.
+
+Major phase transitions are reconciled by the orchestration authority only after their mechanical preconditions are satisfied.
+
+## Current repository state
+
+The repository is currently in a **governed baseline restoration/reconciliation phase** before autonomous successor implementation may proceed. Historical release evidence is preserved separately from the live GitHub tree, and the automation is required to fail closed until the canonical baseline identity and exact-state evidence are reconciled.
+
+Do not infer release authority from this README. The machine-readable state under `ops/`, exact repository history, frozen release contracts, manifests, receipts, and verifier evidence are authoritative.
+
+## Path to Version 1.00
+
+Version 1.00 is a convergence target, not a date or arbitrary version counter. The prospective v1 contract must objectively cover the complete intended lifecycle:
+
+- specification and governed discovery/clarification;
+- traceability and deterministic change propagation;
+- task compilation;
+- prompt/context compilation;
+- execution planning, handoff, and resume;
+- validation and release/history lifecycle;
+- deterministic and provenance-preserving artifacts;
+- package/install and clean-extraction reproducibility;
+- security and data integrity;
+- durable regression memory;
+- documentation and examples matching behavior;
+- justified API/CLI/workflow usability;
+- real-project transfer evidence;
+- fresh independent verification of the exact release candidate;
+- explicit non-goals.
+
+Every v1 MUST requirement needs objective acceptance evidence. When no objective MUST blocker remains, development enters release-candidate hardening rather than inventing another exploratory successor. After verified v1.0.0, autonomous feature expansion stops unless a regression invalidates the completion evidence.
 
 ## Install and run
+
+Once the complete package is present in the working tree:
 
 ```bash
 pip install -e .
 
 spec-creator validate .
-spec-creator hash-contract versions/v0.05/FROZEN-RELEASE-CONTRACT.json
 spec-creator lint path/to/spec.md
 spec-creator lint path/to/spec.md --json
-spec-creator evaluate-lint-corpus .
 spec-creator trace-validate graph.json
 spec-creator trace-impact graph.json NODE-ID [NODE-ID ...]
-spec-creator evaluate-trace-corpus .
 spec-creator ambiguity path/to/spec.md --json
-spec-creator preflight-ambiguity-corpus fixtures/ambiguity/v0.06.1/corpus.jsonl --json
-spec-creator evaluate-ambiguity-corpus . --json
 spec-creator discovery path/to/spec.md --profile profile.json --trace-graph graph.json --json
-spec-creator preflight-discovery-corpus fixtures/discovery/v0.07/corpus.jsonl --json
-spec-creator evaluate-discovery-corpus . --json
 spec-creator task-compile task-project.json --json
 spec-creator task-graph-validate compiled-task-graph.json --json
 spec-creator task-replay compiled-task-graph.json execution-events.jsonl --json
-spec-creator evaluate-task-compiler-corpus . --json
-spec-creator seal-package . --release-version 0.07 --release-status "PROMOTED AS EXPERIMENTAL" --generated-at-utc <UTC>
 ```
 
-Use `--approved-decision DEC-...` on `lint` only when a local lint suppression has an explicitly approved governance decision.
+Additional release- and version-specific commands are defined by the corresponding governed artifacts. Do not substitute README examples for frozen release instructions.
 
-## Executable capabilities
+## Historical evidence matters
 
-### Structural validator — v0.03+
+Spec Creator deliberately retains unsuccessful experiments. Examples include invalid benchmark dependencies, contradictory benchmark cases, invalid freeze transactions, stale-authority defects, duplicate metadata behavior, and unsafe stable-ID assumptions. Repairs become regression memory; the original failures are not erased or retroactively counted as successes.
 
-- JSON / JSONL syntax validation
-- JSON Schema Draft 2020-12 validation
-- stable primary-ID / duplicate checks
-- cross-reference checks
-- event supersession consistency
-- regression-retirement governance
-- denominator snapshot / metric reconciliation
-- missing-data enforcement
-- frozen-contract canonical SHA-256 verification
-- release-manifest verification
-- candidate self-certification detection where actor records expose it
+That is a feature of the project, not clutter: **the history is part of the evidence.**
 
-### Deterministic Spec Linter — v0.04+
+## Status authority
 
-The bounded Markdown profile detects vague/non-testable normative wording, missing acceptance or failure behavior, unresolved critical decisions, undefined references, missing verification, deterministic contradictions, overly broad tasks, unbounded components, and ungoverned assumptions.
+For exact current status, consult the canonical machine-readable state and repository evidence rather than prose documentation. In particular, `ops/spec-creator-state.json`, work-claim/receipt artifacts, frozen contracts, package manifests, tests, and verifier evidence govern release decisions.
 
-Findings carry stable rule IDs, line/column, exact source span, severity, and rationale. Local suppression requires an approved governance decision.
+---
 
-### Recursive-history integrity — v0.04+
-
-- append-only ledgers preserve historical byte prefixes;
-- mutable shared source can evolve while prior release content is preserved in version-local release snapshots;
-- historical prefix/snapshot mutation remains detectable;
-- `append_jsonl_records` prevents accidental whole-ledger rewrites when appending historical records.
-
-### Traceability Engine — v0.05
-
-The typed graph model supports:
-
-`Goal → Requirement → Feature → Task → Test → Gate`
-
-It adds:
-
-- versioned traceability graph schema;
-- duplicate-node and duplicate-edge detection;
-- broken-reference validation;
-- governed relation/type transitions;
-- cycle detection;
-- critical-chain completeness and first-missing-stage diagnostics;
-- deterministic complete-path output;
-- upstream/downstream change-impact analysis;
-- CLI/API access and frozen-corpus evaluation.
-
-The v0.05 release dogfoods its own engine: all ten critical v0.05 requirements have complete ordered paths in `versions/v0.05/TRACEABILITY-GRAPH.json`.
-
-## v0.05 frozen evidence
-
-- **83/83** complete automated tests PASS
-- **49/49** inherited v0.04 tests PASS
-- **20/20** frozen invalid graphs detected
-- **10/10** frozen valid + impact graphs accepted
-- **10/10** frozen critical requirements complete
-- **5/5** impact cases exact
-- diagnostic precision **100%**
-- valid graph false positives **0**
-- v0.05 spec lint findings **0**
-- applicable inherited REG-0001–REG-0006 PASS
-- new REG-0007 PASS
-- **12/12** mandatory gates PASS
-- independent-role verifier PASS
-
-The first implementation run failed 8 tests because impact output used lexical ID ordering. The frozen benchmark was not changed; the implementation was corrected and the defect became REG-0007.
-
-### Ambiguity Engine — v0.06.1
-
-The governed retry adds a deterministic six-family ambiguity layer over active Markdown requirement/task blocks:
-
-- unresolved/defaulted options;
-- missing measurable bounds;
-- undefined referents;
-- conflicting constraints;
-- assumption governance;
-- unresolved status markers.
-
-Each finding includes source location, owning block, severity, disposition (`owner_decision`, `governed_default`, or `spec_correction`), decision-needed state, traceability downstream impact, priority score, and an optional bounded owner question. A supplied trace graph must pass the promoted v0.05 validator before it can influence ranking.
-
-The release also hardens recursive operation itself: embedded successor benchmark artifacts are parent-validated before freeze, schema-aware JSONL append rejects malformed/duplicate records before writing bytes, and the live shipping package manifest is regenerated only after all release artifacts are complete.
-
-## v0.06.1 frozen evidence
-
-- frozen retry corpus: **72 cases**
-- defect detection: **24/24 = 100%**
-- clean acceptance: **20/20 = 100%**
-- exact decision/disposition classifications: **76/76 = 100%**
-- governed-default questions: **0**
-- priority top-question accuracy: **8/8 = 100%**
-- synthetic clarification triggers intercepted: **16/16 = 100%**
-- unnecessary questions: **0/64 = 0%**
-- critical ambiguity escapes: **0**
-- parent-valid graph-backed retry cases: **16/16**
-- release self-traceability: **12/12 critical requirements complete**
-- inherited v0.05 test modules: **84/84 PASS**
-- complete v0.06.1 suite: **100/100 PASS**
-- frozen applicable regressions REG-0001–REG-0009: **PASS**
-- new REG-0010–REG-0014: **PASS**
-- mandatory v0.06.1 gates: **16/16 PASS**
-- independent-role verifier: **PASS**
-
-The first frozen v0.06 candidate is intentionally retained as a failed experiment. v0.06.1 fixes benchmark dependency validity through a governed retry rather than rewriting v0.06 history.
-
-### Adaptive Discovery — v0.07
-
-v0.07 turns the ambiguity queue into a deterministic discovery plan. It can apply only explicit profile defaults that satisfy every safe-inference gate, defer questions behind unresolved declared dependencies, batch only explicitly grouped decisions, enforce bounded noncritical question budgets, and rank ready batches by a preregistered information-value formula. Every candidate keeps a machine-readable action, reason, and provenance record.
-
-The release does **not** infer product choices from project type, probabilistic confidence, or an LLM. Deferred decisions remain unresolved work and cannot be treated as completion.
-
-## v0.07 frozen evidence
-
-- frozen discovery corpus: **72 cases**
-- exact inherited v0.06.1 baseline: **100/100 PASS**
-- complete v0.07 suite: **119/119 PASS**
-- baseline owner questions: **92**
-- adaptive question batches: **40**
-- owner-question reduction: **52/92 = 56.52%**
-- information-value top selection: **24/24 = 100%**
-- held-out action exact match: **47/47 = 100%**
-- safe inference: **20/20 = 100%**
-- unsafe automatic defaults: **0**
-- critical ambiguity escapes: **0**
-- dependency frontier: **16/16 = 100%**
-- provenance completeness: **98/98 = 100%**
-- unnecessary question batches: **0/40 = 0%**
-- release self-traceability: **12/12 critical requirements complete**
-- mandatory v0.07 gates: **19/19 PASS**
-- preregistered metrics: **16/16 PASS**
-- active regressions through **REG-0016** preserved/passing
-- independent-role verifier: **PASS**
-
-The required non-promotional shadow evaluation found two inherited ambiguity false positives that the synthetic benchmark did not: higher-level Markdown heading leakage and descriptive `unresolved` taxonomy language. The fixes became REG-0015 and REG-0016 without changing the frozen v0.07 corpus or counting the fixes as retroactive experiment success.
-
-### Task Compiler — v0.08
-
-v0.08 compiles governed normalized task evidence into deterministic immutable task graphs. Dependencies may come only from validated trace `precedes` edges, explicit ordering constraints, or unique artifact producer/consumer evidence. It refuses unresolved owner-decision work, rejects cycles, emits `needs_spec_refinement` instead of inventing architectural splits for oversized tasks, groups shared write scopes into conflict zones, and marks parallel-safe pairs only when dependency and write-conflict checks both permit it. Execution lifecycle is replayed from append-only `TEVT-*` records bound to the compiled graph hash rather than written into task definitions.
-
-## v0.08 frozen evidence
-
-- frozen compiler cases: **60**
-- accepted graphs: **24/24 exact**
-- held-out accepted graphs: **12/12 exact**
-- negative classifications: **36/36 exact**
-- execution streams: **16/16 exact**
-- dependency provenance: **100%**
-- critical ready-task trace completeness: **100%**
-- unsafe parallelizations: **0**
-- unresolved owner-decision escapes: **0**
-- oversized ready-task escapes: **0**
-- dependency-cycle escapes: **0**
-- invented dependencies: **0**
-- complete suite: **142/142 PASS**
-- exact sealed v0.07 baseline: **119/119 PASS**
-- self-traceability: **13/13 critical requirements complete**
-- mandatory gates: **21/21 PASS**
-- frozen metrics: **20/20 PASS**
-- active regressions through **REG-0019** preserved/passing
-- independent-role verifier: **PASS**
-
-The required shadow/self-integration work found three defects that the perfect synthetic benchmark missed: stale discovery-plan authority, duplicate source-task metadata overwrite, and global field-name stable-ID assumptions. They became REG-0017 through REG-0019 without changing frozen v0.08 targets.
-
-## Recursive invariant
-
-`observe → evidence → root cause → hypothesis → preregister → freeze → implement → independently verify → reconcile → adopt/reject → preserve regression memory → specify successor`
-
-A candidate may not rewrite its frozen criteria, silently edit historical events, hide failed experiments, treat missing data as zero, manipulate denominators, remove regressions for convenience, weaken tests for a pass, or promote itself merely because it is newer.
-
-## Next capability
-
-v0.09.2 is the current sealed **Prompt Compiler** release and is **PROMOTED AS EXPERIMENTAL**. v0.09 and v0.09.1 remain immutable RETRY REQUIRED history. The next cycle should begin unfrozen and preregister genuinely separate transfer evidence before claiming real-project reduction in reconstruction or rework.
-
-## Active successor discovery — v0.10
-
-The sealed parent remains **v0.09.2 Prompt Compiler — PROMOTED AS EXPERIMENTAL**. v0.10 Protocol MVP is currently an **unfrozen governed discovery checkpoint** under DEC-0031. No v0.10 implementation or frozen contract is authorized until three genuinely separate-context prompt-transfer trials satisfy `versions/v0.10/TRANSFER-EVIDENCE-PROTOCOL.json`. Missing transfer evidence remains incomplete and cannot be replaced with same-session synthetic results.
+**Spec Creator's goal is not to produce more specifications. It is to make the path from intent to execution inspectable, reproducible, governable, and increasingly reliable.**
