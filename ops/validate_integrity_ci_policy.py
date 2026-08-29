@@ -56,7 +56,7 @@ def step_has_exact_line(step: list[str], pattern: str) -> bool:
 
 
 def step_run_commands(step: list[str]) -> list[str]:
-    """Return active top-level run commands declared by one workflow step."""
+    """Return active top-level run declarations for one workflow step."""
     commands: list[str] = []
     for line in step:
         match = re.fullmatch(r"\s{8}run:\s*(.+)", line)
@@ -148,10 +148,13 @@ def main() -> None:
     if len(setup_python_step_indexes) != 1:
         fail("integrity workflow must contain exactly one approved setup-python step")
 
+    # Identify the one approved downstream install step even when its run block
+    # is multiline. Alternate pre-control-plane execution is handled by the
+    # fail-closed boundary below rather than by installer-name matching.
     install_step_indexes = [
         index
         for index, step in enumerate(steps)
-        if any("python -m pip install" in command for command in step_run_commands(step))
+        if any("python -m pip install" in line for line in step)
     ]
     if len(install_step_indexes) != 1:
         fail("integrity workflow must contain exactly one approved dependency-install step")
