@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T03:50:28Z",
-  "authority_note": "Lane 5 reconciled the already-existing historical v0.11.1 seal after byte-exact restoration and has now reconciled the initial v1 MUST evidence. No new v0.11.1 seal exists and no successor implementation is authorized until preregistration/freeze.",
+  "updated_at": "2026-08-29T04:48:17Z",
+  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and the initial v1 evidence. The first V1-MUST-FRESHNESS-001 preregistration freeze is preserved but rejected for implementation authority because its executable inputs and complete acceptance semantics were not immutably bound. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "2d6dcb52693fdee63814061f1fd2842373978581",
-    "observation_basis_tree_sha": "9628240f4deee3360b06682d7245f24a42459a0c",
-    "observation_semantics": "Exact main/tree inspected before this v1 evidence-reconciliation transaction.",
+    "observation_basis_main_sha": "2f64304e39228202a3d6d03c1c3c15153126a868",
+    "observation_basis_tree_sha": "019b00b03ff481cf688019bb4995f491cbc7aca8",
+    "observation_semantics": "Exact main/tree inspected before Lane-5 reconciliation of the merged freshness preregistration attempt.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -52,31 +52,60 @@
   },
   "blockers": [],
   "live_claims": [],
-  "latest_handoff_receipt_ids": ["REC-V0111-BASELINE-RECONCILE-001", "REC-V1-EVIDENCE-RECONCILE-001"],
+  "latest_handoff_receipt_ids": [
+    "REC-V0111-BASELINE-RECONCILE-001",
+    "REC-V1-EVIDENCE-RECONCILE-001",
+    "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+  ],
+  "failed_preregistrations": [
+    {
+      "blocker_id": "V1-MUST-FRESHNESS-001",
+      "freeze_id": "V1-FRESHNESS-FREEZE-001",
+      "contract_id": "V1-FRESHNESS-PREREG-001",
+      "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+      "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
+      "disposition": "REJECTED_FOR_IMPLEMENTATION_AUTHORITY_PRESERVE_HISTORY",
+      "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+    }
+  ],
   "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "scope_note": "Valid for the already-sealed historical v0.11.1 package; not a verifier receipt for any future v1 candidate."
+    "scope_note": "Valid for the already-sealed historical v0.11.1 package; not a verifier receipt for any future v1 candidate or preregistration attempt."
   },
   "next_legal_transition": {
-    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX",
+    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
     "owner": "lane-2",
     "blocker_id": "V1-MUST-FRESHNESS-001",
     "requirements": [
-      "define the authoritative MUST-07 mutation universe and expected stale/affected outcomes before implementation",
-      "map existing v0.11.1 impact/provenance capability so only the proven missing delta is targeted",
-      "freeze acceptance criteria and negative cases before implementation",
-      "preserve verifier independence and exact historical release authority"
+      "preserve V1-FRESHNESS-FREEZE-001 unchanged as failed frozen history",
+      "create separately identified retry contract, matrix and freeze record",
+      "bind every mutation case to concrete immutable executable fixture inputs, exact mutation identity, governed artifact identities and explicit provenance/dependency edges",
+      "hash complete canonical case definitions including expected affected, stale-authority and safe-reuse outcomes",
+      "hash metric targets, guardrails, failure criteria, missing-data policy, parent guardrails and implementation-scope constraints",
+      "leave implementation authority pending Lane-5 reconciliation after retry freeze"
     ],
-    "prohibited_until_complete": ["successor implementation", "new v0.11.1 seal", "claiming any v1 MUST cluster PASS without exact evidence"]
+    "prohibited_until_complete": [
+      "successor implementation",
+      "editing or deleting the failed frozen attempt",
+      "new v0.11.1 seal",
+      "claiming V1-MUST-FRESHNESS-001 PASS"
+    ]
   },
   "successor_cycle_count_since_convergence_review": 0,
   "convergence_mode": "ACTIVE_V1_CONVERGENCE",
   "v1_convergence": {
-    "status": "BOUNDED_GAPS_PREREGISTRATION_REQUIRED",
+    "status": "BOUNDED_GAPS_PREREGISTRATION_RETRY_REQUIRED",
     "must_blocker_count": 6,
-    "must_blockers": ["V1-MUST-LIFECYCLE-001", "V1-MUST-FRESHNESS-001", "V1-MUST-TRANSFER-001", "V1-MUST-INTEGRITY-001", "V1-MUST-USABILITY-001", "V1-MUST-RELEASE-001"],
+    "must_blockers": [
+      "V1-MUST-LIFECYCLE-001",
+      "V1-MUST-FRESHNESS-001",
+      "V1-MUST-TRANSFER-001",
+      "V1-MUST-INTEGRITY-001",
+      "V1-MUST-USABILITY-001",
+      "V1-MUST-RELEASE-001"
+    ],
     "selected_next_blocker": "V1-MUST-FRESHNESS-001"
   }
 }
