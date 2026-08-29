@@ -1,23 +1,24 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T03:39:31Z",
-  "authority_note": "This file records lane-5 reconciled machine state. It does not create a new v0.11.1 seal. Exact historical evidence, frozen contracts, verifier receipts, tests, manifests, and repository bytes remain authoritative for the claims they govern.",
+  "updated_at": "2026-08-29T03:41:00Z",
+  "authority_note": "Lane 5 reconciled the already-existing historical v0.11.1 seal after byte-exact restoration. This state does not create or reseal v0.11.1. Exact historical evidence, frozen contracts, verifier evidence, manifests, tests, repository bytes, claims and receipts remain authoritative for the claims they govern.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "9aaa80e405950ea528494d3020dc7a26312cf711",
-    "observation_basis_tree_sha": "adc2a8a4c6ee650100181a22bff6a2457f10c525",
-    "observation_semantics": "Snapshot of the exact live main/tree inspected immediately before this state commit; see ops/CONTROL-PLANE-OBSERVATION.md.",
+    "observation_basis_main_sha": "5a2530a25ecd77c965c282f5810e34f8792a3198",
+    "observation_basis_tree_sha": "6bf5134cf3a61c0e4bd19f5c4f3f7043a3ea2d15",
+    "observation_semantics": "Exact pre-reconciliation branch snapshot. A control-plane state commit cannot contain its own resulting commit SHA. Subsequent reconciliation-only ops changes do not alter sealed historical package identity.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
-    "baseline_reconciled": false,
+    "baseline_reconciled": true,
     "restoration_identity": {
       "historical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
       "restored_historical_files": "1771/1771",
       "restoration_head_sha": "4a5d2206880fade908c191f622ae33df78359e40",
       "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
-      "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e"
+      "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
+      "sealed_readme_blob_sha": "41cc246e26e3671825c0e368fd1bfd89cf02df70"
     },
     "restoration_validation": {
       "historical_hashes": "1771/1771 exact",
@@ -26,74 +27,77 @@
       "failed_v0_11_hashes": "154/154",
       "workspace_validation": "0 errors / 0 warnings",
       "pytest": "166 passed",
-      "tracked_files_at_restoration_head": 1775,
-      "working_tree_at_restoration_head": "clean"
+      "working_tree_at_restoration_head": "clean",
+      "post_restoration_historical_diff_status": "SEALED_HISTORICAL_PATHS_UNCHANGED_AFTER_README_REPAIR"
     }
   },
-  "current_sealed_release": null,
-  "active_candidate": {
+  "current_sealed_release": {
     "version": "0.11.1",
-    "exact_candidate_sha": null,
-    "identity_status": "RESTORATION_INTEGRITY_VERIFIED_AWAITING_LANE5_RELEASE_STATE_RECONCILIATION",
+    "status": "HISTORICALLY_SEALED_RESTORED_AND_RECONCILED",
+    "canonical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
     "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
-    "frozen_contract_hash_status": "MATCHED_RESTORED_FROZEN_CONTRACT"
+    "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
+    "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
+    "reconciliation_receipt_id": "REC-V0111-BASELINE-RECONCILE-001",
+    "new_seal_created": false
   },
-  "phase": "BASELINE_RESTORATION_RECONCILIATION",
+  "active_candidate": null,
+  "phase": "V1_EVIDENCE_RECONCILIATION",
   "phase_authority": "lane-5",
   "lane_ownership": {
     "lane-1": "integrity-packaging-release-infrastructure-and-control-plane-formats",
+    "lane-2": "evidence-experiments-preregistration-and-successor-implementation",
+    "lane-3": "execution-transfer-integration-and-real-project-evidence",
     "lane-4": "independent-verification",
-    "lane-5": "major-phase-reconciliation-authority"
+    "lane-5": "major-phase-reconciliation-roadmap-convergence-and-final-release-authority"
   },
-  "blockers": [
-    {
-      "id": "BLK-BASELINE-001",
-      "severity": "P0",
-      "status": "RESOLVED",
-      "issue": 1,
-      "summary": "Canonical sealed v0.11.1 historical bytes were restored byte-for-byte and exact-head integrity validation passed."
-    },
-    {
-      "id": "BLK-BASELINE-RECONCILE-001",
-      "severity": "P0",
-      "status": "OPEN",
-      "summary": "Lane 5 must reconcile the restored exact historical identity and verification freshness into canonical release state before successor work can begin.",
-      "evidence": {
-        "restoration_issue": 1,
-        "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
-        "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
-        "historical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
-        "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed"
-      }
-    }
+  "blockers": [],
+  "live_claims": [],
+  "latest_handoff_receipt_ids": [
+    "REC-V0111-BASELINE-RECONCILE-001"
   ],
   "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
   "verification_receipt": {
-    "identity": null,
-    "freshness": "STALE_PENDING_EXACT_STATE_RECONCILIATION",
-    "reason": "Historical verification remains authoritative for the exact historical release it covered, but Lane 5 has not yet bound a fresh verifier receipt to the restored GitHub release identity for the reconciliation transition."
+    "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
+    "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
+    "freshness_inputs": {
+      "sealed_package_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+      "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+      "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
+      "historical_files": "1771/1771 exact",
+      "pytest": "166 passed",
+      "workspace_validation": "0 errors / 0 warnings"
+    },
+    "scope_note": "Freshness is established for the already-sealed historical v0.11.1 package by exact byte identity. It is not a claim that additive docs/control-plane files form a new v0.11.1 release."
   },
   "next_legal_transition": {
-    "action": "RECONCILE_RESTORED_V0_11_1_BASELINE",
+    "action": "RECONCILE_V1_MUST_EVIDENCE_AGAINST_SEALED_V0_11_1",
     "owner": "lane-5",
     "requirements": [
-      "bind restoration merge/tree evidence to the canonical historical sealed v0.11.1 identity",
-      "confirm or obtain fresh exact-state independent verifier evidence required by the reconciliation contract",
-      "retire reconstruction-only claims/blockers without erasing their history",
-      "set canonical current sealed release to the already-existing historical v0.11.1 seal only when freshness and identity checks pass",
-      "advance the v1 trajectory only after the restored release state is legally reconciled"
+      "evaluate each prospective v1 MUST capability against existing sealed v0.11.1 evidence before admitting implementation work",
+      "retire any v1 blocker already objectively satisfied by preserved evidence",
+      "rank remaining objective v1 MUST blockers by dependency, user value, risk and information value",
+      "admit at most one promotion-authoritative successor candidate unless governance proves safe independent concurrency",
+      "preregister and freeze any admitted successor before implementation"
     ],
     "prohibited_until_complete": [
-      "create a new v0.11.1 seal",
-      "treat stale verification as fresh",
-      "begin successor capability implementation"
+      "invent successor work for capabilities already evidenced by v0.11.1",
+      "treat documentation prose as completion evidence",
+      "weaken frozen historical tests or criteria"
     ]
   },
+  "successor_cycle_count_since_convergence_review": 0,
+  "convergence_mode": "ACTIVE_V1_CONVERGENCE",
   "v1_convergence": {
-    "status": "BLOCKED_BY_BASELINE_RELEASE_STATE_RECONCILIATION",
-    "must_blocker_count": 1,
+    "status": "EVIDENCE_RECONCILIATION_REQUIRED",
+    "must_blocker_count": 6,
     "must_blockers": [
-      "BLK-BASELINE-RECONCILE-001"
+      "V1-MUST-LIFECYCLE-001",
+      "V1-MUST-FRESHNESS-001",
+      "V1-MUST-TRANSFER-001",
+      "V1-MUST-INTEGRITY-001",
+      "V1-MUST-USABILITY-001",
+      "V1-MUST-RELEASE-001"
     ]
   }
 }

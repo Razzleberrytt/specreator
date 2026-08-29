@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V0111-BASELINE-RECONCILE-001",
+  "receipt_type": "release_state_reconciliation",
+  "producer_lane": "lane-5",
+  "consumer": "spec-creator-control-plane",
+  "created_at": "2026-08-29T03:41:00Z",
+  "release": {
+    "version": "0.11.1",
+    "status": "HISTORICALLY_SEALED",
+    "canonical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed"
+  },
+  "reconciliation_basis": {
+    "restoration_head_sha": "4a5d2206880fade908c191f622ae33df78359e40",
+    "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
+    "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
+    "pre_reconciliation_head_sha": "5a2530a25ecd77c965c282f5810e34f8792a3198",
+    "pre_reconciliation_tree_sha": "6bf5134cf3a61c0e4bd19f5c4f3f7043a3ea2d15",
+    "historical_tree_diff_from_validated_restoration": "no modified historical sealed paths; only additive docs/control-plane paths remain after README restoration",
+    "readme_blob_restored": "41cc246e26e3671825c0e368fd1bfd89cf02df70"
+  },
+  "integrity_evidence": {
+    "historical_files": "1771/1771 exact",
+    "frozen_preflight_registry": "36/36",
+    "v0_10_hashes": "1120/1120",
+    "failed_v0_11_hashes": "154/154",
+    "workspace_validation": "0 errors / 0 warnings",
+    "pytest": "166 passed",
+    "restoration_working_tree": "clean"
+  },
+  "independent_verification": {
+    "historical_evidence_path": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
+    "recommendation": "READY_FOR_RELEASE_SEAL",
+    "freshness_basis": "The reconciled release identity is the already-sealed historical package, and restored historical bytes were proven byte-identical. Additive post-restoration docs/control-plane files are not members of the historical sealed package and do not alter that sealed identity.",
+    "freshness_status": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
+    "does_not_certify_additive_head_as_new_release": true
+  },
+  "decision": {
+    "action": "RECONCILE_EXISTING_SEAL",
+    "result": "ADOPT_RESTORED_HISTORICAL_RELEASE_STATE",
+    "new_seal_created": false,
+    "baseline_reconciled": true,
+    "successor_implementation_authorized": false,
+    "next_action": "RECONCILE_V1_MUST_EVIDENCE_AGAINST_SEALED_V0_11_1"
+  }
+}
