@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "freeze_id": "V1-FRESHNESS-FREEZE-001",
+  "contract_id": "V1-FRESHNESS-PREREG-001",
+  "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+  "basis_main_sha": "5588c3ee1fa71408a0ee340d43f32ee6d28a5ace",
+  "contract_freeze_projection_sha256": "d0fb1e4fe9d01ddc1ea06da97391cdb6cb9acf3729c8d4cc142d6427cd2bc3a7",
+  "matrix_freeze_projection_sha256": "81b6adae7deb3f4c42cd2016c8fd775c1c94b6ccaa87f9caaa596a22af8bc12e",
+  "frozen_contract_bundle_hash": "9831a59d7009a416d0ac425fd250cffc09ad8b935a0242ec4e4f9b74b8761688",
+  "bundle_hash_algorithm": "sha256(contract_projection_sha256 + ':' + matrix_projection_sha256)",
+  "freeze_rule": "After this freeze record is committed, implementation may not change the hypothesis, 21-case mutation universe, denominators, thresholds, failure criteria, missing-data policy, or parent guardrails. Any necessary semantic change requires preserving this frozen attempt and creating a separately identified retry preregistration.",
+  "implementation_authority": "PENDING_LANE5_RECONCILIATION",
+  "independent_verifier": "lane-4",
+  "frozen_at": "2026-08-29T04:14:18Z"
+}
