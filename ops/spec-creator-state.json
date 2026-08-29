@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T05:07:15Z",
-  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and the initial v1 evidence. The first V1-MUST-FRESHNESS-001 preregistration freeze is preserved but rejected for implementation authority because its executable inputs and complete acceptance semantics were not immutably bound. No new v0.11.1 seal exists and no successor implementation is authorized.",
+  "updated_at": "2026-08-29T05:50:25Z",
+  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and initial v1 evidence. Freshness preregistration freezes 001 and 002 are preserved as rejected attempts and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "2f64304e39228202a3d6d03c1c3c15153126a868",
-    "observation_basis_tree_sha": "019b00b03ff481cf688019bb4995f491cbc7aca8",
-    "observation_semantics": "Exact main/tree inspected before Lane-5 reconciliation of the merged freshness preregistration attempt.",
+    "observation_basis_main_sha": "f80792afebea6963455442a33221b6f10d3d80b6",
+    "observation_basis_tree_sha": "046444afdb110075f6897dd32c2a86c67945fda9",
+    "observation_semantics": "Exact main/tree inspected before Lane-5 reconciliation of freshness preregistration retry 002.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -55,7 +55,8 @@
   "latest_handoff_receipt_ids": [
     "REC-V0111-BASELINE-RECONCILE-001",
     "REC-V1-EVIDENCE-RECONCILE-001",
-    "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+    "REC-V1-FRESHNESS-FREEZE-RECONCILE-001",
+    "REC-V1-FRESHNESS-FREEZE-RECONCILE-002"
   ],
   "failed_preregistrations": [
     {
@@ -66,6 +67,18 @@
       "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
       "disposition": "REJECTED_FOR_IMPLEMENTATION_AUTHORITY_PRESERVE_HISTORY",
       "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+    },
+    {
+      "blocker_id": "V1-MUST-FRESHNESS-001",
+      "freeze_id": "V1-FRESHNESS-FREEZE-002",
+      "contract_id": "V1-FRESHNESS-PREREG-002",
+      "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-002",
+      "fixture_set_id": "V1-FRESHNESS-EXECUTABLE-FIXTURES-002",
+      "pr_number": 20,
+      "frozen_head_sha": "4c73c1689e3048484100cb822fcf32edc86b53ae",
+      "pr_head_sha": "d1ef87520c4a5813f7ce6a27bc3a57016f0c89f9",
+      "disposition": "REJECTED_FOR_IMPLEMENTATION_AUTHORITY_PRESERVE_HISTORY",
+      "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002"
     }
   ],
   "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
@@ -79,16 +92,17 @@
     "owner": "lane-2",
     "blocker_id": "V1-MUST-FRESHNESS-001",
     "requirements": [
-      "preserve V1-FRESHNESS-FREEZE-001 unchanged as failed frozen history",
-      "create separately identified retry contract, matrix and freeze record",
-      "bind every mutation case to concrete immutable executable fixture inputs, exact mutation identity, governed artifact identities and explicit provenance/dependency edges",
-      "hash complete canonical case definitions including expected affected, stale-authority and safe-reuse outcomes",
-      "hash metric targets, guardrails, failure criteria, missing-data policy, parent guardrails and implementation-scope constraints",
-      "leave implementation authority pending Lane-5 reconciliation after retry freeze"
+      "preserve V1-FRESHNESS-FREEZE-001 and V1-FRESHNESS-FREEZE-002 unchanged under their failed identities",
+      "create a separately identified third retry contract, matrix, executable fixture set and freeze record",
+      "bind every mutation case to exact immutable per-case before/after content identities, governed artifact identities and explicit provenance/dependency edges",
+      "only the explicit byte-identity control may keep identical before/after content; every other negative safe-reuse control must perform a genuine content mutation that exercises its declared no-path/outside-closure/non-authoritative/optional/explanatory behavior",
+      "bind the executable fixture file bytes and mechanically verify executable_fixture_inputs_sha256 in the canonical control-plane validator",
+      "hash complete canonical expected outcomes, metric targets, guardrails, failure criteria, missing-data policy, parent guardrails and implementation-scope constraints",
+      "leave implementation authority pending Lane-5 reconciliation after the third retry freeze"
     ],
     "prohibited_until_complete": [
       "successor implementation",
-      "editing or deleting the failed frozen attempt",
+      "editing or deleting either failed frozen attempt",
       "new v0.11.1 seal",
       "claiming V1-MUST-FRESHNESS-001 PASS"
     ]
