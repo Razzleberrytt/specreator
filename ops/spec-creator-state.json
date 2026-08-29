@@ -1,14 +1,14 @@
 {
-  "schema_version": "2.1",
+  "schema_version": "2.2",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T10:53:30Z",
-  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and supporting integrity evidence through PR #31. PR #30 credential-boundary hardening was not accepted as strong evidence until its two post-merge review defects were mechanically repaired by PR #31. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
+  "updated_at": "2026-08-29T12:00:30Z",
+  "authority_note": "Lane 5 reconciled supporting integrity evidence through repaired PR #34. PR #33 moved dependency-free control-plane validation before setup/install, but its post-merge P1 review found an alternate-installer/run-step bypass. PR #34 repaired that boundary and passed exact-head integrity CI. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "05ec4950e0383120899c4f05175f9534c9ec0d32",
-    "observation_basis_tree_sha": "47ad218d3650008c84b5798f14db2d0480daf053",
-    "observation_semantics": "Exact main/tree inspected after merge of PR #31 and before this Lane-5 evidence-only reconciliation commit.",
+    "observation_basis_main_sha": "0a830a9659683045f00262f5c3327a2ea27b07c9",
+    "observation_basis_tree_sha": "f423cd9aba126146370d9d4b5fb14f9593956626",
+    "observation_semantics": "Exact main/tree inspected after merge of repaired PR #34 and before this Lane-5 evidence-only reconciliation commit.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -89,6 +89,20 @@
         "repair_workflow_run_id": 33248801808,
         "repair_workflow_conclusion": "success",
         "result": "credential input and pre-install policy ordering are structurally bound to active workflow steps; comments/nearby text cannot satisfy those checks"
+      },
+      "latest_ci_preinstall_boundary": {
+        "receipt_id": "REC-V1-INTEGRITY-CI-PREINSTALL-BOUNDARY-001",
+        "source_pr": 33,
+        "source_head_sha": "23816bb5db3102b75ad6867465ed92e956df86c1",
+        "source_merge_sha": "6ef8d4526c32380f411ecc9f5dff273c9df55c59",
+        "source_workflow_run_id": 33249163549,
+        "post_merge_review_id": 5057857386,
+        "repair_pr": 34,
+        "repair_head_sha": "ac503b97e0502c99d5fb677630d645d1148d70dd",
+        "repair_merge_sha": "0a830a9659683045f00262f5c3327a2ea27b07c9",
+        "repair_workflow_run_id": 33251376103,
+        "repair_workflow_conclusion": "success",
+        "result": "dependency-free control-plane boundary is fail-closed against all pre-control executable run steps except the policy validator; item-form and block-scalar run declarations are parsed"
       }
     }
   },
@@ -123,7 +137,8 @@
     "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
     "REC-V1-INTEGRITY-CI-ENV-001",
     "REC-V1-INTEGRITY-CI-POLICY-001",
-    "REC-V1-INTEGRITY-CI-CREDENTIAL-001"
+    "REC-V1-INTEGRITY-CI-CREDENTIAL-001",
+    "REC-V1-INTEGRITY-CI-PREINSTALL-BOUNDARY-001"
   ],
   "failed_preregistrations": [
     {
@@ -152,7 +167,7 @@
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. PR #22 strengthens byte-integrity confirmation; PR #24 hardens CI action provenance; PR #26 hardens runtime/dependency reproducibility; PR #28 makes CI policy invariants self-validating; PR #30 plus repair PR #31 harden credential handling and pre-install policy enforcement. None become verifier authority for a future v1 candidate or preregistration attempt."
+    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. Supporting CI hardening through repaired PR #34 strengthens integrity evidence but does not become verifier authority for a future v1 candidate or preregistration attempt."
   },
   "next_legal_transition": {
     "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",

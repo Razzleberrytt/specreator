@@ -1,7 +1,7 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T10:53:30Z",
+  "updated_at": "2026-08-29T12:00:30Z",
   "current_status": "V1_GAP_PREREGISTRATION_RETRY_REQUIRED",
   "rule": "The canonical v0.11.1 historical release is restored and reconciled. Six v1 MUST clusters remain. A successor may be implemented only after an objective gap has a mechanically valid preregistration/freeze whose executable inputs, expected outcomes, acceptance criteria and failure policy are immutably bound and then reconciled by Lane 5.",
   "sealed_baseline": {
@@ -12,7 +12,7 @@
   },
   "latest_evidence_reconciliation_receipt": "REC-V1-EVIDENCE-RECONCILE-001",
   "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
-  "latest_integrity_reconciliation_receipt": "REC-V1-INTEGRITY-CI-CREDENTIAL-001",
+  "latest_integrity_reconciliation_receipt": "REC-V1-INTEGRITY-CI-PREINSTALL-BOUNDARY-001",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
@@ -56,13 +56,13 @@
       "id": "V1-MUST-INTEGRITY-001",
       "necessity": "must",
       "status": "PARTIALLY_SATISFIED_OPEN_SECURITY_GAP",
-      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation, active regression memory, manifest-member byte/hash CI, immutable workflow action pinning, reproducible runner/runtime/dependency pinning, self-validation of CI policy invariants, credentialless checkout, and pre-install policy enforcement are preserved. PR #30 introduced the credential boundary but its post-merge review found two parser weaknesses; Lane 5 repaired both in PR #31, whose exact head f9a1853c92a9ce4e5ad22c2b137c1e5f0ef536c2 passed integrity run 33248801808 before merge 05ec4950e0383120899c4f05175f9534c9ec0d32. MUST-11 threat-model/adversarial-security evidence remains unproven and is not satisfied by CI hardening alone.",
+      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation, active regression memory, manifest-member byte/hash CI, immutable workflow action pinning, reproducible runner/runtime/dependency pinning, self-validation of CI policy invariants, credentialless checkout, and dependency-free pre-install control-plane enforcement are preserved. PR #33 moved the control-plane gate ahead of setup/install but its P1 post-merge review found an alternate executable-installer bypass; Lane 5 repaired the boundary in PR #34. Exact repair head ac503b97e0502c99d5fb677630d645d1148d70dd passed integrity run 33251376103 before merge 0a830a9659683045f00262f5c3327a2ea27b07c9. MUST-11 threat-model/adversarial-security evidence remains unproven and is not satisfied by CI hardening alone.",
       "v1_capability_advanced": "MUST-10 through MUST-12 packaging, security/data integrity and regression memory",
       "dependencies": [],
       "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
       "expected_information_value": "High",
-      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "immutable, reproducible, self-validating and credential-minimized CI dependency/action/policy provenance", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"],
-      "latest_supporting_receipt": "REC-V1-INTEGRITY-CI-CREDENTIAL-001"
+      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "immutable, reproducible, self-validating, credential-minimized and dependency-free-preflight CI provenance", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"],
+      "latest_supporting_receipt": "REC-V1-INTEGRITY-CI-PREINSTALL-BOUNDARY-001"
     },
     {
       "id": "V1-MUST-USABILITY-001",
@@ -91,7 +91,7 @@
   "convergence_review": {
     "required_now": false,
     "question": "What specifically prevents v1.00 right now?",
-    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. PR #30/#31 strengthen integrity credential and policy-order enforcement but do not close MUST-11 or alter the selected freshness gap.",
+    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. PR #33/#34 strengthen the dependency-free CI boundary but do not close MUST-11 or alter the selected freshness gap.",
     "must_blocker_count": 6,
     "successor_cycle_count_since_review": 0,
     "mode": "ACTIVE_V1_CONVERGENCE"

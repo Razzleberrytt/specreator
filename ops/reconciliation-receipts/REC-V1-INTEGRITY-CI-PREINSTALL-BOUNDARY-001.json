@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-INTEGRITY-CI-PREINSTALL-BOUNDARY-001",
+  "issued_at": "2026-08-29T12:00:30Z",
+  "authority": "lane-5",
+  "scope": "V1-MUST-INTEGRITY-001 supporting CI boundary evidence",
+  "historical_release_changed": false,
+  "new_v0_11_1_seal_created": false,
+  "source_pr": 33,
+  "source_head_sha": "23816bb5db3102b75ad6867465ed92e956df86c1",
+  "source_merge_sha": "6ef8d4526c32380f411ecc9f5dff273c9df55c59",
+  "source_workflow_run_id": 33249163549,
+  "source_workflow_conclusion": "success",
+  "post_merge_review": {
+    "review_id": 5057857386,
+    "severity": "P1",
+    "finding": "installer detection matched only python -m pip install and did not fail closed on alternate executable installer/run steps before control-plane validation",
+    "disposition": "NOT_ACCEPTED_UNTIL_REPAIRED"
+  },
+  "repair_pr": 34,
+  "repair_head_sha": "ac503b97e0502c99d5fb677630d645d1148d70dd",
+  "repair_merge_sha": "0a830a9659683045f00262f5c3327a2ea27b07c9",
+  "repair_workflow_run_id": 33251376103,
+  "repair_workflow_conclusion": "success",
+  "repair_result": "before dependency-free control-plane validation, no executable run step is permitted except the CI policy validator; item-form and block-scalar run declarations are parsed, preventing alternate installer or arbitrary shell bootstrap bypasses",
+  "verification_freshness_effect": "NONE_FOR_FUTURE_V1_CANDIDATE",
+  "v1_effect": {
+    "blocker": "V1-MUST-INTEGRITY-001",
+    "movement": "SUPPORTING_EVIDENCE_STRENGTHENED_BLOCKER_REMAINS_OPEN",
+    "remaining_gap": "MUST-11 threat-model/adversarial-security evidence remains unproven"
+  }
+}
