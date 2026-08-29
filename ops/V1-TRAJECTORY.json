@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T03:50:28Z",
-  "current_status": "V1_GAP_PREREGISTRATION",
-  "rule": "The canonical v0.11.1 historical release is restored and reconciled. Evidence reconciliation is complete enough to bound the six remaining v1 MUST clusters. No successor implementation is admitted until its objective gap is preregistered and frozen.",
+  "updated_at": "2026-08-29T04:48:17Z",
+  "current_status": "V1_GAP_PREREGISTRATION_RETRY_REQUIRED",
+  "rule": "The canonical v0.11.1 historical release is restored and reconciled. Six v1 MUST clusters remain. A successor may be implemented only after an objective gap has a mechanically valid preregistration/freeze whose executable inputs, expected outcomes, acceptance criteria and failure policy are immutably bound and then reconciled by Lane 5.",
   "sealed_baseline": {
     "version": "0.11.1",
     "canonical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
@@ -11,6 +11,7 @@
     "reconciliation_receipt_id": "REC-V0111-BASELINE-RECONCILE-001"
   },
   "latest_evidence_reconciliation_receipt": "REC-V1-EVIDENCE-RECONCILE-001",
+  "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
@@ -27,13 +28,20 @@
     {
       "id": "V1-MUST-FRESHNESS-001",
       "necessity": "must",
-      "status": "OPEN_OBJECTIVE_GAP_SELECTED_FOR_PREREGISTRATION",
-      "observed_gap": "Existing impact/provenance evidence is narrower than MUST-07. No authoritative mutation matrix covering specifications, decisions, trace graph, tasks, prompts, tests, manifests, dependency definitions and release-authoritative artifacts was found in the sealed/current tree.",
+      "status": "OPEN_OBJECTIVE_GAP_PREREGISTRATION_RETRY_REQUIRED",
+      "observed_gap": "Existing impact/provenance evidence is narrower than MUST-07. The first frozen preregistration attempt was merged but Lane 5 rejected it for implementation authority because concrete executable fixtures/provenance inputs were not frozen and the declared hashes did not bind complete expected outcomes, metric targets, guardrails, failure criteria or missing-data policy.",
       "v1_capability_advanced": "MUST-07 and MUST-08 change propagation, determinism and provenance",
       "dependencies": ["V1-MUST-LIFECYCLE-001"],
-      "preregistration_status": "PREREGISTRATION_NEXT_NO_IMPLEMENTATION_AUTHORITY",
+      "preregistration_status": "RETRY_REQUIRED_PRESERVE_V1-FRESHNESS-FREEZE-001_AS_FAILED_HISTORY",
+      "failed_attempt": {
+        "freeze_id": "V1-FRESHNESS-FREEZE-001",
+        "contract_id": "V1-FRESHNESS-PREREG-001",
+        "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+        "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
+        "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+      },
       "expected_information_value": "Highest currently bounded gap: freshness errors can invalidate otherwise-correct automation and downstream evidence.",
-      "completion_evidence": ["authoritative mutation matrix", "stale-derived-artifact invalidation evidence", "determinism/provenance evidence mapped to exact v1 claims"]
+      "completion_evidence": ["retry preregistration with immutable executable mutation fixtures and provenance edges", "complete canonical expected-outcome hashing", "complete acceptance/failure-policy hashing", "authoritative mutation matrix", "stale-derived-artifact invalidation evidence", "determinism/provenance evidence mapped to exact v1 claims"]
     },
     {
       "id": "V1-MUST-TRANSFER-001",
@@ -82,13 +90,13 @@
   ],
   "next_priority": {
     "blocker_id": "V1-MUST-FRESHNESS-001",
-    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX",
+    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
     "implementation_authorized": false
   },
   "convergence_review": {
     "required_now": false,
     "question": "What specifically prevents v1.00 right now?",
-    "answer": "Six MUST clusters remain. Evidence reconciliation bounded them; the first objective implementation-relevant gap is MUST-07 authoritative freshness/change propagation. Its preregistration is next; implementation remains unauthorized until freeze.",
+    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment because its first preregistration attempt did not immutably bind executable inputs or complete acceptance semantics. A governed retry is required before implementation can begin.",
     "must_blocker_count": 6,
     "successor_cycle_count_since_review": 0,
     "mode": "ACTIVE_V1_CONVERGENCE"
