@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.7",
+  "schema_version": "1.8",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T07:07:30Z",
-  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal, initial v1 evidence, and the stronger exact-head manifest-member integrity CI from PR #22. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
+  "updated_at": "2026-08-29T07:48:39Z",
+  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal, initial v1 evidence, stronger exact-head manifest-member integrity CI from PR #22, and immutable GitHub Actions pinning from PR #24. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "9c9e7d65608f1578ce0b68af102d7c9108dcfc6d",
-    "observation_basis_tree_sha": "5d9e6e248ccc37453c7fc4061117113c807552f1",
-    "observation_semantics": "Exact main/tree inspected after merge of PR #22 and before this Lane-5 evidence-only reconciliation commit.",
+    "observation_basis_main_sha": "d1160e7e88fdc86cbd8a15e4980f4bc2885eff05",
+    "observation_basis_tree_sha": "30643366fc1d5bd68edc67eb054a51453e8c54c7",
+    "observation_semantics": "Exact main/tree inspected after merge of PR #24 and before this Lane-5 evidence-only reconciliation commit.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -40,6 +40,17 @@
         "frozen_preflight": "36/36 + 1120/1120 + 154/154; ownership/prospective closure exact; contract hash valid",
         "workspace_validation": "0 errors / 0 warnings",
         "pytest": "166/166 passed"
+      },
+      "latest_ci_supply_chain_hardening": {
+        "receipt_id": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
+        "source_pr": 24,
+        "source_head_sha": "d93f17e344b8e872642518f538240cca6479f45e",
+        "source_merge_sha": "d1160e7e88fdc86cbd8a15e4980f4bc2885eff05",
+        "workflow_run_id": 33240075933,
+        "workflow_job_id": 99067783103,
+        "workflow_conclusion": "success",
+        "actions_checkout_sha": "11d5960a326750d5838078e36cf38b85af677262",
+        "actions_setup_python_sha": "a26af69be951a213d495a4c3e4e4022e16d87065"
       }
     }
   },
@@ -70,7 +81,8 @@
     "REC-V1-EVIDENCE-RECONCILE-001",
     "REC-V1-FRESHNESS-FREEZE-RECONCILE-001",
     "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
-    "REC-V0111-MANIFEST-INTEGRITY-CI-001"
+    "REC-V0111-MANIFEST-INTEGRITY-CI-001",
+    "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001"
   ],
   "failed_preregistrations": [
     {
@@ -99,7 +111,7 @@
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "scope_note": "Valid for the already-sealed historical v0.11.1 package; PR #22 strengthens mechanical byte-integrity confirmation but does not convert this into verifier authority for any future v1 candidate or preregistration attempt."
+    "scope_note": "Valid for the already-sealed historical v0.11.1 package; PR #22 strengthens mechanical byte-integrity confirmation and PR #24 hardens CI action provenance, but neither converts this into verifier authority for any future v1 candidate or preregistration attempt."
   },
   "next_legal_transition": {
     "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
