@@ -1,14 +1,14 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T09:48:30Z",
-  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and supporting integrity evidence through PR #28. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
+  "updated_at": "2026-08-29T10:53:30Z",
+  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and supporting integrity evidence through PR #31. PR #30 credential-boundary hardening was not accepted as strong evidence until its two post-merge review defects were mechanically repaired by PR #31. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "53c74e0118545c31ec96b1e8b5f708142259c6eb",
-    "observation_basis_tree_sha": "cb60938067256d04bf4b234e9f37edc8d89dc0cf",
-    "observation_semantics": "Exact main/tree inspected after merge of PR #28 and before this Lane-5 evidence-only reconciliation commit.",
+    "observation_basis_main_sha": "05ec4950e0383120899c4f05175f9534c9ec0d32",
+    "observation_basis_tree_sha": "47ad218d3650008c84b5798f14db2d0480daf053",
+    "observation_semantics": "Exact main/tree inspected after merge of PR #31 and before this Lane-5 evidence-only reconciliation commit.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -75,6 +75,20 @@
         "control_plane_validation": "PASS",
         "historical_package_materialization": "PASS",
         "frozen_historical_release_validation": "PASS"
+      },
+      "latest_ci_credential_boundary": {
+        "receipt_id": "REC-V1-INTEGRITY-CI-CREDENTIAL-001",
+        "source_pr": 30,
+        "source_head_sha": "65b6104f8d774579d44289671be07b1f98d8555e",
+        "source_merge_sha": "3d1b3a25b2675e1c80d0e126249dcc7254eae850",
+        "source_workflow_run_id": 33246981460,
+        "post_merge_review_id": 5057609891,
+        "repair_pr": 31,
+        "repair_head_sha": "f9a1853c92a9ce4e5ad22c2b137c1e5f0ef536c2",
+        "repair_merge_sha": "05ec4950e0383120899c4f05175f9534c9ec0d32",
+        "repair_workflow_run_id": 33248801808,
+        "repair_workflow_conclusion": "success",
+        "result": "credential input and pre-install policy ordering are structurally bound to active workflow steps; comments/nearby text cannot satisfy those checks"
       }
     }
   },
@@ -108,7 +122,8 @@
     "REC-V0111-MANIFEST-INTEGRITY-CI-001",
     "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
     "REC-V1-INTEGRITY-CI-ENV-001",
-    "REC-V1-INTEGRITY-CI-POLICY-001"
+    "REC-V1-INTEGRITY-CI-POLICY-001",
+    "REC-V1-INTEGRITY-CI-CREDENTIAL-001"
   ],
   "failed_preregistrations": [
     {
@@ -137,7 +152,7 @@
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. PR #22 strengthens byte-integrity confirmation; PR #24 hardens CI action provenance; PR #26 hardens runtime/dependency reproducibility; PR #28 makes those CI policy invariants self-validating. None become verifier authority for a future v1 candidate or preregistration attempt."
+    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. PR #22 strengthens byte-integrity confirmation; PR #24 hardens CI action provenance; PR #26 hardens runtime/dependency reproducibility; PR #28 makes CI policy invariants self-validating; PR #30 plus repair PR #31 harden credential handling and pre-install policy enforcement. None become verifier authority for a future v1 candidate or preregistration attempt."
   },
   "next_legal_transition": {
     "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
