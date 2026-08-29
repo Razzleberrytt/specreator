@@ -66,9 +66,9 @@ def main() -> None:
         "repository observation",
     )
 
-    # A control-plane commit cannot contain its own commit SHA. The two
-    # observation-basis fields intentionally bind to the exact main/tree state
-    # inspected immediately before the reconciliation commit was written.
+    # A control-plane commit cannot contain its own commit SHA. These fields
+    # intentionally identify the exact main/tree snapshot inspected immediately
+    # before the reconciliation commit was written.
     for key in ("observation_basis_main_sha", "observation_basis_tree_sha"):
         value = repo[key]
         if not isinstance(value, str) or len(value) != 40:
@@ -112,7 +112,7 @@ def main() -> None:
 
     next_action = state["next_legal_transition"]["action"]
     expected_action = (
-        "RECONCILE_CANONICAL_V0_11_1_BASELINE"
+        "VERIFY_RESTORED_V0_11_1_BASELINE_INTEGRITY"
         if repo["baseline_bytes_present"]
         else "RECOVER_CANONICAL_V0_11_1_BASELINE"
     )
@@ -143,7 +143,7 @@ def main() -> None:
 
     print(
         "PASS: control-plane metadata internally consistent; "
-        "baseline reconciliation remains fail-closed"
+        "baseline integrity/reconciliation remains fail-closed"
     )
 
 
