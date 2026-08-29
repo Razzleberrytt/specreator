@@ -3,7 +3,10 @@
 
 from __future__ import annotations
 
+import json
+import os
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -14,6 +17,7 @@ CHECKOUT_SHA = "11d5960a326750d5838078e36cf38b85af677262"
 SETUP_PYTHON_SHA = "a26af69be951a213d495a4c3e4e4022e16d87065"
 PYTHON_VERSION = "3.11.16"
 RUNNER = "ubuntu-24.04"
+EXACT_CHECKOUT_REF = "${{ github.event.pull_request.head.sha || github.sha }}"
 
 
 def fail(message: str) -> None:
@@ -44,10 +48,6 @@ def workflow_steps(lines: list[str]) -> list[list[str]]:
         end = starts[position + 1] if position + 1 < len(starts) else len(lines)
         steps.append(lines[start:end])
     return steps
-
-
-def step_has_exact_line(step: list[str], pattern: str) -> bool:
-    return any(re.fullmatch(pattern, line) for line in step)
 
 
 def step_run_commands(step: list[str]) -> list[str]:
@@ -86,6 +86,46 @@ def step_run_commands(step: list[str]) -> list[str]:
     return body
 
 
+def runtime_expected_sha() -> str | None:
+    """Resolve the event-authoritative checkout SHA when running in Actions."""
+    event_name = os.environ.get("GITHUB_EVENT_NAME")
+    github_sha = os.environ.get("GITHUB_SHA")
+    event_path = os.environ.get("GITHUB_EVENT_PATH")
+    if not event_name or not github_sha:
+        return None
+    if event_name != "pull_request":
+        return github_sha
+    if not event_path:
+        fail("pull_request runtime is missing GITHUB_EVENT_PATH")
+    try:
+        event = json.loads(Path(event_path).read_text(encoding="utf-8"))
+        head_sha = event["pull_request"]["head"]["sha"]
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        fail(f"cannot resolve pull_request head SHA from event payload: {exc}")
+    if not isinstance(head_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", head_sha):
+        fail("pull_request event head SHA is not a canonical 40-hex commit identity")
+    return head_sha
+
+
+def verify_runtime_checkout_identity() -> None:
+    """Prove checkout HEAD equals the exact event-authoritative candidate SHA."""
+    expected = runtime_expected_sha()
+    if expected is None:
+        return
+    try:
+        actual = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        fail(f"cannot resolve checked-out git HEAD: {exc}")
+    if actual != expected:
+        fail(f"checked-out HEAD is not exact event-authoritative SHA: {actual} != {expected}")
+
+
 def main() -> None:
     if not WORKFLOW.is_file() or not CONSTRAINTS.is_file():
         fail("integrity workflow and CI constraints must both exist")
@@ -96,6 +136,9 @@ def main() -> None:
     steps = workflow_steps(active_lines)
 
     required_fragments = {
+        "pull-request trigger": "  pull_request:",
+        "main push trigger": "  push:\n    branches:\n      - main",
+        "merge-queue trigger": "  merge_group:",
         "least-privilege contents permission": "permissions:\n  contents: read",
         "pinned runner": f"runs-on: {RUNNER}",
         "pinned checkout action": f"actions/checkout@{CHECKOUT_SHA}",
@@ -143,6 +186,13 @@ def main() -> None:
     ]
     if persist_values != ["false"]:
         fail("checkout must set exactly one active persist-credentials: false input")
+    ref_values = [
+        item.split(":", 1)[1].strip().strip("'\"")
+        for item in checkout_inputs
+        if item.startswith("ref:")
+    ]
+    if ref_values != [EXACT_CHECKOUT_REF]:
+        fail("checkout must bind exactly to pull-request head SHA with github.sha fallback")
 
     policy_step_indexes = [
         index
@@ -187,10 +237,6 @@ def main() -> None:
             "before setup-python and package/dependency installation"
         )
 
-    # Fail closed at the dependency-free boundary. Before control-plane
-    # validation, the only executable `run:` step permitted is the policy
-    # validator itself. This rejects alternate installer spellings and any
-    # arbitrary shell/bootstrap execution without maintaining a denylist.
     for index, step in enumerate(steps[:control_index]):
         commands = step_run_commands(step)
         if not commands:
@@ -232,9 +278,11 @@ def main() -> None:
     if "pytest==9.1.1" not in {line.lower() for line in constraint_lines}:
         fail("CI constraints must pin pytest==9.1.1")
 
+    verify_runtime_checkout_identity()
+
     print(
-        "PASS: integrity CI policy is credentialless, dependency-free control-plane-first, "
-        "pinned, least-privilege, reproducible, and fail-closed"
+        "PASS: integrity CI policy is exact-head-bound, credentialless, merge-queue-compatible, "
+        "dependency-free control-plane-first, pinned, least-privilege, reproducible, and fail-closed"
     )
 
 
