@@ -41,12 +41,17 @@ def main() -> None:
             "schema_version",
             "state_id",
             "repository",
+            "current_sealed_release",
             "active_candidate",
             "phase",
             "lane_ownership",
             "blockers",
+            "live_claims",
+            "latest_handoff_receipt_ids",
             "verification_receipt",
             "next_legal_transition",
+            "successor_cycle_count_since_convergence_review",
+            "convergence_mode",
             "v1_convergence",
         },
         "state",
@@ -67,9 +72,6 @@ def main() -> None:
         "repository observation",
     )
 
-    # A control-plane commit cannot contain its own commit SHA. These fields
-    # intentionally identify the exact main/tree snapshot inspected immediately
-    # before the reconciliation commit was written.
     for key in ("observation_basis_main_sha", "observation_basis_tree_sha"):
         value = repo[key]
         if not isinstance(value, str) or len(value) != 40:
@@ -79,8 +81,6 @@ def main() -> None:
         fail("restoration integrity cannot be verified when baseline bytes are absent")
     if repo["baseline_reconciled"] and not repo["restoration_integrity_verified"]:
         fail("baseline cannot be reconciled before restoration integrity is verified")
-    if state["phase"] == "BASELINE_RECONSTRUCTION_BLOCKED" and repo["baseline_reconciled"]:
-        fail("blocked baseline phase cannot claim a reconciled baseline")
 
     contract_path = ROOT / "versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json"
     manifest_path = ROOT / "PACKAGE-MANIFEST.json"
@@ -92,29 +92,53 @@ def main() -> None:
     elif contract_path.exists() or manifest_path.exists():
         fail("restored-looking baseline artifacts exist but baseline_bytes_present is false")
 
+    contract = load_json("versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json") if repo["baseline_bytes_present"] else None
+    contract_hash = contract.get("contract_hash") if contract else None
+
     candidate = state["active_candidate"]
-    if candidate["version"] != "0.11.1":
-        fail("active candidate must remain v0.11.1 until baseline reconciliation")
-    if not repo["baseline_reconciled"] and candidate["exact_candidate_sha"] is not None:
-        fail("exact candidate SHA cannot become release authority before lane-5 reconciliation")
+    sealed = state["current_sealed_release"]
 
-    if repo["baseline_bytes_present"]:
-        contract = load_json("versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json")
-        actual_contract_hash = contract.get("contract_hash")
-        if candidate.get("frozen_contract_hash") != actual_contract_hash:
+    if not repo["baseline_reconciled"]:
+        if sealed is not None:
+            fail("current sealed release must remain null before baseline reconciliation")
+        if not isinstance(candidate, dict) or candidate.get("version") != "0.11.1":
+            fail("active candidate must remain v0.11.1 before baseline reconciliation")
+        if candidate.get("exact_candidate_sha") is not None:
+            fail("exact candidate SHA cannot become release authority before lane-5 reconciliation")
+        if contract_hash and candidate.get("frozen_contract_hash") != contract_hash:
             fail("candidate frozen_contract_hash must match the restored frozen contract")
+    else:
+        if candidate is not None:
+            fail("no active successor candidate may exist immediately after baseline reconciliation")
+        if not isinstance(sealed, dict):
+            fail("reconciled baseline requires current_sealed_release")
+        if sealed.get("version") != "0.11.1":
+            fail("reconciled baseline sealed release must be v0.11.1")
+        if sealed.get("frozen_contract_hash") != contract_hash:
+            fail("sealed release frozen contract hash must match restored contract")
+        if sealed.get("new_seal_created") is not False:
+            fail("baseline reconciliation must not create a new v0.11.1 seal")
+        receipt_id = sealed.get("reconciliation_receipt_id")
+        if not receipt_id:
+            fail("reconciled sealed release requires a reconciliation receipt id")
+        receipt_path = ROOT / "ops/reconciliation-receipts" / f"{receipt_id}.json"
+        if not receipt_path.is_file():
+            fail("sealed release reconciliation receipt file is missing")
 
-    blockers = state["blockers"]
-    blocker_ids = [item["id"] for item in blockers]
+    blocker_ids = [item["id"] for item in state["blockers"]]
     if len(blocker_ids) != len(set(blocker_ids)):
         fail("duplicate blocker id")
+    if repo["baseline_reconciled"] and any(item.get("status") == "OPEN" for item in state["blockers"]):
+        fail("baseline-reconciled state cannot retain an open baseline blocker")
 
     receipt = state["verification_receipt"]
-    if receipt.get("freshness") in {"FRESH", "VALID", "CURRENT"}:
-        if not repo["restoration_integrity_verified"]:
-            fail("fresh verification requires verified restoration integrity")
+    if repo["baseline_reconciled"]:
+        if receipt.get("freshness") != "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY":
+            fail("reconciled historical seal requires exact-byte-identity freshness status")
         if not receipt.get("identity"):
-            fail("fresh verification must bind an exact verification identity")
+            fail("reconciled historical seal must reference verifier evidence identity")
+    elif receipt.get("freshness") in {"FRESH", "VALID", "CURRENT"}:
+        fail("generic fresh verification cannot authorize unreconciled baseline state")
 
     if not repo["baseline_bytes_present"]:
         expected_action = "RECOVER_CANONICAL_V0_11_1_BASELINE"
@@ -123,33 +147,44 @@ def main() -> None:
     elif not repo["baseline_reconciled"]:
         expected_action = "RECONCILE_RESTORED_V0_11_1_BASELINE"
     else:
-        expected_action = None
+        expected_action = "RECONCILE_V1_MUST_EVIDENCE_AGAINST_SEALED_V0_11_1"
 
     next_action = state["next_legal_transition"]["action"]
-    if expected_action is not None and next_action != expected_action:
+    if next_action != expected_action:
         fail(f"next legal action must be {expected_action}")
 
     claim_ids = []
+    live_claim_ids = []
     for claim in claims["claims"]:
         claim_ids.append(claim["task_id"])
-        # Follow the ledger's stated staleness policy: only ACTIVE claims are
-        # live mutation authority. ACTIVE_BLOCKED records ownership context but
-        # do not authorize mutation while blocked.
         if claim["status"] == "ACTIVE":
             if parse_ts(claim["expires_at"]) <= parse_ts(claim["updated_at"]):
                 fail(f"claim {claim['task_id']} expires_at must be after updated_at")
+            live_claim_ids.append(claim["task_id"])
     if len(claim_ids) != len(set(claim_ids)):
         fail("duplicate work-claim task id")
+    if sorted(state["live_claims"]) != sorted(live_claim_ids):
+        fail("canonical state live_claims disagrees with work-claims ledger")
 
     if not repo["baseline_reconciled"] and trajectory["prospective_successors"]:
         fail("successor admission is prohibited before v0.11.1 baseline reconciliation")
 
     trajectory_blockers = trajectory["objective_v1_must_blockers"]
+    trajectory_ids = [item["id"] for item in trajectory_blockers]
+    if len(trajectory_ids) != len(set(trajectory_ids)):
+        fail("duplicate v1 trajectory blocker id")
     declared_count = trajectory["convergence_review"]["must_blocker_count"]
     if declared_count != len(trajectory_blockers):
         fail("v1 convergence blocker count mismatch")
     if state["v1_convergence"]["must_blocker_count"] != declared_count:
         fail("canonical state and trajectory disagree on v1 MUST blocker count")
+    if sorted(state["v1_convergence"]["must_blockers"]) != sorted(trajectory_ids):
+        fail("canonical state and trajectory disagree on v1 MUST blocker identities")
+
+    if state["successor_cycle_count_since_convergence_review"] < 0:
+        fail("successor cycle count cannot be negative")
+    if not state["convergence_mode"]:
+        fail("convergence_mode must be explicit")
 
     print("PASS: control-plane metadata internally consistent and fail-closed")
 
