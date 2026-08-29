@@ -36,9 +36,10 @@ jobs:
       - name: Materialize immutable v0.11.1 historical package
         run: |
           python - <<'PY'
+          import hashlib
           import json
           import shutil
-          from pathlib import Path
+          from pathlib import Path, PurePosixPath
 
           root = Path.cwd()
           out = root / '.ci-historical-v0.11.1'
@@ -46,21 +47,52 @@ jobs:
               shutil.rmtree(out)
           out.mkdir()
 
-          manifest = json.loads((root / 'PACKAGE-MANIFEST.json').read_text(encoding='utf-8'))
-          paths = [entry['path'] for entry in manifest['files']]
-          paths.append('PACKAGE-MANIFEST.json')
-          for relative in paths:
+          manifest_path = root / 'PACKAGE-MANIFEST.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          entries = manifest['files']
+          if len(entries) != 1770:
+              raise SystemExit(f'historical manifest entry count mismatch: {len(entries)} != 1770')
+
+          seen = set()
+          for entry in entries:
+              relative = entry['path']
+              expected_sha256 = entry['sha256']
+              expected_bytes = entry['bytes']
+
+              pure = PurePosixPath(relative)
+              if pure.is_absolute() or '..' in pure.parts or str(pure) != relative:
+                  raise SystemExit(f'unsafe/non-canonical historical package path: {relative}')
+              if relative in seen:
+                  raise SystemExit(f'duplicate historical package path: {relative}')
+              seen.add(relative)
+
               src = root / relative
               if not src.is_file():
                   raise SystemExit(f'missing historical package member: {relative}')
+              actual_bytes = src.stat().st_size
+              if actual_bytes != expected_bytes:
+                  raise SystemExit(
+                      f'historical package byte-size mismatch for {relative}: '
+                      f'{actual_bytes} != {expected_bytes}'
+                  )
+              actual_sha256 = hashlib.sha256(src.read_bytes()).hexdigest()
+              if actual_sha256 != expected_sha256:
+                  raise SystemExit(
+                      f'historical package SHA-256 mismatch for {relative}: '
+                      f'{actual_sha256} != {expected_sha256}'
+                  )
+
               dst = out / relative
               dst.parent.mkdir(parents=True, exist_ok=True)
               shutil.copy2(src, dst)
 
+          manifest_dst = out / 'PACKAGE-MANIFEST.json'
+          shutil.copy2(manifest_path, manifest_dst)
+
           count = sum(1 for path in out.rglob('*') if path.is_file())
           if count != 1771:
               raise SystemExit(f'historical package file count mismatch: {count} != 1771')
-          print('PASS: materialized 1771-file immutable historical package')
+          print('PASS: verified 1770 manifest members byte-for-byte and materialized 1771-file immutable historical package')
           PY
 
       - name: Validate frozen historical release in clean package tree
