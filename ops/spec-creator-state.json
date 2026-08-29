@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.9",
+  "schema_version": "2.0",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T08:49:47Z",
-  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal, initial v1 evidence, exact-head manifest-member integrity CI from PR #22, immutable GitHub Actions pinning from PR #24, and reproducible CI runtime/dependency pinning from PR #26. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
+  "updated_at": "2026-08-29T09:48:30Z",
+  "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and supporting integrity evidence through PR #28. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "e020fd7a02a5e6bfacd28c9ab39bd3d3eb2770fc",
-    "observation_basis_tree_sha": "719d8fe720c11181c7dd36793358a1ab30132404",
-    "observation_semantics": "Exact main/tree inspected after merge of PR #26 and before this Lane-5 evidence-only reconciliation commit.",
+    "observation_basis_main_sha": "53c74e0118545c31ec96b1e8b5f708142259c6eb",
+    "observation_basis_tree_sha": "cb60938067256d04bf4b234e9f37edc8d89dc0cf",
+    "observation_semantics": "Exact main/tree inspected after merge of PR #28 and before this Lane-5 evidence-only reconciliation commit.",
     "baseline_bytes_present": true,
     "restoration_integrity_verified": true,
     "baseline_reconciled": true,
@@ -62,6 +62,19 @@
         "python_runtime": "3.11.16",
         "runner_family": "ubuntu-24.04",
         "dependency_consistency_check": "pip check"
+      },
+      "latest_ci_policy_self_integrity": {
+        "receipt_id": "REC-V1-INTEGRITY-CI-POLICY-001",
+        "source_pr": 28,
+        "source_head_sha": "9ccbc1c1d759ffc89db6f12a9099682dc1ccb31f",
+        "source_merge_sha": "53c74e0118545c31ec96b1e8b5f708142259c6eb",
+        "workflow_run_id": 33244659617,
+        "workflow_job_id": 99079933514,
+        "workflow_conclusion": "success",
+        "integrity_policy_validation": "PASS",
+        "control_plane_validation": "PASS",
+        "historical_package_materialization": "PASS",
+        "frozen_historical_release_validation": "PASS"
       }
     }
   },
@@ -94,7 +107,8 @@
     "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
     "REC-V0111-MANIFEST-INTEGRITY-CI-001",
     "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
-    "REC-V1-INTEGRITY-CI-ENV-001"
+    "REC-V1-INTEGRITY-CI-ENV-001",
+    "REC-V1-INTEGRITY-CI-POLICY-001"
   ],
   "failed_preregistrations": [
     {
@@ -123,7 +137,7 @@
   "verification_receipt": {
     "identity": "versions/v0.11.1/review-evidence/INDEPENDENT-VERIFICATION-001",
     "freshness": "VALID_FOR_HISTORICAL_SEALED_PACKAGE_BY_EXACT_BYTE_IDENTITY",
-    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. PR #22 strengthens byte-integrity confirmation, PR #24 hardens CI action provenance, and PR #26 hardens CI runtime/dependency reproducibility; none become verifier authority for a future v1 candidate or preregistration attempt."
+    "scope_note": "Valid only for the already-sealed historical v0.11.1 package. PR #22 strengthens byte-integrity confirmation; PR #24 hardens CI action provenance; PR #26 hardens runtime/dependency reproducibility; PR #28 makes those CI policy invariants self-validating. None become verifier authority for a future v1 candidate or preregistration attempt."
   },
   "next_legal_transition": {
     "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
@@ -133,7 +147,7 @@
       "preserve V1-FRESHNESS-FREEZE-001 and V1-FRESHNESS-FREEZE-002 unchanged under their failed identities",
       "create a separately identified third retry contract, matrix, executable fixture set and freeze record",
       "bind every mutation case to exact immutable per-case before/after content identities, governed artifact identities and explicit provenance/dependency edges",
-      "only the explicit byte-identity control may keep identical before/after content; every other negative safe-reuse control must perform a genuine content mutation that exercises its declared no-path/outside-closure/non-authoritative/optional/explanatory behavior",
+      "only the explicit byte-identity control may keep identical before/after content; every other negative safe-reuse control must perform a genuine content mutation that exercises its declared behavior",
       "bind the executable fixture file bytes and mechanically verify executable_fixture_inputs_sha256 in the canonical control-plane validator",
       "hash complete canonical expected outcomes, metric targets, guardrails, failure criteria, missing-data policy, parent guardrails and implementation-scope constraints",
       "leave implementation authority pending Lane-5 reconciliation after the third retry freeze"
