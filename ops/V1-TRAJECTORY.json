@@ -1,35 +1,34 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T03:37:20Z",
-  "current_status": "BLOCKED_BY_V0_11_1_BASELINE_INTEGRITY_RECONCILIATION",
-  "rule": "No prospective successor is admitted until the restored v0.11.1 GitHub bytes are bound to the exact historical package identity, required integrity universes and tests pass for the exact restored state, independent verification is fresh, the canonical release transaction is reconciled, and lane 5 advances phase authority.",
+  "updated_at": "2026-08-29T03:39:31Z",
+  "current_status": "BLOCKED_BY_V0_11_1_RELEASE_STATE_RECONCILIATION",
+  "rule": "No prospective successor is admitted until the byte-exact restored v0.11.1 historical release is reconciled into canonical current release state with all required verification-freshness evidence and lane-5 phase authority.",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
-      "id": "V1-MUST-BASELINE-001",
+      "id": "V1-MUST-BASELINE-RECONCILE-001",
       "necessity": "must",
-      "observed_gap": "The v0.11.1 artifact family is now present in GitHub, but exact historical package identity, integrity universes, package ownership, and fresh exact-state verification have not yet been reconciled into canonical release authority.",
+      "observed_gap": "The canonical sealed v0.11.1 bytes have been restored and exact-head integrity validation passed, but canonical release state and verification freshness have not yet been reconciled for the live GitHub lineage.",
       "v1_capability_advanced": "reproducible governed release lineage",
       "dependencies": [
-        "BLK-BASELINE-001"
+        "BLK-BASELINE-RECONCILE-001"
       ],
-      "preregistration_status": "NOT_APPLICABLE_BASELINE_INTEGRITY_RECONCILIATION",
-      "expected_information_value": "Confirms whether the restored GitHub tree exactly reproduces the preserved governed history before any successor work is admitted.",
+      "preregistration_status": "NOT_APPLICABLE_RELEASE_STATE_RECONCILIATION",
+      "expected_information_value": "Confirms that restored historical identity and live release authority are equivalent before successor work is admitted.",
       "completion_evidence": [
-        "exact historical package identity bound to restored GitHub state",
-        "historical hash universes pass",
-        "package ownership is exact with zero unclassified/overlap/stale members",
-        "required frozen tests/regressions/workspace validation pass on the exact restored state",
-        "fresh exact-state independent verification receipt",
-        "v0.11.1 release transaction reconciled by lane 5"
+        "restoration merge/tree bound to historical sealed release identity",
+        "historical restoration integrity evidence accepted",
+        "required fresh exact-state independent verifier receipt",
+        "canonical current sealed release reconciled without generating a new v0.11.1 seal",
+        "reconstruction blocker retired with history preserved"
       ]
     }
   ],
   "convergence_review": {
     "required_now": true,
     "question": "What specifically prevents v1.00 now?",
-    "answer": "The sole presently admitted MUST blocker is proving and reconciling the exact integrity and release authority of the restored v0.11.1 baseline. Successor exploration remains frozen until that blocker is cleared.",
+    "answer": "Exactly one admitted MUST blocker remains: reconcile the verified restored v0.11.1 historical release into canonical current release state with required fresh verification evidence. Successor exploration remains frozen until that transition completes.",
     "must_blocker_count": 1
   }
 }
