@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-08-29T04:14:18Z",
+  "updated_at": "2026-08-29T04:31:00Z",
   "staleness_policy": {
     "default_ttl_seconds": 7200,
     "expired_claim_status": "STALE",
@@ -32,11 +32,19 @@
       "release_identity": "V1-MUST-FRESHNESS-001@prereg-freeze:4aa2ee10d17d75b56e9b16091405ac0e7020072c",
       "claimed_at": "2026-08-29T04:14:18Z",
       "heartbeat_at": "2026-08-29T04:14:18Z",
-      "updated_at": "2026-08-29T04:14:18Z",
+      "updated_at": "2026-08-29T04:31:00Z",
       "expires_at": "2026-08-29T06:14:18Z",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
+      "completed_at": "2026-08-29T04:31:00Z",
       "frozen_contract_hash": "9831a59d7009a416d0ac425fd250cffc09ad8b935a0242ec4e4f9b74b8761688",
       "conflict_key": "v1-must-freshness-001",
+      "completion_evidence": {
+        "pr_number": 17,
+        "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
+        "freeze_id": "V1-FRESHNESS-FREEZE-001",
+        "contract_id": "V1-FRESHNESS-PREREG-001",
+        "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001"
+      },
       "incompatible_scopes": ["V1-MUST-FRESHNESS-001","successor-capability-implementation:freshness","successor-preregistration-and-freeze:freshness"]
     }
   ]
