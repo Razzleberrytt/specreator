@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-INTEGRITY-CI-ENV-001",
+  "issued_at": "2026-08-29T08:49:47Z",
+  "authority": "lane-5",
+  "receipt_type": "V1_MUST_INTEGRITY_SUPPORTING_EVIDENCE_RECONCILIATION",
+  "source": {
+    "pr_number": 26,
+    "pr_head_sha": "54b9b7226b40e9670fd4547b3a585971771f12fe",
+    "merge_sha": "e020fd7a02a5e6bfacd28c9ab39bd3d3eb2770fc",
+    "merge_tree_sha": "719d8fe720c11181c7dd36793358a1ab30132404",
+    "workflow_run_id": 33242420818,
+    "workflow_name": "integrity",
+    "workflow_conclusion": "success"
+  },
+  "accepted_evidence": {
+    "python_runtime": "3.11.16",
+    "runner_family": "ubuntu-24.04",
+    "dependency_graph": "pinned by repository constraints used by integrity workflow",
+    "dependency_consistency_check": "pip check",
+    "scope": "CI environment reproducibility and integrity-validation provenance"
+  },
+  "reconciliation": {
+    "v1_blocker_id": "V1-MUST-INTEGRITY-001",
+    "effect": "ADDITIONAL_SUPPORTING_EVIDENCE_ONLY",
+    "blocker_closed": false,
+    "must_blocker_count_before": 6,
+    "must_blocker_count_after": 6,
+    "selected_next_blocker_changed": false,
+    "successor_implementation_authorized": false,
+    "historical_v0_11_1_authority_changed": false,
+    "new_v0_11_1_seal_created": false
+  },
+  "freshness_scope": "This receipt reconciles exact-head CI-environment evidence from PR #26. It is not an independent-verifier receipt and does not extend historical v0.11.1 verifier authority to a future v1 candidate."
+}
