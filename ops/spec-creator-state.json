@@ -1,31 +1,44 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T03:37:20Z",
-  "authority_note": "This file records reconciled machine state but does not grant release promotion. Lane 5 owns major phase reconciliation; exact historical evidence, frozen contracts, verifier receipts, tests, manifests, and repository bytes remain authoritative for the claims they govern.",
+  "updated_at": "2026-08-29T03:39:31Z",
+  "authority_note": "This file records lane-5 reconciled machine state. It does not create a new v0.11.1 seal. Exact historical evidence, frozen contracts, verifier receipts, tests, manifests, and repository bytes remain authoritative for the claims they govern.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
     "default_branch": "main",
-    "observation_basis_main_sha": "47e4d340a58bb61ec04d17f724fdccce093beeaa",
-    "observation_basis_tree_sha": "5e48a917360d42de5dd1315c8e7d9925706cf65a",
-    "observation_semantics": "Snapshot of the exact main/tree inspected immediately before this control-plane state commit; see ops/CONTROL-PLANE-OBSERVATION.md.",
+    "observation_basis_main_sha": "9aaa80e405950ea528494d3020dc7a26312cf711",
+    "observation_basis_tree_sha": "adc2a8a4c6ee650100181a22bff6a2457f10c525",
+    "observation_semantics": "Snapshot of the exact live main/tree inspected immediately before this state commit; see ops/CONTROL-PLANE-OBSERVATION.md.",
     "baseline_bytes_present": true,
+    "restoration_integrity_verified": true,
     "baseline_reconciled": false,
-    "baseline_presence_evidence": [
-      "PACKAGE-MANIFEST.json exists and declares release_version 0.11.1",
-      "versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json exists",
-      "versions/v0.11.1 artifact family is present in the GitHub tree"
-    ]
+    "restoration_identity": {
+      "historical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+      "restored_historical_files": "1771/1771",
+      "restoration_head_sha": "4a5d2206880fade908c191f622ae33df78359e40",
+      "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
+      "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e"
+    },
+    "restoration_validation": {
+      "historical_hashes": "1771/1771 exact",
+      "frozen_preflight_registry": "36/36",
+      "v0_10_hashes": "1120/1120",
+      "failed_v0_11_hashes": "154/154",
+      "workspace_validation": "0 errors / 0 warnings",
+      "pytest": "166 passed",
+      "tracked_files_at_restoration_head": 1775,
+      "working_tree_at_restoration_head": "clean"
+    }
   },
   "current_sealed_release": null,
   "active_candidate": {
     "version": "0.11.1",
     "exact_candidate_sha": null,
-    "identity_status": "RESTORED_BYTES_PRESENT_AWAITING_EXACT_INTEGRITY_RECONCILIATION",
+    "identity_status": "RESTORATION_INTEGRITY_VERIFIED_AWAITING_LANE5_RELEASE_STATE_RECONCILIATION",
     "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
-    "frozen_contract_hash_status": "READ_FROM_RESTORED_V0_11_1_FROZEN_CONTRACT_BUT_NOT_YET_SUFFICIENT_TO_DECLARE_COMPLETE_PACKAGE_IDENTITY"
+    "frozen_contract_hash_status": "MATCHED_RESTORED_FROZEN_CONTRACT"
   },
-  "phase": "BASELINE_RECONSTRUCTION_BLOCKED",
+  "phase": "BASELINE_RESTORATION_RECONCILIATION",
   "phase_authority": "lane-5",
   "lane_ownership": {
     "lane-1": "integrity-packaging-release-infrastructure-and-control-plane-formats",
@@ -36,53 +49,51 @@
     {
       "id": "BLK-BASELINE-001",
       "severity": "P0",
-      "status": "OPEN",
+      "status": "RESOLVED",
       "issue": 1,
-      "summary": "Restored-looking v0.11.1 bytes are now present in GitHub, but exact historical package identity, integrity universes, and fresh exact-state verification have not yet been reconciled into canonical release authority.",
+      "summary": "Canonical sealed v0.11.1 historical bytes were restored byte-for-byte and exact-head integrity validation passed."
+    },
+    {
+      "id": "BLK-BASELINE-RECONCILE-001",
+      "severity": "P0",
+      "status": "OPEN",
+      "summary": "Lane 5 must reconcile the restored exact historical identity and verification freshness into canonical release state before successor work can begin.",
       "evidence": {
-        "observation_basis_main_sha": "47e4d340a58bb61ec04d17f724fdccce093beeaa",
-        "observation_basis_tree_sha": "5e48a917360d42de5dd1315c8e7d9925706cf65a",
-        "package_manifest_present": true,
-        "v0_11_1_frozen_contract_present": true,
-        "restored_frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
-        "preserved_verified_package_file_count": 1358,
-        "preserved_v010_manifest_hashes": "1120/1120",
-        "preserved_failed_v011_hashes": "154/154",
-        "preserved_full_suite": "166/166",
-        "preserved_active_regressions": "25/25",
-        "preserved_workspace_validation": "0 errors / 0 warnings",
-        "preserved_verifier_recommendation": "READY_FOR_RELEASE_SEAL"
+        "restoration_issue": 1,
+        "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
+        "validated_restoration_tree_sha": "07bcfb5be6af584597d54c371873871f2566390e",
+        "historical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+        "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed"
       }
     }
   ],
   "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
   "verification_receipt": {
     "identity": null,
-    "freshness": "STALE_FOR_GITHUB_REPOSITORY_STATE",
-    "reason": "Historical verification evidence remains valid for the exact historical package it covered, but the restored GitHub state has not yet received a fresh exact-state integrity/verification reconciliation."
+    "freshness": "STALE_PENDING_EXACT_STATE_RECONCILIATION",
+    "reason": "Historical verification remains authoritative for the exact historical release it covered, but Lane 5 has not yet bound a fresh verifier receipt to the restored GitHub release identity for the reconciliation transition."
   },
   "next_legal_transition": {
-    "action": "VERIFY_RESTORED_V0_11_1_BASELINE_INTEGRITY",
-    "owner": "lane-1",
+    "action": "RECONCILE_RESTORED_V0_11_1_BASELINE",
+    "owner": "lane-5",
     "requirements": [
-      "bind the restored GitHub package to exact historical package identity",
-      "recompute frozen parent and failed-predecessor hash universes",
-      "recompute package ownership and confirm zero unclassified/overlap/stale members",
-      "run required frozen tests/regressions/workspace validation against the exact restored state",
-      "produce exact-state integrity handoff evidence for independent verification",
-      "obtain fresh independent verifier evidence before any release-authority reconciliation"
+      "bind restoration merge/tree evidence to the canonical historical sealed v0.11.1 identity",
+      "confirm or obtain fresh exact-state independent verifier evidence required by the reconciliation contract",
+      "retire reconstruction-only claims/blockers without erasing their history",
+      "set canonical current sealed release to the already-existing historical v0.11.1 seal only when freshness and identity checks pass",
+      "advance the v1 trajectory only after the restored release state is legally reconciled"
     ],
     "prohibited_until_complete": [
-      "declare v0.11.1 sealed or adopted from GitHub state",
-      "treat the historical verifier recommendation as fresh for the restored GitHub state",
+      "create a new v0.11.1 seal",
+      "treat stale verification as fresh",
       "begin successor capability implementation"
     ]
   },
   "v1_convergence": {
-    "status": "BLOCKED_BY_UNRECONCILED_V0_11_1_BASELINE",
+    "status": "BLOCKED_BY_BASELINE_RELEASE_STATE_RECONCILIATION",
     "must_blocker_count": 1,
     "must_blockers": [
-      "BLK-BASELINE-001"
+      "BLK-BASELINE-RECONCILE-001"
     ]
   }
 }
