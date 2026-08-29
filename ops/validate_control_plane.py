@@ -51,9 +51,9 @@ def validate_preregistration_freezes(state: dict) -> None:
     """Fail closed for any non-rejected freeze that could reach reconciliation.
 
     Failed frozen history is intentionally exempt from new-format requirements: it must
-    remain byte-for-byte preserved. Every later freeze must bind the exact contract and
-    matrix bytes plus immutable executable-input and acceptance-semantics identities so
-    Lane 5 never has to infer implementation authority from an incomplete freeze.
+    remain preserved under its failed identity. Every later freeze must bind the exact
+    contract, matrix, and executable-fixture bytes plus explicit semantic-binding hashes
+    so Lane 5 never has to infer implementation authority from an incomplete freeze.
     """
 
     prereg_dir = ROOT / "ops/v1-preregistrations"
@@ -75,6 +75,7 @@ def validate_preregistration_freezes(state: dict) -> None:
                 "freeze_id",
                 "contract_id",
                 "matrix_id",
+                "fixture_set_id",
                 "implementation_authority",
                 "integrity_bindings",
             },
@@ -90,8 +91,27 @@ def validate_preregistration_freezes(state: dict) -> None:
 
         contract_path = prereg_dir / f"{freeze['contract_id']}.json"
         matrix_path = prereg_dir / f"{freeze['matrix_id']}.json"
-        if not contract_path.is_file() or not matrix_path.is_file():
-            fail(f"preregistration freeze {freeze_id} references missing contract or matrix")
+        fixture_path = prereg_dir / f"{freeze['fixture_set_id']}.json"
+        if not contract_path.is_file() or not matrix_path.is_file() or not fixture_path.is_file():
+            fail(
+                f"preregistration freeze {freeze_id} references missing contract, matrix, or executable fixtures"
+            )
+
+        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+        matrix = json.loads(matrix_path.read_text(encoding="utf-8"))
+        fixtures = json.loads(fixture_path.read_text(encoding="utf-8"))
+        if contract.get("contract_id") != freeze["contract_id"]:
+            fail(f"preregistration freeze {freeze_id} contract identity mismatch")
+        if matrix.get("matrix_id") != freeze["matrix_id"]:
+            fail(f"preregistration freeze {freeze_id} matrix identity mismatch")
+        if fixtures.get("fixture_set_id") != freeze["fixture_set_id"]:
+            fail(f"preregistration freeze {freeze_id} fixture identity mismatch")
+        if matrix.get("contract_id") != freeze["contract_id"]:
+            fail(f"preregistration freeze {freeze_id} matrix contract binding mismatch")
+        if matrix.get("fixture_set_id") != freeze["fixture_set_id"]:
+            fail(f"preregistration freeze {freeze_id} matrix fixture binding mismatch")
+        if fixtures.get("cases") != matrix.get("cases"):
+            fail(f"preregistration freeze {freeze_id} executable fixtures and matrix cases differ")
 
         bindings = freeze["integrity_bindings"]
         require_keys(
@@ -124,6 +144,8 @@ def validate_preregistration_freezes(state: dict) -> None:
             fail(f"preregistration freeze {freeze_id} contract bytes do not match binding")
         if file_sha256(matrix_path) != bindings["matrix_file_sha256"]:
             fail(f"preregistration freeze {freeze_id} matrix bytes do not match binding")
+        if file_sha256(fixture_path) != bindings["executable_fixture_inputs_sha256"]:
+            fail(f"preregistration freeze {freeze_id} executable fixture bytes do not match binding")
 
 
 def main() -> None:

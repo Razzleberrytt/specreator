@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T04:48:17Z",
+  "updated_at": "2026-08-29T05:50:25Z",
   "current_status": "V1_GAP_PREREGISTRATION_RETRY_REQUIRED",
   "rule": "The canonical v0.11.1 historical release is restored and reconciled. Six v1 MUST clusters remain. A successor may be implemented only after an objective gap has a mechanically valid preregistration/freeze whose executable inputs, expected outcomes, acceptance criteria and failure policy are immutably bound and then reconciled by Lane 5.",
   "sealed_baseline": {
@@ -11,7 +11,7 @@
     "reconciliation_receipt_id": "REC-V0111-BASELINE-RECONCILE-001"
   },
   "latest_evidence_reconciliation_receipt": "REC-V1-EVIDENCE-RECONCILE-001",
-  "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001",
+  "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
@@ -29,19 +29,31 @@
       "id": "V1-MUST-FRESHNESS-001",
       "necessity": "must",
       "status": "OPEN_OBJECTIVE_GAP_PREREGISTRATION_RETRY_REQUIRED",
-      "observed_gap": "Existing impact/provenance evidence is narrower than MUST-07. The first frozen preregistration attempt was merged but Lane 5 rejected it for implementation authority because concrete executable fixtures/provenance inputs were not frozen and the declared hashes did not bind complete expected outcomes, metric targets, guardrails, failure criteria or missing-data policy.",
+      "observed_gap": "Existing impact/provenance evidence is narrower than MUST-07. Two frozen preregistration attempts have been rejected for implementation authority. Freeze 001 did not immutably bind executable inputs and complete acceptance semantics. Freeze 002 added fixture bindings but five of six negative controls remained byte-identical and therefore did not exercise their declared safe-reuse mutation behaviors; additionally the canonical validator recorded but did not verify the executable fixture digest.",
       "v1_capability_advanced": "MUST-07 and MUST-08 change propagation, determinism and provenance",
       "dependencies": ["V1-MUST-LIFECYCLE-001"],
-      "preregistration_status": "RETRY_REQUIRED_PRESERVE_V1-FRESHNESS-FREEZE-001_AS_FAILED_HISTORY",
-      "failed_attempt": {
-        "freeze_id": "V1-FRESHNESS-FREEZE-001",
-        "contract_id": "V1-FRESHNESS-PREREG-001",
-        "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
-        "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
-        "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
-      },
+      "preregistration_status": "RETRY_REQUIRED_PRESERVE_FREEZE_001_AND_002_AS_FAILED_HISTORY",
+      "failed_attempts": [
+        {
+          "freeze_id": "V1-FRESHNESS-FREEZE-001",
+          "contract_id": "V1-FRESHNESS-PREREG-001",
+          "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+          "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
+          "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
+        },
+        {
+          "freeze_id": "V1-FRESHNESS-FREEZE-002",
+          "contract_id": "V1-FRESHNESS-PREREG-002",
+          "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-002",
+          "fixture_set_id": "V1-FRESHNESS-EXECUTABLE-FIXTURES-002",
+          "pr_number": 20,
+          "frozen_head_sha": "4c73c1689e3048484100cb822fcf32edc86b53ae",
+          "pr_head_sha": "d1ef87520c4a5813f7ce6a27bc3a57016f0c89f9",
+          "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002"
+        }
+      ],
       "expected_information_value": "Highest currently bounded gap: freshness errors can invalidate otherwise-correct automation and downstream evidence.",
-      "completion_evidence": ["retry preregistration with immutable executable mutation fixtures and provenance edges", "complete canonical expected-outcome hashing", "complete acceptance/failure-policy hashing", "authoritative mutation matrix", "stale-derived-artifact invalidation evidence", "determinism/provenance evidence mapped to exact v1 claims"]
+      "completion_evidence": ["new retry identity distinct from failed freezes 001/002", "immutable executable mutation fixtures with exact per-case before/after identities and provenance edges", "genuine mutated negative controls for all safe-reuse behaviors except explicit byte-identity", "mechanically verified executable fixture SHA-256 binding", "complete canonical expected-outcome hashing", "complete acceptance/failure-policy hashing", "authoritative mutation matrix", "stale-derived-artifact invalidation evidence", "determinism/provenance evidence mapped to exact v1 claims"]
     },
     {
       "id": "V1-MUST-TRANSFER-001",
@@ -96,7 +108,7 @@
   "convergence_review": {
     "required_now": false,
     "question": "What specifically prevents v1.00 right now?",
-    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment because its first preregistration attempt did not immutably bind executable inputs or complete acceptance semantics. A governed retry is required before implementation can begin.",
+    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. A new governed retry is required before implementation can begin.",
     "must_blocker_count": 6,
     "successor_cycle_count_since_review": 0,
     "mode": "ACTIVE_V1_CONVERGENCE"

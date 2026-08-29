@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
+  "reconciled_at": "2026-08-29T05:50:25Z",
+  "authority": "lane-5",
+  "blocker_id": "V1-MUST-FRESHNESS-001",
+  "candidate_freeze": {
+    "freeze_id": "V1-FRESHNESS-FREEZE-002",
+    "contract_id": "V1-FRESHNESS-PREREG-002",
+    "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-002",
+    "fixture_set_id": "V1-FRESHNESS-EXECUTABLE-FIXTURES-002",
+    "frozen_head_sha": "4c73c1689e3048484100cb822fcf32edc86b53ae",
+    "pr_number": 20,
+    "pr_head_sha": "d1ef87520c4a5813f7ce6a27bc3a57016f0c89f9"
+  },
+  "mechanical_checks": {
+    "historical_v0_11_1_seal_unchanged": true,
+    "baseline_reconciled": true,
+    "lane2_claim_live": false,
+    "integrity_workflow_run_id": 33235845992,
+    "integrity_workflow_conclusion": "success",
+    "historical_preflight": "36/36 + 1120/1120 + 154/154",
+    "workspace_validation": "0 errors / 0 warnings",
+    "pytest": "166/166",
+    "automated_review_id": 5057011582
+  },
+  "blocking_findings": [
+    {
+      "severity": "P1",
+      "review_comment_id": 3885682471,
+      "summary": "Negative controls FRESH-N02 through FRESH-N06 are byte-identical before/after under the frozen generator, so they do not exercise their declared no-path/outside-closure/non-authoritative/optional/explanatory mutation behaviors."
+    },
+    {
+      "severity": "P1",
+      "review_comment_id": 3885682473,
+      "summary": "The control-plane validator does not resolve fixture_set_id and verify executable_fixture_inputs_sha256, so the freeze's executable fixture binding is not mechanically enforced."
+    }
+  ],
+  "disposition": "REJECTED_FOR_IMPLEMENTATION_AUTHORITY_PRESERVE_HISTORY",
+  "merge_authorized": false,
+  "implementation_authorized": false,
+  "successor_candidate_authorized": false,
+  "history_preservation": "PR #20 and branch lane2/v1-freshness-prereg-retry-002 preserve the rejected frozen attempt; canonical main records this receipt and does not import the invalid freeze as implementation authority.",
+  "required_retry": [
+    "use a new freeze/contract/matrix/fixture identity distinct from 001 and 002",
+    "make FRESH-N02 through FRESH-N06 genuine content mutations while retaining their safe-reuse expectations; only the explicit byte-identity control may keep identical before/after content",
+    "freeze exact per-case before/after content identities rather than a shared ambiguous generator shortcut",
+    "mechanically validate the executable fixture file SHA-256 through the canonical control-plane integrity gate",
+    "retain complete case outcomes, acceptance/failure semantics, guardrails, missing-data policy, and implementation scope as immutable bindings",
+    "leave implementation authority pending Lane-5 reconciliation"
+  ],
+  "v1_must_blocker_count_before": 6,
+  "v1_must_blocker_count_after": 6
+}
