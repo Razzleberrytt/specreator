@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-08-29T03:41:00Z",
+  "updated_at": "2026-08-29T04:14:18Z",
   "staleness_policy": {
     "default_ttl_seconds": 7200,
     "expired_claim_status": "STALE",
@@ -10,12 +10,7 @@
     {
       "task_id": "L1-BASELINE-RECONSTRUCTION-001",
       "owner_lane": "lane-1",
-      "scope": [
-        "canonical-v0.11.1-baseline-reconstruction",
-        "historical-integrity-validation",
-        "release-seal-prerequisites",
-        "ops-control-plane-bootstrap"
-      ],
+      "scope": ["canonical-v0.11.1-baseline-reconstruction","historical-integrity-validation","release-seal-prerequisites","ops-control-plane-bootstrap"],
       "candidate_version": "0.11.1",
       "exact_candidate_sha": null,
       "release_identity": "HISTORICAL_SEALED_V0.11.1_SHA256_99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
@@ -25,17 +20,24 @@
       "expires_at": "2026-08-29T04:00:24Z",
       "status": "COMPLETED",
       "completed_at": "2026-08-29T03:41:00Z",
-      "completion_evidence": {
-        "issue": 1,
-        "restoration_head_sha": "4a5d2206880fade908c191f622ae33df78359e40",
-        "restoration_merge_sha": "bfd53188f8aac2be4cde3df37ebabe2d99cf000c",
-        "reconciliation_receipt_id": "REC-V0111-BASELINE-RECONCILE-001"
-      },
-      "incompatible_scopes": [
-        "v0.11.1-release-seal",
-        "authoritative-shipping-manifest-generation",
-        "successor-capability-implementation"
-      ]
+      "completion_evidence": {"issue":1,"restoration_head_sha":"4a5d2206880fade908c191f622ae33df78359e40","restoration_merge_sha":"bfd53188f8aac2be4cde3df37ebabe2d99cf000c","reconciliation_receipt_id":"REC-V0111-BASELINE-RECONCILE-001"},
+      "incompatible_scopes": ["v0.11.1-release-seal","authoritative-shipping-manifest-generation","successor-capability-implementation"]
+    },
+    {
+      "task_id": "L2-V1-FRESHNESS-PREREG-001",
+      "owner_lane": "lane-2",
+      "scope": ["V1-MUST-FRESHNESS-001","MUST-07-authoritative-mutation-matrix","MUST-08-freshness-provenance-contract","successor-preregistration-and-freeze"],
+      "candidate_version": "v1-freshness-successor-001",
+      "exact_candidate_sha": "4aa2ee10d17d75b56e9b16091405ac0e7020072c",
+      "release_identity": "V1-MUST-FRESHNESS-001@prereg-freeze:4aa2ee10d17d75b56e9b16091405ac0e7020072c",
+      "claimed_at": "2026-08-29T04:14:18Z",
+      "heartbeat_at": "2026-08-29T04:14:18Z",
+      "updated_at": "2026-08-29T04:14:18Z",
+      "expires_at": "2026-08-29T06:14:18Z",
+      "status": "ACTIVE",
+      "frozen_contract_hash": "9831a59d7009a416d0ac425fd250cffc09ad8b935a0242ec4e4f9b74b8761688",
+      "conflict_key": "v1-must-freshness-001",
+      "incompatible_scopes": ["V1-MUST-FRESHNESS-001","successor-capability-implementation:freshness","successor-preregistration-and-freeze:freshness"]
     }
   ]
 }
