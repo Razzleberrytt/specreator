@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.7",
+  "schema_version": "1.8",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T07:48:39Z",
+  "updated_at": "2026-08-29T08:49:47Z",
   "current_status": "V1_GAP_PREREGISTRATION_RETRY_REQUIRED",
   "rule": "The canonical v0.11.1 historical release is restored and reconciled. Six v1 MUST clusters remain. A successor may be implemented only after an objective gap has a mechanically valid preregistration/freeze whose executable inputs, expected outcomes, acceptance criteria and failure policy are immutably bound and then reconciled by Lane 5.",
   "sealed_baseline": {
@@ -12,7 +12,7 @@
   },
   "latest_evidence_reconciliation_receipt": "REC-V1-EVIDENCE-RECONCILE-001",
   "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
-  "latest_integrity_reconciliation_receipt": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
+  "latest_integrity_reconciliation_receipt": "REC-V1-INTEGRITY-CI-ENV-001",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
@@ -35,23 +35,8 @@
       "dependencies": ["V1-MUST-LIFECYCLE-001"],
       "preregistration_status": "RETRY_REQUIRED_PRESERVE_FREEZE_001_AND_002_AS_FAILED_HISTORY",
       "failed_attempts": [
-        {
-          "freeze_id": "V1-FRESHNESS-FREEZE-001",
-          "contract_id": "V1-FRESHNESS-PREREG-001",
-          "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
-          "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
-          "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001"
-        },
-        {
-          "freeze_id": "V1-FRESHNESS-FREEZE-002",
-          "contract_id": "V1-FRESHNESS-PREREG-002",
-          "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-002",
-          "fixture_set_id": "V1-FRESHNESS-EXECUTABLE-FIXTURES-002",
-          "pr_number": 20,
-          "frozen_head_sha": "4c73c1689e3048484100cb822fcf32edc86b53ae",
-          "pr_head_sha": "d1ef87520c4a5813f7ce6a27bc3a57016f0c89f9",
-          "reconciliation_receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002"
-        }
+        {"freeze_id":"V1-FRESHNESS-FREEZE-001","contract_id":"V1-FRESHNESS-PREREG-001","matrix_id":"V1-FRESHNESS-MUTATION-MATRIX-001","merge_sha":"9e1ccc3fc238fb194ca427a674b23cd09a0cddea","reconciliation_receipt_id":"REC-V1-FRESHNESS-FREEZE-RECONCILE-001"},
+        {"freeze_id":"V1-FRESHNESS-FREEZE-002","contract_id":"V1-FRESHNESS-PREREG-002","matrix_id":"V1-FRESHNESS-MUTATION-MATRIX-002","fixture_set_id":"V1-FRESHNESS-EXECUTABLE-FIXTURES-002","pr_number":20,"frozen_head_sha":"4c73c1689e3048484100cb822fcf32edc86b53ae","pr_head_sha":"d1ef87520c4a5813f7ce6a27bc3a57016f0c89f9","reconciliation_receipt_id":"REC-V1-FRESHNESS-FREEZE-RECONCILE-002"}
       ],
       "expected_information_value": "Highest currently bounded gap: freshness errors can invalidate otherwise-correct automation and downstream evidence.",
       "completion_evidence": ["new retry identity distinct from failed freezes 001/002", "immutable executable mutation fixtures with exact per-case before/after identities and provenance edges", "genuine mutated negative controls for all safe-reuse behaviors except explicit byte-identity", "mechanically verified executable fixture SHA-256 binding", "complete canonical expected-outcome hashing", "complete acceptance/failure-policy hashing", "authoritative mutation matrix", "stale-derived-artifact invalidation evidence", "determinism/provenance evidence mapped to exact v1 claims"]
@@ -71,13 +56,13 @@
       "id": "V1-MUST-INTEGRITY-001",
       "necessity": "must",
       "status": "PARTIALLY_SATISFIED_OPEN_SECURITY_GAP",
-      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation, active regression memory, exact manifest-member byte/hash CI, and immutable commit pinning for integrity-workflow actions are preserved. PR #24 removes mutable major-tag action resolution and passed the integrity workflow on exact head d93f17e344b8e872642518f538240cca6479f45e. MUST-11 threat-model/adversarial-security evidence remains unproven and is not satisfied by package or CI supply-chain integrity alone.",
+      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation, active regression memory, exact manifest-member byte/hash CI, immutable commit pinning for integrity-workflow actions, and reproducible CI runtime/dependency pinning are preserved. PR #26 pins Python 3.11.16 and the validation dependency graph, adds dependency consistency checking, and passed the integrity workflow on exact head 54b9b7226b40e9670fd4547b3a585971771f12fe. MUST-11 threat-model/adversarial-security evidence remains unproven and is not satisfied by package or CI supply-chain/reproducibility integrity alone.",
       "v1_capability_advanced": "MUST-10 through MUST-12 packaging, security/data integrity and regression memory",
       "dependencies": [],
       "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
       "expected_information_value": "High",
-      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "immutable CI dependency/action provenance", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"],
-      "latest_supporting_receipt": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001"
+      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "immutable and reproducible CI dependency/action provenance", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"],
+      "latest_supporting_receipt": "REC-V1-INTEGRITY-CI-ENV-001"
     },
     {
       "id": "V1-MUST-USABILITY-001",
@@ -102,15 +87,11 @@
       "completion_evidence": ["zero unresolved substantive v1 MUST blockers", "fresh exact-state independent verifier recommendation", "authoritative shipping manifest and clean extraction", "completion receipt, release notes, version 1.0.0 and tag/release where tooling permits"]
     }
   ],
-  "next_priority": {
-    "blocker_id": "V1-MUST-FRESHNESS-001",
-    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
-    "implementation_authorized": false
-  },
+  "next_priority": {"blocker_id":"V1-MUST-FRESHNESS-001","action":"PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY","implementation_authorized":false},
   "convergence_review": {
     "required_now": false,
     "question": "What specifically prevents v1.00 right now?",
-    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. A new governed retry is required before implementation can begin. PR #24 strengthens integrity evidence but does not close MUST-11 or alter this selected gap.",
+    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. A new governed retry is required before implementation can begin. PR #26 strengthens integrity/reproducibility evidence but does not close MUST-11 or alter this selected gap.",
     "must_blocker_count": 6,
     "successor_cycle_count_since_review": 0,
     "mode": "ACTIVE_V1_CONVERGENCE"
