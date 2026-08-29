@@ -121,6 +121,23 @@ def main() -> None:
     if len(policy_step_indexes) != 1:
         fail("integrity workflow must contain exactly one active CI-policy validation step")
 
+    control_plane_step_indexes = [
+        index
+        for index, step in enumerate(steps)
+        if step_has_exact_line(step, r"\s{8}run:\s*python ops/validate_control_plane\.py")
+    ]
+    if len(control_plane_step_indexes) != 1:
+        fail("integrity workflow must contain exactly one active control-plane validation step")
+
+    setup_python_ref = f"actions/setup-python@{SETUP_PYTHON_SHA}"
+    setup_python_step_indexes = [
+        index
+        for index, step in enumerate(steps)
+        if any(re.fullmatch(rf"\s+uses:\s*{re.escape(setup_python_ref)}(?:\s+#.*)?", line) for line in step)
+    ]
+    if len(setup_python_step_indexes) != 1:
+        fail("integrity workflow must contain exactly one approved setup-python step")
+
     install_step_indexes = [
         index
         for index, step in enumerate(steps)
@@ -131,8 +148,16 @@ def main() -> None:
     ]
     if len(install_step_indexes) != 1:
         fail("integrity workflow must contain exactly one active dependency-install step")
-    if policy_step_indexes[0] >= install_step_indexes[0]:
-        fail("CI-policy validation must run before package/dependency installation")
+
+    policy_index = policy_step_indexes[0]
+    control_index = control_plane_step_indexes[0]
+    setup_index = setup_python_step_indexes[0]
+    install_index = install_step_indexes[0]
+    if not policy_index < control_index < setup_index < install_index:
+        fail(
+            "CI-policy validation and dependency-free control-plane validation must run "
+            "before setup-python and package/dependency installation"
+        )
 
     allowed_uses = {
         f"actions/checkout@{CHECKOUT_SHA}",
@@ -164,7 +189,10 @@ def main() -> None:
     if "pytest==9.1.1" not in {line.lower() for line in constraint_lines}:
         fail("CI constraints must pin pytest==9.1.1")
 
-    print("PASS: integrity CI policy is credentialless, pre-install, pinned, least-privilege, reproducible, and fail-closed")
+    print(
+        "PASS: integrity CI policy is credentialless, dependency-free control-plane-first, "
+        "pinned, least-privilege, reproducible, and fail-closed"
+    )
 
 
 if __name__ == "__main__":
