@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
+  "created_at": "2026-08-29T07:48:39Z",
+  "authority_lane": "lane-5",
+  "transition_type": "EVIDENCE_RECONCILIATION_NO_PHASE_CHANGE",
+  "subject": "v1-integrity-ci-supply-chain-hardening",
+  "repository": "Razzleberrytt/specreator",
+  "observed_main_sha": "d1160e7e88fdc86cbd8a15e4980f4bc2885eff05",
+  "observed_main_tree_sha": "30643366fc1d5bd68edc67eb054a51453e8c54c7",
+  "source_pr": 24,
+  "source_head_sha": "d93f17e344b8e872642518f538240cca6479f45e",
+  "source_merge_sha": "d1160e7e88fdc86cbd8a15e4980f4bc2885eff05",
+  "workflow_run": {
+    "id": 33240075933,
+    "name": "integrity",
+    "conclusion": "success",
+    "job_id": 99067783103
+  },
+  "mechanical_evidence": {
+    "actions_checkout_sha": "11d5960a326750d5838078e36cf38b85af677262",
+    "actions_setup_python_sha": "a26af69be951a213d495a4c3e4e4022e16d87065",
+    "control_plane_validator": "PASS",
+    "historical_package_integrity_workflow": "PASS",
+    "immutable_action_pinning": true
+  },
+  "historical_authority": {
+    "sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed",
+    "new_seal_created": false
+  },
+  "lane5_judgment": {
+    "accepted_as": "additional V1-MUST-INTEGRITY-001 supply-chain hardening evidence",
+    "phase_changed": false,
+    "v1_must_blocker_count_changed": false,
+    "selected_next_blocker_changed": false,
+    "successor_implementation_authorized": false,
+    "reason": "PR #24 removes mutable major-tag resolution from the integrity workflow and passed on its exact final PR head. This strengthens CI supply-chain integrity but does not establish the outstanding MUST-11 threat-model/adversarial-security evidence and does not alter the selected freshness preregistration retry."
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.6",
+  "schema_version": "1.7",
   "trajectory_id": "V1-TRAJECTORY-001",
-  "updated_at": "2026-08-29T05:50:25Z",
+  "updated_at": "2026-08-29T07:48:39Z",
   "current_status": "V1_GAP_PREREGISTRATION_RETRY_REQUIRED",
   "rule": "The canonical v0.11.1 historical release is restored and reconciled. Six v1 MUST clusters remain. A successor may be implemented only after an objective gap has a mechanically valid preregistration/freeze whose executable inputs, expected outcomes, acceptance criteria and failure policy are immutably bound and then reconciled by Lane 5.",
   "sealed_baseline": {
@@ -12,6 +12,7 @@
   },
   "latest_evidence_reconciliation_receipt": "REC-V1-EVIDENCE-RECONCILE-001",
   "latest_preregistration_reconciliation_receipt": "REC-V1-FRESHNESS-FREEZE-RECONCILE-002",
+  "latest_integrity_reconciliation_receipt": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001",
   "prospective_successors": [],
   "objective_v1_must_blockers": [
     {
@@ -70,12 +71,13 @@
       "id": "V1-MUST-INTEGRITY-001",
       "necessity": "must",
       "status": "PARTIALLY_SATISFIED_OPEN_SECURITY_GAP",
-      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation and active regression memory are preserved, but MUST-11 threat-model/adversarial-security evidence is not established by package-integrity results alone.",
+      "observed_gap": "Exact package identity, ownership/hash universes, clean restoration validation, active regression memory, exact manifest-member byte/hash CI, and immutable commit pinning for integrity-workflow actions are preserved. PR #24 removes mutable major-tag action resolution and passed the integrity workflow on exact head d93f17e344b8e872642518f538240cca6479f45e. MUST-11 threat-model/adversarial-security evidence remains unproven and is not satisfied by package or CI supply-chain integrity alone.",
       "v1_capability_advanced": "MUST-10 through MUST-12 packaging, security/data integrity and regression memory",
       "dependencies": [],
       "preregistration_status": "NOT_YET_ADMITTED_AS_SUCCESSOR",
       "expected_information_value": "High",
-      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"]
+      "completion_evidence": ["package/install/clean-extraction evidence mapped to v1 scope", "immutable CI dependency/action provenance", "security threat model and adversarial/transaction-integrity evidence", "active regression ledger and retirement rules"],
+      "latest_supporting_receipt": "REC-V1-INTEGRITY-CI-SUPPLY-CHAIN-001"
     },
     {
       "id": "V1-MUST-USABILITY-001",
@@ -108,7 +110,7 @@
   "convergence_review": {
     "required_now": false,
     "question": "What specifically prevents v1.00 right now?",
-    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. A new governed retry is required before implementation can begin.",
+    "answer": "Six MUST clusters remain. The selected freshness gap still lacks a mechanically valid frozen experiment: retry 002 failed because most negative controls never mutated and its executable fixture digest was not mechanically enforced. A new governed retry is required before implementation can begin. PR #24 strengthens integrity evidence but does not close MUST-11 or alter this selected gap.",
     "must_blocker_count": 6,
     "successor_cycle_count_since_review": 0,
     "mode": "ACTIVE_V1_CONVERGENCE"
