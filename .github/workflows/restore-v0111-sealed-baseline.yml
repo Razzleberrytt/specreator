@@ -1,0 +1,113 @@
+name: Restore canonical sealed v0.11.1 baseline
+
+on:
+  push:
+    branches:
+      - lane1/restore-v0111-sealed-baseline
+    paths:
+      - .github/workflows/restore-v0111-sealed-baseline.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: restore-v0111-sealed-baseline
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/lane1/restore-v0111-sealed-baseline'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact restoration branch
+        uses: actions/checkout@v4
+        with:
+          ref: lane1/restore-v0111-sealed-baseline
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Reconstruct and validate canonical sealed tree
+        shell: bash
+        env:
+          BOOTSTRAP_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3ISgAd5kqpYDmmZ4zxhWm0LpgDW/b0d493a2-d6bb-48dc-87d0-e76550326285.zip
+          BOOTSTRAP_SHA256: aab77cf6cb0ef269a0fae5afdb0aa70b879b47497b477401fdd3625f735056e7
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          restore="$work/restore"
+          archive="$work/bootstrap.tar.xz"
+          mkdir -p "$restore"
+          curl --fail --location --retry 4 --retry-all-errors "$BOOTSTRAP_URL" -o "$archive"
+          echo "$BOOTSTRAP_SHA256  $archive" | sha256sum -c -
+          test "$(stat -c '%s' "$archive")" = "887392"
+          tar -xJf "$archive" -C "$restore"
+          cd "$restore"
+          python3 .bootstrap/reconstruct_zips.py
+          python3 .bootstrap/verify_tree.py
+          test "$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          print(len(json.loads(Path('.bootstrap/expected-tree.json').read_text())['files']))
+          PY
+          )" = "1771"
+          python3 -m pip install --disable-pip-version-check -q 'jsonschema>=4.20' pytest
+          rm -rf .bootstrap
+          python3 versions/v0.11.1/tools/frozen_contract_preflight.py
+          PYTHONPATH=src python3 -m spec_creator.cli validate . --no-package-manifest
+          python3 -m pytest -q
+
+      - name: Materialize exact historical bytes while preserving additive ops
+        shell: bash
+        env:
+          BOOTSTRAP_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3ISgAd5kqpYDmmZ4zxhWm0LpgDW/b0d493a2-d6bb-48dc-87d0-e76550326285.zip
+          BOOTSTRAP_SHA256: aab77cf6cb0ef269a0fae5afdb0aa70b879b47497b477401fdd3625f735056e7
+        run: |
+          set -euo pipefail
+          repo="$PWD"
+          work="$(mktemp -d)"
+          restore="$work/restore"
+          archive="$work/bootstrap.tar.xz"
+          mkdir -p "$restore"
+          curl --fail --location --retry 4 --retry-all-errors "$BOOTSTRAP_URL" -o "$archive"
+          echo "$BOOTSTRAP_SHA256  $archive" | sha256sum -c -
+          tar -xJf "$archive" -C "$restore"
+          cd "$restore"
+          python3 .bootstrap/reconstruct_zips.py >/dev/null
+          python3 .bootstrap/verify_tree.py
+          cp .bootstrap/expected-tree.json "$work/expected-tree.json"
+          rm -rf .bootstrap
+          rsync -a "$restore/" "$repo/"
+          cd "$repo"
+          rm -f .github/workflows/restore-v0111-sealed-baseline.yml
+          EXPECTED_TREE="$work/expected-tree.json" python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root=Path('.')
+          rows=json.loads(Path(os.environ['EXPECTED_TREE']).read_text())['files']
+          assert len(rows)==1771, len(rows)
+          for row in rows:
+              p=root/row['path']
+              assert p.is_file(), f'missing {row["path"]}'
+              b=p.read_bytes()
+              assert len(b)==row['size'], f'size drift {row["path"]}'
+              assert hashlib.sha256(b).hexdigest()==row['sha256'], f'hash drift {row["path"]}'
+          print('final workspace historical verification: 1771/1771 exact')
+          PY
+          test -f ops/spec-creator-state.json
+          test -f ops/V1-TRAJECTORY.json
+          python3 ops/validate_control_plane.py
+
+      - name: Commit reconstructed baseline once
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- . ':!ops'; then
+            echo 'No historical restoration delta; refusing empty commit.'
+            exit 1
+          fi
+          git config user.name 'spec-creator-lane1-bot'
+          git config user.email 'spec-creator-lane1-bot@users.noreply.github.com'
+          git add -A
+          git commit -m 'restore: canonical sealed v0.11.1 baseline'
+          git push origin HEAD:lane1/restore-v0111-sealed-baseline
