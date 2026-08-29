@@ -21,12 +21,7 @@ def fail(message: str) -> None:
 
 
 def active_yaml_lines(text: str) -> list[str]:
-    """Return nonblank workflow lines with whole-line comments removed.
-
-    The integrity workflow is intentionally simple and dependency-free. This
-    helper prevents comments from satisfying policy invariants while preserving
-    indentation for step/with-block parsing.
-    """
+    """Return nonblank workflow lines with whole-line comments removed."""
     return [
         line.rstrip()
         for line in text.splitlines()
@@ -56,13 +51,39 @@ def step_has_exact_line(step: list[str], pattern: str) -> bool:
 
 
 def step_run_commands(step: list[str]) -> list[str]:
-    """Return active top-level run declarations for one workflow step."""
-    commands: list[str] = []
-    for line in step:
-        match = re.fullmatch(r"\s{8}run:\s*(.+)", line)
+    """Return normalized active run commands for one workflow step.
+
+    Supports both item form (`- run: cmd`) and mapping form (`run: cmd`), plus
+    YAML block scalars. The workflow is deliberately constrained enough that a
+    dependency-free parser can fail closed without interpreting general YAML.
+    """
+    declaration_index: int | None = None
+    value: str | None = None
+    for index, line in enumerate(step):
+        item_match = re.fullmatch(r"\s{6}-\s+run:\s*(.*)", line)
+        mapping_match = re.fullmatch(r"\s{8}run:\s*(.*)", line)
+        match = item_match or mapping_match
         if match:
-            commands.append(match.group(1).strip())
-    return commands
+            if declaration_index is not None:
+                fail("workflow step contains multiple run declarations")
+            declaration_index = index
+            value = match.group(1).strip()
+
+    if declaration_index is None or value is None:
+        return []
+
+    if value not in {"|", "|-", "|+", ">", ">-", ">+"}:
+        return [value]
+
+    body: list[str] = []
+    for line in step[declaration_index + 1 :]:
+        indentation = len(line) - len(line.lstrip())
+        if indentation <= 8:
+            break
+        body.append(line.strip())
+    if not body:
+        fail("run block scalar must contain executable content")
+    return body
 
 
 def main() -> None:
@@ -126,7 +147,7 @@ def main() -> None:
     policy_step_indexes = [
         index
         for index, step in enumerate(steps)
-        if step_has_exact_line(step, r"\s{8}run:\s*python ops/validate_integrity_ci_policy\.py")
+        if step_run_commands(step) == ["python ops/validate_integrity_ci_policy.py"]
     ]
     if len(policy_step_indexes) != 1:
         fail("integrity workflow must contain exactly one active CI-policy validation step")
@@ -134,7 +155,7 @@ def main() -> None:
     control_plane_step_indexes = [
         index
         for index, step in enumerate(steps)
-        if step_has_exact_line(step, r"\s{8}run:\s*python ops/validate_control_plane\.py")
+        if step_run_commands(step) == ["python ops/validate_control_plane.py"]
     ]
     if len(control_plane_step_indexes) != 1:
         fail("integrity workflow must contain exactly one active control-plane validation step")
@@ -148,13 +169,10 @@ def main() -> None:
     if len(setup_python_step_indexes) != 1:
         fail("integrity workflow must contain exactly one approved setup-python step")
 
-    # Identify the one approved downstream install step even when its run block
-    # is multiline. Alternate pre-control-plane execution is handled by the
-    # fail-closed boundary below rather than by installer-name matching.
     install_step_indexes = [
         index
         for index, step in enumerate(steps)
-        if any("python -m pip install" in line for line in step)
+        if any("python -m pip install" in command for command in step_run_commands(step))
     ]
     if len(install_step_indexes) != 1:
         fail("integrity workflow must contain exactly one approved dependency-install step")
@@ -171,9 +189,8 @@ def main() -> None:
 
     # Fail closed at the dependency-free boundary. Before control-plane
     # validation, the only executable `run:` step permitted is the policy
-    # validator itself. This rejects alternate installer spellings (`pip`,
-    # `pip3`, `uv`, `poetry`, shell bootstrap commands, etc.) without trying to
-    # maintain an incomplete installer-name denylist.
+    # validator itself. This rejects alternate installer spellings and any
+    # arbitrary shell/bootstrap execution without maintaining a denylist.
     for index, step in enumerate(steps[:control_index]):
         commands = step_run_commands(step)
         if not commands:
