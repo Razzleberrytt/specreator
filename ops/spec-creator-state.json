@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T06:48:44Z",
+  "updated_at": "2026-08-29T07:07:30Z",
   "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal, initial v1 evidence, and the stronger exact-head manifest-member integrity CI from PR #22. Freshness preregistration freezes 001 and 002 remain rejected and do not authorize implementation. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
