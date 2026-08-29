@@ -31,6 +31,9 @@ jobs:
           python -m pip install --disable-pip-version-check -c .github/ci-constraints.txt -e . pytest==9.1.1
           python -m pip check
 
+      - name: Validate integrity CI policy
+        run: python ops/validate_integrity_ci_policy.py
+
       - name: Validate additive control plane
         run: python ops/validate_control_plane.py
 
