@@ -29,6 +29,7 @@ def main() -> None:
         "least-privilege contents permission": "permissions:\n  contents: read",
         "pinned runner": f"runs-on: {RUNNER}",
         "pinned checkout action": f"actions/checkout@{CHECKOUT_SHA}",
+        "credentialless checkout": "persist-credentials: false",
         "pinned setup-python action": f"actions/setup-python@{SETUP_PYTHON_SHA}",
         "pinned Python runtime": f"python-version: '{PYTHON_VERSION}'",
         "constraints-backed cache": "cache-dependency-path: .github/ci-constraints.txt",
@@ -45,6 +46,18 @@ def main() -> None:
     for label, fragment in required_fragments.items():
         if fragment not in workflow:
             fail(f"integrity workflow lost required invariant: {label}")
+
+    policy_pos = workflow.find("run: python ops/validate_integrity_ci_policy.py")
+    install_pos = workflow.find("python -m pip install")
+    if policy_pos < 0 or install_pos < 0 or policy_pos > install_pos:
+        fail("CI-policy validation must run before package/dependency installation")
+
+    checkout_block = re.search(
+        rf"uses:\s*actions/checkout@{CHECKOUT_SHA}[^\n]*\n(?P<body>(?:\s+[^\n]*\n){{1,8}})",
+        workflow,
+    )
+    if not checkout_block or "persist-credentials: false" not in checkout_block.group("body"):
+        fail("checkout must explicitly disable persisted repository credentials")
 
     allowed_uses = {
         f"actions/checkout@{CHECKOUT_SHA}",
@@ -76,7 +89,7 @@ def main() -> None:
     if "pytest==9.1.1" not in {line.lower() for line in constraint_lines}:
         fail("CI constraints must pin pytest==9.1.1")
 
-    print("PASS: integrity CI policy is pinned, least-privilege, reproducible, and fail-closed")
+    print("PASS: integrity CI policy is credentialless, pre-install, pinned, least-privilege, reproducible, and fail-closed")
 
 
 if __name__ == "__main__":
