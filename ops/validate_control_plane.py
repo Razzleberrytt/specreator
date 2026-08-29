@@ -61,6 +61,7 @@ def main() -> None:
             "observation_basis_main_sha",
             "observation_basis_tree_sha",
             "baseline_bytes_present",
+            "restoration_integrity_verified",
             "baseline_reconciled",
         },
         "repository observation",
@@ -74,6 +75,10 @@ def main() -> None:
         if not isinstance(value, str) or len(value) != 40:
             fail(f"repository {key} must be a 40-character git SHA")
 
+    if repo["restoration_integrity_verified"] and not repo["baseline_bytes_present"]:
+        fail("restoration integrity cannot be verified when baseline bytes are absent")
+    if repo["baseline_reconciled"] and not repo["restoration_integrity_verified"]:
+        fail("baseline cannot be reconciled before restoration integrity is verified")
     if state["phase"] == "BASELINE_RECONSTRUCTION_BLOCKED" and repo["baseline_reconciled"]:
         fail("blocked baseline phase cannot claim a reconciled baseline")
 
@@ -91,7 +96,7 @@ def main() -> None:
     if candidate["version"] != "0.11.1":
         fail("active candidate must remain v0.11.1 until baseline reconciliation")
     if not repo["baseline_reconciled"] and candidate["exact_candidate_sha"] is not None:
-        fail("exact candidate SHA cannot be authoritative before baseline reconciliation")
+        fail("exact candidate SHA cannot become release authority before lane-5 reconciliation")
 
     if repo["baseline_bytes_present"]:
         contract = load_json("versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json")
@@ -103,20 +108,25 @@ def main() -> None:
     blocker_ids = [item["id"] for item in blockers]
     if len(blocker_ids) != len(set(blocker_ids)):
         fail("duplicate blocker id")
-    if not repo["baseline_reconciled"] and "BLK-BASELINE-001" not in blocker_ids:
-        fail("baseline blocker must remain explicit until reconciliation completes")
 
     receipt = state["verification_receipt"]
-    if not repo["baseline_reconciled"] and receipt.get("freshness") in {"FRESH", "VALID", "CURRENT"}:
-        fail("verification cannot be fresh/current before baseline reconciliation")
+    if receipt.get("freshness") in {"FRESH", "VALID", "CURRENT"}:
+        if not repo["restoration_integrity_verified"]:
+            fail("fresh verification requires verified restoration integrity")
+        if not receipt.get("identity"):
+            fail("fresh verification must bind an exact verification identity")
+
+    if not repo["baseline_bytes_present"]:
+        expected_action = "RECOVER_CANONICAL_V0_11_1_BASELINE"
+    elif not repo["restoration_integrity_verified"]:
+        expected_action = "VERIFY_RESTORED_V0_11_1_BASELINE_INTEGRITY"
+    elif not repo["baseline_reconciled"]:
+        expected_action = "RECONCILE_RESTORED_V0_11_1_BASELINE"
+    else:
+        expected_action = None
 
     next_action = state["next_legal_transition"]["action"]
-    expected_action = (
-        "VERIFY_RESTORED_V0_11_1_BASELINE_INTEGRITY"
-        if repo["baseline_bytes_present"]
-        else "RECOVER_CANONICAL_V0_11_1_BASELINE"
-    )
-    if next_action != expected_action:
+    if expected_action is not None and next_action != expected_action:
         fail(f"next legal action must be {expected_action}")
 
     claim_ids = []
@@ -132,7 +142,7 @@ def main() -> None:
         fail("duplicate work-claim task id")
 
     if not repo["baseline_reconciled"] and trajectory["prospective_successors"]:
-        fail("successor admission is prohibited before v0.11.1 baseline reconciliation/seal")
+        fail("successor admission is prohibited before v0.11.1 baseline reconciliation")
 
     trajectory_blockers = trajectory["objective_v1_must_blockers"]
     declared_count = trajectory["convergence_review"]["must_blocker_count"]
@@ -141,10 +151,7 @@ def main() -> None:
     if state["v1_convergence"]["must_blocker_count"] != declared_count:
         fail("canonical state and trajectory disagree on v1 MUST blocker count")
 
-    print(
-        "PASS: control-plane metadata internally consistent; "
-        "baseline integrity/reconciliation remains fail-closed"
-    )
+    print("PASS: control-plane metadata internally consistent and fail-closed")
 
 
 if __name__ == "__main__":
