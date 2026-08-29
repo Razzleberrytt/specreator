@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-29T02:00:24Z",
+  "staleness_policy": {
+    "default_ttl_seconds": 7200,
+    "expired_claim_status": "STALE",
+    "rule": "A claim is live only while status is ACTIVE and expires_at is in the future. Incompatible live claims block mutation of the same scope."
+  },
+  "claims": [
+    {
+      "task_id": "L1-BASELINE-RECONSTRUCTION-001",
+      "owner_lane": "lane-1",
+      "scope": [
+        "canonical-v0.11.1-baseline-reconstruction",
+        "historical-integrity-validation",
+        "release-seal-prerequisites",
+        "ops-control-plane-bootstrap"
+      ],
+      "candidate_version": "0.11.1",
+      "exact_candidate_sha": null,
+      "release_identity": "UNKNOWN_UNTIL_CANONICAL_BASELINE_RECOVERED",
+      "claimed_at": "2026-08-29T02:00:24Z",
+      "heartbeat_at": "2026-08-29T02:00:24Z",
+      "updated_at": "2026-08-29T02:00:24Z",
+      "expires_at": "2026-08-29T04:00:24Z",
+      "status": "ACTIVE_BLOCKED",
+      "blocker": "BLK-BASELINE-001",
+      "incompatible_scopes": [
+        "v0.11.1-release-seal",
+        "authoritative-shipping-manifest-generation",
+        "successor-capability-implementation"
+      ]
+    }
+  ]
+}
