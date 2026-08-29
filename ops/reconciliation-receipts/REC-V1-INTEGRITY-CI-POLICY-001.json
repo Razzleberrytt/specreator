@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-INTEGRITY-CI-POLICY-001",
+  "recorded_at": "2026-08-29T09:48:30Z",
+  "authority": "lane-5",
+  "transition_type": "EVIDENCE_ONLY_RECONCILIATION",
+  "source_pr": 28,
+  "source_head_sha": "9ccbc1c1d759ffc89db6f12a9099682dc1ccb31f",
+  "source_merge_sha": "53c74e0118545c31ec96b1e8b5f708142259c6eb",
+  "source_merge_tree_sha": "cb60938067256d04bf4b234e9f37edc8d89dc0cf",
+  "workflow_run_id": 33244659617,
+  "workflow_job_id": 99079933514,
+  "workflow_conclusion": "success",
+  "accepted_evidence": {
+    "integrity_policy_validator": "ops/validate_integrity_ci_policy.py",
+    "policy_validation_step": "PASS",
+    "control_plane_validation_step": "PASS",
+    "historical_package_materialization_step": "PASS",
+    "frozen_historical_release_validation_step": "PASS",
+    "enforced_policy_scope": [
+      "least-privilege workflow permissions",
+      "immutable GitHub Actions refs",
+      "pinned runner and Python runtime",
+      "constraints-backed dependency installation and cache binding",
+      "dependency consistency checking",
+      "historical manifest/package/preflight/workspace/pytest gates"
+    ]
+  },
+  "v1_mapping": {
+    "blocker_id": "V1-MUST-INTEGRITY-001",
+    "effect": "SUPPORTING_EVIDENCE_ONLY",
+    "must_blocker_count_before": 6,
+    "must_blocker_count_after": 6,
+    "remaining_gap": "MUST-11 threat-model/adversarial-security evidence remains unproven."
+  },
+  "historical_release_effect": {
+    "v0_11_1_resealed": false,
+    "historical_sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed"
+  },
+  "verifier_scope_effect": "NONE",
+  "phase_effect": "NONE",
+  "successor_implementation_authorized": false
+}
