@@ -55,6 +55,16 @@ def step_has_exact_line(step: list[str], pattern: str) -> bool:
     return any(re.fullmatch(pattern, line) for line in step)
 
 
+def step_run_commands(step: list[str]) -> list[str]:
+    """Return active top-level run commands declared by one workflow step."""
+    commands: list[str] = []
+    for line in step:
+        match = re.fullmatch(r"\s{8}run:\s*(.+)", line)
+        if match:
+            commands.append(match.group(1).strip())
+    return commands
+
+
 def main() -> None:
     if not WORKFLOW.is_file() or not CONSTRAINTS.is_file():
         fail("integrity workflow and CI constraints must both exist")
@@ -141,13 +151,10 @@ def main() -> None:
     install_step_indexes = [
         index
         for index, step in enumerate(steps)
-        if any(
-            "python -m pip install" in line and not line.lstrip().startswith("#")
-            for line in step
-        )
+        if any("python -m pip install" in command for command in step_run_commands(step))
     ]
     if len(install_step_indexes) != 1:
-        fail("integrity workflow must contain exactly one active dependency-install step")
+        fail("integrity workflow must contain exactly one approved dependency-install step")
 
     policy_index = policy_step_indexes[0]
     control_index = control_plane_step_indexes[0]
@@ -157,6 +164,22 @@ def main() -> None:
         fail(
             "CI-policy validation and dependency-free control-plane validation must run "
             "before setup-python and package/dependency installation"
+        )
+
+    # Fail closed at the dependency-free boundary. Before control-plane
+    # validation, the only executable `run:` step permitted is the policy
+    # validator itself. This rejects alternate installer spellings (`pip`,
+    # `pip3`, `uv`, `poetry`, shell bootstrap commands, etc.) without trying to
+    # maintain an incomplete installer-name denylist.
+    for index, step in enumerate(steps[:control_index]):
+        commands = step_run_commands(step)
+        if not commands:
+            continue
+        if index == policy_index and commands == ["python ops/validate_integrity_ci_policy.py"]:
+            continue
+        fail(
+            "no executable run step other than CI-policy validation may occur "
+            "before dependency-free control-plane validation"
         )
 
     allowed_uses = {
