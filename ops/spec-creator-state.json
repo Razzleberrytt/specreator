@@ -1,7 +1,7 @@
 {
   "schema_version": "1.5",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T04:48:17Z",
+  "updated_at": "2026-08-29T04:59:45Z",
   "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and the initial v1 evidence. The first V1-MUST-FRESHNESS-001 preregistration freeze is preserved but rejected for implementation authority because its executable inputs and complete acceptance semantics were not immutably bound. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",
@@ -51,7 +51,7 @@
     "lane-5": "major-phase-reconciliation-roadmap-convergence-and-final-release-authority"
   },
   "blockers": [],
-  "live_claims": [],
+  "live_claims": ["L1-PREREG-FREEZE-INTEGRITY-CI-001"],
   "latest_handoff_receipt_ids": [
     "REC-V0111-BASELINE-RECONCILE-001",
     "REC-V1-EVIDENCE-RECONCILE-001",
