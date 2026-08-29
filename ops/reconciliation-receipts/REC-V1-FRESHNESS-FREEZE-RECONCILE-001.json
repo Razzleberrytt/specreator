@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "REC-V1-FRESHNESS-FREEZE-RECONCILE-001",
+  "receipt_type": "LANE5_PREREGISTRATION_RECONCILIATION",
+  "created_at": "2026-08-29T04:48:17Z",
+  "basis_main_sha": "2f64304e39228202a3d6d03c1c3c15153126a868",
+  "basis_main_tree_sha": "019b00b03ff481cf688019bb4995f491cbc7aca8",
+  "blocker_id": "V1-MUST-FRESHNESS-001",
+  "merged_preregistration": {
+    "pr_number": 17,
+    "merge_sha": "9e1ccc3fc238fb194ca427a674b23cd09a0cddea",
+    "freeze_id": "V1-FRESHNESS-FREEZE-001",
+    "contract_id": "V1-FRESHNESS-PREREG-001",
+    "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+    "declared_bundle_hash": "9831a59d7009a416d0ac425fd250cffc09ad8b935a0242ec4e4f9b74b8761688"
+  },
+  "mechanical_findings": [
+    {
+      "severity": "P1",
+      "finding": "The 21 mutation rows do not bind concrete executable fixtures, mutations, governed identities, or dependency/provenance edges, so implementation could choose experiment inputs after freeze."
+    },
+    {
+      "severity": "P1",
+      "finding": "The matrix freeze projection hashes case IDs but not complete expected outcomes, allowing expected affected/stale/reuse semantics to change without changing the declared matrix hash."
+    },
+    {
+      "severity": "P1",
+      "finding": "The contract freeze projection omits metric targets, guardrail definitions, failure criteria, and missing-data policy, allowing acceptance semantics to weaken without changing the declared contract hash."
+    },
+    {
+      "severity": "P2",
+      "finding": "The Lane-2 live claim and canonical live_claims field were temporarily inconsistent; the claim is now completed, but the defect confirms the merged freeze did not satisfy control-plane consistency at review time."
+    }
+  ],
+  "review_source": {
+    "pr_number": 17,
+    "comment_id": 5460338166
+  },
+  "decision": "REJECT_FOR_IMPLEMENTATION_AUTHORITY",
+  "decision_reason": "The merged artifacts are preserved as a failed frozen preregistration attempt, but they are not sufficiently immutable or independently reproducible to authorize successor implementation under the preserved governance sequence.",
+  "required_retry": {
+    "owner_lane": "lane-2",
+    "action": "PREREGISTER_V1_FRESHNESS_MUTATION_MATRIX_RETRY",
+    "requirements": [
+      "preserve V1-FRESHNESS-FREEZE-001 unchanged as failed history",
+      "create a separately identified retry contract/matrix/freeze",
+      "bind every case to concrete immutable executable fixture inputs, exact mutation identity, governed artifact identities, and explicit provenance/dependency edges",
+      "hash the complete canonical case definitions including expected affected/stale/safe-reuse outputs",
+      "hash all metric targets, guardrail definitions, failure criteria, missing-data policy, parent guardrails, and implementation-scope constraints",
+      "keep implementation authority pending Lane-5 reconciliation after the retry freeze"
+    ]
+  },
+  "implementation_authorized": false,
+  "v1_must_blocker_count_before": 6,
+  "v1_must_blocker_count_after": 6,
+  "historical_v0_11_1_authority_changed": false,
+  "new_v0_11_1_seal_created": false
+}
