@@ -1,0 +1,30 @@
+{
+  "contract_hash_ok": true,
+  "frozen_artifact_count": 18,
+  "frozen_drift_count": 0,
+  "historical_baseline_count": 457,
+  "historical_drift": [],
+  "historical_drift_count": 0,
+  "ok": true,
+  "protocol_metrics": {
+    "artifact_provenance_completeness_rate": 1.0,
+    "critical_gate_bypass_count": 0,
+    "deterministic_rerun_rate": 1.0,
+    "end_to_end_project_completion_rate": 1.0,
+    "invalid_or_hash_mismatched_resume_escape_count": 0,
+    "manual_artifact_reconstruction_count": 0,
+    "owner_decision_escape_count": 0,
+    "prerequisite_escape_count": 0,
+    "promoted_stage_semantic_preservation_rate": 1.0,
+    "resume_exact_match_rate": 1.0,
+    "scope_escape_count": 0
+  },
+  "pytest_returncode": 0,
+  "pytest_tail": [
+    "...........                                                              [100%]",
+    "155 passed in 14.91s"
+  ],
+  "recommendation": "PROMOTED AS EXPERIMENTAL",
+  "transfer_3_of_3": true,
+  "verifier_actor": "verifier:independent-pass-010"
+}

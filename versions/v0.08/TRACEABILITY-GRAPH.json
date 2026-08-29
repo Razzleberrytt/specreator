@@ -1,0 +1,516 @@
+{
+  "edges": [
+    {
+      "from": "G-008-001",
+      "relation": "requires",
+      "to": "REQ-008-001"
+    },
+    {
+      "from": "G-008-002",
+      "relation": "requires",
+      "to": "REQ-008-002"
+    },
+    {
+      "from": "G-008-003",
+      "relation": "requires",
+      "to": "REQ-008-003"
+    },
+    {
+      "from": "G-008-002",
+      "relation": "requires",
+      "to": "REQ-008-004"
+    },
+    {
+      "from": "G-008-002",
+      "relation": "requires",
+      "to": "REQ-008-005"
+    },
+    {
+      "from": "G-008-003",
+      "relation": "requires",
+      "to": "REQ-008-006"
+    },
+    {
+      "from": "G-008-003",
+      "relation": "requires",
+      "to": "REQ-008-007"
+    },
+    {
+      "from": "G-008-003",
+      "relation": "requires",
+      "to": "REQ-008-008"
+    },
+    {
+      "from": "G-008-001",
+      "relation": "requires",
+      "to": "REQ-008-009"
+    },
+    {
+      "from": "G-008-005",
+      "relation": "requires",
+      "to": "REQ-008-010"
+    },
+    {
+      "from": "G-008-001",
+      "relation": "requires",
+      "to": "REQ-008-011"
+    },
+    {
+      "from": "G-008-005",
+      "relation": "requires",
+      "to": "REQ-008-012"
+    },
+    {
+      "from": "G-008-004",
+      "relation": "requires",
+      "to": "REQ-008-013"
+    },
+    {
+      "from": "REQ-008-001",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-01"
+    },
+    {
+      "from": "REQ-008-003",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-01"
+    },
+    {
+      "from": "FEAT-008-SELF-01",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-01"
+    },
+    {
+      "from": "TASK-008-SELF-01",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-01"
+    },
+    {
+      "from": "TEST-008-SELF-01",
+      "relation": "gated_by",
+      "to": "GATE-008-COMPILE"
+    },
+    {
+      "from": "REQ-008-002",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-02"
+    },
+    {
+      "from": "REQ-008-004",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-02"
+    },
+    {
+      "from": "FEAT-008-SELF-02",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-02"
+    },
+    {
+      "from": "TASK-008-SELF-02",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-02"
+    },
+    {
+      "from": "TEST-008-SELF-02",
+      "relation": "gated_by",
+      "to": "GATE-008-OWNER-BLOCK"
+    },
+    {
+      "from": "TASK-008-SELF-01",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-02"
+    },
+    {
+      "from": "REQ-008-005",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-03"
+    },
+    {
+      "from": "REQ-008-006",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-03"
+    },
+    {
+      "from": "FEAT-008-SELF-03",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-03"
+    },
+    {
+      "from": "TASK-008-SELF-03",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-03"
+    },
+    {
+      "from": "TEST-008-SELF-03",
+      "relation": "gated_by",
+      "to": "GATE-008-ATOMICITY"
+    },
+    {
+      "from": "TASK-008-SELF-02",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-03"
+    },
+    {
+      "from": "REQ-008-007",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-04"
+    },
+    {
+      "from": "REQ-008-008",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-04"
+    },
+    {
+      "from": "FEAT-008-SELF-04",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-04"
+    },
+    {
+      "from": "TASK-008-SELF-04",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-04"
+    },
+    {
+      "from": "TEST-008-SELF-04",
+      "relation": "gated_by",
+      "to": "GATE-008-PARALLEL"
+    },
+    {
+      "from": "TASK-008-SELF-03",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-04"
+    },
+    {
+      "from": "REQ-008-009",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-05"
+    },
+    {
+      "from": "REQ-008-011",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-05"
+    },
+    {
+      "from": "FEAT-008-SELF-05",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-05"
+    },
+    {
+      "from": "TASK-008-SELF-05",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-05"
+    },
+    {
+      "from": "TEST-008-SELF-05",
+      "relation": "gated_by",
+      "to": "GATE-008-CLI"
+    },
+    {
+      "from": "TASK-008-SELF-04",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-05"
+    },
+    {
+      "from": "REQ-008-013",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-06"
+    },
+    {
+      "from": "FEAT-008-SELF-06",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-06"
+    },
+    {
+      "from": "TASK-008-SELF-06",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-06"
+    },
+    {
+      "from": "TEST-008-SELF-06",
+      "relation": "gated_by",
+      "to": "GATE-008-EXECUTION"
+    },
+    {
+      "from": "TASK-008-SELF-05",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-06"
+    },
+    {
+      "from": "REQ-008-010",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-07"
+    },
+    {
+      "from": "REQ-008-012",
+      "relation": "realized_by",
+      "to": "FEAT-008-SELF-07"
+    },
+    {
+      "from": "FEAT-008-SELF-07",
+      "relation": "decomposed_to",
+      "to": "TASK-008-SELF-07"
+    },
+    {
+      "from": "TASK-008-SELF-07",
+      "relation": "verified_by",
+      "to": "TEST-008-SELF-07"
+    },
+    {
+      "from": "TEST-008-SELF-07",
+      "relation": "gated_by",
+      "to": "GATE-008-INDEPENDENT"
+    },
+    {
+      "from": "TASK-008-SELF-06",
+      "relation": "precedes",
+      "to": "TASK-008-SELF-07"
+    }
+  ],
+  "graph_id": "TG-008-SELF-001",
+  "nodes": [
+    {
+      "id": "G-008-001",
+      "label": "G-008-001",
+      "type": "goal"
+    },
+    {
+      "id": "G-008-002",
+      "label": "G-008-002",
+      "type": "goal"
+    },
+    {
+      "id": "G-008-003",
+      "label": "G-008-003",
+      "type": "goal"
+    },
+    {
+      "id": "G-008-004",
+      "label": "G-008-004",
+      "type": "goal"
+    },
+    {
+      "id": "G-008-005",
+      "label": "G-008-005",
+      "type": "goal"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-001",
+      "label": "REQ-008-001",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-002",
+      "label": "REQ-008-002",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-003",
+      "label": "REQ-008-003",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-004",
+      "label": "REQ-008-004",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-005",
+      "label": "REQ-008-005",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-006",
+      "label": "REQ-008-006",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-007",
+      "label": "REQ-008-007",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-008",
+      "label": "REQ-008-008",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-009",
+      "label": "REQ-008-009",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-010",
+      "label": "REQ-008-010",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-011",
+      "label": "REQ-008-011",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-012",
+      "label": "REQ-008-012",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-008-013",
+      "label": "REQ-008-013",
+      "type": "requirement"
+    },
+    {
+      "id": "FEAT-008-SELF-01",
+      "label": "FEAT-008-SELF-01",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-01",
+      "label": "TASK-008-SELF-01",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-01",
+      "label": "TEST-008-SELF-01",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-COMPILE",
+      "label": "GATE-008-COMPILE",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-02",
+      "label": "FEAT-008-SELF-02",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-02",
+      "label": "TASK-008-SELF-02",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-02",
+      "label": "TEST-008-SELF-02",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-OWNER-BLOCK",
+      "label": "GATE-008-OWNER-BLOCK",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-03",
+      "label": "FEAT-008-SELF-03",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-03",
+      "label": "TASK-008-SELF-03",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-03",
+      "label": "TEST-008-SELF-03",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-ATOMICITY",
+      "label": "GATE-008-ATOMICITY",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-04",
+      "label": "FEAT-008-SELF-04",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-04",
+      "label": "TASK-008-SELF-04",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-04",
+      "label": "TEST-008-SELF-04",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-PARALLEL",
+      "label": "GATE-008-PARALLEL",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-05",
+      "label": "FEAT-008-SELF-05",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-05",
+      "label": "TASK-008-SELF-05",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-05",
+      "label": "TEST-008-SELF-05",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-CLI",
+      "label": "GATE-008-CLI",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-06",
+      "label": "FEAT-008-SELF-06",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-06",
+      "label": "TASK-008-SELF-06",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-06",
+      "label": "TEST-008-SELF-06",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-EXECUTION",
+      "label": "GATE-008-EXECUTION",
+      "type": "gate"
+    },
+    {
+      "id": "FEAT-008-SELF-07",
+      "label": "FEAT-008-SELF-07",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-008-SELF-07",
+      "label": "TASK-008-SELF-07",
+      "type": "task"
+    },
+    {
+      "id": "TEST-008-SELF-07",
+      "label": "TEST-008-SELF-07",
+      "type": "test"
+    },
+    {
+      "id": "GATE-008-INDEPENDENT",
+      "label": "GATE-008-INDEPENDENT",
+      "type": "gate"
+    }
+  ],
+  "schema_version": "1.0"
+}

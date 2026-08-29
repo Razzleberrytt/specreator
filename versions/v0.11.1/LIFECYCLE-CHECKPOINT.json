@@ -1,0 +1,71 @@
+{
+  "blockers": [],
+  "candidate_version": "0.11.1",
+  "checkpoint_id": "LCP-0111-PROMOTED-001",
+  "immutable_boundary": {
+    "hash_algorithm": "sha256",
+    "historical_versions": [
+      "0.11",
+      "0.10",
+      "0.09.2",
+      "0.09",
+      "0.09.1",
+      "0.08",
+      "0.07",
+      "0.06.1",
+      "0.06",
+      "0.05",
+      "0.04",
+      "0.03",
+      "0.02",
+      "0.01"
+    ],
+    "mutation_rule": "Frozen registry artifacts, v0.10/earlier protected bytes, and failed-v0.11 baseline bytes are immutable. Only selector-admitted unbound v0.11.1 outputs may be created.",
+    "registry_id": "FROZEN-REGISTRY-0111-001",
+    "registry_ref": "versions/v0.11.1/FROZEN-ARTIFACT-REGISTRY.json"
+  },
+  "next_legal_action": {
+    "action_id": "ACT-012-BEGIN-DISCOVERY-001",
+    "action_token": "begin_successor_discovery",
+    "allowed_actor": "authoritative Spec Creator continuation context",
+    "description": "Open v0.12 Crash-Safe Resume & Reuse as a new unfrozen discovery cycle using sealed v0.11.1 as immutable promoted parent.",
+    "required_inputs": [
+      "versions/v0.11.1/MANIFEST.json",
+      "versions/v0.11.1/RETROSPECTIVE.md",
+      "versions/v0.11.1/CONTINUATION.md",
+      "roadmap/ROADMAP-to-v1.00-v0.11-DRAFT.md"
+    ],
+    "expected_outputs": [
+      "unfrozen v0.12 discovery artifacts",
+      "machine-readable v0.12 lifecycle checkpoint"
+    ]
+  },
+  "notes": [
+    "Independent verification evidence for source checkpoint SHA-256 43c0bc83c83b1c6eaec325140aeaa3b853662b93a88bfb36a0a906f1a394459a returned READY_FOR_RELEASE_SEAL with zero blocking defects.",
+    "Authoritative release sealing independently recomputed frozen registry, parent/history hashes, ownership closure, frozen metrics, regression status, and package integrity before committing promotion.",
+    "Promotion ceiling remains PROMOTED AS EXPERIMENTAL; no general speedup claim is authorized by shadow evidence."
+  ],
+  "parent_version": "0.10",
+  "release_state": "PROMOTED_EXPERIMENTAL",
+  "required_artifacts": [
+    "versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json",
+    "versions/v0.11.1/FROZEN-ARTIFACT-REGISTRY.json",
+    "versions/v0.11.1/RELEASE-DECISION.json",
+    "versions/v0.11.1/MANIFEST.json",
+    "versions/v0.11.1/RETROSPECTIVE.md",
+    "versions/v0.11.1/ROLLBACK.json",
+    "PACKAGE-MANIFEST.json"
+  ],
+  "schema_version": "1.0-candidate",
+  "stop_condition": "v0.11.1 is sealed and promoted experimental. Successor discovery may begin, but no v0.12 freeze or implementation may occur until v0.12 satisfies its own governed preregistration and independent prefreeze review gates.",
+  "transition_rule_ref": "versions/v0.11.1/LIFECYCLE-TRANSITION-RULES.candidate.json",
+  "validation_profile": {
+    "profile_id": "VAL-0111-SEALED-001",
+    "commands": [
+      "python -m pytest -q",
+      "PYTHONPATH=src python -m spec_creator.cli validate .",
+      "python versions/v0.11.1/tools/frozen_contract_preflight.py"
+    ],
+    "success_condition": "All tests pass; full workspace including final PACKAGE-MANIFEST validates; frozen registry/history/ownership closure remain exact."
+  }
+}

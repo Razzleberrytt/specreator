@@ -1,0 +1,156 @@
+{
+  "universe_id": "OWN-0111-DRAFT-001",
+  "status": "UNFROZEN_SELECTOR_BASED_RETRY_UNIVERSE",
+  "class": "MUTABLE_RETRY_SUCCESSOR",
+  "candidate_version": "0.11.1",
+  "authority_model": "frozen_selectors_plus_auditable_current_snapshot",
+  "package_path_rule": "After immutable precedence, a path is retry-successor-owned iff it matches exactly one selector below. The current snapshot is evidence, not the authority for future additions.",
+  "selectors": [
+    {
+      "selector_id": "S-0111-ROOT-MANIFEST",
+      "kind": "exact",
+      "value": "PACKAGE-MANIFEST.json"
+    },
+    {
+      "selector_id": "S-0111-VERSION-TOPLEVEL",
+      "kind": "directory_filename_in",
+      "directory": "versions/v0.11.1/",
+      "values": [
+        "ACTIVE-REGRESSION-UNIVERSE.json",
+        "CONTINUATION.md",
+        "DEC-0034.json",
+        "DEFECT-RESOLUTION-POSTFREEZE-001.json",
+        "DEPENDENCY-PROVENANCE-RULES.candidate.json",
+        "DISCOVERY.md",
+        "EVALUATION-DESIGN.json",
+        "EVALUATION-PLAN.json",
+        "EVALUATION-UNIVERSES.json",
+        "EXECUTION-TRIAL-PROTOCOL.json",
+        "FAILED-PREDECESSOR-v0.11-BASELINE.json",
+        "FREEZE-RECORD.json",
+        "FROZEN-ARTIFACT-REGISTRY.json",
+        "FROZEN-RELEASE-CONTRACT.json",
+        "IMMUTABILITY-BOUNDARY-DRAFT.json",
+        "INDEPENDENT-PREFREEZE-REVIEW-PROMPT.md",
+        "INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+        "LIFECYCLE-CHECKPOINT-DRAFT.json",
+        "LIFECYCLE-CHECKPOINT.json",
+        "LIFECYCLE-TRANSITION-RULES.candidate.json",
+        "MANIFEST.json",
+        "PARENT-SUITE-UNIVERSE.json",
+        "PREFREEZE-READINESS.md",
+        "PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+        "PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+        "RELEASE-DECISION.json",
+        "RETROSPECTIVE.md",
+        "ROADMAP-AMENDMENT.md",
+        "ROLLBACK.json",
+        "SPEC-CREATOR-v0.11.1.md",
+        "SUCCESSOR-OWNERSHIP-UNIVERSE.json"
+      ]
+    },
+    {
+      "selector_id": "S-0111-CANDIDATE-SCHEMAS",
+      "kind": "prefix",
+      "value": "versions/v0.11.1/candidate-schemas/"
+    },
+    {
+      "selector_id": "S-0111-CANDIDATE-FIXTURES",
+      "kind": "prefix",
+      "value": "versions/v0.11.1/candidate-fixtures/"
+    },
+    {
+      "selector_id": "S-0111-TOOLS",
+      "kind": "prefix",
+      "value": "versions/v0.11.1/tools/"
+    },
+    {
+      "selector_id": "S-0111-REVIEW-EVIDENCE",
+      "kind": "prefix",
+      "value": "versions/v0.11.1/review-evidence/"
+    },
+    {
+      "selector_id": "S-0111-RELEASE-SNAPSHOT",
+      "kind": "prefix",
+      "value": "versions/v0.11.1/RELEASE-SNAPSHOT/"
+    },
+    {
+      "selector_id": "S-0111-IMPLEMENTATION-NAMESPACE",
+      "kind": "prefix",
+      "value": "src/spec_creator/v0111/"
+    },
+    {
+      "selector_id": "S-0111-TEST-NAMESPACE",
+      "kind": "prefix",
+      "value": "tests/v0111/"
+    },
+    {
+      "selector_id": "S-0111-EVAL-PREFIX",
+      "kind": "directory_filename_prefix",
+      "directory": "evaluation/",
+      "value": "v0111-"
+    },
+    {
+      "selector_id": "S-0111-PYTEST-EVIDENCE",
+      "kind": "directory_filename_prefix",
+      "directory": "evaluation/",
+      "value": "pytest-v0.11.1-"
+    },
+    {
+      "selector_id": "S-0111-WORKSPACE-EVIDENCE",
+      "kind": "directory_filename_prefix",
+      "directory": "evaluation/",
+      "value": "workspace-validation-v0.11.1-"
+    }
+  ],
+  "selector_overlap_policy": "A retry-successor path must match exactly one successor selector. Immutable classes take precedence and may not match any successor selector.",
+  "prospective_output_fixture_ref": "versions/v0.11.1/candidate-fixtures/ownership-prospective-paths.json",
+  "current_snapshot_generated_after_all_preregistration_artifacts": true,
+  "current_snapshot_member_count": 36,
+  "current_snapshot_members": [
+    "PACKAGE-MANIFEST.json",
+    "evaluation/pytest-v0.11.1-preregistration.txt",
+    "evaluation/v0111-ownership-classification.json",
+    "evaluation/v0111-preregistration-preflight.txt",
+    "evaluation/v0111-preregistration-summary.json",
+    "evaluation/v0111-reg0025-reproduction.json",
+    "evaluation/v0111-target-nonweakening.json",
+    "evaluation/workspace-validation-v0.11.1-preregistration.txt",
+    "versions/v0.11.1/ACTIVE-REGRESSION-UNIVERSE.json",
+    "versions/v0.11.1/CONTINUATION.md",
+    "versions/v0.11.1/DEC-0034.json",
+    "versions/v0.11.1/DEFECT-RESOLUTION-POSTFREEZE-001.json",
+    "versions/v0.11.1/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+    "versions/v0.11.1/DISCOVERY.md",
+    "versions/v0.11.1/EVALUATION-DESIGN.json",
+    "versions/v0.11.1/EVALUATION-PLAN.json",
+    "versions/v0.11.1/EVALUATION-UNIVERSES.json",
+    "versions/v0.11.1/EXECUTION-TRIAL-PROTOCOL.json",
+    "versions/v0.11.1/FAILED-PREDECESSOR-v0.11-BASELINE.json",
+    "versions/v0.11.1/IMMUTABILITY-BOUNDARY-DRAFT.json",
+    "versions/v0.11.1/INDEPENDENT-PREFREEZE-REVIEW-PROMPT.md",
+    "versions/v0.11.1/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+    "versions/v0.11.1/LIFECYCLE-CHECKPOINT-DRAFT.json",
+    "versions/v0.11.1/LIFECYCLE-TRANSITION-RULES.candidate.json",
+    "versions/v0.11.1/PARENT-SUITE-UNIVERSE.json",
+    "versions/v0.11.1/PREFREEZE-READINESS.md",
+    "versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+    "versions/v0.11.1/ROADMAP-AMENDMENT.md",
+    "versions/v0.11.1/SPEC-CREATOR-v0.11.1.md",
+    "versions/v0.11.1/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+    "versions/v0.11.1/candidate-fixtures/execution-architecture-corpus.jsonl",
+    "versions/v0.11.1/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+    "versions/v0.11.1/candidate-fixtures/ownership-prospective-paths.json",
+    "versions/v0.11.1/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+    "versions/v0.11.1/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "versions/v0.11.1/tools/preregistration_preflight.py"
+  ],
+  "zero_tolerance_rules": {
+    "unclassified_count": 0,
+    "immutable_successor_overlap_count": 0,
+    "successor_selector_multi_match_count": 0,
+    "stale_snapshot_member_count": 0,
+    "prospective_output_classification_error_count": 0
+  },
+  "semantic_note": "Retry ownership uses bounded selectors: explicit retry top-level filenames plus dedicated namespaces for candidate assets, tools, independent review evidence, release snapshots, implementation, tests, and evaluation evidence. Ownership never implies write authority after a path is hash-bound."
+}

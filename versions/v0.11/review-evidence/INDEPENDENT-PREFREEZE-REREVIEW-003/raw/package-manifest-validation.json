@@ -1,0 +1,8 @@
+{
+  "manifest_entry_count": 1223,
+  "expected_non_self_file_count": 1223,
+  "missing_paths": [],
+  "stale_paths": [],
+  "hash_or_size_mismatches": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/candidates/v0.11/execution-architecture-v1.json",
+  "title": "Execution Architecture Candidate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "strategy",
+    "objective",
+    "obligation_set_hash",
+    "source_task_graph_hash",
+    "optimization_actions",
+    "tasks",
+    "critical_paths",
+    "execution_waves",
+    "parallelism_policy",
+    "integration_points",
+    "plan_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0-candidate"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^EPLAN-[A-Za-z0-9._-]+$"
+    },
+    "strategy": {
+      "enum": [
+        "serial_control",
+        "optimized_parallel_ready"
+      ]
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "obligation_set_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_task_graph_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "optimization_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "pillar",
+          "justification"
+        ],
+        "properties": {
+          "action": {
+            "enum": [
+              "eliminate",
+              "reuse",
+              "simplify",
+              "remove_false_dependency",
+              "partition",
+              "rebalance",
+              "parallelize",
+              "overlap_latency",
+              "defer",
+              "none"
+            ]
+          },
+          "pillar": {
+            "type": "string",
+            "minLength": 1
+          },
+          "justification": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "source_task_ids",
+          "dependencies",
+          "estimated_work_units",
+          "read_scopes",
+          "write_scopes",
+          "context_contract",
+          "cache_contract",
+          "retry_boundary",
+          "integration_contract",
+          "verification_contract"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "task_id",
+                "provenance",
+                "reason"
+              ],
+              "properties": {
+                "task_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "provenance": {
+                  "enum": [
+                    "source_requirement",
+                    "artifact_input",
+                    "authority_gate",
+                    "explicit_integration",
+                    "conflict_serialization"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "estimated_work_units": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "read_scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "write_scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "context_contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "required_refs",
+              "selection_rule"
+            ],
+            "properties": {
+              "required_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "selection_rule": {
+                "type": "string",
+                "minLength": 1
+              },
+              "canonical_payload_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              }
+            }
+          },
+          "cache_contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "cacheable",
+              "identity_inputs",
+              "invalidation_conditions"
+            ],
+            "properties": {
+              "cacheable": {
+                "type": "boolean"
+              },
+              "identity_inputs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invalidation_conditions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "retry_boundary": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "boundary_id",
+              "rerun_scope",
+              "preserve_successful_independent_work"
+            ],
+            "properties": {
+              "boundary_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rerun_scope": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "preserve_successful_independent_work": {
+                "type": "boolean"
+              }
+            }
+          },
+          "integration_contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "outputs",
+              "consumer_ids",
+              "merge_rule"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "consumer_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "merge_rule": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "verification_contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "acceptance_refs",
+              "verifier_role"
+            ],
+            "properties": {
+              "acceptance_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verifier_role": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "speculative": {
+            "type": "boolean",
+            "default": false
+          },
+          "authoritative_before_prerequisites": {
+            "type": "boolean",
+            "default": false
+          },
+          "source_task_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "critical_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_ids",
+          "total_work_units"
+        ],
+        "properties": {
+          "task_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "total_work_units": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "execution_waves": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "parallelism_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_useful_not_max_count",
+        "dependency_path_blocks",
+        "write_conflict_blocks",
+        "speculative_non_authority_required"
+      ],
+      "properties": {
+        "max_useful_not_max_count": {
+          "const": true
+        },
+        "dependency_path_blocks": {
+          "const": true
+        },
+        "write_conflict_blocks": {
+          "const": true
+        },
+        "speculative_non_authority_required": {
+          "const": true
+        }
+      }
+    },
+    "integration_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "integration_id",
+          "producer_ids",
+          "consumer_id",
+          "rule"
+        ],
+        "properties": {
+          "integration_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "producer_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "consumer_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rule": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "bottleneck_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "plan_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "benchmark_id": "BENCH-008-001",
+  "candidate_version": "0.08",
+  "compiler_case_count": 60,
+  "compiler_categories": {
+    "accepted_basic": 8,
+    "accepted_conflict": 8,
+    "accepted_dependency": 8,
+    "atomicity_refinement": 12,
+    "dependency_cycle": 8,
+    "owner_blocker": 8,
+    "parent_invalid": 8
+  },
+  "execution_case_count": 16,
+  "partition_policy": "Partition labels and expected outputs are frozen before implementation; heldout labels may not be edited after freeze.",
+  "reference_rules": [
+    "Requirement/test/gate membership derives only from traceability edges.",
+    "Dependencies derive only from trace precedes, explicit order, or unique artifact producer-consumer evidence.",
+    "Conflict zones are assigned by lexically sorted shared write scope.",
+    "Topological tie-break is lexical source_task_id.",
+    "No automatic task splitting is allowed.",
+    "Execution state is replayed from append-only events tied to graph hash."
+  ]
+}

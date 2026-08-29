@@ -1,0 +1,46 @@
+{
+  "case_count": 3,
+  "cases": [
+    {
+      "case_id": "PROTO-010-NORMAL-01",
+      "scenario": "normal",
+      "schema_errors": [],
+      "task_project_diagnostics": [],
+      "trace_diagnostics": [],
+      "trace_ok": true
+    },
+    {
+      "case_id": "PROTO-010-BLOCKER-RECOVERY-01",
+      "scenario": "blocker_recovery",
+      "schema_errors": [],
+      "task_project_diagnostics": [],
+      "trace_diagnostics": [],
+      "trace_ok": true
+    },
+    {
+      "case_id": "PROTO-010-RESUME-01",
+      "scenario": "resume",
+      "schema_errors": [],
+      "task_project_diagnostics": [],
+      "trace_diagnostics": [],
+      "trace_ok": true
+    }
+  ],
+  "corpus_sha256": "8d28f3c89b856185b8854a87fe7bc8243f757bb68bb5da2c42e4ae881f8b199f",
+  "ok": true,
+  "required_scenarios_present": [
+    "blocker_recovery",
+    "normal",
+    "resume"
+  ],
+  "schema_results": {
+    "protocol-project-v1.schema.json": {
+      "sha256": "2644d17f3c1192eb9122306185a11e9102ae4d234cea4263632d9fe833df5812",
+      "valid_schema": true
+    },
+    "protocol-run-v1.schema.json": {
+      "sha256": "89469c1b859d2b5f9feb5d6946930d349cef2ea8c15c4942da3c08f6120176e6",
+      "valid_schema": true
+    }
+  }
+}

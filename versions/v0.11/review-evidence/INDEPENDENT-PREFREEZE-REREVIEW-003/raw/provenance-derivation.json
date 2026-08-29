@@ -1,0 +1,269 @@
+{
+  "explicit_edges": [
+    {
+      "edge": "EXEC-011-001-LINEAR::A->B",
+      "producer": "A",
+      "consumer": "B",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-001-LINEAR::B->C",
+      "producer": "B",
+      "consumer": "C",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-002-DIAMOND::A->B",
+      "producer": "A",
+      "consumer": "B",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-002-DIAMOND::A->C",
+      "producer": "A",
+      "consumer": "C",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-002-DIAMOND::B->D",
+      "producer": "B",
+      "consumer": "D",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-002-DIAMOND::C->D",
+      "producer": "C",
+      "consumer": "D",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-003-CONFLICT::A->C",
+      "producer": "A",
+      "consumer": "C",
+      "authored": "explicit_integration",
+      "semantic_matches": [
+        "explicit_integration"
+      ],
+      "match_count": 1,
+      "derived": "explicit_integration",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-003-CONFLICT::B->C",
+      "producer": "B",
+      "consumer": "C",
+      "authored": "explicit_integration",
+      "semantic_matches": [
+        "explicit_integration"
+      ],
+      "match_count": 1,
+      "derived": "explicit_integration",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::A->B",
+      "producer": "A",
+      "consumer": "B",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::A->C",
+      "producer": "A",
+      "consumer": "C",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::A->D",
+      "producer": "A",
+      "consumer": "D",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::B->E",
+      "producer": "B",
+      "consumer": "E",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::C->E",
+      "producer": "C",
+      "consumer": "E",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-004-LOAD-BALANCE::D->E",
+      "producer": "D",
+      "consumer": "E",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-005-SPECULATIVE::DECIDE->IMPLEMENT",
+      "producer": "DECIDE",
+      "consumer": "IMPLEMENT",
+      "authored": "authority_gate",
+      "semantic_matches": [
+        "authority_gate"
+      ],
+      "match_count": 1,
+      "derived": "authority_gate",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-005-SPECULATIVE::IMPLEMENT->VERIFY",
+      "producer": "IMPLEMENT",
+      "consumer": "VERIFY",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-005-SPECULATIVE::PREP->VERIFY",
+      "producer": "PREP",
+      "consumer": "VERIFY",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-006-RETRY-ISOLATION::A->B",
+      "producer": "A",
+      "consumer": "B",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-006-RETRY-ISOLATION::A->C",
+      "producer": "A",
+      "consumer": "C",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-006-RETRY-ISOLATION::B->D",
+      "producer": "B",
+      "consumer": "D",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    },
+    {
+      "edge": "EXEC-011-006-RETRY-ISOLATION::C->D",
+      "producer": "C",
+      "consumer": "D",
+      "authored": "artifact_input",
+      "semantic_matches": [
+        "artifact_input"
+      ],
+      "match_count": 1,
+      "derived": "artifact_input",
+      "classification_match": true
+    }
+  ],
+  "explicit_count": 21,
+  "zero_match_edges": [],
+  "multi_match_edges": [],
+  "misclassified_edges": [],
+  "derived_conflict_edges": [
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "edges": [
+        "A->B"
+      ]
+    }
+  ],
+  "verdict": "PASS"
+}

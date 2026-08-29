@@ -1,0 +1,95 @@
+EE..E.EE.EEEEE.......................................................... [ 74%]
+.........................                                                [100%]
+==================================== ERRORS ====================================
+______ ERROR at setup of test_frozen_candidate_detection_and_diagnostics _______
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py, line 10
+  def test_frozen_candidate_detection_and_diagnostics(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py:10
+____________ ERROR at setup of test_decision_needed_classification _____________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py, line 24
+  def test_decision_needed_classification(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py:24
+______________ ERROR at setup of test_traceability_impact_context ______________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py, line 61
+  def test_traceability_impact_context(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py:61
+___________________ ERROR at setup of test_question_priority ___________________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py, line 85
+  def test_question_priority(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py:85
+____________ ERROR at setup of test_question_generation_guardrails _____________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py, line 90
+  def test_question_generation_guardrails(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity.py:90
+_____________________ ERROR at setup of test_ambiguity_cli _____________________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py, line 11
+  def test_ambiguity_cli(project_root, tmp_path):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py:11
+___________ ERROR at setup of test_ambiguity_cli_clean_returns_zero ____________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py, line 27
+  def test_ambiguity_cli_clean_returns_zero(project_root, tmp_path):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py:27
+_____________ ERROR at setup of test_evaluate_ambiguity_corpus_cli _____________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py, line 40
+  def test_evaluate_ambiguity_corpus_cli(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_cli.py:40
+___________ ERROR at setup of test_clarification_interception_proxy ____________
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_evaluator.py, line 7
+  def test_clarification_interception_proxy(project_root):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_evaluator.py:7
+_____ ERROR at setup of test_frozen_ambiguity_evaluator_refuses_hash_drift _____
+file /mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_evaluator.py, line 15
+  def test_frozen_ambiguity_evaluator_refuses_hash_drift(project_root, tmp_path):
+E       fixture 'project_root' not found
+>       available fixtures: _class_scoped_runner, _function_scoped_runner, _module_scoped_runner, _package_scoped_runner, _session_faker, _session_scoped_runner, anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, ddspan, ddtracer, doctest_namespace, event_loop_policy, faker, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, helpers, include_metadata_in_junit_xml, json_metadata, metadata, monkeypatch, no_cover, patch_all, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory, unused_tcp_port, unused_tcp_port_factory, unused_udp_port, unused_udp_port_factory, valid_workspace
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/mnt/data/spec_creator_v004_work/spec-creator/tests/test_ambiguity_evaluator.py:15
+=========================== short test summary info ============================
+ERROR tests/test_ambiguity.py::test_frozen_candidate_detection_and_diagnostics
+ERROR tests/test_ambiguity.py::test_decision_needed_classification
+ERROR tests/test_ambiguity.py::test_traceability_impact_context
+ERROR tests/test_ambiguity.py::test_question_priority
+ERROR tests/test_ambiguity.py::test_question_generation_guardrails
+ERROR tests/test_ambiguity_cli.py::test_ambiguity_cli
+ERROR tests/test_ambiguity_cli.py::test_ambiguity_cli_clean_returns_zero
+ERROR tests/test_ambiguity_cli.py::test_evaluate_ambiguity_corpus_cli
+ERROR tests/test_ambiguity_evaluator.py::test_clarification_interception_proxy
+ERROR tests/test_ambiguity_evaluator.py::test_frozen_ambiguity_evaluator_refuses_hash_drift
+87 passed, 10 errors in 2.41s

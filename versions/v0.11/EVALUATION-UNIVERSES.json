@@ -1,0 +1,242 @@
+{
+  "artifact_id": "EVAL-UNIVERSES-011-DRAFT-002",
+  "status": "PREREGISTRATION_DRAFT",
+  "candidate_version": "0.11",
+  "universes": {
+    "lifecycle_fixtures": {
+      "members": [
+        "LIFE-011-001-DISCOVERY",
+        "LIFE-011-002-BLOCKED-PREFREEZE",
+        "LIFE-011-003-FROZEN",
+        "LIFE-011-004-VERIFYING"
+      ],
+      "count": 4,
+      "source_ref": "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl"
+    },
+    "execution_fixtures": {
+      "members": [
+        "EXEC-011-001-LINEAR",
+        "EXEC-011-002-DIAMOND",
+        "EXEC-011-003-CONFLICT",
+        "EXEC-011-004-LOAD-BALANCE",
+        "EXEC-011-005-SPECULATIVE",
+        "EXEC-011-006-RETRY-ISOLATION"
+      ],
+      "count": 6,
+      "source_ref": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl"
+    },
+    "critical_path_fixtures": {
+      "members": [
+        "EXEC-011-001-LINEAR",
+        "EXEC-011-002-DIAMOND",
+        "EXEC-011-003-CONFLICT",
+        "EXEC-011-004-LOAD-BALANCE",
+        "EXEC-011-005-SPECULATIVE",
+        "EXEC-011-006-RETRY-ISOLATION"
+      ],
+      "count": 6,
+      "selection_rule": "all six canonical execution fixtures; ties are represented as a set of all maximum-weight paths"
+    },
+    "failure_injection_fixtures": {
+      "members": [
+        "EXEC-011-006-RETRY-ISOLATION"
+      ],
+      "count": 1
+    },
+    "integration_source_tasks": {
+      "members": [
+        "EXEC-011-001-LINEAR::A",
+        "EXEC-011-001-LINEAR::B",
+        "EXEC-011-001-LINEAR::C",
+        "EXEC-011-002-DIAMOND::A",
+        "EXEC-011-002-DIAMOND::B",
+        "EXEC-011-002-DIAMOND::C",
+        "EXEC-011-002-DIAMOND::D",
+        "EXEC-011-003-CONFLICT::A",
+        "EXEC-011-003-CONFLICT::B",
+        "EXEC-011-003-CONFLICT::C",
+        "EXEC-011-004-LOAD-BALANCE::A",
+        "EXEC-011-004-LOAD-BALANCE::B",
+        "EXEC-011-004-LOAD-BALANCE::C",
+        "EXEC-011-004-LOAD-BALANCE::D",
+        "EXEC-011-004-LOAD-BALANCE::E",
+        "EXEC-011-005-SPECULATIVE::DECIDE",
+        "EXEC-011-005-SPECULATIVE::PREP",
+        "EXEC-011-005-SPECULATIVE::IMPLEMENT",
+        "EXEC-011-005-SPECULATIVE::VERIFY",
+        "EXEC-011-006-RETRY-ISOLATION::A",
+        "EXEC-011-006-RETRY-ISOLATION::B",
+        "EXEC-011-006-RETRY-ISOLATION::C",
+        "EXEC-011-006-RETRY-ISOLATION::D"
+      ],
+      "count": 23,
+      "selection_rule": "every source task in all six canonical execution fixtures; denominator is independent of emitted workstream count"
+    },
+    "explicit_dependency_edges": {
+      "members": [
+        "EXEC-011-001-LINEAR::A->B",
+        "EXEC-011-001-LINEAR::B->C",
+        "EXEC-011-002-DIAMOND::A->B",
+        "EXEC-011-002-DIAMOND::A->C",
+        "EXEC-011-002-DIAMOND::B->D",
+        "EXEC-011-002-DIAMOND::C->D",
+        "EXEC-011-003-CONFLICT::A->C",
+        "EXEC-011-003-CONFLICT::B->C",
+        "EXEC-011-004-LOAD-BALANCE::A->B",
+        "EXEC-011-004-LOAD-BALANCE::A->C",
+        "EXEC-011-004-LOAD-BALANCE::A->D",
+        "EXEC-011-004-LOAD-BALANCE::B->E",
+        "EXEC-011-004-LOAD-BALANCE::C->E",
+        "EXEC-011-004-LOAD-BALANCE::D->E",
+        "EXEC-011-005-SPECULATIVE::DECIDE->IMPLEMENT",
+        "EXEC-011-005-SPECULATIVE::IMPLEMENT->VERIFY",
+        "EXEC-011-005-SPECULATIVE::PREP->VERIFY",
+        "EXEC-011-006-RETRY-ISOLATION::A->B",
+        "EXEC-011-006-RETRY-ISOLATION::A->C",
+        "EXEC-011-006-RETRY-ISOLATION::B->D",
+        "EXEC-011-006-RETRY-ISOLATION::C->D"
+      ],
+      "count": 21
+    },
+    "derived_conflict_edges": {
+      "members": [
+        "EXEC-011-003-CONFLICT::A->B"
+      ],
+      "count": 1,
+      "derivation_ref": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json"
+    },
+    "effective_dependency_edges": {
+      "members": [
+        "EXEC-011-001-LINEAR::A->B",
+        "EXEC-011-001-LINEAR::B->C",
+        "EXEC-011-002-DIAMOND::A->B",
+        "EXEC-011-002-DIAMOND::A->C",
+        "EXEC-011-002-DIAMOND::B->D",
+        "EXEC-011-002-DIAMOND::C->D",
+        "EXEC-011-003-CONFLICT::A->C",
+        "EXEC-011-003-CONFLICT::B->C",
+        "EXEC-011-004-LOAD-BALANCE::A->B",
+        "EXEC-011-004-LOAD-BALANCE::A->C",
+        "EXEC-011-004-LOAD-BALANCE::A->D",
+        "EXEC-011-004-LOAD-BALANCE::B->E",
+        "EXEC-011-004-LOAD-BALANCE::C->E",
+        "EXEC-011-004-LOAD-BALANCE::D->E",
+        "EXEC-011-005-SPECULATIVE::DECIDE->IMPLEMENT",
+        "EXEC-011-005-SPECULATIVE::IMPLEMENT->VERIFY",
+        "EXEC-011-005-SPECULATIVE::PREP->VERIFY",
+        "EXEC-011-006-RETRY-ISOLATION::A->B",
+        "EXEC-011-006-RETRY-ISOLATION::A->C",
+        "EXEC-011-006-RETRY-ISOLATION::B->D",
+        "EXEC-011-006-RETRY-ISOLATION::C->D",
+        "EXEC-011-003-CONFLICT::A->B"
+      ],
+      "count": 22
+    },
+    "parent_suite": {
+      "ref": "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+      "count": 155
+    },
+    "active_regressions": {
+      "ref": "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+      "count": 24
+    },
+    "frozen_parent_hash_entries": {
+      "manifest_ref": "versions/v0.10/MANIFEST.json",
+      "selector": "content_hashes key/value pairs exactly; no exclusions",
+      "count": 1120
+    },
+    "mandatory_quality_gates": {
+      "members": [
+        "candidate_schema_validity",
+        "candidate_fixture_oracle_preflight",
+        "parent_suite",
+        "active_regressions",
+        "frozen_parent_hash_integrity",
+        "independent_prefreeze_review",
+        "independent_verification",
+        "package_manifest_validation"
+      ],
+      "count": 8
+    },
+    "mandatory_evidence_slots": {
+      "members": [
+        "metric::next_legal_action_exact_match_rate",
+        "metric::critical_path_exact_match_rate",
+        "metric::execution_wave_exact_match_rate",
+        "metric::retry_isolation_exact_match_rate",
+        "metric::integration_contract_completeness_rate",
+        "metric::unsafe_parallelization_count",
+        "metric::unsupported_dependency_edge_count",
+        "metric::speculative_authority_escape_count",
+        "metric::hidden_manual_state_reconstruction_count",
+        "metric::immutable_boundary_classification_error_count",
+        "metric::parent_suite_pass_rate",
+        "metric::active_regression_pass_rate",
+        "metric::frozen_parent_hash_integrity_rate",
+        "metric::missing_data_count",
+        "metric::critical_gate_bypass_count",
+        "gate::candidate_schema_validity",
+        "gate::candidate_fixture_oracle_preflight",
+        "gate::parent_suite",
+        "gate::active_regressions",
+        "gate::frozen_parent_hash_integrity",
+        "gate::independent_prefreeze_review",
+        "gate::independent_verification",
+        "gate::package_manifest_validation",
+        "evidence::independent_prefreeze_review",
+        "evidence::package_validation"
+      ],
+      "count": 25,
+      "interpretation": "Every member requires an explicit outcome/evidence record. UNAVAILABLE is permitted only where the metric protocol permits it, but omission is missing data."
+    },
+    "speculative_fixtures": {
+      "members": [
+        "EXEC-011-005-SPECULATIVE"
+      ],
+      "count": 1
+    },
+    "immutable_boundary_assertions": {
+      "classification_universe_ref": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "package_path_rule": "all non-transient shipped package files, including root PACKAGE-MANIFEST.json",
+      "protected_selector": {
+        "manifest_ref": "versions/v0.10/MANIFEST.json",
+        "selector": "union of every content_hashes key plus IMMUTABILITY-BOUNDARY-DRAFT.json protected_release_manifests",
+        "content_hash_count": 1120,
+        "expected_unique_count": 1121,
+        "expected_class": "IMMUTABLE_PARENT",
+        "precedence": 1
+      },
+      "successor_selector": {
+        "universe_ref": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+        "selector": "every exact members entry",
+        "count": 103,
+        "expected_class": "MUTABLE_SUCCESSOR",
+        "precedence": 2
+      },
+      "classification_rule": "Every shipped package path must classify exactly once. Protected-parent has first precedence; every remaining path must be an exact successor member. Any overlap, stale successor member, or path matching neither class counts as an error.",
+      "expected_unclassified_count": 0,
+      "expected_overlap_count": 0,
+      "expected_stale_successor_member_count": 0
+    },
+    "metric_outcome_slots": {
+      "members": [
+        "next_legal_action_exact_match_rate",
+        "critical_path_exact_match_rate",
+        "execution_wave_exact_match_rate",
+        "retry_isolation_exact_match_rate",
+        "integration_contract_completeness_rate",
+        "unsafe_parallelization_count",
+        "unsupported_dependency_edge_count",
+        "speculative_authority_escape_count",
+        "hidden_manual_state_reconstruction_count",
+        "immutable_boundary_classification_error_count",
+        "parent_suite_pass_rate",
+        "active_regression_pass_rate",
+        "frozen_parent_hash_integrity_rate",
+        "missing_data_count",
+        "critical_gate_bypass_count"
+      ],
+      "count": 15
+    }
+  }
+}

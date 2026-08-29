@@ -1,0 +1,147 @@
+{
+  "candidate_version": "0.07",
+  "case_categories": {
+    "batch_budget": 8,
+    "clean_governed": 12,
+    "dependency": 16,
+    "safe_default": 20,
+    "unsafe_default": 16
+  },
+  "corpus": {
+    "case_count": 72,
+    "combined_path": "fixtures/discovery/v0.07/corpus.jsonl",
+    "combined_sha256": "31e13b98991543208e453faa89d2277282646f8110483fab1ea9a8d9b3c272ad",
+    "development_case_count": 38,
+    "development_path": "fixtures/discovery/v0.07/development.jsonl",
+    "development_sha256": "24018e1224e8ecc24417618872a3cdaef558ceb660eadce66fe9ea0d8ffa0c7e",
+    "heldout_case_count": 34,
+    "heldout_path": "fixtures/discovery/v0.07/heldout.jsonl",
+    "heldout_policy": "Held-out expected labels are frozen before implementation and may not be changed to accommodate implementation results.",
+    "heldout_sha256": "064d0b1a78e708cb071fa9c28db8b7b0f1b98cb5e70f0c9f81e14e0282f3848e"
+  },
+  "created_at_utc": "2026-08-24T16:08:00Z",
+  "evaluation_plan_id": "EPLAN-007-001",
+  "frozen_denominators": {
+    "all_expected_action_count": 98,
+    "baseline_question_count": 92,
+    "case_count": 72,
+    "dependency_case_count": 16,
+    "expected_adaptive_question_batch_count": 40,
+    "heldout_action_count": 47,
+    "heldout_case_count": 34,
+    "priority_case_count": 24,
+    "safe_default_case_count": 20,
+    "unsafe_default_case_count": 16
+  },
+  "guardrail_metrics": [
+    {
+      "name": "safe_inference_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "unsafe_default_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "critical_ambiguity_escape_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "dependency_frontier_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "provenance_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "unnecessary_question_rate",
+      "target_operator": "lte",
+      "target_value": 0.05
+    },
+    {
+      "name": "rework_proxy_error_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "active_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "v007_spec_lint_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "package_manifest_validation_error_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0
+    }
+  ],
+  "implementation_visibility_limit": "The benchmark is synthetic and created in the same recursive cycle; held-out labels are partitioned and hash-locked but not independent external evidence.",
+  "missing_data_policy": "Missing, unreadable, skipped, or unscored cases are incomplete evidence. They may not be counted as passes, zero failures, or zero questions.",
+  "parent_preflight": {
+    "artifact": "evaluation/v007-preregistration-preflight.json",
+    "checks": [
+      "v0.04 linter accepts every embedded Markdown document",
+      "v0.06.1 ambiguity analyzer reproduces each frozen baseline question denominator",
+      "v0.05 traceability validator accepts every embedded graph"
+    ],
+    "required_rate": 1.0
+  },
+  "parent_version": "0.06.1",
+  "primary_metrics": [
+    {
+      "definition": "(baseline_question_count - adaptive_question_batch_count) / baseline_question_count",
+      "name": "owner_question_reduction_rate",
+      "target_operator": "gte",
+      "target_value": 0.4
+    },
+    {
+      "definition": "priority/dependency cases whose selected ready question batch exactly matches preregistration / priority cases",
+      "name": "information_value_top_selection_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "definition": "held-out candidate action records exactly matching preregistered action/value labels / held-out expected action records",
+      "name": "heldout_action_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95
+    }
+  ],
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "shadow_evaluation": {
+    "inputs": [
+      "versions/v0.04/SPEC-CREATOR-v0.04.md",
+      "versions/v0.05/SPEC-CREATOR-v0.05.md",
+      "versions/v0.06.1/SPEC-CREATOR-v0.06.1.md",
+      "versions/v0.07/SPEC-CREATOR-v0.07.md"
+    ],
+    "purpose": "Observe behavior on real project specifications without rewriting synthetic frozen criteria.",
+    "required": true,
+    "use_for_promotion": false
+  }
+}

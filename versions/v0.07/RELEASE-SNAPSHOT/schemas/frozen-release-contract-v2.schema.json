@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/frozen-release-contract-v2.json",
+  "title": "Frozen Successor Release Contract v2",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "schema_version",
+    "parent_version",
+    "candidate_version",
+    "frozen_at_utc",
+    "goals",
+    "requirements",
+    "mandatory_gates",
+    "applicable_regressions",
+    "primary_metrics",
+    "guardrail_metrics",
+    "failure_conditions",
+    "promotion_conditions",
+    "rollback_expectations",
+    "evaluator_independence",
+    "hash_algorithm",
+    "hash_scope",
+    "contract_hash"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "pattern": "^REL-[A-Za-z0-9._-]+$"
+    },
+    "schema_version": {
+      "const": "2.0"
+    },
+    "parent_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "frozen_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "goal_id",
+          "description",
+          "acceptance"
+        ],
+        "properties": {
+          "goal_id": {
+            "type": "string",
+            "pattern": "^G-[A-Za-z0-9._-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "acceptance": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "requirement_id",
+          "description",
+          "critical"
+        ],
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^REQ-[A-Za-z0-9._-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "critical": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mandatory_gates": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^GATE-[A-Za-z0-9._-]+$"
+      }
+    },
+    "applicable_regressions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^REG-[A-Za-z0-9._-]+$"
+      }
+    },
+    "primary_metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/metricTarget"
+      }
+    },
+    "guardrail_metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/metricTarget"
+      }
+    },
+    "failure_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "promotion_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "rollback_expectations": {
+      "type": "object",
+      "required": [
+        "rollback_target",
+        "preserve_parent_history",
+        "parent_contract_sha256",
+        "expectation"
+      ],
+      "properties": {
+        "rollback_target": {
+          "type": "string"
+        },
+        "preserve_parent_history": {
+          "const": true
+        },
+        "parent_contract_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "expectation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "evaluator_independence": {
+      "type": "object",
+      "required": [
+        "implementation_actor_id",
+        "required_evaluator_actor_id",
+        "must_differ"
+      ],
+      "properties": {
+        "implementation_actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_evaluator_actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "must_differ": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "hash_algorithm": {
+      "const": "sha256"
+    },
+    "hash_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "metricTarget": {
+      "type": "object",
+      "required": [
+        "metric_id",
+        "name",
+        "target_operator",
+        "target_value",
+        "unit"
+      ],
+      "properties": {
+        "metric_id": {
+          "type": "string",
+          "pattern": "^M-[A-Za-z0-9._-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_operator": {
+          "enum": [
+            "eq",
+            "gte",
+            "lte",
+            "gt",
+            "lt"
+          ]
+        },
+        "target_value": {
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "ratio",
+            "count",
+            "percent",
+            "seconds",
+            "minutes",
+            "hours",
+            "effort_units"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

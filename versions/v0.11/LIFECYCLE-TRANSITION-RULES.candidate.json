@@ -1,0 +1,252 @@
+{
+  "artifact_id": "LIFECYCLE-RULES-011-CANDIDATE-001",
+  "status": "PREREGISTRATION_DRAFT",
+  "candidate_version": "0.11",
+  "input_contract": {
+    "state_field": "state",
+    "blockers_field": "blockers",
+    "blockers_semantics": "set of exact blocker tokens"
+  },
+  "resolution_algorithm": [
+    "Select rules whose state equals the input state.",
+    "A rule matches only when its blocker_predicate evaluates true.",
+    "Select the matching rule with the numerically lowest priority.",
+    "Zero matches or a priority tie is an invalid/unrecoverable lifecycle state.",
+    "Return that rule action exactly; authored fixture expected_next_action is comparison evidence, not an input to resolution."
+  ],
+  "blocker_predicates": {
+    "empty": "len(blockers) == 0",
+    "nonempty": "len(blockers) > 0",
+    "contains_any": "at least one listed token is in blockers"
+  },
+  "rules": [
+    {
+      "rule_id": "LR-001",
+      "priority": 100,
+      "state": "UNFROZEN_DISCOVERY",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "prepare_preregistration"
+    },
+    {
+      "rule_id": "LR-002",
+      "priority": 200,
+      "state": "UNFROZEN_DISCOVERY",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_discovery_blockers"
+    },
+    {
+      "rule_id": "LR-006",
+      "priority": 30,
+      "state": "PREFREEZE_REVIEW",
+      "blocker_predicate": {
+        "kind": "contains_any",
+        "tokens": [
+          "parent_preflight_failed"
+        ]
+      },
+      "action": "repair_or_reject_prefreeze"
+    },
+    {
+      "rule_id": "LR-007",
+      "priority": 40,
+      "state": "PREFREEZE_REVIEW",
+      "blocker_predicate": {
+        "kind": "contains_any",
+        "tokens": [
+          "independent_prefreeze_review_failed"
+        ]
+      },
+      "action": "repair_preregistration"
+    },
+    {
+      "rule_id": "LR-008",
+      "priority": 100,
+      "state": "PREFREEZE_REVIEW",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "prepare_freeze_transaction"
+    },
+    {
+      "rule_id": "LR-009",
+      "priority": 200,
+      "state": "PREFREEZE_REVIEW",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_prefreeze_blockers"
+    },
+    {
+      "rule_id": "LR-010",
+      "priority": 100,
+      "state": "FROZEN",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "implement_frozen_candidate"
+    },
+    {
+      "rule_id": "LR-011",
+      "priority": 200,
+      "state": "FROZEN",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "halt_on_frozen_state_blocker"
+    },
+    {
+      "rule_id": "LR-012",
+      "priority": 100,
+      "state": "IMPLEMENTING",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "continue_implementation"
+    },
+    {
+      "rule_id": "LR-013",
+      "priority": 200,
+      "state": "IMPLEMENTING",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_implementation_blocker"
+    },
+    {
+      "rule_id": "LR-014",
+      "priority": 100,
+      "state": "VERIFYING",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "independent_verification"
+    },
+    {
+      "rule_id": "LR-015",
+      "priority": 200,
+      "state": "VERIFYING",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_verification_blocker"
+    },
+    {
+      "rule_id": "LR-016",
+      "priority": 100,
+      "state": "PROMOTED_EXPERIMENTAL",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "begin_successor_discovery"
+    },
+    {
+      "rule_id": "LR-017",
+      "priority": 200,
+      "state": "PROMOTED_EXPERIMENTAL",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_postpromotion_blocker"
+    },
+    {
+      "rule_id": "LR-018",
+      "priority": 100,
+      "state": "RETRY_REQUIRED",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "repair_and_retry"
+    },
+    {
+      "rule_id": "LR-019",
+      "priority": 200,
+      "state": "RETRY_REQUIRED",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "repair_and_retry"
+    },
+    {
+      "rule_id": "LR-020",
+      "priority": 100,
+      "state": "REJECTED",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "preserve_rejected_state"
+    },
+    {
+      "rule_id": "LR-021",
+      "priority": 200,
+      "state": "REJECTED",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "preserve_rejected_state"
+    },
+    {
+      "rule_id": "LR-022",
+      "priority": 100,
+      "state": "PAUSED",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "revalidate_before_resume"
+    },
+    {
+      "rule_id": "LR-023",
+      "priority": 200,
+      "state": "PAUSED",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_pause_blockers_before_resume"
+    },
+    {
+      "rule_id": "LR-003",
+      "priority": 100,
+      "state": "PREREGISTRATION_DRAFT",
+      "blocker_predicate": {
+        "kind": "empty"
+      },
+      "action": "independent_prefreeze_review"
+    },
+    {
+      "rule_id": "LR-004",
+      "priority": 30,
+      "state": "PREREGISTRATION_DRAFT",
+      "blocker_predicate": {
+        "kind": "contains_any",
+        "tokens": [
+          "independent_prefreeze_review_failed"
+        ]
+      },
+      "action": "repair_preregistration"
+    },
+    {
+      "rule_id": "LR-005A",
+      "priority": 40,
+      "state": "PREREGISTRATION_DRAFT",
+      "blocker_predicate": {
+        "kind": "contains_any",
+        "tokens": [
+          "independent_prefreeze_review_required"
+        ]
+      },
+      "action": "independent_prefreeze_review"
+    },
+    {
+      "rule_id": "LR-005",
+      "priority": 200,
+      "state": "PREREGISTRATION_DRAFT",
+      "blocker_predicate": {
+        "kind": "nonempty"
+      },
+      "action": "resolve_preregistration_blockers"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest

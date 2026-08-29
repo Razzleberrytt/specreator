@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-08-25T01:10:53Z",
+  "evidence_id": "PARENT-PREFLIGHT-0111-FREEZE-001",
+  "failed_v011_exact": 154,
+  "failed_v011_expected": 154,
+  "independent_review_recommendation": "READY_FOR_FREEZE_PREPARATION",
+  "parent_suite_exact": true,
+  "parent_suite_expected": 155,
+  "parent_suite_passed": 155,
+  "review_obligations_pass": true,
+  "review_source_hash_exact": true,
+  "v010_hash_exact": 1120,
+  "v010_hash_expected": 1120
+}

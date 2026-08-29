@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/event-v1.json",
+  "title": "Spec Creator Event v1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "project_id",
+    "event_time_utc",
+    "recorded_time_utc",
+    "actor_type",
+    "actor_id",
+    "event_type",
+    "event_version",
+    "phase",
+    "classification",
+    "severity",
+    "status",
+    "included_in_metrics"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^EVT-[A-Za-z0-9._-]+$"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_time_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_time_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_type": {
+      "enum": [
+        "user",
+        "agent",
+        "verifier",
+        "system",
+        "evaluator",
+        "external"
+      ]
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "enum": [
+        "discovery",
+        "specification",
+        "planning",
+        "implementation",
+        "verification",
+        "release",
+        "retrospective"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "normal",
+        "specification_clarification",
+        "implementation_defect",
+        "specification_defect",
+        "agent_execution_error",
+        "user_scope_change",
+        "external_dependency_failure",
+        "environment_failure",
+        "intentional_architectural_change",
+        "unrelated_maintenance",
+        "measurement",
+        "administrative"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "none",
+        "minor",
+        "moderate",
+        "major",
+        "critical"
+      ]
+    },
+    "status": {
+      "enum": [
+        "observed",
+        "open",
+        "resolved",
+        "accepted_risk",
+        "superseded",
+        "cancelled"
+      ]
+    },
+    "included_in_metrics": {
+      "type": "boolean"
+    },
+    "task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "milestone_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "feature_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "test_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "gate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "defect_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parent_event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

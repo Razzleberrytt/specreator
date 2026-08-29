@@ -1,0 +1,54 @@
+{
+  "attempt_id": "FREEZE-0111-ATTEMPT-002",
+  "frozen_targets_weakened": false,
+  "implementation_authorized": false,
+  "quarantined_artifacts": [
+    {
+      "bytes": 16809,
+      "path": "versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json",
+      "sha256": "5dc35a46bc744cb4bfe3743b82793ccd8a8952ad41ce9bb7ee8ce81da6b8d525"
+    },
+    {
+      "bytes": 7402,
+      "path": "versions/v0.11.1/FROZEN-ARTIFACT-REGISTRY.json",
+      "sha256": "b734a9e099244657d295ca4c76349131ba95fc0e5ecb06e7f34e9d27343e18d0"
+    },
+    {
+      "bytes": 8219,
+      "path": "versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+      "sha256": "ccaf2b97012132935268d85f461a717da42f42701cddbb2082d2109dfff616c1"
+    },
+    {
+      "bytes": 922,
+      "path": "versions/v0.11.1/FREEZE-RECORD.json",
+      "sha256": "bd33ae0c3fdb56d80d7661c64be0eee28fa35b8945e2aa166f32bfa7214eb3b3"
+    },
+    {
+      "bytes": 2767,
+      "path": "versions/v0.11.1/LIFECYCLE-CHECKPOINT.json",
+      "sha256": "a46fe23392955adb4d88a9cf5f8139a5f878a7e3915b3e8716c9acffbf57c364"
+    },
+    {
+      "bytes": 3723,
+      "path": "versions/v0.11.1/tools/frozen_contract_preflight.py",
+      "sha256": "a726499c3fb5f83f1e4db039dc85b57287c42d5343ba262489b2e5bf8da88d08"
+    },
+    {
+      "bytes": 1240,
+      "path": "evaluation/v0111-prefreeze-transaction-final.json",
+      "sha256": "4348ce19f39c5f96efe8f015dbd40cfc78dfbbad98e6507bcc166f769ef1e9f1"
+    },
+    {
+      "bytes": 10982,
+      "path": "evaluation/pytest-collect-v0.11.1-prefreeze-freeze.txt",
+      "sha256": "3bc90a91407644d3e561c9c74ed8d1ed88491dd989b08956279efc74e000ef51"
+    }
+  ],
+  "reason": [
+    "post-generation frozen preflight found one unclassified evidence filename outside the preregistered selector families",
+    "workspace validator rejected retry-local REG-0025 in schema-level applicable_regressions because the global regression ledger is protected v0.10 history"
+  ],
+  "recognized_freeze": false,
+  "recovery": "Rebuild in a staging copy. Use only selector-admitted output names. Keep REG-0025 mandatory through the frozen local active-regression universe, metric denominator=25, requirements, and failure conditions, while schema-level applicable_regressions remains the 24 inherited global IDs for legacy-validator compatibility. Promote staged artifacts into the authoritative package only after frozen preflight + workspace validation + pytest all pass.",
+  "status": "ABORTED_NOT_RECOGNIZED"
+}

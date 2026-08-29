@@ -1,0 +1,168 @@
+{
+  "$id": "https://spec-creator.local/schemas/task-compilation-project-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "discovery_plan": {
+      "additionalProperties": true,
+      "properties": {
+        "actions": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "action": {
+                "enum": [
+                  "infer_default",
+                  "already_governed",
+                  "ask_now",
+                  "defer_dependency",
+                  "defer_budget"
+                ]
+              },
+              "block_id": {
+                "type": "string"
+              },
+              "candidate_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "object"
+              },
+              "value": {}
+            },
+            "required": [
+              "candidate_id",
+              "action"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "actions"
+      ],
+      "type": "object"
+    },
+    "ordering_constraints": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "after_task_id": {
+            "pattern": "^TASK-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "before_task_id": {
+            "pattern": "^TASK-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "source_ref": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "before_task_id",
+          "after_task_id",
+          "source_ref"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "project_id": {
+      "pattern": "^TCP-[A-Za-z0-9._-]+$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_spec_ref": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "spec_text": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "task_metadata": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "consumes_artifacts": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "produces_artifacts": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "read_scopes": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "source_task_id": {
+            "pattern": "^TASK-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "wide_scope_authorization_ref": {
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "write_scopes": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "source_task_id",
+          "write_scopes",
+          "read_scopes",
+          "produces_artifacts",
+          "consumes_artifacts"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "traceability_graph": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "project_id",
+    "source_spec_ref",
+    "spec_text",
+    "traceability_graph",
+    "discovery_plan",
+    "task_metadata",
+    "ordering_constraints"
+  ],
+  "title": "Task Compilation Project v1",
+  "type": "object"
+}

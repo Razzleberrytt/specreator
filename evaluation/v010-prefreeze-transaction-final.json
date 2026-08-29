@@ -1,0 +1,37 @@
+{
+  "all_preconditions_green": true,
+  "bound_artifact_sha256": {
+    "evaluation/ambiguity-v0.10-prefreeze.json": "dd23da93fb7a1bef2a0cb9314569fa4fb9c55ccfe1447692872a37ec1e64ccb5",
+    "evaluation/hash-integrity-historical-v0.10-prefreeze.json": "0b246bfcfa3fffcf5fbf9eb7f23a01d291261b1152c7f00df570027d490e6fa9",
+    "evaluation/lint-v0.10-prefreeze.json": "c1818442f897a517edc5767b6c7768e4f31200fa48709c3418570d471c5def36",
+    "evaluation/pytest-v0.10-prefreeze.txt": "9843f3f6adb2af2b77a68edaea18ac97ad0d87c31b521b50f7d93f5bb308bbe2",
+    "evaluation/transfer-v0.10/raw-packages/trial-001-slug.zip": "8a3e7e4d2000e7402b00be041540d8d955047a6654582781f48cd67d8d2e3965",
+    "evaluation/transfer-v0.10/raw-packages/trial-002-manifest-cli.zip": "1a654436a744374fec81e2cb56d3a9433a2699829a45cada8979e153794ac1f6",
+    "evaluation/transfer-v0.10/raw-packages/trial-003-retry-after.zip": "e41fa7061ff8634c464d5bc3cc5a392148dec97e159439cd4a99f0addf7a5e63",
+    "evaluation/transfer-v0.10/trial-index.json": "71e131ee696e41a19a8d7c5776c88b6874bfa44ee8420d1efe7c2b8a14169a5f",
+    "evaluation/v010-parent-preflight.json": "9b81b464ac2448bfabb6c5f88053e7ff1079902927515073ed6e482f064d1885",
+    "evaluation/v010-schema-corpus-preflight.json": "61f4ace904be7cc5a76890ea7340c620e683458721aceaedb50d11e0e14be683",
+    "evaluation/v010-transfer-preflight.json": "78e17786e990a79c2a3e1ff48e6b74a5404656fc8c692f52cc6df1a21ef5586a",
+    "evaluation/workspace-validation-v0.10-prefreeze.json": "b65df417fd737813c080a3c097c38924e77ebca7432cd9ee9a9ee4971b608a90",
+    "fixtures/protocol/v0.10/corpus.jsonl": "8d28f3c89b856185b8854a87fe7bc8243f757bb68bb5da2c42e4ae881f8b199f",
+    "schemas/protocol-project-v1.schema.json": "2644d17f3c1192eb9122306185a11e9102ae4d234cea4263632d9fe833df5812",
+    "schemas/protocol-run-v1.schema.json": "89469c1b859d2b5f9feb5d6946930d349cef2ea8c15c4942da3c08f6120176e6",
+    "versions/v0.10/EVALUATION-PLAN.json": "1d7d21980e589232ce05b1a2ca337b95e12caf546c112f63bc1d0ab8c8421a7e",
+    "versions/v0.10/SPEC-CREATOR-v0.10.md": "2c07d5e7c3b9c5f283c0e4af80e991976310f47ea894f9e8f4688afb3d3673fb",
+    "versions/v0.10/TRANSFER-EVIDENCE-PROTOCOL.json": "f427f061d290cf4af2a3dceac135b66c8d49571c576d848377c5164c1d56b02b"
+  },
+  "candidate_version": "0.10",
+  "created_at_utc": "2026-08-24T18:42:18Z",
+  "preconditions": {
+    "current_suite_151_pass": true,
+    "external_transfer_preflight": true,
+    "historical_integrity": true,
+    "parent_preflight": true,
+    "schema_corpus_preflight": true,
+    "spec_ambiguity": true,
+    "spec_lint": true,
+    "workspace_validation": true
+  },
+  "rule": "FROZEN-RELEASE-CONTRACT.json may be created only if all preconditions are exactly true. Missing evidence is not true.",
+  "transaction_id": "PREFREEZE-010-FINAL-001"
+}

@@ -1,0 +1,17 @@
+{
+  "compiled_graph_hash": "fa51bcd92a992c20f5cf41a74dbe6e5788c418cab3cfca5527e78d6ba1b6ea58",
+  "compiled_task_count": 7,
+  "complete_critical_requirement_count": 13,
+  "coverage_rate": 1.0,
+  "critical_requirement_count": 13,
+  "final_states": {
+    "CTASK-008-SELF-01": "done",
+    "CTASK-008-SELF-02": "done",
+    "CTASK-008-SELF-03": "done",
+    "CTASK-008-SELF-04": "done",
+    "CTASK-008-SELF-05": "done",
+    "CTASK-008-SELF-06": "done",
+    "CTASK-008-SELF-07": "done"
+  },
+  "replay_ok": true
+}

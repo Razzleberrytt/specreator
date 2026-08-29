@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "request_id": "PREQ-0092-SELF-IMPLEMENT-001",
+  "status": "compiled",
+  "candidate_version": "0.09.2",
+  "graph_hash": "72e068602c636e47793ce93ca3be31152c56b448af27509913ea1a75e7a6a835",
+  "task_id": "CTASK-0092-SELF-01",
+  "prompt_kind": "implementation",
+  "actor_role": "implementation_agent",
+  "declared_write_scopes": [
+    "src/spec_creator/prompt_compiler.py"
+  ],
+  "allowed_write_scopes": [
+    "src/spec_creator/prompt_compiler.py"
+  ],
+  "prerequisite_states": [],
+  "source_requirement_ids": [
+    "REQ-0092-001",
+    "REQ-0092-002"
+  ],
+  "acceptance_criteria": [
+    "All frozen requirements assigned to this self-build task are satisfied with explicit evidence."
+  ],
+  "verification_refs": [
+    "TEST-0092-SELF-01"
+  ],
+  "gate_ids": [
+    "GATE-009-COMPILE"
+  ],
+  "frozen_criteria_refs": [
+    "frozen:REL-0.09.2.1-FROZEN-001",
+    "frozen:REQ-0092-001",
+    "frozen:REQ-0092-002"
+  ],
+  "critical_obligations": [
+    "Do not weaken frozen tests, gates, regressions, metrics, or criteria to obtain a pass.",
+    "Preserve immutable v0.09.2 frozen artifacts and all historical v0.09/v0.09.1 failure evidence."
+  ],
+  "evidence_requirements": [
+    "TEST-0092-SELF-01",
+    "evaluation/v0092-corpus-results.json"
+  ],
+  "source_evidence_refs": [
+    "GATE-009-COMPILE",
+    "REQ-0092-001",
+    "REQ-0092-002",
+    "TEST-0092-SELF-01",
+    "frozen:REL-0.09.2.1-FROZEN-001",
+    "frozen:REQ-0092-001",
+    "frozen:REQ-0092-002",
+    "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+    "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md"
+  ],
+  "included_context_refs": [
+    "GATE-009-COMPILE",
+    "REQ-0092-001",
+    "REQ-0092-002",
+    "TEST-0092-SELF-01",
+    "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+    "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md"
+  ],
+  "excluded_context_refs": [],
+  "task_state": "ready",
+  "completed_evidence_refs": [],
+  "open_blockers": [],
+  "next_permitted_action": "begin_implementation",
+  "completion_constraints": [
+    "Do not expand write scope beyond allowed_write_scopes.",
+    "Do not weaken or remove tests, gates, frozen criteria, or critical regressions to obtain a pass.",
+    "Produce completion evidence for every evidence requirement before claiming done.",
+    "Report missing information explicitly; do not treat missing data as zero."
+  ],
+  "diagnostics": [],
+  "prompt_text": "PROMPT_KIND: implementation\n\nREQUEST_ID: PREQ-0092-SELF-IMPLEMENT-001\n\nCANDIDATE_VERSION: 0.09.2\n\nGRAPH_HASH: 72e068602c636e47793ce93ca3be31152c56b448af27509913ea1a75e7a6a835\n\nTASK_ID: CTASK-0092-SELF-01\n\nACTOR_ROLE: implementation_agent\n\nTASK_STATE: ready\n\nNEXT_PERMITTED_ACTION: begin_implementation\n\nDECLARED_WRITE_SCOPES:\n- src/spec_creator/prompt_compiler.py\n\nALLOWED_WRITE_SCOPES:\n- src/spec_creator/prompt_compiler.py\n\nPREREQUISITES:\n- <none>\n\nSOURCE_REQUIREMENTS:\n- REQ-0092-001\n- REQ-0092-002\n\nACCEPTANCE_CRITERIA:\n- All frozen requirements assigned to this self-build task are satisfied with explicit evidence.\n\nVERIFICATION_REFS:\n- TEST-0092-SELF-01\n\nGATES:\n- GATE-009-COMPILE\n\nFROZEN_CRITERIA:\n- frozen:REL-0.09.2.1-FROZEN-001\n- frozen:REQ-0092-001\n- frozen:REQ-0092-002\n\nCRITICAL_OBLIGATIONS:\n- Do not weaken frozen tests, gates, regressions, metrics, or criteria to obtain a pass.\n- Preserve immutable v0.09.2 frozen artifacts and all historical v0.09/v0.09.1 failure evidence.\n\nEVIDENCE_REQUIREMENTS:\n- TEST-0092-SELF-01\n- evaluation/v0092-corpus-results.json\n\nINCLUDED_CONTEXT:\n- GATE-009-COMPILE\n- REQ-0092-001\n- REQ-0092-002\n- TEST-0092-SELF-01\n- versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json\n- versions/v0.09.2/SPEC-CREATOR-v0.09.2.md\n\nCOMPLETED_EVIDENCE:\n- <none>\n\nOPEN_BLOCKERS:\n- <none>\n\nCOMPLETION_CONSTRAINTS:\n- Do not expand write scope beyond allowed_write_scopes.\n- Do not weaken or remove tests, gates, frozen criteria, or critical regressions to obtain a pass.\n- Produce completion evidence for every evidence requirement before claiming done.\n- Report missing information explicitly; do not treat missing data as zero.\n\nINSTRUCTION:\nImplement only this authorized task within allowed write scopes and satisfy every acceptance/evidence obligation.\n",
+  "envelope_hash": "b60f460c89f92af1b929e20aa03139316fcae49d56fade11759386d798f40f5d"
+}

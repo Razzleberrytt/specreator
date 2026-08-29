@@ -1,0 +1,783 @@
+{
+  "baseline_id": "FAILED-PREDECESSOR-011-BASELINE-001",
+  "status": "IMMUTABLE_RETRY_PARENT_BASELINE",
+  "failed_candidate_version": "0.11",
+  "retry_candidate_version": "0.11.1",
+  "captured_from_checkpoint": "LCP-011-POSTFREEZE-BLOCKER-001",
+  "capture_rule": "Every shipped non-transient path present at v0.11.1 retry opening that is not protected by the v0.10 parent selector, excluding root PACKAGE-MANIFEST.json because the live package manifest must be regenerated manifest-last.",
+  "entry_count": 154,
+  "hash_algorithm": "sha256",
+  "entries": [
+    {
+      "path": "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+      "sha256": "4fe8f0c666a65191ef7ea7ff054eb7e7717897c36c97b9179a7ce4d86cd933ae",
+      "bytes": 8847
+    },
+    {
+      "path": "docs/EXISTING-SOLUTION-INTELLIGENCE-AND-SYNTHESIS.md",
+      "sha256": "295f7fe4b2a7f8f0a9a3912e7e8771dabe6a704a617537514a6c3a3a9e784904",
+      "bytes": 11541
+    },
+    {
+      "path": "evaluation/pytest-collect-v0.11-prefreeze-freeze.txt",
+      "sha256": "74c77e50978fc204e4286eca0e48f662ea81400e5241070e28506b4208e02395",
+      "bytes": 10982
+    },
+    {
+      "path": "evaluation/pytest-v0.11-discovery-docs.txt",
+      "sha256": "c4652ef18b3b705bd5056cf7cac34bbb84cdd775c22f6f3ebc81cf979a25a8c3",
+      "bytes": 260
+    },
+    {
+      "path": "evaluation/pytest-v0.11-esis-roadmap-amendment.txt",
+      "sha256": "ca631679d952aa47df4382fb2620b71b3fc18ec38157129ad92342ae6b0575c0",
+      "bytes": 261
+    },
+    {
+      "path": "evaluation/pytest-v0.11-prefreeze-freeze.txt",
+      "sha256": "02634623bf7a943154c9c2e1af62b97bb8076958b972b7af0e97ef535c954c2c",
+      "bytes": 260
+    },
+    {
+      "path": "evaluation/pytest-v0.11-preregistration-final.txt",
+      "sha256": "3064022dd09f859185e85a9600fc9a09479b84234c4674c0f76829c5a9463b67",
+      "bytes": 261
+    },
+    {
+      "path": "evaluation/v011-esis-roadmap-amendment-validation.json",
+      "sha256": "e94d6e4d0418b7ca59843d53eb768dc043c56634abaed939a44cb34ffbe9791c",
+      "bytes": 1236
+    },
+    {
+      "path": "evaluation/v011-metric-freeze-equivalence.json",
+      "sha256": "085a01410997a5ba1d60672689931aa12f469ead038ede9421ff9efefc88acd6",
+      "bytes": 5036
+    },
+    {
+      "path": "evaluation/v011-parent-preflight.json",
+      "sha256": "dfd5ce19aa3692a2ab4c2bd3afc6de3f72c8d4792cb990c538542ae9a78d706c",
+      "bytes": 1411
+    },
+    {
+      "path": "evaluation/v011-postfreeze-integrity.json",
+      "sha256": "981ecd937e1663462afde8bb4deb9e8e271a29b14a9e48dd7230e0d77adb7c5e",
+      "bytes": 10731
+    },
+    {
+      "path": "evaluation/v011-prefreeze-transaction-final.json",
+      "sha256": "ef25f8b5501afb1384aff6b83ecb94756033e16179244328b279ffde4e9d8d07",
+      "bytes": 5700
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-final-preflight.txt",
+      "sha256": "ff98fa7d1fd7c4ca8f34c042ec02002364c202e385933b0e5fd415b96f5305e6",
+      "bytes": 332
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-final-pytest.txt",
+      "sha256": "14b3306caf9d08679cceeda40852559c92708bc4a20ec8e2e4ff81adc7219798",
+      "bytes": 260
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-final-validation.json",
+      "sha256": "19052d8c6a4732e00393d253f3c7ce64a942c7cd6134c6b19e9e248a589e76a1",
+      "bytes": 969
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-final-workspace-validation.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-package-validation-postseal.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-preflight.txt",
+      "sha256": "ff98fa7d1fd7c4ca8f34c042ec02002364c202e385933b0e5fd415b96f5305e6",
+      "bytes": 332
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-pytest.txt",
+      "sha256": "a6951641fec0bfe49d2d0538f494f211bd11c36d894793741b417d5a518938ba",
+      "bytes": 260
+    },
+    {
+      "path": "evaluation/v011-prereg-repair-workspace-validation.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "evaluation/v011-preregistration-local-summary.json",
+      "sha256": "85d4cf837c664e8e6254ac67ad774b5d3bfd497627dcc4f2e0d7d7c9ffb5601c",
+      "bytes": 991
+    },
+    {
+      "path": "evaluation/v011-preregistration-preflight.json",
+      "sha256": "ffad7cc99bf4b300063f85039b0a9e12a07baa7fc9398412171f1be38a8fd4af",
+      "bytes": 1875
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-discovery-docs.json",
+      "sha256": "b65df417fd737813c080a3c097c38924e77ebca7432cd9ee9a9ee4971b608a90",
+      "bytes": 105
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-esis-roadmap-amendment.json",
+      "sha256": "b65df417fd737813c080a3c097c38924e77ebca7432cd9ee9a9ee4971b608a90",
+      "bytes": 105
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-prefreeze-freeze.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-preregistration-shipping.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "evaluation/workspace-validation-v0.11-preregistration.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "prompts/MASTER-RECURSIVE-PROMPT-v0.11-DRAFT.md",
+      "sha256": "b87b16a84f5fe70ce222c986b1b43938708b7ddcfe3d52a1be74ebe1a8863380",
+      "bytes": 4756
+    },
+    {
+      "path": "roadmap/ROADMAP-to-v1.00-v0.11-DRAFT.md",
+      "sha256": "f398aa3fac5669f67996bc375e847a3cdd90702474d13f2c6a11d4d4c4250cc0",
+      "bytes": 19932
+    },
+    {
+      "path": "self-improvement/SELF-IMPROVEMENT-PROTOCOL-v0.11-DRAFT.md",
+      "sha256": "19ebc4f5ad751b5be509cd4fa59b3d69a546f68314d71600987f0f27811b1865",
+      "bytes": 4872
+    },
+    {
+      "path": "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+      "sha256": "c9508ef9d5a175f3572ac5f85ce1f3709a9ed5d7aee64d3b383ac85d23e84aeb",
+      "bytes": 8679
+    },
+    {
+      "path": "versions/v0.11/CONTINUATION.md",
+      "sha256": "34f0e950cb8070352f6ee3c328b6a338c465b19cda0bd0b1379477da2b90317c",
+      "bytes": 3864
+    },
+    {
+      "path": "versions/v0.11/DEC-0033.json",
+      "sha256": "e1625e8b7e1d296eb52cc08f92bd60690fc9251031582dea4fa99d37b9ef6caa",
+      "bytes": 2052
+    },
+    {
+      "path": "versions/v0.11/DEFECT-RESOLUTION-001.json",
+      "sha256": "61379fefc35e7944fb6a31808bf650a0af9f0bbcc0eb1586b3a2fa2642e68dd6",
+      "bytes": 2985
+    },
+    {
+      "path": "versions/v0.11/DEFECT-RESOLUTION-002.json",
+      "sha256": "ab15c5e9112c2ab35b00d3d8fc7d0f37bd7fe81c80b426c25d514065f7256790",
+      "bytes": 1718
+    },
+    {
+      "path": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "sha256": "5592ac3400433cd97bed890bc39457133b64e80d5b0c519aafc46d2bbc5810a6",
+      "bytes": 2056
+    },
+    {
+      "path": "versions/v0.11/DISCOVERY.md",
+      "sha256": "817979b961caa1a9a855eff7e4362c7bea608f655399c19ae2641f20edc4e934",
+      "bytes": 7444
+    },
+    {
+      "path": "versions/v0.11/DOCS-CHANGELOG.md",
+      "sha256": "fe9c1c74ea0100cc4a2cab3496c25a7ab33c2c4d6c3fbfbf6cbba0356d01ace2",
+      "bytes": 5546
+    },
+    {
+      "path": "versions/v0.11/ESIS-TOP5-PROTOTYPE-AMENDMENT.md",
+      "sha256": "7193b1838be740082ad3fa2bdef8941329894dbf8d038fa211a4b3e12d20315d",
+      "bytes": 3958
+    },
+    {
+      "path": "versions/v0.11/EVALUATION-DESIGN.json",
+      "sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+      "bytes": 6004
+    },
+    {
+      "path": "versions/v0.11/EVALUATION-PLAN.json",
+      "sha256": "a2ebc957916bcd190554919620f5a4c8f0bcd912e64708bcd43534666d8da7ad",
+      "bytes": 5857
+    },
+    {
+      "path": "versions/v0.11/EVALUATION-UNIVERSES.json",
+      "sha256": "96e64c464fa7a0d3fd603ba93f79512c2f3d2565b6b4ca6cd5e4a101c4a57928",
+      "bytes": 9104
+    },
+    {
+      "path": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "sha256": "1af09e51fe382c549fc6ee5d52e36486fdefff6244de940f7a0ba08daca35b9b",
+      "bytes": 3362
+    },
+    {
+      "path": "versions/v0.11/FREEZE-RECORD.json",
+      "sha256": "cca17cc65edce6cd795ba87b107926b249bdd18beb422ddfc0cdec1759988b24",
+      "bytes": 917
+    },
+    {
+      "path": "versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json",
+      "sha256": "6a1e208c7203834adab7f6655a865e3e792f38f1a31834558cd9b67bed228d15",
+      "bytes": 7692
+    },
+    {
+      "path": "versions/v0.11/FROZEN-RELEASE-CONTRACT.json",
+      "sha256": "d42b0d1fd9bcbe1d2f6e06ed4fdf2ba9e986c94fdab37b15d82432b156aab191",
+      "bytes": 16578
+    },
+    {
+      "path": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "sha256": "9d8d61fbac214395b77aba03188ede7b1ffe1fc5c58acd4471fa4b78a1e97bdb",
+      "bytes": 2006
+    },
+    {
+      "path": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROMPT.md",
+      "sha256": "24737943a948ec33bfaafe6ac503c6f37d64810e980bf54ec1b2c6420bb62974",
+      "bytes": 6419
+    },
+    {
+      "path": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+      "sha256": "8b19d3d5af337627f5ee7a54f3974daac0c5ac72d0f881721399693e97dbbd67",
+      "bytes": 4348
+    },
+    {
+      "path": "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+      "sha256": "45db9bc3c477e444f1856813e095242a00a37c81fd127e1d05a4c371fd3560c3",
+      "bytes": 6460
+    },
+    {
+      "path": "versions/v0.11/LIFECYCLE-CHECKPOINT.json",
+      "sha256": "1fd07318ae41f5fefb00939b673335440c7edb8e71c8bd7116a90816e85cd379",
+      "bytes": 4683
+    },
+    {
+      "path": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+      "sha256": "ad5bc9595274e6d8a3fdd13773a8b98824022d1801bb2a0f6e811959e9ff4ee5",
+      "bytes": 6113
+    },
+    {
+      "path": "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+      "sha256": "a3406db3e33dec35ef98bac96a3db46812241cc066bee0f028f079d4903751c4",
+      "bytes": 12520
+    },
+    {
+      "path": "versions/v0.11/PREFREEZE-READINESS.md",
+      "sha256": "c291cd2f017b3559b9ce69d35b4b317fc9e8db6b968863943b681de86ab955e3",
+      "bytes": 1858
+    },
+    {
+      "path": "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json",
+      "sha256": "7ecf37d11eb1eda08573d33aaca57f3434b89b4b21107e1325a36de035e5b2c9",
+      "bytes": 4558
+    },
+    {
+      "path": "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+      "sha256": "bdcd3a0b156d52a1395e44f6a9281c2a0460620404e69866423d4d2c545746d8",
+      "bytes": 6183
+    },
+    {
+      "path": "versions/v0.11/SPEC-CREATOR-PRODUCT-DIRECTION-v0.11-DRAFT.md",
+      "sha256": "1f38520ddb27caefb296c86150b6ffa03e80beab270a7db85b5df58215b2edc5",
+      "bytes": 7783
+    },
+    {
+      "path": "versions/v0.11/SPEC-CREATOR-v0.11.md",
+      "sha256": "1faca23a65ecc78f8aa0d8ddb759658f78b8ce4a57ddc38931399d7c710f69f7",
+      "bytes": 7731
+    },
+    {
+      "path": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "sha256": "f119a0139f35034d48b74400901f47efa8d2aa5e43ba29c74b7b8177ebf9c103",
+      "bytes": 9722
+    },
+    {
+      "path": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+      "sha256": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2",
+      "bytes": 6292
+    },
+    {
+      "path": "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+      "sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+      "bytes": 778
+    },
+    {
+      "path": "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "sha256": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452",
+      "bytes": 10002
+    },
+    {
+      "path": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "sha256": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb",
+      "bytes": 4759
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/INGESTION.json",
+      "sha256": "02237b6db7810bd725883c879c3695ece1fce692e369065745bbc68c9bbb8ca9",
+      "bytes": 925
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json",
+      "sha256": "649635fb2b65aa0b5109beecbf16a949dbe89eb2827b3a5d4b927a9c136e6c30",
+      "bytes": 36638
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md",
+      "sha256": "3c17165284862f54406ddc945c25b165e719d209333f043d225d3e9e2a564383",
+      "bytes": 6553
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+      "sha256": "24fe09ed6660ea4a9ee06e3b1d63cbecc85ebc68cce91e133db40488127cb4d0",
+      "bytes": 7948
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.10/FROZEN-RELEASE-CONTRACT.json",
+      "sha256": "5440dd507d13e13853ebd9aba2e9b39df0e7d340abfa308b9000ebb79e8cd9b2",
+      "bytes": 13027
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.10/MANIFEST.json",
+      "sha256": "8228cd1c99875246fa52c269e8efdffce489f37ef9ccbfd70c5c0e16dbcf878f",
+      "bytes": 150570
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/CONTINUATION.md",
+      "sha256": "c941949f56a8431a7ab0e484b16987509bcd441fafe860c3a4a3869112a3c87c",
+      "bytes": 1923
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/DISCOVERY.md",
+      "sha256": "2bbe87f2cd9466900e0fa75ed9c2e0e4f09a9204b64508780e217e927f040faf",
+      "bytes": 5850
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/EVALUATION-DESIGN.json",
+      "sha256": "d962c0f93e5754e43921d72ab226778fead6947968d4b8a126293a46f5bee727",
+      "bytes": 3351
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "sha256": "cdf2a564a69be8baa262e868a128a21bddc63200e55f7033688b8b5dce92be5e",
+      "bytes": 2995
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "sha256": "e57380a459a1e8fd270762ffdbcf9600a8c33092c351e5f28884050600fa105a",
+      "bytes": 824
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+      "sha256": "cf9a3700b6caf684aa7260b27c1c76beae4f643d81309af20bfb71c15ea4c7fe",
+      "bytes": 1638
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+      "sha256": "024fe841e238d81523ce241f053b1855abd63dd0e13fdfbd86fee4985a51ea2f",
+      "bytes": 3290
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+      "sha256": "37cfa6fbd99dbb6912cb2caac5d37453ba76cff836efa74ed45e865817d39b32",
+      "bytes": 3049
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+      "sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+      "bytes": 778
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "sha256": "5d9c0e02f24d6221d293a236f4b69e88a38b8ca079a0037a066efd4166deca63",
+      "bytes": 9742
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/source-package-artifacts/versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "sha256": "0f4d8b8a60e71a9fed20ba753ab7eb9fe6acfd49c65e2f36633f414262bb0ea3",
+      "bytes": 4405
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/INGEST.json",
+      "sha256": "235410248c831824999a2b7270f1c395285711ad84aff3135cdbe9cbc906b25b",
+      "bytes": 774
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/MANIFEST.json",
+      "sha256": "4133dea7556b85fad9b6f92cbca4f93eab4d1462432c29e375b18b20d80f7bb6",
+      "bytes": 5850
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/active-regression-test-mapping.json",
+      "sha256": "c486e13417c04262f1bf29223aa68173b5c781744d9bfcff421f75d34725acf0",
+      "bytes": 13815
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/artifact-hashes.json",
+      "sha256": "c872a2c76f6529ca15e13aae5b342be58ab98263537f3fc24d069c8afb6c8f6e",
+      "bytes": 14576
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/docs-execution-architecture-after-review.diff",
+      "sha256": "aff2a0cee2d7b92870d284e055ff447ffe849ae91070897ab7eecfb6676cca34",
+      "bytes": 1596
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/fixture-coherence.json",
+      "sha256": "2722e19c5410f63fda2d61554416979abb3680f7d6fd62ea10ff9d1fdf5b4a19",
+      "bytes": 1085
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/frozen-parent-hash-checks.json",
+      "sha256": "3d386de753968cfe2f47ed10a46179653eeb47de299e62fa2cb6029e862835b0",
+      "bytes": 336525
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/immutable-boundary-classification.json",
+      "sha256": "7e9f950849f9dc2a30a21eeb8e2b5f303ff219b6b17489d32f96f868fb3c1018",
+      "bytes": 2902
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/lifecycle-derivation.json",
+      "sha256": "2f5800ff2a895f12c78739e0334616e64fa9cc91e8951ec0ff458477b3adcae6",
+      "bytes": 3250
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/metric-audit.json",
+      "sha256": "31246439f15ac827c47f5a0fa03cdc841da15ebe846ce9c009dc65b55cc6d0d5",
+      "bytes": 19372
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/package-validate.stdout.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/provenance-derivation.json",
+      "sha256": "ba750deccf49ef914ad268cd149a2ae9835e9d844f98791c822440bcf066d664",
+      "bytes": 7648
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/pytest-collect.stdout.txt",
+      "sha256": "163c6f2470a7469d1bfd83ab490b7520c8050ade16fc501f6317427011680d0e",
+      "bytes": 10982
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/schema-validation.json",
+      "sha256": "6e50a6b7e584fa5f0124d3e0783473d21c4cbebf5dc316097fe714488dcc07ee",
+      "bytes": 591
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/structural-recomputation.json",
+      "sha256": "dfbb577827e1056438d204efe4dcb3e2a5e41d81609a7c4bbc460eefc8d2032b",
+      "bytes": 9411
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/target-nonweakening-comparison.json",
+      "sha256": "2de37a5a235e31e9b5f23b0fc25ec03aab01677ef47534e7825ad734bae24dd5",
+      "bytes": 4946
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/universe-audit.json",
+      "sha256": "6cc4b05c7bbd31de990303988ba45be86b3d6239de6746986ddd852b903a11d7",
+      "bytes": 23140
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.command.txt",
+      "sha256": "a9dc631567267262620ff085b7de630c75725118137fdbaf326cc0a8b95d0d7e",
+      "bytes": 20
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/01.stdout.txt",
+      "sha256": "b17839b9bac85d5f068b3e2e1287fcce98a583aef6db9d6f90839af0acd97c3d",
+      "bytes": 261
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.command.txt",
+      "sha256": "268810a58d352a8aa364755a6088bc1bd66d2203d4b4f54c84481eb2cb11f3f6",
+      "bytes": 75
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/02.stdout.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.command.txt",
+      "sha256": "5dc56dc7f27924f0b0d0291bc5d2d2a622494c9c74c5321971059b766e5b16be",
+      "bytes": 57
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/raw/validation-commands/03.stdout.txt",
+      "sha256": "ff98fa7d1fd7c4ca8f34c042ec02002364c202e385933b0e5fd415b96f5305e6",
+      "bytes": 332
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-evidence.json",
+      "sha256": "1426bf3dba7f681234ba5749709f2deee630c8e9874c647ca8d70afae1d34d7d",
+      "bytes": 23313
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-report.md",
+      "sha256": "7a5485549e75ab53e121cd4bfca91b17d0d8d49cafa3c66326c5f57da46587cf",
+      "bytes": 6816
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/INGEST.json",
+      "sha256": "25ce89d37b4a5aee4dbe0896da4c63a28e49f2151aa3baf1983ecaa8584e16cf",
+      "bytes": 1459
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/MANIFEST.json",
+      "sha256": "2e5c039c5f6fd7c95a85688d5084d2f37c75e55c99a3e78f7620363c19dfea51",
+      "bytes": 5836
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/evidence-package.zip",
+      "sha256": "d99e200217630a2629792c17655269bfe99e5fe3140d5ae816772c1fa1313501",
+      "bytes": 96237
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/artifact-hashes.json",
+      "sha256": "b830cc3606491a8a3f78027f470d1d198bf1f5ed8111d1cb1319212ab4fff28a",
+      "bytes": 5363
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/defect-regressions.json",
+      "sha256": "a89b200b0447bd18574b06744376ec6c9c99ba6649b6bf169aaf6df121e72eee",
+      "bytes": 1245
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/fixture-coherence.json",
+      "sha256": "e171a3c220f76d023460de51818e8410007cadf3a1f10a5b6437beb826b76924",
+      "bytes": 1121
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/frozen-parent-hash-checks.json",
+      "sha256": "ff70d95cbdcbae149c0e7fff0229f97231dd2207a2da21af93f775638e789520",
+      "bytes": 352281
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/immutable-boundary-classification.json",
+      "sha256": "0d5a300c0d4e606c18ec6726c8db7f782a67885308fa3c35e9e68c5d6a0f63a5",
+      "bytes": 11283
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/integration-schema-audit.json",
+      "sha256": "ca696b2d7942eb06ffb965811a6449d8a1536c8f22a2e352af0365ee04048619",
+      "bytes": 345
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/lifecycle-derivation.json",
+      "sha256": "d05c15fe6a89a688f1930708c0aaf4586179fefbb8af5a1d9a91f24df1599798",
+      "bytes": 1975
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/metric-audit.json",
+      "sha256": "2d3445fcbe24b6ce67a0f7f97d14ae819e10e5c0ea81d4c31b474d3e9d6e9da3",
+      "bytes": 10409
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/package-manifest-validation.json",
+      "sha256": "9b9cc3ed830212fbe1b7c10788f4ffbf9cd74de03afd5593df3b74e815e35004",
+      "bytes": 173
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/preregistration-artifact-hash-audit.json",
+      "sha256": "d7bd06f5d8bcf1e28600b981c16883ce759086d30f4a39b2f30b01a074c51811",
+      "bytes": 7622
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/provenance-derivation.json",
+      "sha256": "8f9dc9eea7af8524fc33a025912fab40fe1bebdbe2250f89f7535c69606f7a7a",
+      "bytes": 6661
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-computation.py",
+      "sha256": "a584a9e589298335e0a3c878273645b5321cc0bd46d8813225030b70e8552384",
+      "bytes": 35200
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-evidence.json",
+      "sha256": "7292b998230a748e60aacb2bfd6592e071af75dd971a50cc357f8fb980c8bd94",
+      "bytes": 3902
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-obligations.json",
+      "sha256": "81965e2596954d8d68e7829edd6b0f06e6bc005c3abe62e4e67ea4c9393cea43",
+      "bytes": 1701
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/schema-validation.json",
+      "sha256": "b5faaec5311999f96a78548fe937e7780715c1a081acc6307f9934d79c87ac8d",
+      "bytes": 631
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/structural-recomputation.json",
+      "sha256": "af31c5af48c03b790cae7c7b33106580e49ed634b554d0188f304ed1a9b7dead",
+      "bytes": 8665
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/universe-audit.json",
+      "sha256": "de59509151579feb12188378aed6b53b98f478530103c046bda6a01e8b061e5a",
+      "bytes": 3530
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands.json",
+      "sha256": "7c9fe2f6f0dbadb0e4d3abbde2529dfc01aa2ff008e029bf85b656ccc8e8b2d1",
+      "bytes": 1642
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.command.txt",
+      "sha256": "a9dc631567267262620ff085b7de630c75725118137fdbaf326cc0a8b95d0d7e",
+      "bytes": 20
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.stdout.txt",
+      "sha256": "c956c2780e4e1cdc6c83374b5e6ca348efba2164cb1a6238e9124d925102149c",
+      "bytes": 260
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.command.txt",
+      "sha256": "268810a58d352a8aa364755a6088bc1bd66d2203d4b4f54c84481eb2cb11f3f6",
+      "bytes": 75
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.stdout.txt",
+      "sha256": "53dbd6977799557e80e611adbe4cfcb133070c225e92e8544640dd3072c7bdcf",
+      "bytes": 31
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.command.txt",
+      "sha256": "5dc56dc7f27924f0b0d0291bc5d2d2a622494c9c74c5321971059b766e5b16be",
+      "bytes": 57
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.exit_code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.stdout.txt",
+      "sha256": "3e3166f1df44221ed8c205f1de74e0fd99d49465f1ebb69d81beeb077eb4246e",
+      "bytes": 429
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/whole-package-classification.json",
+      "sha256": "fd63dbe4f719dbc3fb294d891818f36177578cc34e1605facf50ed1fc1578305",
+      "bytes": 231739
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/review-evidence.json",
+      "sha256": "7292b998230a748e60aacb2bfd6592e071af75dd971a50cc357f8fb980c8bd94",
+      "bytes": 3902
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/review-report.md",
+      "sha256": "854f57b6aa4bd4aa91ba6ca3f0f911a92e45ade9b9f6d090cb879670910a386e",
+      "bytes": 9604
+    },
+    {
+      "path": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/source-package.zip",
+      "sha256": "dbc7751daa050e28e849aac83c8b679eee5be334e3dadb4286ce90f43d7f954f",
+      "bytes": 3057513
+    },
+    {
+      "path": "versions/v0.11/tools/frozen_contract_preflight.py",
+      "sha256": "530e7bef759da61c574e397e0a99c09dbafe46404141abdcd79f1955a4b1b38b",
+      "bytes": 1947
+    },
+    {
+      "path": "versions/v0.11/tools/preregistration_preflight.py",
+      "sha256": "36d876daa63d30f51761b29f2134b9bb241ce934aa6de00b0d8ca5d2533ef757",
+      "bytes": 15375
+    }
+  ],
+  "mutation_rule": "Every listed byte is historical failed-v0.11 evidence and is immutable for v0.11.1."
+}

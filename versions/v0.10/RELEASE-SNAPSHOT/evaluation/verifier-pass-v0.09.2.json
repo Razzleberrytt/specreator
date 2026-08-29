@@ -1,0 +1,262 @@
+{
+  "active_regression_count": 23,
+  "actor_id": "verifier:independent-pass-0092",
+  "candidate_version": "0.09.2",
+  "checks": {
+    "actor_independence": true,
+    "all_frozen_metrics_available": true,
+    "all_frozen_metrics_meet_target": true,
+    "all_gate_evidence_ready": true,
+    "contract_hash": true,
+    "contract_schema": true,
+    "corpus_hashes": true,
+    "current_suite": true,
+    "failed_history_intact": true,
+    "frozen_artifacts_intact": true,
+    "frozen_regressions_present": true,
+    "historical_shadow": true,
+    "new_corrective_regression_present": true,
+    "no_premature_promotion": true,
+    "parent_suite_exact": true,
+    "reg0023": true,
+    "retry_regressions": true,
+    "rollback_declared": true,
+    "self_graph_reproduces": true,
+    "self_prompt_reproduces": true,
+    "self_traceability": true,
+    "workspace_prefinal": true
+  },
+  "contract_id": "REL-0.09.2.1-FROZEN-001",
+  "corpus_counts": {
+    "accepted_obligation_tokens": 1196,
+    "baseline_missing_obligations": 1142,
+    "compiled_missing_obligations": 0,
+    "continuation_accepted_cases": 9,
+    "development_accepted": 30,
+    "development_cases": 50,
+    "expected_excluded_context_refs": 134,
+    "heldout_accepted": 15,
+    "heldout_cases": 25,
+    "negative_cases": 30,
+    "output_schema_error_count": 0
+  },
+  "corpus_metrics": {
+    "benchmark_contrast_preflight_rate": 1.0,
+    "context_over_inclusion_rate": 0.0,
+    "continuation_state_exact_match_rate": 1.0,
+    "corrective_prompt_proxy_reduction_rate": 1.0,
+    "critical_gate_bypass_count": null,
+    "deterministic_repeat_rate": 1.0,
+    "development_prompt_envelope_exact_match_rate": 1.0,
+    "frozen_hash_integrity_rate": 1.0,
+    "heldout_prompt_envelope_exact_match_rate": 1.0,
+    "inherited_regression_pass_rate": null,
+    "invalid_input_escape_count": 0,
+    "missing_critical_constraint_count": 0,
+    "missing_data_count": null,
+    "negative_case_classification_accuracy": 1.0,
+    "obligation_retention_rate": 1.0,
+    "owner_decision_escape_count": 0,
+    "parent_preflight_rate": 1.0,
+    "preregistration_precondition_pass_rate": 1.0,
+    "prerequisite_escape_count": 0,
+    "scope_expansion_count": 0,
+    "self_certification_violation_count": 0,
+    "v0092_spec_quality_acceptance_rate": 1.0
+  },
+  "failed_history_hash_checks": {
+    "evaluation/def-009-004-frozen-benchmark-contrast-defect.json": true,
+    "evaluation/def-0091-001-freeze-with-failed-preflight.json": true,
+    "evaluation/def-0091-002-invalid-contract-schema.json": true,
+    "versions/v0.09.1/EVALUATION-v0.09.1.json": true,
+    "versions/v0.09.1/FROZEN-RELEASE-CONTRACT.INVALID-ATTEMPT.json": true,
+    "versions/v0.09/EVALUATION-v0.09.json": true,
+    "versions/v0.09/FROZEN-RELEASE-CONTRACT.json": true
+  },
+  "frozen_hash_checks": {
+    "evaluation/pytest-regressions-v0.09.2-prefreeze.txt": true,
+    "evaluation/pytest-v0.09.2-prefreeze-current-suite.txt": true,
+    "evaluation/v0092-benchmark-contrast-preflight.json": true,
+    "evaluation/v0092-prefreeze-transaction-final.json": true,
+    "evaluation/v0092-preregistration-preflight.json": true,
+    "evaluation/v0092-schema-preflight.json": true,
+    "evaluation/workspace-validation-v0.09.2-prefreeze-after-regression-tests.json": true,
+    "fixtures/prompt-compiler/v0.09.2/baseline.json": true,
+    "fixtures/prompt-compiler/v0.09.2/corpus.jsonl": true,
+    "fixtures/prompt-compiler/v0.09.2/development.jsonl": true,
+    "fixtures/prompt-compiler/v0.09.2/heldout.jsonl": true,
+    "schemas/prompt-compilation-input-v1.schema.json": true,
+    "schemas/prompt-envelope-v1.schema.json": true,
+    "versions/v0.09.2/EVALUATION-PLAN.json": true,
+    "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json": true,
+    "versions/v0.09.2/SPEC-CREATOR-v0.09.2.md": true
+  },
+  "frozen_regression_count": 22,
+  "full_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 47%]\n........................................................................ [ 95%]\n.......                                                                  [100%]\n151 passed in 13.67s"
+  },
+  "gate_readiness": {
+    "GATE-009-CLI": true,
+    "GATE-009-COMPILE": true,
+    "GATE-009-CONTEXT": true,
+    "GATE-009-CONTINUATION": true,
+    "GATE-009-CORPUS-INTEGRITY": true,
+    "GATE-009-IDENTITY": true,
+    "GATE-009-INDEPENDENT": true,
+    "GATE-009-OBLIGATION": true,
+    "GATE-009-OWNER": true,
+    "GATE-009-PACKAGE": true,
+    "GATE-009-PARENT-PREFLIGHT": true,
+    "GATE-009-PREREQUISITE": true,
+    "GATE-009-RECONCILIATION": true,
+    "GATE-009-REGRESSION": true,
+    "GATE-009-ROLLBACK": true,
+    "GATE-009-SCHEMA": true,
+    "GATE-009-SCOPE": true,
+    "GATE-009-SELF": true,
+    "GATE-009-SHADOW": true,
+    "GATE-009-SPEC-QUALITY": true,
+    "GATE-009-TEST": true,
+    "GATE-009-VERIFIER": true
+  },
+  "historical_shadow": {
+    "all_ok": true,
+    "event_count": 28,
+    "rows": [
+      {
+        "identity": true,
+        "kind": "bootstrap",
+        "schema_valid": true,
+        "scope_bounded": true,
+        "status": "compiled"
+      },
+      {
+        "identity": true,
+        "kind": "implementation",
+        "schema_valid": true,
+        "scope_bounded": true,
+        "status": "compiled"
+      },
+      {
+        "identity": true,
+        "kind": "debug",
+        "schema_valid": true,
+        "scope_bounded": true,
+        "status": "compiled"
+      },
+      {
+        "identity": true,
+        "kind": "verification",
+        "schema_valid": true,
+        "scope_bounded": true,
+        "status": "compiled"
+      },
+      {
+        "identity": true,
+        "kind": "continuation",
+        "schema_valid": true,
+        "scope_bounded": true,
+        "status": "compiled"
+      }
+    ]
+  },
+  "implementation_actor_id": "agent:spec-creator-builder",
+  "limitations": [
+    "Role-separated verification occurs within the same runtime/session, not an external organization.",
+    "Frozen development/held-out corpora are synthetic same-cycle evidence and visible to the implementer.",
+    "Historical v0.08 shadow is non-promotional and cannot raise the frozen experimental ceiling.",
+    "Final root package seal and fresh extracted-ZIP verification occur after release accounting; any later failure invalidates promotion and triggers rollback/retry."
+  ],
+  "metric_target_checks": {
+    "benchmark_contrast_preflight_rate": true,
+    "context_over_inclusion_rate": true,
+    "continuation_state_exact_match_rate": true,
+    "corrective_prompt_proxy_reduction_rate": true,
+    "critical_gate_bypass_count": true,
+    "deterministic_repeat_rate": true,
+    "development_prompt_envelope_exact_match_rate": true,
+    "frozen_hash_integrity_rate": true,
+    "heldout_prompt_envelope_exact_match_rate": true,
+    "inherited_regression_pass_rate": true,
+    "invalid_input_escape_count": true,
+    "missing_critical_constraint_count": true,
+    "missing_data_count": true,
+    "negative_case_classification_accuracy": true,
+    "obligation_retention_rate": true,
+    "owner_decision_escape_count": true,
+    "parent_preflight_rate": true,
+    "preregistration_precondition_pass_rate": true,
+    "prerequisite_escape_count": true,
+    "scope_expansion_count": true,
+    "self_certification_violation_count": true,
+    "v0092_spec_quality_acceptance_rate": true
+  },
+  "parent_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 50%]\n......................................................................   [100%]\n142 passed in 9.59s"
+  },
+  "premature_promotion_decisions": [],
+  "recommendation": "PROMOTED AS EXPERIMENTAL",
+  "reconciled_metric_values": {
+    "benchmark_contrast_preflight_rate": 1.0,
+    "context_over_inclusion_rate": 0.0,
+    "continuation_state_exact_match_rate": 1.0,
+    "corrective_prompt_proxy_reduction_rate": 1.0,
+    "critical_gate_bypass_count": 0,
+    "deterministic_repeat_rate": 1.0,
+    "development_prompt_envelope_exact_match_rate": 1.0,
+    "frozen_hash_integrity_rate": 1.0,
+    "heldout_prompt_envelope_exact_match_rate": 1.0,
+    "inherited_regression_pass_rate": 1.0,
+    "invalid_input_escape_count": 0,
+    "missing_critical_constraint_count": 0,
+    "missing_data_count": 0,
+    "negative_case_classification_accuracy": 1.0,
+    "obligation_retention_rate": 1.0,
+    "owner_decision_escape_count": 0,
+    "parent_preflight_rate": 1.0,
+    "preregistration_precondition_pass_rate": 1.0,
+    "prerequisite_escape_count": 0,
+    "scope_expansion_count": 0,
+    "self_certification_violation_count": 0,
+    "v0092_spec_quality_acceptance_rate": 1.0
+  },
+  "reg0023_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "....                                                                     [100%]\n4 passed in 3.53s"
+  },
+  "release_process_metrics": {
+    "critical_gate_bypass_count": 0,
+    "inherited_regression_pass_rate": 1.0,
+    "missing_data_count": 0
+  },
+  "result": "PASS",
+  "retry_regression_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "...                                                                      [100%]\n3 passed in 0.15s"
+  },
+  "self_compiled_summary": {
+    "blocking_diagnostic_count": 0,
+    "conflict_zone_count": 1,
+    "dependency_edge_count": 7,
+    "task_count": 8
+  },
+  "self_prompt_hash": "b60f460c89f92af1b929e20aa03139316fcae49d56fade11759386d798f40f5d",
+  "self_traceability_summary": {
+    "critical_requirements_complete": 15,
+    "critical_requirements_total": 15,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  },
+  "workspace_validation": {
+    "errors": 0,
+    "issues": 0,
+    "warnings": 0
+  }
+}

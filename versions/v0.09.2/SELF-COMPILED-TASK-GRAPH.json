@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "project_id": "TCP-0092-SELF",
+  "status": "compiled",
+  "tasks": [
+    {
+      "task_id": "CTASK-0092-SELF-01",
+      "source_task_id": "TASK-0092-SELF-01",
+      "source_requirement_ids": [
+        "REQ-0092-001",
+        "REQ-0092-002"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-01"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [],
+      "verification_refs": [
+        "TEST-0092-SELF-01"
+      ],
+      "gate_ids": [
+        "GATE-009-COMPILE"
+      ],
+      "conflict_zone_ids": [
+        "CZ-001"
+      ],
+      "parallel_with": [],
+      "complexity_score": 9,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 0,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-001:realized_by:FEAT-0092-SELF-01:decomposed_to:TASK-0092-SELF-01",
+          "trace:REQ-0092-002:realized_by:FEAT-0092-SELF-01:decomposed_to:TASK-0092-SELF-01"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-01.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-01.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-01.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-01.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-01:verified_by:TEST-0092-SELF-01"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-01:gated_by:GATE-009-COMPILE"
+        ],
+        "conflict_zone_ids": [
+          "write_scope:src/spec_creator/prompt_compiler.py"
+        ],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-02",
+      "source_task_id": "TASK-0092-SELF-02",
+      "source_requirement_ids": [
+        "REQ-0092-003",
+        "REQ-0092-004"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-02"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-01"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-02"
+      ],
+      "gate_ids": [
+        "GATE-009-SCOPE"
+      ],
+      "conflict_zone_ids": [
+        "CZ-001"
+      ],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-003:realized_by:FEAT-0092-SELF-02:decomposed_to:TASK-0092-SELF-02",
+          "trace:REQ-0092-004:realized_by:FEAT-0092-SELF-02:decomposed_to:TASK-0092-SELF-02"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-02.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-02.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-02.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-02.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-01:precedes:TASK-0092-SELF-02"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-02:verified_by:TEST-0092-SELF-02"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-02:gated_by:GATE-009-SCOPE"
+        ],
+        "conflict_zone_ids": [
+          "write_scope:src/spec_creator/prompt_compiler.py"
+        ],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-03",
+      "source_task_id": "TASK-0092-SELF-03",
+      "source_requirement_ids": [
+        "REQ-0092-005",
+        "REQ-0092-006"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-03"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-02"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-03"
+      ],
+      "gate_ids": [
+        "GATE-009-PREREQUISITE"
+      ],
+      "conflict_zone_ids": [
+        "CZ-001"
+      ],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-005:realized_by:FEAT-0092-SELF-03:decomposed_to:TASK-0092-SELF-03",
+          "trace:REQ-0092-006:realized_by:FEAT-0092-SELF-03:decomposed_to:TASK-0092-SELF-03"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-03.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-03.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-03.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-03.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-02:precedes:TASK-0092-SELF-03"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-03:verified_by:TEST-0092-SELF-03"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-03:gated_by:GATE-009-PREREQUISITE"
+        ],
+        "conflict_zone_ids": [
+          "write_scope:src/spec_creator/prompt_compiler.py"
+        ],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-04",
+      "source_task_id": "TASK-0092-SELF-04",
+      "source_requirement_ids": [
+        "REQ-0092-007",
+        "REQ-0092-008"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-04"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-03"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-04"
+      ],
+      "gate_ids": [
+        "GATE-009-VERIFIER"
+      ],
+      "conflict_zone_ids": [
+        "CZ-001"
+      ],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-007:realized_by:FEAT-0092-SELF-04:decomposed_to:TASK-0092-SELF-04",
+          "trace:REQ-0092-008:realized_by:FEAT-0092-SELF-04:decomposed_to:TASK-0092-SELF-04"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-04.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-04.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-04.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-04.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-03:precedes:TASK-0092-SELF-04"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-04:verified_by:TEST-0092-SELF-04"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-04:gated_by:GATE-009-VERIFIER"
+        ],
+        "conflict_zone_ids": [
+          "write_scope:src/spec_creator/prompt_compiler.py"
+        ],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-05",
+      "source_task_id": "TASK-0092-SELF-05",
+      "source_requirement_ids": [
+        "REQ-0092-009",
+        "REQ-0092-010"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-05"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-04"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-05"
+      ],
+      "gate_ids": [
+        "GATE-009-CONTINUATION"
+      ],
+      "conflict_zone_ids": [
+        "CZ-001"
+      ],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-009:realized_by:FEAT-0092-SELF-05:decomposed_to:TASK-0092-SELF-05",
+          "trace:REQ-0092-010:realized_by:FEAT-0092-SELF-05:decomposed_to:TASK-0092-SELF-05"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-05.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-05.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-05.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-05.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-04:precedes:TASK-0092-SELF-05"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-05:verified_by:TEST-0092-SELF-05"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-05:gated_by:GATE-009-CONTINUATION"
+        ],
+        "conflict_zone_ids": [
+          "write_scope:src/spec_creator/prompt_compiler.py"
+        ],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-06",
+      "source_task_id": "TASK-0092-SELF-06",
+      "source_requirement_ids": [
+        "REQ-0092-011",
+        "REQ-0092-012"
+      ],
+      "write_scopes": [
+        "src/spec_creator/prompt_compiler_evaluator.py"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-06"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-05"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-06"
+      ],
+      "gate_ids": [
+        "GATE-009-CONTEXT"
+      ],
+      "conflict_zone_ids": [],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-011:realized_by:FEAT-0092-SELF-06:decomposed_to:TASK-0092-SELF-06",
+          "trace:REQ-0092-012:realized_by:FEAT-0092-SELF-06:decomposed_to:TASK-0092-SELF-06"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-06.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-06.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-06.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-06.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-05:precedes:TASK-0092-SELF-06"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-06:verified_by:TEST-0092-SELF-06"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-06:gated_by:GATE-009-CONTEXT"
+        ],
+        "conflict_zone_ids": [],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-07",
+      "source_task_id": "TASK-0092-SELF-07",
+      "source_requirement_ids": [
+        "REQ-0092-013",
+        "REQ-0092-014"
+      ],
+      "write_scopes": [
+        "evaluation/metric-reconciliation-v0.09.2.json"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-07"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-06"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-07"
+      ],
+      "gate_ids": [
+        "GATE-009-RECONCILIATION"
+      ],
+      "conflict_zone_ids": [],
+      "parallel_with": [],
+      "complexity_score": 10,
+      "complexity_factors": {
+        "source_requirement_count": 2,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-013:realized_by:FEAT-0092-SELF-07:decomposed_to:TASK-0092-SELF-07",
+          "trace:REQ-0092-014:realized_by:FEAT-0092-SELF-07:decomposed_to:TASK-0092-SELF-07"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-07.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-07.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-07.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-07.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-06:precedes:TASK-0092-SELF-07"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-07:verified_by:TEST-0092-SELF-07"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-07:gated_by:GATE-009-RECONCILIATION"
+        ],
+        "conflict_zone_ids": [],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    },
+    {
+      "task_id": "CTASK-0092-SELF-08",
+      "source_task_id": "TASK-0092-SELF-08",
+      "source_requirement_ids": [
+        "REQ-0092-015"
+      ],
+      "write_scopes": [
+        "versions/v0.09.2/SELF-COMPILED-PROMPT.json"
+      ],
+      "read_scopes": [
+        "versions/v0.09.2/EVALUATION-PLAN.json",
+        "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "produced_artifacts": [
+        "artifact:v0092-self-08"
+      ],
+      "consumed_artifacts": [],
+      "prerequisite_task_ids": [
+        "CTASK-0092-SELF-07"
+      ],
+      "verification_refs": [
+        "TEST-0092-SELF-08"
+      ],
+      "gate_ids": [
+        "GATE-009-SELF"
+      ],
+      "conflict_zone_ids": [],
+      "parallel_with": [],
+      "complexity_score": 7,
+      "complexity_factors": {
+        "source_requirement_count": 1,
+        "write_scope_count": 1,
+        "prerequisite_count": 1,
+        "verification_reference_count": 1
+      },
+      "provenance": {
+        "source_requirement_ids": [
+          "trace:REQ-0092-015:realized_by:FEAT-0092-SELF-08:decomposed_to:TASK-0092-SELF-08"
+        ],
+        "write_scopes": [
+          "task_metadata:TASK-0092-SELF-08.write_scopes"
+        ],
+        "read_scopes": [
+          "task_metadata:TASK-0092-SELF-08.read_scopes"
+        ],
+        "produced_artifacts": [
+          "task_metadata:TASK-0092-SELF-08.produces_artifacts"
+        ],
+        "consumed_artifacts": [
+          "task_metadata:TASK-0092-SELF-08.consumes_artifacts"
+        ],
+        "prerequisite_task_ids": [
+          "trace:TASK-0092-SELF-07:precedes:TASK-0092-SELF-08"
+        ],
+        "verification_refs": [
+          "trace:TASK-0092-SELF-08:verified_by:TEST-0092-SELF-08"
+        ],
+        "gate_ids": [
+          "trace:TEST-0092-SELF-08:gated_by:GATE-009-SELF"
+        ],
+        "conflict_zone_ids": [],
+        "parallel_with": [
+          "rule:no_dependency_path_and_no_shared_write_scope"
+        ],
+        "complexity_score": [
+          "formula:v0.08"
+        ]
+      }
+    }
+  ],
+  "conflict_zones": [
+    {
+      "conflict_zone_id": "CZ-001",
+      "write_scope": "src/spec_creator/prompt_compiler.py",
+      "task_ids": [
+        "CTASK-0092-SELF-01",
+        "CTASK-0092-SELF-02",
+        "CTASK-0092-SELF-03",
+        "CTASK-0092-SELF-04",
+        "CTASK-0092-SELF-05"
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "summary": {
+    "task_count": 8,
+    "dependency_edge_count": 7,
+    "conflict_zone_count": 1,
+    "blocking_diagnostic_count": 0
+  },
+  "graph_hash": "72e068602c636e47793ce93ca3be31152c56b448af27509913ea1a75e7a6a835"
+}

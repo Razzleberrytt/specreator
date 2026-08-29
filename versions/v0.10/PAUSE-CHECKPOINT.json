@@ -1,0 +1,22 @@
+{
+  "checkpoint_id": "PAUSE-010-PROMOTED-20260824T1910Z",
+  "created_at_utc": "2026-08-24T19:10:00Z",
+  "active_candidate": {
+    "version": "0.10",
+    "status": "PROMOTED AS EXPERIMENTAL",
+    "contract_id": "REL-0.10-FROZEN-001",
+    "contract_hash": "b9b1480d0fc7cb943d5010c4801b95e6e8005664825cb5f531b342400a62e10d",
+    "implementation_status": "COMPLETE / VERIFIED",
+    "next_required_action": "Open unfrozen v0.11 Iteration & Continuation Architecture discovery; do not modify v0.10 frozen artifacts."
+  },
+  "last_sealed_release": {"version":"0.10","status":"PROMOTED AS EXPERIMENTAL","decision_id":"DEC-0032"},
+  "invariants": [
+    "Do not modify any v0.10 frozen contract-bound artifact.",
+    "Do not modify v0.09.2 frozen/sealed artifacts.",
+    "Preserve v0.09 and v0.09.1 RETRY REQUIRED history.",
+    "REG-0001 through REG-0024 remain active unless governed retirement occurs.",
+    "Missing evidence remains missing/unavailable, never zero or PASS."
+  ],
+  "release_evidence": {"tests":"155/155 PASS","protocol_projects":"3/3 PASS","external_transfer_trials":"3/3 VALID","frozen_metrics":"20/20 PASS","mandatory_gates":"16/16 PASS","historical_integrity":"457/457 unchanged"},
+  "next_highest_roi_task": "Open v0.11 discovery for package-only continuation and iteration hygiene, targeting near-zero handoff entropy."
+}

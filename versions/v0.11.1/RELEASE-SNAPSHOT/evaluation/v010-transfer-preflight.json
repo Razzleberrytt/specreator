@@ -1,0 +1,56 @@
+{
+  "aggregate": {
+    "completed_trials": 3,
+    "corrective_prompt_count": 0,
+    "missing_obligation_count": 0,
+    "missing_required_field_count": 0,
+    "owner_decision_escape_count": 0,
+    "prerequisite_escape_count": 0,
+    "reconstruction_request_count": 0,
+    "scope_escape_count": 0
+  },
+  "checks": [
+    {
+      "completed": true,
+      "package_hash_ok": true,
+      "package_sha256_actual": "8a3e7e4d2000e7402b00be041540d8d955047a6654582781f48cd67d8d2e3965",
+      "package_sha256_expected": "8a3e7e4d2000e7402b00be041540d8d955047a6654582781f48cd67d8d2e3965",
+      "project_id": "TCP-TRANSFER-SLUG-001",
+      "prompt_envelope_sha256": "5916e99c529ef96eec5d4288fc3aad1ca60420fb69ca054a7fc00e64156d8ff9",
+      "receiver_context_id": "RCX-010-TRIAL-001-20260824T1422-0400",
+      "trial_id": "TRANSFER-010-PREFREEZE-TRIAL-001",
+      "zero_prohibited_escapes": true
+    },
+    {
+      "completed": true,
+      "package_hash_ok": true,
+      "package_sha256_actual": "1a654436a744374fec81e2cb56d3a9433a2699829a45cada8979e153794ac1f6",
+      "package_sha256_expected": "1a654436a744374fec81e2cb56d3a9433a2699829a45cada8979e153794ac1f6",
+      "project_id": "TCP-TRANSFER-010-TRIAL-001",
+      "prompt_envelope_sha256": "b2e4f360a74f178aa76292c86788fd587768316d6f31b5c53ebc6e2568ac78ba",
+      "receiver_context_id": "chatgpt-separate-receiving-context-20260824-1422-0400",
+      "trial_id": "TRANSFER-010-TRIAL-001-RX-001",
+      "zero_prohibited_escapes": true
+    },
+    {
+      "completed": true,
+      "package_hash_ok": true,
+      "package_sha256_actual": "e41fa7061ff8634c464d5bc3cc5a392148dec97e159439cd4a99f0addf7a5e63",
+      "package_sha256_expected": "e41fa7061ff8634c464d5bc3cc5a392148dec97e159439cd4a99f0addf7a5e63",
+      "project_id": "TCP-retry-after-transfer-001",
+      "prompt_envelope_sha256": "443ba189d9f2957b04c35208e3c670235b95a9225d6b061f3623fc67cd5a67f9",
+      "receiver_context_id": "RCX-20260824-GPT56SOL-TRANSFER-001",
+      "trial_id": "TRANSFER-010-TRIAL-001-RETRY-AFTER",
+      "zero_prohibited_escapes": true
+    }
+  ],
+  "distinct_project_ids": 3,
+  "distinct_receiver_context_ids": 3,
+  "distinct_trial_ids": 3,
+  "expected_protocol_sha256": "f427f061d290cf4af2a3dceac135b66c8d49571c576d848377c5164c1d56b02b",
+  "ok": true,
+  "protocol_hash_ok": true,
+  "protocol_id": "TRANSFER-010-PREFREEZE-001",
+  "protocol_sha256": "f427f061d290cf4af2a3dceac135b66c8d49571c576d848377c5164c1d56b02b",
+  "trial_count": 3
+}

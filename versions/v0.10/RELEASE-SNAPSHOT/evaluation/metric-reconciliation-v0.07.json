@@ -1,0 +1,162 @@
+{
+  "all_targets_pass": true,
+  "candidate_version": "0.07",
+  "contract_id": "REL-0.07-FROZEN-001",
+  "cutoff_utc": "2026-08-24T16:28:00Z",
+  "metric_count": 16,
+  "missing_data_policy": "All 16 preregistered metrics have complete denominators and raw evidence; no missing value is treated as zero.",
+  "outcomes": [
+    {
+      "group": "primary_metrics",
+      "metric_name": "owner_question_reduction_rate",
+      "metric_record_id": "MET-007-001",
+      "status": "PASS",
+      "target_operator": "gte",
+      "target_value": 0.4,
+      "value": 0.5652173913043478
+    },
+    {
+      "group": "primary_metrics",
+      "metric_name": "information_value_top_selection_accuracy",
+      "metric_record_id": "MET-007-002",
+      "status": "PASS",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "value": 1.0
+    },
+    {
+      "group": "primary_metrics",
+      "metric_name": "heldout_action_exact_match_rate",
+      "metric_record_id": "MET-007-003",
+      "status": "PASS",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "safe_inference_exact_match_rate",
+      "metric_record_id": "MET-007-G01",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "unsafe_default_count",
+      "metric_record_id": "MET-007-G02",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "critical_ambiguity_escape_count",
+      "metric_record_id": "MET-007-G03",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "dependency_frontier_accuracy",
+      "metric_record_id": "MET-007-G04",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "provenance_completeness_rate",
+      "metric_record_id": "MET-007-G05",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "unnecessary_question_rate",
+      "metric_record_id": "MET-007-G06",
+      "status": "PASS",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "value": 0.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "rework_proxy_error_count",
+      "metric_record_id": "MET-007-G07",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "parent_preflight_rate",
+      "metric_record_id": "MET-007-G08",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "inherited_suite_pass_rate",
+      "metric_record_id": "MET-007-G09",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "active_regression_pass_rate",
+      "metric_record_id": "MET-007-G10",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "v007_spec_lint_acceptance_rate",
+      "metric_record_id": "MET-007-G11",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "value": 1.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "package_manifest_validation_error_count",
+      "metric_record_id": "MET-007-G12",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    },
+    {
+      "group": "guardrail_metrics",
+      "metric_name": "critical_gate_bypass_count",
+      "metric_record_id": "MET-007-G13",
+      "status": "PASS",
+      "target_operator": "eq",
+      "target_value": 0,
+      "value": 0.0
+    }
+  ],
+  "raw_evidence_refs": [
+    "evaluation/v007-corpus-results-final.json",
+    "evaluation/v007-preregistration-preflight.json",
+    "evaluation/pytest-v0.07-final.txt",
+    "evaluation/pytest-v0.06.1-inherited-on-v0.07-final.txt",
+    "evaluation/verifier-pass-v0.07.json",
+    "evaluation/package-validation-prefinal-v0.07.json"
+  ]
+}

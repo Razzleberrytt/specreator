@@ -1,0 +1,48 @@
+{
+  "candidate_version": "0.04",
+  "case_count": 100,
+  "cases_per_rule": 10,
+  "clean_case_count": 50,
+  "corpus_path": "fixtures/linter/v0.04/corpus.jsonl",
+  "corpus_sha256": "cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d",
+  "created_at_utc": "2026-08-24T14:45:00Z",
+  "defect_case_count": 50,
+  "immutability": "The corpus SHA-256 is copied verbatim into the frozen release contract. Any post-freeze mismatch fails the evaluation-integrity gate.",
+  "inherited_validator_compatibility": {
+    "observed_defect": "A v0.03 manifest hash over shared append-only ledgers fails after legitimate v0.04 appends.",
+    "regression_candidate": "REG-0005",
+    "required_evidence": [
+      "Unchanged historical prefix plus later appended JSONL records passes historical manifest verification.",
+      "Mutation inside the historical prefix fails.",
+      "Version-local immutable file mutation still fails."
+    ]
+  },
+  "metrics": {
+    "clean_case_acceptance_rate": "clean cases with zero findings / clean cases",
+    "defect_case_detection_rate": "defect cases with all expected rules and no missing expected rule / defect cases",
+    "diagnostic_completeness_rate": "findings with nonempty rationale and exact source span / all findings",
+    "finding_precision": "expected findings / all emitted findings",
+    "minimum_per_rule_precision": "minimum precision across LINT-001..LINT-010"
+  },
+  "plan_id": "EPLAN-0.04-001",
+  "rule_ids": [
+    "LINT-001",
+    "LINT-002",
+    "LINT-003",
+    "LINT-004",
+    "LINT-005",
+    "LINT-006",
+    "LINT-007",
+    "LINT-008",
+    "LINT-009",
+    "LINT-010"
+  ],
+  "status": "preregistered-pre-freeze",
+  "supported_profile": "Deterministic Markdown lint profile: requirement/task/component headings plus field markers, with contextual prose rules outside fenced code, blockquotes, Notes:, and Rationale: lines.",
+  "suppression_governance": [
+    "A suppression directive may only suppress a rule when it names an approved DEC-* identifier supplied to the linter.",
+    "Unknown/unapproved suppression decisions must not hide findings and must emit a suppression-governance diagnostic.",
+    "Suppressions are explicit and local; blanket disable-all is unsupported in v0.04."
+  ],
+  "target_policy": "All seeded synthetic metrics target 1.0 because the corpus is deterministic and preregistered. Real-project effectiveness remains unvalidated and caps v0.04 at experimental promotion."
+}

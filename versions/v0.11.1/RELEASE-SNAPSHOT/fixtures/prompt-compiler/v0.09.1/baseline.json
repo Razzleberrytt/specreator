@@ -1,0 +1,13 @@
+{
+  "baseline_id": "BASELINE-009-GENERIC-001",
+  "description": "Frozen naive generic prompts used only as a preregistered comparison baseline. They intentionally know the task ID but do not compile governed task closure.",
+  "schema_version": "1.0",
+  "scoring": "For each accepted fixture, corrective-prompt proxy is the count of frozen expected_obligation_tokens absent as exact substrings from the rendered prompt. Compiled prompts are scored identically. Reduction=(baseline_missing-compiled_missing)/baseline_missing. Zero baseline denominator is unavailable, never zero.",
+  "templates": {
+    "bootstrap": "Prepare to work on {task_id} for candidate {candidate_version}. Use available project context.",
+    "continuation": "Continue {task_id} from the previous session and finish the remaining work.",
+    "debug": "Debug {task_id}. Fix the observed problem and rerun tests.",
+    "implementation": "Implement {task_id}. Follow project requirements and run the relevant tests.",
+    "verification": "Verify that {task_id} is complete and correct."
+  }
+}

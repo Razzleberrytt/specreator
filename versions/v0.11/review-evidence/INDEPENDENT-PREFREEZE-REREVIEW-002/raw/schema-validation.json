@@ -1,0 +1,21 @@
+{
+  "draft_2020_12_schema_checks": {
+    "schema_life": {
+      "draft": "https://json-schema.org/draft/2020-12/schema",
+      "valid": true,
+      "error": null
+    },
+    "schema_exec": {
+      "draft": "https://json-schema.org/draft/2020-12/schema",
+      "valid": true,
+      "error": null
+    }
+  },
+  "lifecycle_checkpoint_instance_validation": {
+    "instance_ref": "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+    "schema_ref": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "error_count": 0,
+    "errors": [],
+    "verdict": "PASS"
+  }
+}

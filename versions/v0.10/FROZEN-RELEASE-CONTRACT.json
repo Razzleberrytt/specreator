@@ -1,0 +1,319 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013",
+    "REG-0014",
+    "REG-0015",
+    "REG-0016",
+    "REG-0017",
+    "REG-0018",
+    "REG-0019",
+    "REG-0020",
+    "REG-0021",
+    "REG-0022",
+    "REG-0023"
+  ],
+  "candidate_version": "0.10",
+  "contract_hash": "b9b1480d0fc7cb943d5010c4801b95e6e8005664825cb5f531b342400a62e10d",
+  "contract_id": "REL-0.10-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-010"
+  },
+  "failure_conditions": [
+    "Frozen artifact SHA-256 differs for evaluation/ambiguity-v0.10-prefreeze.json: expected dd23da93fb7a1bef2a0cb9314569fa4fb9c55ccfe1447692872a37ec1e64ccb5.",
+    "Frozen artifact SHA-256 differs for evaluation/hash-integrity-historical-v0.10-prefreeze.json: expected 0b246bfcfa3fffcf5fbf9eb7f23a01d291261b1152c7f00df570027d490e6fa9.",
+    "Frozen artifact SHA-256 differs for evaluation/lint-v0.10-prefreeze.json: expected c1818442f897a517edc5767b6c7768e4f31200fa48709c3418570d471c5def36.",
+    "Frozen artifact SHA-256 differs for evaluation/pytest-v0.10-prefreeze.txt: expected 9843f3f6adb2af2b77a68edaea18ac97ad0d87c31b521b50f7d93f5bb308bbe2.",
+    "Frozen artifact SHA-256 differs for evaluation/transfer-v0.10/raw-packages/trial-001-slug.zip: expected 8a3e7e4d2000e7402b00be041540d8d955047a6654582781f48cd67d8d2e3965.",
+    "Frozen artifact SHA-256 differs for evaluation/transfer-v0.10/raw-packages/trial-002-manifest-cli.zip: expected 1a654436a744374fec81e2cb56d3a9433a2699829a45cada8979e153794ac1f6.",
+    "Frozen artifact SHA-256 differs for evaluation/transfer-v0.10/raw-packages/trial-003-retry-after.zip: expected e41fa7061ff8634c464d5bc3cc5a392148dec97e159439cd4a99f0addf7a5e63.",
+    "Frozen artifact SHA-256 differs for evaluation/transfer-v0.10/trial-index.json: expected 71e131ee696e41a19a8d7c5776c88b6874bfa44ee8420d1efe7c2b8a14169a5f.",
+    "Frozen artifact SHA-256 differs for evaluation/v010-parent-preflight.json: expected 9b81b464ac2448bfabb6c5f88053e7ff1079902927515073ed6e482f064d1885.",
+    "Frozen artifact SHA-256 differs for evaluation/v010-schema-corpus-preflight.json: expected 61f4ace904be7cc5a76890ea7340c620e683458721aceaedb50d11e0e14be683.",
+    "Frozen artifact SHA-256 differs for evaluation/v010-transfer-preflight.json: expected 78e17786e990a79c2a3e1ff48e6b74a5404656fc8c692f52cc6df1a21ef5586a.",
+    "Frozen artifact SHA-256 differs for evaluation/workspace-validation-v0.10-prefreeze.json: expected b65df417fd737813c080a3c097c38924e77ebca7432cd9ee9a9ee4971b608a90.",
+    "Frozen artifact SHA-256 differs for fixtures/protocol/v0.10/corpus.jsonl: expected 8d28f3c89b856185b8854a87fe7bc8243f757bb68bb5da2c42e4ae881f8b199f.",
+    "Frozen artifact SHA-256 differs for schemas/protocol-project-v1.schema.json: expected 2644d17f3c1192eb9122306185a11e9102ae4d234cea4263632d9fe833df5812.",
+    "Frozen artifact SHA-256 differs for schemas/protocol-run-v1.schema.json: expected 89469c1b859d2b5f9feb5d6946930d349cef2ea8c15c4942da3c08f6120176e6.",
+    "Frozen artifact SHA-256 differs for versions/v0.10/EVALUATION-PLAN.json: expected 1d7d21980e589232ce05b1a2ca337b95e12caf546c112f63bc1d0ab8c8421a7e.",
+    "Frozen artifact SHA-256 differs for versions/v0.10/SPEC-CREATOR-v0.10.md: expected 2c07d5e7c3b9c5f283c0e4af80e991976310f47ea894f9e8f4688afb3d3673fb.",
+    "Frozen artifact SHA-256 differs for versions/v0.10/TRANSFER-EVIDENCE-PROTOCOL.json: expected f427f061d290cf4af2a3dceac135b66c8d49571c576d848377c5164c1d56b02b.",
+    "Any of the three preregistered Protocol MVP evaluation projects does not complete under its frozen scenario semantics.",
+    "Any manual reconstruction of a required promoted upstream artifact is needed to complete an evaluation project.",
+    "Any downstream executable authority proceeds across a failed, missing, or hash-invalid stage.",
+    "Any blocker/recovery scenario rewrites historical execution evidence instead of appending valid recovery evidence.",
+    "Any resume scenario accepts incompatible or hash-mismatched continuation state or fails exact canonical resume equivalence.",
+    "Any promoted component semantic check differs from direct invocation of the promoted parent behavior.",
+    "Any critical gate bypass, scope escape, prerequisite escape, owner-decision escape, missing-data substitution, or historical mutation occurs.",
+    "Any active regression fails, disappears, or is weakened to obtain a pass.",
+    "Any frozen metric denominator is missing, skipped, malformed, or reconciled as zero/pass.",
+    "Required independent verification is absent or performed by the implementation actor.",
+    "Final shipping package has missing/extra/hash/size mismatches after fresh extraction."
+  ],
+  "frozen_at_utc": "2026-08-24T18:42:21Z",
+  "goals": [
+    {
+      "acceptance": "All 3 preregistered projects complete end-to-end with zero manual artifact reconstruction and exact stage provenance.",
+      "description": "Compose promoted Spec Creator stages through one deterministic Protocol MVP boundary.",
+      "goal_id": "G-010-001"
+    },
+    {
+      "acceptance": "Zero critical-gate, scope, prerequisite, owner-decision, or invalid-resume escapes; blocker/recovery and resume scenarios satisfy frozen semantics.",
+      "description": "Fail closed across blocker, recovery, and continuation boundaries.",
+      "goal_id": "G-010-002"
+    },
+    {
+      "acceptance": "Parent/regression pass rates and promoted-stage semantic preservation are 1.0 with zero historical mutation.",
+      "description": "Preserve promoted parent semantics and historical evidence.",
+      "goal_id": "G-010-003"
+    },
+    {
+      "acceptance": "Exactly 3/3 validated preregistered transfer trials remain hash-intact with zero prohibited escapes or missing required fields.",
+      "description": "Use real separate-context prompt-transfer evidence as a frozen prerequisite.",
+      "goal_id": "G-010-004"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-010-G01",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G02",
+      "name": "scope_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G03",
+      "name": "prerequisite_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G04",
+      "name": "owner_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G05",
+      "name": "invalid_or_hash_mismatched_resume_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G06",
+      "name": "missing_data_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G07",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-G08",
+      "name": "parent_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-G09",
+      "name": "frozen_hash_integrity_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-G10",
+      "name": "external_transfer_trial_completion_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-G11",
+      "name": "external_transfer_scope_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G12",
+      "name": "external_transfer_missing_obligation_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G13",
+      "name": "external_transfer_prerequisite_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-G14",
+      "name": "external_transfer_owner_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical JSON excluding contract_hash. Exact approved spec, evaluation plan, protocol schemas, three-project corpus, preregistered transfer protocol/index/raw evidence ZIPs, transfer/schema/corpus/parent/spec/workspace/historical preflights, current-suite evidence, and final prefreeze transaction are byte-bound through explicit SHA-256 failure conditions.",
+  "mandatory_gates": [
+    "GATE-010-TRANSFER",
+    "GATE-010-SPEC",
+    "GATE-010-SCHEMA",
+    "GATE-010-CORPUS",
+    "GATE-010-PARENT",
+    "GATE-010-COMPOSE",
+    "GATE-010-FAIL-CLOSED",
+    "GATE-010-RESUME",
+    "GATE-010-PROVENANCE",
+    "GATE-010-SEMANTICS",
+    "GATE-010-TEST",
+    "GATE-010-REGRESSION",
+    "GATE-010-RECONCILIATION",
+    "GATE-010-INDEPENDENT",
+    "GATE-010-PACKAGE",
+    "GATE-010-ROLLBACK"
+  ],
+  "parent_version": "0.09.2",
+  "primary_metrics": [
+    {
+      "metric_id": "M-010-001",
+      "name": "end_to_end_project_completion_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-002",
+      "name": "manual_artifact_reconstruction_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-010-003",
+      "name": "deterministic_rerun_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-004",
+      "name": "resume_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-005",
+      "name": "artifact_provenance_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-010-006",
+      "name": "promoted_stage_semantic_preservation_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "Every primary and guardrail metric meets its frozen target with complete denominators.",
+    "All mandatory gates PASS with no BLOCKED/FAIL gate at decision time.",
+    "Three-project evaluator evidence, independent verification, reconciliation, retrospective, rollback, release snapshot, manifest, and fresh-extraction package verification are complete.",
+    "Maximum promotion status is PROMOTED AS EXPERIMENTAL."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Deterministic end-to-end composition over promoted stages.",
+      "requirement_id": "REQ-010-01"
+    },
+    {
+      "critical": true,
+      "description": "Versioned machine-readable stage artifacts; no prose reconstruction when promoted artifacts exist.",
+      "requirement_id": "REQ-010-02"
+    },
+    {
+      "critical": true,
+      "description": "Fail-closed stage boundaries.",
+      "requirement_id": "REQ-010-03"
+    },
+    {
+      "critical": true,
+      "description": "Persisted resume and continuation with hash compatibility.",
+      "requirement_id": "REQ-010-04"
+    },
+    {
+      "critical": true,
+      "description": "Complete end-to-end provenance.",
+      "requirement_id": "REQ-010-05"
+    },
+    {
+      "critical": true,
+      "description": "Preservation of promoted component semantics.",
+      "requirement_id": "REQ-010-06"
+    },
+    {
+      "critical": true,
+      "description": "Three-project frozen evaluation including normal, blocker/recovery, and resume paths.",
+      "requirement_id": "REQ-010-07"
+    },
+    {
+      "critical": true,
+      "description": "Frozen external transfer evidence prerequisite.",
+      "requirement_id": "REQ-010-08"
+    },
+    {
+      "critical": true,
+      "description": "Historical and active-regression integrity.",
+      "requirement_id": "REQ-010-09"
+    },
+    {
+      "critical": true,
+      "description": "Governed release accounting, independent verification, rollback, and package sealing.",
+      "requirement_id": "REQ-010-10"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.10 fails, preserve all frozen v0.10 evidence and continue using sealed v0.09.2 behavior. Do not rewrite v0.09/v0.09.1 failures or any frozen parent artifact.",
+    "parent_contract_sha256": "44a34857f9c0b34b7ceb3e576c9b39329c4a7d73ad5d908f0d920426b421dde7",
+    "preserve_parent_history": true,
+    "rollback_target": "0.09.2"
+  },
+  "schema_version": "2.0"
+}

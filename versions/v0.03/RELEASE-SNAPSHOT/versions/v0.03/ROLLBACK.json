@@ -1,0 +1,58 @@
+{
+  "rollback_id": "ROLLBACK-0.03-001",
+  "candidate_version": "0.03",
+  "rollback_target": "0.02",
+  "strategy": "Ignore v0.03 candidate artifacts and continue from preserved v0.02 experimental protocol; never delete v0.03 failed evidence.",
+  "parent_artifacts": [
+    {
+      "path": "prompts/MASTER-RECURSIVE-PROMPT.md",
+      "sha256": "1b3d546be47223db3635048eadebe27282a4a2e808d8f3b129d9b5eac788e373"
+    },
+    {
+      "path": "roadmap/ROADMAP-to-v1.00.md",
+      "sha256": "d6321caef5d9952dd3962fca9f2f6fa005a92c4864fb8f5b8987a90ab534320a"
+    },
+    {
+      "path": "schemas/event-v1.schema.json",
+      "sha256": "53586b7c9fcbf3dedc442200fef2d2c3b74316f66f6a3e1baf4208b222bc5538"
+    },
+    {
+      "path": "schemas/frozen-release-contract-v1.schema.json",
+      "sha256": "a80d9ce851c5c9d55ea817f375c615dd8fb08c666f94b8e351382c694b29c1f6"
+    },
+    {
+      "path": "schemas/improvement-v1.schema.json",
+      "sha256": "b1045ecd0de0bf435032e7ec5efb980e3d9e514ff3108e35b9649e10d610d65c"
+    },
+    {
+      "path": "schemas/regression-v1.schema.json",
+      "sha256": "95765e9884e307aeda7f51aae8800bae22eb59d151c04a43a2d7c15cedfc72c6"
+    },
+    {
+      "path": "self-improvement/SELF-IMPROVEMENT-PROTOCOL.md",
+      "sha256": "6e86109ba4fb1e2a7c0444e406d00f7c04ca0565e5e05487f149bc70214a0832"
+    },
+    {
+      "path": "versions/v0.01/MANIFEST.json",
+      "sha256": "3dda07dd54ce4c4963adf08a98843dceeca17fd53c715c991dfbeab2026280a1"
+    },
+    {
+      "path": "versions/v0.01/SPEC-CREATOR-v0.01.md",
+      "sha256": "fb3daca564ae495e11afffcb47e8e0b35371325fa7925ec626c88fc574e62fca"
+    },
+    {
+      "path": "versions/v0.02/FROZEN-RELEASE-CONTRACT.json",
+      "sha256": "eaf68e91974302b6771be89e546f33c8b90e23e3f84c356658c3f4108c6bc717"
+    },
+    {
+      "path": "versions/v0.02/MANIFEST.json",
+      "sha256": "2a8c2ba6315709b91002edfa222b532de514d4da46cba2c28c1b4090cd49ebac"
+    },
+    {
+      "path": "versions/v0.02/SPEC-CREATOR-v0.02.md",
+      "sha256": "d86d3edb790b33e3c111c5c2dbd02684dd8ad769b08b0d168f67db15f36f89f3"
+    }
+  ],
+  "verification": "Every listed pre-v0.03 artifact must remain byte-identical to its original package hash.",
+  "status": "ready"
+}

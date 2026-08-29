@@ -1,0 +1,331 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009",
+    "REG-0010",
+    "REG-0011",
+    "REG-0012",
+    "REG-0013",
+    "REG-0014",
+    "REG-0015",
+    "REG-0016"
+  ],
+  "candidate_version": "0.08",
+  "contract_hash": "460333b394380c6fbc9633ee86fcbff1e91e0c2105b681e51bb9acf5d1b92ec6",
+  "contract_id": "REL-0.08-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-008"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Approved v0.08 specification SHA-256 differs from 8b078db7dfb566cf83ac563d5ce7ef60c1f456145c2a8bc6077bdcb7698c4ddd.",
+    "Frozen evaluation-plan SHA-256 differs from 93917ef51cd4ca06db01bbbbe89ec8e448ec8c44cc0ea0ae79f419c474d423b5.",
+    "Frozen compiler corpus SHA-256 differs from abec3d8c23f2eec3a4a721dc254ea72fbbedafe1f4ea6e9f19722eda733e61ef.",
+    "Frozen held-out partition SHA-256 differs from da9ee47f5fadf77911d512e43a0ac17dd20404283130e2be513f7744d06fcae1.",
+    "Frozen execution corpus SHA-256 differs from 8ffa30d23ed346a1e4c5ebb0e458babd9e2b997cdcd2284bfbdbb67bf71710eb.",
+    "Frozen preregistration preflight SHA-256 differs from 40a46aaec5c098b144e90be5b428a595c23b440d0410a314f7d97a02d05fee33.",
+    "Project schema SHA-256 differs from 88b54a4415a829d1c8ee55a29e5ddf9de470e227b18185506a8531d173244bcf.",
+    "Compiled graph schema SHA-256 differs from c5678475b219c29fc383ae789410448188144874e73b1c309798dfafe36dcde0.",
+    "Execution event schema SHA-256 differs from c00c68c6c10561471ccc1d132fa597c477a185a6ce07f7a3b4a763cdeb256173.",
+    "Parent preflight rate is below 1.0.",
+    "accepted_task_graph_exact_match_rate or heldout_task_graph_exact_match_rate is below 0.95.",
+    "negative_case_classification_accuracy is below 1.0.",
+    "Any unresolved decision, oversized task, dependency cycle, invented dependency, unsafe parallel pair, or invalid execution stream escapes.",
+    "Critical trace completeness, dependency provenance, parallelization accuracy, or execution exact-match is below 1.0.",
+    "Any active inherited regression fails or disappears without governed retirement.",
+    "Approved v0.08 specification emits an unsuppressed parent linter finding, ambiguity finding, or discovery question.",
+    "Evaluator actor equals implementation actor.",
+    "Missing/skipped evidence is treated as zero or complete.",
+    "Final shipping package manifest is stale, incomplete, or fails extracted-package verification."
+  ],
+  "frozen_at_utc": "2026-08-24T16:50:00Z",
+  "goals": [
+    {
+      "acceptance": "accepted_task_graph_exact_match_rate >= 0.95 and heldout_task_graph_exact_match_rate >= 0.95.",
+      "description": "Compile governed specification evidence into exact deterministic atomic task graphs.",
+      "goal_id": "G-008-001"
+    },
+    {
+      "acceptance": "negative_case_classification_accuracy = 1.0 with zero unresolved-decision, cycle, or oversized-ready-task escapes.",
+      "description": "Fail safely on unresolved decisions, invalid parent evidence, cycles, and oversized source tasks.",
+      "goal_id": "G-008-002"
+    },
+    {
+      "acceptance": "dependency_provenance_accuracy, critical_ready_task_trace_completeness_rate, and parallelization_decision_accuracy = 1.0; invented_dependency_count and unsafe_parallelization_count = 0.",
+      "description": "Preserve dependency provenance, critical trace coverage, conflict safety, and pairwise parallel correctness.",
+      "goal_id": "G-008-003"
+    },
+    {
+      "acceptance": "execution_stream_exact_match_rate = 1.0 and invalid_execution_escape_count = 0.",
+      "description": "Represent task execution as immutable graph-bound append-only event replay.",
+      "goal_id": "G-008-004"
+    },
+    {
+      "acceptance": "Parent preflight, inherited suite, active regressions, independent verification, reconciliation, rollback, and extracted package integrity all pass.",
+      "description": "Preserve promoted-parent behavior and release integrity.",
+      "goal_id": "G-008-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-008-G01",
+      "name": "dependency_provenance_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G02",
+      "name": "critical_ready_task_trace_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G03",
+      "name": "parallelization_decision_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G04",
+      "name": "unresolved_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G05",
+      "name": "unsafe_parallelization_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G06",
+      "name": "oversized_ready_task_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G07",
+      "name": "dependency_cycle_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G08",
+      "name": "invented_dependency_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G09",
+      "name": "execution_stream_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G10",
+      "name": "invalid_execution_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G11",
+      "name": "deterministic_repeat_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G12",
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G13",
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G14",
+      "name": "active_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G15",
+      "name": "v008_spec_quality_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-G16",
+      "name": "package_manifest_validation_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-008-G17",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical JSON excluding contract_hash. Frozen criteria additionally bind exact bytes of the approved spec, three v0.08 schemas, compiler corpus, held-out partition, execution corpus, evaluation plan, and preregistration preflight by explicit failure-condition hashes.",
+  "mandatory_gates": [
+    "GATE-008-CORPUS-INTEGRITY",
+    "GATE-008-PARENT-PREFLIGHT",
+    "GATE-008-SPEC-QUALITY",
+    "GATE-008-SCHEMA",
+    "GATE-008-COMPILE",
+    "GATE-008-OWNER-BLOCK",
+    "GATE-008-DEPENDENCY",
+    "GATE-008-CYCLE",
+    "GATE-008-ATOMICITY",
+    "GATE-008-CONFLICT",
+    "GATE-008-PARALLEL",
+    "GATE-008-COVERAGE",
+    "GATE-008-EXECUTION",
+    "GATE-008-CLI",
+    "GATE-008-TEST",
+    "GATE-008-REGRESSION",
+    "GATE-008-SHADOW",
+    "GATE-008-RECONCILIATION",
+    "GATE-008-INDEPENDENT",
+    "GATE-008-PACKAGE",
+    "GATE-008-ROLLBACK"
+  ],
+  "parent_version": "0.07",
+  "primary_metrics": [
+    {
+      "metric_id": "M-008-001",
+      "name": "accepted_task_graph_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-002",
+      "name": "heldout_task_graph_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-008-003",
+      "name": "negative_case_classification_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and every frozen primary/guardrail metric meets target.",
+    "All metrics reconcile to raw frozen corpus results and denominator snapshots.",
+    "All active regressions PASS and meaningful defects are considered for permanent regression memory.",
+    "Spec, schemas, corpora, evaluation-plan, preflight, and contract hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains; rollback, retrospective, continuation state, version-local snapshots, manifest-last shipping seal, and extracted-package verification are complete.",
+    "Because same-cycle synthetic evidence is not organizationally independent, maximum classification is PROMOTED AS EXPERIMENTAL."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Compile governed traceability and source-task evidence into deterministic task records.",
+      "requirement_id": "REQ-008-001"
+    },
+    {
+      "critical": true,
+      "description": "Block compilation while unresolved owner-decision discovery actions remain.",
+      "requirement_id": "REQ-008-002"
+    },
+    {
+      "critical": true,
+      "description": "Derive prerequisite edges only from frozen allowed provenance sources.",
+      "requirement_id": "REQ-008-003"
+    },
+    {
+      "critical": true,
+      "description": "Reject combined dependency cycles with exact cycle source-task set.",
+      "requirement_id": "REQ-008-004"
+    },
+    {
+      "critical": true,
+      "description": "Enforce frozen atomicity bounds without inventing task splits.",
+      "requirement_id": "REQ-008-005"
+    },
+    {
+      "critical": true,
+      "description": "Create deterministic conflict zones for shared write scopes.",
+      "requirement_id": "REQ-008-006"
+    },
+    {
+      "critical": true,
+      "description": "Compute pairwise parallel eligibility from dependency paths and write conflicts.",
+      "requirement_id": "REQ-008-007"
+    },
+    {
+      "critical": true,
+      "description": "Preserve complete critical requirement-to-task-test-gate coverage.",
+      "requirement_id": "REQ-008-008"
+    },
+    {
+      "critical": true,
+      "description": "Expose deterministic compiler API and CLI JSON behavior.",
+      "requirement_id": "REQ-008-009"
+    },
+    {
+      "critical": true,
+      "description": "Preserve sealed-parent behavior and active regressions.",
+      "requirement_id": "REQ-008-010"
+    },
+    {
+      "critical": true,
+      "description": "Evaluate against frozen development and held-out task-compiler projects.",
+      "requirement_id": "REQ-008-011"
+    },
+    {
+      "critical": true,
+      "description": "Require independent verification, reconciliation, rollback, snapshots, and manifest-last sealing.",
+      "requirement_id": "REQ-008-012"
+    },
+    {
+      "critical": true,
+      "description": "Represent task execution state only through append-only events bound to immutable compiled graph hash.",
+      "requirement_id": "REQ-008-013"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.08 fails, preserve all v0.08 frozen/failed evidence and continue using sealed v0.07 executable behavior; do not rewrite parent ledgers or regressions.",
+    "parent_contract_sha256": "981c1415040c986d031f528ce10a12456a0e594bbb9551f95cbec4bf8c3dac38",
+    "preserve_parent_history": true,
+    "rollback_target": "0.07"
+  },
+  "schema_version": "2.0"
+}

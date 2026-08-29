@@ -1,0 +1,9 @@
+{
+  "resolution_id": "RES-0111-POSTFREEZE-001",
+  "source_defect_id": "DEF-011-POSTFREEZE-001",
+  "status": "REPAIRED_IN_UNFROZEN_RETRY_CANDIDATE_PENDING_INDEPENDENT_REVIEW",
+  "root_cause": "v0.11 froze an exact current-file enumeration as future ownership authority even though freeze, implementation, verification, and final packaging necessarily add shipped files afterward.",
+  "repair": "v0.11.1 seals all pre-retry non-parent v0.11 bytes as a hash-exact failed-predecessor baseline and replaces future ownership enumeration authority with disjoint frozen path selectors over isolated retry namespaces plus a prospective-output closure fixture.",
+  "anti_regression": "REG-0025 requires exact classification of both the actual current package and every preregistered future output path before freeze and again after implementation/final packaging.",
+  "target_nonweakening": "All v0.11 structural behavior targets are inherited unchanged; the retry adds one stricter boundary guardrail and one regression."
+}

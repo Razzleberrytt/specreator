@@ -1,0 +1,8 @@
+{
+  "candidate_version": "0.06",
+  "contract_id": "REL-0.06-FROZEN-001",
+  "result": "RETRY REQUIRED",
+  "defect_id": "DEF-006-001",
+  "evidence_ref": "evaluation/v006-preimplementation-preflight.json",
+  "superseded_by_candidate": "0.06.1"
+}

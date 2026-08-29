@@ -1,0 +1,402 @@
+{
+  "issues": [
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 1,
+      "message": "event_id has invalid stable ID: 'TEVT-008-001'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 2,
+      "message": "event_id has invalid stable ID: 'TEVT-008-002'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 3,
+      "message": "event_id has invalid stable ID: 'TEVT-008-003'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 4,
+      "message": "event_id has invalid stable ID: 'TEVT-008-004'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 5,
+      "message": "event_id has invalid stable ID: 'TEVT-008-005'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 6,
+      "message": "event_id has invalid stable ID: 'TEVT-008-006'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 7,
+      "message": "event_id has invalid stable ID: 'TEVT-008-007'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 8,
+      "message": "event_id has invalid stable ID: 'TEVT-008-008'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 9,
+      "message": "event_id has invalid stable ID: 'TEVT-008-009'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 10,
+      "message": "event_id has invalid stable ID: 'TEVT-008-010'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 11,
+      "message": "event_id has invalid stable ID: 'TEVT-008-011'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 12,
+      "message": "event_id has invalid stable ID: 'TEVT-008-012'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 13,
+      "message": "event_id has invalid stable ID: 'TEVT-008-013'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 14,
+      "message": "event_id has invalid stable ID: 'TEVT-008-014'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 15,
+      "message": "event_id has invalid stable ID: 'TEVT-008-015'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 16,
+      "message": "event_id has invalid stable ID: 'TEVT-008-016'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 17,
+      "message": "event_id has invalid stable ID: 'TEVT-008-017'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 18,
+      "message": "event_id has invalid stable ID: 'TEVT-008-018'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 19,
+      "message": "event_id has invalid stable ID: 'TEVT-008-019'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 20,
+      "message": "event_id has invalid stable ID: 'TEVT-008-020'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 21,
+      "message": "event_id has invalid stable ID: 'TEVT-008-021'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 22,
+      "message": "event_id has invalid stable ID: 'TEVT-008-022'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 23,
+      "message": "event_id has invalid stable ID: 'TEVT-008-023'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 24,
+      "message": "event_id has invalid stable ID: 'TEVT-008-024'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 25,
+      "message": "event_id has invalid stable ID: 'TEVT-008-025'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 26,
+      "message": "event_id has invalid stable ID: 'TEVT-008-026'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 27,
+      "message": "event_id has invalid stable ID: 'TEVT-008-027'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 28,
+      "message": "event_id has invalid stable ID: 'TEVT-008-028'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 1,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-01'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 2,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-01'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 3,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-01'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 4,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-01'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 5,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-02'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 6,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-02'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 7,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-02'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 8,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-02'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 9,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-03'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 10,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-03'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 11,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-03'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 12,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-03'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 13,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-04'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 14,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-04'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 15,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-04'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 16,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-04'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 17,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-05'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 18,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-05'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 19,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-05'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 20,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-05'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 21,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-06'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 22,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-06'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 23,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-06'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 24,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-06'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 25,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-07'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 26,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-07'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 27,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-07'",
+      "severity": "error"
+    },
+    {
+      "artifact": "execution/task-events.jsonl",
+      "code": "INVALID_STABLE_ID",
+      "line": 28,
+      "message": "task_id has invalid stable ID: 'CTASK-008-SELF-07'",
+      "severity": "error"
+    }
+  ],
+  "ok": false,
+  "summary": {
+    "errors": 56,
+    "issues": 56,
+    "warnings": 0
+  }
+}

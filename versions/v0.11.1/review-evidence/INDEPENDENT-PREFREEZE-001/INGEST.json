@@ -1,0 +1,16 @@
+{
+  "all_obligations_pass": true,
+  "candidate_version": "0.11.1",
+  "freeze_preparation_authorized": true,
+  "independent_review_evidence_package_sha256": "3b7963df2894627fc974576d1badc72e2ab21d56199a83e885a00d8ee6c17538",
+  "ingest_id": "INGEST-0111-PREFREEZE-001",
+  "new_blocking_defect_count": 0,
+  "obligation_count": 10,
+  "review_evidence_json_sha256": "c52a257b5d5a3ab7d9e8f9601d29e6b49eed864defc6d9d7a53f45b8d69b0c20",
+  "review_id": "INDEPENDENT-PREFREEZE-REVIEW-0111-001",
+  "review_recommendation": "READY_FOR_FREEZE_PREPARATION",
+  "review_report_sha256": "2360f23653290eb4a339a1c11e14f6de4b578e0bcd996d014b34a795ada5c2c9",
+  "reviewed_source_package_sha256": "2d84d3b2f1119d0ba54b5102ca5f4905864b09214dbe7a8b596a54deb8378075",
+  "rule": "Ingestion validates evidence identity only. It does not weaken, repair, or reinterpret reviewed preregistration bytes.",
+  "source_hash_matches_review_claim": true
+}

@@ -1,0 +1,168 @@
+{
+  "candidate_version": "0.08",
+  "corpus": {
+    "case_count": 60,
+    "combined_path": "fixtures/task-compiler/v0.08/corpus.jsonl",
+    "combined_sha256": "abec3d8c23f2eec3a4a721dc254ea72fbbedafe1f4ea6e9f19722eda733e61ef",
+    "development_case_count": 30,
+    "development_path": "fixtures/task-compiler/v0.08/development.jsonl",
+    "development_sha256": "75111f26898b7eb5afba4f85dbe8e9b713d552f76a4156d618034f25305ed847",
+    "execution_case_count": 16,
+    "execution_path": "fixtures/task-compiler/v0.08/execution-corpus.jsonl",
+    "execution_sha256": "8ffa30d23ed346a1e4c5ebb0e458babd9e2b997cdcd2284bfbdbb67bf71710eb",
+    "heldout_case_count": 30,
+    "heldout_path": "fixtures/task-compiler/v0.08/heldout.jsonl",
+    "heldout_policy": "Expected held-out graphs, classifications, dependencies, conflicts, and diagnostics are immutable after freeze.",
+    "heldout_sha256": "da9ee47f5fadf77911d512e43a0ac17dd20404283130e2be513f7744d06fcae1"
+  },
+  "created_at_utc": "2026-08-24T16:44:00Z",
+  "evaluation_plan_id": "EPLAN-008-001",
+  "frozen_denominators": {
+    "accepted_case_count": 24,
+    "atomicity_case_count": 12,
+    "compiler_case_count": 60,
+    "cycle_case_count": 8,
+    "development_case_count": 30,
+    "execution_case_count": 16,
+    "heldout_case_count": 30,
+    "invalid_execution_case_count": 8,
+    "owner_blocker_case_count": 8,
+    "parent_invalid_case_count": 8,
+    "valid_execution_case_count": 8
+  },
+  "guardrail_metrics": [
+    {
+      "name": "dependency_provenance_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "critical_ready_task_trace_completeness_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "parallelization_decision_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "unresolved_decision_escape_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "unsafe_parallelization_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "oversized_ready_task_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "dependency_cycle_escape_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "invented_dependency_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "execution_stream_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "invalid_execution_escape_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "deterministic_repeat_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "parent_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "active_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "v008_spec_quality_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0
+    },
+    {
+      "name": "package_manifest_validation_error_count",
+      "target_operator": "eq",
+      "target_value": 0
+    },
+    {
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0
+    }
+  ],
+  "implementation_visibility_limit": "Synthetic benchmark and expected labels are same-cycle preregistration. The held-out partition is hash-locked but not organizationally independent.",
+  "missing_data_policy": "Missing, malformed, skipped, unreadable, or unscored cases are incomplete evidence and may not be counted as passes or zeros.",
+  "parent_preflight": {
+    "artifact": "evaluation/v008-preregistration-preflight.json",
+    "checks": [
+      "Every project matches task-compilation-project-v1 schema.",
+      "Every source specification has the preregistered active-linter validity result.",
+      "Every trace graph has the preregistered v0.05 validity result.",
+      "Every supplied discovery plan is reproducible from the embedded source specification under the default v0.07 profile.",
+      "Historical tasks/tasks.jsonl remains schema-valid."
+    ],
+    "required_rate": 1.0
+  },
+  "parent_version": "0.07",
+  "primary_metrics": [
+    {
+      "definition": "accepted cases whose normalized compiled graph exactly matches frozen expected graph / accepted cases",
+      "name": "accepted_task_graph_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "definition": "held-out accepted cases whose normalized compiled graph exactly matches frozen expected graph / held-out accepted cases",
+      "name": "heldout_task_graph_exact_match_rate",
+      "target_operator": "gte",
+      "target_value": 0.95
+    },
+    {
+      "definition": "non-accepted cases with exact frozen status and required diagnostic codes / non-accepted cases",
+      "name": "negative_case_classification_accuracy",
+      "target_operator": "eq",
+      "target_value": 1.0
+    }
+  ],
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "schemas": {
+    "compiled_graph_schema_path": "schemas/compiled-task-graph-v1.schema.json",
+    "compiled_graph_schema_sha256": "c5678475b219c29fc383ae789410448188144874e73b1c309798dfafe36dcde0",
+    "execution_event_schema_path": "schemas/task-execution-event-v1.schema.json",
+    "execution_event_schema_sha256": "c00c68c6c10561471ccc1d132fa597c477a185a6ce07f7a3b4a763cdeb256173",
+    "project_schema_path": "schemas/task-compilation-project-v1.schema.json",
+    "project_schema_sha256": "88b54a4415a829d1c8ee55a29e5ddf9de470e227b18185506a8531d173244bcf"
+  },
+  "shadow_evaluation": {
+    "purpose": "Compile a governed v0.08 self-project derived from real release traceability/task shapes and replay execution events; defects are corrective evidence but do not rewrite frozen metrics.",
+    "required": true,
+    "use_for_promotion": false
+  }
+}

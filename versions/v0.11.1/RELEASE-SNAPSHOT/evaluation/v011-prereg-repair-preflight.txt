@@ -1,0 +1,8 @@
+PASS: v0.11 preregistration preflight
+candidate schemas: 2 valid
+execution fixtures: 6; explicit provenance edges: 21; derived conflict edges: 1
+lifecycle fixtures: 4 independently derived
+integration source-task universe: 23
+parent suite universe: 155 node IDs
+active regression universe: 24 IDs
+frozen parent integrity: 1120/1120

@@ -1,0 +1,94 @@
+{
+  "candidate_version": "0.06.1",
+  "cases": [
+    {
+      "case_id": "WF-01",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-02",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-03",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-04",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-05",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-06",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-07",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "WF-08",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-01",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-02",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-03",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-04",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-05",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-06",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-07",
+      "diagnostics": [],
+      "valid": true
+    },
+    {
+      "case_id": "PRI-08",
+      "diagnostics": [],
+      "valid": true
+    }
+  ],
+  "checked_at_utc": "2026-08-24T15:47:00Z",
+  "corpus_sha256": "3d147717ff2501061f72a0c5f384403751297eb91b6d916fd4fbb48e9edf5f9e",
+  "evaluation_plan_sha256": "456ec848e02172c79dab5909be6f01ec64bff34356495c14acd9441b28e54428",
+  "parent_validator_version": "0.05",
+  "result": "PASS",
+  "spec_lint_findings": 0,
+  "trace_graph_case_count": 16,
+  "trace_graph_invalid_count": 0,
+  "trace_graph_valid_count": 16
+}

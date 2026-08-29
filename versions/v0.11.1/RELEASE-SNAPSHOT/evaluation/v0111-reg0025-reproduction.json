@@ -1,0 +1,285 @@
+{
+  "regression_id": "REG-0025",
+  "source_defect": "DEF-011-POSTFREEZE-001",
+  "failed_v011_reproduction": {
+    "shipped_paths": 1276,
+    "protected_parent": 1121,
+    "old_exact_successor_members": 103,
+    "unclassified_count": 52,
+    "unclassified_paths": [
+      "evaluation/pytest-collect-v0.11-prefreeze-freeze.txt",
+      "evaluation/pytest-v0.11-prefreeze-freeze.txt",
+      "evaluation/v011-metric-freeze-equivalence.json",
+      "evaluation/v011-parent-preflight.json",
+      "evaluation/v011-postfreeze-integrity.json",
+      "evaluation/v011-prefreeze-transaction-final.json",
+      "evaluation/workspace-validation-v0.11-prefreeze-freeze.txt",
+      "versions/v0.11/EVALUATION-PLAN.json",
+      "versions/v0.11/FREEZE-RECORD.json",
+      "versions/v0.11/FROZEN-ARTIFACT-REGISTRY.json",
+      "versions/v0.11/FROZEN-RELEASE-CONTRACT.json",
+      "versions/v0.11/LIFECYCLE-CHECKPOINT.json",
+      "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+      "versions/v0.11/SPEC-CREATOR-v0.11.md",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/INGEST.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/MANIFEST.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/evidence-package.zip",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/artifact-hashes.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/defect-regressions.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/fixture-coherence.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/frozen-parent-hash-checks.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/immutable-boundary-classification.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/integration-schema-audit.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/lifecycle-derivation.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/metric-audit.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/package-manifest-validation.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/preregistration-artifact-hash-audit.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/provenance-derivation.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-computation.py",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-evidence.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/review-obligations.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/schema-validation.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/structural-recomputation.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/universe-audit.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.command.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.exit_code.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.stderr.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/01.stdout.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.command.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.exit_code.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.stderr.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/02.stdout.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.command.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.exit_code.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.stderr.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/validation-commands/03.stdout.txt",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/raw/whole-package-classification.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/review-evidence.json",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/review-report.md",
+      "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-003/source-package.zip",
+      "versions/v0.11/tools/frozen_contract_preflight.py"
+    ]
+  },
+  "retry_mechanism": {
+    "legal_prospective_pass_count": 25,
+    "legal_prospective_total": 25,
+    "forbidden_rejection_pass_count": 7,
+    "forbidden_total": 7,
+    "legal_results": [
+      {
+        "path": "PACKAGE-MANIFEST.json",
+        "matches": [
+          "S-0111-ROOT-MANIFEST"
+        ],
+        "pass": true
+      },
+      {
+        "path": "src/spec_creator/v0111/__init__.py",
+        "matches": [
+          "S-0111-IMPLEMENTATION-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "src/spec_creator/v0111/lifecycle.py",
+        "matches": [
+          "S-0111-IMPLEMENTATION-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "src/spec_creator/v0111/execution_architecture.py",
+        "matches": [
+          "S-0111-IMPLEMENTATION-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "src/spec_creator/v0111/evaluator.py",
+        "matches": [
+          "S-0111-IMPLEMENTATION-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "tests/v0111/__init__.py",
+        "matches": [
+          "S-0111-TEST-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "tests/v0111/test_lifecycle.py",
+        "matches": [
+          "S-0111-TEST-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "tests/v0111/test_execution_architecture.py",
+        "matches": [
+          "S-0111-TEST-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "tests/v0111/test_regressions.py",
+        "matches": [
+          "S-0111-TEST-NAMESPACE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/v0111-implementation.json",
+        "matches": [
+          "S-0111-EVAL-PREFIX"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/v0111-structural-evaluation.json",
+        "matches": [
+          "S-0111-EVAL-PREFIX"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/v0111-shadow-trial.json",
+        "matches": [
+          "S-0111-EVAL-PREFIX"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/v0111-independent-verification.json",
+        "matches": [
+          "S-0111-EVAL-PREFIX"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/pytest-v0.11.1-final.txt",
+        "matches": [
+          "S-0111-PYTEST-EVIDENCE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "evaluation/workspace-validation-v0.11.1-final.json",
+        "matches": [
+          "S-0111-WORKSPACE-EVIDENCE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/FROZEN-RELEASE-CONTRACT.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/FROZEN-ARTIFACT-REGISTRY.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/PREREGISTRATION-ARTIFACT-HASHES-FROZEN.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/FREEZE-RECORD.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/LIFECYCLE-CHECKPOINT.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/review-evidence/INDEPENDENT-PREFREEZE-001/evidence-package.zip",
+        "matches": [
+          "S-0111-REVIEW-EVIDENCE"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/RELEASE-SNAPSHOT/README.md",
+        "matches": [
+          "S-0111-RELEASE-SNAPSHOT"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/MANIFEST.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/RETROSPECTIVE.md",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/ROLLBACK.json",
+        "matches": [
+          "S-0111-VERSION-TOPLEVEL"
+        ],
+        "pass": true
+      }
+    ],
+    "forbidden_results": [
+      {
+        "path": "src/spec_creator/rogue_v0111.py",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "tests/test_rogue_v0111.py",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "evaluation/random-v0111.txt",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "docs/v0111-rogue.md",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/UNDECLARED-TOPLEVEL.json",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "versions/v0.11.1/random-subdir/file.txt",
+        "matches": [],
+        "pass": true
+      },
+      {
+        "path": "src/spec_creator/v0112/not_this_retry.py",
+        "matches": [],
+        "pass": true
+      }
+    ]
+  },
+  "verdict": "PASS"
+}

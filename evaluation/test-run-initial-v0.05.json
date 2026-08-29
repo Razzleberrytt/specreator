@@ -1,0 +1,23 @@
+{
+  "candidate_version": "0.05",
+  "run_kind": "first_full_implementation_test",
+  "command": "PYTHONPATH=src python -m pytest -q",
+  "result": "FAIL",
+  "passed": 74,
+  "failed": 8,
+  "total": 82,
+  "failure_cluster": "impact-ordering",
+  "failed_cases": [
+    "TC-005-IMPACT-01",
+    "TC-005-IMPACT-02",
+    "TC-005-IMPACT-03",
+    "TC-005-IMPACT-04",
+    "TC-005-IMPACT-05",
+    "test_frozen_v005_corpus_evaluation_is_perfect",
+    "test_traceability_impact_cli",
+    "test_traceability_corpus_cli"
+  ],
+  "root_cause": "Impact closure membership was correct, but the implementation sorted IDs lexicographically instead of using the preregistered Goal→Requirement→Feature→Task→Test→Gate chain order.",
+  "contract_or_corpus_changed": false,
+  "disposition": "Implementation corrected; frozen corpus and frozen release contract unchanged. Converted to REG-0007."
+}

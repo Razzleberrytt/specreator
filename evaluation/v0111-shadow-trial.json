@@ -1,0 +1,136 @@
+{
+  "candidate_version": "0.11.1",
+  "environment": {
+    "human_intervention_count": 0,
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "provider_model_configuration": "local Python runtime; no external model/provider used for the measured plan-generation execution",
+    "python": "3.13.5",
+    "tool_availability": "filesystem + pytest + jsonschema"
+  },
+  "executions": [
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 378,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "b1af6265b32c0b0283c09ef88f96a892a0fd95c1b7cc32b594c011c3d14f0510",
+      "output_plan_hash": "0ead4e34ec1c8d89378cb1664a19d9d22bfb2697c13fd312b0a3dc1f49fc35c8",
+      "retry_amplification_work_units": "NOT_APPLICABLE",
+      "strategy": "serial_control",
+      "time_to_verified_implementation_seconds": 0.00020191899966448545,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-002-DIAMOND"
+    },
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 378,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "b1af6265b32c0b0283c09ef88f96a892a0fd95c1b7cc32b594c011c3d14f0510",
+      "output_plan_hash": "5a9e4fef4268889685e487f8a9d88b7e16dd6297ec0fb5e8e7e6e1c7daaa4bf5",
+      "retry_amplification_work_units": "NOT_APPLICABLE",
+      "strategy": "optimized_parallel_ready",
+      "time_to_verified_implementation_seconds": 0.00018009599989454728,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-002-DIAMOND"
+    },
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 477,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "33e707411da9eec2e999b479f59d13850851fd6ec8dc1e73764df6d33772e1cd",
+      "output_plan_hash": "b6d0fb3182966225e7f65006ed8e660b0dd3c35723f02efdc848db14b3770630",
+      "retry_amplification_work_units": "NOT_APPLICABLE",
+      "strategy": "serial_control",
+      "time_to_verified_implementation_seconds": 0.00021468699924298562,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-004-LOAD-BALANCE"
+    },
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 477,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "33e707411da9eec2e999b479f59d13850851fd6ec8dc1e73764df6d33772e1cd",
+      "output_plan_hash": "cc000c1d6edc29e0e6783300c183fed1fd8a584866afb7866f14b337b15548f6",
+      "retry_amplification_work_units": "NOT_APPLICABLE",
+      "strategy": "optimized_parallel_ready",
+      "time_to_verified_implementation_seconds": 0.0004209120006635203,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-004-LOAD-BALANCE"
+    },
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 378,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "4f23871b8830e4ebe16d7e2425a4f59668aaca42817e168e748ae10da424cd0b",
+      "output_plan_hash": "409626f4fe327e3cb09a27ab741e4c96e7572a4f267e4abbbb6d85b7e03dbc0b",
+      "retry_amplification_work_units": 0,
+      "strategy": "serial_control",
+      "time_to_verified_implementation_seconds": 0.0001883590002762503,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-006-RETRY-ISOLATION"
+    },
+    {
+      "architectural_rework_count": 0,
+      "canonical_context_payload_bytes": 378,
+      "corrective_prompt_count": 0,
+      "integration_conflict_count": 0,
+      "mandatory_quality_gate_set": [
+        "schema_validity",
+        "structural_oracle",
+        "integration_contract",
+        "retry_boundary"
+      ],
+      "obligation_set_hash": "4f23871b8830e4ebe16d7e2425a4f59668aaca42817e168e748ae10da424cd0b",
+      "output_plan_hash": "76dedf18f00192b41c3b67571a84008f062b453367b31468951e67eaaa2eedc6",
+      "retry_amplification_work_units": 0,
+      "strategy": "optimized_parallel_ready",
+      "time_to_verified_implementation_seconds": 0.00016700699961802457,
+      "verified_obligation_completion_rate": 1.0,
+      "workload_id": "EXEC-011-006-RETRY-ISOLATION"
+    }
+  ],
+  "interpretation": "Local runtime calibration only. No general speedup claim is authorized.",
+  "matched_obligations_required": true,
+  "matched_quality_gates_required": true,
+  "promotion_authoritative": false,
+  "strategies": [
+    "serial_control",
+    "optimized_parallel_ready"
+  ],
+  "trial_id": "SHADOW-0111-LOCAL-001",
+  "workload_count": 3
+}

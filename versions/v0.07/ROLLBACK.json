@@ -1,0 +1,23 @@
+{
+  "candidate_version": "0.07",
+  "expectation": "Rollback changes the active promoted capability baseline to v0.06.1 but never deletes v0.07 frozen, defect, experiment, regression, or evaluation evidence.",
+  "preserve_on_rollback": [
+    "versions/v0.07/FROZEN-RELEASE-CONTRACT.json",
+    "versions/v0.07/EVALUATION-PLAN.json",
+    "fixtures/discovery/v0.07/corpus.jsonl",
+    "fixtures/discovery/v0.07/heldout.jsonl",
+    "evaluation/v007-corpus-results-final.json",
+    "evaluation/def-007-001-heading-boundary-shadow.json",
+    "evaluation/def-007-002-unresolved-context-shadow.json",
+    "evaluation/verifier-pass-v0.07.json",
+    "self-improvement/regressions.jsonl"
+  ],
+  "rollback_target_version": "0.06.1",
+  "trigger_conditions": [
+    "Any final mandatory gate fails after release decision.",
+    "Final shipping package or extracted-package validation reports any error, warning, missing file, extra file, size mismatch, or hash mismatch.",
+    "Frozen v0.07 contract, evaluation-plan, combined corpus, or held-out partition integrity changes.",
+    "Any active critical regression fails or disappears without governed retirement.",
+    "Post-release evidence demonstrates unsafe automatic defaults or critical ambiguity escapes attributable to v0.07."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "classification": "implementation_defect",
+  "defect_id": "DEF-008-001",
+  "fix": "Recompute parent ambiguity findings and require every decision-needed candidate to be represented in the supplied discovery plan before readiness.",
+  "frozen_artifacts_changed": false,
+  "initial_evidence": "evaluation/shadow-task-compiler-v0.08-initial.json",
+  "observation": "A stale/truncated supplied discovery plan with no actions allowed an actually ambiguous source spec to compile in the initial shadow pass.",
+  "root_cause": "Compiler trusted supplied discovery actions without reconciling them to parent ambiguity findings.",
+  "severity": "major",
+  "verification": [
+    "tests/test_task_compiler.py::test_stale_discovery_plan_cannot_hide_owner_decision_regression",
+    "evaluation/shadow-task-compiler-v0.08-final.json"
+  ]
+}

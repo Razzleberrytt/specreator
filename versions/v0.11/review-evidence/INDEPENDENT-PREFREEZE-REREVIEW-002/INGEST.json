@@ -1,0 +1,19 @@
+{
+  "ingest_id": "INGEST-011-PREFREEZE-REREVIEW-002",
+  "received_at_utc": "2026-08-24T22:55:09Z",
+  "received_evidence_zip_sha256": "ced3f15b723e018ecb8d7541f3003afdb587620902ed17247a8b1f60b7b797a8",
+  "source_candidate_package_sha256": "af2879fcb3f07ceff1f8c518618ee19cb38634cc56e58ef8b36eefb3a60ec4c7",
+  "recommendation": "NOT_READY",
+  "new_blocking_defect_ids": [
+    "DEF-011-REREVIEW-001"
+  ],
+  "original_defect_regressions": {
+    "DEF-011-REVIEW-001": "PASS",
+    "DEF-011-REVIEW-002": "PASS",
+    "DEF-011-REVIEW-003": "PASS",
+    "DEF-011-REVIEW-004": "PASS",
+    "DEF-011-REVIEW-005": "PASS",
+    "DEF-011-REVIEW-006": "PASS"
+  },
+  "authority_rule": "Independent evidence is preserved verbatim; this ingest metadata does not alter the receiver's findings."
+}

@@ -1,0 +1,101 @@
+{
+  "plan_id": "EVAL-011-DRAFT-001",
+  "status": "PREREGISTRATION_DRAFT",
+  "candidate_version": "0.11",
+  "parent_version": "0.10",
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "evaluation_domains": [
+    "package_only_continuation",
+    "execution_architecture_structural_correctness",
+    "retry_reuse_safety",
+    "historical_integrity",
+    "empirical_efficiency_shadow"
+  ],
+  "fixture_refs": [
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl"
+  ],
+  "schema_refs": [
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json"
+  ],
+  "primary_metrics": [
+    {
+      "metric": "next_legal_action_exact_match_rate",
+      "denominator": "all lifecycle fixtures",
+      "target": 1.0
+    },
+    {
+      "metric": "critical_path_exact_match_rate",
+      "denominator": "all execution fixtures with unambiguous/tie-aware expected critical paths",
+      "target": 1.0
+    },
+    {
+      "metric": "execution_wave_exact_match_rate",
+      "denominator": "all execution fixtures",
+      "target": 1.0
+    },
+    {
+      "metric": "retry_isolation_exact_match_rate",
+      "denominator": "all failure-injection fixtures",
+      "target": 1.0
+    },
+    {
+      "metric": "integration_contract_completeness_rate",
+      "denominator": "all implementation workstreams emitted in governed corpus",
+      "target": 1.0
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric": "unsafe_parallelization_count",
+      "target": 0
+    },
+    {
+      "metric": "unsupported_dependency_edge_count",
+      "target": 0
+    },
+    {
+      "metric": "speculative_authority_escape_count",
+      "target": 0
+    },
+    {
+      "metric": "hidden_manual_state_reconstruction_count",
+      "target": 0
+    },
+    {
+      "metric": "immutable_boundary_classification_error_count",
+      "target": 0
+    },
+    {
+      "metric": "parent_suite_pass_rate",
+      "target": 1.0
+    },
+    {
+      "metric": "active_regression_pass_rate",
+      "target": 1.0
+    },
+    {
+      "metric": "frozen_parent_hash_integrity_rate",
+      "target": 1.0
+    },
+    {
+      "metric": "missing_data_count",
+      "target": 0
+    },
+    {
+      "metric": "critical_gate_bypass_count",
+      "target": 0
+    }
+  ],
+  "shadow_metrics_ref": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+  "missing_data_policy": "Missing, skipped, malformed, unreconciled, or environment-incomparable evidence is unavailable and cannot count as zero or PASS.",
+  "structural_vs_empirical_rule": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+  "control_equivalence_rule": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+  "preregistration_blockers": [
+    "independent prefreeze review of schemas, fixtures, denominators, thresholds, immutable boundary, and anti-gaming rules",
+    "final frozen artifact hashes not yet established",
+    "candidate implementation spec not yet frozen"
+  ],
+  "implementation_authority": false
+}

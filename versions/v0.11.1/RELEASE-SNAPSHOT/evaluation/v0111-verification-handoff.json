@@ -1,0 +1,33 @@
+{
+  "blocking_pending_gates": [
+    "genuinely independent post-implementation verification",
+    "final shipping package manifest/seal after independent verification"
+  ],
+  "candidate_version": "0.11.1",
+  "created_at_utc": "2026-08-25T01:17:22.476019+00:00",
+  "current_package_classification": {
+    "failed_predecessor_count": 154,
+    "immutable_successor_overlap_count": 0,
+    "protected_parent_count": 1121,
+    "retry_successor_count": 83,
+    "shipped_nontransient_count": 1358,
+    "successor_multimatch_count": 0,
+    "unclassified_count": 0
+  },
+  "failed_v011_hashes": "154/154 exact",
+  "frozen_parent_suite": "155/155 PASS",
+  "frozen_registry": "36/36 exact",
+  "full_current_tests": "166/166 PASS",
+  "handoff_id": "VERIFY-HANDOFF-0111-001",
+  "implementation_actor_id": "agent:spec-creator-builder-v0.11.1",
+  "independence_required": true,
+  "next_legal_action": "independent_verification",
+  "reg0025": "25/25 legal exactly once; 7/7 forbidden rejected",
+  "release_state": "VERIFYING",
+  "required_evaluator_actor_id": "verifier:independent-pass-0111",
+  "retry_local_tests": "11/11 PASS",
+  "v010_hashes": "1120/1120 exact",
+  "v012_authorized": false,
+  "v012_reason": "v0.12 may begin only after v0.11.1 is independently verified, final-sealed, and promoted experimental under the frozen contract.",
+  "workspace_validation": "0 errors / 0 warnings"
+}

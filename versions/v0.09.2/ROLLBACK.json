@@ -1,0 +1,25 @@
+{
+  "candidate_version": "0.09.2",
+  "declared_at_utc": "2026-08-24T18:00:00Z",
+  "rollback_target_version": "0.08",
+  "status": "declared",
+  "rollback_action": "Use sealed v0.08 release behavior as the promoted parent while preserving v0.09, v0.09.1, and v0.09.2 evidence and opening a governed corrective candidate.",
+  "trigger_conditions": [
+    "Any mandatory v0.09.2 gate later proves falsely recorded, bypassed, or unreproducible.",
+    "Any v0.09.2 frozen artifact hash mismatch is discovered.",
+    "Any critical active regression fails in the sealed deliverable.",
+    "Independent metric reconciliation finds missing/unavailable evidence that was recorded as zero or PASS.",
+    "Final shipping manifest or freshly extracted ZIP verification fails."
+  ],
+  "preservation_requirements": [
+    "Preserve all v0.09.2 frozen artifacts, raw evaluation evidence, defects, regressions, scorecard, and decision even if runtime use rolls back to v0.08.",
+    "Preserve v0.09 and v0.09.1 RETRY REQUIRED history byte-for-byte; rollback must not rewrite failed history into a pass.",
+    "Do not rewrite append-only events or ledgers to make rollback appear as non-occurrence."
+  ],
+  "evidence_refs": [
+    "versions/v0.08/MANIFEST.json",
+    "versions/v0.09.2/FROZEN-RELEASE-CONTRACT.json",
+    "evaluation/hash-integrity-historical-v0.09.2.json",
+    "evaluation/hash-integrity-frozen0092-v0.09.2.json"
+  ]
+}

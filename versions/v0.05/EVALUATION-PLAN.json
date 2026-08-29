@@ -1,0 +1,84 @@
+{
+  "candidate_version": "0.05",
+  "case_count": 30,
+  "corpus_path": "fixtures/traceability/v0.05/corpus.jsonl",
+  "corpus_sha256": "f80475f84faad0afeb57da0d4db385274debe0760f87e2687fec0457d7ba3c21",
+  "created_at_utc": "2026-08-24T15:18:00Z",
+  "expected_diagnostic_codes": [
+    "TRACE-DUPLICATE-NODE",
+    "TRACE-DUPLICATE-EDGE",
+    "TRACE-BROKEN-REFERENCE",
+    "TRACE-INVALID-TRANSITION",
+    "TRACE-CYCLE",
+    "TRACE-MISSING-UPSTREAM-GOAL",
+    "TRACE-MISSING-FEATURE",
+    "TRACE-MISSING-TASK",
+    "TRACE-MISSING-TEST",
+    "TRACE-MISSING-GATE"
+  ],
+  "graph_profile": {
+    "auxiliary_relations": [
+      {
+        "from": "task",
+        "relation": "precedes",
+        "to": "task"
+      },
+      {
+        "from": "feature",
+        "relation": "precedes",
+        "to": "feature"
+      }
+    ],
+    "critical_completion": "A critical requirement has at least one incoming goal requires edge and a complete requirement\u2192feature\u2192task\u2192test\u2192gate path.",
+    "node_types": [
+      "goal",
+      "requirement",
+      "feature",
+      "task",
+      "test",
+      "gate"
+    ],
+    "primary_relations": [
+      {
+        "from": "goal",
+        "relation": "requires",
+        "to": "requirement"
+      },
+      {
+        "from": "requirement",
+        "relation": "realized_by",
+        "to": "feature"
+      },
+      {
+        "from": "feature",
+        "relation": "decomposed_to",
+        "to": "task"
+      },
+      {
+        "from": "task",
+        "relation": "verified_by",
+        "to": "test"
+      },
+      {
+        "from": "test",
+        "relation": "gated_by",
+        "to": "gate"
+      }
+    ],
+    "schema_version": "1.0"
+  },
+  "immutability": "Corpus hash and this evaluation-plan hash are embedded in the frozen v0.05 release contract.",
+  "impact_case_count": 5,
+  "invalid_case_count": 20,
+  "metrics": {
+    "critical_traceability_coverage_rate": "critical requirements with a complete ordered traceability path / critical requirements in accepted valid + impact graphs",
+    "diagnostic_code_precision": "emitted error diagnostics whose code is preregistered for that invalid case / all emitted error diagnostics in invalid cases",
+    "impact_analysis_exact_match_rate": "impact cases whose upstream and downstream sets exactly match preregistration / impact cases",
+    "invalid_graph_detection_rate": "invalid cases containing every preregistered expected code / invalid cases",
+    "valid_graph_acceptance_rate": "valid + impact graphs with zero error diagnostics / valid + impact graphs"
+  },
+  "plan_id": "EPLAN-0.05-001",
+  "status": "preregistered-pre-freeze",
+  "target_policy": "All synthetic frozen metrics target 1.0 and valid false-positive count targets 0. Promotion remains experimental without independent real-project evidence.",
+  "valid_case_count": 5
+}

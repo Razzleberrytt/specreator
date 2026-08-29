@@ -1,0 +1,16 @@
+{
+  "candidate_version": "0.11",
+  "contract_file_sha256": "d42b0d1fd9bcbe1d2f6e06ed4fdf2ba9e986c94fdab37b15d82432b156aab191",
+  "contract_hash": "fd555b7f90b1d35343465e3bf83d014f383c566f2b6bdf94d556f9707fdc81b9",
+  "contract_id": "REL-0.11-FROZEN-001",
+  "created_at_utc": "2026-08-24T23:24:36Z",
+  "freeze_record_id": "FREEZE-011-001",
+  "frozen_registry_sha256": "6a1e208c7203834adab7f6655a865e3e792f38f1a31834558cd9b67bed228d15",
+  "implementation_authorized": true,
+  "implementation_completed": false,
+  "independent_review_evidence_package_sha256": "d99e200217630a2629792c17655269bfe99e5fe3140d5ae816772c1fa1313501",
+  "next_legal_action": "implement_frozen_candidate",
+  "prefreeze_transaction_sha256": "ef25f8b5501afb1384aff6b83ecb94756033e16179244328b279ffde4e9d8d07",
+  "promotion_authorized": false,
+  "reviewed_source_package_sha256": "dbc7751daa050e28e849aac83c8b679eee5be334e3dadb4286ce90f43d7f954f"
+}

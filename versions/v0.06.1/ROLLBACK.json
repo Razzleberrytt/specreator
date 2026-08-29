@@ -1,0 +1,20 @@
+{
+  "candidate_version": "0.06.1",
+  "expectation": "Rollback changes the active promoted capability baseline to v0.05 but never deletes failed v0.06 or v0.06.1 evidence.",
+  "preserve_on_rollback": [
+    "versions/v0.06",
+    "versions/v0.06.1/FROZEN-RELEASE-CONTRACT.json",
+    "fixtures/ambiguity/v0.06/corpus.jsonl",
+    "fixtures/ambiguity/v0.06.1/corpus.jsonl",
+    "evaluation/test-run-initial-v0.06.1.json",
+    "evaluation/def-0061-002-duplicate-ledger-reconciliation.json",
+    "self-improvement/regressions.jsonl"
+  ],
+  "rollback_target_version": "0.05",
+  "trigger_conditions": [
+    "Any final mandatory gate fails after pre-final decision.",
+    "Final shipping package validation reports any error or warning.",
+    "Frozen corpus/plan/contract integrity changes.",
+    "A critical regression fails."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/metric-ledger-v1.json",
+  "title": "Metric Ledger Record v1",
+  "type": "object",
+  "required": [
+    "metric_record_id",
+    "metric_name",
+    "snapshot_id",
+    "numerator_value",
+    "denominator_value",
+    "denominator_unit",
+    "value",
+    "cutoff_utc",
+    "scope",
+    "source_event_ids",
+    "missing_data"
+  ],
+  "properties": {
+    "metric_record_id": {
+      "type": "string",
+      "pattern": "^MET-[A-Za-z0-9._-]+$"
+    },
+    "metric_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^DEN-[A-Za-z0-9._-]+$"
+    },
+    "numerator_value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "denominator_value": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "denominator_unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "cutoff_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^EVT-[A-Za-z0-9._-]+$"
+      },
+      "uniqueItems": true
+    },
+    "missing_data": {
+      "type": "object",
+      "required": [
+        "status",
+        "details"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "complete",
+            "incomplete",
+            "unavailable"
+          ]
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

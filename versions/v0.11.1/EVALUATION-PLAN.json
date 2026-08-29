@@ -1,0 +1,144 @@
+{
+  "plan_id": "EVAL-0111-PREFREEZE-001",
+  "status": "PREREGISTERED_PREFREEZE_RETRY",
+  "candidate_version": "0.11.1",
+  "parent_version": "0.10",
+  "promotion_ceiling": "PROMOTED AS EXPERIMENTAL",
+  "primary_metrics": [
+    {
+      "metric": "next_legal_action_exact_match_rate",
+      "universe": "lifecycle_fixtures",
+      "denominator_count": 4,
+      "numerator_rule": "fixture count for which applying lifecycle transition rules to state+blockers exactly equals expected_next_action",
+      "target": 1.0,
+      "metric_id": "M-0111-001"
+    },
+    {
+      "metric": "critical_path_exact_match_rate",
+      "universe": "critical_path_fixtures",
+      "denominator_count": 6,
+      "numerator_rule": "fixture count for which the independently recomputed set of all maximum-weight effective-DAG paths exactly equals expected.critical_paths",
+      "target": 1.0,
+      "metric_id": "M-0111-002"
+    },
+    {
+      "metric": "execution_wave_exact_match_rate",
+      "universe": "execution_fixtures",
+      "denominator_count": 6,
+      "numerator_rule": "fixture count for which deterministic dependency+conflict-safe waves exactly equal expected.waves",
+      "target": 1.0,
+      "metric_id": "M-0111-003"
+    },
+    {
+      "metric": "retry_isolation_exact_match_rate",
+      "universe": "failure_injection_fixtures",
+      "denominator_count": 1,
+      "numerator_rule": "failure-injection fixtures satisfying all authored preservation and unrelated-rerun expectations",
+      "target": 1.0,
+      "metric_id": "M-0111-004"
+    },
+    {
+      "metric": "integration_contract_completeness_rate",
+      "universe": "integration_source_tasks",
+      "denominator_count": 23,
+      "numerator_rule": "source-task keys covered by >=1 emitted workstream via tasks[*].source_task_ids where every covering emitted workstream has a schema-valid integration_contract; emitted workstreams with no source_task_ids are schema-invalid",
+      "target": 1.0,
+      "metric_id": "M-0111-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric": "unsafe_parallelization_count",
+      "universe": "execution_fixtures",
+      "target": 0,
+      "metric_id": "M-0111-G01"
+    },
+    {
+      "metric": "unsupported_dependency_edge_count",
+      "universe": "effective_dependency_edges",
+      "denominator_count": 22,
+      "oracle_ref": "versions/v0.11.1/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "target": 0,
+      "metric_id": "M-0111-G02"
+    },
+    {
+      "metric": "speculative_authority_escape_count",
+      "universe": "speculative_fixtures",
+      "target": 0,
+      "denominator_count": 1,
+      "metric_id": "M-0111-G03"
+    },
+    {
+      "metric": "hidden_manual_state_reconstruction_count",
+      "universe": "lifecycle_fixtures",
+      "target": 0,
+      "metric_id": "M-0111-G04"
+    },
+    {
+      "metric": "immutable_boundary_classification_error_count",
+      "universe": "immutable_boundary_assertions",
+      "target": 0,
+      "metric_id": "M-0111-G05"
+    },
+    {
+      "metric": "parent_suite_pass_rate",
+      "universe": "parent_suite",
+      "denominator_count": 155,
+      "numerator_rule": "exact listed pytest node IDs with PASS outcome",
+      "target": 1.0,
+      "metric_id": "M-0111-G06"
+    },
+    {
+      "metric": "active_regression_pass_rate",
+      "universe": "active_regressions",
+      "denominator_count": 25,
+      "numerator_rule": "exact listed regression IDs with explicit passing verification evidence",
+      "target": 1.0,
+      "metric_id": "M-0111-G07"
+    },
+    {
+      "metric": "frozen_parent_hash_integrity_rate",
+      "universe": "frozen_parent_hash_entries",
+      "denominator_count": 1120,
+      "numerator_rule": "exact v0.10 manifest file entries whose path exists and sha256 equals manifest value",
+      "target": 1.0,
+      "metric_id": "M-0111-G08"
+    },
+    {
+      "metric": "missing_data_count",
+      "universe": "mandatory_evidence_slots",
+      "target": 0,
+      "denominator_count": 26,
+      "metric_id": "M-0111-G09"
+    },
+    {
+      "metric": "critical_gate_bypass_count",
+      "universe": "mandatory_quality_gates",
+      "denominator_count": 9,
+      "target": 0,
+      "metric_id": "M-0111-G10"
+    },
+    {
+      "metric": "prospective_output_classification_error_count",
+      "universe": "prospective_output_paths",
+      "denominator_count": 25,
+      "numerator_rule": "count of preregistered future output paths that fail to classify exactly once as MUTABLE_RETRY_SUCCESSOR after immutable precedence",
+      "target": 0,
+      "metric_id": "M-0111-G11"
+    }
+  ],
+  "shadow_metrics_ref": "versions/v0.11.1/EXECUTION-TRIAL-PROTOCOL.json",
+  "missing_data_policy": "Missing, skipped, malformed, unreconciled, or environment-incomparable evidence is unavailable and cannot count as zero or PASS.",
+  "structural_vs_empirical_rule": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+  "control_equivalence_rule": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+  "universe_ref": "versions/v0.11.1/EVALUATION-UNIVERSES.json",
+  "integration_anti_gaming_rule": "Integration completeness denominator is the fixed 23-source-task universe, never emitted workstream count. Every emitted workstream must identify >=1 source_task_ids, and every source task must be covered.",
+  "critical_path_tie_rule": "Every execution fixture is eligible. Critical-path truth is the set of ALL maximum-total-work paths in the effective DAG after mechanically derived conflict-serialization edges; set equality is required.",
+  "retry_nonweakening_rule": "The 15 v0.11 promotion-authoritative metrics are inherited without weaker targets; v0.11.1 adds prospective_output_classification_error_count == 0 and REG-0025.",
+  "source_reviewed_design_ref": "versions/v0.11.1/EVALUATION-DESIGN.json",
+  "primary_metric_count": 5,
+  "guardrail_metric_count": 11,
+  "promotion_authoritative_metric_count": 16,
+  "independent_verifier_actor": "verifier:independent-pass-0111",
+  "derivation_rule": "Canonical retry prefreeze projection of EVALUATION-DESIGN.json. All v0.11 targets are inherited without weakening; retry-only boundary guardrails are additive."
+}

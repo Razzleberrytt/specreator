@@ -1,0 +1,21 @@
+{
+  "decision_id": "DEC-0035",
+  "status": "APPROVED",
+  "date_utc": "2026-08-25",
+  "candidate_version": "0.11.1",
+  "contract_id": "REL-0.11.1-FROZEN-001",
+  "decision": "PROMOTED AS EXPERIMENTAL",
+  "promotion_ceiling_respected": true,
+  "implementation_actor_id": "agent:spec-creator-builder-v0.11.1",
+  "independent_verifier_actor_id": "verifier:independent-pass-0111",
+  "independence_satisfied": true,
+  "independent_recommendation": "READY_FOR_RELEASE_SEAL",
+  "blocking_defect_count": 0,
+  "frozen_metric_targets_met": true,
+  "mandatory_gate_policy": "All frozen gates must be PASS before the release-seal transaction commits. PACKAGE is evaluated by the final manifest-last clean-extraction validation; failure aborts the transaction.",
+  "history_policy": "v0.10/earlier protected bytes and failed-v0.11 baseline bytes remain immutable; v0.11 remains failed frozen history.",
+  "next_capability_if_seal_commits": "v0.12 \u2014 Crash-Safe Resume & Reuse",
+  "seal_transaction_committed": true,
+  "package_gate": "PASS",
+  "seal_ref": "evaluation/v0111-release-seal.json"
+}

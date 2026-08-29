@@ -1,0 +1,26 @@
+{
+  "evidence_id": "VAL-011-PREREG-REPAIR-FINAL",
+  "status": "PASS_LOCAL_PENDING_INDEPENDENT_REREVIEW",
+  "pytest": {
+    "command": "python -m pytest -q",
+    "result": "155 passed"
+  },
+  "workspace_validation": {
+    "command": "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+    "result": "PASS: 0 error(s), 0 warning(s)"
+  },
+  "preregistration_preflight": {
+    "command": "python versions/v0.11/tools/preregistration_preflight.py",
+    "result": "PASS",
+    "execution_fixtures": 6,
+    "explicit_dependency_edges": 21,
+    "derived_conflict_edges": 1,
+    "lifecycle_fixtures": 4,
+    "integration_source_tasks": 23,
+    "parent_suite_nodeids": 155,
+    "active_regressions": 24,
+    "frozen_parent_hashes": "1120/1120"
+  },
+  "preregistration_hash_inventory_sha256": "4f05eaa5fabe1e18785ab7fdcb3f1be9a5bf75cd5234ba2a824eab633196c066",
+  "authority": "local preflight only; cannot substitute for required independent re-review"
+}

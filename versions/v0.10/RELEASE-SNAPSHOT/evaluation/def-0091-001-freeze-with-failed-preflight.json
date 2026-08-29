@@ -1,0 +1,18 @@
+{
+  "defect_id": "DEF-0091-001",
+  "candidate_version": "0.09.1",
+  "observed_at_utc": "2026-08-24T17:29:00Z",
+  "phase": "specification",
+  "classification": "agent_execution_error",
+  "severity": "critical",
+  "status": "resolved",
+  "observation": "The v0.09.1 preregistration helper wrote FROZEN-RELEASE-CONTRACT.json even though its generated parent preflight reported all_ok=false (72/75), violating the required prefreeze gate.",
+  "root_cause": "The helper computed preregistration status but did not assert all required preflight booleans before writing the contract. Its parent preflight also incorrectly skipped independent execution replay whenever graph validation was intentionally negative.",
+  "evidence_refs": [
+    "evaluation/v0091-preregistration-preflight.json",
+    "evaluation/v0091-benchmark-construction.json",
+    "versions/v0.09.1/FROZEN-RELEASE-CONTRACT.json"
+  ],
+  "failure_disposition": "Preserve the v0.09.1 contract as a failed freeze; do not implement against it. Retry as v0.09.2 with a fail-closed preregistration transaction that refuses contract creation unless parent, schema, contrast, spec-quality, and inherited-suite preconditions all pass.",
+  "regression_candidate": true
+}

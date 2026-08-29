@@ -1,0 +1,33 @@
+{
+  "artifact_hashes": {
+    "approved_spec": "fad5bc60f2860d131e75da9c35ff8c2cda297452b5e42dedc52e7d59c77f7f07",
+    "baseline": "ecab22f1ff6b609e250dea79a7df6d2cb871e4a6dd1db54bb69dbf3d2964d7f7",
+    "combined_corpus": "991acb5d47104f5ffce196194741bd340b79b052938a9c2fab4a84ce2ab9e9ee",
+    "contrast_preflight": "49843521b3baf0bdeb333343ce0bf6f98d007448c12ee8c25935f5c32361946e",
+    "development_corpus": "2925a711b0a44d995ef458cce6ce5df618a2db198f47a245838eedff726a8eb1",
+    "envelope_schema": "8549a36497cebe28ad01e136224fe6ed820c9d37a7922a767c1d48ec239a8d24",
+    "heldout_corpus": "614ade13d8bf6d2c432f54fd9c0bb6fec57291204dc0aeb92f178967afe8f199",
+    "input_schema": "4365164d63f141cb0cece5e812666871d2af988369b598a2cdb7337dd82aba9c",
+    "parent_preflight": "104afd4a313a5726ba7f0b4ae814f54e1622b97b7881674d6b65eef5d348f466",
+    "plan": "c5290333356e5ca4922dc26c64529382ca571fd117dc222e9ba2aa377918c8fd",
+    "schema_preflight": "bc170054e0e1bc7080b30c7183a0583eda053b3d83d62bd82278c58f4027fc3e"
+  },
+  "candidate_version": "0.09.1",
+  "case_counts": {
+    "accepted": 45,
+    "development": 50,
+    "heldout": 25,
+    "negative": 30,
+    "total": 75
+  },
+  "contract_hash": "ece6c01cf6e4ab5813d53c72685328b7fb106bd6adeb20b861cf96e30f39310f",
+  "contrast_preflight_ok": true,
+  "documented_semantic_change": {
+    "case_id": "DEV-NEG-2-07",
+    "change": "task_contract.task_id CTASK-008-SELF-03 -> CTASK-008-SELF-04",
+    "reason": "Restore intended task_contract_mismatch mutation."
+  },
+  "parent_preflight_ok": false,
+  "schema_preflight_ok": true,
+  "source_failed_candidate": "0.09"
+}

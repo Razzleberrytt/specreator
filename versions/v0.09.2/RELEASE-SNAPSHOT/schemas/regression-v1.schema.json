@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spec-creator.local/schemas/regression-v1.json",
+  "title": "Regression Record v1",
+  "type": "object",
+  "required": [
+    "regression_id",
+    "description",
+    "severity",
+    "expected_behavior",
+    "status"
+  ],
+  "properties": {
+    "regression_id": {
+      "type": "string"
+    },
+    "origin_incident": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "first_fixed_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "reproducer_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expected_behavior": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "minor",
+        "moderate",
+        "major",
+        "critical"
+      ]
+    },
+    "applicable_modes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Quick",
+          "Standard",
+          "Exhaustive"
+        ]
+      }
+    },
+    "automated": {
+      "type": "boolean"
+    },
+    "verification_procedure": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "retired",
+        "superseded"
+      ]
+    },
+    "superseding_decision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

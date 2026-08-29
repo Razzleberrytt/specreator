@@ -1,0 +1,19 @@
+{
+  "decision_id": "DEC-0034",
+  "status": "ACCEPTED",
+  "date_utc": "2026-08-24",
+  "title": "Reject v0.11 implementation under broken frozen ownership closure and open governed v0.11.1 retry",
+  "context": "REL-0.11-FROZEN-001 became unsatisfiable before implementation because its exact successor universe omitted 52 freeze-time shipped paths and could not legally admit later implementation/evidence paths.",
+  "decision": [
+    "Preserve all v0.11 frozen and blocker evidence unchanged.",
+    "Keep v0.10 as executable promoted authority.",
+    "Open v0.11.1 as a separately preregistered retry with unchanged structural product targets and stricter immutable-boundary mechanics.",
+    "Require REG-0025 prospective path closure before v0.11.1 may freeze."
+  ],
+  "non_decisions": [
+    "No v0.11 frozen target is rewritten.",
+    "No v0.11 implementation result is claimed.",
+    "No ESIS/top-5 forward-direction feature is pulled into retry promotion metrics."
+  ],
+  "supersedes_for_active_development": "REL-0.11-FROZEN-001 implementation authorization only; historical contract remains immutable evidence."
+}

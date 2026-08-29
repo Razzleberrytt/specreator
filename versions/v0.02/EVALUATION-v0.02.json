@@ -1,0 +1,176 @@
+{
+  "evaluation_id": "EVAL-0.02-20260824-001",
+  "version": "0.02",
+  "contract_id": "REL-0.02-FROZEN-001",
+  "evaluated_at_utc": "2026-08-24T14:20:00Z",
+  "evaluation_mode": "Exhaustive",
+  "implementation_actor_ids": [
+    "agent:spec-creator-builder"
+  ],
+  "evaluator_actor_id": "verifier:independent-pass-001",
+  "overall_release_state": "BLOCKED",
+  "promotion_decision": "NOT PROMOTED",
+  "criteria": [
+    {
+      "criterion_id": "G-001",
+      "status": "PASS",
+      "evidence": [
+        "versions/v0.02/SPEC-CREATOR-v0.02.md#3-meta-specification-lifecycle"
+      ],
+      "finding": "The recursive lifecycle explicitly prevents proposal-to-promotion shortcuts."
+    },
+    {
+      "criterion_id": "G-002",
+      "status": "PASS",
+      "evidence": [
+        "versions/v0.02/SPEC-CREATOR-v0.02.md#2-new-non-negotiable-invariants",
+        "versions/v0.02/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "finding": "Pre-registration and no-goalpost-movement are explicit; the supplied contract remained byte-identical to its manifest hash."
+    },
+    {
+      "criterion_id": "G-003",
+      "status": "PASS",
+      "evidence": [
+        "self-improvement/regressions.jsonl",
+        "versions/v0.02/SPEC-CREATOR-v0.02.md#6-regression-corpus"
+      ],
+      "finding": "A permanent regression registry exists and contains three active critical regressions."
+    },
+    {
+      "criterion_id": "G-004",
+      "status": "PASS WITH ACCEPTED RISK",
+      "evidence": [
+        "versions/v0.02/SPEC-CREATOR-v0.02.md#8-independent-evaluator-role"
+      ],
+      "finding": "Independent evaluator role is specified, but the supplied package contains no completed evaluator record demonstrating the separation in practice.",
+      "risk": "Structural capability exists only as protocol text."
+    },
+    {
+      "criterion_id": "GATE-Self-Improvement",
+      "status": "BLOCKED",
+      "evidence": [
+        "versions/v0.02/SPEC-CREATOR-v0.02.md#9-self-improvement-quality-gate"
+      ],
+      "finding": "The supplied v0.02 package has no v0.03 frozen contract, declared rollback package, or completed successor evaluation yet."
+    },
+    {
+      "criterion_id": "GATE-Candidate-Promotion",
+      "status": "FAIL",
+      "evidence": [
+        "evaluation/events.jsonl",
+        "evaluation/metric-ledger.jsonl",
+        "evaluation/release-scorecards.jsonl",
+        "versions/v0.02/MANIFEST.json"
+      ],
+      "finding": "Raw evaluation ledgers are empty, no denominator reconciliation exists, no evaluator recommendation exists, rollback package is absent, and the manifest omits several fields required by the v0.02 specification."
+    },
+    {
+      "criterion_id": "GATE-v0.01-critical",
+      "status": "BLOCKED",
+      "evidence": [
+        "versions/v0.01/SPEC-CREATOR-v0.01.md#15-explicit-quality-gates-and-failure-policy",
+        "evaluation/events.jsonl"
+      ],
+      "finding": "No gate outcome records exist from which prior critical gate passage can be reproduced."
+    },
+    {
+      "criterion_id": "REG-0001",
+      "status": "PASS",
+      "evidence": [
+        "versions/v0.02/MANIFEST.json",
+        "versions/v0.02/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "finding": "The frozen contract SHA-256 matches the supplied manifest and no mutation evidence was found."
+    },
+    {
+      "criterion_id": "REG-0002",
+      "status": "BLOCKED",
+      "evidence": [
+        "evaluation/release-scorecards.jsonl"
+      ],
+      "finding": "No promotion evaluation exists, so independent evaluator separation cannot be demonstrated for v0.02."
+    },
+    {
+      "criterion_id": "REG-0003",
+      "status": "PASS",
+      "evidence": [
+        "self-improvement/regressions.jsonl",
+        "versions/v0.02/FROZEN-RELEASE-CONTRACT.json"
+      ],
+      "finding": "REG-0001 through REG-0003 are active and all are present in the frozen critical regression set."
+    },
+    {
+      "criterion_id": "METRIC-promotion_decision_reproducibility",
+      "status": "BLOCKED",
+      "evidence": [
+        "evaluation/events.jsonl",
+        "evaluation/metric-ledger.jsonl"
+      ],
+      "finding": "Unavailable: no raw evaluation events or metric records were supplied. Missing data is not treated as zero."
+    },
+    {
+      "criterion_id": "GUARDRAIL-critical_gate_bypass_count",
+      "status": "BLOCKED",
+      "evidence": [
+        "evaluation/events.jsonl"
+      ],
+      "finding": "Unavailable: there are no gate transition events; zero cannot be inferred."
+    },
+    {
+      "criterion_id": "GUARDRAIL-critical_regression_pass_rate",
+      "status": "BLOCKED",
+      "evidence": [
+        "evaluation/release-scorecards.jsonl"
+      ],
+      "finding": "Incomplete because REG-0002 cannot be evaluated from supplied evidence."
+    },
+    {
+      "criterion_id": "GUARDRAIL-metric_reconciliation_failure_count",
+      "status": "BLOCKED",
+      "evidence": [
+        "evaluation/metric-ledger.jsonl"
+      ],
+      "finding": "Unavailable: there are no metric or denominator records to reconcile."
+    }
+  ],
+  "defects": [
+    {
+      "defect_id": "DEF-0001",
+      "classification": "evaluation defect",
+      "severity": "critical",
+      "summary": "v0.02 cannot reproduce a promotion decision from raw records because the evaluation workspace is empty."
+    },
+    {
+      "defect_id": "DEF-0002",
+      "classification": "missing executable capability",
+      "severity": "major",
+      "summary": "Schemas exist but there is no executable validator, semantic integrity checker, or test corpus."
+    },
+    {
+      "defect_id": "DEF-0003",
+      "classification": "schema defect",
+      "severity": "major",
+      "summary": "The frozen-contract schema does not express failure conditions, promotion conditions, rollback expectations, integrity hash, or constrained metric record shapes."
+    },
+    {
+      "defect_id": "DEF-0004",
+      "classification": "traceability defect",
+      "severity": "major",
+      "summary": "v0.02 MANIFEST.json omits removed/deprecated capabilities, migrations, regression changes, preregistered goals, evaluation result, and promotion decision despite the v0.02 manifest specification."
+    },
+    {
+      "defect_id": "DEF-0005",
+      "classification": "regression gap",
+      "severity": "major",
+      "summary": "Critical regressions are manual only and lack executable reproducible fixtures."
+    },
+    {
+      "defect_id": "DEF-0006",
+      "classification": "documentation defect",
+      "severity": "moderate",
+      "summary": "No v0.02 retrospective or rollback package exists although both are required by the protocol."
+    }
+  ],
+  "notes": "v0.02 is structurally useful as an experimental governance parent but is not promoted/validated on the supplied evidence."
+}

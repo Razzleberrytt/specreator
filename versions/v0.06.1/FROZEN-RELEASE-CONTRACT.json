@@ -1,0 +1,267 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006",
+    "REG-0007",
+    "REG-0008",
+    "REG-0009"
+  ],
+  "candidate_version": "0.06.1",
+  "contract_hash": "2ae4073dc197c73386d07b9746d38d807a1d9c038b56aae6a68c7c16a53fbf27",
+  "contract_id": "REL-0.06.1-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-006"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Frozen retry evaluation-plan SHA-256 differs from 70e3f6c5017fc2a6aef312065ec7f705cbc055f9cec46aec6144c1a1ee6a0bc5.",
+    "Frozen retry ambiguity corpus SHA-256 differs from 3d147717ff2501061f72a0c5f384403751297eb91b6d916fd4fbb48e9edf5f9e.",
+    "The semantic payload differs from failed v0.06 beyond the governed trace graph schema repairs.",
+    "Any of the 16 graph-backed retry cases fails promoted-parent traceability validation.",
+    "Defect-case detection rate is below 0.95 or any preregistered critical workflow ambiguity escapes.",
+    "Decision-needed classification accuracy is below 0.95.",
+    "Any governed-default case emits a question or unnecessary-question rate exceeds 0.05.",
+    "Priority top-question accuracy is below 0.90.",
+    "Clarification-interception proxy rate is below 0.80.",
+    "Any applicable regression REG-0001 through REG-0009 fails or disappears without approved retirement.",
+    "The approved v0.06.1 specification emits an unsuppressed v0.04 linter finding.",
+    "The evaluator actor is also the implementation actor.",
+    "The final live package manifest is stale, incomplete, or fails package-integrity validation.",
+    "Missing evaluation cases or denominator data are treated as zero or complete evidence."
+  ],
+  "frozen_at_utc": "2026-08-24T15:49:00Z",
+  "goals": [
+    {
+      "acceptance": "At least 95% of the 24 frozen defect cases are detected and critical ambiguity escape count is zero.",
+      "description": "Detect preregistered implementation-blocking ambiguity before execution.",
+      "goal_id": "G-0061-001"
+    },
+    {
+      "acceptance": "Decision-needed classification accuracy is at least 95%, governed-default question count is zero, and unnecessary-question rate is at most 5%.",
+      "description": "Ask only questions that require a decision while respecting explicit governed defaults.",
+      "goal_id": "G-0061-002"
+    },
+    {
+      "acceptance": "At least 90% of the 8 frozen priority projects select the preregistered top question.",
+      "description": "Prioritize owner questions using traceability-aware delivery impact.",
+      "goal_id": "G-0061-003"
+    },
+    {
+      "acceptance": "The frozen workflow proxy intercepts at least 80% of known implementation-time clarification triggers with zero critical ambiguity escapes.",
+      "description": "Intercept known clarification triggers before implementation without claiming observed production causality.",
+      "goal_id": "G-0061-004"
+    },
+    {
+      "acceptance": "All 16 graph-backed retry cases pass parent preflight, REG-0008/REG-0009 pass, and final live package validation has zero errors/warnings.",
+      "description": "Prevent invalid evaluation dependencies and stale shipping manifests from recurring.",
+      "goal_id": "G-0061-005"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-0061-G01",
+      "name": "clean_case_acceptance_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G02",
+      "name": "governed_default_question_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0061-G03",
+      "name": "unnecessary_question_rate",
+      "target_operator": "lte",
+      "target_value": 0.05,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G04",
+      "name": "critical_ambiguity_escape_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0061-G05",
+      "name": "evaluation_dependency_preflight_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G06",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G07",
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G08",
+      "name": "v0061_spec_lint_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-G09",
+      "name": "package_manifest_validation_error_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-0061-G10",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "mandatory_gates": [
+    "GATE-0061-CORPUS-INTEGRITY",
+    "GATE-0061-DEPENDENCY-PREFLIGHT",
+    "GATE-0061-SPEC-LINT",
+    "GATE-0061-AMBIGUITY-DETECTION",
+    "GATE-0061-DECISION-CLASSIFICATION",
+    "GATE-0061-QUESTION-GUARDRAIL",
+    "GATE-0061-PRIORITY",
+    "GATE-0061-CLARIFICATION-PROXY",
+    "GATE-0061-TRACE-INTEGRATION",
+    "GATE-0061-CLI",
+    "GATE-0061-TEST",
+    "GATE-0061-REGRESSION",
+    "GATE-0061-RECONCILIATION",
+    "GATE-0061-INDEPENDENT",
+    "GATE-0061-PACKAGE-MANIFEST",
+    "GATE-0061-ROLLBACK"
+  ],
+  "parent_version": "0.05",
+  "primary_metrics": [
+    {
+      "metric_id": "M-0061-001",
+      "name": "defect_case_detection_rate",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-002",
+      "name": "decision_needed_classification_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.95,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-003",
+      "name": "priority_top_question_accuracy",
+      "target_operator": "gte",
+      "target_value": 0.9,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-0061-004",
+      "name": "implementation_time_clarification_reduction_proxy_rate",
+      "target_operator": "gte",
+      "target_value": 0.8,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and all frozen primary and guardrail metrics meet target.",
+    "All metrics reconcile to raw evaluation evidence and denominator snapshots.",
+    "All applicable regressions REG-0001 through REG-0009 PASS and new meaningful defects are considered for regression memory.",
+    "Retry corpus/evaluation-plan hashes and semantic-equivalence evidence remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains and release manifest/rollback declaration/final package manifest are complete.",
+    "Because the clarification outcome remains a synthetic interception proxy, maximum classification is PROMOTED AS EXPERIMENTAL; no observed real-project clarification-reduction claim is permitted."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Parse active Markdown requirement/task blocks and produce deterministic structured ambiguity findings with source locations and owning block identifiers.",
+      "requirement_id": "REQ-0061-001"
+    },
+    {
+      "critical": true,
+      "description": "Implement the preregistered six-family ambiguity taxonomy and detect frozen ambiguity cases.",
+      "requirement_id": "REQ-0061-002"
+    },
+    {
+      "critical": true,
+      "description": "Classify ambiguity candidates as owner_decision, governed_default, or spec_correction with an explicit decision-needed flag.",
+      "requirement_id": "REQ-0061-003"
+    },
+    {
+      "critical": true,
+      "description": "Scope explicit Default fields and approved DEC governance markers to the ambiguity candidate they resolve.",
+      "requirement_id": "REQ-0061-004"
+    },
+    {
+      "critical": true,
+      "description": "Link findings to requirement/task blocks and compute v0.05 traceability impact context when a valid graph is supplied.",
+      "requirement_id": "REQ-0061-005"
+    },
+    {
+      "critical": true,
+      "description": "Rank required clarification questions using the preregistered severity, criticality, and downstream-impact score.",
+      "requirement_id": "REQ-0061-006"
+    },
+    {
+      "critical": true,
+      "description": "Generate bounded questions only for decision-needed findings and preserve unnecessary-question guardrails.",
+      "requirement_id": "REQ-0061-007"
+    },
+    {
+      "critical": true,
+      "description": "Measure the preregistered implementation-time clarification interception proxy without denominator manipulation.",
+      "requirement_id": "REQ-0061-008"
+    },
+    {
+      "critical": true,
+      "description": "Expose ambiguity analysis through deterministic Python API and CLI JSON output.",
+      "requirement_id": "REQ-0061-009"
+    },
+    {
+      "critical": true,
+      "description": "Preserve inherited v0.05 functionality and active regressions.",
+      "requirement_id": "REQ-0061-010"
+    },
+    {
+      "critical": true,
+      "description": "Validate every graph-backed evaluation dependency with the promoted parent traceability engine before contract freeze.",
+      "requirement_id": "REQ-0061-011"
+    },
+    {
+      "critical": true,
+      "description": "Generate the live root package manifest only after final release artifacts and require package-integrity validation before shipping.",
+      "requirement_id": "REQ-0061-012"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.06.1 fails, v0.05 remains active promoted-experimental; preserve failed v0.06 and v0.06.1 evidence and do not rewrite either frozen contract.",
+    "parent_contract_sha256": "c3d9588520221b8b8440d296bf3da5f2cbf7b43751b1725299b576f16efb3ca5",
+    "preserve_parent_history": true,
+    "rollback_target": "0.05"
+  },
+  "schema_version": "2.0"
+}

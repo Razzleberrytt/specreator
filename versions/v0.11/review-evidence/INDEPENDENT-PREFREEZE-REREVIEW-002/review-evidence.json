@@ -1,0 +1,460 @@
+{
+  "evidence_schema": "spec-creator-independent-prefreeze-rereview-v0.11/1",
+  "receiver_identifier": "receiver:gpt-5.6-sol:independent-prefreeze-rereview:v0.11:002",
+  "reviewed_at_utc": "2026-08-24T22:39:25Z",
+  "source_package": {
+    "uploaded_name": "spec-creator-v0.11-preregistration-repaired-rereview-checkpoint(1).zip",
+    "sha256": "af2879fcb3f07ceff1f8c518618ee19cb38634cc56e58ef8b36eefb3a60ec4c7",
+    "bytes": 2955123
+  },
+  "scope": "Independent evidence-only re-review. No v0.11 implementation, freeze, promotion, repair, or redesign performed.",
+  "protocol_ref": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+  "reviewed_artifact_hashes": {
+    "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json": "d313bb549f0944fa9d7e05fc99e2252962cc1e7076defe0e6103e57cfc4f7917",
+    "versions/v0.11/CONTINUATION.md": "cbc1f0ec76e4e32e4b72d2b11aa16f0f40a9bf4f2b8ecdefe1f2bdd9fbebf669",
+    "versions/v0.11/DISCOVERY.md": "817979b961caa1a9a855eff7e4362c7bea608f655399c19ae2641f20edc4e934",
+    "versions/v0.11/EVALUATION-DESIGN.json": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+    "versions/v0.11/EVALUATION-UNIVERSES.json": "d61c491d34f65cee8f0946e3189b0c1e6b8a078a671626018127016112c57f76",
+    "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json": "1af09e51fe382c549fc6ee5d52e36486fdefff6244de940f7a0ba08daca35b9b",
+    "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json": "e57380a459a1e8fd270762ffdbcf9600a8c33092c351e5f28884050600fa105a",
+    "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json": "ad5bc9595274e6d8a3fdd13773a8b98824022d1801bb2a0f6e811959e9ff4ee5",
+    "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json": "5592ac3400433cd97bed890bc39457133b64e80d5b0c519aafc46d2bbc5810a6",
+    "versions/v0.11/PARENT-SUITE-UNIVERSE.json": "a3406db3e33dec35ef98bac96a3db46812241cc066bee0f028f079d4903751c4",
+    "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json": "c9508ef9d5a175f3572ac5f85ce1f3709a9ed5d7aee64d3b383ac85d23e84aeb",
+    "versions/v0.11/DEFECT-RESOLUTION-001.json": "61379fefc35e7944fb6a31808bf650a0af9f0bbcc0eb1586b3a2fa2642e68dd6",
+    "versions/v0.11/PREREGISTRATION-ARTIFACT-HASHES-DRAFT.json": "4f05eaa5fabe1e18785ab7fdcb3f1be9a5bf75cd5234ba2a824eab633196c066",
+    "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md": "496c60235205dce8d7b38fd81e11ebbe678570003f4b0a750bd2a8d26d3c36a2",
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb",
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452",
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2",
+    "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-report.md": "3c17165284862f54406ddc945c25b165e719d209333f043d225d3e9e2a564383",
+    "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-001/review-evidence.json": "649635fb2b65aa0b5109beecbf16a949dbe89eb2827b3a5d4b927a9c136e6c30",
+    "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md": "4fe8f0c666a65191ef7ea7ff054eb7e7717897c36c97b9179a7ce4d86cd933ae",
+    "versions/v0.10/MANIFEST.json": "8228cd1c99875246fa52c269e8efdffce489f37ef9ccbfd70c5c0e16dbcf878f",
+    "versions/v0.10/FROZEN-RELEASE-CONTRACT.json": "5440dd507d13e13853ebd9aba2e9b39df0e7d340abfa308b9000ebb79e8cd9b2",
+    "versions/v0.11/tools/preregistration_preflight.py": "3797c691521d1906e96d3767cef3676ad9bb373ff773b83fe4d4405acb48289f",
+    "versions/v0.11/PREFREEZE-READINESS.md": "bd3e49553d741af4f4ab8e571270ad161aad90d0a528140f94dba00811eb041f",
+    "versions/v0.11/DOCS-CHANGELOG.md": "fe9c1c74ea0100cc4a2cab3496c25a7ab33c2c4d6c3fbfbf6cbba0356d01ace2",
+    "versions/v0.11/DEC-0033.json": "e1625e8b7e1d296eb52cc08f92bd60690fc9251031582dea4fa99d37b9ef6caa",
+    "evaluation/v011-esis-roadmap-amendment-validation.json": "e94d6e4d0418b7ca59843d53eb768dc043c56634abaed939a44cb34ffbe9791c",
+    "self-improvement/regressions.jsonl": "3d20cd450422466cfdd91e8893972badf37074dbe612b7d61480b8de6b44320b",
+    "PACKAGE-MANIFEST.json": "9b2413961e88d9559ac18a65bc6addbcbfcd636d5d2a09d2ad39768fc3a2791a"
+  },
+  "original_defect_regressions": [
+    {
+      "defect_id": "DEF-011-REVIEW-001",
+      "verdict": "PASS",
+      "summary": "All 21 explicit edges have exactly one semantic provenance match equal to the authored label; one conflict-serialization edge A->B is independently derived; exact effective universe is 22 with zero unsupported/misclassified edges.",
+      "artifact_locations": [
+        "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+        "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+        "versions/v0.11/EVALUATION-UNIVERSES.json"
+      ],
+      "evidence_refs": [
+        "raw/provenance-derivation.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-002",
+      "verdict": "PASS",
+      "summary": "All 4 lifecycle actions and the current checkpoint action derive from state+blockers only; the exact validation profile runs cleanly from fresh extraction with no undeclared setup.",
+      "artifact_locations": [
+        "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+        "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+        "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl"
+      ],
+      "evidence_refs": [
+        "raw/lifecycle-derivation.json",
+        "raw/validation-commands/"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-003",
+      "verdict": "PASS",
+      "summary": "Critical-path denominator is exactly all six canonical execution fixtures; all maximum-weight path sets were independently recomputed and match, including both two-path ties.",
+      "artifact_locations": [
+        "versions/v0.11/EVALUATION-DESIGN.json",
+        "versions/v0.11/EVALUATION-UNIVERSES.json",
+        "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl"
+      ],
+      "evidence_refs": [
+        "raw/structural-recomputation.json",
+        "raw/universe-audit.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-004",
+      "verdict": "PASS",
+      "summary": "Integration denominator is exactly the 23 canonical source-task keys, independently derived from all six fixtures; execution output tasks require non-empty source_task_ids and an integration_contract.",
+      "artifact_locations": [
+        "versions/v0.11/EVALUATION-DESIGN.json",
+        "versions/v0.11/EVALUATION-UNIVERSES.json",
+        "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json"
+      ],
+      "evidence_refs": [
+        "raw/universe-audit.json",
+        "raw/schema-validation.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-005",
+      "verdict": "PASS",
+      "summary": "Exact guardrail universes independently match: 155 pytest node IDs, 24 active regression IDs, and all 1120 v0.10 manifest content_hash entries; fresh pytest collection exactly matches the stored 155-node list.",
+      "artifact_locations": [
+        "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+        "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+        "versions/v0.11/EVALUATION-UNIVERSES.json",
+        "versions/v0.10/MANIFEST.json"
+      ],
+      "evidence_refs": [
+        "raw/universe-audit.json",
+        "raw/frozen-parent-hash-checks.json",
+        "raw/active-regression-test-mapping.json"
+      ]
+    },
+    {
+      "defect_id": "DEF-011-REVIEW-006",
+      "verdict": "PASS",
+      "summary": "The exact three declared commands run from a clean extraction with exit code 0; PYTHONPATH=src is declared inline in the command itself, so no undeclared bootstrap is required.",
+      "artifact_locations": [
+        "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json:/validation_profile/commands"
+      ],
+      "evidence_refs": [
+        "raw/validation-commands/"
+      ]
+    }
+  ],
+  "review_obligations": [
+    {
+      "id": 1,
+      "status": "PASS",
+      "summary": "v0.10 and earlier protected history remains immutable: 1120/1120 parent manifest hashes match; v0.10 contract hash recomputes exactly; all listed historical version files are manifest-bound except v0.10 MANIFEST itself, which is explicitly a protected release manifest."
+    },
+    {
+      "id": 2,
+      "status": "PASS",
+      "summary": "Both candidate schemas pass Draft 2020-12 meta-schema checks; the current lifecycle checkpoint validates with zero errors."
+    },
+    {
+      "id": 3,
+      "status": "PASS",
+      "summary": "All 10 fixture records parse and are internally coherent; six execution DAGs have unique task IDs, valid dependencies, positive weights, and no cycles."
+    },
+    {
+      "id": 4,
+      "status": "PASS",
+      "summary": "Structural waves, all maximum-weight critical paths, conflict serialization, load-balance expectation, speculative authority behavior, and retry preservation independently recompute to the authored expectations."
+    },
+    {
+      "id": 5,
+      "status": "PASS",
+      "summary": "All 21 explicit sequential edges have exactly one permitted semantic provenance class; the only derived conflict edge is A->B; all declared waves are dependency/write-conflict safe."
+    },
+    {
+      "id": 6,
+      "status": "PASS",
+      "summary": "All four lifecycle fixtures and the current checkpoint derive one exact action from machine rules without answer-key/chat-state dependence; the exact validation profile is self-executable from a clean extraction."
+    },
+    {
+      "id": 7,
+      "status": "FAIL",
+      "summary": "Most repaired denominator/universe defects are closed, but the immutable_boundary_classification_error_count guardrail has a new blocking selector/classification inconsistency: actual reviewed/mutated v0.11-owned paths remain UNCLASSIFIED under the declared exact universe."
+    },
+    {
+      "id": 8,
+      "status": "PASS",
+      "summary": "Wall-clock, context, retry/rework, and related empirical efficiency metrics are explicitly shadow-only; every required shadow metric has promotion_authoritative=false and v0.11 may not claim general speedup."
+    },
+    {
+      "id": 9,
+      "status": "PASS",
+      "summary": "Serial/control and optimized comparisons require identical obligation_set_hash and identical mandatory quality-gate sets; the gate universe is exactly 8."
+    },
+    {
+      "id": 10,
+      "status": "PASS",
+      "summary": "This returned evidence package contains machine-readable evidence, exact commands/outputs, hashes, computations, per-defect/per-obligation verdicts, and an allowed final recommendation."
+    }
+  ],
+  "command_evidence": [
+    {
+      "ordinal": 1,
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "stdout_ref": "raw/validation-commands/01.stdout.txt",
+      "stderr_ref": "raw/validation-commands/01.stderr.txt",
+      "concise_output": "155 passed in 12.46s",
+      "undeclared_environment_manipulation": false
+    },
+    {
+      "ordinal": 2,
+      "command": "PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest",
+      "exit_code": 0,
+      "stdout_ref": "raw/validation-commands/02.stdout.txt",
+      "stderr_ref": "raw/validation-commands/02.stderr.txt",
+      "concise_output": "PASS: 0 error(s), 0 warning(s)",
+      "undeclared_environment_manipulation": false
+    },
+    {
+      "ordinal": 3,
+      "command": "python versions/v0.11/tools/preregistration_preflight.py",
+      "exit_code": 0,
+      "stdout_ref": "raw/validation-commands/03.stdout.txt",
+      "stderr_ref": "raw/validation-commands/03.stderr.txt",
+      "concise_output": "PASS: v0.11 preregistration preflight; candidate schemas: 2 valid; execution fixtures: 6; explicit provenance edges: 21; derived conflict edges: 1; lifecycle fixtures: 4 independently derived; integration source-task universe: 23; parent suite universe: 155 node IDs; active regression universe: 24 IDs; frozen parent integrity: 1120/1120",
+      "undeclared_environment_manipulation": false
+    }
+  ],
+  "key_computations": {
+    "schemas_valid_draft_2020_12": 2,
+    "fixtures_parsed_and_coherent": 10,
+    "lifecycle_exact_matches": "4/4",
+    "current_checkpoint_action": "independent_prefreeze_review",
+    "explicit_provenance_edges": "21/21 unique semantic matches",
+    "derived_conflict_edges": [
+      "EXEC-011-003-CONFLICT::A->B"
+    ],
+    "effective_dependency_edges": "22/22 exact",
+    "critical_path_fixtures": "6/6 exact",
+    "execution_wave_fixtures": "6/6 exact",
+    "integration_source_tasks": "23/23 exact",
+    "parent_suite": "155/155 PASS; exact node-ID list match",
+    "active_regressions": "24/24 exact source IDs; all map to passing collected pytest nodes",
+    "frozen_parent_hashes": "1120/1120 exact",
+    "preregistration_hash_inventory": "20/20 exact hash+size",
+    "targets_unchanged": "15/15",
+    "immutable_classification": "FAIL: at least one mandatory reviewed successor path is UNCLASSIFIED; 13 whole-package unclassified under conservative classifier"
+  },
+  "shadow_only_confirmation": {
+    "evaluation_rule": "Synthetic/fixture evidence may authorize only structural claims. Wall-clock, provider, context-cost, or rework claims require actual execution evidence and are shadow-only in v0.11.",
+    "trial_purpose": "Collect matched empirical calibration evidence without using provider/runtime-dependent efficiency measurements as v0.11 promotion authority.",
+    "trial_interpretation_rule": "v0.11 may report observed empirical deltas only as calibration/shadow evidence. It must not claim general speedup from these trials. A later reproducible runner (roadmap v0.17) may preregister provider/runtime-dependent promotion thresholds.",
+    "shadow_metrics": [
+      {
+        "name": "time_to_verified_implementation_seconds",
+        "promotion_authoritative": false,
+        "denominator": "each matched workload execution"
+      },
+      {
+        "name": "canonical_context_payload_bytes",
+        "promotion_authoritative": false,
+        "denominator": "all work packages in each strategy"
+      },
+      {
+        "name": "corrective_prompt_count",
+        "promotion_authoritative": false,
+        "denominator": "each matched workload execution"
+      },
+      {
+        "name": "integration_conflict_count",
+        "promotion_authoritative": false,
+        "denominator": "each matched workload execution"
+      },
+      {
+        "name": "architectural_rework_count",
+        "promotion_authoritative": false,
+        "denominator": "each matched workload execution"
+      },
+      {
+        "name": "retry_amplification_work_units",
+        "promotion_authoritative": false,
+        "denominator": "exact matched executions whose workload manifest has failure_injection.enabled=true; otherwise metric outcome is NOT_APPLICABLE and excluded by the preregistered applicability predicate"
+      },
+      {
+        "name": "verified_obligation_completion_rate",
+        "promotion_authoritative": false,
+        "denominator": "frozen implementation obligations"
+      }
+    ],
+    "all_promotion_authoritative_false": true,
+    "speed_claim_authorized": false,
+    "verdict": "PASS"
+  },
+  "control_equivalence_confirmation": {
+    "evaluation_rule": "Serial control and optimized plans must preserve an identical obligation_set_hash and identical mandatory quality-gate set before empirical comparison is valid.",
+    "trial_matched_obligations_required": true,
+    "trial_matched_quality_gates_required": true,
+    "output_schema_requires_obligation_set_hash": true,
+    "mandatory_quality_gate_universe": [
+      "candidate_schema_validity",
+      "candidate_fixture_oracle_preflight",
+      "parent_suite",
+      "active_regressions",
+      "frozen_parent_hash_integrity",
+      "independent_prefreeze_review",
+      "independent_verification",
+      "package_manifest_validation"
+    ],
+    "verdict": "PASS"
+  },
+  "target_nonweakening_confirmation": {
+    "prior_evaluation_design_preserved_sha256": "d962c0f93e5754e43921d72ab226778fead6947968d4b8a126293a46f5bee727",
+    "current_evaluation_design_sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+    "metric_comparisons": [
+      {
+        "metric": "next_legal_action_exact_match_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": "all lifecycle fixtures",
+        "current_universe": "lifecycle_fixtures",
+        "current_denominator_count": 4
+      },
+      {
+        "metric": "critical_path_exact_match_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": "all execution fixtures with unambiguous/tie-aware expected critical paths",
+        "current_universe": "critical_path_fixtures",
+        "current_denominator_count": 6
+      },
+      {
+        "metric": "execution_wave_exact_match_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": "all execution fixtures",
+        "current_universe": "execution_fixtures",
+        "current_denominator_count": 6
+      },
+      {
+        "metric": "retry_isolation_exact_match_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": "all failure-injection fixtures",
+        "current_universe": "failure_injection_fixtures",
+        "current_denominator_count": 1
+      },
+      {
+        "metric": "integration_contract_completeness_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": "all implementation workstreams emitted in governed corpus",
+        "current_universe": "integration_source_tasks",
+        "current_denominator_count": 23
+      },
+      {
+        "metric": "unsafe_parallelization_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "execution_fixtures",
+        "current_denominator_count": null
+      },
+      {
+        "metric": "unsupported_dependency_edge_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "effective_dependency_edges",
+        "current_denominator_count": 22
+      },
+      {
+        "metric": "speculative_authority_escape_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "speculative_fixtures",
+        "current_denominator_count": 1
+      },
+      {
+        "metric": "hidden_manual_state_reconstruction_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "lifecycle_fixtures",
+        "current_denominator_count": null
+      },
+      {
+        "metric": "immutable_boundary_classification_error_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "immutable_boundary_assertions",
+        "current_denominator_count": null
+      },
+      {
+        "metric": "parent_suite_pass_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "parent_suite",
+        "current_denominator_count": 155
+      },
+      {
+        "metric": "active_regression_pass_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "active_regressions",
+        "current_denominator_count": 24
+      },
+      {
+        "metric": "frozen_parent_hash_integrity_rate",
+        "prior_target": 1.0,
+        "current_target": 1.0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "frozen_parent_hash_entries",
+        "current_denominator_count": 1120
+      },
+      {
+        "metric": "missing_data_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "mandatory_evidence_slots",
+        "current_denominator_count": 25
+      },
+      {
+        "metric": "critical_gate_bypass_count",
+        "prior_target": 0,
+        "current_target": 0,
+        "target_unchanged": true,
+        "prior_denominator": null,
+        "current_universe": "mandatory_quality_gates",
+        "current_denominator_count": 8
+      }
+    ],
+    "all_15_targets_unchanged": true,
+    "scope_changes_summary": {
+      "critical_path": "selection-sensitive prior denominator replaced by all six canonical fixtures",
+      "integration": "emitted-workstream denominator replaced by fixed 23 canonical source tasks",
+      "parent_regression_hash": "formerly unspecified ratio denominators replaced by exact 155/24/1120 universes"
+    },
+    "verdict": "PASS"
+  },
+  "new_blocking_findings": [
+    {
+      "defect_id": "DEF-011-REREVIEW-001",
+      "blocking": true,
+      "title": "Immutable-boundary exact universe does not classify actual successor mutation/review paths",
+      "artifact_locations": [
+        "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json:/successor_mutable_prefixes",
+        "versions/v0.11/EVALUATION-UNIVERSES.json:/universes/immutable_boundary_assertions",
+        "versions/v0.11/EVALUATION-DESIGN.json:/guardrail_metrics/4",
+        "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+        "evaluation/v011-esis-roadmap-amendment-validation.json"
+      ],
+      "evidence": "The repaired universe says any relevant path matching neither protected-parent nor successor-mutable selectors is UNCLASSIFIED and counts as an error, with target 0. The mandatory reviewed docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md is not a v0.10 content_hash entry, is not a protected manifest, and does not match either mutable prefix. It changed from SHA-256 24fe09... in review 001 to 4fe8f0... after the 22:03:17Z ESIS amendment while the immutable-boundary draft remained byte-identical. A conservative whole-package classification finds 13 UNCLASSIFIED files (12 excluding PACKAGE-MANIFEST.json), including multiple v0.11 draft/evaluation paths. Parent history is still intact, but the guardrail's own exact-universe claim cannot meet target zero as written.",
+      "evidence_refs": [
+        "raw/immutable-boundary-classification.json",
+        "raw/docs-execution-architecture-after-review.diff"
+      ],
+      "required_resolution_direction": "Reconcile the machine-readable mutable-successor selector/classification rule with the actual unfrozen successor artifact locations (or explicitly narrow the guardrail universe in a non-gameable way), then repeat independent re-review. Do not weaken the zero-error target."
+    }
+  ],
+  "recommendation": "NOT_READY"
+}

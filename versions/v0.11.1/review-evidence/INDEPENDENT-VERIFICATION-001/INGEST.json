@@ -1,0 +1,20 @@
+{
+  "ingest_id": "INGEST-0111-INDEPENDENT-VERIFICATION-001",
+  "candidate_version": "0.11.1",
+  "contract_id": "REL-0.11.1-FROZEN-001",
+  "verification_actor": "verifier:independent-pass-0111",
+  "implementation_actor": "agent:spec-creator-builder-v0.11.1",
+  "independence_required": true,
+  "source_checkpoint_sha256_claimed": "43c0bc83c83b1c6eaec325140aeaa3b853662b93a88bfb36a0a906f1a394459a",
+  "source_checkpoint_sha256_authoritative": "43c0bc83c83b1c6eaec325140aeaa3b853662b93a88bfb36a0a906f1a394459a",
+  "source_hash_matches": true,
+  "evidence_package_sha256": "e087f9d1d368288a3d0946450f8b666ee91ebcc8dd2f08cd930cfc65363435a3",
+  "evidence_manifest_sha256": "43d445cecc960ddcc36d075f631e5617666e557fe9708060dbe15e34088ae58e",
+  "verification_evidence_sha256": "ef7ef06f7ca32cb538bb348c92a8feba8f5875f3a5f9df9257cff365237c3843",
+  "verification_report_sha256": "0661f7b87218ebeccf458daa65ea5e13e2d6133c70de8ea0b184ac828fe8b345",
+  "recommendation": "READY_FOR_RELEASE_SEAL",
+  "blocking_defect_count": 0,
+  "ready_for_release_seal": true,
+  "ingested_at_utc": "2026-08-25T01:37:11Z",
+  "rule": "Evidence identity and recommendation were validated independently; authored verifier summaries are not substituted for authoritative release-seal recomputation."
+}

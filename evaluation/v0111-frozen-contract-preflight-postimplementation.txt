@@ -1,0 +1,1 @@
+PASS: frozen registry 36/36; v0.10 1120/1120; failed-v0.11 154/154; ownership/prospective closure exact; contract hash valid

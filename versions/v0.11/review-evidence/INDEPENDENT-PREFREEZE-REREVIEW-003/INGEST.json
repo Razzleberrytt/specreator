@@ -1,0 +1,36 @@
+{
+  "authority_unlocked": "FREEZE_PREPARATION_ONLY",
+  "candidate_version": "0.11",
+  "defect_regressions": {
+    "DEF-011-REREVIEW-001": "PASS",
+    "DEF-011-REVIEW-001": "PASS",
+    "DEF-011-REVIEW-002": "PASS",
+    "DEF-011-REVIEW-003": "PASS",
+    "DEF-011-REVIEW-004": "PASS",
+    "DEF-011-REVIEW-005": "PASS",
+    "DEF-011-REVIEW-006": "PASS"
+  },
+  "final_recommendation": "READY_FOR_FREEZE_PREPARATION",
+  "ingest_id": "INGEST-011-PREFREEZE-REREVIEW-003",
+  "ingested_at_utc": "2026-08-24T23:19:27Z",
+  "new_blocking_defects": [],
+  "preserved_evidence_package_sha256": "d99e200217630a2629792c17655269bfe99e5fe3140d5ae816772c1fa1313501",
+  "preserved_source_package_sha256": "dbc7751daa050e28e849aac83c8b679eee5be334e3dadb4286ce90f43d7f954f",
+  "receiver_identifier": "receiver:gpt-5.6-sol:independent-prefreeze-rereview:v0.11:003",
+  "reported_evidence_package_sha256": "d99e200217630a2629792c17655269bfe99e5fe3140d5ae816772c1fa1313501",
+  "review_id": "INDEPENDENT-PREFREEZE-REREVIEW-003",
+  "review_obligations": {
+    "1": "PASS",
+    "10": "PASS",
+    "2": "PASS",
+    "3": "PASS",
+    "4": "PASS",
+    "5": "PASS",
+    "6": "PASS",
+    "7": "PASS",
+    "8": "PASS",
+    "9": "PASS"
+  },
+  "reviewed_source_package_sha256": "dbc7751daa050e28e849aac83c8b679eee5be334e3dadb4286ce90f43d7f954f",
+  "rule": "Independent review evidence authorizes freeze preparation only. It does not constitute implementation, verification, or promotion evidence."
+}

@@ -1,0 +1,68 @@
+{
+  "added_capabilities": [
+    "deterministic Markdown spec linter LINT-001..LINT-010",
+    "exact-span/rationale diagnostics",
+    "governed local lint suppressions",
+    "frozen lint-corpus evaluator",
+    "historical release snapshot verification",
+    "append-only ledger prefix verification",
+    "byte-preserving JSONL append helper"
+  ],
+  "breaking_changes": [],
+  "content_hashes": {
+    "README.md": "a7040540b1ef722dec350e5753a50f337823c41e655cd9413e189d9e98326f24",
+    "evaluation/lint-corpus-results-v0.04.jsonl": "63356609a39a679f809b00c4b3e8c37dc219e95edc8da4b0ceb39631eec546c2",
+    "evaluation/lint-corpus-summary-v0.04.json": "73cc8653fc632723b64e483780eab10714889bf57c80d9567e40b3614cccc391",
+    "evaluation/pytest-regressions-frozen-v0.04.txt": "b4e6716fbd6745e8531d806d530757d7b2e907a881718c8369d92405a53c4ebc",
+    "evaluation/pytest-regressions-new-v0.04.txt": "ede79f995e2f310beccdc9410e7733dc39b02dbefaa16a04f56b0c5951bb8a9f",
+    "evaluation/pytest-suppression-v0.04.txt": "c2cba0e5b1275bde99432021fd22a26635493fa35d0886fcd5cd38708b0f7cca",
+    "evaluation/pytest-v0.03-inherited-on-v0.04.txt": "24fe65f8e09eb820ef5c68d5cb111339f841bad84211fe18b74eb254ad3e4da6",
+    "evaluation/pytest-v0.04.xml": "b4904e2f3dd7fc3ab813f640e1f02c5ff2c53658588c68bb0f8643565f5048ec",
+    "evaluation/verifier-pass-v0.04.txt": "d76f0e7e4f27c72928e66f2e6246abae18ca31e6d0226d4eab7566d742895743",
+    "fixtures/linter/v0.04/corpus.jsonl": "cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d",
+    "pyproject.toml": "f17dd9d7ae33371759f978375a52158d08b7c86b03348da141e2ea0efe15d55b",
+    "src/spec_creator/__init__.py": "02fe13c019a3a273dbf7a613ab2216f2e0804c6c51b0a5a9fefb3afc6a3d857d",
+    "src/spec_creator/cli.py": "dea7a93823a6c935d7ab311871a6b92b120776133a31a418ded1c288df236903",
+    "src/spec_creator/ledger.py": "a0c7ea9ed5b1d745aeae86aba7ea7d53c859c1187a7fe38f9e4895311c14b0b3",
+    "src/spec_creator/lint_evaluator.py": "9fc89d5e6c5dc3d9e7176c1c9cb278a9295c40e112382390a868c09f609a1bbe",
+    "src/spec_creator/linter.py": "fbecc23739b75f7c4f6713e315c6b143c17c8f1ba1a67422229864de34810b57",
+    "src/spec_creator/models.py": "ea7f7dc994a6298afc19f7482ca8399c54585b8d6686c169ce1ff8095174f541",
+    "src/spec_creator/schema_registry.py": "7329c40db3b5caa4e633b186d17b23b2ea129be2028ec79ef17033ae7bb033ce",
+    "src/spec_creator/validator.py": "f34ec4468d3023fe1eab877a051e8f25d696d678cb0c1707e3c07e3fec8d2783",
+    "tests/conftest.py": "89ac47c65dcc0bb339a5acfe167e6a4c496ee5b0c928591a68b1b7495c7c2dd2",
+    "tests/test_cli.py": "908e88a594af63017ae6c26d399319b745ff9912979c83e440dcfbee59a79164",
+    "tests/test_linter.py": "95c76c25dd7237058a889b40681383aa3438cf407002dc8b819fb9f0dfd8c79c",
+    "tests/test_validator.py": "a66a88c22334671dcc7071e37d083d5bfbdb4667520729b97e7ad1b8c31a5f7c",
+    "versions/v0.04/CONTINUATION.md": "a28d51cb68f920d89d9aa20f7ab5723b10d91e2424a1c1282564eccfaddefd40",
+    "versions/v0.04/EVALUATION-PLAN.json": "d397f59d72cf83df246beb41a59931b67d8d15d3bd850dce8fc2e2be4925fbc4",
+    "versions/v0.04/FROZEN-RELEASE-CONTRACT.json": "625f3adc395bc6981cac3d3928c89df603dddc7fa2adcd1a9ffc9ed1c6946233",
+    "versions/v0.04/RETROSPECTIVE.md": "a3b1775aab63b5fff8903f2bbb9d42229a5a1da964ad5b683be15645b2ecac26",
+    "versions/v0.04/ROLLBACK.json": "cdf81e2bdae7b542b2f144331e7fbe90a8c92d262049052c98b4a2725f794ea8",
+    "versions/v0.04/SPEC-CREATOR-v0.04.md": "e43e4ae3fa18a1d4671615d3967b997686e629226c4a743aa2b0d547ae746da8"
+  },
+  "evaluation_result": "EVAL-0.04-20260824-001: all frozen v0.04 gates, primary metrics, guardrails, and applicable inherited regressions passed; two new history-integrity regressions also pass.",
+  "manifest_schema_version": "2.0",
+  "new_regressions": [
+    "REG-0005",
+    "REG-0006"
+  ],
+  "parent_version": "0.03",
+  "preregistered_goals": [
+    "G-004-001",
+    "G-004-002",
+    "G-004-003",
+    "G-004-004",
+    "G-004-005"
+  ],
+  "promotion_decision": "PROMOTED AS EXPERIMENTAL",
+  "protocol_schema_version": "2.0",
+  "release_contract_hash": "2e512511159fd20d432b143f2093e84001eb8857f5b3db151c0654a89eea3010",
+  "removed_or_deprecated_capabilities": [],
+  "required_migrations": [
+    "Future recursive versions must preserve a version-local RELEASE-SNAPSHOT for mutable shared release content and a PACKAGE-MANIFEST-SNAPSHOT with release-time byte counts for append-only ledgers."
+  ],
+  "retired_regressions": [],
+  "rollback_ref": "versions/v0.04/ROLLBACK.json",
+  "status": "promoted_experimental",
+  "version": "0.04"
+}

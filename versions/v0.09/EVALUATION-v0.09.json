@@ -1,0 +1,13 @@
+{
+  "candidate_version": "0.09",
+  "contract_id": "REL-0.09-FROZEN-001",
+  "result": "RETRY REQUIRED",
+  "defect_ids": ["DEF-009-003", "DEF-009-004"],
+  "evidence_refs": [
+    "evaluation/def-009-003-evaluator-public-api-integration.json",
+    "evaluation/def-009-004-frozen-benchmark-contrast-defect.json",
+    "evaluation/v009-corpus-results-failed.json"
+  ],
+  "superseded_by_candidate": "0.09.1",
+  "note": "The product direction remains viable, but the frozen evaluation contains one contradictory negative fixture and cannot be goalpost-adjusted after results."
+}

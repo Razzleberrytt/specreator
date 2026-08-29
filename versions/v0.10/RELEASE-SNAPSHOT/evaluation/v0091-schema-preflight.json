@@ -1,0 +1,10 @@
+{
+  "accepted_envelopes": 45,
+  "all_ok": true,
+  "candidate_version": "0.09.1",
+  "envelope_error_count": 0,
+  "envelope_errors": [],
+  "input_cases": 75,
+  "input_error_count": 0,
+  "input_errors": []
+}

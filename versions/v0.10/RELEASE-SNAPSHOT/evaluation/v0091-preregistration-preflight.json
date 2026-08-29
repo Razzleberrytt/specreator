@@ -1,0 +1,758 @@
+{
+  "all_ok": false,
+  "candidate_version": "0.09.1",
+  "case_count": 75,
+  "passing": 72,
+  "rows": [
+    {
+      "case_id": "DEV-BOOTSTRAP-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-BOOTSTRAP-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-BOOTSTRAP-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-BOOTSTRAP-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-BOOTSTRAP-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-BOOTSTRAP-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-IMPLEMENTATION-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-DEBUG-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-VERIFICATION-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-CONTINUATION-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-07",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-08",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-09",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-1-10",
+      "execution_valid": false,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": false
+      },
+      "graph_valid": false,
+      "ok": false
+    },
+    {
+      "case_id": "DEV-NEG-2-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-07",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-08",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-09",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "DEV-NEG-2-10",
+      "execution_valid": false,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": false
+      },
+      "graph_valid": false,
+      "ok": false
+    },
+    {
+      "case_id": "HELD-BOOTSTRAP-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-BOOTSTRAP-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-BOOTSTRAP-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-IMPLEMENTATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-IMPLEMENTATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-IMPLEMENTATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-DEBUG-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-DEBUG-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-DEBUG-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-VERIFICATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-VERIFICATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-VERIFICATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-CONTINUATION-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-CONTINUATION-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-CONTINUATION-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-01",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-02",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-03",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-04",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-05",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-06",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-07",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-08",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-09",
+      "execution_valid": true,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": true
+      },
+      "graph_valid": true,
+      "ok": true
+    },
+    {
+      "case_id": "HELD-NEG-10",
+      "execution_valid": false,
+      "expected": {
+        "execution_valid": true,
+        "graph_valid": false
+      },
+      "graph_valid": false,
+      "ok": false
+    }
+  ]
+}

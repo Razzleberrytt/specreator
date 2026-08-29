@@ -1,0 +1,10 @@
+{
+  "all_code_test_contract_files_identical": true,
+  "code_test_contract_file_count": 44,
+  "differences": [],
+  "ok": true,
+  "sealed_parent_version": "0.09.2",
+  "snapshot_local_collection_limitation": "RELEASE-SNAPSHOT omits several historical fixture directories; direct pytest collection inside that subdirectory is therefore not the governed parent-suite method. Root code/tests are byte-identical to sealed snapshot source/tests and the preserved root fixture suite passes 151/151.",
+  "suite_evidence_ref": "evaluation/pytest-v0.10-prefreeze.txt",
+  "suite_result": "151 passed"
+}

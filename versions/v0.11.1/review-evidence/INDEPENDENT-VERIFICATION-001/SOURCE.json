@@ -1,0 +1,9 @@
+{
+  "implementation_actor": "agent:spec-creator-builder-v0.11.1",
+  "independence_required": true,
+  "input_bytes": 19348902,
+  "input_filename": "spec-creator-v0.11.1-verifying-checkpoint.zip",
+  "input_sha256": "43c0bc83c83b1c6eaec325140aeaa3b853662b93a88bfb36a0a906f1a394459a",
+  "source_of_truth_rule": "Supplied VERIFYING checkpoint ZIP treated as sole source of truth.",
+  "verification_actor": "verifier:independent-pass-0111"
+}

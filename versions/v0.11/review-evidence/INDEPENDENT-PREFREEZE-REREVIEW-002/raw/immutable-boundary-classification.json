@@ -1,0 +1,54 @@
+{
+  "registry_ref": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+  "universe_ref": "versions/v0.11/EVALUATION-UNIVERSES.json:/universes/immutable_boundary_assertions",
+  "target_ref": "versions/v0.11/EVALUATION-DESIGN.json:/guardrail_metrics/4",
+  "target": 0,
+  "classification_method_for_review": "Conservative union: v0.10 content_hash keys OR explicit protected_release_manifests => IMMUTABLE_PARENT; successor_mutable_prefixes => MUTABLE_SUCCESSOR; otherwise UNCLASSIFIED.",
+  "successor_mutable_prefixes": [
+    "versions/v0.11/",
+    "evaluation/v011-"
+  ],
+  "protected_release_manifests": [
+    "versions/v0.10/MANIFEST.json",
+    "versions/v0.09.2/MANIFEST.json",
+    "versions/v0.08/MANIFEST.json"
+  ],
+  "whole_package_class_counts": {
+    "IMMUTABLE_PARENT": 1121,
+    "UNCLASSIFIED": 13,
+    "MUTABLE_SUCCESSOR": 52
+  },
+  "whole_package_unclassified_paths": [
+    "PACKAGE-MANIFEST.json",
+    "self-improvement/SELF-IMPROVEMENT-PROTOCOL-v0.11-DRAFT.md",
+    "roadmap/ROADMAP-to-v1.00-v0.11-DRAFT.md",
+    "prompts/MASTER-RECURSIVE-PROMPT-v0.11-DRAFT.md",
+    "docs/EXISTING-SOLUTION-INTELLIGENCE-AND-SYNTHESIS.md",
+    "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+    "evaluation/workspace-validation-v0.11-discovery-docs.json",
+    "evaluation/pytest-v0.11-discovery-docs.txt",
+    "evaluation/workspace-validation-v0.11-preregistration-shipping.txt",
+    "evaluation/pytest-v0.11-esis-roadmap-amendment.txt",
+    "evaluation/pytest-v0.11-preregistration-final.txt",
+    "evaluation/workspace-validation-v0.11-preregistration.txt",
+    "evaluation/workspace-validation-v0.11-esis-roadmap-amendment.json"
+  ],
+  "whole_package_unclassified_count": 13,
+  "unclassified_excluding_package_manifest_count": 12,
+  "mandatory_reviewed_path_example": {
+    "path": "docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md",
+    "class": "UNCLASSIFIED",
+    "in_v0_10_content_hashes": false,
+    "matches_successor_mutable_prefix": false,
+    "prior_review_sha256": "24fe09ed6660ea4a9ee06e3b1d63cbecc85ebc68cce91e133db40488127cb4d0",
+    "current_sha256": "4fe8f0c666a65191ef7ea7ff054eb7e7717897c36c97b9179a7ce4d86cd933ae",
+    "changed_after_review_001": true,
+    "prior_review_time_utc": "2026-08-24T21:02:16Z",
+    "post_review_amendment_validation_time_utc": "2026-08-24T22:03:17Z",
+    "immutability_boundary_prior_sha256": "e57380a459a1e8fd270762ffdbcf9600a8c33092c351e5f28884050600fa105a",
+    "immutability_boundary_current_sha256": "e57380a459a1e8fd270762ffdbcf9600a8c33092c351e5f28884050600fa105a",
+    "immutability_boundary_unchanged": true
+  },
+  "interpretation": "Parent history itself remains intact, but the repaired exact classification universe is inconsistent with actual unfrozen successor mutation/review paths. At least the mandatory reviewed docs path is UNCLASSIFIED under the declared selectors, so a zero-error guardrail cannot be derived as written.",
+  "verdict": "FAIL"
+}

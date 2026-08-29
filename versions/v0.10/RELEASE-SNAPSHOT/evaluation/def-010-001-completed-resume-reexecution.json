@@ -1,0 +1,9 @@
+{
+  "defect_id": "DEF-010-001",
+  "candidate_version": "0.10",
+  "status": "FIXED_POSTFREEZE",
+  "summary": "Protocol resume replayed a completed continuation correctly but then attempted to execute already-done tasks again.",
+  "frozen_artifacts_modified": false,
+  "resolution": "Treat replayed done tasks as terminal during resumed orchestration; preserve the append-only event stream exactly.",
+  "regression_id": "REG-0024"
+}

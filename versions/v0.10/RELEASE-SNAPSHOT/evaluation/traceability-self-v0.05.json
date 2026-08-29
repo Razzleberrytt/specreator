@@ -1,0 +1,186 @@
+{
+  "complete_paths": {
+    "REQ-005-001": [
+      [
+        "G-005-001",
+        "REQ-005-001",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-GRAPH-SCHEMA"
+      ],
+      [
+        "G-005-001",
+        "REQ-005-001",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-VALIDATION"
+      ]
+    ],
+    "REQ-005-002": [
+      [
+        "G-005-002",
+        "REQ-005-002",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-GRAPH-SCHEMA"
+      ],
+      [
+        "G-005-002",
+        "REQ-005-002",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-VALIDATION"
+      ]
+    ],
+    "REQ-005-003": [
+      [
+        "G-005-002",
+        "REQ-005-003",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-GRAPH-SCHEMA"
+      ],
+      [
+        "G-005-002",
+        "REQ-005-003",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-VALIDATION"
+      ]
+    ],
+    "REQ-005-004": [
+      [
+        "G-005-002",
+        "REQ-005-004",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-GRAPH-SCHEMA"
+      ],
+      [
+        "G-005-002",
+        "REQ-005-004",
+        "FEAT-005-001",
+        "TASK-005-001",
+        "TEST-005-STRUCT",
+        "GATE-005-VALIDATION"
+      ]
+    ],
+    "REQ-005-005": [
+      [
+        "G-005-002",
+        "REQ-005-005",
+        "FEAT-005-002",
+        "TASK-005-002",
+        "TEST-005-SEMANTIC",
+        "GATE-005-TRACEABILITY"
+      ]
+    ],
+    "REQ-005-006": [
+      [
+        "G-005-001",
+        "REQ-005-006",
+        "FEAT-005-002",
+        "TASK-005-002",
+        "TEST-005-SEMANTIC",
+        "GATE-005-TRACEABILITY"
+      ]
+    ],
+    "REQ-005-007": [
+      [
+        "G-005-001",
+        "REQ-005-007",
+        "FEAT-005-002",
+        "TASK-005-002",
+        "TEST-005-SEMANTIC",
+        "GATE-005-TRACEABILITY"
+      ]
+    ],
+    "REQ-005-008": [
+      [
+        "G-005-003",
+        "REQ-005-008",
+        "FEAT-005-003",
+        "TASK-005-003",
+        "TEST-005-IMPACT",
+        "GATE-005-CLI"
+      ],
+      [
+        "G-005-003",
+        "REQ-005-008",
+        "FEAT-005-003",
+        "TASK-005-003",
+        "TEST-005-IMPACT",
+        "GATE-005-IMPACT"
+      ]
+    ],
+    "REQ-005-009": [
+      [
+        "G-005-003",
+        "REQ-005-009",
+        "FEAT-005-003",
+        "TASK-005-003",
+        "TEST-005-IMPACT",
+        "GATE-005-CLI"
+      ],
+      [
+        "G-005-003",
+        "REQ-005-009",
+        "FEAT-005-003",
+        "TASK-005-003",
+        "TEST-005-IMPACT",
+        "GATE-005-IMPACT"
+      ]
+    ],
+    "REQ-005-010": [
+      [
+        "G-005-004",
+        "REQ-005-010",
+        "FEAT-005-005",
+        "TASK-005-005",
+        "TEST-005-REGRESSION",
+        "GATE-005-INDEPENDENT"
+      ],
+      [
+        "G-005-004",
+        "REQ-005-010",
+        "FEAT-005-005",
+        "TASK-005-005",
+        "TEST-005-REGRESSION",
+        "GATE-005-REGRESSION"
+      ],
+      [
+        "G-005-004",
+        "REQ-005-010",
+        "FEAT-005-005",
+        "TASK-005-005",
+        "TEST-005-REGRESSION",
+        "GATE-005-ROLLBACK"
+      ],
+      [
+        "G-005-004",
+        "REQ-005-010",
+        "FEAT-005-005",
+        "TASK-005-005",
+        "TEST-005-REGRESSION",
+        "GATE-005-SPEC-LINT"
+      ]
+    ]
+  },
+  "diagnostics": [],
+  "graph_id": "TG-005-RELEASE",
+  "ok": true,
+  "summary": {
+    "critical_requirements_complete": 10,
+    "critical_requirements_total": 10,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  }
+}

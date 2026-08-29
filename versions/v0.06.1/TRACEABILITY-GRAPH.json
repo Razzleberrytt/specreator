@@ -1,0 +1,510 @@
+{
+  "edges": [
+    {
+      "from": "G-0061-001",
+      "relation": "requires",
+      "to": "REQ-0061-001"
+    },
+    {
+      "from": "G-0061-001",
+      "relation": "requires",
+      "to": "REQ-0061-002"
+    },
+    {
+      "from": "G-0061-002",
+      "relation": "requires",
+      "to": "REQ-0061-003"
+    },
+    {
+      "from": "G-0061-002",
+      "relation": "requires",
+      "to": "REQ-0061-004"
+    },
+    {
+      "from": "G-0061-002",
+      "relation": "requires",
+      "to": "REQ-0061-007"
+    },
+    {
+      "from": "G-0061-003",
+      "relation": "requires",
+      "to": "REQ-0061-005"
+    },
+    {
+      "from": "G-0061-003",
+      "relation": "requires",
+      "to": "REQ-0061-006"
+    },
+    {
+      "from": "G-0061-004",
+      "relation": "requires",
+      "to": "REQ-0061-008"
+    },
+    {
+      "from": "G-0061-004",
+      "relation": "requires",
+      "to": "REQ-0061-009"
+    },
+    {
+      "from": "G-0061-005",
+      "relation": "requires",
+      "to": "REQ-0061-010"
+    },
+    {
+      "from": "G-0061-005",
+      "relation": "requires",
+      "to": "REQ-0061-011"
+    },
+    {
+      "from": "G-0061-005",
+      "relation": "requires",
+      "to": "REQ-0061-012"
+    },
+    {
+      "from": "REQ-0061-001",
+      "relation": "realized_by",
+      "to": "FEAT-0061-001"
+    },
+    {
+      "from": "REQ-0061-002",
+      "relation": "realized_by",
+      "to": "FEAT-0061-001"
+    },
+    {
+      "from": "REQ-0061-003",
+      "relation": "realized_by",
+      "to": "FEAT-0061-001"
+    },
+    {
+      "from": "REQ-0061-004",
+      "relation": "realized_by",
+      "to": "FEAT-0061-001"
+    },
+    {
+      "from": "REQ-0061-005",
+      "relation": "realized_by",
+      "to": "FEAT-0061-002"
+    },
+    {
+      "from": "REQ-0061-006",
+      "relation": "realized_by",
+      "to": "FEAT-0061-002"
+    },
+    {
+      "from": "REQ-0061-007",
+      "relation": "realized_by",
+      "to": "FEAT-0061-002"
+    },
+    {
+      "from": "REQ-0061-008",
+      "relation": "realized_by",
+      "to": "FEAT-0061-003"
+    },
+    {
+      "from": "REQ-0061-009",
+      "relation": "realized_by",
+      "to": "FEAT-0061-003"
+    },
+    {
+      "from": "REQ-0061-011",
+      "relation": "realized_by",
+      "to": "FEAT-0061-003"
+    },
+    {
+      "from": "REQ-0061-012",
+      "relation": "realized_by",
+      "to": "FEAT-0061-004"
+    },
+    {
+      "from": "REQ-0061-010",
+      "relation": "realized_by",
+      "to": "FEAT-0061-005"
+    },
+    {
+      "from": "FEAT-0061-001",
+      "relation": "decomposed_to",
+      "to": "TASK-0061-001"
+    },
+    {
+      "from": "FEAT-0061-002",
+      "relation": "decomposed_to",
+      "to": "TASK-0061-002"
+    },
+    {
+      "from": "FEAT-0061-003",
+      "relation": "decomposed_to",
+      "to": "TASK-0061-003"
+    },
+    {
+      "from": "FEAT-0061-004",
+      "relation": "decomposed_to",
+      "to": "TASK-0061-004"
+    },
+    {
+      "from": "FEAT-0061-005",
+      "relation": "decomposed_to",
+      "to": "TASK-0061-005"
+    },
+    {
+      "from": "TASK-0061-001",
+      "relation": "verified_by",
+      "to": "TEST-0061-AMBIGUITY"
+    },
+    {
+      "from": "TASK-0061-002",
+      "relation": "verified_by",
+      "to": "TEST-0061-PRIORITY"
+    },
+    {
+      "from": "TASK-0061-003",
+      "relation": "verified_by",
+      "to": "TEST-0061-EVALUATOR"
+    },
+    {
+      "from": "TASK-0061-004",
+      "relation": "verified_by",
+      "to": "TEST-0061-PACKAGE"
+    },
+    {
+      "from": "TASK-0061-005",
+      "relation": "verified_by",
+      "to": "TEST-0061-RELEASE"
+    },
+    {
+      "from": "TEST-0061-AMBIGUITY",
+      "relation": "gated_by",
+      "to": "GATE-0061-AMBIGUITY-DETECTION"
+    },
+    {
+      "from": "TEST-0061-AMBIGUITY",
+      "relation": "gated_by",
+      "to": "GATE-0061-DECISION-CLASSIFICATION"
+    },
+    {
+      "from": "TEST-0061-PRIORITY",
+      "relation": "gated_by",
+      "to": "GATE-0061-QUESTION-GUARDRAIL"
+    },
+    {
+      "from": "TEST-0061-PRIORITY",
+      "relation": "gated_by",
+      "to": "GATE-0061-PRIORITY"
+    },
+    {
+      "from": "TEST-0061-PRIORITY",
+      "relation": "gated_by",
+      "to": "GATE-0061-TRACE-INTEGRATION"
+    },
+    {
+      "from": "TEST-0061-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-0061-CORPUS-INTEGRITY"
+    },
+    {
+      "from": "TEST-0061-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-0061-DEPENDENCY-PREFLIGHT"
+    },
+    {
+      "from": "TEST-0061-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-0061-CLARIFICATION-PROXY"
+    },
+    {
+      "from": "TEST-0061-EVALUATOR",
+      "relation": "gated_by",
+      "to": "GATE-0061-CLI"
+    },
+    {
+      "from": "TEST-0061-PACKAGE",
+      "relation": "gated_by",
+      "to": "GATE-0061-PACKAGE-MANIFEST"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-SPEC-LINT"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-TEST"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-REGRESSION"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-RECONCILIATION"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-INDEPENDENT"
+    },
+    {
+      "from": "TEST-0061-RELEASE",
+      "relation": "gated_by",
+      "to": "GATE-0061-ROLLBACK"
+    }
+  ],
+  "graph_id": "TG-0061-RELEASE",
+  "nodes": [
+    {
+      "id": "G-0061-001",
+      "label": "G-0061-001",
+      "type": "goal"
+    },
+    {
+      "id": "G-0061-002",
+      "label": "G-0061-002",
+      "type": "goal"
+    },
+    {
+      "id": "G-0061-003",
+      "label": "G-0061-003",
+      "type": "goal"
+    },
+    {
+      "id": "G-0061-004",
+      "label": "G-0061-004",
+      "type": "goal"
+    },
+    {
+      "id": "G-0061-005",
+      "label": "G-0061-005",
+      "type": "goal"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-001",
+      "label": "REQ-0061-001",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-002",
+      "label": "REQ-0061-002",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-003",
+      "label": "REQ-0061-003",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-004",
+      "label": "REQ-0061-004",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-005",
+      "label": "REQ-0061-005",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-006",
+      "label": "REQ-0061-006",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-007",
+      "label": "REQ-0061-007",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-008",
+      "label": "REQ-0061-008",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-009",
+      "label": "REQ-0061-009",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-010",
+      "label": "REQ-0061-010",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-011",
+      "label": "REQ-0061-011",
+      "type": "requirement"
+    },
+    {
+      "critical": true,
+      "id": "REQ-0061-012",
+      "label": "REQ-0061-012",
+      "type": "requirement"
+    },
+    {
+      "id": "FEAT-0061-001",
+      "label": "FEAT-0061-001",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-0061-002",
+      "label": "FEAT-0061-002",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-0061-003",
+      "label": "FEAT-0061-003",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-0061-004",
+      "label": "FEAT-0061-004",
+      "type": "feature"
+    },
+    {
+      "id": "FEAT-0061-005",
+      "label": "FEAT-0061-005",
+      "type": "feature"
+    },
+    {
+      "id": "TASK-0061-001",
+      "label": "TASK-0061-001",
+      "type": "task"
+    },
+    {
+      "id": "TASK-0061-002",
+      "label": "TASK-0061-002",
+      "type": "task"
+    },
+    {
+      "id": "TASK-0061-003",
+      "label": "TASK-0061-003",
+      "type": "task"
+    },
+    {
+      "id": "TASK-0061-004",
+      "label": "TASK-0061-004",
+      "type": "task"
+    },
+    {
+      "id": "TASK-0061-005",
+      "label": "TASK-0061-005",
+      "type": "task"
+    },
+    {
+      "id": "TEST-0061-AMBIGUITY",
+      "label": "TEST-0061-AMBIGUITY",
+      "type": "test"
+    },
+    {
+      "id": "TEST-0061-PRIORITY",
+      "label": "TEST-0061-PRIORITY",
+      "type": "test"
+    },
+    {
+      "id": "TEST-0061-EVALUATOR",
+      "label": "TEST-0061-EVALUATOR",
+      "type": "test"
+    },
+    {
+      "id": "TEST-0061-PACKAGE",
+      "label": "TEST-0061-PACKAGE",
+      "type": "test"
+    },
+    {
+      "id": "TEST-0061-RELEASE",
+      "label": "TEST-0061-RELEASE",
+      "type": "test"
+    },
+    {
+      "id": "GATE-0061-CORPUS-INTEGRITY",
+      "label": "GATE-0061-CORPUS-INTEGRITY",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-DEPENDENCY-PREFLIGHT",
+      "label": "GATE-0061-DEPENDENCY-PREFLIGHT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-SPEC-LINT",
+      "label": "GATE-0061-SPEC-LINT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-AMBIGUITY-DETECTION",
+      "label": "GATE-0061-AMBIGUITY-DETECTION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-DECISION-CLASSIFICATION",
+      "label": "GATE-0061-DECISION-CLASSIFICATION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-QUESTION-GUARDRAIL",
+      "label": "GATE-0061-QUESTION-GUARDRAIL",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-PRIORITY",
+      "label": "GATE-0061-PRIORITY",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-CLARIFICATION-PROXY",
+      "label": "GATE-0061-CLARIFICATION-PROXY",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-TRACE-INTEGRATION",
+      "label": "GATE-0061-TRACE-INTEGRATION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-CLI",
+      "label": "GATE-0061-CLI",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-TEST",
+      "label": "GATE-0061-TEST",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-REGRESSION",
+      "label": "GATE-0061-REGRESSION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-RECONCILIATION",
+      "label": "GATE-0061-RECONCILIATION",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-INDEPENDENT",
+      "label": "GATE-0061-INDEPENDENT",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-PACKAGE-MANIFEST",
+      "label": "GATE-0061-PACKAGE-MANIFEST",
+      "type": "gate"
+    },
+    {
+      "id": "GATE-0061-ROLLBACK",
+      "label": "GATE-0061-ROLLBACK",
+      "type": "gate"
+    }
+  ],
+  "schema_version": "1.0"
+}

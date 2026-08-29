@@ -1,0 +1,21 @@
+{
+  "registry_id": "IMMUT-011-DRAFT-001",
+  "status": "UNFROZEN_CANDIDATE",
+  "hash_algorithm": "sha256",
+  "immutable_rule": "Any path bound by a historical frozen manifest/contract remains immutable. Successor files may be added only outside those bound bytes until a successor release transaction creates its own boundary.",
+  "protected_release_manifests": [
+    "versions/v0.10/MANIFEST.json",
+    "versions/v0.09.2/MANIFEST.json",
+    "versions/v0.08/MANIFEST.json"
+  ],
+  "current_parent_manifest_ref": "versions/v0.10/MANIFEST.json",
+  "successor_mutable_prefixes": [
+    "versions/v0.11/",
+    "evaluation/v011-"
+  ],
+  "explicitly_not_authorized": [
+    "overwrite v0.10-bound bytes",
+    "rewrite historical failure evidence",
+    "append to shared frozen/hash-locked canonical docs merely for convenience"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "corpus_sha256": "cc23a138f8a8c4b8d1985a8cde6e4177d9185d7c01f1f777eced3a462d729b7d",
+  "counts": {
+    "case_count": 100,
+    "clean_accepted": 50,
+    "clean_total": 50,
+    "complete_diagnostics": 56,
+    "defect_detected": 50,
+    "defect_total": 50,
+    "emitted_finding_count": 56,
+    "expected_finding_count": 56
+  },
+  "evaluation_plan_sha256": "d397f59d72cf83df246beb41a59931b67d8d15d3bd850dce8fc2e2be4925fbc4",
+  "metrics": {
+    "clean_case_acceptance_rate": 1.0,
+    "clean_false_positive_count": 0,
+    "defect_case_detection_rate": 1.0,
+    "diagnostic_completeness_rate": 1.0,
+    "finding_precision": 1.0,
+    "minimum_per_rule_precision": 1.0
+  },
+  "per_rule_precision": {
+    "LINT-001": 1.0,
+    "LINT-002": 1.0,
+    "LINT-003": 1.0,
+    "LINT-004": 1.0,
+    "LINT-005": 1.0,
+    "LINT-006": 1.0,
+    "LINT-007": 1.0,
+    "LINT-008": 1.0,
+    "LINT-009": 1.0,
+    "LINT-010": 1.0
+  }
+}

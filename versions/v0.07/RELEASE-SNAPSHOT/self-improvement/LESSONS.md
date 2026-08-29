@@ -1,0 +1,57 @@
+# Lessons Registry
+
+## LESSON-0001 — Recursive improvement requires governance
+
+**Origin:** v0.01 → v0.02 design cycle  
+**Observation:** Measurement alone is insufficient if a later version can change its own evaluation criteria.  
+**Rule adopted:** Success criteria for a candidate are frozen by the parent/governor before candidate implementation.  
+**Regression:** REG-0001.
+
+## LESSON-0002 — Improvement must preserve failure memory
+
+**Origin:** v0.01 → v0.02 design cycle  
+**Observation:** A self-improving system can regress if fixes are not converted into durable tests/rules.  
+**Rule adopted:** Adopted fixes produce regression memory or an explicit justification for manual-only verification.  
+**Regression:** REG-0003.
+
+## LESSON-0003 — Rejection rate is not validator quality
+
+**Origin:** v0.03 implementation cycle  
+**Observation:** An over-broad duplicate-ID rule rejected a valid workspace and initially made the validator look stricter.  
+**Rule adopted:** Every validator/linter release must pair invalid-case detection with preregistered valid-case false-positive guardrails.  
+**Regression:** REG-0004.
+
+## LESSON-0004 — Primary IDs and reference IDs require different semantics
+
+**Origin:** v0.03 implementation cycle  
+**Observation:** The same identifier shape may represent record identity or a reference to another record.  
+**Rule adopted:** Uniqueness applies to primary record IDs; references are checked for format and resolution, not global uniqueness.  
+**Regression:** REG-0004.
+
+## LESSON-0005 — Perfect synthetic scores do not prove compatibility coverage
+
+**Origin:** v0.07 Adaptive Discovery shadow evaluation  
+**Observation:** The frozen v0.07 corpus scored perfectly on its intended semantics, yet historical real specifications still exposed two inherited ambiguity false positives.  
+**Rule adopted:** Keep a non-promotional historical/real-artifact shadow pass in successor releases and move representative historical shapes into pre-freeze benchmark preflight where practical.  
+**Regressions:** REG-0015, REG-0016.
+
+## LESSON-0006 — Safe question reduction requires explicit non-question provenance
+
+**Origin:** v0.07 Adaptive Discovery  
+**Observation:** Asking fewer questions is only meaningful when every suppressed question is explained as governed, safely inferred, dependency-blocked, or budget-deferred; otherwise question reduction can hide ambiguity.  
+**Rule adopted:** Every discovery action must preserve reason/provenance and unresolved deferrals remain unresolved work.  
+**Evidence:** MET-007-001, MET-007-G03, MET-007-G05, MET-007-G06.
+
+## LESSON-0007 — Task definitions and execution history should not be the same record
+
+**Origin:** v0.07 retrospective / v0.08 successor design  
+**Observation:** Immutable preregistered task definitions remain marked `planned` even after completion evidence appears in events/tests/gates. Rewriting them would weaken historical integrity.  
+**Rule adopted:** v0.08 should compile immutable task definitions and represent execution lifecycle through append-only events.  
+**Target:** IMP-0013 / v0.08.
+
+## LESSON-0008 — Per-ledger atomicity is not cross-ledger transactionality
+
+**Origin:** DEF-007-004  
+**Observation:** Duplicate-ID protection correctly prevented a bad event append, but earlier valid writes to other ledgers had already committed in the same orchestration.  
+**Rule adopted:** When multi-ledger transactional orchestration is introduced, preflight all IDs/schemas before the first mutation and add failure-injection regression coverage.  
+**Target:** reliability series v0.12–v0.13.

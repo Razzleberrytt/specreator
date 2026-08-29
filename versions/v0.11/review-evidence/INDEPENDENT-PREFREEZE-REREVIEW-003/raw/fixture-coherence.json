@@ -1,0 +1,57 @@
+{
+  "records": [
+    {
+      "fixture_id": "EXEC-011-001-LINEAR",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "EXEC-011-002-DIAMOND",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "EXEC-011-003-CONFLICT",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "EXEC-011-004-LOAD-BALANCE",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "EXEC-011-005-SPECULATIVE",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "EXEC-011-006-RETRY-ISOLATION",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "LIFE-011-001-DISCOVERY",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "LIFE-011-002-BLOCKED-PREFREEZE",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "LIFE-011-003-FROZEN",
+      "errors": [],
+      "coherent": true
+    },
+    {
+      "fixture_id": "LIFE-011-004-VERIFYING",
+      "errors": [],
+      "coherent": true
+    }
+  ],
+  "execution_count": 6,
+  "lifecycle_count": 4,
+  "verdict": "PASS"
+}

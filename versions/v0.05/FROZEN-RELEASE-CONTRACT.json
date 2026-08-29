@@ -1,0 +1,214 @@
+{
+  "applicable_regressions": [
+    "REG-0001",
+    "REG-0002",
+    "REG-0003",
+    "REG-0004",
+    "REG-0005",
+    "REG-0006"
+  ],
+  "candidate_version": "0.05",
+  "contract_hash": "c3d9588520221b8b8440d296bf3da5f2cbf7b43751b1725299b576f16efb3ca5",
+  "contract_id": "REL-0.05-FROZEN-001",
+  "evaluator_independence": {
+    "implementation_actor_id": "agent:spec-creator-builder",
+    "must_differ": true,
+    "required_evaluator_actor_id": "verifier:independent-pass-004"
+  },
+  "failure_conditions": [
+    "Any mandatory critical gate is FAIL or BLOCKED at release decision time.",
+    "Frozen evaluation-plan SHA-256 differs from 3f97c63e65b6d3d9a3c217a8bed60b5129c2ade80a9f34c636852e645205a881.",
+    "Frozen traceability corpus SHA-256 differs from f80475f84faad0afeb57da0d4db385274debe0760f87e2687fec0457d7ba3c21.",
+    "Any frozen invalid graph misses a preregistered expected diagnostic code.",
+    "Any frozen valid or impact graph emits an error diagnostic.",
+    "Any critical requirement in an accepted graph lacks a complete ordered traceability path.",
+    "Any frozen impact set differs from preregistration.",
+    "Diagnostic code precision on frozen invalid cases is below 1.0.",
+    "Any applicable inherited regression fails or disappears without approved retirement.",
+    "The v0.05 approved specification emits an unsuppressed v0.04 linter finding.",
+    "The evaluator actor is also the implementation actor.",
+    "Missing evaluation cases or denominator data are treated as zero or complete evidence."
+  ],
+  "frozen_at_utc": "2026-08-24T15:21:00Z",
+  "goals": [
+    {
+      "acceptance": "Every accepted critical requirement has a complete goal\u2192requirement\u2192feature\u2192task\u2192test\u2192gate path and every frozen incomplete case is rejected.",
+      "description": "Make critical delivery traceability mechanically verifiable.",
+      "goal_id": "G-005-001"
+    },
+    {
+      "acceptance": "All 20 frozen invalid graph cases contain every preregistered expected diagnostic code and no accepted graph emits an error.",
+      "description": "Reject structurally invalid or semantically invalid traceability graphs deterministically.",
+      "goal_id": "G-005-002"
+    },
+    {
+      "acceptance": "All 5 frozen impact cases exactly match preregistered upstream and downstream node sets.",
+      "description": "Provide deterministic change-impact analysis.",
+      "goal_id": "G-005-003"
+    },
+    {
+      "acceptance": "The inherited automated suite and active REG-0001 through REG-0006 all pass, and the v0.05 spec remains lint-clean.",
+      "description": "Preserve all v0.04 controls while adding the traceability layer.",
+      "goal_id": "G-005-004"
+    }
+  ],
+  "guardrail_metrics": [
+    {
+      "metric_id": "M-005-G01",
+      "name": "valid_graph_false_positive_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    },
+    {
+      "metric_id": "M-005-G02",
+      "name": "v005_spec_lint_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-G03",
+      "name": "inherited_regression_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-G04",
+      "name": "inherited_suite_pass_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-G05",
+      "name": "critical_gate_bypass_count",
+      "target_operator": "eq",
+      "target_value": 0,
+      "unit": "count"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "hash_scope": "Canonical UTF-8 JSON with sorted keys and compact separators, excluding the contract_hash property.",
+  "mandatory_gates": [
+    "GATE-005-CORPUS-INTEGRITY",
+    "GATE-005-SPEC-LINT",
+    "GATE-005-GRAPH-SCHEMA",
+    "GATE-005-VALIDATION",
+    "GATE-005-TRACEABILITY",
+    "GATE-005-IMPACT",
+    "GATE-005-CLI",
+    "GATE-005-TEST",
+    "GATE-005-REGRESSION",
+    "GATE-005-RECONCILIATION",
+    "GATE-005-INDEPENDENT",
+    "GATE-005-ROLLBACK"
+  ],
+  "parent_version": "0.04",
+  "primary_metrics": [
+    {
+      "metric_id": "M-005-001",
+      "name": "invalid_graph_detection_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-002",
+      "name": "valid_graph_acceptance_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-003",
+      "name": "critical_traceability_coverage_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-004",
+      "name": "impact_analysis_exact_match_rate",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "metric_id": "M-005-005",
+      "name": "diagnostic_code_precision",
+      "target_operator": "eq",
+      "target_value": 1.0,
+      "unit": "ratio"
+    }
+  ],
+  "promotion_conditions": [
+    "All mandatory gates PASS and all frozen primary and guardrail metrics meet target.",
+    "All metrics reconcile to raw evaluation evidence and denominator snapshots.",
+    "All applicable regressions REG-0001 through REG-0006 PASS and new meaningful defects are considered for regression memory.",
+    "Frozen corpus and evaluation-plan hashes remain intact.",
+    "Independent evaluator recommendation is recorded and evaluator differs from implementation actor.",
+    "No critical open defect remains and release manifest/rollback declaration are complete.",
+    "Because evaluation is synthetic, the maximum release classification is PROMOTED AS EXPERIMENTAL unless independent real-project evidence is added under a separately preregistered contract."
+  ],
+  "requirements": [
+    {
+      "critical": true,
+      "description": "Parse a versioned JSON traceability graph with typed nodes and edges.",
+      "requirement_id": "REQ-005-001"
+    },
+    {
+      "critical": true,
+      "description": "Reject duplicate node IDs and duplicate directed edges.",
+      "requirement_id": "REQ-005-002"
+    },
+    {
+      "critical": true,
+      "description": "Reject edges whose source or target node does not exist.",
+      "requirement_id": "REQ-005-003"
+    },
+    {
+      "critical": true,
+      "description": "Enforce allowed edge type transitions for primary and preregistered auxiliary relations.",
+      "requirement_id": "REQ-005-004"
+    },
+    {
+      "critical": true,
+      "description": "Detect directed cycles in the delivery graph.",
+      "requirement_id": "REQ-005-005"
+    },
+    {
+      "critical": true,
+      "description": "Compute complete critical traceability from goal through requirement, feature, task, test, and gate.",
+      "requirement_id": "REQ-005-006"
+    },
+    {
+      "critical": true,
+      "description": "Detect orphan critical requirements and the first missing required traceability stage.",
+      "requirement_id": "REQ-005-007"
+    },
+    {
+      "critical": true,
+      "description": "Compute upstream and downstream impact sets for changed node IDs.",
+      "requirement_id": "REQ-005-008"
+    },
+    {
+      "critical": true,
+      "description": "Expose traceability validation and impact analysis through importable API and deterministic CLI JSON output.",
+      "requirement_id": "REQ-005-009"
+    },
+    {
+      "critical": true,
+      "description": "Preserve v0.04 validator, linter, historical-release, and append-only regression behavior.",
+      "requirement_id": "REQ-005-010"
+    }
+  ],
+  "rollback_expectations": {
+    "expectation": "If v0.05 fails, v0.04 remains the active promoted-experimental release; preserve all v0.05 experiment evidence and frozen artifacts without rewriting v0.04 history.",
+    "parent_contract_sha256": "625f3adc395bc6981cac3d3928c89df603dddc7fa2adcd1a9ffc9ed1c6946233",
+    "preserve_parent_history": true,
+    "rollback_target": "0.04"
+  },
+  "schema_version": "2.0"
+}

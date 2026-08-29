@@ -1,0 +1,248 @@
+{
+  "$id": "https://spec-creator.local/schemas/prompt-compilation-input-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actor_context": {
+      "additionalProperties": false,
+      "properties": {
+        "implementation_actor_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "requested_actor_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "implementation_actor_id",
+        "requested_actor_id"
+      ],
+      "type": "object"
+    },
+    "candidate_version": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "compiled_task_graph": {
+      "type": "object"
+    },
+    "context_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "context_id": {
+            "pattern": "^CTX-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "spec",
+              "requirement",
+              "test",
+              "gate",
+              "artifact",
+              "decision",
+              "execution",
+              "defect",
+              "other"
+            ]
+          },
+          "ref": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "selectors": {
+            "additionalProperties": false,
+            "properties": {
+              "gate_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "prompt_kinds": {
+                "items": {
+                  "enum": [
+                    "bootstrap",
+                    "implementation",
+                    "debug",
+                    "verification",
+                    "continuation"
+                  ]
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "requirement_ids": {
+                "items": {
+                  "pattern": "^REQ-[A-Za-z0-9._-]+$",
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "task_ids": {
+                "items": {
+                  "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "verification_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "task_ids",
+              "requirement_ids",
+              "verification_refs",
+              "gate_ids",
+              "prompt_kinds"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "context_id",
+          "ref",
+          "kind",
+          "critical",
+          "selectors"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "debug_evidence_refs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "execution_events": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "prompt_kind": {
+      "enum": [
+        "bootstrap",
+        "implementation",
+        "debug",
+        "verification",
+        "continuation"
+      ]
+    },
+    "request_id": {
+      "pattern": "^PREQ-[A-Za-z0-9._-]+$",
+      "type": "string"
+    },
+    "requested_write_scopes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "task_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance_criteria": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "blocking_owner_decision_ids": {
+          "items": {
+            "pattern": "^DEC-[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "critical_obligations": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "evidence_requirements": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "frozen_criteria_refs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "task_id": {
+          "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "acceptance_criteria",
+        "critical_obligations",
+        "evidence_requirements",
+        "blocking_owner_decision_ids",
+        "frozen_criteria_refs"
+      ],
+      "type": "object"
+    },
+    "task_id": {
+      "pattern": "^CTASK-[A-Za-z0-9._-]+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "request_id",
+    "candidate_version",
+    "prompt_kind",
+    "compiled_task_graph",
+    "task_id",
+    "task_contract",
+    "context_records",
+    "execution_events",
+    "actor_context",
+    "requested_write_scopes",
+    "debug_evidence_refs"
+  ],
+  "title": "Prompt Compilation Input v1",
+  "type": "object"
+}

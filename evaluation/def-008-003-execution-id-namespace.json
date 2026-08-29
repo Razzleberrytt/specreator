@@ -1,0 +1,15 @@
+{
+  "classification": "implementation_defect",
+  "defect_id": "DEF-008-003",
+  "fix": "Add path-specific stable-ID pattern overrides for execution/task-events.jsonl while preserving existing ID checks for all historical ledgers.",
+  "frozen_artifacts_changed": false,
+  "initial_evidence": "evaluation/workspace-validation-v0.08-self-before-id-fix.json",
+  "observation": "Workspace validation produced 56 false INVALID_STABLE_ID errors for schema-valid v0.08 TEVT execution event IDs and CTASK compiled task references.",
+  "root_cause": "Generic stable-ID validation keyed only by field name and inherited EVT-/TASK- namespaces, ignoring path-specific v0.08 execution namespaces frozen in task-execution-event-v1 schema.",
+  "severity": "major",
+  "verification": [
+    "tests/test_validator.py::test_execution_ledger_uses_compiled_stable_id_namespace_regression",
+    "evaluation/workspace-validation-v0.08-self-after-id-fix.json",
+    "evaluation/pytest-v0.08-after-reg0019.txt"
+  ]
+}

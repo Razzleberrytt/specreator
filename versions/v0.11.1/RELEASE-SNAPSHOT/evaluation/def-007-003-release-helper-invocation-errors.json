@@ -1,0 +1,25 @@
+{
+  "defect_id": "DEF-007-003",
+  "classification": "agent_execution_error",
+  "severity": "minor",
+  "status": "resolved",
+  "candidate_version": "0.07",
+  "incidents": [
+    {
+      "operation": "independent verifier invocation",
+      "failure": "Verifier helper initially imported a nonexistent ambiguity API alias and exited before producing release evidence.",
+      "resolution": "Use analyze_ambiguity_file, then rerun the verifier from the beginning.",
+      "frozen_artifact_mutation": false,
+      "ledger_mutation_before_failure": false
+    },
+    {
+      "operation": "temporary-clone package seal rehearsal",
+      "failure": "Initial command used obsolete seal-package option names and exited before manifest generation.",
+      "resolution": "Use the current declared --release-version, --release-status, and --generated-at-utc options and rerun the rehearsal.",
+      "frozen_artifact_mutation": false,
+      "ledger_mutation_before_failure": false
+    }
+  ],
+  "regression_disposition": "No new permanent regression. Existing CLI argument parsing and immediate import failure already fail closed, and neither incident exposed a repeatable product invariant beyond ordinary caller/API-name correctness.",
+  "promotion_effect": "none; both incidents occurred outside the frozen effectiveness measurements and were resolved before final package sealing"
+}

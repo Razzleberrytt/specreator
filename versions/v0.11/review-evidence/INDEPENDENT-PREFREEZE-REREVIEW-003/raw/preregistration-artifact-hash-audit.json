@@ -1,0 +1,183 @@
+{
+  "entry_count": 22,
+  "match_count": 22,
+  "failures": [],
+  "checks": [
+    {
+      "path": "versions/v0.11/CONTINUATION.md",
+      "declared_sha256": "9dfaf2bee6238fd2c505e9ccee586fc487640db7a09710af0ffa97e21200646a",
+      "actual_sha256": "9dfaf2bee6238fd2c505e9ccee586fc487640db7a09710af0ffa97e21200646a",
+      "declared_bytes": 4975,
+      "actual_bytes": 4975,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/DISCOVERY.md",
+      "declared_sha256": "817979b961caa1a9a855eff7e4362c7bea608f655399c19ae2641f20edc4e934",
+      "actual_sha256": "817979b961caa1a9a855eff7e4362c7bea608f655399c19ae2641f20edc4e934",
+      "declared_bytes": 7444,
+      "actual_bytes": 7444,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/PREFREEZE-READINESS.md",
+      "declared_sha256": "8fc2fc6b0b15ae50e71d10c9f260ad677229a9d5e77e793a51a8ad2159f65f68",
+      "actual_sha256": "8fc2fc6b0b15ae50e71d10c9f260ad677229a9d5e77e793a51a8ad2159f65f68",
+      "declared_bytes": 2918,
+      "actual_bytes": 2918,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/LIFECYCLE-CHECKPOINT-DRAFT.json",
+      "declared_sha256": "45db9bc3c477e444f1856813e095242a00a37c81fd127e1d05a4c371fd3560c3",
+      "actual_sha256": "45db9bc3c477e444f1856813e095242a00a37c81fd127e1d05a4c371fd3560c3",
+      "declared_bytes": 6460,
+      "actual_bytes": 6460,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/LIFECYCLE-TRANSITION-RULES.candidate.json",
+      "declared_sha256": "ad5bc9595274e6d8a3fdd13773a8b98824022d1801bb2a0f6e811959e9ff4ee5",
+      "actual_sha256": "ad5bc9595274e6d8a3fdd13773a8b98824022d1801bb2a0f6e811959e9ff4ee5",
+      "declared_bytes": 6113,
+      "actual_bytes": 6113,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/DEPENDENCY-PROVENANCE-RULES.candidate.json",
+      "declared_sha256": "5592ac3400433cd97bed890bc39457133b64e80d5b0c519aafc46d2bbc5810a6",
+      "actual_sha256": "5592ac3400433cd97bed890bc39457133b64e80d5b0c519aafc46d2bbc5810a6",
+      "declared_bytes": 2056,
+      "actual_bytes": 2056,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/EVALUATION-DESIGN.json",
+      "declared_sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+      "actual_sha256": "a2e210eac1a5344a77b2daa86edfcccd4b2cf42b4c2354ff62d271d6e59fb6d6",
+      "declared_bytes": 6004,
+      "actual_bytes": 6004,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/EVALUATION-UNIVERSES.json",
+      "declared_sha256": "96e64c464fa7a0d3fd603ba93f79512c2f3d2565b6b4ca6cd5e4a101c4a57928",
+      "actual_sha256": "96e64c464fa7a0d3fd603ba93f79512c2f3d2565b6b4ca6cd5e4a101c4a57928",
+      "declared_bytes": 9104,
+      "actual_bytes": 9104,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/EXECUTION-TRIAL-PROTOCOL.json",
+      "declared_sha256": "1af09e51fe382c549fc6ee5d52e36486fdefff6244de940f7a0ba08daca35b9b",
+      "actual_sha256": "1af09e51fe382c549fc6ee5d52e36486fdefff6244de940f7a0ba08daca35b9b",
+      "declared_bytes": 3362,
+      "actual_bytes": 3362,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/IMMUTABILITY-BOUNDARY-DRAFT.json",
+      "declared_sha256": "9d8d61fbac214395b77aba03188ede7b1ffe1fc5c58acd4471fa4b78a1e97bdb",
+      "actual_sha256": "9d8d61fbac214395b77aba03188ede7b1ffe1fc5c58acd4471fa4b78a1e97bdb",
+      "declared_bytes": 2006,
+      "actual_bytes": 2006,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/PARENT-SUITE-UNIVERSE.json",
+      "declared_sha256": "a3406db3e33dec35ef98bac96a3db46812241cc066bee0f028f079d4903751c4",
+      "actual_sha256": "a3406db3e33dec35ef98bac96a3db46812241cc066bee0f028f079d4903751c4",
+      "declared_bytes": 12520,
+      "actual_bytes": 12520,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/ACTIVE-REGRESSION-UNIVERSE.json",
+      "declared_sha256": "c9508ef9d5a175f3572ac5f85ce1f3709a9ed5d7aee64d3b383ac85d23e84aeb",
+      "actual_sha256": "c9508ef9d5a175f3572ac5f85ce1f3709a9ed5d7aee64d3b383ac85d23e84aeb",
+      "declared_bytes": 8679,
+      "actual_bytes": 8679,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/DEFECT-RESOLUTION-001.json",
+      "declared_sha256": "61379fefc35e7944fb6a31808bf650a0af9f0bbcc0eb1586b3a2fa2642e68dd6",
+      "actual_sha256": "61379fefc35e7944fb6a31808bf650a0af9f0bbcc0eb1586b3a2fa2642e68dd6",
+      "declared_bytes": 2985,
+      "actual_bytes": 2985,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json",
+      "declared_sha256": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb",
+      "actual_sha256": "66adef71a814dbf6fd1e64d4ad7319c1c8f13a08e110a64881b6b23398418cdb",
+      "declared_bytes": 4759,
+      "actual_bytes": 4759,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+      "declared_sha256": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452",
+      "actual_sha256": "63e375c851c869e514ce866177a7540e32808cfe12037f8d0949ef2ab9e64452",
+      "declared_bytes": 10002,
+      "actual_bytes": 10002,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl",
+      "declared_sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+      "actual_sha256": "3c13493431a7307dbb6aede0fdfb15711008f2653f5011b1c7748efa8093aa54",
+      "declared_bytes": 778,
+      "actual_bytes": 778,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl",
+      "declared_sha256": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2",
+      "actual_sha256": "6a786dcfa9119a749d4228808b277b84d95eef2042843727697af638c3ba33a2",
+      "declared_bytes": 6292,
+      "actual_bytes": 6292,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROTOCOL.md",
+      "declared_sha256": "8b19d3d5af337627f5ee7a54f3974daac0c5ac72d0f881721399693e97dbbd67",
+      "actual_sha256": "8b19d3d5af337627f5ee7a54f3974daac0c5ac72d0f881721399693e97dbbd67",
+      "declared_bytes": 4348,
+      "actual_bytes": 4348,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/INDEPENDENT-PREFREEZE-REVIEW-PROMPT.md",
+      "declared_sha256": "24737943a948ec33bfaafe6ac503c6f37d64810e980bf54ec1b2c6420bb62974",
+      "actual_sha256": "24737943a948ec33bfaafe6ac503c6f37d64810e980bf54ec1b2c6420bb62974",
+      "declared_bytes": 6419,
+      "actual_bytes": 6419,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/tools/preregistration_preflight.py",
+      "declared_sha256": "36d876daa63d30f51761b29f2134b9bb241ce934aa6de00b0d8ca5d2533ef757",
+      "actual_sha256": "36d876daa63d30f51761b29f2134b9bb241ce934aa6de00b0d8ca5d2533ef757",
+      "declared_bytes": 15375,
+      "actual_bytes": 15375,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+      "declared_sha256": "f119a0139f35034d48b74400901f47efa8d2aa5e43ba29c74b7b8177ebf9c103",
+      "actual_sha256": "f119a0139f35034d48b74400901f47efa8d2aa5e43ba29c74b7b8177ebf9c103",
+      "declared_bytes": 9722,
+      "actual_bytes": 9722,
+      "match": true
+    },
+    {
+      "path": "versions/v0.11/DEFECT-RESOLUTION-002.json",
+      "declared_sha256": "ab15c5e9112c2ab35b00d3d8fc7d0f37bd7fe81c80b426c25d514065f7256790",
+      "actual_sha256": "ab15c5e9112c2ab35b00d3d8fc7d0f37bd7fe81c80b426c25d514065f7256790",
+      "declared_bytes": 1718,
+      "actual_bytes": 1718,
+      "match": true
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "candidate_version": "0.08",
+  "compiler_results": [
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-01",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-02",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-03",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-04",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-05",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-06",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-07",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-BASE-08",
+      "category": "accepted_basic",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-01",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-02",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-03",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-04",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-05",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-06",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-07",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-DEP-08",
+      "category": "accepted_dependency",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-01",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-02",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-03",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-04",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-05",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-06",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-07",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "case_id": "TC-CONF-08",
+      "category": "accepted_conflict",
+      "exact": true,
+      "expected_status": "compiled",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-01",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-02",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-03",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-04",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-05",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-06",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-07",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "TC-BLOCK-08",
+      "category": "owner_blocker",
+      "exact": true,
+      "expected_status": "blocked",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-01",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-02",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-03",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-04",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-05",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-06",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "development"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-07",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-08",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-09",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-10",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-11",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "needs_spec_refinement",
+      "case_id": "TC-ATOM-12",
+      "category": "atomicity_refinement",
+      "exact": true,
+      "expected_status": "needs_spec_refinement",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-01",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-02",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-03",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-04",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-05",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-06",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-07",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-CYCLE-08",
+      "category": "dependency_cycle",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-01",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-02",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-03",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-04",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-05",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-06",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-07",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "TC-INVALID-08",
+      "category": "parent_invalid",
+      "exact": true,
+      "expected_status": "invalid",
+      "partition": "heldout"
+    }
+  ],
+  "counts": {
+    "accepted_cases": 24,
+    "compiled_tasks_evaluated": 40,
+    "compiler_cases": 60,
+    "dependency_edges_evaluated": 8,
+    "execution_cases": 16,
+    "heldout_accepted_cases": 12,
+    "negative_cases": 36
+  },
+  "execution_results": [
+    {
+      "case_id": "TE-VALID-01",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-02",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-03",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-04",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-05",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-06",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-07",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-VALID-08",
+      "codes": [],
+      "exact": true,
+      "valid": true
+    },
+    {
+      "case_id": "TE-INVALID-01",
+      "codes": [
+        "TE-DUPLICATE-EVENT"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-02",
+      "codes": [
+        "TE-GRAPH-HASH-MISMATCH"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-03",
+      "codes": [
+        "TE-UNKNOWN-TASK"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-04",
+      "codes": [
+        "TE-FROM-STATE-MISMATCH"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-05",
+      "codes": [
+        "TE-INVALID-TRANSITION"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-06",
+      "codes": [
+        "TE-TIME-REVERSAL"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-07",
+      "codes": [
+        "TE-INVALID-INITIAL"
+      ],
+      "exact": true,
+      "valid": false
+    },
+    {
+      "case_id": "TE-INVALID-08",
+      "codes": [
+        "TE-INVALID-TRANSITION"
+      ],
+      "exact": true,
+      "valid": false
+    }
+  ],
+  "hash_checks": {
+    "compiler_corpus": true,
+    "evaluation_plan": true,
+    "execution": true,
+    "heldout": true
+  },
+  "metrics": {
+    "accepted_task_graph_exact_match_rate": 1.0,
+    "critical_ready_task_trace_completeness_rate": 1.0,
+    "dependency_cycle_escape_count": 0,
+    "dependency_provenance_accuracy": 1.0,
+    "deterministic_repeat_rate": 1.0,
+    "execution_stream_exact_match_rate": 1.0,
+    "heldout_task_graph_exact_match_rate": 1.0,
+    "invalid_execution_escape_count": 0,
+    "invented_dependency_count": 0,
+    "negative_case_classification_accuracy": 1.0,
+    "oversized_ready_task_count": 0,
+    "parallelization_decision_accuracy": 1.0,
+    "parent_preflight_rate": 1.0,
+    "unresolved_decision_escape_count": 0,
+    "unsafe_parallelization_count": 0,
+    "v008_spec_quality_acceptance_rate": 1.0
+  },
+  "missing_data": []
+}

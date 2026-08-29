@@ -1,0 +1,11 @@
+{
+  "details": [],
+  "ok": true,
+  "summary": {
+    "accepted": 45,
+    "cases": 75,
+    "envelope_errors": 0,
+    "input_errors": 0,
+    "negative": 30
+  }
+}

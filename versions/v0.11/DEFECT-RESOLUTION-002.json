@@ -1,0 +1,23 @@
+{
+  "record_id": "DEFRES-011-PREFREEZE-002",
+  "status": "REPAIRED_PENDING_INDEPENDENT_REREVIEW",
+  "source_review_recommendation": "NOT_READY",
+  "source_review_ref": "versions/v0.11/review-evidence/INDEPENDENT-PREFREEZE-REREVIEW-002/review-evidence.json",
+  "defect_id": "DEF-011-REREVIEW-001",
+  "finding": "The immutable-boundary guardrail required zero unclassified paths but the declared mutable-successor prefixes omitted mandatory reviewed/root successor artifacts, including docs/EXECUTION-EFFICIENCY-ARCHITECTURE.md.",
+  "resolution": "Replace prefix-only classification with an exact package-wide successor ownership universe. Protected-parent paths have first precedence; every other shipped path, including root PACKAGE-MANIFEST.json and successor-owned root docs/prompts/roadmap/evaluation artifacts, must be an exact successor member. preregistration_preflight.py independently recomputes the package partition and fails on overlap, omission, stale members, or any unclassified path.",
+  "artifacts": [
+    "IMMUTABILITY-BOUNDARY-DRAFT.json",
+    "SUCCESSOR-OWNERSHIP-UNIVERSE.json",
+    "EVALUATION-UNIVERSES.json",
+    "tools/preregistration_preflight.py",
+    "LIFECYCLE-CHECKPOINT-DRAFT.json"
+  ],
+  "nonweakening": {
+    "immutable_boundary_classification_error_count_target": 0,
+    "original_six_defects_status": "independently PASS in rereview 002",
+    "metric_targets_changed": false
+  },
+  "historical_integrity_requirement": "v0.10 manifest-bound hashes must remain 1120/1120 exact.",
+  "authority_rule": "This repair record is not independent verification. DEF-011-REREVIEW-001 remains pending until a genuinely separate receiving context recomputes the repaired package classification."
+}

@@ -1,0 +1,172 @@
+{
+  "active_regression_count": 16,
+  "actor_id": "verifier:independent-pass-007",
+  "candidate_version": "0.07",
+  "checks": {
+    "actor_independence": true,
+    "contract_hash": true,
+    "corpus_hash": true,
+    "critical_escapes": true,
+    "dependency_frontier": true,
+    "evaluation_plan_hash": true,
+    "frozen_regressions_present": true,
+    "full_tests": true,
+    "heldout_actions": true,
+    "heldout_hash": true,
+    "information_value": true,
+    "inherited_tests": true,
+    "new_corrective_regression_tests": true,
+    "new_corrective_regressions_present": true,
+    "parent_preflight": true,
+    "provenance": true,
+    "question_reduction": true,
+    "rework_proxy": true,
+    "safe_inference": true,
+    "self_traceability": true,
+    "shadow_nonpromotional_clean": true,
+    "spec_ambiguity": true,
+    "spec_lint": true,
+    "unnecessary_questions": true,
+    "unsafe_defaults": true,
+    "workspace_without_shipping_manifest": true
+  },
+  "corpus_counts": {
+    "adaptive_question_batch_count": 40,
+    "baseline_question_count": 92,
+    "case_count": 72,
+    "dependency_case_count": 16,
+    "heldout_action_count": 47,
+    "heldout_case_count": 34,
+    "priority_case_count": 24,
+    "provenance_action_count": 98,
+    "safe_default_case_count": 20,
+    "unsafe_default_case_count": 16,
+    "zero_question_case_count": 12
+  },
+  "corpus_metrics": {
+    "critical_ambiguity_escape_count": 0,
+    "dependency_frontier_accuracy": 1.0,
+    "heldout_action_exact_match_rate": 1.0,
+    "information_value_top_selection_accuracy": 1.0,
+    "owner_question_reduction_rate": 0.5652173913043478,
+    "parent_preflight_rate": 1.0,
+    "provenance_completeness_rate": 1.0,
+    "rework_proxy_error_count": 0,
+    "safe_inference_exact_match_rate": 1.0,
+    "unnecessary_question_rate": 0.0,
+    "unsafe_default_count": 0
+  },
+  "full_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 60%]\n...............................................                          [100%]\n119 passed in 2.59s"
+  },
+  "hashes": {
+    "contract_canonical_sha256": "981c1415040c986d031f528ce10a12456a0e594bbb9551f95cbec4bf8c3dac38",
+    "corpus_sha256": "31e13b98991543208e453faa89d2277282646f8110483fab1ea9a8d9b3c272ad",
+    "evaluation_plan_sha256": "539e75dca5af5067188417b27ed405719b9b3e4d78a61739178c0db0a9cebe3d",
+    "heldout_sha256": "064d0b1a78e708cb071fa9c28db8b7b0f1b98cb5e70f0c9f81e14e0282f3848e"
+  },
+  "implementation_actor_id": "agent:spec-creator-builder",
+  "inherited_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 72%]\n............................                                             [100%]\n100 passed, 3 deselected in 2.37s"
+  },
+  "limitations": [
+    "Role separation is within the same runtime/session, not an external organization.",
+    "The frozen held-out set is same-cycle synthetic evidence and does not establish real-project causal rework reduction.",
+    "Shadow internal-spec evaluation is corrective/non-promotional and cannot raise the release classification.",
+    "Final root package manifest is intentionally generated only after release accounting is complete."
+  ],
+  "new_corrective_regression_test_run": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "...                                                                      [100%]\n3 passed in 0.03s"
+  },
+  "preflight_summary": {
+    "case_count": 72,
+    "graph_backed_case_count": 2,
+    "ok": true,
+    "parent_preflight_rate": 1.0,
+    "parent_valid_case_count": 72
+  },
+  "recommendation": "PROMOTED AS EXPERIMENTAL",
+  "result": "PASS",
+  "shadow_summary": [
+    {
+      "file": "versions/v0.04/SPEC-CREATOR-v0.04.md",
+      "summary": {
+        "already_governed": 0,
+        "ask_now": 0,
+        "baseline_questions": 0,
+        "candidates": 0,
+        "defer_budget": 0,
+        "defer_dependency": 0,
+        "infer_default": 0,
+        "question_batches": 0
+      }
+    },
+    {
+      "file": "versions/v0.05/SPEC-CREATOR-v0.05.md",
+      "summary": {
+        "already_governed": 0,
+        "ask_now": 0,
+        "baseline_questions": 0,
+        "candidates": 0,
+        "defer_budget": 0,
+        "defer_dependency": 0,
+        "infer_default": 0,
+        "question_batches": 0
+      }
+    },
+    {
+      "file": "versions/v0.06.1/SPEC-CREATOR-v0.06.1.md",
+      "summary": {
+        "already_governed": 0,
+        "ask_now": 0,
+        "baseline_questions": 0,
+        "candidates": 0,
+        "defer_budget": 0,
+        "defer_dependency": 0,
+        "infer_default": 0,
+        "question_batches": 0
+      }
+    },
+    {
+      "file": "versions/v0.07/SPEC-CREATOR-v0.07.md",
+      "summary": {
+        "already_governed": 0,
+        "ask_now": 0,
+        "baseline_questions": 0,
+        "candidates": 0,
+        "defer_budget": 0,
+        "defer_dependency": 0,
+        "infer_default": 0,
+        "question_batches": 0
+      }
+    }
+  ],
+  "spec_ambiguity_summary": {
+    "decision_needed": 0,
+    "findings": 0,
+    "questions": 0
+  },
+  "spec_lint_summary": {
+    "findings": 0,
+    "suppressed": 0,
+    "unsuppressed": 0
+  },
+  "traceability_summary": {
+    "critical_requirements_complete": 12,
+    "critical_requirements_total": 12,
+    "critical_traceability_coverage_rate": 1.0,
+    "diagnostics": 0,
+    "errors": 0
+  },
+  "workspace_validation": {
+    "errors": 0,
+    "issues": 0,
+    "warnings": 0
+  }
+}

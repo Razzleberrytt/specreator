@@ -1,0 +1,34 @@
+{
+  "validation_id": "VAL-011-ESIS-ROADMAP-AMENDMENT-001",
+  "generated_at_utc": "2026-08-24T22:03:17Z",
+  "scope": "Forward product-direction/roadmap amendment only; no v0.11 promotion obligation changes.",
+  "new_capability": "Existing-Solution Intelligence & Synthesis (ESIS)",
+  "candidate_schemas_valid": [
+    "versions/v0.11/candidate-schemas/execution-architecture-v1.candidate.schema.json",
+    "versions/v0.11/candidate-schemas/lifecycle-checkpoint-v1.candidate.schema.json"
+  ],
+  "fixture_counts": {
+    "versions/v0.11/candidate-fixtures/execution-architecture-corpus.jsonl": 6,
+    "versions/v0.11/candidate-fixtures/lifecycle-continuation-corpus.jsonl": 4
+  },
+  "pytest": {
+    "passed": 155,
+    "failed": 0,
+    "evidence": "evaluation/pytest-v0.11-esis-roadmap-amendment.txt"
+  },
+  "workspace_validation": {
+    "errors": 0,
+    "warnings": 0,
+    "evidence": "evaluation/workspace-validation-v0.11-esis-roadmap-amendment.json"
+  },
+  "v0_10_protected_hashes": {
+    "matched": 1120,
+    "total": 1120
+  },
+  "v0_11_preregistration_hashes": {
+    "matched": 10,
+    "total": 10,
+    "changed": false
+  },
+  "governance_conclusion": "PASS: amendment is forward-looking and does not move v0.11 preregistered gates."
+}

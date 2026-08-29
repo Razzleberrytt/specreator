@@ -1,0 +1,4 @@
+{"fixture_id":"LIFE-011-001-DISCOVERY","partition":"development","state":"UNFROZEN_DISCOVERY","blockers":[],"expected_next_action":"prepare_preregistration","expected_hidden_reconstruction":0}
+{"fixture_id":"LIFE-011-002-BLOCKED-PREFREEZE","partition":"development","state":"PREFREEZE_REVIEW","blockers":["parent_preflight_failed"],"expected_next_action":"repair_or_reject_prefreeze","expected_hidden_reconstruction":0}
+{"fixture_id":"LIFE-011-003-FROZEN","partition":"heldout","state":"FROZEN","blockers":[],"expected_next_action":"implement_frozen_candidate","expected_hidden_reconstruction":0}
+{"fixture_id":"LIFE-011-004-VERIFYING","partition":"heldout","state":"VERIFYING","blockers":[],"expected_next_action":"independent_verification","expected_hidden_reconstruction":0}

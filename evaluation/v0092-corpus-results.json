@@ -1,0 +1,833 @@
+{
+  "candidate_version": "0.09.2",
+  "contract_id": "REL-0.09.2.1-FROZEN-001",
+  "counts": {
+    "accepted_obligation_tokens": 1196,
+    "baseline_missing_obligations": 1142,
+    "compiled_missing_obligations": 0,
+    "continuation_accepted_cases": 9,
+    "development_accepted": 30,
+    "development_cases": 50,
+    "expected_excluded_context_refs": 134,
+    "heldout_accepted": 15,
+    "heldout_cases": 25,
+    "negative_cases": 30,
+    "output_schema_error_count": 0
+  },
+  "hash_checks": {
+    "approved_spec": true,
+    "baseline": true,
+    "combined_corpus": true,
+    "contract": true,
+    "contrast_preflight": true,
+    "development_corpus": true,
+    "envelope_schema": true,
+    "heldout_corpus": true,
+    "input_schema": true,
+    "parent_preflight": true,
+    "plan": true,
+    "prefreeze_transaction": true,
+    "schema_preflight": true
+  },
+  "metrics": {
+    "benchmark_contrast_preflight_rate": 1.0,
+    "context_over_inclusion_rate": 0.0,
+    "continuation_state_exact_match_rate": 1.0,
+    "corrective_prompt_proxy_reduction_rate": 1.0,
+    "critical_gate_bypass_count": null,
+    "deterministic_repeat_rate": 1.0,
+    "development_prompt_envelope_exact_match_rate": 1.0,
+    "frozen_hash_integrity_rate": 1.0,
+    "heldout_prompt_envelope_exact_match_rate": 1.0,
+    "inherited_regression_pass_rate": null,
+    "invalid_input_escape_count": 0,
+    "missing_critical_constraint_count": 0,
+    "missing_data_count": null,
+    "negative_case_classification_accuracy": 1.0,
+    "obligation_retention_rate": 1.0,
+    "owner_decision_escape_count": 0,
+    "parent_preflight_rate": 1.0,
+    "preregistration_precondition_pass_rate": 1.0,
+    "prerequisite_escape_count": 0,
+    "scope_expansion_count": 0,
+    "self_certification_violation_count": 0,
+    "v0092_spec_quality_acceptance_rate": 1.0
+  },
+  "missing_data": [
+    "inherited_regression_pass_rate",
+    "critical_gate_bypass_count",
+    "missing_data_count"
+  ],
+  "rows": [
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-BOOTSTRAP-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-BOOTSTRAP-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 25,
+      "case_id": "DEV-BOOTSTRAP-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-BOOTSTRAP-04",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 22,
+      "case_id": "DEV-BOOTSTRAP-05",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-BOOTSTRAP-06",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-IMPLEMENTATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-IMPLEMENTATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "DEV-IMPLEMENTATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-IMPLEMENTATION-04",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-IMPLEMENTATION-05",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-IMPLEMENTATION-06",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-DEBUG-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-DEBUG-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "DEV-DEBUG-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-DEBUG-04",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-DEBUG-05",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-DEBUG-06",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-VERIFICATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-VERIFICATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "DEV-VERIFICATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-VERIFICATION-04",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-VERIFICATION-05",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-VERIFICATION-06",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-CONTINUATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-CONTINUATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "DEV-CONTINUATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-CONTINUATION-04",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "DEV-CONTINUATION-05",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "DEV-CONTINUATION-06",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-01",
+      "class": "negative",
+      "diagnostic_code": "PC-SCOPE-EXPANSION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-02",
+      "class": "negative",
+      "diagnostic_code": "PC-PREREQUISITE-INCOMPLETE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-03",
+      "class": "negative",
+      "diagnostic_code": "PC-OWNER-DECISION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-04",
+      "class": "negative",
+      "diagnostic_code": "PC-VERIFIER-SELF-CERTIFICATION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-05",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-NOT-DONE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-06",
+      "class": "negative",
+      "diagnostic_code": "PC-DEBUG-EVIDENCE-MISSING",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-1-07",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-CONTRACT-MISMATCH",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-1-08",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-DUPLICATE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-1-09",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-CLOSURE-UNPROVEN",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-1-10",
+      "class": "negative",
+      "diagnostic_code": "PC-GRAPH-INVALID",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-01",
+      "class": "negative",
+      "diagnostic_code": "PC-SCOPE-EXPANSION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-02",
+      "class": "negative",
+      "diagnostic_code": "PC-PREREQUISITE-INCOMPLETE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-03",
+      "class": "negative",
+      "diagnostic_code": "PC-OWNER-DECISION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-04",
+      "class": "negative",
+      "diagnostic_code": "PC-VERIFIER-SELF-CERTIFICATION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-05",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-NOT-DONE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-06",
+      "class": "negative",
+      "diagnostic_code": "PC-DEBUG-EVIDENCE-MISSING",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-2-07",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-CONTRACT-MISMATCH",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-2-08",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-DUPLICATE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "DEV-NEG-2-09",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-CLOSURE-UNPROVEN",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "DEV-NEG-2-10",
+      "class": "negative",
+      "diagnostic_code": "PC-GRAPH-INVALID",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "development"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "HELD-BOOTSTRAP-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 22,
+      "case_id": "HELD-BOOTSTRAP-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 25,
+      "case_id": "HELD-BOOTSTRAP-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "HELD-IMPLEMENTATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "HELD-IMPLEMENTATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "HELD-IMPLEMENTATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "HELD-DEBUG-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "HELD-DEBUG-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "HELD-DEBUG-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "HELD-VERIFICATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "HELD-VERIFICATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "HELD-VERIFICATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 26,
+      "case_id": "HELD-CONTINUATION-01",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 24,
+      "case_id": "HELD-CONTINUATION-02",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "compiled",
+      "baseline_missing_obligations": 27,
+      "case_id": "HELD-CONTINUATION-03",
+      "class": "accepted",
+      "compiled_missing_obligations": 0,
+      "diagnostic_code": null,
+      "exact_envelope": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-01",
+      "class": "negative",
+      "diagnostic_code": "PC-SCOPE-EXPANSION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-02",
+      "class": "negative",
+      "diagnostic_code": "PC-PREREQUISITE-INCOMPLETE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-03",
+      "class": "negative",
+      "diagnostic_code": "PC-OWNER-DECISION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-04",
+      "class": "negative",
+      "diagnostic_code": "PC-VERIFIER-SELF-CERTIFICATION",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-05",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-NOT-DONE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-06",
+      "class": "negative",
+      "diagnostic_code": "PC-DEBUG-EVIDENCE-MISSING",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "HELD-NEG-07",
+      "class": "negative",
+      "diagnostic_code": "PC-TASK-CONTRACT-MISMATCH",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "HELD-NEG-08",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-DUPLICATE",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "blocked",
+      "case_id": "HELD-NEG-09",
+      "class": "negative",
+      "diagnostic_code": "PC-CONTEXT-CLOSURE-UNPROVEN",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    },
+    {
+      "actual_status": "invalid",
+      "case_id": "HELD-NEG-10",
+      "class": "negative",
+      "diagnostic_code": "PC-GRAPH-INVALID",
+      "negative_exact": true,
+      "output_schema_errors": [],
+      "partition": "heldout"
+    }
+  ],
+  "spec_quality": {
+    "ambiguity_findings": 0,
+    "discovery_question_batches": 0,
+    "lint_ok": true
+  }
+}
