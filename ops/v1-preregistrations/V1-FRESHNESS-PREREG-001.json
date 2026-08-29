@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "V1-FRESHNESS-PREREG-001",
+  "blocker_id": "V1-MUST-FRESHNESS-001",
+  "status": "FROZEN",
+  "basis_main_sha": "5588c3ee1fa71408a0ee340d43f32ee6d28a5ace",
+  "sealed_parent": {
+    "version": "0.11.1",
+    "sealed_zip_sha256": "99b825690bde2fe131fa5db467b3abe682ee9db93ada44e0de5d059f47a8c8e3",
+    "frozen_contract_hash": "af752631ce8c50586605ffed2be4ddb4995b6f2536e5594417d7d61bc2a168ed"
+  },
+  "observed_gap": "v0.11.1 provides deterministic node-local traceability impact closure, but no artifact-authority freshness layer spans specifications, decisions, trace graphs, tasks, prompts, tests, manifests, dependency definitions, and release-authoritative artifacts.",
+  "hypothesis": "An explicit artifact-provenance dependency graph keyed by stable artifact identity and content hash can deterministically compute exact affected/stale authority sets across the frozen MUST-07 mutation universe, while allowing safe reuse only when governed identity/provenance remains valid.",
+  "artifact_universe": [
+    "specification",
+    "decision",
+    "trace_graph",
+    "task_graph",
+    "prompt_context",
+    "test_definition",
+    "manifest",
+    "dependency_definition",
+    "release_authoritative_artifact"
+  ],
+  "implementation_scope": {
+    "allowed": [
+      "additive freshness/provenance model and evaluator",
+      "machine-readable artifact dependency edges",
+      "stable content-identity comparison",
+      "affected/stale/safe-reuse reason codes",
+      "frozen fixtures and regression tests",
+      "minimal CLI/API exposure required by the frozen evaluator"
+    ],
+    "forbidden": [
+      "editing historical v0.11.1 artifacts",
+      "changing existing traceability semantics except additive integration",
+      "inventing dependency edges from filenames or prose",
+      "treating missing provenance as fresh",
+      "changing frozen matrix, denominators, thresholds, or failure criteria after implementation begins",
+      "release sealing or Lane-2 self-verification"
+    ]
+  },
+  "metrics": {
+    "primary": {
+      "name": "mutation_outcome_exact_match_rate",
+      "numerator": "frozen cases whose affected set, stale-authority set, and safe-reuse decision exactly match expected",
+      "denominator": 21,
+      "target": 1.0
+    },
+    "guardrails": [
+      {"name": "stale_authority_escape_count", "denominator": 15, "target": 0},
+      {"name": "negative_case_false_invalidation_count", "denominator": 6, "target": 0},
+      {"name": "provenance_completeness_rate", "denominator": "all emitted affected/stale outputs across the 21 frozen cases", "target": 1.0},
+      {"name": "repeat_determinism_exact_match_rate", "denominator": 63, "target": 1.0},
+      {"name": "parent_trace_impact_exact_match_rate", "denominator": "all existing frozen v0.11.1 trace impact cases", "target": 1.0},
+      {"name": "parent_suite_pass_rate", "denominator": 166, "target": 1.0},
+      {"name": "active_regression_pass_rate", "denominator": 25, "target": 1.0}
+    ]
+  },
+  "failure_criteria": [
+    "any of 21 frozen mutation cases differs from expected affected/stale/reuse outcome",
+    "any positive mutation permits stale promotion-authoritative reuse",
+    "any of 6 negative controls is falsely invalidated",
+    "missing provenance is treated as fresh or equivalent",
+    "any emitted affected/stale output lacks complete machine-readable source-mutation, dependency-path, and identity provenance",
+    "any repeat differs under identical inputs",
+    "any existing frozen trace-impact case changes",
+    "any of 166 sealed-parent tests fails",
+    "any of 25 active regressions fails or disappears",
+    "any frozen contract or matrix semantic identity changes after freeze"
+  ],
+  "missing_data_policy": "Missing, unreadable, unevaluated, or provenance-incomplete artifacts remain in their frozen denominator and are INCOMPLETE/STALE evidence; they never count as fresh, equivalent, zero defects, or PASS.",
+  "backward_compatibility": "Existing traceability impact behavior remains authoritative for node-local graph impact. Freshness is additive and must not rewrite historical v0.11.1 evidence or parent semantics.",
+  "verification_boundary": "Lane 4 independently recomputes frozen identities, all matrix outcomes and denominators, parent trace-impact cases, 166 parent tests, 25 active regressions, and exact candidate identity. Lane 2 cannot self-certify promotion.",
+  "freeze_projection": {
+    "contract_id": "V1-FRESHNESS-PREREG-001",
+    "basis_main_sha": "5588c3ee1fa71408a0ee340d43f32ee6d28a5ace",
+    "status": "FROZEN",
+    "hypothesis": "An explicit artifact-provenance dependency graph keyed by stable artifact identity and content hash can deterministically compute exact affected/stale authority sets across the frozen MUST-07 mutation universe, while allowing safe reuse only when governed identity/provenance remains valid.",
+    "primary_denominator": 21,
+    "positive_denominator": 15,
+    "negative_denominator": 6,
+    "repeat_denominator": 63,
+    "parent_suite_denominator": 166,
+    "active_regression_denominator": 25
+  },
+  "freeze_projection_sha256": "d0fb1e4fe9d01ddc1ea06da97391cdb6cb9acf3729c8d4cc142d6427cd2bc3a7",
+  "created_at": "2026-08-29T04:14:18Z",
+  "frozen_at": "2026-08-29T04:14:18Z"
+}

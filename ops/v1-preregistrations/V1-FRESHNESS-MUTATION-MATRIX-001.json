@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+  "contract_id": "V1-FRESHNESS-PREREG-001",
+  "case_count": 21,
+  "positive_case_count": 15,
+  "negative_case_count": 6,
+  "denominator_rule": "All 21 named rows are mandatory. Missing, skipped, unreadable, or unevaluated rows remain in the denominator and fail exact-match evidence.",
+  "edge_rule": "Expected propagation follows explicit frozen provenance/dependency edges in each fixture; artifact-class membership alone never implies universal invalidation.",
+  "safe_reuse_rule": "Reuse is allowed only when governed content identity is unchanged or the mutated artifact has no declared provenance path into reused authority. Missing required provenance fails closed.",
+  "cases": [
+    {"case_id":"FRESH-P01","mutation_class":"specification","positive":true,"expected_affected":["trace_graph","task_graph","prompt_context","test_definition"],"expected_stale_authority":["trace_graph","task_graph","prompt_context","test_definition"],"safe_reuse":false},
+    {"case_id":"FRESH-P02","mutation_class":"decision","positive":true,"expected_affected":["specification","trace_graph","task_graph","prompt_context","test_definition"],"expected_stale_authority":["specification","trace_graph","task_graph","prompt_context","test_definition"],"safe_reuse":false},
+    {"case_id":"FRESH-P03","mutation_class":"trace_graph","positive":true,"expected_affected":["task_graph","prompt_context","test_definition"],"expected_stale_authority":["task_graph","prompt_context","test_definition"],"safe_reuse":false},
+    {"case_id":"FRESH-P04","mutation_class":"task_graph","positive":true,"expected_affected":["prompt_context","test_definition"],"expected_stale_authority":["prompt_context","test_definition"],"safe_reuse":false},
+    {"case_id":"FRESH-P05","mutation_class":"prompt_context","positive":true,"expected_affected":["release_authoritative_artifact"],"expected_stale_authority":["release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P06","mutation_class":"test_definition","positive":true,"expected_affected":["release_authoritative_artifact"],"expected_stale_authority":["release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P07","mutation_class":"manifest","positive":true,"expected_affected":["release_authoritative_artifact"],"expected_stale_authority":["release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P08","mutation_class":"dependency_definition","positive":true,"expected_affected":["test_definition","release_authoritative_artifact"],"expected_stale_authority":["test_definition","release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P09","mutation_class":"release_authoritative_artifact","positive":true,"expected_affected":["release_authoritative_artifact"],"expected_stale_authority":["release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P10","mutation_class":"specification","positive":true,"expected_affected":["task_graph","prompt_context"],"expected_stale_authority":["task_graph","prompt_context"],"safe_reuse":false},
+    {"case_id":"FRESH-P11","mutation_class":"decision","positive":true,"expected_affected":["prompt_context"],"expected_stale_authority":["prompt_context"],"safe_reuse":false},
+    {"case_id":"FRESH-P12","mutation_class":"trace_graph","positive":true,"expected_affected":["test_definition"],"expected_stale_authority":["test_definition"],"safe_reuse":false},
+    {"case_id":"FRESH-P13","mutation_class":"manifest","positive":true,"expected_affected":["test_definition","release_authoritative_artifact"],"expected_stale_authority":["test_definition","release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P14","mutation_class":"dependency_definition","positive":true,"expected_affected":["prompt_context","test_definition","release_authoritative_artifact"],"expected_stale_authority":["prompt_context","test_definition","release_authoritative_artifact"],"safe_reuse":false},
+    {"case_id":"FRESH-P15","mutation_class":"task_graph","positive":true,"expected_affected":["prompt_context"],"expected_stale_authority":["prompt_context"],"safe_reuse":false},
+    {"case_id":"FRESH-N01","mutation_class":"specification","positive":false,"control":"byte-identical canonical content and unchanged governed identity","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true},
+    {"case_id":"FRESH-N02","mutation_class":"decision","positive":false,"control":"unrelated decision with no provenance path","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true},
+    {"case_id":"FRESH-N03","mutation_class":"trace_graph","positive":false,"control":"unrelated graph component outside declared provenance closure","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true},
+    {"case_id":"FRESH-N04","mutation_class":"manifest","positive":false,"control":"non-shipping explanatory inventory not designated authoritative","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true},
+    {"case_id":"FRESH-N05","mutation_class":"dependency_definition","positive":false,"control":"non-executed optional dependency outside candidate dependency identity","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true},
+    {"case_id":"FRESH-N06","mutation_class":"release_authoritative_artifact","positive":false,"control":"explanatory documentation outside promotion-authoritative artifact set","expected_affected":[],"expected_stale_authority":[],"safe_reuse":true}
+  ],
+  "freeze_projection": {
+    "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001",
+    "contract_id": "V1-FRESHNESS-PREREG-001",
+    "cases": ["FRESH-P01","FRESH-P02","FRESH-P03","FRESH-P04","FRESH-P05","FRESH-P06","FRESH-P07","FRESH-P08","FRESH-P09","FRESH-P10","FRESH-P11","FRESH-P12","FRESH-P13","FRESH-P14","FRESH-P15","FRESH-N01","FRESH-N02","FRESH-N03","FRESH-N04","FRESH-N05","FRESH-N06"]
+  },
+  "freeze_projection_sha256": "81b6adae7deb3f4c42cd2016c8fd775c1c94b6ccaa87f9caaa596a22af8bc12e",
+  "frozen_at": "2026-08-29T04:14:18Z"
+}
