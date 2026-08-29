@@ -20,16 +20,54 @@ def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
 
 
+def active_yaml_lines(text: str) -> list[str]:
+    """Return nonblank workflow lines with whole-line comments removed.
+
+    The integrity workflow is intentionally simple and dependency-free. This
+    helper prevents comments from satisfying policy invariants while preserving
+    indentation for step/with-block parsing.
+    """
+    return [
+        line.rstrip()
+        for line in text.splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    ]
+
+
+def workflow_steps(lines: list[str]) -> list[list[str]]:
+    """Extract the job's active step blocks using their YAML indentation."""
+    starts = [
+        index
+        for index, line in enumerate(lines)
+        if re.match(r"^\s{6}-\s+(name|uses|run):", line)
+    ]
+    if not starts:
+        fail("integrity workflow contains no active steps")
+
+    steps: list[list[str]] = []
+    for position, start in enumerate(starts):
+        end = starts[position + 1] if position + 1 < len(starts) else len(lines)
+        steps.append(lines[start:end])
+    return steps
+
+
+def step_has_exact_line(step: list[str], pattern: str) -> bool:
+    return any(re.fullmatch(pattern, line) for line in step)
+
+
 def main() -> None:
     if not WORKFLOW.is_file() or not CONSTRAINTS.is_file():
         fail("integrity workflow and CI constraints must both exist")
 
     workflow = WORKFLOW.read_text(encoding="utf-8")
+    active_lines = active_yaml_lines(workflow)
+    active_workflow = "\n".join(active_lines)
+    steps = workflow_steps(active_lines)
+
     required_fragments = {
         "least-privilege contents permission": "permissions:\n  contents: read",
         "pinned runner": f"runs-on: {RUNNER}",
         "pinned checkout action": f"actions/checkout@{CHECKOUT_SHA}",
-        "credentialless checkout": "persist-credentials: false",
         "pinned setup-python action": f"actions/setup-python@{SETUP_PYTHON_SHA}",
         "pinned Python runtime": f"python-version: '{PYTHON_VERSION}'",
         "constraints-backed cache": "cache-dependency-path: .github/ci-constraints.txt",
@@ -44,26 +82,63 @@ def main() -> None:
         "package cardinality": "count != 1771",
     }
     for label, fragment in required_fragments.items():
-        if fragment not in workflow:
+        if fragment not in active_workflow:
             fail(f"integrity workflow lost required invariant: {label}")
 
-    policy_pos = workflow.find("run: python ops/validate_integrity_ci_policy.py")
-    install_pos = workflow.find("python -m pip install")
-    if policy_pos < 0 or install_pos < 0 or policy_pos > install_pos:
-        fail("CI-policy validation must run before package/dependency installation")
+    checkout_ref = f"actions/checkout@{CHECKOUT_SHA}"
+    checkout_steps = [
+        step
+        for step in steps
+        if any(re.fullmatch(rf"\s+uses:\s*{re.escape(checkout_ref)}(?:\s+#.*)?", line) for line in step)
+    ]
+    if len(checkout_steps) != 1:
+        fail(f"integrity workflow must contain exactly one approved checkout step, found {len(checkout_steps)}")
 
-    checkout_block = re.search(
-        rf"uses:\s*actions/checkout@{CHECKOUT_SHA}[^\n]*\n(?P<body>(?:\s+[^\n]*\n){{1,8}})",
-        workflow,
-    )
-    if not checkout_block or "persist-credentials: false" not in checkout_block.group("body"):
-        fail("checkout must explicitly disable persisted repository credentials")
+    checkout_step = checkout_steps[0]
+    with_positions = [index for index, line in enumerate(checkout_step) if re.fullmatch(r"\s{8}with:", line)]
+    if len(with_positions) != 1:
+        fail("checkout step must contain exactly one with mapping")
+    with_index = with_positions[0]
+    checkout_inputs = []
+    for line in checkout_step[with_index + 1 :]:
+        if re.match(r"^\s{10}\S", line):
+            checkout_inputs.append(line.strip())
+        elif len(line) - len(line.lstrip()) <= 8:
+            break
+    persist_values = [
+        item.split(":", 1)[1].strip().lower()
+        for item in checkout_inputs
+        if item.startswith("persist-credentials:")
+    ]
+    if persist_values != ["false"]:
+        fail("checkout must set exactly one active persist-credentials: false input")
+
+    policy_step_indexes = [
+        index
+        for index, step in enumerate(steps)
+        if step_has_exact_line(step, r"\s{8}run:\s*python ops/validate_integrity_ci_policy\.py")
+    ]
+    if len(policy_step_indexes) != 1:
+        fail("integrity workflow must contain exactly one active CI-policy validation step")
+
+    install_step_indexes = [
+        index
+        for index, step in enumerate(steps)
+        if any(
+            "python -m pip install" in line and not line.lstrip().startswith("#")
+            for line in step
+        )
+    ]
+    if len(install_step_indexes) != 1:
+        fail("integrity workflow must contain exactly one active dependency-install step")
+    if policy_step_indexes[0] >= install_step_indexes[0]:
+        fail("CI-policy validation must run before package/dependency installation")
 
     allowed_uses = {
         f"actions/checkout@{CHECKOUT_SHA}",
         f"actions/setup-python@{SETUP_PYTHON_SHA}",
     }
-    observed_uses = set(re.findall(r"(?m)^\s*uses:\s*([^\s#]+)", workflow))
+    observed_uses = set(re.findall(r"(?m)^\s*uses:\s*([^\s#]+)", active_workflow))
     unexpected = sorted(observed_uses - allowed_uses)
     missing = sorted(allowed_uses - observed_uses)
     if unexpected:
@@ -71,7 +146,7 @@ def main() -> None:
     if missing:
         fail(f"integrity workflow is missing approved action references: {missing}")
 
-    if re.search(r"(?m)^\s*uses:\s*[^\n]+@(v\d+|main|master|latest)\b", workflow):
+    if re.search(r"(?m)^\s*uses:\s*[^\n]+@(v\d+|main|master|latest)\b", active_workflow):
         fail("integrity workflow contains mutable action ref")
 
     constraint_lines = [
