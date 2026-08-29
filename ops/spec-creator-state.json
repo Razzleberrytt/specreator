@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "state_id": "SPEC-CREATOR-STATE-001",
+  "updated_at": "2026-08-29T02:00:24Z",
+  "authority_note": "This file records reconciled machine state but does not grant phase-transition authority; lane 5 must reconcile major phase transitions.",
+  "repository": {
+    "full_name": "Razzleberrytt/specreator",
+    "default_branch": "main",
+    "observed_main_sha": "38c7f312f2c62d23498adac946ca378c4d9c8957",
+    "observed_tree_sha": "3d92c450948abe8e42ce226b46fb91d9b3843e2d",
+    "baseline_present": false,
+    "observed_shipped_files": 1
+  },
+  "current_sealed_release": null,
+  "active_candidate": {
+    "version": "0.11.1",
+    "exact_candidate_sha": null,
+    "identity_status": "UNKNOWN_UNTIL_CANONICAL_BASELINE_RECOVERED",
+    "frozen_contract_hash": null,
+    "frozen_contract_hash_status": "PRESERVED_EXTERNAL_EVIDENCE_SAYS_PASS_BUT_EXACT_HASH_NOT_AVAILABLE_IN_REPOSITORY"
+  },
+  "phase": "BASELINE_RECONSTRUCTION_BLOCKED",
+  "phase_authority": "lane-5",
+  "lane_ownership": {
+    "lane-1": "integrity-packaging-release-infrastructure-and-control-plane-formats",
+    "lane-5": "major-phase-reconciliation-authority"
+  },
+  "blockers": [
+    {
+      "id": "BLK-BASELINE-001",
+      "severity": "P0",
+      "status": "OPEN",
+      "issue": 1,
+      "summary": "Canonical v0.11.1 package is absent from GitHub and cannot be reconstructed byte-for-byte from currently retrievable artifacts.",
+      "evidence": {
+        "github_main_sha": "38c7f312f2c62d23498adac946ca378c4d9c8957",
+        "github_tree_sha": "3d92c450948abe8e42ce226b46fb91d9b3843e2d",
+        "github_tree_paths": ["README.md"],
+        "preserved_verified_package_file_count": 1358,
+        "preserved_v010_manifest_hashes": "1120/1120",
+        "preserved_failed_v011_hashes": "154/154",
+        "preserved_full_suite": "166/166",
+        "preserved_active_regressions": "25/25",
+        "preserved_workspace_validation": "0 errors / 0 warnings",
+        "preserved_verifier_recommendation": "READY_FOR_RELEASE_SEAL"
+      }
+    }
+  ],
+  "verifier_recommendation": "READY_FOR_RELEASE_SEAL",
+  "verification_receipt": {
+    "identity": null,
+    "freshness": "STALE_FOR_GITHUB_REPOSITORY_STATE",
+    "reason": "The verified v0.11.1 package is not the current GitHub tree; no release promotion may use the external recommendation until the exact package identity is restored and matched."
+  },
+  "next_legal_transition": {
+    "action": "RECOVER_CANONICAL_V0_11_1_BASELINE",
+    "owner": "lane-1",
+    "requirements": [
+      "recover exact preserved package/checkpoint bytes",
+      "verify package identity against preserved hashes/receipts",
+      "import without mutating frozen history",
+      "recompute package ownership and historical hashes",
+      "refresh exact-state verification before release seal if any promotion-authoritative identity changed"
+    ],
+    "prohibited_until_complete": [
+      "generate authoritative shipping manifest",
+      "declare v0.11.1 sealed or adopted",
+      "begin successor capability work"
+    ]
+  },
+  "v1_convergence": {
+    "status": "BLOCKED_BY_UNSEALED_BASELINE",
+    "must_blocker_count": 1,
+    "must_blockers": ["BLK-BASELINE-001"]
+  }
+}
