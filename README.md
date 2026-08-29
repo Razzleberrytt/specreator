@@ -24,6 +24,19 @@ The system is designed to preserve a chain from goals and requirements through d
 - **Historical immutability.** Failed and superseded experiments remain part of the record.
 - **Convergence over version churn.** Successors must close an objective capability gap or necessary uncertainty.
 
+## Documentation
+
+Start with the [`docs/` index](docs/README.md). The highest-value references are:
+
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — end-to-end architecture and authority boundaries;
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — governed path from the mature baseline to Version 1.00;
+- [`docs/VERSION-1.00-CONTRACT.md`](docs/VERSION-1.00-CONTRACT.md) — prospective additive v1 completion contract;
+- [`docs/V1-CAPABILITY-MAP.md`](docs/V1-CAPABILITY-MAP.md) — v1 capability, dependency, evidence, and lane map;
+- [`docs/AUTONOMOUS-DEVELOPMENT.md`](docs/AUTONOMOUS-DEVELOPMENT.md) — five-lane autonomous workflow and convergence model;
+- [`docs/ARTIFACTS-AND-AUTHORITY.md`](docs/ARTIFACTS-AND-AUTHORITY.md) — artifact classes, freshness, receipts, claims, and authority resolution.
+
+These documents explain the system; they do not replace machine-readable release authority under `ops/`, frozen contracts, manifests, exact repository history, tests, receipts, or verifier evidence.
+
 ## Capability evolution
 
 | Version | Outcome | Capability |
