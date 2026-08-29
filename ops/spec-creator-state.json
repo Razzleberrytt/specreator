@@ -1,7 +1,7 @@
 {
   "schema_version": "1.5",
   "state_id": "SPEC-CREATOR-STATE-001",
-  "updated_at": "2026-08-29T04:48:17Z",
+  "updated_at": "2026-08-29T05:07:15Z",
   "authority_note": "Lane 5 has reconciled the historical v0.11.1 seal and the initial v1 evidence. The first V1-MUST-FRESHNESS-001 preregistration freeze is preserved but rejected for implementation authority because its executable inputs and complete acceptance semantics were not immutably bound. No new v0.11.1 seal exists and no successor implementation is authorized.",
   "repository": {
     "full_name": "Razzleberrytt/specreator",

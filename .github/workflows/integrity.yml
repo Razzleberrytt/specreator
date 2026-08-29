@@ -1,0 +1,71 @@
+name: integrity
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Validate additive control plane
+        run: python ops/validate_control_plane.py
+
+      - name: Materialize immutable v0.11.1 historical package
+        run: |
+          python - <<'PY'
+          import json
+          import shutil
+          from pathlib import Path
+
+          root = Path.cwd()
+          out = root / '.ci-historical-v0.11.1'
+          if out.exists():
+              shutil.rmtree(out)
+          out.mkdir()
+
+          manifest = json.loads((root / 'PACKAGE-MANIFEST.json').read_text(encoding='utf-8'))
+          paths = [entry['path'] for entry in manifest['files']]
+          paths.append('PACKAGE-MANIFEST.json')
+          for relative in paths:
+              src = root / relative
+              if not src.is_file():
+                  raise SystemExit(f'missing historical package member: {relative}')
+              dst = out / relative
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copy2(src, dst)
+
+          count = sum(1 for path in out.rglob('*') if path.is_file())
+          if count != 1771:
+              raise SystemExit(f'historical package file count mismatch: {count} != 1771')
+          print('PASS: materialized 1771-file immutable historical package')
+          PY
+
+      - name: Validate frozen historical release in clean package tree
+        working-directory: .ci-historical-v0.11.1
+        run: |
+          python versions/v0.11.1/tools/frozen_contract_preflight.py
+          PYTHONPATH=src python -m spec_creator.cli validate . --no-package-manifest
+          python -m pytest -q

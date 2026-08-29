@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,6 +28,102 @@ def require_keys(mapping: dict, required: set[str], label: str) -> None:
     missing = sorted(required - set(mapping))
     if missing:
         fail(f"{label} missing required keys: {missing}")
+
+
+def require_sha256(value: object, label: str) -> None:
+    if not isinstance(value, str) or len(value) != 64:
+        fail(f"{label} must be a 64-character SHA-256 digest")
+    try:
+        int(value, 16)
+    except ValueError:
+        fail(f"{label} must be hexadecimal")
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_preregistration_freezes(state: dict) -> None:
+    """Fail closed for any non-rejected freeze that could reach reconciliation.
+
+    Failed frozen history is intentionally exempt from new-format requirements: it must
+    remain byte-for-byte preserved. Every later freeze must bind the exact contract and
+    matrix bytes plus immutable executable-input and acceptance-semantics identities so
+    Lane 5 never has to infer implementation authority from an incomplete freeze.
+    """
+
+    prereg_dir = ROOT / "ops/v1-preregistrations"
+    failed_freeze_ids = {
+        item.get("freeze_id") for item in state.get("failed_preregistrations", [])
+    }
+    if not prereg_dir.is_dir():
+        return
+
+    for freeze_path in sorted(prereg_dir.glob("*-FREEZE-*.json")):
+        freeze = json.loads(freeze_path.read_text(encoding="utf-8"))
+        freeze_id = freeze.get("freeze_id")
+        if freeze_id in failed_freeze_ids:
+            continue
+
+        require_keys(
+            freeze,
+            {
+                "freeze_id",
+                "contract_id",
+                "matrix_id",
+                "implementation_authority",
+                "integrity_bindings",
+            },
+            f"preregistration freeze {freeze_path.name}",
+        )
+        if freeze.get("implementation_authority") not in {
+            "PENDING_LANE5_RECONCILIATION",
+            "AUTHORIZED_BY_LANE5_RECONCILIATION",
+        }:
+            fail(
+                f"preregistration freeze {freeze_id} has unsupported implementation authority"
+            )
+
+        contract_path = prereg_dir / f"{freeze['contract_id']}.json"
+        matrix_path = prereg_dir / f"{freeze['matrix_id']}.json"
+        if not contract_path.is_file() or not matrix_path.is_file():
+            fail(f"preregistration freeze {freeze_id} references missing contract or matrix")
+
+        bindings = freeze["integrity_bindings"]
+        require_keys(
+            bindings,
+            {
+                "binding_complete",
+                "contract_file_sha256",
+                "matrix_file_sha256",
+                "executable_fixture_inputs_sha256",
+                "canonical_case_definitions_sha256",
+                "acceptance_semantics_sha256",
+                "implementation_scope_sha256",
+            },
+            f"preregistration freeze {freeze_id} integrity_bindings",
+        )
+        if bindings["binding_complete"] is not True:
+            fail(f"preregistration freeze {freeze_id} integrity binding is incomplete")
+
+        for key in (
+            "contract_file_sha256",
+            "matrix_file_sha256",
+            "executable_fixture_inputs_sha256",
+            "canonical_case_definitions_sha256",
+            "acceptance_semantics_sha256",
+            "implementation_scope_sha256",
+        ):
+            require_sha256(bindings[key], f"preregistration freeze {freeze_id} {key}")
+
+        if file_sha256(contract_path) != bindings["contract_file_sha256"]:
+            fail(f"preregistration freeze {freeze_id} contract bytes do not match binding")
+        if file_sha256(matrix_path) != bindings["matrix_file_sha256"]:
+            fail(f"preregistration freeze {freeze_id} matrix bytes do not match binding")
 
 
 def main() -> None:
@@ -109,6 +206,8 @@ def main() -> None:
             fail("failed preregistration must have an immutable reconciliation receipt")
         if item.get("disposition") != "REJECTED_FOR_IMPLEMENTATION_AUTHORITY_PRESERVE_HISTORY":
             fail("failed preregistration disposition must preserve history and deny implementation authority")
+
+    validate_preregistration_freezes(state)
 
     next_action = state["next_legal_transition"]["action"]
     if not repo["baseline_bytes_present"]:

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-08-29T04:31:00Z",
+  "updated_at": "2026-08-29T05:07:00Z",
   "staleness_policy": {
     "default_ttl_seconds": 7200,
     "expired_claim_status": "STALE",
@@ -46,6 +46,29 @@
         "matrix_id": "V1-FRESHNESS-MUTATION-MATRIX-001"
       },
       "incompatible_scopes": ["V1-MUST-FRESHNESS-001","successor-capability-implementation:freshness","successor-preregistration-and-freeze:freshness"]
+    },
+    {
+      "task_id": "L1-PREREG-FREEZE-INTEGRITY-CI-001",
+      "owner_lane": "lane-1",
+      "scope": ["control-plane-validator","preregistration-freeze-integrity-gate","github-actions-integrity-ci"],
+      "candidate_version": null,
+      "exact_candidate_sha": "30212a986b1d326edc30645e81ba6b990eec9c70",
+      "release_identity": "CONTROL_PLANE_INFRA@30212a986b1d326edc30645e81ba6b990eec9c70",
+      "claimed_at": "2026-08-29T04:59:30Z",
+      "heartbeat_at": "2026-08-29T05:07:00Z",
+      "updated_at": "2026-08-29T05:07:00Z",
+      "expires_at": "2026-08-29T06:59:30Z",
+      "status": "COMPLETED",
+      "completed_at": "2026-08-29T05:07:00Z",
+      "conflict_key": "control-plane-prereg-freeze-integrity-ci",
+      "completion_evidence": {
+        "pr_number": 19,
+        "validated_functional_head_sha": "acf75e347e1e83daa00585341966d41ea01c25ab",
+        "workflow_run_id": 33235303250,
+        "workflow_conclusion": "success",
+        "historical_package_files": 1771
+      },
+      "incompatible_scopes": ["control-plane-validator","github-actions-integrity-ci"]
     }
   ]
 }
